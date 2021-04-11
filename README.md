@@ -2,9 +2,9 @@
     <img src="logo.png" alt="logo"/>
 </div>
 
-## [👉 ISSUE](https://github.com/boostcamp-ai-tech-4/tech-interview/issues)
+## [👉 Discussion](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions)
 
-스터디 방식, 기록은 모두 Issue에 저장합니다!
+스터디 방식, 스터디 기록, 토의, QnA는 모두 Discussions에서 작성됩니다!
 
 ## 📝 Table of Contents
 
