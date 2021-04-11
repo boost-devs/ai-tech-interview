@@ -2,11 +2,13 @@
     <img src="logo.png" alt="logo"/>
 </div>
 
-## [👉 Discussion](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions)
+## [👉 Discussions](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions)
 
 스터디 방식, 스터디 기록, 토의, QnA는 모두 Discussions에서 작성됩니다!
 
-## 📝 Table of Contents
+---
+
+## Table of Contents
 
 - [Part 1. Data Science](#part-1-data-science)
   - [Statistics/Math](#-statistics-math)
