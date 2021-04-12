@@ -4,7 +4,7 @@
 
 ## [👉 Discussions](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions)
 
-스터디 방식, 스터디 기록, 토의, QnA는 모두 Discussions에서 작성됩니다!
+스터디 방식, 스터디 기록, 토의, QnA는 모두 Discussions에서 작성됩니다
 
 ---
 
