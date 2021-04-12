@@ -6,6 +6,8 @@
 
 스터디 방식, 스터디 기록, QnA는 모두 Discussions에서 작성됩니다!
 
+pull-request test
+
 ---
 
 ## Table of Contents
