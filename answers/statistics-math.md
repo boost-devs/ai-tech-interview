@@ -53,11 +53,44 @@
 
 ## #4
 
-#### 누적 분포 함수와 확률 밀도 함수는 무엇일까요? 수식과 함께 표현해주세요
+#### 누적 분포 함수와 확률 밀도 함수는 무엇일까요? 수식과 함께 표현해주세요.
 
-부먹 vs 찍먹
+확률 변수 <!-- $X$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=X">가 임의의 실수 집합 <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B">에 포함되는 사건의 확률이 다음과 같이 어떤 음이 아닌 함수 <!-- $f$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f">의 적분으로 주어진다고 합시다.
+
+<!-- $$
+P(X \in B) = \int_{B} f(x) dx
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=P(X%20%5Cin%20B)%20%3D%20%5Cint_%7BB%7D%20f(x)%20dx%0D"></div>
+
+<br/>
+
+이 때의 <!-- $X$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=X">를 연속확률변수라고 하며, 함수 <!-- $f(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x)">를 `확률 밀도 함수(Probability Density Function, PDF)`라고 합니다. 단, 실수 집합 <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B">가 실수 전체일 경우 실수 전체에 대한 확률밀도함수의 적분은 1을 만족해야 합니다.
+
+<!-- $$
+P(X \in R) = \int_{R} f(x) dx = 1
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=P(X%20%5Cin%20R)%20%3D%20%5Cint_%7BR%7D%20f(x)%20dx%20%3D%201%0D"></div>
+
+<br/>
+
+`누적 분포 함수(Cumulative Distribution Function, CDF)`는 확률변수가 특정 값보다 작거나 같을 확률을 나타내는 함수입니다. 특정 값을 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">라고 할 때, 누적 분포 함수는 다음과 같이 나타낼 수 있습니다.
+
+<!-- $$
+F(a) = P(X ≤ a) = \int^a_{-\inf} f(x) dx
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=F(a)%20%3D%20P(X%20%E2%89%A4%20a)%20%3D%20%5Cint%5Ea_%7B-%5Cinf%7D%20f(x)%20dx%0D"></div>
+
+<br/>
+
+확률 밀도 함수와 누적 분포 함수는 `미분과 적분의 관계`를 갖고 있습니다. 확률 밀도 함수를 음의 무한대에서 특정값 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">까지 적분을 하면, <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">에 대한 누적 분포 함수를 얻을 수 있습니다. 반대로 누적 분포 함수를 미분하면 확률 밀도 함수를 얻을 수 있습니다.
 
 #### References
+
+- [확률및통계 홍영훈 교수님 정말 감사드립니다🙇‍♀️](https://sites.google.com/site/hong0108/)
+- [확률 분포 함수와 확률 밀도 함수의 의미 - groovallstar.log](https://velog.io/@groovallstar/%ED%99%95%EB%A5%A0-%EB%B6%84%ED%8F%AC-%ED%95%A8%EC%88%98%EC%99%80-%ED%99%95%EB%A5%A0-%EB%B0%80%EB%8F%84-%ED%95%A8%EC%88%98%EC%9D%98-%EC%9D%98%EB%AF%B8)
 
 ---
 
@@ -88,6 +121,8 @@
 ## #8
 
 #### p-value를 모르는 사람에게 설명한다면 어떻게 설명하실 건가요?
+
+xx
 
 #### References
 
@@ -121,6 +156,8 @@
 
 #### 엔트로피(entropy)에 대해 설명해주세요. 가능하면 Information Gain도요.
 
+xx
+
 #### References
 
 ---
@@ -152,6 +189,8 @@
 ## #16
 
 #### 모수가 매우 적은 (수십개 이하) 케이스의 경우 어떤 방식으로 예측 모델을 수립할 수 있을까요?
+
+xx
 
 #### References
 
@@ -185,6 +224,8 @@
 
 #### 아웃라이어의 판단하는 기준은 무엇인가요?
 
+xx
+
 #### References
 
 ---
@@ -216,6 +257,8 @@
 ## #24
 
 #### 베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포에 대해 설명해주세요. 그리고 분표 간의 연관성도 설명해주세요.
+
+xx
 
 #### References
 
