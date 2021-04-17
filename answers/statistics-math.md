@@ -31,11 +31,11 @@
 
 #### 고유값(eigen value)와 고유벡터(eigen vector)에 대해 설명해주세요. 그리고 왜 중요할까요?
 
-정방행렬 A (n x n) 는 임의의 벡터 x (n x 1) 의 방향과 크기를 변화시킬 수 있다.  
+정방행렬 A (n x n) 는 임의의 벡터 x (n x 1) 의 방향과 크기를 변화시킬 수 있다.
 
-수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수 $\lambda$ (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**   
+수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수 $\lambda$ (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**
 
-고유값과 고유벡터를 통해 A 를 고유값과 고유벡터들로 분해하는 **고유값 분해** (eigen decomposition), 정방행렬 뿐만 아닌 m x n 행렬도 분해할 수 있는 **특이값 분해** (SVD), 데이터들을 차원 축소시킬 때 가장 원래 의미를 잘 보존시키는 **주성분 분석** (PCA) 등에 활용할 수 있으므로 중요하다.  
+고유값과 고유벡터를 통해 A 를 고유값과 고유벡터들로 분해하는 **고유값 분해** (eigen decomposition), 정방행렬 뿐만 아닌 m x n 행렬도 분해할 수 있는 **특이값 분해** (SVD), 데이터들을 차원 축소시킬 때 가장 원래 의미를 잘 보존시키는 **주성분 분석** (PCA) 등에 활용할 수 있으므로 중요하다.
 
 #### References
 
@@ -63,6 +63,7 @@
 리샘플링은 표본을 추출하면서 원래 데이터 셋을 복원하기 때문에 이를 통해서 모집단의 분포에 어떤 가정도 필요 없이 표본만으로 추론이 가능하다는 장점이 있다.
 
 #### References
+
 - [(데이터과학 인터뷰 질문)(2) 샘플링과 리샘플링, 1편](https://cnp-0717.tistory.com/7?category=838077)
 - [샘플링과 리샘플링의 차이는 무엇일까?](https://kejdev.github.io/posts/sampling-resampling/)
 - [resampling을 이용한 방법 (bootstrapping)](https://adnoctum.tistory.com/296)
@@ -76,9 +77,9 @@
 
 - 확률변수(Random Variable)
   - 확률 실험에 따라 정의되는 표본공간 S의 각 원소에 실수 값을 대응시키는 함수
-  - 무작위(Random) 실험을 했을 때, 특정 확률로 발생하는 각각의 결과를 수치적 값으로 표현하는 변수  
+  - 무작위(Random) 실험을 했을 때, 특정 확률로 발생하는 각각의 결과를 수치적 값으로 표현하는 변수
     ```
-    X를 "어떤 동전을 5번 던져서 앞면이 나오는 횟수"라고 하면,  
+    X를 "어떤 동전을 5번 던져서 앞면이 나오는 횟수"라고 하면,
     X는 확률 현상에 기인해 결과값이 확률적으로 정해지므로 확률변수임을 알 수 있다.
     ```
 - 확률분포(Probability Distribution)
@@ -87,14 +88,14 @@
   - 확률변수를 이용하여 데이터의 분포를 수학적으로 정의한 모형
   - 확률분포함수라 불리는 미리 정해진 함수의 수식을 사용
     - 확률변수함수에 쓰인 계수들을 모수(parameter)라고 함
-    > 확률분포를 안다는 것은 확률분포함수를 안다는 것이고, 확률분포함수를 알면, 함수식을 구성하는 parameter를 안다는 것이다. 따라서 어떤 변수의 분포를 안다는 것은 매우 의미있는 정보(모수)를 얻는 것이라고 할 수 있다. (분포를 알면 어떤 X값이든 그 X가 발생할 확률을 얻을 수 있음)
+      > 확률분포를 안다는 것은 확률분포함수를 안다는 것이고, 확률분포함수를 알면, 함수식을 구성하는 parameter를 안다는 것이다. 따라서 어떤 변수의 분포를 안다는 것은 매우 의미있는 정보(모수)를 얻는 것이라고 할 수 있다. (분포를 알면 어떤 X값이든 그 X가 발생할 확률을 얻을 수 있음)
 - 용어 정리 및 예시
-    ```
-    Experiment: 실험, 주사위를 던진다.  
-    Outcome: 결과, 주사위의 눈 (ex. 3, 4, 6)  
-    Sample space: 표본공간, 가능한 주사위의 모든 눈 집합 (ex. Ω = {1, 2, 3, 4, 5, 6})  
-    Event: 사건, 우리가 관심있는 Sample space의 부분집합 (ex. 주사위 눈이 3이 나온다, 짝수/홀수가 나온다)  
-    ```
+  ```
+  Experiment: 실험, 주사위를 던진다.
+  Outcome: 결과, 주사위의 눈 (ex. 3, 4, 6)
+  Sample space: 표본공간, 가능한 주사위의 모든 눈 집합 (ex. Ω = {1, 2, 3, 4, 5, 6})
+  Event: 사건, 우리가 관심있는 Sample space의 부분집합 (ex. 주사위 눈이 3이 나온다, 짝수/홀수가 나온다)
+  ```
 
 #### References
 
@@ -109,7 +110,7 @@
 
 #### 누적 분포 함수와 확률 밀도 함수는 무엇일까요? 수식과 함께 표현해주세요.
 
-확률 변수 <!-- $X$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=X">가 임의의 실수 집합 <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B">에 포함되는 사건의 확률이 다음과 같이 어떤 음이 아닌 함수 <!-- $f$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f">의 적분으로 주어진다고 합시다.
+확률 변수 <!-- $X$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=X">가 임의의 실수 집합 <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B">에 포함되는 사건의 확률이 다음과 같이 어떤 음이 아닌 함수 <!-- $f$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f">의 적분으로 주어진다고 하자.
 
 <!-- $$
 P(X \in B) = \int_{B} f(x) dx
@@ -119,7 +120,7 @@ $$ -->
 
 <br/>
 
-이 때의 <!-- $X$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=X">를 연속확률변수라고 하며, 함수 <!-- $f(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x)">를 `확률 밀도 함수(Probability Density Function, PDF)`라고 합니다. 단, 실수 집합 <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B">가 실수 전체일 경우 실수 전체에 대한 확률밀도함수의 적분은 1을 만족해야 합니다.
+이 때의 <!-- $X$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=X">를 연속확률변수라고 하며, 함수 <!-- $f(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x)">를 `확률 밀도 함수(Probability Density Function, PDF)`라고 한다. 단, 실수 집합 <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B">가 실수 전체일 경우 실수 전체에 대한 확률밀도함수의 적분은 1을 만족해야 한다.
 
 <!-- $$
 P(X \in R) = \int_{R} f(x) dx = 1
@@ -129,7 +130,7 @@ $$ -->
 
 <br/>
 
-`누적 분포 함수(Cumulative Distribution Function, CDF)`는 확률변수가 특정 값보다 작거나 같을 확률을 나타내는 함수입니다. 특정 값을 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">라고 할 때, 누적 분포 함수는 다음과 같이 나타낼 수 있습니다.
+`누적 분포 함수(Cumulative Distribution Function, CDF)`는 확률변수가 특정 값보다 작거나 같을 확률을 나타내는 함수이다. 특정 값을 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">라고 할 때, 누적 분포 함수는 다음과 같이 나타낼 수 있다.
 
 <!-- $$
 F(a) = P(X ≤ a) = \int^a_{-\inf} f(x) dx
@@ -139,8 +140,7 @@ $$ -->
 
 <br/>
 
-확률 밀도 함수와 누적 분포 함수는 `미분과 적분의 관계`를 갖고 있습니다. 확률 밀도 함수를 음의 무한대에서 특정값 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">까지 적분을 하면, <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">에 대한 누적 분포 함수를 얻을 수 있습니다. 반대로 누적 분포 함수를 미분하면 확률 밀도 함수를 얻을 수 있습니다.
-
+확률 밀도 함수와 누적 분포 함수는 `미분과 적분의 관계`를 갖는다. 확률 밀도 함수를 음의 무한대에서 특정값 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">까지 적분을 하면, <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">에 대한 누적 분포 함수를 얻을 수 있다. 반대로 누적 분포 함수를 미분하면 확률 밀도 함수를 얻을 수 있다.
 
 #### References
 
@@ -211,11 +211,11 @@ $$ -->
 
 #### p-value를 모르는 사람에게 설명한다면 어떻게 설명하실 건가요?
 
-`p-value`를 알기 위해서는 먼저 1종 오류를 알아야 합니다. 여기서 1종 오류란 "귀무가설이 참인데 기각한 경우"을 말합니다. 귀무가설이란 기존의 주장을 말하며, 이와 반대로 새로운 주장을 대립가설이라고 합니다.
+`p-value`를 알기 위해서는 먼저 1종 오류를 알아야 한다. 여기서 1종 오류란 "귀무가설이 참인데 기각한 경우"을 말한다. 귀무가설이란 기존의 주장을 말하며, 이와 반대로 새로운 주장을 대립가설이라고 한다.
 
-예를 들어, 어느 제약회사에서 치료약 A를 개발하였습니다. 제약회사에서 귀무가설로 "치료약 A가 효과가 없다"라고 설정했다고 합시다. 반대로 대립가설은 "치료약 A는 효과가 있다"로 설정할 수 있습니다. 회사에서는 귀무가설을 기각하고 대립가설을 채택하였습니다. 치료약 A는 판매되었고 높은 매출을 기록합니다. 그런데 알고보니 치료약 A가 효과가 없다는 것이 밝혀졌습니다. 참인 귀무가설을 기각했기에 이는 1종 오류가 일어났다고 볼 수 있습니다.
+예를 들어, 어느 제약회사에서 치료약 A를 개발했다. 제약회사에서 귀무가설로 "치료약 A가 효과가 없다"라고 설정했다고 하자. 반대로 대립가설은 "치료약 A는 효과가 있다"로 설정할 수 있다. 회사에서는 귀무가설을 기각하고 대립가설을 채택했다. 치료약 A는 판매되었고 높은 매출을 기록했다. 그런데 알고보니 치료약 A가 효과가 없다는 것이 밝혀졌다. 참인 귀무가설을 기각했기에 이는 1종 오류가 일어났다고 볼 수 있다.
 
-`p-value`는 1종 오류를 범할 확률을 말합니다. 예를 들어, p-value가 5%라면, 100번 중 5번 1종 오류가 발생한다는 말입니다. 다시 말해, 95%의 신뢰도로 귀무가설을 기각합니다.
+다시 돌아와서 `p-value`는 1종 오류를 범할 확률을 말한다. 예를 들어, p-value가 5%라면, 100번 중 5번 1종 오류가 발생한다는 말이다. 다시 말해, 95%의 신뢰도로 귀무가설을 기각한다.
 
 #### References
 
@@ -232,13 +232,13 @@ $$ -->
 결정계수 (R square) 는 선형 회귀 모델에서 데이터에 대해 회귀선이 얼마나 잘 설명하는지에 대한 설명력을 의미한다.  
 결정계수는 0~1 의 값을 가질 수 있고, 만약 값이 1 이라면 회귀선으로 모든 데이터를 다 설명할 수 있다.
 
-참고로 결정계수는 다음의 식으로 구할 수 있다.  
-> R^2 = SSE/SST = 1 - SSR/SST,  
+참고로 결정계수는 다음의 식으로 구할 수 있다.
+
+> R^2 = SSE/SST = 1 - SSR/SST,
 
 SSE = sum((관측값-관측값 평균)^2),  
 SST = sum((추정값-추정값 평균)^2),  
 SSR = sum((관측값-추정값)^2)
-
 
 #### References
 
@@ -284,7 +284,7 @@ SSR = sum((관측값-추정값)^2)
 
 > 엔트로피는 entropy로, 정보이득은 information gain으로 모두 영어로 표기합니다.
 
-`entropy`는 주어진 데이터의 혼잡도를 의미하며, entropy는 다음과 같이 데이터가 어떤 클래스에 속할 확률에 대한 기댓값으로 표현할 수 있습니다.
+`entropy`는 주어진 데이터의 혼잡도를 의미하며, entropy는 다음과 같이 데이터가 어떤 클래스에 속할 확률에 대한 기댓값으로 표현할 수 있다.
 
 <!-- $$
 E = - \sum^k_{i=1} p_i \log_2 (p_i)
@@ -292,9 +292,11 @@ $$ -->
 
 <div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=E%20%3D%20-%20%5Csum%5Ek_%7Bi%3D1%7D%20p_i%20%5Clog_2%20(p_i)%0D"></div>
 
-entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클래스에 속하면 낮습니다. 다시 말하면 특정 클래스에 속할 확률이 높고 나머지 클래스에 속할 확률이 낮다면 entropy가 낮고, 모든 각각의 클래스에 속할 확률이 비슷하다면 entropy는 낮습니다.
+<br/>
 
-`information gain`은 어떤 속성을 선택함으로 인해 데이터가 잘 필터링되는지를 말하며, 1에서 엔트로피를 뺀 값으로 표현됩니다. 이 값은 의사결정트리가 분할을 할 때의 기준으로 사용되며, 높은 information gain을 기준으로 분할합니다.
+entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클래스에 속하면 낮다. 다시 말하면 특정 클래스에 속할 확률이 높고 나머지 클래스에 속할 확률이 낮다면 entropy가 낮고, 모든 각각의 클래스에 속할 확률이 비슷하다면 entropy는 낮다.
+
+`information gain`은 어떤 속성을 선택함으로 인해 데이터가 잘 필터링되는지를 말하며, 1에서 엔트로피를 뺀 값으로 표현된다. 이 값은 의사결정트리가 분할을 할 때의 기준으로 사용되며, 높은 information gain을 기준으로 분할한다.
 
 #### References
 
@@ -354,7 +356,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 > 모수는 모집단의 수가 아닌, 평균, 표준편차 등의 모집단의 특징을 말합니다. 여기서는 모집단의 수로 잘못 쓰인 것으로 보이며, 데이터가 적은 경우라 가정하고 답변을 작성하였습니다.
 
-표본이 매우 작은 경우 표본평균의 분포가 정규분포를 따른다고 가정할 수 없으므로 비모수적 방법을 채택하여 예측 모델을 수립할 수 있습니다. 하지만 중심극한정리에 의해 표본의 크기가 30보다 클 경우 표본평균이 정규분포를 따른다고 가정할 수 있으므로, 이 경우에는 무수적 방법을 사용합니다.
+표본이 매우 작은 경우 표본평균의 분포가 정규분포를 따른다고 가정할 수 없으므로 비모수적 방법을 채택하여 예측 모델을 수립할 수 있다. 하지만 중심극한정리에 의해 표본의 크기가 30보다 클 경우 표본평균이 정규분포를 따른다고 가정할 수 있으므로, 이 경우에는 모수적 방법을 사용한다.
 
 #### References
 
@@ -374,6 +376,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 즉, 프리퀀티스트는 현재의 객관적인 확률에 의해서만 사건이 발생한다는 입장을 가지고 있다.
 
 #### References
+
 - [베이지안(Bayesian)과 프리퀀티스트(Frequentist) 간의 입장 차이](https://astralworld58.tistory.com/81)
 
 ---
@@ -382,10 +385,10 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 #### 검정력(statistical power)은 무엇일까요?
 
-||귀무가설 H0 참|귀무가설 H0 거짓|
-|:---:|:---:|:---:|
-|귀무가설 H0 채택|옳은 결정(1-α)|제 2종 오류(β)|
-|귀무가설 H0 기각|제 1종 오류(α)|옳은 결정(1-β)|
+|                  | 귀무가설 H0 참 | 귀무가설 H0 거짓 |
+| :--------------: | :------------: | :--------------: |
+| 귀무가설 H0 채택 | 옳은 결정(1-α) |  제 2종 오류(β)  |
+| 귀무가설 H0 기각 | 제 1종 오류(α) |  옳은 결정(1-β)  |
 
 검정력은 대립가설 H1이 참인 경우 귀무가설 H0를 기각(대립가설 H1을 채택)할 확률이다.
 
@@ -416,11 +419,11 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 #### 아웃라이어의 판단하는 기준은 무엇인가요?
 
-`이상치(outlier)`는 전체 데이터의 패턴에서 벗어난 이상한 값을 가진 데이터를 말합니다. 이상치는 모델의 성능에 영향을 미치므로 이를 탐지하는 것은 정말 중요합니다.
+`이상치(outlier)`는 전체 데이터의 패턴에서 벗어난 이상한 값을 가진 데이터를 말한다. 이상치는 모델의 성능에 영향을 미치므로 이를 탐지하는 것은 정말 중요하다.
 
-이상치를 탐지하는 방법 중 하나로 IQR(Inter Quantile Range) 기법이 있습니다. IQR 기법을 사용하기 위해서는 우선 데이터를 오름차순으로 정렬하고 25%, 50%, 75%, 100%로 4등분을 합니다. 이 75% 지점과 25% 지점의 값의 차이를 IQR이라고 합니다. 이 IQR에 1.5를 곱한 값을 75% 지점의 값에 더하여 최대값을, 25% 지점의 값에서 빼서 최소값을 계산합니다. 이 때 최소값보다 작거나 최대값보다 큰 값을 이상치라고 판단합니다.
+이상치를 탐지하는 방법 중 하나로 IQR(Inter Quantile Range) 기법이 있다. IQR 기법을 사용하기 위해서는 우선 데이터를 오름차순으로 정렬하고 25%, 50%, 75%, 100%로 4등분을 한다. 이 75% 지점과 25% 지점의 값의 차이를 IQR이라고 한다. 이 IQR에 1.5를 곱한 값을 75% 지점의 값에 더하여 최대값을, 25% 지점의 값에서 빼서 최소값을 계산한다. 이 때 최소값보다 작거나 최대값보다 큰 값을 이상치라고 판단한다.
 
-또 다른 탐지 방법으로는 Z-score를 계산하는 방식이 있습니다. Z-score는 데이터가 평균에서 얼마나 떨어져 있는지를 나타내는 지표로, 임계값을 설정하여 Z-score이 이 값보다 크다면 이상치로 판단합니다. 하지만 Z-score 방식은 데이터가 가우시안 분포를 따른다고 가정하기 때문에 데이터가 가우시안 분포가 아닐 경우 별도의 변환이 필요합니다.
+또 다른 탐지 방법으로는 Z-score를 계산하는 방식이 있다. Z-score는 데이터가 평균에서 얼마나 떨어져 있는지를 나타내는 지표로, 임계값을 설정하여 Z-score이 이 값보다 크다면 이상치로 판단한다. 하지만 Z-score 방식은 데이터가 가우시안 분포를 따른다고 가정하기 때문에 데이터가 가우시안 분포가 아닐 경우 별도의 변환이 필요하다.
 
 #### References
 
@@ -434,16 +437,15 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 #### 필요한 표본의 크기를 어떻게 계산합니까?
 
-먼저 **모집단의 크기 : N** 을 구하고, **신뢰수준 : z** 와 **오차범위 : e** 를 얼마로 할지 선정하여 표본의 크기를 구할 수 있다.  
+먼저 **모집단의 크기 : N** 을 구하고, **신뢰수준 : z** 와 **오차범위 : e** 를 얼마로 할지 선정하여 표본의 크기를 구할 수 있다.
 
 ![표본크기 공식](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/sample-size-formula.png)
 
 참고로 신뢰수준은 표본추출을 반복했을 때 얼마나 그 결과를 신뢰할 수 있는지에 대한 정도로 95% 를 주로 사용한다.
 오차범위는 작을 수록 모집단의 특성에 대한 유용한 정보를 제공하지만 모집단에 대한 추론이 틀릴 가능성도 높아지므로 10% 를 넘지 않게 한다.
 
-
-
 #### References
+
 - [필요한 설문 응답자수(표본크기) 계산하기](https://learnx.tistory.com/entry/%ED%95%84%EC%9A%94%ED%95%9C-%EC%84%A4%EB%AC%B8-%EC%9D%91%EB%8B%B5%EC%9E%90%EC%88%98%ED%91%9C%EB%B3%B8%ED%81%AC%EA%B8%B0-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0)
 - [표본크기의 결정](https://datascream.co.kr/77)
 
@@ -462,6 +464,7 @@ Bias는 데이터 내에 있는 모든 정보를 고려하지 않음으로 인�
 <img src="https://lh5.googleusercontent.com/lAbzDl1HYiYHAEuGnaUw2GdCyQzkZvjWisgNY-ZRYqvRG-X-U7f7cL_UunIF7v5q0BbUSw4CZ-1-xMXs8mvE8fbGa7ghFeEGzuwJ6wiIs64nUgJxkDNEC2JrSTUHEjViRZLdA23NLqI" width=400>
 
 Bias를 통제하기 위한 방법으로는
+
 - (neuron이나 계층의 갯수 같은) 모델의 크기 증가
 - 오류평가시 얻은 지식을 기반으로 입력 특성 수정
 - 정규화를 줄이거나 제거
@@ -483,14 +486,15 @@ Bias를 통제하기 위한 방법으로는
 #### 로그 함수는 어떤 경우 유용합니까? 사례를 들어 설명해주세요.
 
 1. 단위 수가 너무 큰 값들을 바로 회귀분석 할 경우, 결과를 왜곡할 우려가 있으므로 이를 방지하기 위해 사용된다.
-    > **(예시)** 나이와 재산보유액의 관계를 회귀분석으로 푼다고 했을 때, 재산보유액의 숫자가 굉장히 클 수 있다. 재산보유액에 로그를 취할 경우, 데이터의 왜도와 첨도를 줄일 수 있어 정규성이 높아지는 효과를 얻는다
+   > **(예시)** 나이와 재산보유액의 관계를 회귀분석으로 푼다고 했을 때, 재산보유액의 숫자가 굉장히 클 수 있다. 재산보유액에 로그를 취할 경우, 데이터의 왜도와 첨도를 줄일 수 있어 정규성이 높아지는 효과를 얻는다
 2. 독립변수와 종속변수의 변화관계에서 절대량이 아닌 비율을 확인하기 위해 사용된다.
 3. 비선형관계의 데이터를 선형으로 만들기 위해 사용된다.
-    > **(예시)** 기하급수적으로 늘어나는 제곱 형식의 그래프에 자연로그를 취하면 그 관게가 직선(선형)이 된다.
+   > **(예시)** 기하급수적으로 늘어나는 제곱 형식의 그래프에 자연로그를 취하면 그 관게가 직선(선형)이 된다.
 
-> **<왜도(skewness)와 첨도(Kurtosis)>**  
-> - 왜도: 데이터가 한쪽으로 치우친 정도  
-> - 첨도: 분포가 얼마나 뾰족한지를 나타내는 정도  
+> **<왜도(skewness)와 첨도(Kurtosis)>**
+>
+> - 왜도: 데이터가 한쪽으로 치우친 정도
+> - 첨도: 분포가 얼마나 뾰족한지를 나타내는 정도
 
 #### References
 
