@@ -11,7 +11,7 @@
 ## Table of Contents
 
 - [Part 1. Data Science](#part-1-data-science)
-  - [Statistics/Math](#statistics-math)
+  - [Statistics/Math](#-statistics-math)
   - [Machine Learning](#machine-learning)
   - [Deep Learning](#deep-learning)
 - [Part 2. Language](#part-2-language)
