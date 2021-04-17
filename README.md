@@ -92,7 +92,7 @@
 
 ### [🔻 Algorithm](./answers/algorithm.md)
 
-<a href='#-table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 ---
 
