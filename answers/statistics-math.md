@@ -1,6 +1,25 @@
 ## 📝 Table of Contents
 
 - [고유값(eigen value)와 고유벡터(eigen vector)에 대해 설명해주세요. 그리고 왜 중요할까요?](#1)
+
+정방행렬 A (n x n) 는 임의의 벡터 x (n x 1) 의 방향과 크기를 변화시킬 수 있다. 
+
+수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수 $\lambda$(람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.** 
+
+고유값과 고유벡터를 통해 A 를 고유값과 고유벡터들로 분해하는 **고유값 분해** (eigen decomposition), 정방행렬 뿐만 아닌 m x n 행렬도 분해할 수 있는 **특이값 분해** (SVD), 데이터들을 차원 축소시킬 때 가장 원래 의미를 잘 보존시키는 **주성분 분석** (PCA) 등에 활용할 수 있으므로 중요하다.
+
+#### References
+
+- [고유값과 고유 벡터](https://twlab.tistory.com/46)
+
+- [머신러닝 - 19. 고유값(eigenvalue), 고유벡터(eigenvector), 고유값 분해(eigen decomposition)](https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-19-%ED%96%89%EB%A0%AC)
+
+- [[선형대수학 #4] 특이값 분해(Singular Value Decomposition, SVD)의 활용](https://darkpgmr.tistory.com/106)
+
+- [주성분 분석(PCA)](https://angeloyeo.github.io/2019/07/27/PCA.html)
+
+<hr>
+
 - [샘플링(Sampling)과 리샘플링(Resampling)에 대해 설명해주세요. 리샘플링은 무슨 장점이 있을까요?](#2)
 - [확률 모형과 확률 변수는 무엇일까요?](#3)
 - [누적 분포 함수와 확률 밀도 함수는 무엇일까요? 수식과 함께 표현해주세요](#4)
