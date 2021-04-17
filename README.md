@@ -11,15 +11,15 @@
 ## Table of Contents
 
 - [Part 1. Data Science](#part-1-data-science)
-  - [Statistics/Math](#-statistics-math)
-  - [Machine Learning](#-machine-learning)
-  - [Deep Learning](#-deep-learning)
+  - [Statistics/Math](#statistics-math)
+  - [Machine Learning](#machine-learning)
+  - [Deep Learning](#deep-learning)
 - [Part 2. Language](#part-2-language)
-  - [Python](#-python)
+  - [Python](#python)
 - [Part 3. CS](#part-3-cs)
-  - [Network](#-network)
-  - [Operating System](#-operating-system)
-  - [Algorithm](#-algorithm)
+  - [Network](#network)
+  - [Operating System](#operating-system)
+  - [Algorithm](#algorithm)
 - [References](#references)
 
 ---
@@ -52,19 +52,19 @@
 - Bias를 통제하는 방법은 무엇입니까?
 - 로그 함수는 어떤 경우 유용합니까? 사례를 들어 설명해주세요.
 
-<a href='#-table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 <br/>
 
 ### [🤖 Machine Learning](./answers/machine-learning.md)
 
-<a href='#-table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 <br/>
 
 ### [🧠 Deep Learning](./answers/deep-learning.md)
 
-<a href='#-table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 ---
 
@@ -72,7 +72,7 @@
 
 ### [🐍 Python](./answers/python.md)
 
-<a href='#-table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 ---
 
@@ -80,19 +80,19 @@
 
 ### [🌐 Network](./answers/network.md)
 
-<a href='#-table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 <br/>
 
 ### [🖥️ Operating System](./answers/operating-system.md)
 
-<a href='#-table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 <br/>
 
 ### [🔻 Algorithm](./answers/algorithm.md)
 
-<a href='#-table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 ---
 
