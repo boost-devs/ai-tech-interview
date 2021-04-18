@@ -46,10 +46,10 @@
 
 #### References
 
-- [고유값과 고유 벡터](https://twlab.tistory.com/46)
-- [머신러닝 - 19. 고유값(eigenvalue), 고유벡터(eigenvector), 고유값 분해(eigen decomposition)](https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-19-%ED%96%89%EB%A0%AC)
-- [[선형대수학 #4] 특이값 분해(Singular Value Decomposition, SVD)의 활용](https://darkpgmr.tistory.com/106)
-- [주성분 분석(PCA)](https://angeloyeo.github.io/2019/07/27/PCA.html)
+- [고유값과 고유 벡터 - 러너게인](https://twlab.tistory.com/46)
+- [머신러닝 - 19. 고유값(eigenvalue), 고유벡터(eigenvector), 고유값 분해(eigen decomposition) - 귀퉁이 서재](https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-19-%ED%96%89%EB%A0%AC)
+- [[선형대수학 #4] 특이값 분해(Singular Value Decomposition, SVD)의 활용 - 다크 프로그래머](https://darkpgmr.tistory.com/106)
+- [주성분 분석(PCA) - 공돌이의 수학정리노트](https://angeloyeo.github.io/2019/07/27/PCA.html)
 
 ---
 
@@ -168,14 +168,10 @@ Evidence : 데이터 전체의 분포
 
 베이즈 정리를 통해 가능도와 Evidence를 바탕으로 사전확률을 사후확률로 업데이트한다.
 
-
-
-
-
 #### References
 
-- [조건부 확률](https://m.blog.naver.com/PostView.nhn?blogId=mykepzzang&logNo=220834864348&proxyReferer=https:%2F%2Fwww.google.com%2F)
-- [통계학 맛보기](https://velog.io/@dldydldy75/%EB%B2%A0%EC%9D%B4%EC%A6%88-%ED%86%B5%EA%B3%84%ED%95%99-%EB%A7%9B%EB%B3%B4%EA%B8%B0)
+- [조건부 확률 - Truth in Engineering](https://m.blog.naver.com/PostView.nhn?blogId=mykepzzang&logNo=220834864348&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [통계학 맛보기 - Heath](https://velog.io/@dldydldy75/%EB%B2%A0%EC%9D%B4%EC%A6%88-%ED%86%B5%EA%B3%84%ED%95%99-%EB%A7%9B%EB%B3%B4%EA%B8%B0)
 
 ---
 
@@ -287,8 +283,8 @@ SSR = sum((관측값-추정값)^2)
 
 #### References
 
-- [평균(average, mean) vs. 중간값(median) | 통계상의 오류가능성](https://leedakyeong.tistory.com/entry/%ED%8F%89%EA%B7%A0-%EC%A4%91%EC%95%99%EA%B0%92-%EC%B5%9C%EB%B9%88%EA%B0%92-%EB%B9%84%EA%B5%90-Mean-VS-Median-VS-Mode)
-- [[기초통계] 평균 중앙값 최빈값 비교 (Mean VS Median VS Mode)](https://blog.naver.com/ricemankr/220796823014)
+- [평균(average, mean) vs. 중간값(median) | 통계상의 오류가능성 - 슈퍼짱짱](https://leedakyeong.tistory.com/entry/%ED%8F%89%EA%B7%A0-%EC%A4%91%EC%95%99%EA%B0%92-%EC%B5%9C%EB%B9%88%EA%B0%92-%EB%B9%84%EA%B5%90-Mean-VS-Median-VS-Mode)
+- [[기초통계] 평균 중앙값 최빈값 비교 (Mean VS Median VS Mode) - Peter Hwang](https://blog.naver.com/ricemankr/220796823014)
 
 ---
 
@@ -345,7 +341,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 #### References
 
-- [어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?](https://astralworld58.tistory.com/80)
+- [어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요? - 내가 보려고 만든 공간](https://astralworld58.tistory.com/80)
 
 ---
 
@@ -410,7 +406,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 #### References
 
-- [베이지안(Bayesian)과 프리퀀티스트(Frequentist) 간의 입장 차이](https://astralworld58.tistory.com/81)
+- [베이지안(Bayesian)과 프리퀀티스트(Frequentist) 간의 입장 차이 - 내가 보려고 만든 공간](https://astralworld58.tistory.com/81)
 
 ---
 
@@ -484,8 +480,8 @@ missing value를 처리하는 방법에는 크게 3가지가 있다.
 
 #### References
 
-- [필요한 설문 응답자수(표본크기) 계산하기](https://learnx.tistory.com/entry/%ED%95%84%EC%9A%94%ED%95%9C-%EC%84%A4%EB%AC%B8-%EC%9D%91%EB%8B%B5%EC%9E%90%EC%88%98%ED%91%9C%EB%B3%B8%ED%81%AC%EA%B8%B0-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0)
-- [표본크기의 결정](https://datascream.co.kr/77)
+- [필요한 설문 응답자수(표본크기) 계산하기 - LearnX](https://learnx.tistory.com/entry/%ED%95%84%EC%9A%94%ED%95%9C-%EC%84%A4%EB%AC%B8-%EC%9D%91%EB%8B%B5%EC%9E%90%EC%88%98%ED%91%9C%EB%B3%B8%ED%81%AC%EA%B8%B0-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0)
+- [표본크기의 결정 - Data Scream](https://datascream.co.kr/77)
 
 ---
 
