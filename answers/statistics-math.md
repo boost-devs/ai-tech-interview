@@ -37,10 +37,10 @@
 수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수  <!-- $\lambda$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Clambda"> (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**
 
 공식  
-![고유값 공식](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen-formula.png)
+![고유값 공식](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen-formula.jpeg)
 
 아래처럼 x1 은 A 에 의해 변환되었음에도 x1 과 평행하다. 따라서 x1 은 고유벡터이다.  
-![고유벡터 예시](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen-vector.png)
+![고유벡터 예시](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen-vector.jpeg)
 
 고유값과 고유벡터를 통해 A 를 고유값과 고유벡터들로 분해하는 **고유값 분해** (eigen decomposition), 정방행렬 뿐만 아닌 m x n 행렬도 분해할 수 있는 **특이값 분해** (SVD), 데이터들을 차원 축소시킬 때 가장 원래 의미를 잘 보존시키는 **주성분 분석** (PCA) 등에 활용할 수 있으므로 중요하다.
 
@@ -155,11 +155,27 @@ $$ -->
 #### 조건부 확률은 무엇일까요?
 
 조건부 확률은 사건 A 가 일어났다는 전제 하에 사건 B 가 일어날 확률이다. 이는 P(B|A) = P(B∩A) / P(A) 로 표현 가능하다.  
-조건부 확률은 베이즈 정리와도 이어지며, 조건부 확률을 이용한 가장 유명한 문제는 [몬티홀 문제](https://terms.naver.com/entry.naver?docId=3569086&cid=58944&categoryId=58970)가 있다.
+조건부 확률은 <u>베이즈 정리</u>와도 이어지며, 조건부 확률을 이용한 가장 유명한 문제는 [몬티홀 문제](https://terms.naver.com/entry.naver?docId=3569086&cid=58944&categoryId=58970)가 있다.
+
+*베이즈 정리  
+![베이즈 정리](https://media.vlpt.us/images/dldydldy75/post/a1f16b20-7d93-4b4b-af89-9e63201c917c/image.png)
+> D : 새로 관찰되는 데이터  
+θ : 모델에서 계산하고 싶어하는 모수 (가설)  
+사후확률 : 데이터를 관찰했을 때, 이 가설이 성립할 확률 (데이터 관찰 이후 측정하기 때문에 사후확률)  
+사전확률 : 가설에 대해 사전에 세운 확률 (데이터 관측 이후 사후확률이 사전확률이 된다.)  
+가능도 : 현재 주어진 모수 (가정) 에서 이 데이터가 관찰될 가능성  
+Evidence : 데이터 전체의 분포
+
+베이즈 정리를 통해 가능도와 Evidence를 바탕으로 사전확률을 사후확률로 업데이트한다.
+
+
+
+
 
 #### References
 
 - [조건부 확률](https://m.blog.naver.com/PostView.nhn?blogId=mykepzzang&logNo=220834864348&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [통계학 맛보기](https://velog.io/@dldydldy75/%EB%B2%A0%EC%9D%B4%EC%A6%88-%ED%86%B5%EA%B3%84%ED%95%99-%EB%A7%9B%EB%B3%B4%EA%B8%B0)
 
 ---
 
@@ -241,14 +257,20 @@ $$ -->
 
 > R^2 = SSE/SST = 1 - SSR/SST,
 
-SSE = sum((관측값-관측값 평균)^2),  
-SST = sum((추정값-추정값 평균)^2),  
+SSE = sum((추정값-관측값 평균)^2),  
+SST = sum((관측값-관측값 평균)^2),  
 SSR = sum((관측값-추정값)^2)
+
+*관측값 : 실제 데이터의 값,  
+추정값 : 회귀 모델을 통해 나온 값.
+
+회귀 모델의 성능을 평가하는 방법은 결정계수 외에도 MAE, MSE, RMSE 가 있다.
 
 #### References
 
 - [결정계수의 의미와 계산 방법](https://m.blog.naver.com/tlrror9496/222055889079)
 - [회귀분석에서 R스퀘어의 정확한 의미](https://m.blog.naver.com/PostView.nhn?blogId=will84&logNo=220348748198&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [모델 성능 평가](https://heung-bae-lee.github.io/2020/01/09/machine_learning_03/)
 
 ---
 
@@ -382,7 +404,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 즉, 베이지안은 과거의 사건이 현재 사건에 영향을 끼친다는 입장을 가지고 있다.  
 
-반면, 프리퀀티스트는 확률을 객관적으로 발생하는 현상의 빈도수로 바라본다. 
+반면, 프리퀀티스트는 확률을 무한번 실험한 결과, 객관적으로 발생하는 현상의 빈도수로 바라본다. 
 
 즉, 프리퀀티스트는 현재의 객관적인 확률에 의해서만 사건이 발생한다는 입장을 가지고 있다.
 
