@@ -135,10 +135,10 @@ $$ -->
 `누적 분포 함수(Cumulative Distribution Function, CDF)`는 확률변수가 특정 값보다 작거나 같을 확률을 나타내는 함수이다. 특정 값을 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">라고 할 때, 누적 분포 함수는 다음과 같이 나타낼 수 있다.
 
 <!-- $$
-F(a) = P(X ≤ a) = \int^a_{-∞} f(x) dx
+F(a) = P(X ≤ a) = \int^a_{-\infty} f(x) dx
 $$ -->
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=F(a)%20%3D%20P(X%20%E2%89%A4%20a)%20%3D%20%5Cint%5Ea_%7B-%E2%88%9E%7D%20f(x)%20dx%0D"></div>
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=F(a)%20%3D%20P(X%20%E2%89%A4%20a)%20%3D%20%5Cint%5Ea_%7B-%5Cinfty%7D%20f(x)%20dx%0D"></div>
 
 <br/>
 
