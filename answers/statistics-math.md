@@ -37,10 +37,10 @@
 수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수  <!-- $\lambda$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Clambda"> (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**
 
 공식  
-![고유값 공식](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen-formula.jpeg)
+![고유값 공식](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen_formula.jpeg)
 
 아래처럼 x1 은 A 에 의해 변환되었음에도 x1 과 평행하다. 따라서 x1 은 고유벡터이다.  
-![고유벡터 예시](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen-vector.jpeg)
+![고유벡터 예시](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen_vector.jpeg)
 
 고유값과 고유벡터를 통해 A 를 고유값과 고유벡터들로 분해하는 **고유값 분해** (eigen decomposition), 정방행렬 뿐만 아닌 m x n 행렬도 분해할 수 있는 **특이값 분해** (SVD), 데이터들을 차원 축소시킬 때 가장 원래 의미를 잘 보존시키는 **주성분 분석** (PCA) 등에 활용할 수 있으므로 중요하다.
 
