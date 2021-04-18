@@ -334,6 +334,8 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 - 확률(Probability): 어떤 시행(trial, experiment)에서 특정 결과(sample)가 나올 가능성. 즉, **시행 전 모든 경우의 수의 가능성은 정해져 있으며 그 총합은 1(100%)이다.**
 - 가능도(Likelihood): 어떤 시행(trial, experiment)을 충분히 수행한 뒤 그 결과(sample)를 토대로 경우의 수의 가능성을 도출하는 것. 아무리 충분히 수행해도 어디까지나 추론(inference)이기 때문에 **가능성의 합이 1이 되지 않을수도 있다.**
 
+PDF(probability density function)에서는 **확률변수**를 변수로 보기 때문에 총합이 1이지만, likelihood function에서는 **분포의 모수**를 변수로 보기 때문에 총합이 1이 되지 않을수도 있다.
+
 #### References
 
 - [가능도(Likelihood)와 확률(Probability)의 차이](https://swjman.tistory.com/104)
@@ -399,9 +401,11 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 |                  | 귀무가설 H0 참 | 귀무가설 H0 거짓 |
 | :--------------: | :------------: | :--------------: |
 | 귀무가설 H0 채택 | 옳은 결정(1-α) |  제 2종 오류(β)  |
-| 귀무가설 H0 기각 | 제 1종 오류(α) |  옳은 결정(1-β)  |
+| 귀무가설 H0 기각 | 제 1종 오류(α) |  옳은 결정(1-β), 검정력 |
 
 검정력은 대립가설 H1이 참인 경우 귀무가설 H0를 기각(대립가설 H1을 채택)할 확률이다.
+
+<img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkJIVD%2FbtqEGDk7q8y%2FJfGDXmB22SCXWxN3enQwg1%2Fimg.png" width=700>
 
 #### References
 
@@ -475,9 +479,12 @@ Bias는 데이터 내에 있는 모든 정보를 고려하지 않음으로 인�
 
 반대로 Variance는 데이터 내에 있는 에러나 노이즈까지 잘 잡아내는 highly flexible models에 데이터를 fitting 시킴으로써, 실제 현상과 관계 없는 random한 것들까지 학습하는 알고리즘의 경향을 의미한다. 이는 overfitting과 관계되어 있다.
 
+<img src="https://www.endtoend.ai/assets/blog/misc/bias-variance-tradeoff-in-reinforcement-learning/underfit_right_overfit.png" width=600>
+<img src="http://www.endtoend.ai/assets/blog/misc/bias-variance-tradeoff-in-reinforcement-learning/front.png" width=400>
+
 편향(Bias)과 분산(Variance)은 한 쪽이 증가하면 다른 한 쪽이 감소하고, 한쪽이 감소하면 다른 한쪽이 증가하는 tradeoff 관계를 가진다.
 
-<img src="https://lh5.googleusercontent.com/lAbzDl1HYiYHAEuGnaUw2GdCyQzkZvjWisgNY-ZRYqvRG-X-U7f7cL_UunIF7v5q0BbUSw4CZ-1-xMXs8mvE8fbGa7ghFeEGzuwJ6wiIs64nUgJxkDNEC2JrSTUHEjViRZLdA23NLqI" width=400>
+<img src="https://lh5.googleusercontent.com/lAbzDl1HYiYHAEuGnaUw2GdCyQzkZvjWisgNY-ZRYqvRG-X-U7f7cL_UunIF7v5q0BbUSw4CZ-1-xMXs8mvE8fbGa7ghFeEGzuwJ6wiIs64nUgJxkDNEC2JrSTUHEjViRZLdA23NLqI" width=350>
 
 Bias를 통제하기 위한 방법으로는
 
