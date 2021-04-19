@@ -71,10 +71,10 @@
 
 #### References
 
-- [(데이터과학 인터뷰 질문)(2) 샘플링과 리샘플링, 1편](https://cnp-0717.tistory.com/7?category=838077)
-- [샘플링과 리샘플링의 차이는 무엇일까?](https://kejdev.github.io/posts/sampling-resampling/)
-- [resampling을 이용한 방법 (bootstrapping)](https://adnoctum.tistory.com/296)
-- [샘플링과 리샘플링](https://trampled-worm.tistory.com/91)
+- [(데이터과학 인터뷰 질문)(2) 샘플링과 리샘플링, 1편 - CHAOS & PATTERN : 데이터 사이언스 블로그](https://cnp-0717.tistory.com/7?category=838077)
+- [샘플링과 리샘플링의 차이는 무엇일까? - 김감귤](https://kejdev.github.io/posts/sampling-resampling/)
+- [resampling을 이용한 방법 (bootstrapping) - 진화하자 - 어디에도 소속되지 않기](https://adnoctum.tistory.com/296)
+- [샘플링과 리샘플링 - Wriggling](https://trampled-worm.tistory.com/91)
 
 ---
 
@@ -195,8 +195,8 @@ Evidence : 데이터 전체의 분포
 
 #### References
 
-- [공분산과 상관계수의 이해.txt](https://bskyvision.com/398)
-- [공분산(Covariance)과 상관계수(Correlation)](https://destrudo.tistory.com/15)
+- [공분산과 상관계수의 이해.txt - bskyvision](https://bskyvision.com/398)
+- [공분산(Covariance)과 상관계수(Correlation) - Serious Archive](https://destrudo.tistory.com/15)
 
 ---
 
@@ -352,9 +352,11 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 - 확률(Probability): 어떤 시행(trial, experiment)에서 특정 결과(sample)가 나올 가능성. 즉, **시행 전 모든 경우의 수의 가능성은 정해져 있으며 그 총합은 1(100%)이다.**
 - 가능도(Likelihood): 어떤 시행(trial, experiment)을 충분히 수행한 뒤 그 결과(sample)를 토대로 경우의 수의 가능성을 도출하는 것. 아무리 충분히 수행해도 어디까지나 추론(inference)이기 때문에 **가능성의 합이 1이 되지 않을수도 있다.**
 
+PDF(probability density function)에서는 **확률변수**를 변수로 보기 때문에 총합이 1이지만, likelihood function에서는 **분포의 모수**를 변수로 보기 때문에 총합이 1이 되지 않을수도 있다.
+
 #### References
 
-- [가능도(Likelihood)와 확률(Probability)의 차이](https://swjman.tistory.com/104)
+- [가능도(Likelihood)와 확률(Probability)의 차이 - JMAN's SW Lab.](https://swjman.tistory.com/104)
 
 ---
 
@@ -417,14 +419,17 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 |                  | 귀무가설 H0 참 | 귀무가설 H0 거짓 |
 | :--------------: | :------------: | :--------------: |
 | 귀무가설 H0 채택 | 옳은 결정(1-α) |  제 2종 오류(β)  |
-| 귀무가설 H0 기각 | 제 1종 오류(α) |  옳은 결정(1-β)  |
+| 귀무가설 H0 기각 | 제 1종 오류(α) |  옳은 결정(1-β), 검정력 |
 
 검정력은 대립가설 H1이 참인 경우 귀무가설 H0를 기각(대립가설 H1을 채택)할 확률이다.
 
+<img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkJIVD%2FbtqEGDk7q8y%2FJfGDXmB22SCXWxN3enQwg1%2Fimg.png" width=700>
+
 #### References
 
-- [검정력(power)의 의미 및 수식](https://m.blog.naver.com/PostView.nhn?blogId=hancury&logNo=220854934914&proxyReferer=https:%2F%2Fwww.google.com%2F)
-- [통계적 검정: 검정력(power)과 Type 1, 2 Error(1, 2 종 오류)](https://niceguy1575.tistory.com/entry/%ED%86%B5%EA%B3%84%EC%A0%81-%EA%B2%80%EC%A0%95-%EA%B2%80%EC%A0%95%EB%A0%A5power%EA%B3%BC-Type-1-2-Error1-2-%EC%A2%85-%EC%98%A4%EB%A5%98)
+- [검정력(power)의 의미 및 수식 - 	
+Curycu's Box](https://m.blog.naver.com/PostView.nhn?blogId=hancury&logNo=220854934914&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [통계적 검정: 검정력(power)과 Type 1, 2 Error(1, 2 종 오류) - 코딩하고, ](https://niceguy1575.tistory.com/entry/%ED%86%B5%EA%B3%84%EC%A0%81-%EA%B2%80%EC%A0%95-%EA%B2%80%EC%A0%95%EB%A0%A5power%EA%B3%BC-Type-1-2-Error1-2-%EC%A2%85-%EC%98%A4%EB%A5%98)
 
 ---
 
@@ -493,9 +498,12 @@ Bias는 데이터 내에 있는 모든 정보를 고려하지 않음으로 인�
 
 반대로 Variance는 데이터 내에 있는 에러나 노이즈까지 잘 잡아내는 highly flexible models에 데이터를 fitting 시킴으로써, 실제 현상과 관계 없는 random한 것들까지 학습하는 알고리즘의 경향을 의미한다. 이는 overfitting과 관계되어 있다.
 
+<img src="https://www.endtoend.ai/assets/blog/misc/bias-variance-tradeoff-in-reinforcement-learning/underfit_right_overfit.png" width=600>
+<img src="http://www.endtoend.ai/assets/blog/misc/bias-variance-tradeoff-in-reinforcement-learning/front.png" width=400>
+
 편향(Bias)과 분산(Variance)은 한 쪽이 증가하면 다른 한 쪽이 감소하고, 한쪽이 감소하면 다른 한쪽이 증가하는 tradeoff 관계를 가진다.
 
-<img src="https://lh5.googleusercontent.com/lAbzDl1HYiYHAEuGnaUw2GdCyQzkZvjWisgNY-ZRYqvRG-X-U7f7cL_UunIF7v5q0BbUSw4CZ-1-xMXs8mvE8fbGa7ghFeEGzuwJ6wiIs64nUgJxkDNEC2JrSTUHEjViRZLdA23NLqI" width=400>
+<img src="https://lh5.googleusercontent.com/lAbzDl1HYiYHAEuGnaUw2GdCyQzkZvjWisgNY-ZRYqvRG-X-U7f7cL_UunIF7v5q0BbUSw4CZ-1-xMXs8mvE8fbGa7ghFeEGzuwJ6wiIs64nUgJxkDNEC2JrSTUHEjViRZLdA23NLqI" width=350>
 
 Bias를 통제하기 위한 방법으로는
 
@@ -509,9 +517,9 @@ Bias를 통제하기 위한 방법으로는
 
 #### References
 
-- [쉽게 이해해보는 bias-variance tradeoff](https://bywords.tistory.com/entry/%EB%B2%88%EC%97%AD-%EC%9C%A0%EC%B9%98%EC%9B%90%EC%83%9D%EB%8F%84-%EC%9D%B4%ED%95%B4%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-biasvariance-tradeoff)
-- [Bias and Variance (편향과 분산)](https://opentutorials.org/module/3653/22071)
-- [[MLY] avoidable bias를 줄이는 방법들](https://talkingaboutme.tistory.com/entry/MLY-avoidable-bias%EB%A5%BC-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%A9%EB%B2%95%EB%93%A4?category=538748)
+- [쉽게 이해해보는 bias-variance tradeoff - 건빵의 블로그](https://bywords.tistory.com/entry/%EB%B2%88%EC%97%AD-%EC%9C%A0%EC%B9%98%EC%9B%90%EC%83%9D%EB%8F%84-%EC%9D%B4%ED%95%B4%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-biasvariance-tradeoff)
+- [Bias and Variance (편향과 분산) - 한 페이지 머신러닝](https://opentutorials.org/module/3653/22071)
+- [[MLY] avoidable bias를 줄이는 방법들 - 생각많은 소심남](https://talkingaboutme.tistory.com/entry/MLY-avoidable-bias%EB%A5%BC-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%A9%EB%B2%95%EB%93%A4?category=538748)
 
 ---
 
