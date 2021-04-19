@@ -34,16 +34,22 @@
 
 정방행렬 A (n x n) 는 임의의 벡터 x (n x 1) 의 방향과 크기를 변화시킬 수 있다.
 
-수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수 $\lambda$ (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**
+수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수 <!-- $\lambda$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Clambda"> (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**
+
+공식  
+![고유값 공식](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen_formula.jpeg)
+
+아래처럼 x1 은 A 에 의해 변환되었음에도 x1 과 평행하다. 따라서 x1 은 고유벡터이다.  
+![고유벡터 예시](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen_vector.jpeg)
 
 고유값과 고유벡터를 통해 A 를 고유값과 고유벡터들로 분해하는 **고유값 분해** (eigen decomposition), 정방행렬 뿐만 아닌 m x n 행렬도 분해할 수 있는 **특이값 분해** (SVD), 데이터들을 차원 축소시킬 때 가장 원래 의미를 잘 보존시키는 **주성분 분석** (PCA) 등에 활용할 수 있으므로 중요하다.
 
 #### References
 
-- [고유값과 고유 벡터](https://twlab.tistory.com/46)
-- [머신러닝 - 19. 고유값(eigenvalue), 고유벡터(eigenvector), 고유값 분해(eigen decomposition)](https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-19-%ED%96%89%EB%A0%AC)
-- [[선형대수학 #4] 특이값 분해(Singular Value Decomposition, SVD)의 활용](https://darkpgmr.tistory.com/106)
-- [주성분 분석(PCA)](https://angeloyeo.github.io/2019/07/27/PCA.html)
+- [고유값과 고유 벡터 - 러너게인](https://twlab.tistory.com/46)
+- [머신러닝 - 19. 고유값(eigenvalue), 고유벡터(eigenvector), 고유값 분해(eigen decomposition) - 귀퉁이 서재](https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-19-%ED%96%89%EB%A0%AC)
+- [[선형대수학 #4] 특이값 분해(Singular Value Decomposition, SVD)의 활용 - 다크 프로그래머](https://darkpgmr.tistory.com/106)
+- [주성분 분석(PCA) - 공돌이의 수학정리노트](https://angeloyeo.github.io/2019/07/27/PCA.html)
 
 ---
 
@@ -65,10 +71,10 @@
 
 #### References
 
-- [(데이터과학 인터뷰 질문)(2) 샘플링과 리샘플링, 1편](https://cnp-0717.tistory.com/7?category=838077)
-- [샘플링과 리샘플링의 차이는 무엇일까?](https://kejdev.github.io/posts/sampling-resampling/)
-- [resampling을 이용한 방법 (bootstrapping)](https://adnoctum.tistory.com/296)
-- [샘플링과 리샘플링](https://trampled-worm.tistory.com/91)
+- [(데이터과학 인터뷰 질문)(2) 샘플링과 리샘플링, 1편 - CHAOS & PATTERN : 데이터 사이언스 블로그](https://cnp-0717.tistory.com/7?category=838077)
+- [샘플링과 리샘플링의 차이는 무엇일까? - 김감귤](https://kejdev.github.io/posts/sampling-resampling/)
+- [resampling을 이용한 방법 (bootstrapping) - 진화하자 - 어디에도 소속되지 않기](https://adnoctum.tistory.com/296)
+- [샘플링과 리샘플링 - Wriggling](https://trampled-worm.tistory.com/91)
 
 ---
 
@@ -153,10 +159,10 @@ $$ -->
 `누적 분포 함수(Cumulative Distribution Function, CDF)`는 확률변수가 특정 값보다 작거나 같을 확률을 나타내는 함수이다. 특정 값을 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">라고 할 때, 누적 분포 함수는 다음과 같이 나타낼 수 있다.
 
 <!-- $$
-F(a) = P(X ≤ a) = \int^a_{-\inf} f(x) dx
+F(a) = P(X ≤ a) = \int^a_{-\infty} f(x) dx
 $$ -->
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=F(a)%20%3D%20P(X%20%E2%89%A4%20a)%20%3D%20%5Cint%5Ea_%7B-%5Cinf%7D%20f(x)%20dx%0D"></div>
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=F(a)%20%3D%20P(X%20%E2%89%A4%20a)%20%3D%20%5Cint%5Ea_%7B-%5Cinfty%7D%20f(x)%20dx%0D"></div>
 
 <br/>
 
@@ -164,7 +170,7 @@ $$ -->
 
 #### References
 
-- [확률및통계 홍영훈 교수님 정말 감사드립니다🙇‍♀️](https://sites.google.com/site/hong0108/)
+- [확률및통계 강의노트 - 홍영훈 교수님](https://sites.google.com/site/hong0108/)
 - [확률 분포 함수와 확률 밀도 함수의 의미 - groovallstar.log](https://velog.io/@groovallstar/%ED%99%95%EB%A5%A0-%EB%B6%84%ED%8F%AC-%ED%95%A8%EC%88%98%EC%99%80-%ED%99%95%EB%A5%A0-%EB%B0%80%EB%8F%84-%ED%95%A8%EC%88%98%EC%9D%98-%EC%9D%98%EB%AF%B8)
 
 ---
@@ -174,11 +180,23 @@ $$ -->
 #### 조건부 확률은 무엇일까요?
 
 조건부 확률은 사건 A 가 일어났다는 전제 하에 사건 B 가 일어날 확률이다. 이는 P(B|A) = P(B∩A) / P(A) 로 표현 가능하다.  
-조건부 확률은 베이즈 정리와도 이어지며, 조건부 확률을 이용한 가장 유명한 문제는 [몬티홀 문제](https://terms.naver.com/entry.naver?docId=3569086&cid=58944&categoryId=58970)가 있다.
+조건부 확률은 <u>베이즈 정리</u>와도 이어지며, 조건부 확률을 이용한 가장 유명한 문제는 [몬티홀 문제](https://terms.naver.com/entry.naver?docId=3569086&cid=58944&categoryId=58970)가 있다.
+
+*베이즈 정리  
+![베이즈 정리](https://media.vlpt.us/images/dldydldy75/post/a1f16b20-7d93-4b4b-af89-9e63201c917c/image.png)
+> D : 새로 관찰되는 데이터  
+θ : 모델에서 계산하고 싶어하는 모수 (가설)  
+사후확률 : 데이터를 관찰했을 때, 이 가설이 성립할 확률 (데이터 관찰 이후 측정하기 때문에 사후확률)  
+사전확률 : 가설에 대해 사전에 세운 확률 (데이터 관측 이후 사후확률이 사전확률이 된다.)  
+가능도 : 현재 주어진 모수 (가정) 에서 이 데이터가 관찰될 가능성  
+Evidence : 데이터 전체의 분포
+
+베이즈 정리를 통해 가능도와 Evidence를 바탕으로 사전확률을 사후확률로 업데이트한다.
 
 #### References
 
-- [조건부 확률](https://m.blog.naver.com/PostView.nhn?blogId=mykepzzang&logNo=220834864348&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [조건부 확률 - Truth in Engineering](https://m.blog.naver.com/PostView.nhn?blogId=mykepzzang&logNo=220834864348&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [통계학 맛보기 - Heath](https://velog.io/@dldydldy75/%EB%B2%A0%EC%9D%B4%EC%A6%88-%ED%86%B5%EA%B3%84%ED%95%99-%EB%A7%9B%EB%B3%B4%EA%B8%B0)
 
 ---
 
@@ -202,8 +220,8 @@ $$ -->
 
 #### References
 
-- [공분산과 상관계수의 이해.txt](https://bskyvision.com/398)
-- [공분산(Covariance)과 상관계수(Correlation)](https://destrudo.tistory.com/15)
+- [공분산과 상관계수의 이해.txt - bskyvision](https://bskyvision.com/398)
+- [공분산(Covariance)과 상관계수(Correlation) - Serious Archive](https://destrudo.tistory.com/15)
 
 ---
 
@@ -239,15 +257,16 @@ $$ -->
 
 `p-value`를 알기 위해서는 먼저 1종 오류를 알아야 한다. 여기서 1종 오류란 "귀무가설이 참인데 기각한 경우"을 말한다. 귀무가설이란 기존의 주장을 말하며, 이와 반대로 새로운 주장을 대립가설이라고 한다.
 
-예를 들어, 어느 제약회사에서 치료약 A를 개발했다. 제약회사에서 귀무가설로 "치료약 A가 효과가 없다"라고 설정했다고 하자. 반대로 대립가설은 "치료약 A는 효과가 있다"로 설정할 수 있다. 회사에서는 귀무가설을 기각하고 대립가설을 채택했다. 치료약 A는 판매되었고 높은 매출을 기록했다. 그런데 알고보니 치료약 A가 효과가 없다는 것이 밝혀졌다. 참인 귀무가설을 기각했기에 이는 1종 오류가 일어났다고 볼 수 있다.
+예를 들어, 어느 제약회사에서 치료약 A를 개발했다. 기존에는 치료약 A가 없었으므로 귀무가설은 "치료약 A가 효과가 없다"라고 설정한다. 반대로 대립가설은 "치료약 A는 효과가 있다"로 설정한다. 회사에서는 검정을 한 결과, 귀무가설을 기각하고 대립가설을 채택했다. 치료약 A는 판매되었고 높은 매출을 기록했다. 그런데 알고보니 치료약 A가 효과가 없다는 것이 밝혀졌다. 참인 귀무가설을 기각했기에 이는 1종 오류가 일어났다고 볼 수 있다.
 
-다시 돌아와서 `p-value`는 1종 오류를 범할 확률을 말한다. 예를 들어, p-value가 5%라면, 100번 중 5번 1종 오류가 발생한다는 말이다. 다시 말해, 95%의 신뢰도로 귀무가설을 기각한다.
+다시 돌아와서 `p-value`는 1종 오류를 범할 확률을 말한다. 예를 들어, p-value가 5%라면, 100번 중 5번 1종 오류가 발생한다는 말이다. 검정을 할 때는 유의 수준 <!-- $\alpha$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Calpha">를 정하는데, 이것이 1종 오류의 상한선이 된다. 그래서 유의 수준보다 p-value가 작다면 실험의 오류가 상한선보다 작으므로 귀무가설을 기각하고 대립가설을 채택한다. 만약 크다면 상한선을 넘었으므로 귀무가설을 채택한다.
 
 #### References
 
 - [p-value의 의미 - 공돌이의 수학정리노트](https://angeloyeo.github.io/2020/03/29/p_value.html)
 - [p-value란 무엇인가 - 진화하자 어디에도 소속되지 않기](https://adnoctum.tistory.com/332)
 - [통계, 기본 개념을 정리해보자 - 이지훈](https://brunch.co.kr/@jihoonleeh9l6/34)
+- [유의수준(Significance Level)과 p값(p-value) - 통계학과 사색의 공간](https://m.blog.naver.com/vnf3751/220830413960)
 
 ---
 
@@ -256,20 +275,26 @@ $$ -->
 #### R square의 의미는 무엇인가요?
 
 결정계수 (R square) 는 선형 회귀 모델에서 데이터에 대해 회귀선이 얼마나 잘 설명하는지에 대한 설명력을 의미한다.  
-결정계수는 0~1 의 값을 가질 수 있고, 만약 값이 1 이라면 회귀선으로 모든 데이터를 다 설명할 수 있다.
+결정계수는 0~1 의 값을 가질 수 있고, 만약 값이 1 이라면 회귀선으로 모든 데이터를 다 설명할 수 있다고 이해할 수 있다.
 
 참고로 결정계수는 다음의 식으로 구할 수 있다.
 
 > R^2 = SSE/SST = 1 - SSR/SST,
 
-SSE = sum((관측값-관측값 평균)^2),  
-SST = sum((추정값-추정값 평균)^2),  
+SSE = sum((추정값-관측값 평균)^2),  
+SST = sum((관측값-관측값 평균)^2),  
 SSR = sum((관측값-추정값)^2)
+
+*관측값 : 실제 데이터의 값,  
+추정값 : 회귀 모델을 통해 나온 값.
+
+회귀 모델의 성능을 평가하는 방법은 결정계수 외에도 MAE, MSE, RMSE 가 있다.
 
 #### References
 
 - [결정계수의 의미와 계산 방법](https://m.blog.naver.com/tlrror9496/222055889079)
 - [회귀분석에서 R스퀘어의 정확한 의미](https://m.blog.naver.com/PostView.nhn?blogId=will84&logNo=220348748198&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [모델 성능 평가](https://heung-bae-lee.github.io/2020/01/09/machine_learning_03/)
 
 ---
 
@@ -286,8 +311,8 @@ SSR = sum((관측값-추정값)^2)
 
 #### References
 
-- [평균(average, mean) vs. 중간값(median) | 통계상의 오류가능성](https://leedakyeong.tistory.com/entry/%ED%8F%89%EA%B7%A0-%EC%A4%91%EC%95%99%EA%B0%92-%EC%B5%9C%EB%B9%88%EA%B0%92-%EB%B9%84%EA%B5%90-Mean-VS-Median-VS-Mode)
-- [[기초통계] 평균 중앙값 최빈값 비교 (Mean VS Median VS Mode)](https://blog.naver.com/ricemankr/220796823014)
+- [평균(average, mean) vs. 중간값(median) | 통계상의 오류가능성 - 슈퍼짱짱](https://leedakyeong.tistory.com/entry/%ED%8F%89%EA%B7%A0-%EC%A4%91%EC%95%99%EA%B0%92-%EC%B5%9C%EB%B9%88%EA%B0%92-%EB%B9%84%EA%B5%90-Mean-VS-Median-VS-Mode)
+- [[기초통계] 평균 중앙값 최빈값 비교 (Mean VS Median VS Mode) - Peter Hwang](https://blog.naver.com/ricemankr/220796823014)
 
 ---
 
@@ -320,9 +345,9 @@ $$ -->
 
 <br/>
 
-entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클래스에 속하면 낮다. 다시 말하면 특정 클래스에 속할 확률이 높고 나머지 클래스에 속할 확률이 낮다면 entropy가 낮고, 모든 각각의 클래스에 속할 확률이 비슷하다면 entropy는 낮다.
+entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클래스에 속하면 낮다. 다시 말하면 각각의 데이터가 특정 클래스에 속할 확률이 높고 나머지 클래스에 속할 확률이 낮다면 entropy가 높고, 모든 각각의 클래스에 속할 확률이 비슷하다면 entropy는 낮다.
 
-`information gain`은 어떤 속성을 선택함으로 인해 데이터가 잘 필터링되는지를 말하며, 1에서 엔트로피를 뺀 값으로 표현된다. 이 값은 의사결정트리가 분할을 할 때의 기준으로 사용되며, 높은 information gain을 기준으로 분할한다.
+`information gain`은 어떤 속성을 선택함으로 인해 데이터가 잘 필터링되는지를 말하며, 1에서 엔트로피를 뺀 값으로 표현된다. 의사결정트리는 가지를 칠 때 이 값을 사용하여 가지를 친다. 이 때 어떤 데이터를 두 집합으로 나누었을 때 두 집합의 information gain이 크도록, entropy는 작아지도록 분할을 한다.
 
 #### References
 
@@ -337,12 +362,14 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 #### 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
 
 표본의 통계량 (평균, 표준편차 등) 을 통해 모집단의 모수 (모평균, 모표준편차 등) 를 추정하는 방법을 통계적 추론이라고 한다.
-모집단이 어떤 분포를 따른다는 가정 하에 통계적 추론을 하는 방법을 모수적 방법인데, 표본의 수가 30개 이상일 때 중심극한 정리에 의해 정규분포를 따르므로 모수적 방법론을 사용한다.
+
+모집단이 어떤 분포를 따른다는 가정 하에 통계적 추론을 하는 방법을 모수적 방법이라 하는데, 표본의 수가 30개 이상일 때 중심극한 정리에 의해 정규분포를 따르므로 모수적 방법론을 사용한다.
+
 반대로, 모집단의 분포를 가정하지 않는 비모수적 방법은, 표본의 수가 30개 미만이거나 정규성 검정에서 정규 분포를 따르지 않는다고 증명되는 경우 비모수적 방법론을 사용한다.
 
 #### References
 
-- [어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?](https://astralworld58.tistory.com/80)
+- [어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요? - 내가 보려고 만든 공간](https://astralworld58.tistory.com/80)
 
 ---
 
@@ -353,9 +380,11 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 - 확률(Probability): 어떤 시행(trial, experiment)에서 특정 결과(sample)가 나올 가능성. 즉, **시행 전 모든 경우의 수의 가능성은 정해져 있으며 그 총합은 1(100%)이다.**
 - 가능도(Likelihood): 어떤 시행(trial, experiment)을 충분히 수행한 뒤 그 결과(sample)를 토대로 경우의 수의 가능성을 도출하는 것. 아무리 충분히 수행해도 어디까지나 추론(inference)이기 때문에 **가능성의 합이 1이 되지 않을수도 있다.**
 
+PDF(probability density function)에서는 **확률변수**를 변수로 보기 때문에 총합이 1이지만, likelihood function에서는 **분포의 모수**를 변수로 보기 때문에 총합이 1이 되지 않을수도 있다.
+
 #### References
 
-- [가능도(Likelihood)와 확률(Probability)의 차이](https://swjman.tistory.com/104)
+- [가능도(Likelihood)와 확률(Probability)의 차이 - JMAN's SW Lab.](https://swjman.tistory.com/104)
 
 ---
 
@@ -404,13 +433,17 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 #### 베이지안과 프리퀀티스트 간의 입장차이를 설명해주실 수 있나요?
 
 베이지안은 사건의 확률을 바라볼 때, 사전 확률을 미리 염두해두고 사건의 발생에 따라 베이즈 정리로 사후 확률을 구해 다시 사전 확률을 업데이트시킨다.
+
 즉, 베이지안은 과거의 사건이 현재 사건에 영향을 끼친다는 입장을 가지고 있다.
-반면, 프리퀀티스트는 확률을 객관적으로 발생하는 현상의 빈도수로 바라본다.
+
+반면, 프리퀀티스트는 확률을 무한번 실험한 결과, 객관적으로 발생하는 현상의 빈도수로 바라본다. 
+
+
 즉, 프리퀀티스트는 현재의 객관적인 확률에 의해서만 사건이 발생한다는 입장을 가지고 있다.
 
 #### References
 
-- [베이지안(Bayesian)과 프리퀀티스트(Frequentist) 간의 입장 차이](https://astralworld58.tistory.com/81)
+- [베이지안(Bayesian)과 프리퀀티스트(Frequentist) 간의 입장 차이 - 내가 보려고 만든 공간](https://astralworld58.tistory.com/81)
 
 ---
 
@@ -421,14 +454,17 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 |                  | 귀무가설 H0 참 | 귀무가설 H0 거짓 |
 | :--------------: | :------------: | :--------------: |
 | 귀무가설 H0 채택 | 옳은 결정(1-α) |  제 2종 오류(β)  |
-| 귀무가설 H0 기각 | 제 1종 오류(α) |  옳은 결정(1-β)  |
+| 귀무가설 H0 기각 | 제 1종 오류(α) |  옳은 결정(1-β), 검정력 |
 
 검정력은 대립가설 H1이 참인 경우 귀무가설 H0를 기각(대립가설 H1을 채택)할 확률이다.
 
+<img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkJIVD%2FbtqEGDk7q8y%2FJfGDXmB22SCXWxN3enQwg1%2Fimg.png" width=700>
+
 #### References
 
-- [검정력(power)의 의미 및 수식](https://m.blog.naver.com/PostView.nhn?blogId=hancury&logNo=220854934914&proxyReferer=https:%2F%2Fwww.google.com%2F)
-- [통계적 검정: 검정력(power)과 Type 1, 2 Error(1, 2 종 오류)](https://niceguy1575.tistory.com/entry/%ED%86%B5%EA%B3%84%EC%A0%81-%EA%B2%80%EC%A0%95-%EA%B2%80%EC%A0%95%EB%A0%A5power%EA%B3%BC-Type-1-2-Error1-2-%EC%A2%85-%EC%98%A4%EB%A5%98)
+- [검정력(power)의 의미 및 수식 - 	
+Curycu's Box](https://m.blog.naver.com/PostView.nhn?blogId=hancury&logNo=220854934914&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [통계적 검정: 검정력(power)과 Type 1, 2 Error(1, 2 종 오류) - 코딩하고, ](https://niceguy1575.tistory.com/entry/%ED%86%B5%EA%B3%84%EC%A0%81-%EA%B2%80%EC%A0%95-%EA%B2%80%EC%A0%95%EB%A0%A5power%EA%B3%BC-Type-1-2-Error1-2-%EC%A2%85-%EC%98%A4%EB%A5%98)
 
 ---
 
@@ -491,12 +527,13 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 ![표본크기 공식](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/sample-size-formula.png)
 
 참고로 신뢰수준은 표본추출을 반복했을 때 얼마나 그 결과를 신뢰할 수 있는지에 대한 정도로 95% 를 주로 사용한다.
+
 오차범위는 작을 수록 모집단의 특성에 대한 유용한 정보를 제공하지만 모집단에 대한 추론이 틀릴 가능성도 높아지므로 10% 를 넘지 않게 한다.
 
 #### References
 
-- [필요한 설문 응답자수(표본크기) 계산하기](https://learnx.tistory.com/entry/%ED%95%84%EC%9A%94%ED%95%9C-%EC%84%A4%EB%AC%B8-%EC%9D%91%EB%8B%B5%EC%9E%90%EC%88%98%ED%91%9C%EB%B3%B8%ED%81%AC%EA%B8%B0-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0)
-- [표본크기의 결정](https://datascream.co.kr/77)
+- [필요한 설문 응답자수(표본크기) 계산하기 - LearnX](https://learnx.tistory.com/entry/%ED%95%84%EC%9A%94%ED%95%9C-%EC%84%A4%EB%AC%B8-%EC%9D%91%EB%8B%B5%EC%9E%90%EC%88%98%ED%91%9C%EB%B3%B8%ED%81%AC%EA%B8%B0-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0)
+- [표본크기의 결정 - Data Scream](https://datascream.co.kr/77)
 
 ---
 
@@ -508,9 +545,12 @@ Bias는 데이터 내에 있는 모든 정보를 고려하지 않음으로 인�
 
 반대로 Variance는 데이터 내에 있는 에러나 노이즈까지 잘 잡아내는 highly flexible models에 데이터를 fitting 시킴으로써, 실제 현상과 관계 없는 random한 것들까지 학습하는 알고리즘의 경향을 의미한다. 이는 overfitting과 관계되어 있다.
 
+<img src="https://www.endtoend.ai/assets/blog/misc/bias-variance-tradeoff-in-reinforcement-learning/underfit_right_overfit.png" width=600>
+<img src="http://www.endtoend.ai/assets/blog/misc/bias-variance-tradeoff-in-reinforcement-learning/front.png" width=400>
+
 편향(Bias)과 분산(Variance)은 한 쪽이 증가하면 다른 한 쪽이 감소하고, 한쪽이 감소하면 다른 한쪽이 증가하는 tradeoff 관계를 가진다.
 
-<img src="https://lh5.googleusercontent.com/lAbzDl1HYiYHAEuGnaUw2GdCyQzkZvjWisgNY-ZRYqvRG-X-U7f7cL_UunIF7v5q0BbUSw4CZ-1-xMXs8mvE8fbGa7ghFeEGzuwJ6wiIs64nUgJxkDNEC2JrSTUHEjViRZLdA23NLqI" width=400>
+<img src="https://lh5.googleusercontent.com/lAbzDl1HYiYHAEuGnaUw2GdCyQzkZvjWisgNY-ZRYqvRG-X-U7f7cL_UunIF7v5q0BbUSw4CZ-1-xMXs8mvE8fbGa7ghFeEGzuwJ6wiIs64nUgJxkDNEC2JrSTUHEjViRZLdA23NLqI" width=350>
 
 Bias를 통제하기 위한 방법으로는
 
@@ -524,9 +564,9 @@ Bias를 통제하기 위한 방법으로는
 
 #### References
 
-- [쉽게 이해해보는 bias-variance tradeoff](https://bywords.tistory.com/entry/%EB%B2%88%EC%97%AD-%EC%9C%A0%EC%B9%98%EC%9B%90%EC%83%9D%EB%8F%84-%EC%9D%B4%ED%95%B4%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-biasvariance-tradeoff)
-- [Bias and Variance (편향과 분산)](https://opentutorials.org/module/3653/22071)
-- [[MLY] avoidable bias를 줄이는 방법들](https://talkingaboutme.tistory.com/entry/MLY-avoidable-bias%EB%A5%BC-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%A9%EB%B2%95%EB%93%A4?category=538748)
+- [쉽게 이해해보는 bias-variance tradeoff - 건빵의 블로그](https://bywords.tistory.com/entry/%EB%B2%88%EC%97%AD-%EC%9C%A0%EC%B9%98%EC%9B%90%EC%83%9D%EB%8F%84-%EC%9D%B4%ED%95%B4%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-biasvariance-tradeoff)
+- [Bias and Variance (편향과 분산) - 한 페이지 머신러닝](https://opentutorials.org/module/3653/22071)
+- [[MLY] avoidable bias를 줄이는 방법들 - 생각많은 소심남](https://talkingaboutme.tistory.com/entry/MLY-avoidable-bias%EB%A5%BC-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%A9%EB%B2%95%EB%93%A4?category=538748)
 
 ---
 
