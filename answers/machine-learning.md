@@ -138,7 +138,14 @@ $$ -->
 
 #### 정규화를 왜 해야할까요? 정규화의 방법은 무엇이 있나요?
 
+`정규화`는 개별 피처의 크기를 모두 똑같은 단위로 변경하는 것을 말한다. 정규화를 하는 이유는 <u>피처의 스케일이 심하게 차이가 나는 경우 값이 큰 피처가 더 중요하게 여겨질 수 있기 때문</u>이다. 이를 막기 위해 피처 모두 동일한 스케일로 반영되도록 하는 것이 정규화이다.
+
+정규화하는 방법으로는 대표적으로 두 가지가 존재한다. 첫 번째 정규화 방법은 <strong>최소-최대 정규화(min-max normalization)</strong>으로 각 피처의 최소값을 0, 최대값을 1로 두고 변환하는 방법이다. 값을 <!-- $x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x">로, 최소값을 <!-- $min$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=min">, 최대값을 <!-- $max$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=max">로 둘 때, 정규화된 값은 <!-- $\frac{x - min}{max - min}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cfrac%7Bx%20-%20min%7D%7Bmax%20-%20min%7D">으로 계산할 수 있다. 두 번째 정규화 방법으로 <strong>Z-점수 정규화(z-score normalization)</strong>이 있다. 이 방법은 각 피처의 표준편차와 평균으로 값을 정규화시킨다. 정규화된 값은 <!-- $\frac{x - mean}{std}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cfrac%7Bx%20-%20mean%7D%7Bstd%7D">로 계산할 수 있다.
+
 #### References
+
+- [정규화(Normalization) 쉽게 이해하기 - 아무튼 워라밸](http://hleecaster.com/ml-normalization-concept/)
+- [2. 사이킷런으로 시작하는 머신러닝 - 파이썬 머신러닝 완벽 가이드](http://www.yes24.com/Product/Goods/87044746?OzSrank=1)
 
 ---
 
@@ -146,7 +153,12 @@ $$ -->
 
 #### Local Minima와 Global Minima에 대해 설명해주세요.
 
+비용 함수(cost function)에서의 global minima는 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, local minima는 에러가 최소가 될 수 있는 후보가 되는 지점 중 global minima를 뺀 지점을 말한다. local minima는 자칫 에러가 최소화되는 지점을 찾았다고 생각할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 local minima에서 벗어날 수 있다.
+
 #### References
+
+- [Local Minima 문제에 대한 새로운 시각 - 다크 프로그래머](https://darkpgmr.tistory.com/148)
+- [Minima - Hong's](https://jihongl.github.io/2017/09/18/minima/)
 
 ---
 
