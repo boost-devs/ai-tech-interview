@@ -166,7 +166,12 @@ $$ -->
 
 #### 차원의 저주에 대해 설명해주세요.
 
+차원의 저주란 데이터 차원이 증가할수록 해당 공간의 크기가 기하급수적으로 증가하여 동일한 개수의 데이터의 밀도가 급속도로 희박해지는 현상을 말한다. 이를 해결하기 위해서는 차원을 증가시킨만큼 더 많은 데이터를 추가하거나 PCA, LDA, LLE, MDS와 같은 차원 축소 알고리즘으로 차원을 줄여 해결할 수 있다.
+
 #### References
+
+- [차원의 저주(Curse of dimensionality) - BioinformaticsAndMe](https://bioinformaticsandme.tistory.com/197)
+- [차원의 문제 - 다크 프로그래머](https://darkpgmr.tistory.com/145)
 
 ---
 
