@@ -153,7 +153,7 @@ $$ -->
 
 #### Local Minima와 Global Minima에 대해 설명해주세요.
 
-비용 함수(cost function)에서의 global minima는 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, local minima는 에러가 최소가 될 수 있는 후보가 되는 지점 중 global minima를 뺀 지점을 말한다. local minima는 자칫 에러가 최소화되는 지점을 찾았다고 생각할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 local minima에서 벗어날 수 있다.
+비용 함수(cost function)에서의 `Global Minima`는 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, `Local Minima`는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minima를 뺀 지점을 말한다. Local Minima는 자칫 에러가 최소화되는 지점을 찾았다고 생각할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
 
 #### References
 
@@ -170,7 +170,7 @@ $$ -->
     <img height='250px' src='../images/penguin/curse-of-dimensionality.png'/>
 </div>
 
-차원의 저주란 데이터 차원이 증가할수록 해당 공간의 크기가 기하급수적으로 증가하여 데이터 간 거리가 기하급수적으로 멀어지고 희소한 구조를 갖게 되는 현상을 말한다. 이를 해결하기 위해서는 차원을 증가시킨만큼 더 많은 데이터를 추가하거나 PCA, LDA, LLE, MDS와 같은 차원 축소 알고리즘으로 차원을 줄여 해결할 수 있다.
+`차원의 저주란 데이터 차원이 증가할수록 해당 공간의 크기가 기하급수적으로 증가하여 데이터 간 거리가 기하급수적으로 멀어지고 희소한 구조를 갖게 되는 현상을 말한다. 이를 해결하기 위해서는 차원을 증가시킨만큼 더 많은 데이터를 추가하거나 PCA, LDA, LLE, MDS와 같은 차원 축소 알고리즘으로 차원을 줄여 해결할 수 있다.
 
 #### References
 
@@ -184,7 +184,7 @@ $$ -->
 
 #### dimension reduction 기법으로 보통 어떤 것들이 있나요?
 
-차원 축소는 `피처 선택(feature selection)`과 `피처 추출(feature extraction)`으로 나눌 수 있다. 우선 피처 선택은 특정 피처에 종속성이 강한 불필요한 피처는 제거하고 데이터의 특징을 잘 표현하는 주요 피처만 선택하는 것을 말한다. 반면 피처 추출은 기존 피처를 저차원의 피처로 압축하여, 피처를 함축적으로 잘 설명할 수 있도록 저차원으로 매핑하는 것을 말한다. 대표적인 피처 추출 알고리즘으로 PCA, SVD, NMF, LDA 등이 있다.
+차원 축소는 `피처 선택(feature selection)`과 `피처 추출(feature extraction)`으로 나눌 수 있다. 우선 피처 선택은 <u>특정 피처에 종속성이 강한 불필요한 피처는 제거하고 데이터의 특징을 잘 표현하는 주요 피처만 선택하는 것</u>을 말한다. 반면 피처 추출은 기존 피처를 저차원의 피처로 압축하여, <u>피처를 함축적으로 잘 설명할 수 있도록 저차원으로 매핑하는 것</u>을 말한다. 대표적인 피처 추출 알고리즘으로 PCA, SVD, NMF, LDA 등이 있다.
 
 #### References
 
@@ -197,7 +197,7 @@ $$ -->
 
 #### PCA는 차원 축소 기법이면서, 데이터 압축 기법이기도 하고, 노이즈 제거기법이기도 합니다. 왜 그런지 설명해주실 수 있나요?
 
-PCA(Principle Component Analysis)는 입력 데이터의 공분산 행렬을 기반으로 고유벡터를 생성하고 이렇게 구한 고유 벡터에 입력 데이터를 선형 변환하여 차원을 축소하는 방법이다. 차원은 곧 입력 데이터의 피처를 뜻하므로 데이터 압축 기법으로 볼 수도 있다.
+`PCA(Principle Component Analysis)`는 <u>입력 데이터의 공분산 행렬을 기반으로 고유벡터를 생성하고 이렇게 구한 고유 벡터에 입력 데이터를 선형 변환하여 차원을 축소하는 방법</u>이다. 차원은 곧 입력 데이터의 피처를 뜻하므로 데이터 압축 기법으로 볼 수도 있다.
 
 또한 PCA는 고유값이 가장 큰, 즉 데이터의 분산이 가장 큰 순으로 주성분 벡터를 추출하는데, 가장 나중에 뽑힌 벡터보다 가장 먼저 뽑힌 벡터가 데이터를 더 잘 설명할 수 있기 때문에 노이즈 제거 기법이라고도 불린다.
 
@@ -213,9 +213,20 @@ PCA(Principle Component Analysis)는 입력 데이터의 공분산 행렬을 기
 
 #### LSA, LDA, SVD 등의 약자들이 어떤 뜻이고 서로 어떤 관계를 가지는지 설명할 수 있나요?
 
+`PCA`는 **Principle Component Analysis**의 약자로 데이터의 공분산 행렬을 기반으로 고유벡터를 생성하고 이렇게 구한 고유 벡터에 입력 데이터를 선형 변환하여 차원을 축소하는 방법이다. `SVD`는 **Singular Value Decomposition**의 약자로 PCA와 유사한 행렬 분해 기법을 사용하나 정방 행렬(square matrix)를 분해하는 PCA와 달리 행과 열의 크기가 다른 행렬에도 적용할 수 있다.
+
+`LSA`는 **Latent Semantic Analysis**의 약자로 잠재 의미 분석을 말하며, 주로 토픽 모델링에 자주 사용되는 기법이다. LSA는 DTM(Document-Term Matrix)이나 TF-IDF(Term Frequency-Inverse Document Frequency) 행렬에 Trucated SVD를 적용하여 차원을 축소시키고, 단어들의 잠재적인 의미를 이끌어낸다.
+
+`LDA`는 **Latent Dirichlet Allocation** 혹은 **Linear Discriminant Analysis**의 약자이다. 전자는 토픽모델링에 사용되는 기법 중 하나로 LSA와는 달리 단어가 특정 토픽에 존재할 확률과 문서에 특정 토픽이 존재할 확률을 결합확률로 추정하여 토픽을 추정하는 기법을 말한다. 후자는 차원축소기법 중 하나로 분류하기 쉽도록 클래스 간 분산을 최대화하고 클래스 내부의 분산은 최소화하는 방식을 말한다.
 
 
 #### References
+
+- [잠재 의미 분석(Latent Semantic Analysis, LSA) - 딥러닝을 이용한 자연어 처리 입문](https://wikidocs.net/24949)
+- [잠재 디리클레 할당(Latent Dirichlet Allocation, LDA) - 딥러닝을 이용한 자연어 처리 입문](https://wikidocs.net/30708)
+- [문서 단어 행렬(Document-Term Matrix, DTM) - 딥러닝을 이용한 자연어 처리 입문](https://wikidocs.net/24559)
+- [TF-IDF(Term Frequency-Inverse Document Frequency) - 딥러닝을 이용한 자연어 처리 입문](https://wikidocs.net/31698)
+- [6. 차원 축소 - 파이썬 머신러닝 완벽 가이드](http://www.yes24.com/Product/Goods/87044746?OzSrank=1)
 
 ---
 
