@@ -549,10 +549,10 @@ K-means 알고리즘의 단점은 다음과 같다.
 
 정규화(**일반화**)의 목적은 모델이 학습 데이터에 오버피팅되지 않고 처음 보는 테스트 데이터에도 좋은 성능을 내도록 만드는 것이다. 
 
-L1 정규화 (라쏘 회귀)
+L1 정규화 (라쏘 회귀)  
 ![L1 정규화](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/l1_regularization.png)
 
-L2 정규화 (릿지 회귀)
+L2 정규화 (릿지 회귀)  
 ![L2 정규화](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/l2_regularization.png)
 
 loss 식에 람다 * 모델의 웨이트에 대한 L1 or L2 norm 을 더해줌으로써 모델의 일반화가 가능해진다.
