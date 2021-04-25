@@ -161,7 +161,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 <img src="../images/adc/machine-learning/SVM.PNG" width=300>
 
-- SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데, 비선형 분류에서는 입력자료를 다차원 공간상으로 맵핑할 때 **커널 트릭(kernel trick)**을 사용하기도 한다.
+- SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데, 비선형 분류에서는 입력자료를 다차원 공간상으로 맵핑할 때 <strong>커널 트릭(kernel trick)</strong>을 사용하기도 한다.
     - 원공간(Input Space)의 데이터를 선형분류가 가능한 고차원 공간(Feature Space)으로 매핑한 뒤 두 범주를 분류하는 초평면을 찾는다. (Kernel-SVM)
 
 <img src="../images/adc/machine-learning/SVM2.PNG" width=430>
@@ -189,7 +189,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 > 나이브 베이즈(Naïve Bayes Classification)
 
-데이터에서 변수들에 대한 **조건부 독립을 가정**하는 알고리즘으로 클래스에 대한 사전 정보와 데이터로부터 추출된 정보를 결합하고, **베이즈 정리(Bayes Theorem)**를 이용하여 어떤 데이터가 특정 클래스에 속하는지 분류하는 알고리즘이다.
+데이터에서 변수들에 대한 **조건부 독립을 가정**하는 알고리즘으로 클래스에 대한 사전 정보와 데이터로부터 추출된 정보를 결합하고, <strong>베이즈 정리(Bayes Theorem)</strong>를 이용하여 어떤 데이터가 특정 클래스에 속하는지 분류하는 알고리즘이다.
 
 |장점|단점|
 |---|---|
@@ -247,17 +247,17 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 1. Support(지지도)
 - 전체 거래 중 항목 A와 항목 B를 동시에 포함하는 거래의 비율로 정의한다.
 
-<img src="../images/adc/machine-learning/support.png" height=60>
+<img src="../images/adc/machine-learning/support.PNG" height=60>
 
 2. Confidence(신뢰도)
 - 항목 A를 포함한 거래 중에서 항목 A와 항목 B가 같이 포함될 확률이다. 연관성의 정도를 파악할 수 있다.
 
-<img src="../images/adc/machine-learning/confidence.png" height=60>
+<img src="../images/adc/machine-learning/confidence.PNG" height=60>
 
 3. Lift(향상도)
 - A가 구매되지 않았을 때 품목 B의 구매확률에 비해 A가 구매됐을 때 품목 B의 구매확률의 증가 비이다. 연관규칙 A→B는 품목 A와 품목 B의 구매가 서로 관련이 없는 경우에 향상도가 1이 된다.
 
-<img src="../images/adc/machine-learning/lift.png" height=60>
+<img src="../images/adc/machine-learning/lift.PNG" height=60>
 
 #### References
 - [[R 연관규칙(Association Rule)] 지지도(support), 신뢰도(confidence), 향상도(lift), IS측도, 교차지지도 - R, Python 분석과 프로그래밍의 친구 (by R Friend)](https://rfriend.tistory.com/191)
@@ -274,7 +274,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - 현재 x값에서 접선을 그리고 접선이 x축과 만나는 지점으로 x를 이동시켜 가면서 점진적으로 해를 찾는 방법
 - 초기값을 잘 주면 금방 해를 찾을 수 있지만 잘못 주면 시간이 오래 걸리거나 아예 해를 찾지 못할 수 있다.
 
-<img src="../images/adc/machine-learning/newton.png" height=250>
+<img src="../images/adc/machine-learning/newton.PNG" height=250>
 
 Newton's method를 수식화하면 아무 값이나 초기값 <!-- $x^1$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/WYgejmd8vP.svg">에서 시작해서 다음 수식에 따라 수렴할 때까지 계속 x를 이동시켜 나가는 것이다.
 
@@ -289,7 +289,7 @@ Newton's method를 수식화하면 아무 값이나 초기값 <!-- $x^1$ --> <im
 
 Gradient Descent 방법은 그레디언트의 특성을 이용하여 어떤 비용함수의 값을 최소화시키기 위한 파라미터 값을 아래와 같이 점진적으로 찾는 방법이다.<!-- $x_{k+1}=x_k-\lambda_k\nabla f(x_k), k\geq0$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/riBPmSx41r.svg">
 
-<img src="../images/adc/machine-learning/gradient2.png" height=350>
+<img src="../images/adc/machine-learning/gradient2.PNG" height=350>
 
 #### References
 - [뉴턴법/뉴턴-랩슨법의 이해와 활용(Newton's method) - 다크 프로그래머](https://darkpgmr.tistory.com/58)
