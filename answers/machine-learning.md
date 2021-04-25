@@ -184,15 +184,31 @@
 
 #### 지금 나오고 있는 deep learning 계열의 혁신의 근간은 무엇이라고 생각하시나요?
 
+현재 좋은 성능을 내는 딥러닝 모델들은 모두 큰 규모의 모델들인데 **하드웨어의 발전**이 이를 가능하게 하였다.
+
+또한 **end-to-end 모델**이 나타나면서 데이터 레이블링, 하이퍼파라미터 찾기, 최적 모델 찾기 등 모든 작업을 기계에게 맡기면서 딥러닝이 크게 발전하였다.
+
+추가적으로 여러 **경량화 기법**들이 발전함에 따라 마스크 탐지 카메라 등의 유용한 모델들을 실생활에서 사용할 수 있게 되었다.
+
 #### References
+- [end-to-end 학습의 장단점 - 생각많은 소심남](https://talkingaboutme.tistory.com/entry/MLY-end-to-end-%ED%95%99%EC%8A%B5%EC%9D%98-%EC%9E%A5%EB%8B%A8%EC%A0%90)
 
 ---
 
 ## #18
 
 #### ROC 커브에 대해 설명해주실 수 있으신가요?
+ROC 커브는 **이진분류 모델의 성능**을 나타내는 지표이다.
+
+모델이 참이라고 예측하는 경우는 **FPR** (False Positive Rate, 실제 값이 거짓일 때) 과 **TPR** (True Positive Rate, 실제 값이 참일 때) 두 경우로 나뉜다.  
+FPR 과 TPR 을 그래프에서 x 축, y 축으로 동시에 표현한 ROC 커브를 통해 모델이 얼마나 옳은 값을 잘 예측하는지 알 수 있게 된다.
+
+![ROC](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/ROC.png) 
+
+ROC 커브가 좌상단과 가까운 경우 좋은 모델이라고 판단할 수 있다. 모델이 FPR 은 낮게, TPR 은 높게 예측하기 때문이다.
 
 #### References
+- [ROC curve - 공돌이의 수학 정리 노트](https://angeloyeo.github.io/2020/08/05/ROC.html)
 
 ---
 
@@ -200,7 +216,16 @@
 
 #### 여러분이 서버를 100대 가지고 있습니다. 이때 인공신경망보다 Random Forest를 써야하는 이유는 뭘까요?
 
+**랜덤 포레스트**는 각 서버를 모델의 특성을 이해하는 단일 결정 트리 (Decision tree) 로 **병렬**적이게 구성할 수 있다.  
+
+반면, **인공신경망**은 하나의 서버 자체가 모델의 특성을 모두 이해하는 end-to-end 구조로 **직렬**적이게 구성된다.
+
+따라서 서버가 100대 있을 때는, 이를 병렬적으로 활용할 수 있는 **랜덤 포레스트**를 사용한다.
+
 #### References
+- [Random Forest(랜덤 포레스트) 개념 정리 - Codesigner's Dev Story](https://eunsukimme.github.io/ml/2019/11/26/Random-Forest/)
+- [의사결정나무 - ratsgo's blog](https://ratsgo.github.io/machine%20learning/2017/03/26/tree/)
+- [출근 루틴, 하루 3문제 - Man-About-Town](https://yongwookha.github.io/MachineLearning/2021-01-29-interview-question)
 
 ---
 
@@ -208,7 +233,17 @@
 
 #### K-means의 대표적 의미론적 단점은 무엇인가요? (계산량 많다는것 말고)
 
+K-means 는 특성이 비슷한 데이터를 같은 그룹으로 묶어주는 클러스터링 알고리즘이다.
+
+K-means 알고리즘의 단점은 다음과 같다.  
+1. K 를 몇 개로 설정하냐에 따라 성능이 달라진다.
+2. K 개 군집의 중심점을 예측하여야 하는데, 어디를 중심점으로 두냐에 따라 성능이 달라진다.
+3. 데이터가 잘 모여있는 경우에 효과적이지, 노이즈가 많은 경우 효과적이지 않다. 
+
+
+
 #### References
+- [머신러닝 - 7. K-평균 클러스터링(K-means Clustering) - 귀퉁이 서재](https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-7-K-%ED%8F%89%EA%B7%A0-%EA%B5%B0%EC%A7%91%ED%99%94-K-means-Clustering)
 
 ---
 
