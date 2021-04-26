@@ -579,6 +579,7 @@ L2 정규화는 특정 웨이트의 값이 매우 낮아도 0에 수렴되지는
 #### References
 - [딥러닝 용어 정리, L1 Regularization, L2 Regularization 의 이해, 용도와 차이 설명 - 빛나는 나무](https://light-tree.tistory.com/125)
 - [L1, L2 Norm, Loss, Regularization? - 생각 정리](https://junklee.tistory.com/29)
+- [릿지회귀, 라쏘회귀, 엘라스틱넷 - 대학원생이 쉽게 설명해보기](https://hwiyong.tistory.com/93)
 
 ---
 
