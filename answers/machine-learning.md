@@ -153,7 +153,13 @@ $$ -->
 
 #### Local Minima와 Global Minima에 대해 설명해주세요.
 
-비용 함수(cost function)에서의 `Global Minima`는 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, `Local Minima`는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minima를 뺀 지점을 말한다. Local Minima는 자칫 에러가 최소화되는 지점을 찾았다고 생각할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
+<div align='center'>
+    <img height='250px' src='../images/penguin/local-minima-global-minima.png'/>
+</div>
+
+<br/>
+
+비용 함수(cost function)에서의 `Global Minima`는 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, `Local Minima`는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minima를 뺀 지점을 말한다. Local Minima는 자칫 에러가 **최소화되는 지점을 찾았다고 착각**할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
 
 #### References
 
@@ -190,7 +196,6 @@ $$ -->
 
 - [6. 차원 축소 - 파이썬 머신러닝 완벽 가이드](http://www.yes24.com/Product/Goods/87044746?OzSrank=1)
 
-
 ---
 
 ## #6
@@ -200,7 +205,6 @@ $$ -->
 `PCA(Principle Component Analysis)`는 <u>입력 데이터의 공분산 행렬을 기반으로 고유벡터를 생성하고 이렇게 구한 고유 벡터에 입력 데이터를 선형 변환하여 차원을 축소하는 방법</u>이다. 차원은 곧 입력 데이터의 피처를 뜻하므로 데이터 압축 기법으로 볼 수도 있다.
 
 또한 PCA는 고유값이 가장 큰, 즉 데이터의 분산이 가장 큰 순으로 주성분 벡터를 추출하는데, 가장 나중에 뽑힌 벡터보다 가장 먼저 뽑힌 벡터가 데이터를 더 잘 설명할 수 있기 때문에 노이즈 제거 기법이라고도 불린다.
-
 
 #### References
 
@@ -215,10 +219,11 @@ $$ -->
 
 `PCA`는 **Principle Component Analysis**의 약자로 데이터의 공분산 행렬을 기반으로 고유벡터를 생성하고 이렇게 구한 고유 벡터에 입력 데이터를 선형 변환하여 차원을 축소하는 방법이다. `SVD`는 **Singular Value Decomposition**의 약자로 PCA와 유사한 행렬 분해 기법을 사용하나 정방 행렬(square matrix)를 분해하는 PCA와 달리 행과 열의 크기가 다른 행렬에도 적용할 수 있다.
 
-`LSA`는 **Latent Semantic Analysis**의 약자로 잠재 의미 분석을 말하며, 주로 토픽 모델링에 자주 사용되는 기법이다. LSA는 DTM(Document-Term Matrix)이나 TF-IDF(Term Frequency-Inverse Document Frequency) 행렬에 Trucated SVD를 적용하여 차원을 축소시키고, 단어들의 잠재적인 의미를 이끌어낸다.
+`LSA`는 **Latent Semantic Analysis**의 약자로 잠재 의미 분석을 말하며, 주로 토픽 모델링에 자주 사용되는 기법이다. LSA는 DTM(Document-Term Matrix)이나 TF-IDF(Term Frequency-Inverse Document Frequency) 행렬에 Truncated SVD를 적용하여 차원을 축소시키고, 단어들의 잠재적인 의미를 이끌어낸다. Truncated SVD는 SVD와 똑같으나 상위 n개의 특이값만 사용하는 축소 방법이다. 이 방법을 쓸 경우 원 행렬로 복원할 수 없다.
 
 `LDA`는 **Latent Dirichlet Allocation** 혹은 **Linear Discriminant Analysis**의 약자이다. 전자는 토픽모델링에 사용되는 기법 중 하나로 LSA와는 달리 단어가 특정 토픽에 존재할 확률과 문서에 특정 토픽이 존재할 확률을 결합확률로 추정하여 토픽을 추정하는 기법을 말한다. 후자는 차원축소기법 중 하나로 분류하기 쉽도록 클래스 간 분산을 최대화하고 클래스 내부의 분산은 최소화하는 방식을 말한다.
 
+> **Latent Dirichlet Allocation**와 관련된 자세한 내용은 [#9 텍스트 더미에서 주제를 추출해야 합니다. 어떤 방식으로 접근해 나가시겠나요?](#9)을 참고해주세요!
 
 #### References
 
@@ -246,7 +251,7 @@ n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정
 
 > 마코프 모델
 
-마코프 모델은 위의 가정하에 확률적 모델을 만든 것으로써, 가장 먼저 각 상태를 정의하게 된다. 상태(state)는 <!-- $V={v_1,···,v_m}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/27heV0OeWa.svg">로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 **상태 전이 확률(State transition Probability)**을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 <!-- $a_{ij}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/EbxBH6xbkL.svg">는 상태 <!-- $v_i$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/rLeCmj8Out.svg">에서 상태 <!-- $v_j$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/bx2Hfeesug.svg">로 이동할 확률을 의미한다.  아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
+마코프 모델은 위의 가정하에 확률적 모델을 만든 것으로써, 가장 먼저 각 상태를 정의하게 된다. 상태(state)는 <!-- $V={v_1,···,v_m}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/27heV0OeWa.svg">로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 **상태 전이 확률(State transition Probability)**을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 <!-- $a_{ij}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/EbxBH6xbkL.svg">는 상태 <!-- $v_i$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/rLeCmj8Out.svg">에서 상태 <!-- $v_j$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/bx2Hfeesug.svg">로 이동할 확률을 의미한다. 아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
 
 <img src="../images/adc/machine-learning/state_transition_probability.PNG" width=200>
 
@@ -266,6 +271,7 @@ n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정
 #### 텍스트 더미에서 주제를 추출해야 합니다. 어떤 방식으로 접근해 나가시겠나요?
 
 > 잠재 디리클레 할당(Latent Dirichlet Allocation, LDA)
+
 - LDA는 **문서들은 토픽들의 혼합으로 구성되어져 있으며, 토픽들은 확률 분포에 기반하여 단어들을 생성한다**고 가정
 - 데이터가 주어지면 LDA는 토픽을 문서가 생성되던 과정을 역추적
 - LDA는 각 문서의 **토픽 분포**와 **각 토픽 내의 단어 분포**를 추정
@@ -299,24 +305,26 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 #### SVM은 왜 반대로 차원을 확장시키는 방식으로 동작할까요? SVM은 왜 좋을까요?
 
 > SVM(Support Vector Machine)
+
 - SVM은 데이터가 사상된 공간에서 **경계로 표현**되며, 공간상에 존재하는 **여러 경계 중 가장 큰 폭을 가진 경계를 찾는다.**
 
 <img src="../images/adc/machine-learning/SVM.PNG" width=300>
 
 - SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데, 비선형 분류에서는 입력자료를 다차원 공간상으로 맵핑할 때 <strong>커널 트릭(kernel trick)</strong>을 사용하기도 한다.
-    - 원공간(Input Space)의 데이터를 선형분류가 가능한 고차원 공간(Feature Space)으로 매핑한 뒤 두 범주를 분류하는 초평면을 찾는다. (Kernel-SVM)
+  - 원공간(Input Space)의 데이터를 선형분류가 가능한 고차원 공간(Feature Space)으로 매핑한 뒤 두 범주를 분류하는 초평면을 찾는다. (Kernel-SVM)
 
 <img src="../images/adc/machine-learning/SVM2.PNG" width=430>
 <img src="../images/adc/machine-learning/SVM3.PNG" width=430>
 
-|장점|단점|
-|---|---|
-|분류와 회귀에 모두 사용할 수 있다.|데이터 전처리와 매개변수 설정에 따라 정확도가 달라질 수 있다.|
-|신경망 기법에 비해 과적합 정도가 낮다.|예측이 어떻게 이루어지는지에 대한 이해와 모델에 대한 해석이 어렵다.|
-|예측의 정확도가 높다.|대용량 데이터에 대한 모델 구축 시 속도가 느리며,메모리 할당량이 크다.|
-|저차원과 고차원 데이터에 대해서 모두 잘 작동한다.||
+| 장점                                              | 단점                                                                  |
+| ------------------------------------------------- | --------------------------------------------------------------------- |
+| 분류와 회귀에 모두 사용할 수 있다.                | 데이터 전처리와 매개변수 설정에 따라 정확도가 달라질 수 있다.         |
+| 신경망 기법에 비해 과적합 정도가 낮다.            | 예측이 어떻게 이루어지는지에 대한 이해와 모델에 대한 해석이 어렵다.   |
+| 예측의 정확도가 높다.                             | 대용량 데이터에 대한 모델 구축 시 속도가 느리며,메모리 할당량이 크다. |
+| 저차원과 고차원 데이터에 대해서 모두 잘 작동한다. |                                                                       |
 
 #### References
+
 - [서포트 벡터 머신 (Support Vector Machine) - ratsgo's blog](https://ratsgo.github.io/machine%20learning/2017/05/23/SVM/)
 - [Kernel-SVM - ratsgo's blog](https://ratsgo.github.io/machine%20learning/2017/05/30/SVM3/)
 - [Support Vector Machine (SVM)의 개념 - butter_shower](https://butter-shower.tistory.com/7)
@@ -333,14 +341,15 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 데이터에서 변수들에 대한 **조건부 독립을 가정**하는 알고리즘으로 클래스에 대한 사전 정보와 데이터로부터 추출된 정보를 결합하고, <strong>베이즈 정리(Bayes Theorem)</strong>를 이용하여 어떤 데이터가 특정 클래스에 속하는지 분류하는 알고리즘이다.
 
-|장점|단점|
-|---|---|
-|단순하고 빠르며 매우 효과적이다|모든 속성은 동등하게 중요하고 독립적이라는 알려진 결함 가정에 의존한다|
-|노이즈와 결측 데이터가 있어도 잘 수행한다|수치 속성으로 구성된 많은 데이터셋에 대해 이상적이지 않다|
-|훈련에 대한 상대적으로 적은 예제가 필요하지만 매우 많은 예제도 잘 수행한다|추정된 확률은 예측된 범주보다 덜 신뢰적이다|
-|예측에 대한 추정된 확률을 얻기 쉽다||
+| 장점                                                                       | 단점                                                                   |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| 단순하고 빠르며 매우 효과적이다                                            | 모든 속성은 동등하게 중요하고 독립적이라는 알려진 결함 가정에 의존한다 |
+| 노이즈와 결측 데이터가 있어도 잘 수행한다                                  | 수치 속성으로 구성된 많은 데이터셋에 대해 이상적이지 않다              |
+| 훈련에 대한 상대적으로 적은 예제가 필요하지만 매우 많은 예제도 잘 수행한다 | 추정된 확률은 예측된 범주보다 덜 신뢰적이다                            |
+| 예측에 대한 추정된 확률을 얻기 쉽다                                        |                                                                        |
 
 #### References
+
 - [쉽고 강력한 머신러닝, 나이브 베이즈 분류 (Naive Bayes Classification)- 자비스가 필요해](https://needjarvis.tistory.com/621)
 - [나이브 베이즈 알고리즘의 장점과 단점 - 웹개발공작소](http://w3devlabs.net/wp/?p=17273)
 - [ADP 필기 올패키지 데이터 분석 전문가](https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=ADP+%ED%95%84%EA%B8%B0+%EC%98%AC%ED%8C%A8%ED%82%A4%EC%A7%80+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%B6%84%EC%84%9D+%EC%A0%84%EB%AC%B8%EA%B0%80)
@@ -354,23 +363,25 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 [1번](#1) 참고
 
 - 회귀
-    - <!-- $R^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/VhPpSHpPzC.svg"> (결정계수, Coefficient of determination)
-    <img src="../images/adc/machine-learning/R2.jpg" height=90>
 
-    - <!-- $adj R^2, R_a^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/e0vHtnZyTf.svg"> (수정된 결정계수, adjusted coefficient of determination)
-    <img src="../images/adc/machine-learning/adjR2.jpg" height=100>
+  - <!-- $R^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/VhPpSHpPzC.svg"> (결정계수, Coefficient of determination)
+  <img src="../images/adc/machine-learning/R2.jpg" height=90>
+
+  - <!-- $adj R^2, R_a^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/e0vHtnZyTf.svg"> (수정된 결정계수, adjusted coefficient of determination)
+  <img src="../images/adc/machine-learning/adjR2.jpg" height=100>
 
 - 분류
-    - Log Loss/Binary Crossentropy
 
-        <img src="../images/adc/machine-learning/log_loss.PNG" height=30>
+  - Log Loss/Binary Crossentropy
 
-    - Categorical Crossentropy
+      <img src="../images/adc/machine-learning/log_loss.PNG" height=30>
 
-        <img src="../images/adc/machine-learning/categorical_crossentropy.PNG" height=70>
+  - Categorical Crossentropy
 
+      <img src="../images/adc/machine-learning/categorical_crossentropy.PNG" height=70>
 
 #### References
+
 - [상관계수 & 결정계수 & 수정된 결정계수 - 모찌의 맛집 통계](https://mansoostat.tistory.com/76)
 - [[결정계수] R square와 adjusted R square - specialscene](https://specialscene.tistory.com/63)
 - [3 Best metrics to evaluate Regression Model?](https://towardsdatascience.com/what-are-the-best-metrics-to-evaluate-your-regression-model-418ca481755b)
@@ -383,25 +394,30 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 #### Association Rule의 Support, Confidence, Lift에 대해 설명해주세요.
 
 > 연관규칙분석(Association Analysis)
+
 - 연관성 분석은 흔히 장바구니 분석(Market Basket Analysis) 또는 서열분석(Sequence Analysis)이라고 불린다.
 - 기업의 데이터베이스에서 상품의 구매, 서비스 등 일련의 거래 또는 사건들 간의 규칙을 발견하기 위해 적용한다.
 
 1. Support(지지도)
+
 - 전체 거래 중 항목 A와 항목 B를 동시에 포함하는 거래의 비율로 정의한다.
 
 <img src="../images/adc/machine-learning/support.PNG" height=60>
 
 2. Confidence(신뢰도)
+
 - 항목 A를 포함한 거래 중에서 항목 A와 항목 B가 같이 포함될 확률이다. 연관성의 정도를 파악할 수 있다.
 
 <img src="../images/adc/machine-learning/confidence.PNG" height=60>
 
 3. Lift(향상도)
+
 - A가 구매되지 않았을 때 품목 B의 구매확률에 비해 A가 구매됐을 때 품목 B의 구매확률의 증가 비이다. 연관규칙 A→B는 품목 A와 품목 B의 구매가 서로 관련이 없는 경우에 향상도가 1이 된다.
 
 <img src="../images/adc/machine-learning/lift.PNG" height=60>
 
 #### References
+
 - [[R 연관규칙(Association Rule)] 지지도(support), 신뢰도(confidence), 향상도(lift), IS측도, 교차지지도 - R, Python 분석과 프로그래밍의 친구 (by R Friend)](https://rfriend.tistory.com/191)
 - [ADP 필기 올패키지 데이터 분석 전문가](https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=ADP+%ED%95%84%EA%B8%B0+%EC%98%AC%ED%8C%A8%ED%82%A4%EC%A7%80+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%B6%84%EC%84%9D+%EC%A0%84%EB%AC%B8%EA%B0%80)
 
@@ -412,6 +428,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 #### 최적화 기법중 Newton’s Method와 Gradient Descent 방법에 대해 알고 있나요?
 
 > Newton's Method
+
 - 방정식 <!-- $f(x)=0$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/3B52psPf6O.svg">의 해를 근사적으로 찾을 때 사용되는 방법
 - 현재 x값에서 접선을 그리고 접선이 x축과 만나는 지점으로 x를 이동시켜 가면서 점진적으로 해를 찾는 방법
 - 초기값을 잘 주면 금방 해를 찾을 수 있지만 잘못 주면 시간이 오래 걸리거나 아예 해를 찾지 못할 수 있다.
@@ -425,6 +442,7 @@ Newton's method를 수식화하면 아무 값이나 초기값 <!-- $x^1$ --> <im
 종료 조건은 x 값의 변화가 거의 없을 때까지이다. 즉, <!-- $\left|x^{t+1}-x^t\right|$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/rTWws9VGwB.svg">이 매우 작은 값이면 Newton's method를 종료하고 <!-- $x=x^{t+1}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/01BPy35Emb.svg">이 해, 즉 <!-- $f(x^{t+1})=0$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/GUlky4w0I7.svg"> 이라고 생각하는 것이다.
 
 > Gradient Descent
+
 - <!-- $f^\prime(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/THO6FX4QLH.svg">가 0이 되는 점을 찾는 방법
 - 미분하여 극소점을 찾아가는 방법 (local minimum에 빠질수도 있다는 문제점이 있다)
 - 모든 차원과 모든 공간에서 적용이 가능
@@ -434,9 +452,10 @@ Gradient Descent 방법은 그레디언트의 특성을 이용하여 어떤 비�
 <img src="../images/adc/machine-learning/gradient2.PNG" height=350>
 
 #### References
+
 - [뉴턴법/뉴턴-랩슨법의 이해와 활용(Newton's method) - 다크 프로그래머](https://darkpgmr.tistory.com/58)
 - [Gradient Descent 탐색 방법 - 다크 프로그래머](https://darkpgmr.tistory.com/133)
-- [4주차_#2. 최적화 기법중 Newton's Method와 Gradient Descent 방법을 설명하세요. - 내가 보려고 만든 공간](https://astralworld58.tistory.com/86)
+- [4주차\_#2. 최적화 기법중 Newton's Method와 Gradient Descent 방법을 설명하세요. - 내가 보려고 만든 공간](https://astralworld58.tistory.com/86)
 
 ---
 
@@ -444,7 +463,7 @@ Gradient Descent 방법은 그레디언트의 특성을 이용하여 어떤 비�
 
 #### 머신러닝(machine)적 접근방법과 통계(statistics)적 접근방법의 둘간에 차이에 대한 견해가 있나요?
 
-머신러닝적 접근방법과 통계적 접근방법의 차이는 두 방법의 주 목적이 다르다는 것이다. 
+머신러닝적 접근방법과 통계적 접근방법의 차이는 두 방법의 주 목적이 다르다는 것이다.
 
 머신러닝적 접근방법은 모델의 **예측 성공률**을 높이는게 목적이다.  
 따라서 모델의 신뢰도나 정교한 가정보다는 다양한 피쳐를 사용하여 (오버피팅을 감안하더라도) 높은 예측률을 달성하고자 한다.
@@ -453,6 +472,7 @@ Gradient Descent 방법은 그레디언트의 특성을 이용하여 어떤 비�
 따라서 모형을 복잡하지 않고 단순하게 만들고, 어떤 피쳐가 어떤 원인을 주는지 알 수 있도록 한다.
 
 #### References
+
 - [머신러닝과 전통적 통계학의 차이 - Hyunseok Choi](https://medium.com/@hyunseok/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EA%B3%BC-%EC%A0%84%ED%86%B5%EC%A0%81-%ED%86%B5%EA%B3%84%ED%95%99%EC%9D%98-%EC%B0%A8%EC%9D%B4-a560f0708db0)
 - [Machine Learning과 전통적 통계분석 방법의 차이](https://ek-koh.github.io/data%20analysis/ML-diff/)
 
@@ -468,11 +488,10 @@ Gradient Descent 방법은 그레디언트의 특성을 이용하여 어떤 비�
 
 하지만 시그모이드와 같은 비선형 함수를 선형 모델에 추가하여 XOR 문제를 해결하고, 편미분 체인룰을 사용한 오차역전파 방법으로 모델을 업데이트할 수 있게 되면서 레이어를 깊게 쌓은 딥러닝 인공신경망이 발전하였다.
 
-
 #### References
+
 - [1.2 딥러닝 이전: 머신 러닝의 간략한 역사 - 텐서 플로우 블로그](https://tensorflow.blog/%EC%BC%80%EB%9D%BC%EC%8A%A4-%EB%94%A5%EB%9F%AC%EB%8B%9D/1-2-%EB%94%A5%EB%9F%AC%EB%8B%9D-%EC%9D%B4%EC%A0%84-%EB%A8%B8%EC%8B%A0-%EB%9F%AC%EB%8B%9D%EC%9D%98-%EA%B0%84%EB%9E%B5%ED%95%9C-%EC%97%AD%EC%82%AC/)
 - [모두를 위한 딥러닝 - Sung Kim](https://www.youtube.com/watch?v=n7DNueHGkqE&list=PLlMkM4tgfjnLSOjrEJN31gZATbcj_MpUm&index=22)
-
 
 ---
 
@@ -489,6 +508,7 @@ ImageNet 과 같은 **거대하고 높은 품질의 데이터셋**이 모두에�
 
 
 #### References
+
 - [end-to-end 학습의 장단점 - 생각많은 소심남](https://talkingaboutme.tistory.com/entry/MLY-end-to-end-%ED%95%99%EC%8A%B5%EC%9D%98-%EC%9E%A5%EB%8B%A8%EC%A0%90)
 
 ---
@@ -496,16 +516,18 @@ ImageNet 과 같은 **거대하고 높은 품질의 데이터셋**이 모두에�
 ## #18
 
 #### ROC 커브에 대해 설명해주실 수 있으신가요?
+
 ROC 커브는 **이진분류 모델의 성능**을 나타내는 지표이다.
 
 모델이 참이라고 예측하는 경우는 **FPR** (False Positive Rate, 실제 값이 거짓일 때) 과 **TPR** (True Positive Rate, 실제 값이 참일 때) 두 경우로 나뉜다.  
 FPR 과 TPR 을 그래프에서 x 축, y 축으로 동시에 표현한 ROC 커브를 통해 모델이 얼마나 옳은 값을 잘 예측하는지 알 수 있게 된다.
 
-![ROC](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/ROC.png) 
+![ROC](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/ROC.png)
 
 ROC 커브가 좌상단과 가까운 경우 좋은 모델이라고 판단할 수 있다. 모델이 FPR 은 낮게, TPR 은 높게 예측하기 때문이다.
 
 #### References
+
 - [ROC curve - 공돌이의 수학 정리 노트](https://angeloyeo.github.io/2020/08/05/ROC.html)
 
 ---
@@ -514,13 +536,14 @@ ROC 커브가 좌상단과 가까운 경우 좋은 모델이라고 판단할 수
 
 #### 여러분이 서버를 100대 가지고 있습니다. 이때 인공신경망보다 Random Forest를 써야하는 이유는 뭘까요?
 
-**랜덤 포레스트**는 여러 결정 트리를 앙상블하여 하나의 모델로 구성하는 방법이다. 랜덤 포레스트에서는 각 서버를 모델의 특성을 이해하는 단일 결정 트리 (Decision tree) 로 **병렬**적이게 구성할 수 있다.  
+**랜덤 포레스트**는 여러 결정 트리를 앙상블하여 하나의 모델로 구성하는 방법이다. 랜덤 포레스트에서는 각 서버를 모델의 특성을 이해하는 단일 결정 트리 (Decision tree) 로 **병렬**적이게 구성할 수 있다.
 
 반면, **인공신경망**은 하나의 서버 자체가 모델의 특성을 모두 이해하는 end-to-end 구조로 **직렬**적이게 구성된다.
 
 따라서 서버가 100대 있을 때는, 이를 병렬적으로 활용할 수 있는 **랜덤 포레스트**를 사용한다.
 
 #### References
+
 - [Random Forest(랜덤 포레스트) 개념 정리 - Codesigner's Dev Story](https://eunsukimme.github.io/ml/2019/11/26/Random-Forest/)
 - [의사결정나무 - ratsgo's blog](https://ratsgo.github.io/machine%20learning/2017/03/26/tree/)
 - [출근 루틴, 하루 3문제 - Man-About-Town](https://yongwookha.github.io/MachineLearning/2021-01-29-interview-question)
@@ -533,14 +556,14 @@ ROC 커브가 좌상단과 가까운 경우 좋은 모델이라고 판단할 수
 
 K-means 는 특성이 비슷한 데이터를 같은 그룹으로 묶어주는 클러스터링 알고리즘으로, k 개의 군집 개수를 정하고 군집의 중심점을 예측하여 각 데이터와 거리를 비교한 후 군집을 결정한다.
 
-K-means 알고리즘의 단점은 다음과 같다.  
+K-means 알고리즘의 단점은 다음과 같다.
+
 1. K 를 몇 개로 설정하냐에 따라 성능이 달라진다.
 2. K 개 군집의 중심점을 예측하여야 하는데, 어디를 중심점으로 두냐에 따라 성능이 달라진다.
-3. 데이터가 잘 모여있는 경우에 효과적이지, 노이즈가 많은 경우 효과적이지 않다. 
-
-
+3. 데이터가 잘 모여있는 경우에 효과적이지, 노이즈가 많은 경우 효과적이지 않다.
 
 #### References
+
 - [머신러닝 - 7. K-평균 클러스터링(K-means Clustering) - 귀퉁이 서재](https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-7-K-%ED%8F%89%EA%B7%A0-%EA%B5%B0%EC%A7%91%ED%99%94-K-means-Clustering)
 
 ---
@@ -549,7 +572,7 @@ K-means 알고리즘의 단점은 다음과 같다.
 
 #### L1, L2 정규화에 대해 설명해주세요.
 
-정규화(**일반화**)의 목적은 모델이 학습 데이터에 오버피팅되지 않고 처음 보는 테스트 데이터에도 좋은 성능을 내도록 만드는 것이다. 
+정규화(**일반화**)의 목적은 모델이 학습 데이터에 오버피팅되지 않고 처음 보는 테스트 데이터에도 좋은 성능을 내도록 만드는 것이다.
 
 모델의 학습은 loss 함수를 최소화하는 방향으로 진행된다. 
 
@@ -565,18 +588,22 @@ L1 정규화는 특정 피쳐의 값이 매우 낮은 경우 (아웃라이어) 0
 L2 정규화는 특정 웨이트의 값이 매우 낮아도 0에 수렴되지는 않고 가까워지는 특징이 있다. 이는 L1 정규화에 비해 강하지 않게 정규화를 실행하여 항상 선형 모델에 일반화 효과를 줄 수 있다.  
 ![L2 정규화](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/l2_regularization.png)
 
- 
-> norm 은 벡터의 크기를 나타내는 것으로 L1 norm 은 벡터의 절댓값 크기를 나타내고, L2 norm 은 직선 거리 (제곱의 루트) 를 나타낸다.  
+loss 식에 람다 \* 모델의 웨이트에 대한 L1 or L2 norm 을 더해줌으로써 모델의 일반화가 가능해진다.
+
+loss 는 데이터 값과 추정 값의 차이로 모델은 loss 를 최소화하는 방향으로 학습하는데, L1 or L2 정규화를 사용하면 loss 가 웨이트의 크기만큼 커지기 때문에 데이터 값에 예측 값이 fit 해지지 않기 때문이다.
+
+\*norm 은 벡터의 크기를 나타내는 것으로 L1 norm 은 벡터의 절댓값 크기를 나타내고, L2 norm 은 직선 거리 (제곱의 루트) 를 나타낸다.
 ![norm](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/norm.png)  
 위 그림에서 초록선은 L2 norm 을 의미하고, 나머지 선은 L1 norm 을 의미한다.
- 
-> L1 loss  
-![L1 loss](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/l1_loss.png)  
+
+L1 loss
+![L1 loss](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/l1_loss.png)
 
 > L2 loss  
 ![L2 loss](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/l2_loss.png)
 
 #### References
+
 - [딥러닝 용어 정리, L1 Regularization, L2 Regularization 의 이해, 용도와 차이 설명 - 빛나는 나무](https://light-tree.tistory.com/125)
 - [L1, L2 Norm, Loss, Regularization? - 생각 정리](https://junklee.tistory.com/29)
 - [릿지회귀, 라쏘회귀, 엘라스틱넷 - 대학원생이 쉽게 설명해보기](https://hwiyong.tistory.com/93)
@@ -587,16 +614,16 @@ L2 정규화는 특정 웨이트의 값이 매우 낮아도 0에 수렴되지는
 
 #### Cross Validation은 무엇이고 어떻게 해야하나요?
 
-cross validation(교차검증)이란 train(학습) 데이터로 학습한 모델이, 학습에 사용되지 않은 validation(검증) 데이터를 기준으로 얼마나 잘 동작하는지 확인하는 것이다. 여기서 주의할 점은 train 데이터셋과 validation 데이터셋에는 test 데이터셋이 포함되면 안된다는 것이다.  
+cross validation(교차검증)이란 train(학습) 데이터로 학습한 모델이, 학습에 사용되지 않은 validation(검증) 데이터를 기준으로 얼마나 잘 동작하는지 확인하는 것이다. 여기서 주의할 점은 train 데이터셋과 validation 데이터셋에는 test 데이터셋이 포함되면 안된다는 것이다.
 
-교차검증을 통해 얻을 수 있는 장단점은 아래와 같다.  
+교차검증을 통해 얻을 수 있는 장단점은 아래와 같다.
 
 - 적은 데이터에 대한 validation 신뢰성을 높일 수 있다.
 - 모든 데이터셋을 훈련에 활용할 수 있으므로 데이터 편중을 막을 수 있다. (k-fold 경우)
 - 검증 결과에 따라 더 일반화된 모델을 만들 수 있다.
 - 모델 학습에 오랜 시간이 소요된다.
 
-교차검증 기법의 종류는 아래와 같다. (validation 데이터셋을 어떻게 지정하느냐에 따라 달라진다.)  
+교차검증 기법의 종류는 아래와 같다. (validation 데이터셋을 어떻게 지정하느냐에 따라 달라진다.)
 
 - 홀드 아웃 교차검증(Holdout Cross Validation)
 - K-겹 교차검증(K-fold Cross Validation)
@@ -604,9 +631,9 @@ cross validation(교차검증)이란 train(학습) 데이터로 학습한 모델
 
 > **홀드아웃 교차검증** 방법은 일정한 비율의 validation 데이터셋 하나를 지정하여 검증 데이터셋으로 사용하는 것이다. **k-겹 교차검증** 방법은 train 데이터를 k개의 fold로 나누어, 그 중 하나의 fold를 validation 데이터셋으로 삼아 검증하는 방법을 k번 반복하여, 그 평균을 결과로서 사용하는 방법이다. **계층별 k-겹 교차검증** 방법은 k-겹 교차검증 방법에서 fold를 나눌때, 랜덤하게 fold를 지정하는 것이 아닌, 각 클래스별 비율을 고려하여 fold를 구성하는 방법이다.
 
-<img src="/images/sally/2021-04-25-02-15-37.png" width="70%">  
+<img src="/images/sally/2021-04-25-02-15-37.png" width="70%">
 
-교차검증 방법 중, 대표적인 `K-Fold 교차검증`의 세부적인 동작방법은 아래와 같다.  
+교차검증 방법 중, 대표적인 `K-Fold 교차검증`의 세부적인 동작방법은 아래와 같다.
 
 1. train 데이터셋을 k개의 fold로 나누고, 그 중 하나를 validation 데이터셋으로 지정한다.
 2. validation 데이터셋을 제외한 나머지 폴드들을 train 데이터셋으로 사용하여 모델을 학습한다.
@@ -628,7 +655,7 @@ cross validation(교차검증)이란 train(학습) 데이터로 학습한 모델
 
 #### XGBoost을 아시나요? 왜 이 모델이 캐글에서 유명할까요?
 
-**XGBoost(eXtreme Gradient Boosting)** 이란, 트리 기반의 앙상블 학습에서 가장 각광받고 있는 알고리즘 중 하나이다. Kaggle 경연대회에서 상위를 차지한 많은 과학자들이 XGBoost를 이용하면서 널리 알려졌다. GBM에 기반하고 있지만, GBM의 단점인 느린 수행시간 및 과적합 규제(Regularization) 부재 등의 문제를 해결해서 각광받고 있다.  
+**XGBoost(eXtreme Gradient Boosting)** 이란, 트리 기반의 앙상블 학습에서 가장 각광받고 있는 알고리즘 중 하나이다. Kaggle 경연대회에서 상위를 차지한 많은 과학자들이 XGBoost를 이용하면서 널리 알려졌다. GBM에 기반하고 있지만, GBM의 단점인 느린 수행시간 및 과적합 규제(Regularization) 부재 등의 문제를 해결해서 각광받고 있다.
 
 XGBoost의 장점은 다음과 같다.
 
@@ -642,7 +669,7 @@ XGBoost의 장점은 다음과 같다.
 **GBM(Gradient Boosting Algorithm)** 이란 회귀분석 또는 분류 분석을 수행할 수 있는 **예측모형**이며 예측모형의 **앙상블 방법론** 중 **부스팅** 계열에 속하는 알고리즘이다. LightGBM, CatBoost, XGBoost는 모두 GBM을 기반으로 만들어졌다. (자세한 내용은 [Gradient Boosting Algorithm의 직관적인 이해 - DeepPlay](https://3months.tistory.com/368) 참고)
 
 > **Q.** boosting 이라는 테크닉 자체가 sequential 한데 어떻게 병렬처리를 할까?  
-> **A.** 세가지 가능성이 제기된다. 나뉜 분기마다 각각 병렬처리하거나, 분기가 나뉘는 지점 계산을 병렬처리 하거나, 처음부터 feature별 정렬을 통해 병렬처리를 할 수 있다. (자세한 내용은 [XGBoost의 병렬처리가 어떻게 가능할까? - GoLab](http://machinelearningkorea.com/2019/07/25/xgboost-%EC%9D%98-%EB%B3%91%EB%A0%AC%EC%B2%98%EB%A6%AC%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C/) 참고)  
+> **A.** 세가지 가능성이 제기된다. 나뉜 분기마다 각각 병렬처리하거나, 분기가 나뉘는 지점 계산을 병렬처리 하거나, 처음부터 feature별 정렬을 통해 병렬처리를 할 수 있다. (자세한 내용은 [XGBoost의 병렬처리가 어떻게 가능할까? - GoLab](http://machinelearningkorea.com/2019/07/25/xgboost-%EC%9D%98-%EB%B3%91%EB%A0%AC%EC%B2%98%EB%A6%AC%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C/) 참고)
 
 #### References
 
@@ -655,13 +682,13 @@ XGBoost의 장점은 다음과 같다.
 
 #### 앙상블 방법엔 어떤 것들이 있나요?
 
-<img src="/images/sally/2021-04-25-03-05-23.png" width="70%">  
+<img src="/images/sally/2021-04-25-03-05-23.png" width="70%">
 
-**앙상블(Ensemble)** 은 여러개의 모델을 조합해서 그 결과를 뽑아 내는 방법이다. 정확도가 높은 강한 모델을 하나 사용하는 것보다, 정확도가 낮은 약한 모델을 여러개 조합 하는 방식이 정확도가 높다는 방법에 기반한 방법인데, 앙상블은 방식에 따라서 Bagging과 Boosting으로 분류된다.  
+**앙상블(Ensemble)** 은 여러개의 모델을 조합해서 그 결과를 뽑아 내는 방법이다. 정확도가 높은 강한 모델을 하나 사용하는 것보다, 정확도가 낮은 약한 모델을 여러개 조합 하는 방식이 정확도가 높다는 방법에 기반한 방법인데, 앙상블은 방식에 따라서 Bagging과 Boosting으로 분류된다.
 
-**배깅(Bagging, Bootstrap Aggregation)** 이란 샘플을 여러번 뽑아(Bootstrap) 각 모델을 학습시켜 결과물을 집계(Aggregation)하는 방법이다.  
+**배깅(Bagging, Bootstrap Aggregation)** 이란 샘플을 여러번 뽑아(Bootstrap) 각 모델을 학습시켜 결과물을 집계(Aggregation)하는 방법이다.
 
-배깅은 우선, 데이터로부터 bootstrap 한다. (복원 랜덤 샘플링) bootstrap한 데이터로 모델을 학습시키고, 학습된 모델의 결과를 집계하여 최종 결과 값을 구한다. 카테고리 데이터는 투표 방식(Voting)으로 결과를 집계하며, 연속형 데이터는 평균으로 집계한다. Bagging을 사용한 대표적인 기법에는 Random Forest 방법이 있다.  
+배깅은 우선, 데이터로부터 bootstrap 한다. (복원 랜덤 샘플링) bootstrap한 데이터로 모델을 학습시키고, 학습된 모델의 결과를 집계하여 최종 결과 값을 구한다. 카테고리 데이터는 투표 방식(Voting)으로 결과를 집계하며, 연속형 데이터는 평균으로 집계한다. Bagging을 사용한 대표적인 기법에는 Random Forest 방법이 있다.
 
 **부스팅(Boosting)** 이란 가중치를 활용하여 약 분류기(weak learner)를 강 분류기(strong learner)로 만드는 방법이다. 배깅의 결정트리가 서로 독립적으로 결과를 예측하는 것에 반해, 부스팅은 이전 모델이 예측하면, 그 예측 결과에 따라 데이터에 가중치가 부여되고, 부여된 가중치가 다음 모델 학습에 영향을 주는 방법이다. 오답에 대해서는 높은 가중치를 부여하고, 정답에 대해서는 낮은 가중치를 부여하므로, 오답을 정답으로 맞추기 위해 오답에 더 집중하게 되는 방법이다. 부스팅은 배깅에 비해 오류율이 낮다. 그러나 속도가 느리고 오버피팅될 가능성이 있다. GBM(Gradient Boosting) 방법이 대표적이다.
 
@@ -678,21 +705,21 @@ XGBoost의 장점은 다음과 같다.
 **특징(feature)** 이란, 샘플(데이터)을 잘 설명하는 측정가능한 속성이다. 특징을 통해 특정 샘플을 수치화하여 나타낼 수 있다.  
 **특징벡터(feature vector)** 란 피쳐(feature)들의 집합이다. 굳이 벡터로 표시하는 이유는 수학적으로 다루기 편하기 때문이다.  
 데이터별로 어떤 특징을 가지고 있는지 찾아내고, 그것을 토대로 데이터를 벡터로 변환하는 작업을 **특징추출(feature extraction)** 이라고 한다.  
-**특징 공간(feature space)** 이란 관측값들이 있는 공간을 의미한다. 이 특징 공간은 여러 차원으로 구성될 수 있다. 어떤 데이터를 특징공간의 하나의 벡터로 표현하는 경우, 여러 특징 변수가 특징벡터에 영향을 줄 수 있다. 예를들어, 특징 변수가 하나인 데이터는 1차원 특징 공간에 나타나고, 특징 변수가 N개라면 N차원의 특징 공간에 나타낼 수 있다.  
+**특징 공간(feature space)** 이란 관측값들이 있는 공간을 의미한다. 이 특징 공간은 여러 차원으로 구성될 수 있다. 어떤 데이터를 특징공간의 하나의 벡터로 표현하는 경우, 여러 특징 변수가 특징벡터에 영향을 줄 수 있다. 예를들어, 특징 변수가 하나인 데이터는 1차원 특징 공간에 나타나고, 특징 변수가 N개라면 N차원의 특징 공간에 나타낼 수 있다.
 
 d-차원 데이터의 특징 벡터는 다음과 같이 표시된다.  
-<img src="/images/sally/2021-04-25-03-59-10.png" width="20%">  
+<img src="/images/sally/2021-04-25-03-59-10.png" width="20%">
 
 > **컴퓨터비전(이미지)** 에서의 특징은 edge, corner 등을 의미한다. 픽셀 값이 급격히 변화하는 곳, 밝기의 변화, 색상의 변화, 그래디언트의 방향 등의 매칭 정보등을 특징으로 삼는다. SIFT, SURF 등의 방법이 존재한다.  
 > **자연어처리(텍스트)** 에서의 특징은 단어, 형태소, 서브워드, 토큰 등으로 표현될 수 있으며, BOW(Bag-of-Words)는 문서에서 단어의 발생을 설명하는 텍스트의 벡터 표현이다. 만약 8개의 단어로 이루어진 문장을 BoW로 만들면, 8차원(dimension)의 vector로서 하나의 단어를 표현할 수 있다.  
-> **정형데이터**에서의 특징은 각 attribute(열)를 의미한다. 키, 나이, 국적 등이 특징으로 사용될 수 있다.  
+> **정형데이터**에서의 특징은 각 attribute(열)를 의미한다. 키, 나이, 국적 등이 특징으로 사용될 수 있다.
 
 #### References
 
-- [피쳐(기계학습) - 위키백과](https://ko.wikipedia.org/wiki/%ED%94%BC%EC%B3%90_(%EA%B8%B0%EA%B3%84_%ED%95%99%EC%8A%B5))
+- [피쳐(기계학습) - 위키백과](<https://ko.wikipedia.org/wiki/%ED%94%BC%EC%B3%90_(%EA%B8%B0%EA%B3%84_%ED%95%99%EC%8A%B5)>)
 - [4)머신러닝이란? - TCPschool.com](http://www.tcpschool.com/deep2018/deep2018_machine_learning)
 - [머신러닝-다차원 특징공간과 차원의 저주 - 예비 개발자](http://blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221323034856)
-- [OpenCV-특징검출, 디스크립터, 매칭 - JeongYongHwang](https://wjddyd66.github.io/opencv/OpenCV(8)/)
+- [OpenCV-특징검출, 디스크립터, 매칭 - JeongYongHwang](<https://wjddyd66.github.io/opencv/OpenCV(8)/>)
 - [자연어처리 Bag of Words](https://bsm8734.github.io/posts/bc-d016-2-nlp-bag-of-words/)
 - [자연어의 피처와 전처리 - GeumjaeLee](https://brunch.co.kr/@geumjaelee/4)
 
@@ -706,7 +733,7 @@ d-차원 데이터의 특징 벡터는 다음과 같이 표시된다.
 
 머신러닝, 딥러닝 등을 사용하여 모델을 생성하는 이유는 `기계가 사람 대신 어떠한 결정을 내리기 위함`이다. 따라서 모델은 `결정을 대신하는 기계, 결정기`라고 볼 수 있다.
 이 관점에서, 좋은 결정(옳은 결정)을 내리는 모델이 좋은 모델이다. 주어진 학습 데이터에 과적합된 모델의 경우, 주어진 데이터와 조금만 다른 데이터가 들어오면 제대로 분류하지 못하는 상황이 발생된다.
-그러므로 **모델의 일반화**가 이루어져, 새로운 데이터에 대해서도 적정한 수준의 성능을 보이는 모델이 좋은 모델이라고 할 수 있다.  
+그러므로 **모델의 일반화**가 이루어져, 새로운 데이터에 대해서도 적정한 수준의 성능을 보이는 모델이 좋은 모델이라고 할 수 있다.
 
 예를들어, 예측이 목적이라면, 실제 정답과 예측 값의 차이(loss, cost, error)를 최소화 하는 모델이 가장 좋은 모델이다. 또한 확률을 추정하는 경우에는 가능성(likelihood)을 최대화하는 모델이 좋은 모델이라고 할 수 있다.
 
@@ -724,11 +751,11 @@ d-차원 데이터의 특징 벡터는 다음과 같이 표시된다.
 
 50개의 작은 의사결정 나무는 앙상블에서 `Bagging` 기법을 사용한 모델로 볼 수 있다. 따라서 Bagging의 대표적인 방법인 `Random Forest` 방법이 왜 좋은지 설명하는 것으로, 왜 50개의 작은 의사결정 나무가 더 나은지 설명하고자 한다.
 
-<img src="/images/sally/2021-04-25-05-18-50.png" width="100%">  
+<img src="/images/sally/2021-04-25-05-18-50.png" width="100%">
 
 큰 트리는 작은 편향(bias)와 큰 분산(variance)를 갖기 때문에, 매우 깊이 성장한 트리는 훈련데이터에 대해 과적합(overfitting)하게 된다. Random Forest 방식으로 학습하면, 트리들의 편향은 그대로 유지하면서, **여러 데이터셋/여러 경우에 대해 학습하기 떄문에 분산을 감소**시킬 수 있다. 또한 한 개의 결정트리의 경우, train 데이터에 있는 노이즈에 대해 매우 민감하지만, 여러 트리들을 만들면서 평균을 내면, **노이즈에 대해 강인**해질 수 있다. 따라서 하나의 깊은/큰 의사결정 나무보다 50개의 작은 의사결정 나무가 더 좋은 모델을 완성시킨다고 할 수 있다.
 
-> **Bagging(Bootstrap Aggregating)** 은 Bootstrap(반복, 복원추출)하고, 이를 Aggregation(집계)하는 방법이다. 원래 데이터셋에 대해서 여러개의 작은 데이터셋 N개를 샘플링해서 만든다음, 각각의 데이터를 작은 모델 N개로 학습을 시킨다. 그 다음 학습된 N개의 모델을 모두 하나로 합쳐서 최종적인 모델로 사용하는 방법론을 의미한다. 결국, 병렬적으로 데이터를 나누어 여러 개의 모델을 동시에 학습시키는 방법이다.  
+> **Bagging(Bootstrap Aggregating)** 은 Bootstrap(반복, 복원추출)하고, 이를 Aggregation(집계)하는 방법이다. 원래 데이터셋에 대해서 여러개의 작은 데이터셋 N개를 샘플링해서 만든다음, 각각의 데이터를 작은 모델 N개로 학습을 시킨다. 그 다음 학습된 N개의 모델을 모두 하나로 합쳐서 최종적인 모델로 사용하는 방법론을 의미한다. 결국, 병렬적으로 데이터를 나누어 여러 개의 모델을 동시에 학습시키는 방법이다.
 
 > **Random Forest**는 여러 의사 결정 나무를 생성한 후에 다수결(hard voting) 또는 평균(soft voting)에 따라 출력을 예측하는 알고리즘이다. 즉 의사 결정 나무와 bagging을 혼합한 형태라고 볼 수 있다. Random Forest의 특징은 bootstrap을 이용하여 학습 데이터셋에서 다양한 샘플을 추출하여 일부만 한번의 학습에 사용한다는 것이다. 데이터 샘플링 및 변수 선택을 통해 의사 결정 나무의 다양성을 확보할 수 있다. 이를 통해 예측의 변동성이 줄어들고, 과적합을 방지할 수 있어 결측치에 대해 강건하다는 장점을 가진다. 그러나 데이터의 수가 많아지면 의사결정나무에 비해 속도가 크게 떨어지고, 결과에 대한 해석이 어렵다는 단점이 있다.
 
@@ -754,10 +781,10 @@ d-차원 데이터의 특징 벡터는 다음과 같이 표시된다.
 
 로지스틱 회귀는 **시그모이드 함수(sigmoid function)** 를 통해 선형함수를 0과 1 사이의 함수로 바꾼 것이며, S자 형태를 보인다.
 시그모이드 함수의 정의는 아래와 같다.  
-<img src="/images/sally/2021-04-25-07-21-21.png" width="16%">  
+<img src="/images/sally/2021-04-25-07-21-21.png" width="16%">
 
 로지스틱 회귀의 가설함수는 다음과 같다.  
-<img src="/images/sally/2021-04-25-11-10-50.png" width="40%">  
+<img src="/images/sally/2021-04-25-11-10-50.png" width="40%">
 
 x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값을 반환한다. 확률은 **0에서 1사이의 범위 내에 들어와야하므로** 이러한 형태가 적합하다.
 이렇게 H(x)의 값이 0과 1사이로 나오면, 위의 Hypothesis 함수로 regression을 한 결과값이 threshold(ex.0.5) 이상인 경우엔 1로 분류하고, threshold 보다 작으면 0으로 분류하면 되기 떄문이다.
@@ -767,7 +794,7 @@ x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값�
 `그림1`과 같이 주어진 데이터를 표현하는 그래프를 그려, 적절한 지점을 기준으로 두 그룹으로 분류할 수 있다.
 이때 `그림2`의 `new` 데이터가 새로 들어왔다고 해보자. 그래프는 새로운 데이터 `new`의 영향을 받아, 아래로 기울어진 형태로 업데이트되어, `그림3`의 붉은색 그래프 형태가 된다.
 이렇게 되면, 원래는 1로 잘 분류되던 것들의 예측값이 기존 threshold 아래로 내려가게되어, 0으로 분류되어버리는 문제가 발생한다.  
-![new](/images/sally/2021-04-25-10-32-14.png)  
+![new](/images/sally/2021-04-25-10-32-14.png)
 
 선형회귀 함수는 어떤 입력값이 들어오느냐에 따라 **0과 1 사이의 범위를 벗어나기도** 한다.  
 또한, `H(x) = 100x`라는 가설함수(Hypothesis function)이 있다고 하자. x가 0.01 이상인 경우는 모두 1로 x가 0 이하인 경우는 모두 0으로 분류하게 된다. 이처럼 **x값에 너무 민감하게 반응**하는 모델이 만들어질 수 있다. 연산상으로는 매우 작은 값만 바뀌어도 아예 분류자체가 바뀌어버린다.  
@@ -790,13 +817,14 @@ x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값�
 OLS Regression은 회귀를 통해서 방정식의 상수 값들을 추정하는 데에 사용된다. n개의 입력값과 그에 대응하는 출력값 <!-- $(x_{i},y_{i})(1\leq i\leq n)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=(x_%7Bi%7D%2Cy_%7Bi%7D)(1%5Cleq%20i%5Cleq%20n)">이 있고, 이 계의 방정식이 변수 <!-- $x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x">와 <!-- $\beta=(\beta _{0},\beta _{1},\cdots ,\beta _{k})$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta%3D(%5Cbeta%20_%7B0%7D%2C%5Cbeta%20_%7B1%7D%2C%5Ccdots%20%2C%5Cbeta%20_%7Bk%7D)">인 상수 <!-- $\beta$에 대한 식 $f(x, \beta)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta%24%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%8B%9D%20%24f(x%2C%20%5Cbeta)">으로 주어질 때, <!-- $\sum _{i}(y_{i}-f(x_{i}, \beta))^{2}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Csum%20_%7Bi%7D(y_%7Bi%7D-f(x_%7Bi%7D%2C%20%5Cbeta))%5E%7B2%7D"> 의 값을 최소로 만드는 <!-- $\beta$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta">를 구하는 것이 문제의 목표이다.
 
 추정하고자 하는 파라미터 β에 대한 표현식을 다음과 같이 구할 수 있다.
+
 <!-- ${\hat {\beta}}=(\mathbf {X} ^{\rm {T}}\mathbf {X})^{-1}\mathbf {X}^{\rm {T}}\mathbf {y} ={\big (}\,{\textstyle \sum }\mathbf {x} _{i}\mathbf {x} _{i}^{\rm {T}}\,{\big )}^{-1}{\big (}\,{\textstyle \sum }\mathbf {x} _{i}y_{i}\,{\big)}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%7B%5Chat%20%7B%5Cbeta%7D%7D%3D(%5Cmathbf%20%7BX%7D%20%5E%7B%5Crm%20%7BT%7D%7D%5Cmathbf%20%7BX%7D)%5E%7B-1%7D%5Cmathbf%20%7BX%7D%5E%7B%5Crm%20%7BT%7D%7D%5Cmathbf%20%7By%7D%20%3D%7B%5Cbig%20(%7D%5C%2C%7B%5Ctextstyle%20%5Csum%20%7D%5Cmathbf%20%7Bx%7D%20_%7Bi%7D%5Cmathbf%20%7Bx%7D%20_%7Bi%7D%5E%7B%5Crm%20%7BT%7D%7D%5C%2C%7B%5Cbig%20)%7D%5E%7B-1%7D%7B%5Cbig%20(%7D%5C%2C%7B%5Ctextstyle%20%5Csum%20%7D%5Cmathbf%20%7Bx%7D%20_%7Bi%7Dy_%7Bi%7D%5C%2C%7B%5Cbig)%7D">  .
 
-<br>  
+<br>
 
 > **추가) OLS가 가지는 의미**
 
-![img](/images/sally/2021-04-25-05-54-21.png)  
+![img](/images/sally/2021-04-25-05-54-21.png)
 
 예를들어, 7개 데이터의 경향을 나타내는 추세선을 `그림2`와 같이 그렸다고 하자.
 이때 실제 데이터의 y값(실제값)과 추세선의 y값(예측값)의 차를 **잔차(Residual)** 라고 한다. (아래 그래프에서 잔차는 점선으로 표시)
