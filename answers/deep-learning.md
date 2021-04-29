@@ -172,7 +172,7 @@
 
 #### References
 
-- [[밑바닥 딥러닝] 신경망 - 코딩하는펭귄의 저장소](https://cooding-penguin.netlify.app/deep-learning/neural-network/#%EB%B9%84%EC%84%A0%ED%98%95-%ED%95%A8%EC%88%98)
+- [[밑바닥 딥러닝] 신경망 - 코딩하는펭귄의 저장소](https://cooding-penguin.netlify.app/dl-from-scratch/neural-network/#%EB%B9%84%EC%84%A0%ED%98%95-%ED%95%A8%EC%88%98)
 
 ---
 
@@ -303,6 +303,8 @@
 
 #### References
 
+- [Batch Normalization - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/116)
+
 ---
 
 ## #16-1
@@ -310,6 +312,8 @@
 #### Dropout의 효과는?
 
 #### References
+
+- [3.13. 드롭아웃(dropout) - Dive into Deep Learningfg](https://ko.d2l.ai/chapter_deep-learning-basics/dropout.html)
 
 ---
 
