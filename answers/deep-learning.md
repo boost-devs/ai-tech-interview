@@ -332,6 +332,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 #### References
 
 - [Batch Normalization - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/116)
+- [Understanding Batch Normalization for Neural Networks - towards data science](https://towardsdatascience.com/understanding-batch-normalization-for-neural-networks-1cd269786fa6)
 
 ---
 
@@ -341,7 +342,8 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### References
 
-- [3.13. 드롭아웃(dropout) - Dive into Deep Learningfg](https://ko.d2l.ai/chapter_deep-learning-basics/dropout.html)
+- [3.13. 드롭아웃(dropout) - Dive into Deep Learning](https://ko.d2l.ai/chapter_deep-learning-basics/dropout.html)
+- [An Intuitive Explanation to Dropout - towards data science](https://towardsdatascience.com/an-intuitive-explanation-to-dropout-749c7fb5395c)
 
 ---
 
@@ -463,6 +465,8 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### References
 
+- [What is a GPU and do you need one in Deep Learning? - towards data science](https://towardsdatascience.com/what-is-a-gpu-and-do-you-need-one-in-deep-learning-718b9597aa0d)
+
 ---
 
 ## #20-1
@@ -486,5 +490,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 #### 학습시 필요한 GPU 메모리는 어떻게 계산하는가?
 
 #### References
+
+- [Which GPU(s) to Get for Deep Learning: My Experience and Advice for Using GPUs in Deep Learning - Tim Dettmers](https://timdettmers.com/2020/09/07/which-gpu-for-deep-learning/)
 
 ---
