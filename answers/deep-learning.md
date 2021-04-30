@@ -218,7 +218,17 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 ## #12-4
 
-#### Bias는 왜 있는걸까?
+#### 편향(bias)는 왜 있는걸까?
+
+<div align='center' >
+<img src='../images/penguin/bias-example.png' height='250px'/>
+<br/>
+<small><strong>bias별 sigmoid 함수의 위치</strong></small>
+</div>
+
+<br/>
+
+편향(bias)는 활성화 함수가 왼쪽 혹은 오른쪽으로 이동한다. 가중치(weight)는 활성화 함수의 가파른 정도 즉, 기울기를 조절하는 반면, 편향(bias)는 활성화 함수를 움직임으로써 데이터에 잘 맞도록 한다.
 
 #### References
 
