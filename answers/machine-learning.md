@@ -102,13 +102,17 @@ n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정
 
 <img src="../images/adc/machine-learning/markov_chain.PNG" width=400>
 
+정리하면 마코프 체인은 확률변수(random variable)가 어떤 상태(state)에 도달할 확률이 오직 바로 이전 시점의 상태(state)에 달려 있는 경우를 가리킨다.
+
+예를 들어 오늘의 날씨가 어제의 날씨에만 의존하면 1차 마코프 체인, 이틀 전까지의 날씨에만 의존하면 2차 마코프 체인이다.
+
 > 마코프 모델
 
-마코프 모델은 위의 가정하에 확률적 모델을 만든 것으로써, 가장 먼저 각 상태를 정의하게 된다. 상태(state)는 <!-- $V={v_1,···,v_m}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/27heV0OeWa.svg">로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 **상태 전이 확률(State transition Probability)**을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 <!-- $a_{ij}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/EbxBH6xbkL.svg">는 상태 <!-- $v_i$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/rLeCmj8Out.svg">에서 상태 <!-- $v_j$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/bx2Hfeesug.svg">로 이동할 확률을 의미한다.  아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
+마코프 모델은 위의 가정하에 확률적 모델을 만든 것으로써, 가장 먼저 각 상태를 정의하게 된다. 상태(state)는 <!-- $V={v_1,···,v_m}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/27heV0OeWa.svg">로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 <strong>상태 전이 확률(State transition Probability)</strong>을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 <!-- $a_{ij}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/EbxBH6xbkL.svg">는 상태 <!-- $v_i$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/rLeCmj8Out.svg">에서 상태 <!-- $v_j$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/bx2Hfeesug.svg">로 이동할 확률을 의미한다. 아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
 
 <img src="../images/adc/machine-learning/state_transition_probability.PNG" width=200>
 
-그리고 상태와 상태 전이 확률을 정리하여 **상태 전이도(state transition diagram)**으로도 표현할 수 있다.
+그리고 상태와 상태 전이 확률을 정리하여 <strong>상태 전이도(state transition diagram)</strong>으로도 표현할 수 있다.
 
 <img src="../images/adc/machine-learning/state_transition_diagram.PNG" width=300>
 
@@ -116,6 +120,7 @@ n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정
 
 - [Markov Chain - MLWiki](https://sites.google.com/site/machlearnwiki/RBM/markov-chain)
 - [[기술면접] Markov Chain, Gibbs Sampling, 마르코프 체인, 깁스 샘플링 (day2 / 201010) - huidea](https://huidea.tistory.com/128?category=879541)
+- [(Bayes 학습)(4)마르코프 연쇄-(1) - 정보사회학연구소](http://piramvill2.org/?p=905)
 
 ---
 
@@ -124,9 +129,18 @@ n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정
 #### 텍스트 더미에서 주제를 추출해야 합니다. 어떤 방식으로 접근해 나가시겠나요?
 
 > 잠재 디리클레 할당(Latent Dirichlet Allocation, LDA)
+- 문서의 집합에서 토픽을 찾아내는 프로세스를 뜻하는 토픽 모델링의 대표적인 알고리즘
 - LDA는 **문서들은 토픽들의 혼합으로 구성되어져 있으며, 토픽들은 확률 분포에 기반하여 단어들을 생성한다**고 가정
 - 데이터가 주어지면 LDA는 토픽을 문서가 생성되던 과정을 역추적
 - LDA는 각 문서의 **토픽 분포**와 **각 토픽 내의 단어 분포**를 추정
+
+> LDA 예시
+
+문서1 : 저는 사과랑 바나나를 먹어요
+
+문서2 : 우리는 귀여운 강아지가 좋아요
+
+문서3 : 저의 깜찍하고 귀여운 강아지가 바나나를 먹어요
 
 **<각 문서의 토픽 분포>**
 
@@ -147,7 +161,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 #### References
 
 - [Topic Modeling, LDA - ratsgo's blog](https://ratsgo.github.io/from%20frequency%20to%20semantics/2017/06/01/LDA/)
-- [[기술면접] 잠재디리클레할당 (day3 / 201012) - huidea](https://huidea.tistory.com/category/Study/Machine%20learning)
+- [[기술면접] 잠재디리클레할당 (day3 / 201012) - huidea](https://huidea.tistory.com/130?category=879541)
 - [딥 러닝을 이용한 자연어 처리 입문](https://wikidocs.net/30708)
 
 ---
@@ -161,11 +175,27 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 <img src="../images/adc/machine-learning/SVM.PNG" width=300>
 
+- <!-- $B_1$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/puUbpTR2Jk.svg">: 결정 경계
+- <!-- $b_{11}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/mk2a1PhYFR.svg">: plus-plane
+- <!-- $b_{12}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/5tjVZdiGts.svg">: minus-plane
+
+> Margin
+- Margin은 plus-plane과 minus-plane 사이의 거리를 의미하며, **최적의 결정 경계는 margin을 최대화**한다.
+
+
 - SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데, 비선형 분류에서는 입력자료를 다차원 공간상으로 맵핑할 때 <strong>커널 트릭(kernel trick)</strong>을 사용하기도 한다.
     - 원공간(Input Space)의 데이터를 선형분류가 가능한 고차원 공간(Feature Space)으로 매핑한 뒤 두 범주를 분류하는 초평면을 찾는다. (Kernel-SVM)
 
 <img src="../images/adc/machine-learning/SVM2.PNG" width=430>
 <img src="../images/adc/machine-learning/SVM3.PNG" width=430>
+
+> 커널 트릭(kernel trick)
+
+- 커널 함수를 이용하여 차원 공간(low dimensional space)을 고차원 공간(high dimensional space)으로 매핑해주는 작업
+- 커널 함수의 종류
+<img src="../images/adc/machine-learning/kernel.PNG" width=500>
+
+> SVM의 장단점
 
 |장점|단점|
 |---|---|
@@ -179,6 +209,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - [Kernel-SVM - ratsgo's blog](https://ratsgo.github.io/machine%20learning/2017/05/30/SVM3/)
 - [Support Vector Machine (SVM)의 개념 - butter_shower](https://butter-shower.tistory.com/7)
 - [Support Vector Machine (SVM, 서포트 벡터 머신) - Excelsior-JH](https://excelsior-cjh.tistory.com/66)
+- [서포트 벡터 머신(Support Vector Machine) 쉽게 이해하기 - 아무튼 워라벨](http://hleecaster.com/ml-svm-concept/)
 - [ADP 필기 올패키지 데이터 분석 전문가](https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=ADP+%ED%95%84%EA%B8%B0+%EC%98%AC%ED%8C%A8%ED%82%A4%EC%A7%80+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%B6%84%EC%84%9D+%EC%A0%84%EB%AC%B8%EA%B0%80)
 
 ---
@@ -190,6 +221,8 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 > 나이브 베이즈(Naïve Bayes Classification)
 
 데이터에서 변수들에 대한 **조건부 독립을 가정**하는 알고리즘으로 클래스에 대한 사전 정보와 데이터로부터 추출된 정보를 결합하고, <strong>베이즈 정리(Bayes Theorem)</strong>를 이용하여 어떤 데이터가 특정 클래스에 속하는지 분류하는 알고리즘이다.
+
+> 나이브 베이즈의 장단점
 
 |장점|단점|
 |---|---|
@@ -209,23 +242,30 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 #### 회귀 / 분류시 알맞은 metric은 무엇일까?
 
-[1번](#1) 참고
+[#1. 알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)](#1) 참고
 
-- 회귀
-    - <!-- $R^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/VhPpSHpPzC.svg"> (결정계수, Coefficient of determination)
+**회귀**
+> <!-- $R^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/VhPpSHpPzC.svg"> (결정계수, Coefficient of determination)
+- 결정계수는 독립변수의 개수가 많아질수록 결정계수가 1에 가까워진다.
+- 회귀모형이 높은 결정계수를 갖는다면 실제로 모형이 설명력이 높은 것인지 단순히 독립변수의 개수가 많은 것인지 알기 어려워 결정계수를 신뢰할 수 없게 되는 문제가 발생한다.
+    
     <img src="../images/adc/machine-learning/R2.jpg" height=90>
 
-    - <!-- $adj R^2, R_a^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/e0vHtnZyTf.svg"> (수정된 결정계수, adjusted coefficient of determination)
+> <!-- $adj R^2, R_a^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/e0vHtnZyTf.svg"> (수정된 결정계수, adjusted coefficient of determination)
+- 결정계수의 문제를 해결하기 위해 표본의 크기(n)와 독립변수의 수(p)를 고려하여 수정된 결정계수를 계산한다.
+
     <img src="../images/adc/machine-learning/adjR2.jpg" height=100>
 
-- 분류
-    - Log Loss/Binary Crossentropy
+**분류**
+> Log Loss/Binary Crossentropy
+- 이진 분류에서의 metric으로 사용된다.
 
-        <img src="../images/adc/machine-learning/log_loss.PNG" height=30>
+    <img src="../images/adc/machine-learning/log_loss.PNG" height=30>
 
-    - Categorical Crossentropy
+> Categorical Crossentropy
+- 분류해야할 class가 3개 이상인 multiclass 분류에서의 metric으로 사용된다.
 
-        <img src="../images/adc/machine-learning/categorical_crossentropy.PNG" height=70>
+    <img src="../images/adc/machine-learning/categorical_crossentropy.PNG" height=70>
 
 
 #### References
@@ -243,6 +283,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 > 연관규칙분석(Association Analysis)
 - 연관성 분석은 흔히 장바구니 분석(Market Basket Analysis) 또는 서열분석(Sequence Analysis)이라고 불린다.
 - 기업의 데이터베이스에서 상품의 구매, 서비스 등 일련의 거래 또는 사건들 간의 규칙을 발견하기 위해 적용한다.
+- 연관성 분석의 평가 지표로는 Support, Confidence, Lift를 사용한다.
 
 1. Support(지지도)
 - 전체 거래 중 항목 A와 항목 B를 동시에 포함하는 거래의 비율로 정의한다.
@@ -258,6 +299,31 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - A가 구매되지 않았을 때 품목 B의 구매확률에 비해 A가 구매됐을 때 품목 B의 구매확률의 증가 비이다. 연관규칙 A→B는 품목 A와 품목 B의 구매가 서로 관련이 없는 경우에 향상도가 1이 된다.
 
 <img src="../images/adc/machine-learning/lift.PNG" height=60>
+
+> 예시
+
+연관규칙 X:{계란, 맥주} → Y:{기저귀} 에 대해
+
+|Customer<br>ID|Transaction<br>ID|Items|
+|:---:|:---:|:---:|
+|1131|no.1|계란, 우유|
+|2094|no.2|<U>계란, 기저귀, 맥주</U>, 사과|
+|4122|no.3|우유, 기저귀, 맥주, 콜라|
+|4811|no.4|<U>계란</U>, 우유, <U>맥주, 기저귀</U>|
+|8091|no.5|계란, 우유, 맥주, 콜라|
+
+- <!-- $N = 5$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/68GNpvTMUv.svg"> (전체 transaction 개수)
+
+- <!-- $P(Y) = \frac{n(Y)}{N} = \frac{n\left\{no.2, no.3, no.4\right\}}{N} = \frac{3}{5} = 0.6$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/9XZ0PprAzP.svg">
+
+- 지지도(Support)
+    <!-- $s(X→Y) = \frac{n(X\cup Y)}{N} = \frac{n\left\{no.2, no.4\right\}}{N} = \frac{2}{5} = 0.4$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/BlaUiNtJbK.svg">
+
+- 신뢰도(Confidence)
+    <!-- $c(X→Y) = \frac{n(X\cup Y)}{n(X)} = \frac{n\left\{no.2, no.4\right\}}{n\left\{no.2, no.4, no.5\right\}} = \frac{2}{3} = 0.6667$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/IG2lNlELwr.svg">
+
+- 향상도(Lift)
+    <!-- $Lift(X→Y) = \frac{c(X→Y)}{s(Y)} = \frac{0.6667}{0.6} = 1.1111$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/xqeS85B3xm.svg">
 
 #### References
 - [[R 연관규칙(Association Rule)] 지지도(support), 신뢰도(confidence), 향상도(lift), IS측도, 교차지지도 - R, Python 분석과 프로그래밍의 친구 (by R Friend)](https://rfriend.tistory.com/191)
@@ -287,7 +353,8 @@ Newton's method를 수식화하면 아무 값이나 초기값 <!-- $x^1$ --> <im
 - 미분하여 극소점을 찾아가는 방법 (local minimum에 빠질수도 있다는 문제점이 있다)
 - 모든 차원과 모든 공간에서 적용이 가능
 
-Gradient Descent 방법은 그레디언트의 특성을 이용하여 어떤 비용함수의 값을 최소화시키기 위한 파라미터 값을 아래와 같이 점진적으로 찾는 방법이다.<!-- $x_{k+1}=x_k-\lambda_k\nabla f(x_k), k\geq0$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/riBPmSx41r.svg">
+Gradient Descent 방법은 그레디언트의 특성을 이용하여 어떤 비용함수의 값을 최소화시키기 위한 파라미터 값을 아래와 같이 점진적으로 찾는 방법이다.
+<!-- $x_{k+1}=x_k-\lambda_k\nabla f(x_k), k\geq0$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/riBPmSx41r.svg">
 
 <img src="../images/adc/machine-learning/gradient2.PNG" height=350>
 
