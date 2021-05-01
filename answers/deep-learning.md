@@ -141,7 +141,7 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 - Label smoothing
   - 모델이 Ground Truth를 정확하게 예측하지 않아도 되게 만들어 주어 정확하지 않은 학습 데이터셋에 치중되는 경향(overconfident)을 막아주는 방법
 
-    <img src="../images/adc/deep-learning/label_smoothing.png" width=500>
+    <img src="../images/adc/deep-learning/label_smoothing.PNG" width=500>
 
 - Dropout
   - 각 계층 마다 일정 비율의 뉴런을 임의로 정해 drop 시키고 나머지 뉴런만 학습하도록 하는 방법
@@ -257,7 +257,7 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 
 Gradient Descent는 어떤 함수의 극소점을 찾기 위해 gradient 반대 방향으로 이동해 가는 방법이다.
 
-<img src="../images/adc/deep-learning/gradient_descent_2.PNG" width=700>
+<img src="../images/adc/deep-learning/gradient_descent_2.png" width=700>
 
 딥러닝에서는 Loss function을 최소화시키기 위해 파라미터에 대해 Loss function을 미분하여 그 기울기값(gradient)을 구하고, 경사가 하강하는 방향으로 파라미터 값을 점진적으로 찾기위해 사용된다.
 
@@ -271,12 +271,12 @@ Gradient Descent를 수식으로 표현하면 아래와 같다.
   - step size가 큰 경우 한 번 이동하는 거리가 커지므로 빠르게 수렴할 수 있다는 장점이 있다. 하지만, step size를 너무 크게 설정해버리면 최소값을 계산하도록 수렴하지 못하고 함수 값이 계속 커지는 방향으로 최적화가 진행될 수 있다.
   - 한편 step size가 너무 작은 경우 발산하지는 않을 수 있지만 최적의 x를 구하는데 소요되는 시간이 오래 걸린다는 단점이 있다.
 
-  <img src="../images/adc/deep-learning/gradient_descent_4.PNG">
+  <img src="../images/adc/deep-learning/gradient_descent_4.png">
 
 - local minima 문제
   - gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때문에 어떤 경우에는 local minima에 빠져 계속 헤어나오지 못하는 경우도 생긴다.
 
-  <img src="../images/adc/deep-learning/gradient_descent_3.PNG" width=400>
+  <img src="../images/adc/deep-learning/gradient_descent_3.png" width=400>
 
 > 자세한 내용은 [#14-1. GD가 Local Minima 문제를 피하는 방법은?](#14-1) 참고
 
