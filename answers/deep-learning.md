@@ -329,16 +329,42 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### Batch Normalization의 효과는?
 
+<div align='center' >
+<img src='../images/penguin/batch-normalization.png' height='250px'/>
+<br/>
+<small><strong>배치 정규화(Batch Normalization) 수식</strong></small>
+</div>
+
+<br/>
+
+배치 정규화(Batch Normalization)은 학습 시 미니배치 단위로 입력의 분포가 평균이 0, 분산이 1이 되도록 정규화한다. 더불어 <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cgamma">로 스케일과 <!-- $\beta$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta">로 이동 변환을 수행한다. 이렇게 배치 정규화를 사용하면 다음과 같은 효과를 얻을 수 있다.
+
+- `장점 1` 기울기 소실/폭발 문제가 해결되어 큰 학습률을 설정할 수 있어 학습속도가 빨라진다.
+- `장점 2` 항상 입력을 정규화시키기 대문에 가중치 초깃값에 크게 의존하지 않아도 된다.
+- `장점 3` 자체적인 규제(Regularization) 효과가 있어 Dropout이나 Weight Decay와 같은 규제 방법을 사용하지 않아도 된다.
+
 #### References
 
 - [Batch Normalization - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/116)
 - [Understanding Batch Normalization for Neural Networks - towards data science](https://towardsdatascience.com/understanding-batch-normalization-for-neural-networks-1cd269786fa6)
+- [Batch Normalization - 라온 피플](https://m.blog.naver.com/laonple/220808903260)
+- [[Deep Learning] Batch Normalization (배치 정규화) - 꾸준희](https://eehoeskrap.tistory.com/430)
 
 ---
 
 ## #16-1
 
 #### Dropout의 효과는?
+
+<div align='center' >
+<img src='../images/penguin/drop-out.png' height='250px'/>
+<br/>
+<small><a href='https://www.oreilly.com/library/view/deep-learning-for/9781788295628/'><strong>Deep Learning for Computer Vision</strong></a></small>
+</div>
+
+<br/>
+
+드롭아웃(Dropout)은 설정된 확률 <!-- $p$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=p">만큼 은닉층(hidden layer)에 있는 뉴런을 무작위로 제거하는 방법으로, 오버피팅을 방지하기 위한 방법 중 하나이다. (정확히는 출력을 0으로 만들어 더이상의 전파가 되지 않도록 한다.) 드롭아웃(Dropout)은 학습 때마다 무작위로 뉴런을 제거하므로 매번 다른 모델을 학습시키는 것으로 해석할 수 있다. 그리고 추론 시 출력에 제거 확률 <!-- $p$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=p">를 곱함으로써 앙상블 학습에서 여러 모델의 평균을 내는 효과를 얻을 수 있다.
 
 #### References
 
@@ -351,7 +377,11 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### BN 적용해서 학습 이후 실제 사용시에 주의할 점은? 코드로는?
 
+학습 과정에서는 미니 배치의 평균과 분산을 계산하여 배치 정규화를 적용하지만, 추론 시에는 학습 데이터 전체에 대한 평균과 분산을 계산하여 적용을 해야 한다. 왜냐하면 사용자가 설정한 배치의 크기에 따라 추론 결과가 변할 수도 있기 때문이다.
+
 #### References
+
+- [Batch Normalization (ICML 2015) - SanghyukChun's Blog](http://sanghyukchun.github.io/88/)
 
 ---
 
@@ -359,7 +389,11 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### GAN에서 Generator 쪽에도 BN을 적용해도 될까?
 
+일반적으로 GAN에서는 생성기(Generator)의 출력층(Output Layer)와 식별기(Discriminator)의 입력층(Input Layer)에는 BN(Batch Normalization)을 적용하지 않는다. 왜냐하면 생성기가 만든 이미지가 BN을 지나면 실제 이미지와는 값의 범위가 달라지기 때문이다.
+
 #### References
+
+- [초짜 대학원생의 입장에서 이해하는 Deep Convolutional Generative Adversarial Network (DCGAN) (1) - Jaejun Yoo's Playground](http://jaejunyoo.blogspot.com/2017/02/deep-convolutional-gan-dcgan-1.html)
 
 ---
 
