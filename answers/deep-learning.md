@@ -311,9 +311,9 @@ Local minima 문제는 에러를 최소화시키는 최적의 파라미터를 �
 
 용어에 대해서 먼저 언급하면 아래와 같다.
 
-- critical point: 일차 미분이 0인 지점
+- critical point: 일차 미분이 0인 지점이다. (local/global)minima, (local/global)maxima, saddle point를 가리킴
 - local minimum: 모든 방향에서 극소값을 만족하는 점
-- global minimum: 모든 방향에서 극대값을 만족하는 점
+- global minimum: 모든 방향에서 극소값을 만족하는 점 중에 가장 값이 작은 점(정답)
 - saddle point: 어느 방향에서 보면 극대값이지만 다른 방향에서 보면 극소값이 되는 점
 
 > **Local Minima 문제에도 불구하고 딥러닝이 잘 되는, 더 구체적인 이유**

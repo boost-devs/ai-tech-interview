@@ -83,7 +83,7 @@
 <img src="/images/sally/2021-05-01-23-57-40.png" width="80%">  
 <img src="/images/sally/2021-05-01-23-57-57.png" width="60%">  
 
-정규 분포 식에서 변수는 σ와 μ이다. 그래프를 종모양으로 만드는데 사용된다. μ는 확률 변수 X의 평균이고 σ는확률 변수 X의 표준 편차이다. 종 모양의 그래프는 평균을 기준으로 좌우 대칭을 이룬다. 표준 편차가 높을 수록 그래프는 완만한 곡선 형태를 띄게 된다. 
+정규 분포 식에서 변수는 <!-- $x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x">이다. σ와 μ는 그래프를 종모양으로 만드는데 사용된다. μ는 확률 변수 X의 평균이고 σ는확률 변수 X의 표준 편차이다. 종 모양의 그래프는 평균을 기준으로 좌우 대칭을 이룬다. 표준 편차가 높을 수록 그래프는 완만한 곡선 형태를 띄게 된다. 
 
 #### References
 
