@@ -168,7 +168,7 @@
 
 비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 <!-- $x_1, x_2, ... , x_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x_1%2C%20x_2%2C%20...%20%2C%20x_n">과 가중치 <!-- $w_1, w_2, ... , w_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=w_1%2C%20w_2%2C%20...%20%2C%20w_n">으로 <!-- $y = w_1*x_1 + w_2*x_2 + ... + w_n*x_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20w_1*x_1%20%2B%20w_2*x_2%20%2B%20...%20%2B%20w_n*x_n">으로 표현할 수 있다. 그 외에 이렇게 표현할 수 없는 모든 모델을 비선형 관계에 있는 모델이라고 한다.
 
-딥러닝에서 이런 비선형 관계는 활성화 함수(activation function)을 도입함으로써 표현할 수 있다. 그럼 비선형 관계 즉, 활성화 함수가 왜 필요할까? 바로 활성화 함수를 사용해 여러 층을 쌓아서 더 복잡한 표현을 하기 위해서이다. 활성화 함수가 <!-- $h(x) = cx$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=h(x)%20%3D%20cx">인 선형 함수 라고 생각해보자. 이 때 <!-- $n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=n">개의 층을 쌓았다고 할 때, 모델은 <!-- $y = h^n(x) = c^nx$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20h%5En(x)%20%3D%20c%5Enx">로 나타낼 수 있다. <!-- $c^n=k$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=c%5En%3Dk">라는 상수로 치환하면 결국 1층을 가진 신경망과 동일하다. 그렇기 때문에 비선형인 활성화 함수가 필요한 것이다.
+딥러닝에서 이런 비선형 관계는 활성화 함수(activation function)을 도입함으로써 표현할 수 있다. 그럼 비선형 관계 즉, 활성화 함수가 왜 필요할까? 바로 **활성화 함수를 사용해 여러 층을 쌓아서 더 복잡한 표현을 하기 위해서**이다. 활성화 함수가 <!-- $h(x) = cx$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=h(x)%20%3D%20cx">인 선형 함수라고 생각해보자. 이 때 <!-- $n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=n">개의 층을 쌓았다고 할 때, 모델은 <!-- $y = h^n(x) = c^nx$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20h%5En(x)%20%3D%20c%5Enx">로 나타낼 수 있다. <!-- $c^n=k$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=c%5En%3Dk">라는 상수로 치환하면 결국 1층을 가진 신경망과 동일하다. 그렇기 때문에 비선형인 활성화 함수가 필요한 것이다.
 
 #### References
 
@@ -180,7 +180,7 @@
 
 #### ReLU로 어떻게 곡선 함수를 근사하나?
 
-ReLU는 양수일 때 $y=x$로 선형 부분과 음수일 때 $y=0$으로 비선형 부분이 결합된 형태이다. 이를 활성화 함수로 설정하고 여러 층을 쌓으면, 마치 ReLU 함수를 선형 결합한 형태를 갖게 된다. ReLU는 비선형 함수이기 때문에 최종적으로 비선형성을 띄게 되고, back propagation을 통해 점점 곡선 함수에 맞게 학습되도록 하여 근사할 수 있다.
+ReLU는 양수일 때 <!-- $y=x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3Dx">로 선형 부분과 음수일 때 <!-- $y=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3D0">으로 비선형 부분이 결합된 형태이다. 이를 활성화 함수로 설정하고 여러 층을 쌓으면, 마치 **ReLU 함수를 선형 결합한 형태**를 갖게 된다. ReLU는 비선형 함수이기 때문에 최종적으로 비선형성을 띄게 되고, back propagation을 통해 점점 곡선 함수에 맞게 학습되도록 하여 근사할 수 있다.
 
 #### References
 
@@ -228,7 +228,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 <br/>
 
-편향(bias)는 활성화 함수가 왼쪽 혹은 오른쪽으로 이동한다. 가중치(weight)는 활성화 함수의 가파른 정도 즉, 기울기를 조절하는 반면, 편향(bias)는 활성화 함수를 움직임으로써 데이터에 잘 맞도록 한다.
+편향(bias)는 활성화 함수가 왼쪽 혹은 오른쪽으로 이동한다. 가중치(weight)는 활성화 함수의 가파른 정도 즉, 기울기를 조절하는 반면, 편향(bias)는 **활성화 함수를 움직임으로써 데이터에 더 잘 맞도록 한다.**
 
 #### References
 
@@ -337,7 +337,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 <br/>
 
-배치 정규화(Batch Normalization)은 학습 시 미니배치 단위로 입력의 분포가 평균이 0, 분산이 1이 되도록 정규화한다. 더불어 <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cgamma">로 스케일과 <!-- $\beta$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta">로 이동 변환을 수행한다. 이렇게 배치 정규화를 사용하면 다음과 같은 효과를 얻을 수 있다.
+배치 정규화(Batch Normalization)은 학습 시 **미니배치 단위로 입력의 분포가 평균이 0, 분산이 1이 되도록 정규화**한다. 더불어 <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cgamma">로 스케일과 <!-- $\beta$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta">로 이동 변환을 수행한다. 이렇게 배치 정규화를 사용하면 다음과 같은 효과를 얻을 수 있다.
 
 - `장점 1` 기울기 소실/폭발 문제가 해결되어 큰 학습률을 설정할 수 있어 학습속도가 빨라진다.
 - `장점 2` 항상 입력을 정규화시키기 대문에 가중치 초깃값에 크게 의존하지 않아도 된다.
@@ -364,7 +364,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 <br/>
 
-드롭아웃(Dropout)은 설정된 확률 <!-- $p$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=p">만큼 은닉층(hidden layer)에 있는 뉴런을 무작위로 제거하는 방법으로, 오버피팅을 방지하기 위한 방법 중 하나이다. (정확히는 출력을 0으로 만들어 더이상의 전파가 되지 않도록 한다.) 드롭아웃(Dropout)은 학습 때마다 무작위로 뉴런을 제거하므로 매번 다른 모델을 학습시키는 것으로 해석할 수 있다. 그리고 추론 시 출력에 제거 확률 <!-- $p$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=p">를 곱함으로써 앙상블 학습에서 여러 모델의 평균을 내는 효과를 얻을 수 있다.
+드롭아웃(Dropout)은 **설정된 확률 <!-- $p$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=p">만큼 은닉층(hidden layer)에 있는 뉴런을 무작위로 제거하는 방법**으로, 오버피팅을 방지하기 위한 방법 중 하나이다. (정확히는 출력을 0으로 만들어 더이상의 전파가 되지 않도록 한다.) 드롭아웃(Dropout)은 학습 때마다 무작위로 뉴런을 제거하므로 매번 다른 모델을 학습시키는 것으로 해석할 수 있다. 그리고 추론 시 출력에 제거 확률 <!-- $p$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=p">를 곱함으로써 앙상블 학습에서 여러 모델의 평균을 내는 효과를 얻을 수 있다.
 
 #### References
 
@@ -497,6 +497,8 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### 딥러닝할 때 GPU를 쓰면 좋은 이유는?
 
+GPU(Graphics Processing Unit)은 부동 소수점 연산을 수행하는 많은 코어가 있어 수 많은 연산을 **병렬처리**할 수 있다. 또한 CPU보다 더 큰 메모리 대역폭을 가지고 있기 때문에 **큰 데이터를 더 효율적으로 빠르게 처리**할 수 있다.
+
 #### References
 
 - [What is a GPU and do you need one in Deep Learning? - towards data science](https://towardsdatascience.com/what-is-a-gpu-and-do-you-need-one-in-deep-learning-718b9597aa0d)
@@ -507,7 +509,13 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### 학습 중인데 GPU를 100% 사용하지 않고 있다. 이유는?
 
+가장 먼저 의심할 수 있는 부분은 GPU가 아니라 **CPU를 사용하고 있을 경우**이다. CPU와 GPU 사용률을 확인해보고 CPU 사용률이 높으면 CPU로 돌아간다는 것을 보고 추론할 수 있다.
+
+다른 경우로는 **GPU의 메모리가 부족한 경우**가 있다. 메모리가 부족하면 병목 현상으로 인해서 GPU를 100% 사용할 수 없다. 이 때 배치 사이즈를 줄이거나 모델을 최적화하여 가볍게 만드는 방법으로 메모리 사용량을 줄일 수 있다.
+
 #### References
+
+- [Pytorch가 GPU를 사용하지 않습니다 Fastai 작업 - Python2.net](https://www.python2.net/questions-251364.html)
 
 ---
 
@@ -515,7 +523,15 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### GPU를 두개 다 쓰고 싶다. 방법은?
 
+Pytorch의 경우 `torch.nn.DataParallel`을 사용하여 여러 개의 GPU를 사용할 수 있다.
+
+- `torch.device`를 **cuda**로 설정한다.
+- `nn.DataParallel`을 사용하여 모델을 감싼다.
+- 모델을 `model.to(device)`를 사용하여 GPU로 보낸다.
+
 #### References
+
+- [OPTIONAL: DATA PARALLELISM - Pytorch Tutorials](https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html)
 
 ---
 
@@ -523,8 +539,6 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### 학습시 필요한 GPU 메모리는 어떻게 계산하는가?
 
-#### References
-
-- [Which GPU(s) to Get for Deep Learning: My Experience and Advice for Using GPUs in Deep Learning - Tim Dettmers](https://timdettmers.com/2020/09/07/which-gpu-for-deep-learning/)
+Pytorch를 기준으로 볼 때 `something.to('cuda')`로 변환하는 모든 것들을 생각해보면 된다. 보통 GPU로 올리는 것은 모델과 데이터셋이므로, **(모델의 크기 + 데이터의 크기 × 배치 크기)**로 학습시 필요한 메모리 크기를 계산할 수 있다.
 
 ---
