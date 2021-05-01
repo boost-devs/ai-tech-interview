@@ -183,7 +183,7 @@ ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다.
 ![lecun_normal](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/lecun_normal.png)
 
 
-균등 분포를 따르는 방법
+균등 분포를 따르는 방법  
 ![lecun_uniform](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/lecun_uniform.png)
 
 **Xavier Initialization**
@@ -193,7 +193,7 @@ LeCun 방법과 비슷하지만 들어오는 노드 수와 나가는 노드 수�
 ![xavier_normal](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/xavier_normal.png)
 
 
-균등 분포를 따르는 방법
+균등 분포를 따르는 방법  
 ![xavier_uniform](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/xavier_uniform.png)
 
 sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 사용할 경우 0에 수렴하는 문제가 발생한다.  
@@ -206,7 +206,7 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 ![he_normal](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/he_normal.png)
 
 
-균등 분포를 따르는 방법
+균등 분포를 따르는 방법  
 ![he_uniform](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/he_uniform.png)
 
 
