@@ -87,7 +87,7 @@ theta 와 k 는 감마 분포의 모수이다.
 감마 분포는 0~무한대까지 값을 가질 수 있으며 모수의 베이지안 추정을 위해 사용된다.
 
 <div align='center'>
-<img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/gamma_dist_formula.png' height='240px'/>
+<img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/gamma_dist_formula.png' height='150px'/>
 </div>
 <br>
 
@@ -100,7 +100,7 @@ theta 와 k 는 감마 분포의 모수이다.
 **팩토리얼**을 함수로 일반화한 것  
 
 <div align='center'>
-<img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/gamma_function.png' height='240px'/>
+<img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/gamma_function.png' height='150px'/>
 </div>
 <br>
 
@@ -120,7 +120,7 @@ theta 와 k 는 감마 분포의 모수이다.
 베타 분포의 값은 0~1 사이이며 감마 분포와 마찬가지로 베이지안 추정을 위해 사용된다.
 
 <div align='center'>
-<img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/beta_dist_formula.png' height='240px'/>
+<img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/beta_dist_formula.png' height='150px'/>
 </div>
 <br>
 
