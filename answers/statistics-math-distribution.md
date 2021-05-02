@@ -94,7 +94,7 @@ theta 와 k 는 감마 분포의 모수이다.
 **감마 함수**  
 **팩토리얼**을 함수로 일반화한 것  
 
-![gamma_function]()
+![gamma_function](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/gamma_function.png)
 
 #### References
 - [갈아먹는 통계 기초 [1] 확률 분포 정리 - 갈아먹는 머신러닝](https://yeomko.tistory.com/33)
