@@ -91,7 +91,7 @@
 #### Cost Function과 Activation Function은 무엇인가요?
 
 **cost function**  
-모델은 데이터에 대해 현재 예측을 얼마나 잘하고 있는지 알아야 학습 방향을 어느 방향으로 얼마나 개선할지 판단할 수 있다.  
+모델은 데이터에 대해 현재 예측을 얼마나 잘하고 있는지 알아야 학습 방향을 어느 방향으로, 얼마나 개선할지 판단할 수 있다.  
 
 이 때, 예측 값과 데이터 값의 차이에 대한 함수를 **cost function**(MSE, CrossEntropy 등) 이라고 한다.  
 
@@ -99,16 +99,22 @@
 
 
 **activation function**  
-모델의 한 레이어는 선형 함수와 비선형 함수 **activation function**(Sigmoid, ReLU 등) 이 결합된 비선형 모델로 존재한다.
+데이터를 예측하기 위해 선형 모델을 사용할 수 있다. 하지만 선형 모델의 경우 복잡한 데이터에 대해서는 적절한 예측을 못한다. 따라서 이를 처리하기 위해 **비선형 모델**이 필요하다.
 
-이러한 비선형 함수들이 왜 활성화 함수라고 불리는걸까?  
-활성화 함수를 통해 모델의 웨이트에서 중요한 부분은 높은 값을 띄게 되고 (활성화) 중요하지 않은 부분은 낮은 값을 띄거나 0이 (비활성화) 되기 때문이다.
+선형 모델을 비선형 모델로 만들어주는 역할을 하는 함수가 바로 활성화 함수 **activation function**(Sigmoid, ReLU 등) 이다.
 
-활성화 과정을 통해 모델은 복잡한 데이터에 대해 더 좋은 예측을 할 수 있게 되고, 여러 레이어를 쌓는 과정도 가능하게 되었다.
+비선형 함수인 활성화 함수가 선형 함수와 결합됨으로써 선형 모델은 비선형 모델이 된다.
+
+선형 모델은 깊게 쌓을 수 없다. 깊게 쌓아도 하나의 층을 잘 튜닝한 것과 다르지 않기 때문이다.
+
+비선형 모델은 깊게 쌓을 수 있다. 선형으로 만들었다가 비선형으로 만드는 작업을 계속 반복할 수 있기 때문이다. 이로 인해 모델은 복잡한 데이터에 대해 더 표현력이 좋아질 수 있다.
+
+활성화 함수는 입력 값에 대해 더 높게 혹은 더 낮게 만들 수 있기 때문에 활성화 함수라고 불린다.
 
 #### References
 - [5. 결과 값을 비교하는 방식(Cost function) - 대소니](https://daeson.tistory.com/166)
 - [Activation Functions에 대해 알아보자 - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/113 )
+- [활성화 함수(activation function)을 사용하는 이유 - 프라이데이](https://ganghee-lee.tistory.com/30)
 
 ---
 
@@ -188,20 +194,30 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 
 **Sigmoid**
 
-![sigmoid_formula](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/sigmoid_formula.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/sigmoid_formula.png' height='100px '/>
+</div>
+<br/>
 
-![sigmoid](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/sigmoid.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/sigmoid.png' height='200px '/>
+</div>
+<br/>
+
 
 sigmoid 함수는 입력을 0~1 사이의 값으로 바꿔준다.
 
 입력 값이 크거나 작을 때 기울기가 0에 가까워지는 `saturation` 문제가 있다.   
 이는 `gradient vanishing` 문제를 야기하므로 요즘에는 활성화 함수로서 잘 사용되지 않는다.
 
-또한 값이 `zero-centered` 가 아니기 때문에 입력값의 부호에 그대로 영향을 받으므로 경사하강법 과정에서 정확한 방향으로 가지 못하고 지그재그로 움직이는 문제가 있다.
+또한 값이 `zero-centered` 가 아니기 때문에 입력값의 부호에 그대로 영향을 받으므로 경사하강법 과정에서 정확한 방향으로 가지 못하고 지그재그로 움직이는 문제가 있다. [12-3 참고](#12-3)
 
 **Tanh**
 
-![tanh](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/tanh.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/tanh.png' height='200px '/>
+</div>
+<br/>
 
 tanh 함수는 입력을 -1~1 사이의 값으로 바꿔준다.
 
@@ -210,7 +226,10 @@ sigmoid 함수와 마찬가지로 `saturation` 문제가 있다.
 
 **ReLU** 
 
-![ReLU](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/relu.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/relu.png' height='200px '/>
+</div>
+<br/>
 
 ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다. 
 
@@ -225,7 +244,10 @@ ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다.
 
 **LeakyReLU** 
 
-![LeakyReLU](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/leakyrelu.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/leakyrelu.png' height='200px '/>
+</div>
+<br/>
 
 > f(x) = max(0.01x, x)
 
@@ -318,37 +340,56 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 딥러닝에서 가중치를 잘 초기화하는 것은 기울기 소실이나 local minima 등의 문제를 야기할 수 있기 때문에 중요하다.
 
 **LeCun Initialization**  
-딥러닝의 대가 LeCun 교수님이 제시한 초기화 방법으로 정규 분포와 균등 분포를 따르는 방법이 있다.
+딥러닝의 대가 LeCun 교수님이 제시한 초기화 방법으로 들어오는 노드 수에 대해 정규 분포와 균등 분포를 따르는 방법이 있다.
+
 
 정규 분포를 따르는 방법  
-![lecun_normal](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/lecun_normal.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/lecun_normal.png' height='200px '/>
+</div>
+<br/>
 
 
 균등 분포를 따르는 방법  
-![lecun_uniform](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/lecun_uniform.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/lecun_uniform.png' height='200px '/>
+</div>
+<br/>
 
-**Xavier Initialization**
+**Xavier Initialization**   
 LeCun 방법과 비슷하지만 들어오는 노드 수와 나가는 노드 수에 의존하고, 적절한 상수값도 발견하여 사용한 방법이다.
 
 정규 분포를 따르는 방법  
-![xavier_normal](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/xavier_normal.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/xavier_normal.png' height='200px '/>
+</div>
+<br/>
 
 
 균등 분포를 따르는 방법  
-![xavier_uniform](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/xavier_uniform.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/xavier_uniform.png' height='200px '/>
+</div>
+<br/>
 
 sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 사용할 경우 0에 수렴하는 문제가 발생한다.  
 따라서 `sigmoid` 나 `tanh` 함수와 주로 많이 사용한다.
 
 **He Initialization**
-`ReLU` 와 함께 많이 사용되는 방법으로, LeCun 방법과 같지만 상수를 다르게 하였다.
+`ReLU` 와 함께 많이 사용되는 방법으로, LeCun 방법과 같지만 상수를 다르게 하였다. 들어오는 노드만 고려한다.
 
 정규 분포를 따르는 방법  
-![he_normal](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/he_normal.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/he_normal.png' height='200px '/>
+</div>
+<br/>
 
 
 균등 분포를 따르는 방법  
-![he_uniform](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/he_uniform.png)
+<div align='center'>
+    <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/he_uniform.png' height='200px '/>
+</div>
+<br/>
 
 
 #### References
@@ -393,9 +434,9 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 `One-shot Learning` 은 뉴럴넷도 새로운 레이블을 지닌 데이터가 적을 때 (one-shot 에서는 한 개) 에도 모델이 좋은 성능을 내도록 사용되는 방법이다.
 
-기존에 다른 레이블의 많은 데이터를 학습한 모델은 데이터의 특성을 잘 이해하고 있다.  
-이 모델에 새로운 레이블의 데이터 하나를 주면 모델은 이 레이블에 대해서도 이해를 하게 된다.  
-따라서 `One-shot Learning` 으로 인해 적은 데이터를 가진 레이블에 대해 좋은 성능을 낼 수 있게 된다.
+이를 위해서는 기존에 다른 레이블의 많은 데이터를 학습하여 데이터의 특성을 잘 이해하는 `pretrained` 모델이 필요하다.
+
+학습된 모델에 새로운 레이블의 데이터 하나 던져 주면 모델은 데이터의 특성에 대한 이해를 바탕으로 이 레이블에 대해서도 이해를 하게 된다.  
 
 #### References
 - [One-shot learning (siamese network) - sji](https://aimaster.tistory.com/48)
@@ -728,7 +769,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 #### Regularization이란 무엇인가?
 모델의 오버피팅을 막고 처음 보는 데이터에도 잘 예측하도록 만드는 방법을 Regularization(일반화)라고 한다.
 
-대표적인 방법으로 dropout, [L1-L2 Regularization](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/machine-learning.md#21) 등이 있다.
+대표적인 방법으로 dropout, [L1-L2 Regularization](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/machine-learning.md#21) 등이 있다. [6번 참고](#6)
 
 
 
@@ -1035,7 +1076,7 @@ MNIST 분류기는 Convolution 레이어를 깊게 쌓으며 숫자 이미지의
 ## #19-3
 
 #### 학습은 BCE loss로 하되 상황을 MSE loss로 보고 싶다면?
-무슨말일까요...
+train 과정에서 criterion 은 BinaryCrossEntropy 를 사용하고, valid 데이터를 이용한 valid loss 를 구하는 과정에서는 MeanSquaredLoss 를 사용한다.
 
 #### References
 
