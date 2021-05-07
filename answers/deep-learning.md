@@ -772,9 +772,6 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 대표적인 방법으로 dropout, [L1-L2 Regularization](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/machine-learning.md#21) 등이 있다. [6번 참고](#6)
 
 
-
-#### References
-
 ---
 
 ## #16
@@ -1043,8 +1040,6 @@ TF 나 Pytorch 를 몇 번 사용해본 사람이라면 도큐먼트 참고도 �
 
 강력한 성능을 내는 모델도 이러한 프레임워크를 사용하면 빠른 시간 내에 구현해낼 수 있음에 감사하고, 추상화가 잘 된 함수들일지라도 안에서는 어떤 동작을 하는지 알고 사용해야한다.
 
-#### References
-
 ---
 
 ## #19-1
@@ -1055,8 +1050,6 @@ Convolution 레이어는 receptive field 를 통해 이미지의 위치 정보�
 반면 MLP 는 모두 Fully connected 구조이므로 이미지의 특징을 이해하는데 픽셀마다 위치를 고려할 수 없게된다.
 
 따라서 MNIST 분류기에서 MLP 를 사용하면 CNN 을 사용했을 때보다 성능이 낮다.
-
-#### References
 
 ---
 
@@ -1069,16 +1062,12 @@ MNIST 분류기는 Convolution 레이어를 깊게 쌓으며 숫자 이미지의
 
 만약 더 많은 레이블에 대해 분류해야 한다면 마지막 레이어의 out dimension 을 그에 맞게 설정하면 된다.
 
-#### References
-
 ---
 
 ## #19-3
 
 #### 학습은 BCE loss로 하되 상황을 MSE loss로 보고 싶다면?
 train 과정에서 criterion 은 BinaryCrossEntropy 를 사용하고, valid 데이터를 이용한 valid loss 를 구하는 과정에서는 MeanSquaredLoss 를 사용한다.
-
-#### References
 
 ---
 
