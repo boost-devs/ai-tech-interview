@@ -135,7 +135,9 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 
 이 패러다임의 차이로 Tensorflow의 경우 먼저 모델을 만들고 값을 다 따로 넣어주어야 해서 직관적이지 않지만, Pytorch의 경우 간단하고 직관적이다.
 
-두 프레임워크 모두 계산 그래프를 정의하고 자동으로 그래디언트를 계산하는 기능이 있다. 하지만 Tensorflow의 계산 그래프는 정적이고 Pytorch는 동적이다. 즉 Tensorflow에서는 계산 그래프를 한 번 정의하고 나면 그래프에 들어가는 입력 데이터만 다르게 할 수 있을 뿐 같은 그래프만을 실행할 수 있다. 하지만 PyTorch는 각 순전파마다 새로운 계산 그래프를 정의하여 이용한다.
+두 프레임워크 모두 계산 그래프를 정의하고 자동으로 그래디언트를 계산하는 기능이 있다. 하지만 Tensorflow의 계산 그래프는 정적이고 Pytorch는 동적이다.
+
+즉 Tensorflow에서는 계산 그래프를 한 번 정의하고 나면 그래프에 들어가는 입력 데이터만 다르게 할 수 있을 뿐 같은 그래프만을 실행할 수 있다. 하지만 PyTorch는 각 순전파마다 새로운 계산 그래프를 정의하여 이용한다.
 
 <img src="../images/adc/deep-learning/Tensorflow_PyTorch.png" width=800>
 
@@ -289,10 +291,12 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 - Label smoothing
   - 모델이 Ground Truth를 정확하게 예측하지 않아도 되게 만들어 주어 정확하지 않은 학습 데이터셋에 치중되는 경향(overconfident)을 막아주는 방법
 
-    <img src="../images/adc/deep-learning/label_smoothing.PNG" width=500>
+    <img src="../images/adc/deep-learning/label_smoothing.png" width=400>
 
 - Dropout
   - 각 계층 마다 일정 비율의 뉴런을 임의로 정해 drop 시키고 나머지 뉴런만 학습하도록 하는 방법
+  - 매 학습마다 drop 되는 뉴런이 달라지기 때문에 서로 다른 모델들을 앙상블 하는 것과 같은 효과가 있다.
+  - dropout은 **학습 시에만 적용**하고, 추론 시에는 적용하지 않는다.
 
   <img src="../images/adc/deep-learning/dropout.png" width=500>
 
@@ -404,9 +408,19 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 #### 볼츠만 머신은 무엇인가요?
 
-볼츠만 머신은 가시층(Visible Layer)와 은닉층(Hidden Layer), 총 두 개의 층으로 신경망을 구성하는 방법이다. 볼츠만 머신은 모든 뉴런이 연결되어 있는 완전 그래프 형태이며, 제한된 볼츠만 머신(RBM)에서는 같은 층의 뉴런들은 연결되어 있지 않은 모양이다. 기본적으로 단층구조이며, 확률 모델이다. 분류나 선형 회귀 분석 등에 사용될 수 있다. 특히 DBN(Deep Belief Network)에서는 RBM들을 쌓아올려, 각 볼츠만 머신을 순차적으로 학습시킨다.
+볼츠만 머신은 가시층(Visible Layer)와 은닉층(Hidden Layer), 총 두 개의 층으로 신경망을 구성하는 방법이다.
+
+볼츠만 머신은 모든 뉴런이 연결되어 있는 완전 그래프 형태이며, 제한된 볼츠만 머신(RBM)에서는 같은 층의 뉴런들은 연결되어 있지 않은 모양이다.
+
+기본적으로 단층구조이며, 확률 모델이다. 분류나 선형 회귀 분석 등에 사용될 수 있다.
+
+특히 DBN(Deep Belief Network)에서는 RBM들을 쌓아올려, 각 볼츠만 머신을 순차적으로 학습시킨다.
 
 <img src="../images/adc/deep-learning/boltzmann_machine.PNG">
+
+색깔 별 cell의 역할은 아래와 같다.
+
+<img src="../images/adc/deep-learning/boltzmann_machine_cell.PNG" height=300>
 
 #### References
 
@@ -602,7 +616,7 @@ Gradient가 양수이면 올라가는 방향이며 음수이면 내려가는 방
 
 <img src="../images/adc/deep-learning/GD_Loss.jpeg" height=500>
 
-local minimum에 들어갔다가 나오는 경우일 것이다.
+minima에 들어갔다가 나오는 경우일 것이다.
 
 실제로 사용되는 GD에서는 local minima 문제를 피하기 위해 Momentum 등의 개념을 도입한 RMSprop, Adam 등의 optimization 전략을 사용한다.
 
@@ -620,7 +634,7 @@ local minimum에 들어갔다가 나오는 경우일 것이다.
 
 #### Back Propagation에 대해서 쉽게 설명 한다면?
 
-역전파 알고리즘은 출력값에 대한 입력값의 기울기(미분값)을 출력층 layer에서부터 계산하여 거꾸로 전파시키는 것이다.
+역전파 알고리즘은 Loss에 대한 입력값의 기울기(미분값)를 출력층 layer에서부터 계산하여 거꾸로 전파시키는 것이다.
 
 이렇게 거꾸로 전파시켜서 최종적으로 출력층에서의 output값에 대한 입력층에서의 input data의 기울기 값을 구할 수 있다.
 
@@ -859,9 +873,11 @@ Loss Function을 계산할 때 전체 train set을 사용하는 것을 Batch Gra
 
 그러나 이렇게 계산을 할 경우 한번 step을 내딛을 때 전체 데이터에 대해 Loss Function을 계산해야 하므로 너무 많은 계산량이 필요하다.
 
-이를 방지하기 위해 보통은 Stochastic Gradient Descent (SGD) 라는 방법을 사용한다.
+이를 방지하기 위해 보통은 Stochastic Gradient Descent(SGD)라는 방법을 사용한다.
 
-이 방법에서는 loss function을 계산할 때 전체 데이터(batch) 대신 일부 조그마한 데이터의 모음(mini-batch)에 대해서만 loss function을 계산한다.
+이 방법에서는 loss function을 계산할 때 전체 데이터(batch) 대신 데이터 한 개 또는 일부 조그마한 데이터의 모음(mini-batch)에 대해서만 loss function을 계산한다.
+
+**데이터 한 개**를 사용하는 경우를 <strong>Stochastic Gradient Descent(SGD)</strong>, <strong>데이터의 일부(mini-batch)</strong>를 사용하는 경우를 <strong>mini-batch Stochastic Gradient Descent(mini-batch SGD)</strong>라고 하지만 **오늘날의 딥러닝에서 일반적으로 통용되는 SGD는 mini-batch SGD이다.**
 
 이 방법은 batch gradient descent 보다 다소 부정확할 수는 있지만, 훨씬 계산 속도가 빠르기 때문에 같은 시간에 더 많은 step을 갈 수 있으며 여러 번 반복할 경우 보통 batch의 결과와 유사한 결과로 수렴한다.
 
@@ -890,7 +906,7 @@ Adam(Adaptive Moment Estimation)은 RMSProp과 Momentum 방식을 합친 것 같
 
 다만, Adam에서는 m과 v가 처음에 0으로 초기화되어 있기 때문에 학습의 초반부에서는 <!-- $m_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/s1N1tdU89k.svg">,<!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/vlT3mzq78b.svg">가 0에 가깝게 bias 되어있을 것이라고 판단하여 이를 unbiased 하게 만들어주는 작업을 거친다.
 
-<!-- $m_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/s1N1tdU89k.svg"> 와 <!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/vlT3mzq78b.svg">의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
+<!-- $m_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/SC5adUyLme.svg">와 <!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/nZmGiXVEWJ.svg">의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
 
 이 보정된 expectation들을 가지고 gradient가 들어갈 자리에 <!-- $\widehat{m_t}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/Fg1mKf6Zwb.svg">, <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/8GdDTNeust.svg">가 들어갈 자리에 <!-- $\widehat{v_t}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/dHeVwJaC2s.svg">를 넣어 계산을 진행한다.
 
@@ -942,13 +958,13 @@ Momentum 방식은 말 그대로 Gradient Descent를 통해 이동하는 과정�
 
 현재 Gradient를 통해 이동하는 방향과는 별개로, 과거에 이동했던 방식을 기억하면서 그 방향으로 일정 정도를 추가적으로 이동하는 방식이다.
 
-<!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/AtlXNPiI8N.svg">: time step t에서의 이동 벡터
+<!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/DHJxB0uJ6a.svg">: time step t에서의 이동 벡터
 <br>
 <!-- $v_t = \gamma v_{t-1} + \eta\nabla_{\theta}J(\theta)$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/wVsfex3Z6n.svg">
 <br>
 <!-- $\theta = \theta - v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/NEC8eYVWpB.svg">
 <br>
-이 때, <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/635kzo5HeT.svg">는 얼마나 momentum을 줄 것인지에 대한 momentum term이다.
+이 때, <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/ivoAg3xkou.svg">는 얼마나 momentum을 줄 것인지에 대한 momentum term이다.
 
 #### References
 
