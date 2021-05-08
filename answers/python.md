@@ -423,24 +423,12 @@ for i in r:
 
 #### How do you write comments in python?
 
-한 줄 주석은 `#`을 사용하여 달 수 있다.
+> 따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#32)를 참고!
+
+`#`을 사용하여 주석을 달 수 있다.
 
 ```python
 # this is my comment
-```
-
-여러 줄 주석은 큰따옴표(`"`) 3개 혹은 작은따옴표(`'`) 3개로 주석을 달 수 있다.
-
-```python
-'''
-this is multiple comment with single quotes
-- boostcamp ai tech team 4
-'''
-
-"""
-this is multiple comment with double quotes
-- boostcamp ai tech team 4
-"""
 ```
 
 #### References
@@ -453,15 +441,56 @@ this is multiple comment with double quotes
 
 #### What is pickling and unpickling?
 
+Pickle module accepts any Python object and converts it into a string representation and dumps it into a file by using dump function, this process is called pickling. While the process of retrieving original Python objects from the stored string representation is called unpickling.
+
+우선 `직렬화(Serialization)`와 `역 직렬화(Deserialization)`의 개념을 알아야 한다. `직렬화`란 객체를 바이트 스트림(byte stream)으로 변환하여 디스크에 저장하거나 네트워크로 보낼 수 있도록 만들어주는 것을 말한다. 반대로 바이트 스트림을 파이썬 객체로 변환하는 것을 `역 직렬화`라고 한다.
+
+**pickle 모듈**은 파이썬 객체의 직렬화와 역 직렬화를 수행하는 모듈이다. 이 때 파이썬 객체를 직렬화할 때를 `pickling`이라고 하며, 바이트 스트림을 역 직렬화할 때를 `unpickling`이라고 한다.
+
 #### References
 
 - [pickle — 파이썬 객체 직렬화 - Python Documentation](https://docs.python.org/ko/3/library/pickle.html)
+- [The Python pickle Module: How to Persist Objects in Python - Real Python](https://realpython.com/python-pickle-module/)
 
 ---
 
 ## #28
 
 #### What are the generators in python?
+
+제너레이터(Generator)란 Iterator 객체를 간단히 만들 수 있는 함수를 말한다. 제너레이터는 다음과 같이 ① yield문과 함수, ② 표현식 형태로 만들 수 있다.
+
+> **방법 1. yield문과 함수**
+
+- 제너레이터 함수 정의
+
+```python
+def generator_list(value):
+    for i in range(value):
+        # 값을 반환하고 여기를 기억
+        yield i
+```
+
+- 제너레이터 객체 생성 및 next 함수로 호출
+
+```python
+gen = generator_list(2)
+print(next(gen))    # 0
+print(next(gen))    # 1
+print(next(gen))    # StopIteration 에러 발생
+```
+
+> **방법 2. 표현문**
+
+```python
+value = 2
+gen = (i for i in range(value))
+print(next(gen))    # 0
+print(next(gen))    # 1
+print(next(gen))    # StopIteration 에러 발생
+```
+
+그럼 왜 리스트 대신 제너레이터를 사용할까? 리스트를 사용하면 리스트의 크기만큼 메모리에 공간이 할당된다. 반면 제너레이터는 말그대로 next 함수로 호출될 때 값을 생성하고 해당 값만 메모리에 올린다! 즉, 메모리를 절약할 수 있다. 작은 데이터라면 상관없지만 큰 데이터에서는 제너레이터 사용이 필수이다.
 
 #### References
 
@@ -510,7 +539,15 @@ print(string.lower())           # boostcamp ai tech
 
 #### How to comment multiple lines in python?
 
-[26번 답변](#26) 참고!
+> 따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#32)를 참고!
+
+`#`을 여러 줄 사용하여 여러 줄의 주석을 달 수 있다.
+
+```python
+# this is my comment
+# I am commenting multiple lines
+# - boostcamp ai tech team 4
+```
 
 #### References
 
@@ -522,6 +559,8 @@ print(string.lower())           # boostcamp ai tech
 
 #### What are docstrings in Python?
 
+Docstrings are not actually comments, but, they are documentation strings. These docstrings are within triple quotes. They are not assigned to any variable and therefore, at times, serve the purpose of comments as well.
+
 #### References
 
 - [Documenting Python Code: A Complete Guide - Real Python](https://realpython.com/documenting-python-code/)
@@ -531,6 +570,14 @@ print(string.lower())           # boostcamp ai tech
 ## #33
 
 #### What is the purpose of is, not and in operators?
+
+Operators are special functions. They take one or more values and produce a corresponding result.
+
+is: returns true when 2 operands are true (Example: “a” is ‘a’)
+
+not: returns the inverse of the boolean value
+
+in: checks if some element is present in some sequence
 
 #### References
 
@@ -550,6 +597,10 @@ print(string.lower())           # boostcamp ai tech
 ## #35
 
 #### Whenever Python exits, why isn’t all the memory de-allocated?
+
+Whenever Python exits, especially those Python modules which are having circular references to other objects or the objects that are referenced from the global namespaces are not always de-allocated or freed.
+It is impossible to de-allocate those portions of memory that are reserved by the C library.
+On exit, because of having its own efficient clean up mechanism, Python would try to de-allocate/destroy every other object.
 
 #### References
 
