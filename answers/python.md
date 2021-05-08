@@ -224,6 +224,9 @@
 
 #### References
 
+- [self 이해하기 - 파이썬으로 배우는 알고리즘 트레이딩](https://wikidocs.net/1742)
+- [Python's Instance, Class, and Static Methods Demystified - Real Python](https://realpython.com/instance-class-and-static-methods-demystified/)
+
 ---
 
 ## #20
@@ -248,6 +251,8 @@
 
 #### References
 
+- [Shuffle a list, string, tuple in Python (random.shuffle, sample) - note.nkmk.me](https://note.nkmk.me/en/python-random-shuffle/)
+
 ---
 
 ## #23
@@ -255,6 +260,9 @@
 #### What’s the difference between iterator and iterable?
 
 #### References
+
+- [🐍 제너레이터(Generator) - 코딩하는펭귄의 저장소](https://cooding-penguin.netlify.app/python/generator/)
+- [Iterable 과 Iterator - 파이썬 - 기본을 갈고 닦자!](https://wikidocs.net/16068)
 
 ---
 
@@ -264,6 +272,8 @@
 
 #### References
 
+- [Generating random number list in Python - tutorialspoint](https://www.tutorialspoint.com/generating-random-number-list-in-python)
+
 ---
 
 ## #25
@@ -271,6 +281,8 @@
 #### What is the difference between range & xrange?
 
 #### References
+
+- [python range() 와 xrange() 차이 - ㅍㅍㅋㄷ](https://bluese05.tistory.com/57)
 
 ---
 
@@ -280,6 +292,8 @@
 
 #### References
 
+- [Documenting Python Code: A Complete Guide - Real Python](https://realpython.com/documenting-python-code/)
+
 ---
 
 ## #27
@@ -287,6 +301,8 @@
 #### What is pickling and unpickling?
 
 #### References
+
+- [pickle — 파이썬 객체 직렬화 - Python Documentation](https://docs.python.org/ko/3/library/pickle.html)
 
 ---
 
@@ -296,6 +312,9 @@
 
 #### References
 
+- [🐍 제너레이터(Generator) - 코딩하는펭귄의 저장소](https://cooding-penguin.netlify.app/python/generator/)
+- [How to Use Generators and yield in Python - Real Python](https://realpython.com/introduction-to-python-generators/)
+
 ---
 
 ## #29
@@ -303,6 +322,8 @@
 #### How will you capitalize the first letter of string?
 
 #### References
+
+- [Python String Methods - w3schools](https://www.w3schools.com/python/python_ref_string.asp)
 
 ---
 
@@ -312,6 +333,8 @@
 
 #### References
 
+- [Python String Methods - w3schools](https://www.w3schools.com/python/python_ref_string.asp)
+
 ---
 
 ## #31
@@ -320,6 +343,8 @@
 
 #### References
 
+- [Documenting Python Code: A Complete Guide - Real Python](https://realpython.com/documenting-python-code/)
+
 ---
 
 ## #32
@@ -327,6 +352,8 @@
 #### What are docstrings in Python?
 
 #### References
+
+- [Documenting Python Code: A Complete Guide - Real Python](https://realpython.com/documenting-python-code/)
 
 ---
 
@@ -343,6 +370,9 @@
 #### What is the usage of help() and dir() function in Python?
 
 #### References
+
+- [내장 함수: help() - Python Documentation](https://docs.python.org/ko/3/library/functions.html#help)
+- [내장 함수: dir() - Python Documentation](https://docs.python.org/ko/3/library/functions.html#dir)
 
 ---
 
