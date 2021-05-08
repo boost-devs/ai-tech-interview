@@ -906,7 +906,7 @@ Adam(Adaptive Moment Estimation)은 RMSProp과 Momentum 방식을 합친 것 같
 
 다만, Adam에서는 m과 v가 처음에 0으로 초기화되어 있기 때문에 학습의 초반부에서는 <!-- $m_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/s1N1tdU89k.svg">,<!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/vlT3mzq78b.svg">가 0에 가깝게 bias 되어있을 것이라고 판단하여 이를 unbiased 하게 만들어주는 작업을 거친다.
 
-<!-- $m_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/SC5adUyLme.svg">와 <!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/nZmGiXVEWJ.svg">의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
+<!-- $m_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=m_t">와 <!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=v_t">의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
 
 이 보정된 expectation들을 가지고 gradient가 들어갈 자리에 <!-- $\widehat{m_t}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/Fg1mKf6Zwb.svg">, <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/8GdDTNeust.svg">가 들어갈 자리에 <!-- $\widehat{v_t}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/dHeVwJaC2s.svg">를 넣어 계산을 진행한다.
 
@@ -958,13 +958,13 @@ Momentum 방식은 말 그대로 Gradient Descent를 통해 이동하는 과정�
 
 현재 Gradient를 통해 이동하는 방향과는 별개로, 과거에 이동했던 방식을 기억하면서 그 방향으로 일정 정도를 추가적으로 이동하는 방식이다.
 
-<!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/DHJxB0uJ6a.svg">: time step t에서의 이동 벡터
+<!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=v_t">: time step t에서의 이동 벡터
 <br>
 <!-- $v_t = \gamma v_{t-1} + \eta\nabla_{\theta}J(\theta)$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/wVsfex3Z6n.svg">
 <br>
 <!-- $\theta = \theta - v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/NEC8eYVWpB.svg">
 <br>
-이 때, <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/ivoAg3xkou.svg">는 얼마나 momentum을 줄 것인지에 대한 momentum term이다.
+이 때, <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cgamma">는 얼마나 momentum을 줄 것인지에 대한 momentum term이다.
 
 #### References
 
