@@ -44,9 +44,8 @@
   - [마지막 레이어 부분에 대해서 설명 한다면?](#19-2)
   - [학습은 BCE loss로 하되 상황을 MSE loss로 보고 싶다면?](#19-3)
 - [딥러닝할 때 GPU를 쓰면 좋은 이유는?](#20)
-  - [학습 중인데 GPU를 100% 사용하지 않고 있다. 이유는?](#20-1)
-  - [GPU를 두개 다 쓰고 싶다. 방법은?](#20-2)
-  - [학습시 필요한 GPU 메모리는 어떻게 계산하는가?](#20-3)
+  - [GPU를 두개 다 쓰고 싶다. 방법은?](#20-1)
+  - [학습시 필요한 GPU 메모리는 어떻게 계산하는가?](#20-2)
 
 ---
 
@@ -56,22 +55,22 @@
 
 **딥러닝이란** 여러 층을 가진 인공신경망(Artificial Neural Network, ANN)을 사용하여 머신러닝 학습을 수행하는 것으로, 심층학습이라고도 부른다.
 
-> 딥러닝은 엄밀히 말하자면 머신러닝에 포함되는 개념이다. 따라서 전통적인 머신러닝 기법과 딥러닝 기법의 차이를 설명하고자 한다.  
+> 딥러닝은 엄밀히 말하자면 머신러닝에 포함되는 개념이다. 따라서 전통적인 머신러닝 기법과 딥러닝 기법의 차이를 설명하고자 한다.
 
 > 인공신경망, 퍼셉트론에 대한 내용은 [reference](http://tcpschool.com/deep2018/deep2018_deeplearning_intro)를 참고
 
 **머신러닝과 딥러닝의 가장 큰 차이점**은 다음과 같다. 기존 머신러닝에서는 학습하려는 데이터의 여러 특징 중에서 `어떤 특징을 추출할지 사람이 직접 분석하고 판단`해야하는 반면, 딥러닝에서는 기계가 `자동으로 학습하려는 데이터에서 특징을 추출`하여 학습하게 된다. 따라서 특징 추출에 사람이 개입(feature engineering)하면 머신러닝, 개입하지 않으면 딥러닝이다.
 또한, 딥러닝은 머신러닝보다 큰 데이터셋과 긴 학습시간이 필요하다. 정형데이터는 주로 머신러닝, 비정형데이터는 주로 딥러닝 방식을 사용한다.
 
-> **추가내용) AI, ML, DL**  
+> **추가내용) AI, ML, DL**
 
 ![ai_ml_dl](/images/sally/2021-05-01-02-44-22.png)
 
-**인공지능이란** 인간이 가지고 있는 인식, 판단 등의 지적 능력을 모델링하여 컴퓨터에서 구현하는 것이다. 머신러닝, 딥러닝 외에도 다양한 분야가 인공지능 내에 포함된다.  
+**인공지능이란** 인간이 가지고 있는 인식, 판단 등의 지적 능력을 모델링하여 컴퓨터에서 구현하는 것이다. 머신러닝, 딥러닝 외에도 다양한 분야가 인공지능 내에 포함된다.
 
-**머신러닝이란** 데이터를 기반으로 패턴을 학습하고 결과를 예측하는 알고리즘 기법이다. 머신러닝은 조건이 복잡하고 규칙이 다양한 경우에, 데이터를 기반으로 일정한/숨겨진 패턴을 찾아내서 문제를 해결한다. 머신러닝의 단점은 데이터에 매우 의존적이라는 것이다. 즉, 좋은 품질의 데이터를 갖추지 못하면 머신러닝 수행결과도 좋지 않다는 것이다.  
+**머신러닝이란** 데이터를 기반으로 패턴을 학습하고 결과를 예측하는 알고리즘 기법이다. 머신러닝은 조건이 복잡하고 규칙이 다양한 경우에, 데이터를 기반으로 일정한/숨겨진 패턴을 찾아내서 문제를 해결한다. 머신러닝의 단점은 데이터에 매우 의존적이라는 것이다. 즉, 좋은 품질의 데이터를 갖추지 못하면 머신러닝 수행결과도 좋지 않다는 것이다.
 
-머신러닝은 아래와 같이 분류된다.  
+머신러닝은 아래와 같이 분류된다.
 
 - 지도학습
   - 분류, 회귀, 추천시스템, 시각/음성 인지(DL), 텍스트분석/NLP(DL)
@@ -91,12 +90,11 @@
 #### Cost Function과 Activation Function은 무엇인가요?
 
 **cost function**  
-모델은 데이터에 대해 현재 예측을 얼마나 잘하고 있는지 알아야 학습 방향을 어느 방향으로, 얼마나 개선할지 판단할 수 있다.  
+모델은 데이터에 대해 현재 예측을 얼마나 잘하고 있는지 알아야 학습 방향을 어느 방향으로, 얼마나 개선할지 판단할 수 있다.
 
-이 때, 예측 값과 데이터 값의 차이에 대한 함수를 **cost function**(MSE, CrossEntropy 등) 이라고 한다.  
+이 때, 예측 값과 데이터 값의 차이에 대한 함수를 **cost function**(MSE, CrossEntropy 등) 이라고 한다.
 
 **cost function** 을 최소화함으로써 모델을 적절한 표현력을 갖추도록 학습시킬 수 있다.
-
 
 **activation function**  
 데이터를 예측하기 위해 선형 모델을 사용할 수 있다. 하지만 선형 모델의 경우 복잡한 데이터에 대해서는 적절한 예측을 못한다. 따라서 이를 처리하기 위해 **비선형 모델**이 필요하다.
@@ -112,8 +110,9 @@
 활성화 함수는 입력 값에 대해 더 높게 혹은 더 낮게 만들 수 있기 때문에 활성화 함수라고 불린다.
 
 #### References
+
 - [5. 결과 값을 비교하는 방식(Cost function) - 대소니](https://daeson.tistory.com/166)
-- [Activation Functions에 대해 알아보자 - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/113 )
+- [Activation Functions에 대해 알아보자 - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/113)
 - [활성화 함수(activation function)을 사용하는 이유 - 프라이데이](https://ganghee-lee.tistory.com/30)
 
 ---
@@ -122,10 +121,10 @@
 
 #### Tensorflow, PyTorch 특징과 차이가 뭘까요?
 
-|구분|Tensorflow|PyTorch|
-|---|---|---|
-|패러다임|Define and Run|Define by Run|
-|그래프 형태|Static graph(정적)|Dynamic graph(동적)|
+| 구분        | Tensorflow         | PyTorch             |
+| ----------- | ------------------ | ------------------- |
+| 패러다임    | Define and Run     | Define by Run       |
+| 그래프 형태 | Static graph(정적) | Dynamic graph(동적) |
 
 Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패러다임이 다르다는 것이다. Tensorflow는 **Define-and-Run**인 반면에, Pytorch는 **Define-by-Run**이다.
 
@@ -133,12 +132,9 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 
 > <strong>Define by Run (PyTorch)</strong><br>선언과 동시에 데이터를 집어넣고 세션도 필요없이 돌리면 되기때문에 코드가 간결하고 난이도가 낮은 편이다.
 
-이 패러다임의 차이로 Tensorflow의 경우 먼저 모델을 만들고 값을 다 따로 넣어주어야 해서 직관적이지 않지만, Pytorch의 경우 간단하고 직관적이다.
-
 두 프레임워크 모두 계산 그래프를 정의하고 자동으로 그래디언트를 계산하는 기능이 있다. 하지만 Tensorflow의 계산 그래프는 정적이고 Pytorch는 동적이다.
 
 즉 Tensorflow에서는 계산 그래프를 한 번 정의하고 나면 그래프에 들어가는 입력 데이터만 다르게 할 수 있을 뿐 같은 그래프만을 실행할 수 있다. 하지만 PyTorch는 각 순전파마다 새로운 계산 그래프를 정의하여 이용한다.
-
 <img src="../images/adc/deep-learning/Tensorflow_PyTorch.png" width=800>
 
 #### References
@@ -153,7 +149,7 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 #### Data Normalization은 무엇이고 왜 필요한가요?
 
 **Data Normalization(데이터 정규화)이란** feature들의 분포(scale)을 조절하여 균일하게 만드는 방법이다. 데이터 정규화가 필요한 이유는 데이터 feature 간 scale 차이가 심하게 날 때, 큰 범위를 가지는 feature(ex. 가격)가 작은 범위를 가지는 feature(ex. 나이)보다 더 강하게 모델에 반영될 수 있기 때문이다.  
-즉, 데이터 정규화는 모든 데이터 포인트가 동일한 정도의 스케일(중요도)로 반영되도록 하는 역할을 수행하며, 아래와 같은 장점을 얻을 수 있다.  
+즉, 데이터 정규화는 모든 데이터 포인트가 동일한 정도의 스케일(중요도)로 반영되도록 하는 역할을 수행하며, 아래와 같은 장점을 얻을 수 있다.
 
 - 학습속도가 개선된다.
 - 노이즈가 작아지므로 오버피팅을 억제시킨다.
@@ -164,9 +160,10 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 > **추가내용) Regularization, Normalization, Standardization**
 
 **Regularization(정규화, 규제)** 란 모델에 제약(penalty)를 주어 모델의 복잡성을 낮추고, 이를 통해 오버피팅을 방지하는 방법이다. 제약을 사용하면 학습 정확도(train accuracy)는 조금 낮아질 수 있지만, 테스트 정확도(test accuracy)를 높일 수 있다. 정규화에는 `Drop out, Early Stopping, Weight decay(Parameter Norm Penalty)`와 같은 방법이 존재한다.  
+
 - 자세한 Regularization 방법은 [reference](https://bsm8734.github.io/posts/bc-d012-3-dlbasic-optimization-regularization/) 참고
 
-**Normalization, Standardization**은 모두 데이터의 범위(scale)을 축소하는 방법이다.(re-scaling) 데이터의 범위 재조정이 필요한 이유는 `데이터의 범위가 너무 넓은 곳에 퍼져있을 때(scale이 크다면), 데이터셋이 outlier를 지나치게 반영`하여 오버피팅이 될 가능성이 높기 때문이다. 두 방법은 scale 조절 방식에 차이가 존재한다.  
+**Normalization, Standardization**은 모두 데이터의 범위(scale)을 축소하는 방법이다.(re-scaling) 데이터의 범위 재조정이 필요한 이유는 `데이터의 범위가 너무 넓은 곳에 퍼져있을 때(scale이 크다면), 데이터셋이 outlier를 지나치게 반영`하여 오버피팅이 될 가능성이 높기 때문이다. 두 방법은 scale 조절 방식에 차이가 존재한다.
 
 **Normalization(정규화)** 방법에는 Batch Normalization, Min-Max Normalization 등이 있다.
 
@@ -179,11 +176,10 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 - `Z-score`: 관측값이 평균 기준으로 얼마나 떨어져있는지 나타낼 때 사용한다. 각 데이터에서 데이터 전체의 평균을 빼고, 이를 표준편차로 나누는 방식이다. 이상치(outlier)를 잘 처리하지만, 정확히 동일한 척도로 정규화 된 데이터를 생성하지는 않는다. 식은 아래와 같다.  
   - <!-- $z-score = {x-{\mu} \over {\sigma}}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=z-score%20%3D%20%7Bx-%7B%5Cmu%7D%20%5Cover%20%7B%5Csigma%7D%7D" width="25%">  
 
-
 #### References
 
 - [딥러닝 기초 Optimization_Regularization - Sally blog](https://bsm8734.github.io/posts/bc-d012-3-dlbasic-optimization-regularization/)
-- [머신 러닝_Normalization, Standardization, Regularization 비교 - 프로그래밍 학습 블로그](https://m.blog.naver.com/qbxlvnf11/221476122182)
+- [머신 러닝\_Normalization, Standardization, Regularization 비교 - 프로그래밍 학습 블로그](https://m.blog.naver.com/qbxlvnf11/221476122182)
 - [정규화(Normalization) 쉽게 이해하기 - 아무튼 워라벨](http://hleecaster.com/ml-normalization-concept/)
 - [정규화(Normalization)의 목적과 방법들 - Deep Learning with Writing](https://mole-starseeker.tistory.com/31)
 - [데이터 일반화 vs 표준화 (Normalization and Standardization of Data) - 컴퓨터와 수학, 몽상 조금](https://skyil.tistory.com/50)
@@ -206,10 +202,9 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 </div>
 <br/>
 
-
 sigmoid 함수는 입력을 0~1 사이의 값으로 바꿔준다.
 
-입력 값이 크거나 작을 때 기울기가 0에 가까워지는 `saturation` 문제가 있다.   
+입력 값이 크거나 작을 때 기울기가 0에 가까워지는 `saturation` 문제가 있다.  
 이는 `gradient vanishing` 문제를 야기하므로 요즘에는 활성화 함수로서 잘 사용되지 않는다.
 
 또한 값이 `zero-centered` 가 아니기 때문에 입력값의 부호에 그대로 영향을 받으므로 경사하강법 과정에서 정확한 방향으로 가지 못하고 지그재그로 움직이는 문제가 있다. [12-3 참고](#12-3)
@@ -225,15 +220,14 @@ tanh 함수는 입력을 -1~1 사이의 값으로 바꿔준다.
 
 sigmoid 함수와 마찬가지로 `saturation` 문제가 있다.
 
-
-**ReLU** 
+**ReLU**
 
 <div align='center'>
     <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/relu.png' height='200px '/>
 </div>
 <br/>
 
-ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다. 
+ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다.
 
 > f(x) = max(0, x)
 
@@ -243,8 +237,7 @@ ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다.
 
 음의 입력 값에 대해서는 어떤 업데이트도 되지 않는 `Dead ReLU` 문제가 발생한다.
 
-
-**LeakyReLU** 
+**LeakyReLU**
 
 <div align='center'>
     <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/leakyrelu.png' height='200px '/>
@@ -256,8 +249,10 @@ ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다.
 `ReLU` 와 마찬가지로 좋은 성능을 유지하면서 음수 입력이 0이 아니게 됨에 따라 `Dead ReLU` 문제를 해결하였다.
 
 #### References
-- [Activation Functions에 대해 알아보자 - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/113 )
+
+- [Activation Functions에 대해 알아보자 - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/113)
 - [[신경망] 6. 활성화 함수 (Activation Function) - 분석벌레의 공부방](https://analysisbugs.tistory.com/55)
+
 ---
 
 ## #6
@@ -269,38 +264,45 @@ ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다.
 Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overfitting을 방지하는 방법
 
 - Early stopping
+
   - training loss는 계속 낮아지더라도 validation loss는 올라가는 시점을 overfitting으로 간주하여 학습을 종료하는 방법
 
   <img src="../images/adc/deep-learning/early_stopping.png" width=500>
 
 - Parameter norm penalty (weight decay)
+
   - 비용함수에 제곱을 더하거나(<!-- $L_2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/nvXndsE27D.svg">-Regularization) 절댓값을 더해서(<!-- $L_1$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/iMW66XbpJ0.svg">-Regularization) weight의 크기에 페널티를 부과하는 방법
 
   <img src="../images/adc/deep-learning/parameter_norm_penalty.PNG" width=350>
 
 - Data augmentation
+
   - 훈련 데이터의 개수가 적을 때, 데이터에 인위적으로 변화를 주어 훈련 데이터의 수를 늘리는 방법
 
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb7fmua%2FbtqWVSMBevN%2FBzTdTP90jwXk00i2sEtZ81%2Fimg.png" width=500>
 
 - Noise robustness
+
   - 노이즈나 이상치같은 엉뚱한 데이터가 들어와도 흔들리지 않는(robust 한) 모델을 만들기 위해 input data나 weight에 일부러 노이즈를 주는 방법
 
   <img src="../images/adc/deep-learning/noise_robustness.PNG" width=500>
 
 - Label smoothing
+
   - 모델이 Ground Truth를 정확하게 예측하지 않아도 되게 만들어 주어 정확하지 않은 학습 데이터셋에 치중되는 경향(overconfident)을 막아주는 방법
 
     <img src="../images/adc/deep-learning/label_smoothing.png" width=400>
 
 - Dropout
+
   - 각 계층 마다 일정 비율의 뉴런을 임의로 정해 drop 시키고 나머지 뉴런만 학습하도록 하는 방법
   - 매 학습마다 drop 되는 뉴런이 달라지기 때문에 서로 다른 모델들을 앙상블 하는 것과 같은 효과가 있다.
   - dropout은 **학습 시에만 적용**하고, 추론 시에는 적용하지 않는다.
-
+  
   <img src="../images/adc/deep-learning/dropout.png" width=500>
 
 - Batch normalization
+
   - 활성화함수의 활성화값 또는 출력값을 정규화하는 방법
   - 각 hidden layer에서 정규화를 하면서 입력분포가 일정하게 되고, 이에 따라 Learning rate을 크게 설정해도 괜찮아진다. 결과적으로 학습속도가 빨라지는 효과가 있다.
 
@@ -324,11 +326,11 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 
 ![hyper-parameter](/images/sally/2021-05-01-16-23-27.png)
 
-> **추가내용) 파라미터 vs. 하이퍼 파라미터**  
+> **추가내용) 파라미터 vs. 하이퍼 파라미터**
 
 파라미터와 하이퍼 파라미터를 구분하는 기준은 사용자가 직접 설정하느냐 아니냐이다. **사용자가 직접 설정하면 하이퍼 파라미터, 모델 혹은 데이터에 의해 결정되면 파라미터**이다.
 딥러닝에서 하이퍼 파라미터는 `학습률, 배치 크기, 은닉층의 개수` 등이 있고, 파라미터는 `가중치, 편향` 등이 있다.  
-![parameter_vs_hyperParameter](/images/sally/2021-05-01-16-27-17.png)  
+![parameter_vs_hyperParameter](/images/sally/2021-05-01-16-27-17.png)
 
 > ✔︎ 선험적 지식: 경험하지 않아도 알 수 있는 것을 말한다.  
 > ✔︎ 휴리스틱: 체계적이면서 합리적인 판단이 굳이 필요하지 않은 상황에서 사람들이 빠르게 사용할 수 있도록, 보다 용이하게 구성된 간편추론의 방법이다. '대충 어림짐작하기', '눈대중으로 맞추기' 등의 방법을 일컫는다.
@@ -349,31 +351,32 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 **LeCun Initialization**  
 딥러닝의 대가 LeCun 교수님이 제시한 초기화 방법으로 들어오는 노드 수에 대해 정규 분포와 균등 분포를 따르는 방법이 있다.
 
+정규 분포를 따르는 방법
 
-정규 분포를 따르는 방법  
 <div align='center'>
     <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/lecun_normal.png' height='200px '/>
 </div>
 <br/>
 
+균등 분포를 따르는 방법
 
-균등 분포를 따르는 방법  
 <div align='center'>
     <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/lecun_uniform.png' height='200px '/>
 </div>
 <br/>
 
-**Xavier Initialization**   
+**Xavier Initialization**  
 LeCun 방법과 비슷하지만 들어오는 노드 수와 나가는 노드 수에 의존하고, 적절한 상수값도 발견하여 사용한 방법이다.
 
-정규 분포를 따르는 방법  
+정규 분포를 따르는 방법
+
 <div align='center'>
     <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/xavier_normal.png' height='200px '/>
 </div>
 <br/>
 
+균등 분포를 따르는 방법
 
-균등 분포를 따르는 방법  
 <div align='center'>
     <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/xavier_uniform.png' height='200px '/>
 </div>
@@ -385,21 +388,22 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 **He Initialization**
 `ReLU` 와 함께 많이 사용되는 방법으로, LeCun 방법과 같지만 상수를 다르게 하였다. 들어오는 노드만 고려한다.
 
-정규 분포를 따르는 방법  
+정규 분포를 따르는 방법
+
 <div align='center'>
     <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/he_normal.png' height='200px '/>
 </div>
 <br/>
 
+균등 분포를 따르는 방법
 
-균등 분포를 따르는 방법  
 <div align='center'>
     <img src='https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/he_uniform.png' height='200px '/>
 </div>
 <br/>
 
-
 #### References
+
 - [가중치 초기화 (Weight Initialization) - reniew's blog](https://reniew.github.io/13/)
 
 ---
@@ -433,7 +437,7 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 #### TF, PyTorch 등을 사용할 때 디버깅 노하우는?
 
-오류가 발생하는 곳, 중요한 데이터가 바뀌는 지점을 디버깅 포인트로 두고, 확인하는 방법이 있다. 또, IDE에서 다양한 디버깅 extension을 지원하기 때문에 이를 잘 활용하면 좋은 인사이트를 얻을 수 있다. 예를들어, vs code의 jupyter extension을 사용하면 데이터 프레임, 변수값등을 보기 쉽게 정렬하여 확인할 수 있다.  
+오류가 발생하는 곳, 중요한 데이터가 바뀌는 지점을 디버깅 포인트로 두고, 확인하는 방법이 있다. 또, IDE에서 다양한 디버깅 extension을 지원하기 때문에 이를 잘 활용하면 좋은 인사이트를 얻을 수 있다. 예를들어, vs code의 jupyter extension을 사용하면 데이터 프레임, 변수값등을 보기 쉽게 정렬하여 확인할 수 있다.
 
 디버깅 노하우도 중요하지만, 오류에 대한 대처방식을 익히면 좋다. 디버깅 하지 않고 오류에 대처할 수 있으므로, 디버깅 시간을 아껴준다. 예를들어, 딥러닝 학습을 위한 코드를 작성할 때, 가장 많이 발생하는 오류는 CUDA out of memory와 shape 오류이다.(개인적인 의견) out of memory와 같은 오류는 배치 사이즈를 줄인다거나, 입력 데이터의 사이즈를 줄이는 방식으로 해결할 수 있다. shape 오류는 디버깅을 통해서 현재 입력 데이터의 shape, type등을 확인하고, 함수의 파라미터가 요구하는 shape, type에 맞게 변형하는 과정이 필요하다.  
 
@@ -446,6 +450,7 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 ## #11
 
 #### 뉴럴넷의 가장 큰 단점은 무엇인가? 이를 위해 나온 One-Shot Learning은 무엇인가?
+
 사람은 처음 보는 물건 (새 레이블) 에 대해 조금만 봐도 다른 것과 이 물건을 구분해낼 수 있다.  
 하지만 뉴럴넷은 이 물건을 구분해내기 위해서는 이 물건에 대한 많은 데이터를 학습해야한다.
 
@@ -453,9 +458,10 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 이를 위해서는 기존에 다른 레이블의 많은 데이터를 학습하여 데이터의 특성을 잘 이해하는 `pretrained` 모델이 필요하다.
 
-학습된 모델에 새로운 레이블의 데이터 하나 던져 주면 모델은 데이터의 특성에 대한 이해를 바탕으로 이 레이블에 대해서도 이해를 하게 된다.  
+학습된 모델에 새로운 레이블의 데이터 하나 던져 주면 모델은 데이터의 특성에 대한 이해를 바탕으로 이 레이블에 대해서도 이해를 하게 된다.
 
 #### References
+
 - [One-shot learning (siamese network) - sji](https://aimaster.tistory.com/48)
 - [One shot learning, Siamese Network 이해 - Deep Play](https://3months.tistory.com/507)
 
@@ -489,13 +495,19 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 #### Non-Linearity라는 말의 의미와 그 필요성은?
 
-비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 <!-- $x_1, x_2, ... , x_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x_1%2C%20x_2%2C%20...%20%2C%20x_n">과 가중치 <!-- $w_1, w_2, ... , w_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=w_1%2C%20w_2%2C%20...%20%2C%20w_n">으로 <!-- $y = w_1*x_1 + w_2*x_2 + ... + w_n*x_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20w_1*x_1%20%2B%20w_2*x_2%20%2B%20...%20%2B%20w_n*x_n">으로 표현할 수 있다. 그 외에 이렇게 표현할 수 없는 모든 모델을 비선형 관계에 있는 모델이라고 한다.
+비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 <!-- $x_1, x_2, ... , x_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x_1%2C%20x_2%2C%20...%20%2C%20x_n">과 가중치 <!-- $w_1, w_2, ... , w_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=w_1%2C%20w_2%2C%20...%20%2C%20w_n">으로 <!-- $y = w_1*x_1 + w_2*x_2 + ... + w_n*x_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20w_1*x_1%20%2B%20w_2*x_2%20%2B%20...%20%2B%20w_n*x_n">으로 표현할 수 있으며, 가산성(Additreivityly)과 동차성(Homogeneity)을 만족해야 한다.
+
+- **가산성**: 임의의 수 <!-- $x, y$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x%2C%20y">에 대해 <!-- $f(x+y) = f(x) + f(y)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x%2By)%20%3D%20f(x)%20%2B%20f(y)">가 성립
+- **동차성**: 임의의 수 $x, \alpha$에 대해 <!-- $f(\alpha x) = \alpha f(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(%5Calpha%20x)%20%3D%20%5Calpha%20f(x)">가 성립
+
+이를 만족하지 못하는 모델을 비선형 관계에 있는 모델이라고 한다.
 
 딥러닝에서 이런 비선형 관계는 활성화 함수(activation function)을 도입함으로써 표현할 수 있다. 그럼 비선형 관계 즉, 활성화 함수가 왜 필요할까? 바로 **활성화 함수를 사용해 여러 층을 쌓아서 더 복잡한 표현을 하기 위해서**이다. 활성화 함수가 <!-- $h(x) = cx$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=h(x)%20%3D%20cx">인 선형 함수라고 생각해보자. 이 때 <!-- $n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=n">개의 층을 쌓았다고 할 때, 모델은 <!-- $y = h^n(x) = c^nx$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20h%5En(x)%20%3D%20c%5Enx">로 나타낼 수 있다. <!-- $c^n=k$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=c%5En%3Dk">라는 상수로 치환하면 결국 1층을 가진 신경망과 동일하다. 그렇기 때문에 비선형인 활성화 함수가 필요한 것이다.
 
 #### References
 
 - [[밑바닥 딥러닝] 신경망 - 코딩하는펭귄의 저장소](https://cooding-penguin.netlify.app/dl-from-scratch/neural-network/#%EB%B9%84%EC%84%A0%ED%98%95-%ED%95%A8%EC%88%98)
+- [선형성 - 위키백과](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%98%95%EC%84%B1)
 
 ---
 
@@ -503,13 +515,22 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 #### ReLU로 어떻게 곡선 함수를 근사하나?
 
-ReLU는 양수일 때 <!-- $y=x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3Dx">로 선형 부분과 음수일 때 <!-- $y=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3D0">으로 비선형 부분이 결합된 형태이다. 이를 활성화 함수로 설정하고 여러 층을 쌓으면, 마치 **ReLU 함수를 선형 결합한 형태**를 갖게 된다. ReLU는 비선형 함수이기 때문에 최종적으로 비선형성을 띄게 되고, back propagation을 통해 점점 곡선 함수에 맞게 학습되도록 하여 근사할 수 있다.
+ReLU는 양수일 때 <!-- $y=x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3Dx">인 선형 함수와 음수일 때 <!-- $y=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3D0">인 선형 함수 두 개를 결합된 형태이다. 그렇지만 ReLU는 선형 함수가 갖는 가산성을 만족하지 못하기 때문에 비선형 함수로 볼 수 있다. 하지만 ReLU가 어떻게 곡선 함수를 근사할 수 있을까?
+
+<div align='center'>
+<img src='../images/penguin/relu-approximate.png' height='240px'/>
+</div>
+
+<br/>
+
+ReLU를 여러 개 결합하면, 특정 지점에서 특정 각도만큼 선형 함수를 구부릴 수 있다. 이 성질을 이용하여 곡선 함수 뿐만 아니라 모든 함수에 근사를 할 수 있게 된다.
 
 #### References
 
 - [활성화 함수(Activation function) 설명 (Sigmoid, ReLU, LeakyReLU, tanh) - 별보는두더지](https://mole-starseeker.tistory.com/m/39)
 - [Q2) Sigmoid 보다 ReLu를 많이 쓰는 이유? - JINSOL KIM](https://gaussian37.github.io/math-question-q2/)
 - [How do ReLU Neural Networks approximate any continuous function? - towards data science](https://towardsdatascience.com/how-do-relu-neural-networks-approximate-any-continuous-function-f59ca3cf2c39)
+- [Finally, an intuitive explanation of why ReLU works](https://towardsdatascience.com/if-rectified-linear-units-are-linear-how-do-they-add-nonlinearity-40247d3e4792)
 
 ---
 
@@ -517,9 +538,9 @@ ReLU는 양수일 때 <!-- $y=x$ --> <img style="transform: translateY(0.1em); b
 
 #### ReLU의 문제점은?
 
-ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</strong>이다. ReLU는 결과값이 음수인 경우 모두 0으로 취급하는데, back propagation시 기울기에 0이 곱해져 해당 부분의 뉴런은 죽고 그 이후의 뉴런 모두 죽게 된다. 이를 해결한 Leaky ReLU는 값이 음수일 때 조금의 음의 기울기를 갖도록 하여 뉴런이 조금이라도 기울기를 갖도록 한다.
+ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</strong>이다. ReLU는 결과값이 음수인 경우 모두 0으로 취급하는데, back propagation시 기울기에 0이 곱해져 해당 부분의 뉴런은 죽고 그 이후의 뉴런 모두 죽게 된다. 이를 해결한 Leaky ReLU는 값이 음수일 때 조금의 음의 기울기를 갖도록 하여 뉴런이 조금이라도 기울기를 갖도록 한다. 또 다른 방법으로는 입력값에 아주 조금의 편향(bias)를 주어 ReLU를 왼쪽으로 조금 이동시키는 방법이 있다. 이렇게 되면 입력값은 모두 양수이므로 뉴런이 모두 활성화가 되어 뉴런이 죽지 않는다. 관련 내용은 [CS231n 6강 16:45](https://youtu.be/wEoyxE0GP2M?t=1005)를 참고!
 
-두 번째 문제는 <strong>편향 이동(Bias Shift)</strong>이다. ReLU는 항상 0이상의 값을 출력하기 때문에 활성화값의 평균이 0보다 커 zero-centered하지 않다. 활성화값이 zero-centered되지 않으면 가중치 업데이트가 동일한 방향으로만 업데이트가 되서 학습 속도가 느려질 수가 있다.
+두 번째 문제는 <strong>편향 이동(Bias Shift)</strong>이다. ReLU는 항상 0이상의 값을 출력하기 때문에 활성화값의 평균이 0보다 커 zero-centered하지 않다. 활성화값이 zero-centered되지 않으면 가중치 업데이트가 동일한 방향으로만 업데이트가 되서 학습 속도가 느려질 수가 있다. 관련 내용은 [CS231n 6강 8:46](https://youtu.be/wEoyxE0GP2M?t=526)을 참고!
 
 <div align='center'>
 <img src='../images/penguin/selu-elu.png' height='240px'/>
@@ -536,6 +557,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 - [05-1. 심층 신경망 학습 - 활성화 함수, 가중치 초기화 EXCELSIOR](https://excelsior-cjh.tistory.com/177)
 - [computer-vision-study-2020s/week3/week3.md - CoodingPenguin/computer-vision-study-2020s](https://github.com/CoodingPenguin/computer-vision-study-2020s/blob/master/week3/week3.md#lecture-6)
 - [Activation Functions in Neural Networks - Kshitij Khurana](https://medium.com/@kshitijkhurana3010/activation-functions-in-neural-networks-ed88c56b611b)
+- [A Gentle Introduction to the Rectified Linear Unit (ReLU)](https://machinelearningmastery.com/rectified-linear-activation-function-for-deep-learning-neural-networks/)
 
 ---
 
@@ -577,12 +599,14 @@ Gradient Descent를 수식으로 표현하면 아래와 같다.
 **Gradient Descent의 문제점**
 
 - 적절한 step size(learning rate)
+
   - step size가 큰 경우 한 번 이동하는 거리가 커지므로 빠르게 수렴할 수 있다는 장점이 있다. 하지만, step size를 너무 크게 설정해버리면 최소값을 계산하도록 수렴하지 못하고 함수 값이 계속 커지는 방향으로 최적화가 진행될 수 있다.
   - 한편 step size가 너무 작은 경우 발산하지는 않을 수 있지만 최적의 x를 구하는데 소요되는 시간이 오래 걸린다는 단점이 있다.
 
   <img src="../images/adc/deep-learning/gradient_descent_4.png">
 
 - local minima 문제
+
   - gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때문에 어떤 경우에는 local minima에 빠져 계속 헤어나오지 못하는 경우도 생긴다.
 
   <img src="../images/adc/deep-learning/gradient_descent_3.png" width=400>
@@ -659,7 +683,7 @@ minima에 들어갔다가 나오는 경우일 것이다.
 
 #### Local Minima 문제에도 불구하고 딥러닝이 잘 되는 이유는?
 
-local minima 문제가 사실은 고차원(High Dimensional)의 공간에서는 발생하기 힘든, 매우 희귀한 경우이기 때문이다. 실제 딥러닝 모델에서는 weight가 수도없이 많으며, 그 수많은 weight가 모두 local minima에 빠져야 weight update가 정지되기 때문에 local minima는 큰 문제가 되지 않는다.  
+local minima 문제가 사실은 고차원(High Dimensional)의 공간에서는 발생하기 힘든, 매우 희귀한 경우이기 때문이다. 실제 딥러닝 모델에서는 weight가 수도없이 많으며, 그 수많은 weight가 모두 local minima에 빠져야 weight update가 정지되기 때문에 local minima는 큰 문제가 되지 않는다.
 
 > **Local Minima 문제에도 불구하고 딥러닝이 잘 되는, 더 구체적인 이유**
 
@@ -667,11 +691,11 @@ local minima 문제가 사실은 고차원(High Dimensional)의 공간에서는 
 
 ![high-dim-minima](/images/sally/2021-05-01-17-08-37.png)
 
-> **추가자료) Local minima**  
+> **추가자료) Local minima**
 
-Local minima 문제는 에러를 최소화시키는 최적의 파라미터를 찾는 문제에 있어서 아래 그림처럼 파라미터 공간에 수많은 지역적인 홀(hole)들이 존재하여 이러한 local minima에 빠질 경우 전역적인 해(global minimum)를 찾기 힘들게 되는 문제를 일컫는다.  
+Local minima 문제는 에러를 최소화시키는 최적의 파라미터를 찾는 문제에 있어서 아래 그림처럼 파라미터 공간에 수많은 지역적인 홀(hole)들이 존재하여 이러한 local minima에 빠질 경우 전역적인 해(global minimum)를 찾기 힘들게 되는 문제를 일컫는다.
 
-<img src="/images/sally/2021-05-01-16-53-57.png" width="70%">  
+<img src="/images/sally/2021-05-01-16-53-57.png" width="70%">
 
 > **Critical point, Saddle point, Local minima**
 
@@ -684,7 +708,7 @@ Local minima 문제는 에러를 최소화시키는 최적의 파라미터를 �
 
 #### References
 
-- [NeuralNetwork (3) Optimazation2 - Cornor's Blog](https://wjddyd66.github.io/dl/NeuralNetwork-(3)-Optimazation2/)
+- [NeuralNetwork (3) Optimazation2 - Cornor's Blog](<https://wjddyd66.github.io/dl/NeuralNetwork-(3)-Optimazation2/>)
 - [Local Minima 문제에 대한 새로운 시각 - 다크 프로그래머](https://darkpgmr.tistory.com/148)
 - [05-1.심층 신경망 학습-활성화 함수, 가중치 초기화 - EXCELSIOR](https://excelsior-cjh.tistory.com/177)
 
@@ -699,29 +723,29 @@ Local minima 문제를 피하는 방법으로는 **Momentum, Nesterov Accelerate
 **SGD**는 Stochastic Gradient Descent으로, 하나 혹은 여러개의 데이터를 확인한 후에 어느 방향으로 갈 지 정하는 가장 기초적인 방식이다.  
 
 **Momentum**이란 관성을 의미하며, 이전 gradient의 방향성을 담고있는 `momentum` 인자를 통해 흐르던 방향을 어느 정도 유지시켜 local minima에 빠지지 않게 만든다. 즉, 관성을 이용하여, 학습 속도를 더 빠르게 하고, 변곡점을 잘 넘어갈 수 있도록 해주는 역할을 수행한다.  
-<img src="/images/sally/2021-05-01-18-37-27.png" width="50%">  
+<img src="/images/sally/2021-05-01-18-37-27.png" width="50%">
 
 **Nesterov Accelerated Gradient(NAG)** 는 모멘텀과 비슷한 역할을 수행하는 `Look-ahead gradient `인자를 포함하여, <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a"> 라는 `accumulate gradient`가 gradient를 감소시키는 역할을 한다. 모멘텀과 다른 점은, 미리 한 스텝을 옮겨가본 후에 어느 방향으로 갈지 정한다는 것이다.  
 <img src="/images/sally/2021-05-01-18-41-38.png" width="45%">
 
 - **Momentum vs. NAG**  
-  ![momemtum vs. NAD](/images/sally/2021-05-01-18-44-16.png)  
+  ![momemtum vs. NAD](/images/sally/2021-05-01-18-44-16.png)
 
 **Adagrad**란 뉴럴넷의 파라미터가 많이 바뀌었는지 적게 바뀌었는지 확인하고, 적게 변한건 더 크게 변하게 하고, 크게 변한건 더 작게 변화시키는 방법이다. Adagrad는 `sum of gradient squares`(<!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">)를 사용하는데, 이는 그래디언트가 얼만큼 변했는지를 제곱해서 더하는 것이므로 계속 커진다는 문제가 발생한다. <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">가 계속 커지면 분모가 점점 무한대에 가까워지게 되어, <!-- $W$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=W"> 업데이트가 되지 않게 되어, 뒤로 갈수록 학습이 점점 안되는 문제점이 발생한다.
 
-<img src="/images/sally/2021-05-01-18-47-55.png" width="60%">  
+<img src="/images/sally/2021-05-01-18-47-55.png" width="60%">
 
 **Adadelta**는 `Exponential Moving Average(EMA)`를 사용하여, Adagrad의 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">가 계속 커지는 현상을 막을 수 있다. EMA는 현재 타임스텝으로부터 `윈도우 사이즈만큼의 파라미터 변화(그래디언트 제곱의 변화)를 반영`하는 역할을 하는데, 이전의 값을 모두 저장하는 것이 아닌, `이전 변화량에 특정 비율을 곱해 더한 인자`를 따로 두는 방식이다. Adadelta는 learning rate가 없다.
 
 <img src="/images/sally/2021-05-01-21-41-54.png" width="70%">
 
 > **Momentum**의 더 자세한 내용은 [모멘텀의 수식을 적어 본다면?](#17-3) 참고  
-> **SGD, RMSprop, Adam**에 대한 설명은 [SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?](#17) 참고  
+> **SGD, RMSprop, Adam**에 대한 설명은 [SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?](#17) 참고
 
 #### References
 
 - [딥러닝 기초 Optimization-Gradient Descent Methods - Sally blog](https://bsm8734.github.io/posts/bc-d012-2-dlbasic-optimization-gradient-descent-methods/)
-- [NeuralNetwork (3) Optimazation2 - Cornor's Blog](https://wjddyd66.github.io/dl/NeuralNetwork-(3)-Optimazation2/)
+- [NeuralNetwork (3) Optimazation2 - Cornor's Blog](<https://wjddyd66.github.io/dl/NeuralNetwork-(3)-Optimazation2/>)
 
 ---
 
@@ -741,12 +765,14 @@ Gradient Descent 방식에서 lacal minima에 도달함은 증명되어있으나
 ## #15
 
 #### Training 세트와 Test 세트를 분리하는 이유는?
+
 모델은 데이터에 대해 예측값을 만들고 정답과 비교하며 업데이트되면서 학습이 된다.  
 그런데 학습 데이터에 대해서는 좋은 성능을 낸다 하더라도 본 적 없는 데이터에 대해서는 잘 대응하지 못하는 **오버피팅** 문제가 생긴다면 좋은 모델이 아니다.
 
 이를 막기 위해 학습된 모델이 처음 보는 데이터에도 강건하게 성능을 내는지 판단하기 위한 수단으로 test 세트를 따로 만든다.
 
 #### References
+
 - [test와 validation - ML Basics](https://wikidocs.net/31019)
 
 ---
@@ -754,9 +780,10 @@ Gradient Descent 방식에서 lacal minima에 도달함은 증명되어있으나
 ## #15-1
 
 #### Validation 세트가 따로 있는 이유는?
+
 모델을 학습시키고 test 데이터를 통해 모델의 일반화 성능을 파악하고, 다시 모델에 새로운 시도를 하고 test 데이터를 통해 모델의 성능을 파악한다고 생각해보자.
 
-이 경우, 모델은 결국 test 데이터에도 오버피팅이 되어 다시 처음 보는 데이터를 주면 좋은 성능을 보장할 수 없게 된다.  
+이 경우, 모델은 결국 test 데이터에도 오버피팅이 되어 다시 처음 보는 데이터를 주면 좋은 성능을 보장할 수 없게 된다.
 
 이 문제를 막기 위해 validation 세트를 사용한다.  
 validation 세트를 통해 모델의 성능을 평가하고 하이퍼파라미터 등을 수정하는 것이다.
@@ -764,6 +791,7 @@ validation 세트를 통해 모델의 성능을 평가하고 하이퍼파라미�
 즉, train 데이터로 모델을 학습시키고 valid 데이터로 학습된 모델의 성능 평가를 하고 더 좋은 방향으로 모델을 수정한다. 그리고 최종적으로 만들어진 모델로 test 데이터를 통해 최종 성능을 평가한다.
 
 #### References
+
 - [test와 validation - ML Basics](https://wikidocs.net/31019)
 
 ---
@@ -771,12 +799,14 @@ validation 세트를 통해 모델의 성능을 평가하고 하이퍼파라미�
 ## #15-2
 
 #### Test 세트가 오염되었다는 말의 뜻은?
+
 test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.  
 그런데 train 데이터가 test 데이터와 흡사하거나 포함되기까지한다면 test 데이터는 더이상 학습된 모델의 성능 평가를 객관적으로 하지 못한다.
 
 이렇듯 test 데이터가 train 데이터와 유사하거나 포함된 경우에 test 세트가 오염되었다고 말한다.
 
 #### References
+
 - [7. Data Leakage - 분리수거장](https://m.blog.naver.com/hongjg3229/221811766581)
 
 ---
@@ -784,10 +814,10 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 ## #15-3
 
 #### Regularization이란 무엇인가?
+
 모델의 오버피팅을 막고 처음 보는 데이터에도 잘 예측하도록 만드는 방법을 Regularization(일반화)라고 한다.
 
 대표적인 방법으로 dropout, [L1-L2 Regularization](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/machine-learning.md#21) 등이 있다. [6번 참고](#6)
-
 
 ---
 
@@ -806,7 +836,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 배치 정규화(Batch Normalization)은 학습 시 **미니배치 단위로 입력의 분포가 평균이 0, 분산이 1이 되도록 정규화**한다. 더불어 <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cgamma">로 스케일과 <!-- $\beta$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta">로 이동 변환을 수행한다. 이렇게 배치 정규화를 사용하면 다음과 같은 효과를 얻을 수 있다.
 
 - `장점 1` 기울기 소실/폭발 문제가 해결되어 큰 학습률을 설정할 수 있어 학습속도가 빨라진다.
-- `장점 2` 항상 입력을 정규화시키기 대문에 가중치 초깃값에 크게 의존하지 않아도 된다.
+- `장점 2` 항상 입력을 정규화시키기 때문에 가중치 초깃값에 크게 의존하지 않아도 된다.
 - `장점 3` 자체적인 규제(Regularization) 효과가 있어 Dropout이나 Weight Decay와 같은 규제 방법을 사용하지 않아도 된다.
 
 #### References
@@ -855,7 +885,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 #### GAN에서 Generator 쪽에도 BN을 적용해도 될까?
 
-일반적으로 GAN에서는 생성기(Generator)의 출력층(Output Layer)와 식별기(Discriminator)의 입력층(Input Layer)에는 BN(Batch Normalization)을 적용하지 않는다. 왜냐하면 생성기가 만든 이미지가 BN을 지나면 실제 이미지와는 값의 범위가 달라지기 때문이다.
+일반적으로 GAN에서는 생성기(Generator)의 출력층(Output Layer)에만 BN(Batch Normalization)을 적용하지 않는다. 왜냐하면 생성기가 만든 이미지가 BN을 지나면 실제 이미지와는 값의 범위가 달라지기 때문이다.
 
 #### References
 
@@ -891,7 +921,6 @@ Adagrad의 식에서 gradient의 제곱값을 더해나가면서 구한 <!-- $G_
 
 이렇게 대체를 할 경우 Adagrad처럼 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/SKqtMhxnCB.svg"> 가 무한정 커지지는 않으면서 최근 변화량의 변수간 상대적인 크기 차이는 유지할 수 있다.
 
-
 식으로 나타내면 다음과 같다.
 
 <img src="../images/adc/deep-learning/RMSProp.PNG" width=250>
@@ -913,8 +942,10 @@ Adam(Adaptive Moment Estimation)은 RMSProp과 Momentum 방식을 합친 것 같
 <img src="../images/adc/deep-learning/Adam2.PNG" width=220>
 
 #### References
+
 - [Gradient Descent Optimization Algorithms 정리 - Beomsu Kim's Blog](http://shuuki4.github.io/deep%20learning/2016/05/20/Gradient-Descent-Algorithm-Overview.html)
 - [딥러닝 Optimization 함수 정리 - rueki](https://rueki.tistory.com/187)
+
 ---
 
 ## #17-1
@@ -936,6 +967,7 @@ SGD는 Loss Function을 계산할 때 전체 train dataset을 사용하는 Batch
 #### 미니배치를 작게 할때의 장단점은?
 
 - 장점
+
   - 한 iteration의 계산량이 적어지기 때문에 step 당 속도가 빨라진다.
   - 적은 Graphic Ram으로도 학습이 가능하다.
 
@@ -1039,22 +1071,24 @@ for key in ('W1', 'b1', 'W2', 'b2'):
 
 #### CNN으로 바꾼다면 얼마나 추가될까?
 
-filter의 수, 크기, padding, stride 등에 대한 내용과 pooling layer등 레이어에 관한 정의가 추가되므로 약 50줄 정도 추가된다.  
+filter의 수, 크기, padding, stride 등에 대한 내용과 pooling layer등 레이어에 관한 정의가 추가되므로 약 50줄 정도 추가된다.
 
-MLP 버전과 CNN 버전의 참고코드는 아래와 같다.  
+MLP 버전과 CNN 버전의 참고코드는 아래와 같다.
+
 - [MLP 참고 코드](https://github.com/youbeebee/deeplearning_from_scratch/blob/master/ch4.%EC%8B%A0%EA%B2%BD%EB%A7%9D%20%ED%95%99%EC%8A%B5/4.5.%ED%95%99%EC%8A%B5%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0.py)
 - [CNN 참고 코드](https://github.com/youbeebee/deeplearning_from_scratch/blob/master/ch7.CNN/7.5.CNN%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0.py)
 
 #### References
 
 - [deeplearning_from_scratch - youbeebee](https://github.com/youbeebee/deeplearning_from_scratch/blob/master/ch7.CNN/7.5.CNN%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0.py)
-- [4.5.신경망 학습, 7.5.CNN 구현하기 - 파이썬 머신러닝 완벽가이드(도서)](http://m.yes24.com/Goods/Detail/34970929)
+- [4.5.신경망학습_학습 알고리즘 구현하기 - 밑바닥부터 시작하는 딥러닝(도서)](http://m.yes24.com/Goods/Detail/34970929)
 
 ---
 
 ## #19
 
 #### 간단한 MNIST 분류기를 TF, PyTorch 등으로 작성하는데 몇시간이 필요한가?
+
 TF 나 Pytorch 를 몇 번 사용해본 사람이라면 도큐먼트 참고도 하고 적당히 구글링도 하면, MNIST 분류기의 `데이터 다운로드, 데이터셋, 데이터로더, 모델 세팅, 학습, 추론` 를 구현하는데 2시간이 걸리지 않을 것이라 생각한다.
 
 강력한 성능을 내는 모델도 이러한 프레임워크를 사용하면 빠른 시간 내에 구현해낼 수 있음에 감사하고, 추상화가 잘 된 함수들일지라도 안에서는 어떤 동작을 하는지 알고 사용해야한다.
@@ -1064,7 +1098,8 @@ TF 나 Pytorch 를 몇 번 사용해본 사람이라면 도큐먼트 참고도 �
 ## #19-1
 
 #### CNN이 아닌 MLP로 해도 잘 될까?
-Convolution 레이어는 receptive field 를 통해 이미지의 위치 정보까지 고려할 수 있다는 장점이 있다. 
+
+Convolution 레이어는 receptive field 를 통해 이미지의 위치 정보까지 고려할 수 있다는 장점이 있다.
 
 반면 MLP 는 모두 Fully connected 구조이므로 이미지의 특징을 이해하는데 픽셀마다 위치를 고려할 수 없게된다.
 
@@ -1075,6 +1110,7 @@ Convolution 레이어는 receptive field 를 통해 이미지의 위치 정보�
 ## #19-2
 
 #### 마지막 레이어 부분에 대해서 설명 한다면?
+
 MNIST 분류기는 Convolution 레이어를 깊게 쌓으며 숫자 이미지의 작은 특징부터 큰 특징까지 파악한다.
 
 마지막 레이어, `Fully connected 레이어`는 이미지 데이터의 특징을 취합하여 10개의 숫자 중 적절한 숫자로 분류하는 역할을 한다.
@@ -1086,6 +1122,7 @@ MNIST 분류기는 Convolution 레이어를 깊게 쌓으며 숫자 이미지의
 ## #19-3
 
 #### 학습은 BCE loss로 하되 상황을 MSE loss로 보고 싶다면?
+
 train 과정에서 criterion 은 BinaryCrossEntropy 를 사용하고, valid 데이터를 이용한 valid loss 를 구하는 과정에서는 MeanSquaredLoss 를 사용한다.
 
 ---
@@ -1106,20 +1143,6 @@ GPU(Graphics Processing Unit)은 부동 소수점 연산을 수행하는 많은 
 
 ## #20-1
 
-#### 학습 중인데 GPU를 100% 사용하지 않고 있다. 이유는?
-
-가장 먼저 의심할 수 있는 부분은 GPU가 아니라 **CPU를 사용하고 있을 경우**이다. CPU와 GPU 사용률을 확인해보고 CPU 사용률이 높으면 CPU로 돌아간다는 것을 보고 추론할 수 있다.
-
-다른 경우로는 **GPU의 메모리가 부족한 경우**가 있다. 메모리가 부족하면 병목 현상으로 인해서 GPU를 100% 사용할 수 없다. 이 때 배치 사이즈를 줄이거나 모델을 최적화하여 가볍게 만드는 방법으로 메모리 사용량을 줄일 수 있다.
-
-#### References
-
-- [Pytorch가 GPU를 사용하지 않습니다 Fastai 작업 - Python2.net](https://www.python2.net/questions-251364.html)
-
----
-
-## #20-2
-
 #### GPU를 두개 다 쓰고 싶다. 방법은?
 
 Pytorch의 경우 `torch.nn.DataParallel`을 사용하여 여러 개의 GPU를 사용할 수 있다.
@@ -1134,7 +1157,7 @@ Pytorch의 경우 `torch.nn.DataParallel`을 사용하여 여러 개의 GPU를 �
 
 ---
 
-## #20-3
+## #20-2
 
 #### 학습시 필요한 GPU 메모리는 어떻게 계산하는가?
 
