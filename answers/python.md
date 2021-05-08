@@ -387,15 +387,39 @@ print(random.sample(lst, 5))    # [70, 36, 32, 82, 5]
 
 #### What is the difference between range & xrange?
 
+`range`와 `xrange` 모두
+
 #### References
 
 - [python range() 와 xrange() 차이 - ㅍㅍㅋㄷ](https://bluese05.tistory.com/57)
+- [[python] range, xrange 차이 - 코딩장이](https://itholic.github.io/python-range-xrange/)
+- [range() vs xrange() in Python - GeeksforGeeks](https://www.geeksforgeeks.org/range-vs-xrange-python/)
 
 ---
 
 ## #26
 
 #### How do you write comments in python?
+
+한 줄 주석은 `#`을 사용하여 달 수 있다.
+
+```python
+# this is my comment
+```
+
+여러 줄 주석은 큰따옴표(`"`) 3개 혹은 작은따옴표(`'`) 3개로 주석을 달 수 있다.
+
+```python
+'''
+this is multiple comment with single quotes
+- boostcamp ai tech team 4
+'''
+
+"""
+this is multiple comment with double quotes
+- boostcamp ai tech team 4
+"""
+```
 
 #### References
 
@@ -428,6 +452,15 @@ print(random.sample(lst, 5))    # [70, 36, 32, 82, 5]
 
 #### How will you capitalize the first letter of string?
 
+문자열 메서드 `capitalize`를 사용하면 된다.
+
+```python
+string = "boostcamp ai tech"
+print(string.capitalize())      # Boostcamp ai tech
+```
+
+자세한 문자열 메서드는 [여기](https://www.w3schools.com/python/python_ref_string.asp)를 참고!
+
 #### References
 
 - [Python String Methods - w3schools](https://www.w3schools.com/python/python_ref_string.asp)
@@ -438,6 +471,13 @@ print(random.sample(lst, 5))    # [70, 36, 32, 82, 5]
 
 #### How will you convert a string to all lowercase?
 
+문자열 메서드 `lower`을 사용하면 된다.
+
+```python
+string = "BOOSTCAMP AI TECH"
+print(string.lower())           # boostcamp ai tech
+```
+
 #### References
 
 - [Python String Methods - w3schools](https://www.w3schools.com/python/python_ref_string.asp)
@@ -447,6 +487,8 @@ print(random.sample(lst, 5))    # [70, 36, 32, 82, 5]
 ## #31
 
 #### How to comment multiple lines in python?
+
+[26번 답변](#26) 참고!
 
 #### References
 
