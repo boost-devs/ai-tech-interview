@@ -254,7 +254,7 @@
 - MAC Address란?
 - 라우터와 스위치, 허브의 차이는 뭔가요.
 - SMTP가 뭔가요?
-- 당신이 노트북에서 www.google.com에 접속을 했습니다. 요청을 보내고 받기까지의 과정을 설명해주세요.
+- 당신이 노트북에서 `www.google.com`에 접속을 했습니다. 요청을 보내고 받기까지의 과정을 설명해주세요.
 - 여러 네트워크 topology에 대해 소개해주세요 (간단히)
 - subnet mask에 대해서 설명해주세요.
 - data encapsulation이란?
