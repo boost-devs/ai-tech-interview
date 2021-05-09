@@ -559,7 +559,25 @@ print(string.lower())           # boostcamp ai tech
 
 #### What are docstrings in Python?
 
-Docstrings are not actually comments, but, they are documentation strings. These docstrings are within triple quotes. They are not assigned to any variable and therefore, at times, serve the purpose of comments as well.
+docstrings은 주석은 아니지만, 사용자에게 코드에 대한 설명을 적어놓은 문서(documentation)이다. docstrings는 `__doc__` 속성이나 `help()` 내장 함수로 접근할 수 있다. docstrings는 작은 따옴표(`'`) 혹은 큰 따옴표(`"`) 3개로 작성할 수 있다.
+
+```python
+def mult(a, b):
+  """
+  Returns the product of a and b
+  - a(float): any real number
+  - b(float): any real number 
+  """
+  return a*b
+```
+
+```python
+print(help(mult))
+print(mult.__doc__)
+```
+
+> **Comments(주석) vs Dosctrings**     
+> comments와 docstrings은 각각 `#`, `"""`을 쓴다는 점에서 다르지만 가장 큰 차이는 **읽는 대상**이다. comments는 개발을 위해 동료 혹은 나중에 코드를 읽을 나에게 남겨놓는 것이고 docstrings는 이 코드를 사용할 사용자들이 이해하기 쉽도록 남겨놓는 것이다.
 
 #### References
 
@@ -571,15 +589,35 @@ Docstrings are not actually comments, but, they are documentation strings. These
 
 #### What is the purpose of is, not and in operators?
 
-Operators are special functions. They take one or more values and produce a corresponding result.
+`is`는 객체 비교 연산자(identity operator)로 두 변수가 참조하는 객체의 id가 같을 경우 **True**를 반환한다. 보통 두 변수가 참조하는 객체가 동일한 객체인지 확인할 때 사용한다.
 
-is: returns true when 2 operands are true (Example: “a” is ‘a’)
+```python
+a = [1, 2, 3]
+b = a
+c = a.copy()
 
-not: returns the inverse of the boolean value
+print(a is b) # True
+print(a is c) # False
+```
 
-in: checks if some element is present in some sequence
+`not`은 단항 논리 연산자(logical operator)로 뒤에 오는 boolean 값을 뒤집는다. 뒤에 오는 값이 **True**이면 **False**를, **False**이면 **True**를 반환한다.
+
+```python
+print(not True)   # False
+print(not False)  # True
+```
+
+`in`은 멤버 연산자(membership operator)로, 요소 a와 시퀀스 b가 있는 지를 확인하고 싶을 때 `a in b`로 표현하며 만약 a가 b 안에 있다면 **True**를, 없으면 **False**를 반환한다.
+
+```python
+b = "abc"
+print("a" in b) # True
+print("z" in b) # False
+```
 
 #### References
+
+- [Python Operators - w3schools](https://www.w3schools.com/python/python_operators.asp)
 
 ---
 
@@ -587,22 +625,47 @@ in: checks if some element is present in some sequence
 
 #### What is the usage of help() and dir() function in Python?
 
+`help()`는 docstrings를 작성하였다면 해당 docstrings를 출력한다. docstrings에는 클래스, 메서드의 사용법에 관한 내용이 담겨있으므로 해당 클래스와 메서드를 사용자에게 매우 유용하다. docstrings에 대한 내용은 [#31](#31) 참고!
+
+`dir()`은 인자로 넣은 객체의 속성과 메서드를 문자열로 변환하고 그것을 요소로 갖는 정렬된 리스트를 반환한다. `dir`은 사용할 객체의 메서드와 속성에 대한 정보를 얻고 싶을 때 유용하다. 다만 인자가 없다면 현재 지역 스코프에서 정의된 함수와 변수들의 리스트를 반환한다.
+
+```python
+def func(x):
+  return x
+
+a = 3
+print(dir(a))     # 객체 a에 대한 속성, 메서드
+print(dir(func))  # 함수 func에 대한 속성, 메서드
+print(dir())      # 지역 스코프에 정의된 a와 func
+```
+
 #### References
 
 - [내장 함수: help() - Python Documentation](https://docs.python.org/ko/3/library/functions.html#help)
 - [내장 함수: dir() - Python Documentation](https://docs.python.org/ko/3/library/functions.html#dir)
-
+- [10 Python built-in functions you should know](https://towardsdatascience.com/10-python-built-in-functions-you-should-know-fbd5c879e0ab)
 ---
 
 ## #35
 
 #### Whenever Python exits, why isn’t all the memory de-allocated?
 
-Whenever Python exits, especially those Python modules which are having circular references to other objects or the objects that are referenced from the global namespaces are not always de-allocated or freed.
-It is impossible to de-allocate those portions of memory that are reserved by the C library.
-On exit, because of having its own efficient clean up mechanism, Python would try to de-allocate/destroy every other object.
+다른 객체나 전역 네임스페이스에서 참조되는 객체를 순환 참조하는 파이썬 모듈은 항상 해제되지는 않는다. 또한 C 라이브러리가 예약한 메모리의 해당 부분을 해제하는 것은 불가능하다. 그러므로 파이썬 종료 시, 모든 메모리가 해제되지는 않는다.
+
+> **순환 참조(Circular Reference)**
+> 두 객체가 서로 참조하는 경우를 말한다. 
+
+
+> **전역 네임스페이스(Global Namespace)**    
+> 네임스페이스(namespace)란 프로그래밍 언어에서 특정 객체를 이름에 따라 구분할 수 있는 범위를 의미한다. 전역 네임스페이스는 import한 모듈들의 이름을 포함하며, 스크립트가 끝날 때까지 지속된다.
 
 #### References
+
+- [Releasing memory in Python - Net-informations.com](http://net-informations.com/python/iq/memory.htm)
+- [Whenever you exit Python, is all memory de-allocated? - BYTES](https://bytes.com/topic/python/answers/972248-whenever-you-exit-python-all-memory-de-allocated)
+- [Circular References in Python - hearsaysocial](http://engineering.hearsaysocial.com/2013/06/16/circular-references-in-python/)
+- [[Python] 네임스페이스 개념 정리 - Hyungcheol Noh's Blog](https://hcnoh.github.io/2019-01-30-python-namespace)
+- [네임스페이스 - 제대로 파이썬](https://wikidocs.net/23109)
 
 ---
 
@@ -610,7 +673,63 @@ On exit, because of having its own efficient clean up mechanism, Python would tr
 
 #### What is a dictionary in Python?
 
+딕셔너리는 **key값과 그에 대응하는 value값을 얻을 수 있는 컬렉션**을 말한다. 딕셔너리는 데이터가 들어온 순서가 상관이 없고, 인덱싱이 되어 있어 key값으로 요소에 접근하여 데이터(= value) 수정이 가능하다. 하지만, key값은 고유 값이므로 key값 중복은 불가능하다. 주로 자체적으로 만든 key값으로 데이터에 접근하고 싶을 때 딕셔너리 컬렉션을 사용한다.
+
+딕셔너리의 뜻은 사전이다. 영한 사전에서 각 영단어(ex. beautiful)에 대응하는 단어(ex. 아름다운)가 나오는 것처럼, 영단어가 key값이고 그에 대응하는 단어를 value값으로 볼 수 있다.
+
+>  **특징1** : 딕셔너리는 {, }를 사용하여 선언하며 { key1 : value1, key2 : value2, ... } 로 요소를 나타낸다.
+
+- key값으로 변하지 않는 값을 사용하고, value값으로 변하는 값과 변하지 않는 값 둘 다 사용할 수 있다.
+- key값으로 리스트를 사용하면, 값이 변할 가능성이 있기 때문에 인터프리터에서 type error를 발생시킨다.
+
+```python
+ex1 = {'name':'Groot', 'lover':'penguin', 'feature':'really cute'}
+
+# 딕셔너리 생성자로 집합을 생성하는 경우
+ex2 = dict(name='Groot', lover='penguin', feature='really cute')
+
+# key값은 변하지 않는 값, value값은 변하지 않는 값과 변하는 값 둘 다 가능
+ex3 = {[10, 3]:'birthday'}	# type error!
+```
+
+> **특징2** : 딕셔너리는 딕셔너리 쌍(key : value)을 추가하거나 제거할 수 있다.
+
+- 추가 : dict_ex[ 새로운 key값 ] = 그에 대응하는 value값으로 추가할 수 있다.
+- 제거 : del 키워드를 이용해 특정 쌍을 제거할 수 있다.
+  - 딕셔너리 앞에 del 키워드를 쓰면 딕셔너리가 완전히 제거된다.
+
+```python
+ex = {'Kevin':180, 'Anna':165, 'Penelope':175}
+
+# 새로운 딕셔너리 쌍 추가
+ex['Groot'] = 100
+print(ex)		# {'Kevin': 180, 'Anna': 165, 'Penelope': 175, 'Groot': 100}
+
+# del 키워드로 딕셔너리 쌍 제거
+del ex['Penelope']
+print(ex)		# {'Kevin': 180, 'Anna': 165, 'Groot': 100}
+
+# del 키워드로 딕셔너리 완전 제거
+del ex
+print(ex)       	# name error!
+```
+
+> **특징3** : 딕셔너리의 key값은 중복될 수 없다.
+
+- key값은 고유값이므로 2개 이상의 key값이 존재할 수 없다.
+  - key값에 해당하는 value값을 어떤 걸 불러야할지 모르기 때문.
+- key값이 중복될 경우 하나를 제외한 나머지 것들이 모두 무시된다.
+  - key값에 대입한 최근의 value값을 불러온다.
+
+```python
+ex = {'name': 'Groot', 'lover': 'Penguin', 'feature': 'cute', 'feature': 'handsome'}
+
+print(ex)  # {'name': 'Groot', 'lover': 'Penguin', 'feature': 'handsome'}
+```
+
 #### References
+
+- [Python Dictionaries - w3schools](https://www.w3schools.com/python/python_dictionaries.asp)
 
 ---
 
