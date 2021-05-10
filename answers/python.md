@@ -1473,13 +1473,13 @@ class MyClass():
 #### What is monkey patching in Python?
 주로 테스트를 위해 많이 사용되는 방법으로, 어떤 클래스나 모듈의 일부 (함수나 변수 등) 를 로컬에서 런타임으로만 instance 를 통해 수정하는 방법을 말한다. 
 
-예시로 file.py 의 A 라는 클래스에 a 라는 함수가 있는데, 다른 파일에서 A 를 import 하여 a 함수 대신 new_a 를 할당하여 사용하는 방법이 있다.
+예시로 heath.py 파일의 A 클래스에 a 라는 함수가 있는데, 다른 파일에서 A 를 import 하여 a 함수 대신 new_a 를 할당하여 사용하는 방법이 있다.
 
 ```python
-import file
+from heath import A
 
 A.a = new_a
-my_A = A()
+my_A = A() # A 클래스 객체 할당
 my_A.a # new_a 가 동작
 ```
 
@@ -1534,9 +1534,18 @@ class C(P_A, P_B): #P_A 와 P_B 클래스를 동시에 상속
 ## #61
 
 #### How do you do data abstraction in Python?
-데이터 추상화는 데이터의 필수적 요소만 제공하고 나머지 구현은 숨기는 것을 말한다. 
+데이터 추상화는 객체지향의 주요 개념으로 사용자에게 데이터의 주요 정보만 제공하여 구체적인 구현은 몰라도 사용할 수 있게 만드는 방법이다.
 
-파이썬에서는 interface 와 abstract class 를 통해 데이터 추상화를 할 수 있다.
+파이썬에서는 abstract class 를 통해 데이터 추상화를 할 수 있다. abstract class 를 사용하기 위해서는 `abc` 모듈을 import 하고 `metaclass=ABCClass` 와 `@abstractmethod` 를 사용해야 한다.
+
+```python
+from abc import *
+class 추상클래스명(metaclass=ABCMeta):
+
+     @abstractmethod
+        def 추상메소드(self):
+            pass
+```
 
 ---
 
@@ -1606,6 +1615,8 @@ int_arr = list(map(int, input().split()))
 #### What is GIL in Python language?
 멀티쓰레딩을 할 때, 공유 자원에 대해 여러 쓰레드가 동시에 접근한다면 갱신된 내용이 유실되는 등의 문제가 발생할 수 있다. 이를 막기 위해 파이썬은 GIL (Global Interpreter Lock) 을 통해 python interpreter 에 한 쓰레드만 접근하여 모든 자원을 사용할 수 있게 한다.
 
+정확히는 멀티 쓰레드가 bytecode(=instruction) 한 라인씩을 들고 있기 때문에, 한 쓰레드의 bytecode 한 줄에 대해서만 GIL 은 허용한다.
+
 #### References
 - [[python] GIL, Global interpreter Lock은 무엇일까? - 수학과의 좌충우돌 프로그래밍](https://ssungkang.tistory.com/entry/python-GIL-Global-interpreter-Lock%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
 - [왜 Python에는 GIL이 있는가 - 개발새발블로그](https://dgkim5360.tistory.com/entry/understanding-the-global-interpreter-lock-of-cpython)
@@ -1614,7 +1625,7 @@ int_arr = list(map(int, input().split()))
 
 ## #68
 
-#### What makes the CPython different from Python?
+#### What is the CPython?
 파이썬은 일반적으로 C 로 구현된 인터프리터 언어이다. 일반적인 C 언어와 구분하기 위해 파이썬 구현체 C 를 CPython 이라고 부른다. 
 
 CPython 은 인터프리터이면서 컴파일러로 Python 코드를 C 가 아닌 bytecode 로 컴파일해주고, 이를 interpreter(virtual machine) 가 실행하게 만든다.
@@ -1681,9 +1692,11 @@ object interning 은 자주 사용될, 즉 재활용될 object 에 대해 매번
 
 #### What is @classmethod, @staticmethod, @property?
 **@classmethod**
+
 클래스 내부의 함수 중에 @classmethod 로 선언된 함수에 대해서는 클래스의 객체를 만들지 않고도 바로 접근이 가능하다. 하지만 함수의 첫 인자로 클래스를 받아서, 상속되었을 때 자식 클래스의 데이터를 따르는 특징이 있다.
 
 **@staticmethod**
+
 @staticmethod 는 @classmethod 와 마찬가지로 클래스의 객체를 만들지 않고도 바로 접근할 수 있다. 하지만 클래스를 인자로 받지 않기 때문에, 상속되었을 때에도 자식 클래스의 데이터를 따르지 않고 처음에 클래스에서 선언한 데이터대로 함수가 사용된다.
 
 ```python
