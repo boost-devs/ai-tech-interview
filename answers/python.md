@@ -864,7 +864,7 @@ print(not True)   # False
 print(not False)  # True
 ```
 
-`in`은 멤버 연산자(membership operator)로, 요소 a와 시퀀스 b가 있는 지를 확인하고 싶을 때 `a in b`로 표현하며 만약 a가 b 안에 있다면 **True**를, 없으면 **False**를 반환한다.
+`in`은 멤버 연산자(membership operator)로, 요소 a와 시퀀스 b안에 있는 지를 확인하고 싶을 때 `a in b`로 표현하며 만약 a가 b 안에 있다면 **True**를, 없으면 **False**를 반환한다.
 
 ```python
 b = "abc"
