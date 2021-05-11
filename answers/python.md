@@ -526,7 +526,7 @@ for i in range(10):
 # >> 0 1 2 3 4 6 7 8 9
 ```
 
-`pass`는 문법적으로 필요하지만, 아무 것도 수행하고 싶을 때 사용한다. 주로 함수나 클래스의 구조부터 세우고 나중에 구현을 하고 싶을 때 사용한다.
+`pass`는 문법적으로 필요하지만, 아무 것도 수행하고 싶지 않을 때 사용한다. 주로 함수나 클래스의 구조부터 세우고 나중에 구현을 하고 싶을 때 사용한다.
 
 ```python
 class MyClass:
@@ -864,7 +864,7 @@ print(not True)   # False
 print(not False)  # True
 ```
 
-`in`은 멤버 연산자(membership operator)로, 요소 a와 시퀀스 b안에 있는 지를 확인하고 싶을 때 `a in b`로 표현하며 만약 a가 b 안에 있다면 **True**를, 없으면 **False**를 반환한다.
+`in`은 멤버 연산자(membership operator)로, 요소 a가 시퀀스 b안에 있는 지를 확인하고 싶을 때 `a in b`로 표현하며 만약 a가 b 안에 있다면 **True**를, 없으면 **False**를 반환한다.
 
 ```python
 b = "abc"
