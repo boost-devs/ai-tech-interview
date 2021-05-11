@@ -1,3 +1,5 @@
+> 본 파일의 질문들과 답변들은 [Top 100 Python Interview Questions You Must Prepare In 2021 - edureka!](https://www.edureka.co/blog/interview-questions/python-interview-questions/) 를 참조하였습니다.
+
 ## 📝 Table of Contents
 
 - [What is the difference between list and tuples in Python?](#1)
