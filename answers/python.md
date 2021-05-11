@@ -1399,17 +1399,14 @@ Python은 객체 지향 프로그래밍 언어이다. Python의 주요 OOP 개�
 
 #### What is the process of compilation and linking in python?
 
-컴파일과 연결을 통해 새로운 확장을 오류없이 적절하게 컴파일 할 수 있으며 컴파일된 절차를 통과해야만 연결을 수행할 수 있다. dynamic loading을 사용하는 경우 시스템과 함께 제공되는 스타일에 따라 다르다. 파이썬 인터프리터는 configuration setup file의 dynamic loading을 제공하는 데 사용할 수 있으며 인터프리터를 다시 빌드한다.
+#### References
 
-이에 필요한 단계는 아래와 같다.
-
-1. 시스템의 컴파일러가 지원하는 언어로 파일을 만든다.
-   - ex. file.c, file.cpp
-2. 이 파일을 사용되고있는 배포판의 모듈/디렉토리에 저장한다.
-3. 모듈/디렉토리에 있는 Setup.local 파일에 행을 추가한다.
-4. spam file.o를 사용하여 파일을 실행한다.
-5. 이 작업을 성공적으로 실행 한 후 최상위 디렉토리에서 make 명령을 사용하여 인터프리터를 다시 빌드한다.
-6. 파일이 변경되면 `make Makefile` 명령을 사용하여 rebuildMakefile을 실행한다.
+- [Compiling and Linking in Python - Net-informations.com](http://net-informations.com/python/iq/linking.htm)
+- [What is the process of compilation and linking in python? - tutorialspoint](https://www.tutorialspoint.com/what-is-the-process-of-compilation-and-linking-in-python)
+- [What is the process, in Python, of compilation and linking? - Quora](https://www.quora.com/What-is-the-process-in-Python-of-compilation-and-linking)
+- [Python Compilation/Interpretation Process - stackoverflow](https://stackoverflow.com/questions/3299648/python-compilation-interpretation-process)
+- [How does Python work? - towards data science](https://towardsdatascience.com/how-does-python-work-6f21fd197888)
+- [Is Python interpreted or compiled? Yes. - Ned Batchelder](https://nedbatchelder.com/blog/201803/is_python_interpreted_or_compiled_yes.html)
 
 ---
 
