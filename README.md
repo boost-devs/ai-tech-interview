@@ -26,7 +26,7 @@
 
 ## Part 1. Data Science
 
-### [📈 Statistics/Math](./answers/statistics-math.md)
+### [📈 Statistics/Math](./answers/1-statistics-math.md)
 
 - 고유값(eigen value)와 고유벡터(eigen vector)에 대해 설명해주세요. 그리고 왜 중요할까요?
 - 샘플링(Sampling)과 리샘플링(Resampling)에 대해 설명해주세요. 리샘플링은 무슨 장점이 있을까요?
@@ -58,7 +58,7 @@
 
 <br/>
 
-### [🤖 Machine Learning](./answers/machine-learning.md)
+### [🤖 Machine Learning](./answers/2-machine-learning.md)
 
 - 알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)
 - 정규화를 왜 해야할까요? 정규화의 방법은 무엇이 있나요?
@@ -94,7 +94,7 @@
 
 <br/>
 
-### [🧠 Deep Learning](./answers/deep-learning.md)
+### [🧠 Deep Learning](./answers/3-deep-learning.md)
 
 - 딥러닝은 무엇인가요? 딥러닝과 머신러닝의 차이는?
 - Cost Function과 Activation Function은 무엇인가요?
@@ -149,7 +149,7 @@
 
 ## Part 2. Language
 
-### [🐍 Python](./answers/python.md)
+### [🐍 Python](./answers/4-python.md)
 
 - What is the difference between list and tuples in Python?
 - What are the key features of Python?
@@ -229,7 +229,7 @@
 
 ## Part 3. CS
 
-### [🌐 Network](./answers/network.md)
+### [🌐 Network](./answers/5-network.md)
 
 - TCP/IP의 각 계층을 설명해주세요.
 - OSI 7계층와 TCP/IP 계층의 차이를 설명해주세요.
@@ -268,13 +268,13 @@
 
 <br/>
 
-### [🖥️ Operating System](./answers/operating-system.md)
+### [🖥️ Operating System](./answers/6-operating-system.md)
 
 <a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 <br/>
 
-### [🔻 Algorithm](./answers/algorithm.md)
+### [🔻 Algorithm](./answers/7-algorithm.md)
 
 <a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
