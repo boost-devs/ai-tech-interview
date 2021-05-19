@@ -2,7 +2,7 @@
   <h1>📈 Statistics/Math 📈</h1>
 </div>
 
-> 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였으며, 질문에 대한 답변은 직접 작성하였음을 알려드립니다.
+> 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였으며, 질문에 대한 답변은 직접 작성하였습니다.
 
 ---
 

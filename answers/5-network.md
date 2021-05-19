@@ -1,4 +1,12 @@
-## 📝 Table of Contents
+<div align='center'>
+  <h1>🌐 Network 🌐</h1>
+</div>
+
+> 질문 중 일부는 <strong>[WeareSoft님의 tech-interview](https://github.com/WeareSoft/tech-interview)</strong>를 참고하였으며, 질문에 대한 답변은 직접 작성하였습니다.
+
+---
+
+## Table of Contents
 
 - [TCP/IP의 각 계층을 설명해주세요.](#1)
 - [OSI 7계층와 TCP/IP 계층의 차이를 설명해주세요.](#2)

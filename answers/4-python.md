@@ -1,6 +1,10 @@
-> 본 파일의 질문들과 답변들은 [Top 100 Python Interview Questions You Must Prepare In 2021 - edureka!](https://www.edureka.co/blog/interview-questions/python-interview-questions/) 를 참조하였습니다.
+<div align='center'>
+  <h1>🐍 Python Programming Language 🐍</h1>
+</div>
 
-## 📝 Table of Contents
+> 질문은 <strong>[Top 100 Python Interview Questions You Must Prepare In 2021 - edureka!](https://www.edureka.co/blog/interview-questions/python-interview-questions/)</strong>을 참고하였으며, 질문에 대한 답변 중 일부는 위의 사이트의 답변을 참고하여 작성되었습니다.
+
+## Table of Contents
 
 - [What is the difference between list and tuples in Python?](#1)
 - [What are the key features of Python?](#2)
@@ -351,7 +355,7 @@ Python은 Indentation(들여쓰기)이 필요하다. 파이썬은 `{}`을 사용
 
 #### References
 
-- [제 01장 첫번째 계단밟기 02. 들여쓰기(indent) -  Python 계단밟기](https://wikidocs.net/20368)
+- [제 01장 첫번째 계단밟기 02. 들여쓰기(indent) - Python 계단밟기](https://wikidocs.net/20368)
 
 ---
 
@@ -450,9 +454,9 @@ XYZ
 
 #### What is a lambda function?
 
-익명 함수(이름이 없는 함수)를 람다 함수라고 한다. 람다 함수는 `def` 키워드를 통해서 함수를 생성하는 리터럴 표기법을 **딱 한 줄의 코드로 표현**할 수 있게 해주며, `lambda 인자 : 표현식`의 형식으로 표현한다. 람다함수는 결과 부분을 return 키워드 없이 자동으로 return한다.  람다함수를 사용하면 코드가 간결해지고 메모리가 절약된다는 장점이 있다. 그러나 함수에 이름이 없고, 저장된 변수가 없기 때문에 다시 사용하기 위해서는 다시 코드를 적어주거나, 람다함수를 변수에 담아주어야한다. 람다함수도 객체이기 때문에 정의와 동시에 변수에 담을 수는 있다. 재사용할 이유가 없다면 lambda 함수를 생성하여 넘겨주는 편이 좋다.
+익명 함수(이름이 없는 함수)를 람다 함수라고 한다. 람다 함수는 `def` 키워드를 통해서 함수를 생성하는 리터럴 표기법을 **딱 한 줄의 코드로 표현**할 수 있게 해주며, `lambda 인자 : 표현식`의 형식으로 표현한다. 람다함수는 결과 부분을 return 키워드 없이 자동으로 return한다. 람다함수를 사용하면 코드가 간결해지고 메모리가 절약된다는 장점이 있다. 그러나 함수에 이름이 없고, 저장된 변수가 없기 때문에 다시 사용하기 위해서는 다시 코드를 적어주거나, 람다함수를 변수에 담아주어야한다. 람다함수도 객체이기 때문에 정의와 동시에 변수에 담을 수는 있다. 재사용할 이유가 없다면 lambda 함수를 생성하여 넘겨주는 편이 좋다.
 
-람다함수의 표현법을 그림으로 표현하면 아래와 같다.  
+람다함수의 표현법을 그림으로 표현하면 아래와 같다.
 
 <img src="/images/sally/2021-05-09-03-28-16.png" width="60%">
 
@@ -820,7 +824,7 @@ def mult(a, b):
   """
   Returns the product of a and b
   - a(float): any real number
-  - b(float): any real number 
+  - b(float): any real number
   """
   return a*b
 ```
@@ -830,7 +834,7 @@ print(help(mult))
 print(mult.__doc__)
 ```
 
-> **Comments(주석) vs Dosctrings**     
+> **Comments(주석) vs Dosctrings**  
 > comments와 docstrings은 각각 `#`, `"""`을 쓴다는 점에서 다르지만 가장 큰 차이는 **읽는 대상**이다. comments는 개발을 위해 동료 혹은 나중에 코드를 읽을 나에게 남겨놓는 것이고 docstrings는 이 코드를 사용할 사용자들이 이해하기 쉽도록 남겨놓는 것이다.
 
 #### References
@@ -898,6 +902,7 @@ print(dir())      # 지역 스코프에 정의된 a와 func
 - [내장 함수: help() - Python Documentation](https://docs.python.org/ko/3/library/functions.html#help)
 - [내장 함수: dir() - Python Documentation](https://docs.python.org/ko/3/library/functions.html#dir)
 - [10 Python built-in functions you should know](https://towardsdatascience.com/10-python-built-in-functions-you-should-know-fbd5c879e0ab)
+
 ---
 
 ## #35
@@ -907,10 +912,9 @@ print(dir())      # 지역 스코프에 정의된 a와 func
 다른 객체나 전역 네임스페이스에서 참조되는 객체를 순환 참조하는 파이썬 모듈은 항상 해제되지는 않는다. 또한 C 라이브러리가 예약한 메모리의 해당 부분을 해제하는 것은 불가능하다. 그러므로 파이썬 종료 시, 모든 메모리가 해제되지는 않는다.
 
 > **순환 참조(Circular Reference)**
-> 두 객체가 서로 참조하는 경우를 말한다. 
+> 두 객체가 서로 참조하는 경우를 말한다.
 
-
-> **전역 네임스페이스(Global Namespace)**    
+> **전역 네임스페이스(Global Namespace)**  
 > 네임스페이스(namespace)란 프로그래밍 언어에서 특정 객체를 이름에 따라 구분할 수 있는 범위를 의미한다. 전역 네임스페이스는 import한 모듈들의 이름을 포함하며, 스크립트가 끝날 때까지 지속된다.
 
 #### References
@@ -931,7 +935,7 @@ print(dir())      # 지역 스코프에 정의된 a와 func
 
 딕셔너리의 뜻은 사전이다. 영한 사전에서 각 영단어(ex. beautiful)에 대응하는 단어(ex. 아름다운)가 나오는 것처럼, 영단어가 key값이고 그에 대응하는 단어를 value값으로 볼 수 있다.
 
->  **특징1** : 딕셔너리는 {, }를 사용하여 선언하며 { key1 : value1, key2 : value2, ... } 로 요소를 나타낸다.
+> **특징1** : 딕셔너리는 {, }를 사용하여 선언하며 { key1 : value1, key2 : value2, ... } 로 요소를 나타낸다.
 
 - key값으로 변하지 않는 값을 사용하고, value값으로 변하는 값과 변하지 않는 값 둘 다 사용할 수 있다.
 - key값으로 리스트를 사용하면, 값이 변할 가능성이 있기 때문에 인터프리터에서 type error를 발생시킨다.
@@ -998,22 +1002,29 @@ ternary operators(삼항 연산자)는 조건문을 표시하는 데 사용되�
 ```
 
 > **Example_1**
+
 ```python
 a = 123
 print("a is 123" if a==123 else "a is not 123")
 ```
+
 > **Output**
+
 ```
 a is 123
 ```
+
 <br>
 
 > **Example_2**
+
 ```python
 a = 456
 print("a is 123" if a==123 else "a is not 123")
 ```
+
 > **Output**
+
 ```
 a is not 123
 ```
@@ -1031,35 +1042,42 @@ a is not 123
 `*args`는 함수에 전달되는 argument의 수를 알 수 없거나, list나 tuple의 argument들을 함수에 전달하고자 할 때 사용한다.
 
 > **Example_1**
+
 ```python
 def name(*args):
     print(args)
 
 name("샐리", "펭귄", "히스", "원딜")
 ```
+
 > **Output**
+
 ```
 ('샐리', '펭귄', '히스', '원딜')
 ```
+
 <br>
 
 `**kwargs`는 함수에 전달되는 keyword argument의 수를 모르거나, dictionary의 keyword argument들을 함수에 전달하고자 할 때 사용한다.
 
 > **Example_2**
+
 ```python
 def name(**kwargs):
     print(kwargs)
 
 name(sally="샐리", penguin="펭귄", heath="히스", adc="원딜")
 ```
+
 > **Output**
+
 ```
 {'sally': '샐리', 'penguin': '펭귄', 'heath': '히스', 'adc': '원딜'}
 ```
 
 #### References
 
-- [[Python] *args와 **kwargs - Jun94](https://velog.io/@hj8853/Python-args%EC%99%80-kwargs)
+- [[Python] \*args와 \*\*kwargs - Jun94](https://velog.io/@hj8853/Python-args%EC%99%80-kwargs)
 
 ---
 
@@ -1072,22 +1090,29 @@ name(sally="샐리", penguin="펭귄", heath="히스", adc="원딜")
 argument로는 sequence(string, bytes, tuple, list, range, ...), collection(dictionary, set, frozenset, ...)을 받는다.
 
 > **Example_1**
+
 ```python
 stg = "ai-tech-interview"
 len(stg)
 ```
+
 > **Output**
+
 ```
 17
 ```
+
 <br>
 
 > **Example_2**
+
 ```python
 ex_list = ["ai", "tech", "interview"]
 len(ex_list)
 ```
+
 > **Output**
+
 ```
 3
 ```
@@ -1119,14 +1144,16 @@ len(ex_list)
 #### What are negative indexes and why are they used?
 
 **인덱스**
+
 - 시퀀스 객체에 \[](대괄호)를 붙여 사용
 - 시퀀스 객체의 인덱스는 항상 0부터 시작
 - 시퀀스 객체(list, tuple, range, 문자열)에 사용가능
 - 시퀀스객체[인덱스]
 
 **음수 인덱스**
+
 - 인덱스를 음수로 지정하면 뒤에서부터 요소에 접근하게 된다.
-    - -1은 뒤에서 첫 번째, -5는 뒤에서 다섯 번째 요소를 뜻한다.
+  - -1은 뒤에서 첫 번째, -5는 뒤에서 다섯 번째 요소를 뜻한다.
 - 시퀀스 객체(list, tuple, range, 문자열)에 사용가능
 
 #### References
@@ -1169,10 +1196,12 @@ len(ex_list)
 os 모듈을 import 한 후 `os.remove()` 함수를 사용하여 파일을 삭제할수있다.
 
 > **Example**
+
 ```python
 import os
 os.remove("ai-tech-interview.txt")
 ```
+
 <br>
 
 > 자세한 내용은 [os.remove - Python documentation](https://docs.python.org/3/library/os.html#os.remove) 참고
@@ -1184,6 +1213,7 @@ os.remove("ai-tech-interview.txt")
 #### What are the built-in types of python?
 
 Python의 Built-in type은 아래와 같다.
+
 - Integer
 - Floating-point
 - Complex number
@@ -1201,12 +1231,12 @@ Python의 Built-in type은 아래와 같다.
 
 파이썬 리스트 대신 넘파이 리스트를 쓸 때의 이점
 
-Ans: 
+Ans:
 
 Python’s lists are efficient general-purpose containers. They support (fairly) efficient insertion, deletion, appending, and concatenation, and Python’s list comprehensions make them easy to construct and manipulate.
 They have certain limitations: they don’t support “vectorized” operations like elementwise addition and multiplication, and the fact that they can contain objects of differing types mean that Python must store type information for every element, and must execute type dispatching code when operating on each element.
 NumPy is not just more efficient; it is also more convenient. You get a lot of vector and matrix operations for free, which sometimes allow one to avoid unnecessary work. And they are also efficiently implemented.
-NumPy array is faster and You get a lot built in with NumPy, FFTs, convolutions, fast searching, basic statistics, linear algebra, histograms, etc. 
+NumPy array is faster and You get a lot built in with NumPy, FFTs, convolutions, fast searching, basic statistics, linear algebra, histograms, etc.
 
 list는 효율적인 범용 컨테이너입니다. 그들은 (공정하게) 효율적인 삽입, 삭제, 추가 및 연결을 지원하며 list comprehenshion을 통해 쉽게 구성하고 조작 할 수 있습니다.
 특정 제한이 있습니다. 요소 별 덧셈 및 곱셈과 같은 "벡터화 된"연산을 지원하지 않으며, 유형이 다른 객체를 포함 할 수 있다는 사실은 Python이 모든 요소에 대한 유형 정보를 저장해야하며 작동 할 때 유형 디스패치 코드를 각 요소에 실행해야 함을 의미합니다.
@@ -1229,6 +1259,7 @@ NumPy 배열은 더 빠르며 NumPy, FFT, 컨볼 루션, 빠른 검색, 기본 �
 `list.append(x)` 형태로 사용한다. 괄호 안에 값을 입력하면 새로운 요소를 list 맨 끝에 추가한다. 요소를 추가할 때는 객체로 추가하게 되는데, 입력한 값이 리스트와 같은 반복 가능한 iterable 자료형이더라도 객체로 저장한다.
 
 > **Example**
+
 ```python
 nums = [1, 2, 3]
 nums.append(4)
@@ -1237,11 +1268,14 @@ print(nums)
 nums.append([5, 6])
 print(nums)
 ```
+
 > **Output**
+
 ```
 [1, 2, 3, 4]
 [1, 2, 3, 4, [5, 6]]
 ```
+
 <br>
 
 **extend**
@@ -1249,6 +1283,7 @@ print(nums)
 `list.extend(iterable)` 형태로 사용한다. 입력한 iterable 자료형의 항목 각각을 list의 끝에 하나씩 추가한다. append와 동일하게 요소를 list의 끝에 추가하지만 append와 다른 점은 괄호 안에는 iterable 자료형만 올 수 있다는 것이다. iterable 자료형이 아닌 경우 TypeError가 발생한다.
 
 > **Example**
+
 ```python
 nums = [1, 2, 3]
 nums.extend([4])
@@ -1257,11 +1292,14 @@ print(nums)
 nums.extend([5, 6])
 print(nums)
 ```
+
 > **Output**
+
 ```
 [1, 2, 3, 4]
 [1, 2, 3, 4, 5, 6]
 ```
+
 <br>
 
 **insert()**
@@ -1269,6 +1307,7 @@ print(nums)
 `list.insert(i, x)` 형태로 사용한다. list의 원하는 위치 i 앞에 추가할 값 x를 삽입할 수 있다. i는 위치를 나타내는 인덱스를 숫자를 입력한다. 음수를 입력하면 배열의 끝을 기준으로 처리된다. 추가할 값 x는 객체로 추가되며 iterable 자료형이더라도 객체로 저장된다.
 
 > **Example**
+
 ```python
 nums = [1, 2, 3]
 nums.insert(0, 10)
@@ -1280,7 +1319,9 @@ print(nums)
 nums.insert(len(nums), [20, 30])
 print(nums)
 ```
+
 > **Output**
+
 ```
 [10, 1, 2, 3]
 [10, 1, 2, 99, 3]
@@ -1326,15 +1367,17 @@ Python은 객체 지향 프로그래밍 언어이다. Python의 주요 OOP 개�
 #### What is the difference between deep and shallow copy?
 
 **Shallow copy**
+
 - Shallow copy는 새로운 객체(변수)를 만든 후에 원본에 접근할 수 있는 참조(reference)를 입력한다.
-    - 이런 경우 서로 다른 변수명이지만 본질적으로 서로 같은 대상을 의미하므로 하나의 변수 역시 수정이 된다.
+  - 이런 경우 서로 다른 변수명이지만 본질적으로 서로 같은 대상을 의미하므로 하나의 변수 역시 수정이 된다.
 - 가변형(mutable) 자료형에 대해서 적용이 가능하다.
-    - 가변형(mutable) 자료형은 같은 주소에서 값(value)이 변경 가능하기 때문에 얕은 복사가 가능하다.
-    - 불변형(immutable) 자료형은 본질적으로 변경이 불가능하므로 재배정을 통해 변수를 바꾼다. 따라서 재배정이 이루어지므로 객체가 서로 달라진다.
+  - 가변형(mutable) 자료형은 같은 주소에서 값(value)이 변경 가능하기 때문에 얕은 복사가 가능하다.
+  - 불변형(immutable) 자료형은 본질적으로 변경이 불가능하므로 재배정을 통해 변수를 바꾼다. 따라서 재배정이 이루어지므로 객체가 서로 달라진다.
 
 **Deep copy**
+
 - Deep copy는 새로운 객체(변수)를 만든 뒤에 원본의 복사본을 변수에 입력한다.
-    - 서로 값만 같을 뿐 본질적으로 서로 다르기 때문에 한 변수가 수정될 시 다른 변수가 수정되지 않는다.
+  - 서로 값만 같을 뿐 본질적으로 서로 다르기 때문에 한 변수가 수정될 시 다른 변수가 수정되지 않는다.
 
 #### References
 
@@ -1361,7 +1404,7 @@ Python은 객체 지향 프로그래밍 언어이다. Python의 주요 OOP 개�
 이에 필요한 단계는 아래와 같다.
 
 1. 시스템의 컴파일러가 지원하는 언어로 파일을 만든다.
-    - ex. file.c, file.cpp
+   - ex. file.c, file.cpp
 2. 이 파일을 사용되고있는 배포판의 모듈/디렉토리에 저장한다.
 3. 모듈/디렉토리에 있는 Setup.local 파일에 행을 추가한다.
 4. spam file.o를 사용하여 파일을 실행한다.
@@ -1395,6 +1438,7 @@ sep이 지정되면 구분자를 기준으로 문자열을 분리하고, sep이 
 maxsplit이 지정되면 그 수만큼의 분할이 수행되고, maxsplit이 지정되지 않았거나 -1인 경우에는 가능한 모든 분할이 수행된다.
 
 > **Example**
+
 ```python
 a = "ai tech interview"
 print(a.split())
@@ -1405,7 +1449,9 @@ print(a.split("-"))
 a = "ai-tech-interview"
 print(a.split("-", 1))
 ```
+
 > **Output**
+
 ```
 ['ai', 'tech', 'interview']
 ['ai', 'tech', 'interview']
@@ -1426,11 +1472,13 @@ print(a.split("-", 1))
 `import` 키워드를 사용하여 모듈을 가져올 수 있다. 세 가지 방법으로 모듈을 가져올 수 있다.
 
 > **Example**
+
 ```python
 import numpy        # importing using the original module name
 import numpy as np  # importing using an alias name
 from numpy import * # imports everything present in the array module
 ```
+
 <br>
 
 ---
@@ -1439,11 +1487,11 @@ from numpy import * # imports everything present in the array module
 
 #### Explain Inheritance in Python with an example.
 
-상속을 통해 상위 (부모) 클래스의 멤버 함수, 멤버 변수들을 모두 하위 (자식) 클래스가 가질 수 있다. 상위 클래스를 상속함으로써 코드 재사용성이 더 좋아지고, 관리가 용이해진다. 
+상속을 통해 상위 (부모) 클래스의 멤버 함수, 멤버 변수들을 모두 하위 (자식) 클래스가 가질 수 있다. 상위 클래스를 상속함으로써 코드 재사용성이 더 좋아지고, 관리가 용이해진다.
 
-파이썬은 부모 클래스 A 를 자식 클래스 B 가 상속하는 **Single Inheritance**, 
-부모 클래스 A 를 자식 클래스 B 가 다시 B 를 자식 클래스 C 가 상속하는 **Multi-level Inheritance**, 
-부모 클래스 A 가 여러 자식 클래스에 상속되는 **Hierarchical Inheritance**, 
+파이썬은 부모 클래스 A 를 자식 클래스 B 가 상속하는 **Single Inheritance**,
+부모 클래스 A 를 자식 클래스 B 가 다시 B 를 자식 클래스 C 가 상속하는 **Multi-level Inheritance**,
+부모 클래스 A 가 여러 자식 클래스에 상속되는 **Hierarchical Inheritance**,
 하나의 자식 클래스가 여러 부모 클래스를 상속하는 **Multiple Inheritance** 가 있다.
 
 ---
@@ -1458,12 +1506,12 @@ from numpy import * # imports everything present in the array module
 
 클래스 내에서는 멤버 함수를 만들 수 있고, 클래스 객체에서 멤버 함수를 사용할 수 있다.
 
-```python 
+```python
 class MyClass():
     def __init__(self, feature):
         self.feature = feature
         ...
-    
+
     def my_method(self):
         ...
 ```
@@ -1473,7 +1521,8 @@ class MyClass():
 ## #57
 
 #### What is monkey patching in Python?
-주로 테스트를 위해 많이 사용되는 방법으로, 어떤 클래스나 모듈의 일부 (함수나 변수 등) 를 로컬에서 런타임으로만 instance 를 통해 수정하는 방법을 말한다. 
+
+주로 테스트를 위해 많이 사용되는 방법으로, 어떤 클래스나 모듈의 일부 (함수나 변수 등) 를 로컬에서 런타임으로만 instance 를 통해 수정하는 방법을 말한다.
 
 예시로 heath.py 파일의 A 클래스에 a 라는 함수가 있는데, 다른 파일에서 A 를 import 하여 a 함수 대신 new_a 를 할당하여 사용하는 방법이 있다.
 
@@ -1485,8 +1534,8 @@ my_A = A() # A 클래스 객체 할당
 my_A.a # new_a 가 동작
 ```
 
-
 #### References
+
 - [Python - Monkey Patch - IT 초보](https://newbiestory.tistory.com/60)
 
 ---
@@ -1494,9 +1543,11 @@ my_A.a # new_a 가 동작
 ## #58
 
 #### Does python support multiple inheritance?
+
 파이썬은 자바와 다르게 multiple inheritance 을 지원한다. multiple inheritance 의 개념은 [#55](#55) 에서 참고할 수 있다.
 
 예시는 아래와 같다.
+
 ```python
 class P_A():
     ...
@@ -1514,11 +1565,13 @@ class C(P_A, P_B): #P_A 와 P_B 클래스를 동시에 상속
 ## #59
 
 #### What is Polymorphism in Python?
+
 다형성은 객체지향의 주요 개념으로 여러가지 형태를 가질 수 있는 능력을 말한다. 다형성은 코드의 유지보수에 도움을 준다.
 
 파이썬은 다형성을 지원하는데, + 연산이나 len 연산에 대해 생각해볼 수 있다. 이들은 여러 타입의 변수에 대해서도 동일한 기능을 제공하는데 overriding 과 overloading 을 통해 각기 다른 타입의 변수에도 반응하도록 다형성을 주었기 때문에 가능하다.
 
 #### References
+
 - [다형성(polymorphism)- 잔재미 코딩](https://www.fun-coding.org/PL&OOP1-8.html)
 - [[python] 다형성(polymorphism) - Son's Data story](https://datastory1.blogspot.com/2020/03/python-polymorphism.html)
 
@@ -1527,6 +1580,7 @@ class C(P_A, P_B): #P_A 와 P_B 클래스를 동시에 상속
 ## #60
 
 #### Define encapsulation in Python?
+
 캡슐화는 주요 변수나 함수를 외부로부터 보호하는 방법을 말한다. 캡슐화를 통해 코드의 안전성을 높일 수 있다.
 
 파이썬에서는 클래스를 생각해볼 수 있다. 클래스의 멤버 변수나 멤버 함수에 접근하기 위해서는 클래스에 대한 객체를 만들어야 한다. 객체를 통해 멤버에 접근하기 때문에 직접 변수를 손대는 것보다 데이터를 더 안전하게 지킬 수 있다.
@@ -1536,6 +1590,7 @@ class C(P_A, P_B): #P_A 와 P_B 클래스를 동시에 상속
 ## #61
 
 #### How do you do data abstraction in Python?
+
 데이터 추상화는 객체지향의 주요 개념으로 사용자에게 데이터의 주요 정보만 제공하여 구체적인 구현은 몰라도 사용할 수 있게 만드는 방법이다.
 
 파이썬에서는 abstract class 를 통해 데이터 추상화를 할 수 있다. abstract class 를 사용하기 위해서는 `abc` 모듈을 import 하고 `metaclass=ABCClass` 와 `@abstractmethod` 를 사용해야 한다.
@@ -1554,6 +1609,7 @@ class 추상클래스명(metaclass=ABCMeta):
 ## #62
 
 #### Does python make use of access specifiers?
+
 파이썬은 다른 언어와 달리 private, protected 등의 접근 제한자를 직접 명시하지 않고 변수명을 통해 접근 제어를 한다.
 
 접두사 _ 가 한 개 있는 경우에는 protected, 접두사 _ 가 두 개 있는 경우에는 private, 접두사 _ 가 없거나 접미사 _ 가 두 개 이상 있는 경우에는 public 이다.
@@ -1561,6 +1617,7 @@ class 추상클래스명(metaclass=ABCMeta):
 > [public, private, protect의 차이점 - Eureka Developer](https://eurekadeveloper.tistory.com/entry/public-private-protect%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90)
 
 #### References
+
 - [[python] 접근 제어자 - 불곰](https://brownbears.tistory.com/112)
 
 ---
@@ -1568,6 +1625,7 @@ class 추상클래스명(metaclass=ABCMeta):
 ## #63
 
 #### How to create an empty class in Python?
+
 파이썬에서 클래스 내부에 아무 내용 없이 선언만 하기 위해서는 `pass` 나 `...` 을 사용할 수 있다. 추가적으로 empty class 를 선언한 후, 외부에서 객체를 통해 클래스의 변수나 함수를 만들 수도 있다.
 
 ```python
@@ -1584,7 +1642,8 @@ print(e.a) # 10
 ## #64
 
 #### What does an object() do?
-파이썬은 모든 것이 객체이다. 따라서 기본적으로 object 클래스를 상속받고 있다. 
+
+파이썬은 모든 것이 객체이다. 따라서 기본적으로 object 클래스를 상속받고 있다.
 
 object() 함수를 사용하면 새로운 기본 object 객체를 반환받을 수 있다.
 
@@ -1593,9 +1652,10 @@ object() 함수를 사용하면 새로운 기본 object 객체를 반환받을 �
 ## #65
 
 #### What is map function in Python?
+
 map 함수는 iterable 한 객체의 모든 원소에 동일한 함수를 적용하는 기능을 한다.
 
-첫 인자로 적용할 함수를, 두번째 인자로 iterable 한 객체를 넣으면, iterable 한 map 객체 형태로 각 원소에 대해 함수가 적용된 묶음들이 담겨 나온다. 
+첫 인자로 적용할 함수를, 두번째 인자로 iterable 한 객체를 넣으면, iterable 한 map 객체 형태로 각 원소에 대해 함수가 적용된 묶음들이 담겨 나온다.
 
 ```python
 int_arr = list(map(int, input().split()))
@@ -1606,6 +1666,7 @@ int_arr = list(map(int, input().split()))
 ## #66
 
 #### Is python numpy better than lists?
+
 파이썬의 리스트는 각 원소들의 값을 직접 사용하지 않고 원소들의 주소를 참조하는 방식을 사용하기 때문에 원소들의 타입이 정해지지 않아 편리하지만 메모리를 많이 사용하고 느리다는 단점이 있다.
 
 반면, 넘파이는 C 기반으로 구현되어 원소들의 타입을 미리 설정하여 메모리를 적게 사용하고 빠르다. 또한 행렬과 선형대수에 편리한 함수들을 제공한다는 장점도 있다.
@@ -1615,11 +1676,13 @@ int_arr = list(map(int, input().split()))
 ## #67
 
 #### What is GIL in Python language?
+
 멀티쓰레딩을 할 때, 공유 자원에 대해 여러 쓰레드가 동시에 접근한다면 갱신된 내용이 유실되는 등의 문제가 발생할 수 있다. 이를 막기 위해 파이썬은 GIL (Global Interpreter Lock) 을 통해 python interpreter 에 한 쓰레드만 접근하여 모든 자원을 사용할 수 있게 한다.
 
 정확히는 멀티 쓰레드가 bytecode(=instruction) 한 라인씩을 들고 있기 때문에, 한 쓰레드의 bytecode 한 줄에 대해서만 GIL 은 허용한다.
 
 #### References
+
 - [[python] GIL, Global interpreter Lock은 무엇일까? - 수학과의 좌충우돌 프로그래밍](https://ssungkang.tistory.com/entry/python-GIL-Global-interpreter-Lock%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
 - [왜 Python에는 GIL이 있는가 - 개발새발블로그](https://dgkim5360.tistory.com/entry/understanding-the-global-interpreter-lock-of-cpython)
 
@@ -1628,20 +1691,23 @@ int_arr = list(map(int, input().split()))
 ## #68
 
 #### What is the CPython?
-파이썬은 일반적으로 C 로 구현된 인터프리터 언어이다. 일반적인 C 언어와 구분하기 위해 파이썬 구현체 C 를 CPython 이라고 부른다. 
+
+파이썬은 일반적으로 C 로 구현된 인터프리터 언어이다. 일반적인 C 언어와 구분하기 위해 파이썬 구현체 C 를 CPython 이라고 부른다.
 
 CPython 은 인터프리터이면서 컴파일러로 Python 코드를 C 가 아닌 bytecode 로 컴파일해주고, 이를 interpreter(virtual machine) 가 실행하게 만든다.
 이러한 CPython 의 interpreter 적인 특징이 파이썬을 차별되게 만들었다.
 
 #### References
+
 - [
-Python에 대하여, Python은 어떻게 동작하는가? Python의 장단점 - cjh5414](https://cjh5414.github.io/about-python-and-how-python-works/)
+  Python에 대하여, Python은 어떻게 동작하는가? Python의 장단점 - cjh5414](https://cjh5414.github.io/about-python-and-how-python-works/)
 
 ---
 
 ## #69
 
 #### What are Decorators in Python?
+
 함수를 인자로 받고 내부 함수에서 인자로 받은 함수를 사용하는 클래스나 함수가 있을 때, 인자로 사용할 함수를 간편하게 지정해주는 역할을 하는 것이 Decorator 이다.
 
 Decorator 의 사용 문법은 인자가 될 함수 위에 `@외부함수이름` 을 붙여주면 된다.
@@ -1670,8 +1736,8 @@ def big_number2(n):
       return (n+1) ** (n+1) ** (n+1)
 ```
 
-
 #### References
+
 - [5) 데코레이터 - 제대로 파이썬](https://wikidocs.net/23106)
 
 ---
@@ -1679,13 +1745,15 @@ def big_number2(n):
 ## #70
 
 #### What is object interning?
-파이썬에서는 모든 것이 객체이므로 변수들은 값을 바로 가지지 않고 값을 가진 주소를 참조하게 된다. 
+
+파이썬에서는 모든 것이 객체이므로 변수들은 값을 바로 가지지 않고 값을 가진 주소를 참조하게 된다.
 
 object interning 은 자주 사용될, 즉 재활용될 object 에 대해 매번 새로운 주소를 할당하는 것은 비효율적이므로, 하나의 주소에 값을 주고 그 주소를 재활용하는 작업을 말한다.
 
 기본적으로 파이썬에서는 -5~256, [a-Az-Z0-9_] 에 대해 고정된 주소를 할당하여 interning 을 하고 있다.
 
 #### References
+
 - [파이썬의 효과적인 메모리 재활용 방법 Interning - Nephtyw'S Programming Stash](https://nephtyws.github.io/python/interning/)
 
 ---
@@ -1693,6 +1761,7 @@ object interning 은 자주 사용될, 즉 재활용될 object 에 대해 매번
 ## #71
 
 #### What is @classmethod, @staticmethod, @property?
+
 **@classmethod**
 
 클래스 내부의 함수 중에 @classmethod 로 선언된 함수에 대해서는 클래스의 객체를 만들지 않고도 바로 접근이 가능하다. 하지만 함수의 첫 인자로 클래스를 받아서, 상속되었을 때 자식 클래스의 데이터를 따르는 특징이 있다.
@@ -1760,8 +1829,8 @@ if __name__ == '__main__':
     print(t.color)
 ```
 
-
 #### References
+
 - [44. class 정리, 정적메소드 @classmethod와 @staticmethod의 정리 - 파이썬 기본을 갈고 닦자!](https://wikidocs.net/16074)
 - [파이썬에서 @property 에 대해 알아보자. - HAMA 블로그](https://hamait.tistory.com/827)
 
