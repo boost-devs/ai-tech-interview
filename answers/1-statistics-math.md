@@ -1,4 +1,12 @@
-## 📝 Table of Contents
+<div align='center'>
+  <h1>📈 Statistics/Math 📈</h1>
+</div>
+
+> 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였으며, 질문에 대한 답변은 직접 작성하였습니다.
+
+---
+
+## Table of Contents
 
 - [고유값(eigen value)와 고유벡터(eigen vector)에 대해 설명해주세요. 그리고 왜 중요할까요?](#1)
 - [샘플링(Sampling)과 리샘플링(Resampling)에 대해 설명해주세요. 리샘플링은 무슨 장점이 있을까요?](#2)
@@ -99,7 +107,7 @@ P(X=1)와 같은 식으로 표현하고, 이는 "주사위를 굴렸을 때, 1�
 데이터 분포를 묘사하기 위해서 사용된다.
 보통 `확률 분포 함수(probability distribution function)` 또는 `확률 밀도 함수(probability density function)`를 주로 사용하며, 이때 함수의 계수를 분포의 모수(parameter)라고 부른다.
 **확률분포(Probability Distribution)** 란 표본공간에 정의된 확률을 이용하여 확률변수의 값 또는 영역에 대한 확률을 표현한 것이다.
-예를 들어 가장 널리 쓰이는 확률 모형의 하나인 `가우시안 정규 분포(Gaussian normal distribution)`는 다음과 같은 수식으로 확률 밀도 함수를 정의한다.  
+예를 들어 가장 널리 쓰이는 확률 모형의 하나인 `가우시안 정규 분포(Gaussian normal distribution)`는 다음과 같은 수식으로 확률 밀도 함수를 정의한다.
 
 <img src="/images/sally/2021-04-19-03-39-37.png" width=30%>
 
@@ -109,7 +117,8 @@ P(X=1)와 같은 식으로 표현하고, 이는 "주사위를 굴렸을 때, 1�
 - 확률밀도함후(PDF, Probability Density Function) - 연속형
 - 누적분포함수(CDF, Cumulative Distribution Function)
 
-✔︎ 추가적으로 **확률 통계의 기초 용어**를 정리하면 다음과 같다. (주사위 굴리기 예제 사용)  
+✔︎ 추가적으로 **확률 통계의 기초 용어**를 정리하면 다음과 같다. (주사위 굴리기 예제 사용)
+
 ```
 - 실험(Experiment)은 하나의 행위가 하나 이상의 결과를 도출하는 것에 대한 과정 혹은 절차를 나타낸다.
   - 예시) 주사위를 던진다.
@@ -182,14 +191,15 @@ $$ -->
 조건부 확률은 사건 A 가 일어났다는 전제 하에 사건 B 가 일어날 확률이다. 이는 P(B|A) = P(B∩A) / P(A) 로 표현 가능하다.  
 조건부 확률은 <u>베이즈 정리</u>와도 이어지며, 조건부 확률을 이용한 가장 유명한 문제는 [몬티홀 문제](https://terms.naver.com/entry.naver?docId=3569086&cid=58944&categoryId=58970)가 있다.
 
-*베이즈 정리  
+\*베이즈 정리  
 ![베이즈 정리](https://media.vlpt.us/images/dldydldy75/post/a1f16b20-7d93-4b4b-af89-9e63201c917c/image.png)
+
 > D : 새로 관찰되는 데이터  
-θ : 모델에서 계산하고 싶어하는 모수 (가설)  
-사후확률 : 데이터를 관찰했을 때, 이 가설이 성립할 확률 (데이터 관찰 이후 측정하기 때문에 사후확률)  
-사전확률 : 가설에 대해 사전에 세운 확률 (데이터 관측 이후 사후확률이 사전확률이 된다.)  
-가능도 : 현재 주어진 모수 (가정) 에서 이 데이터가 관찰될 가능성  
-Evidence : 데이터 전체의 분포
+> θ : 모델에서 계산하고 싶어하는 모수 (가설)  
+> 사후확률 : 데이터를 관찰했을 때, 이 가설이 성립할 확률 (데이터 관찰 이후 측정하기 때문에 사후확률)  
+> 사전확률 : 가설에 대해 사전에 세운 확률 (데이터 관측 이후 사후확률이 사전확률이 된다.)  
+> 가능도 : 현재 주어진 모수 (가정) 에서 이 데이터가 관찰될 가능성  
+> Evidence : 데이터 전체의 분포
 
 베이즈 정리를 통해 가능도와 Evidence를 바탕으로 사전확률을 사후확률로 업데이트한다.
 
@@ -285,7 +295,7 @@ SSE = sum((추정값-관측값 평균)^2),
 SST = sum((관측값-관측값 평균)^2),  
 SSR = sum((관측값-추정값)^2)
 
-*관측값 : 실제 데이터의 값,  
+\*관측값 : 실제 데이터의 값,  
 추정값 : 회귀 모델을 통해 나온 값.
 
 회귀 모델의 성능을 평가하는 방법은 결정계수 외에도 MAE, MSE, RMSE 가 있다.
@@ -436,8 +446,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 즉, 베이지안은 과거의 사건이 현재 사건에 영향을 끼친다는 입장을 가지고 있다.
 
-반면, 프리퀀티스트는 확률을 무한번 실험한 결과, 객관적으로 발생하는 현상의 빈도수로 바라본다. 
-
+반면, 프리퀀티스트는 확률을 무한번 실험한 결과, 객관적으로 발생하는 현상의 빈도수로 바라본다.
 
 즉, 프리퀀티스트는 현재의 객관적인 확률에 의해서만 사건이 발생한다는 입장을 가지고 있다.
 
@@ -451,10 +460,10 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 #### 검정력(statistical power)은 무엇일까요?
 
-|                  | 귀무가설 H0 참 | 귀무가설 H0 거짓 |
-| :--------------: | :------------: | :--------------: |
-| 귀무가설 H0 채택 | 옳은 결정(1-α) |  제 2종 오류(β)  |
-| 귀무가설 H0 기각 | 제 1종 오류(α) |  옳은 결정(1-β), 검정력 |
+|                  | 귀무가설 H0 참 |    귀무가설 H0 거짓    |
+| :--------------: | :------------: | :--------------------: |
+| 귀무가설 H0 채택 | 옳은 결정(1-α) |     제 2종 오류(β)     |
+| 귀무가설 H0 기각 | 제 1종 오류(α) | 옳은 결정(1-β), 검정력 |
 
 검정력은 대립가설 H1이 참인 경우 귀무가설 H0를 기각(대립가설 H1을 채택)할 확률이다.
 
@@ -462,8 +471,8 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 #### References
 
-- [검정력(power)의 의미 및 수식 - 	
-Curycu's Box](https://m.blog.naver.com/PostView.nhn?blogId=hancury&logNo=220854934914&proxyReferer=https:%2F%2Fwww.google.com%2F)
+- [검정력(power)의 의미 및 수식 -
+  Curycu's Box](https://m.blog.naver.com/PostView.nhn?blogId=hancury&logNo=220854934914&proxyReferer=https:%2F%2Fwww.google.com%2F)
 - [통계적 검정: 검정력(power)과 Type 1, 2 Error(1, 2 종 오류) - 코딩하고, ](https://niceguy1575.tistory.com/entry/%ED%86%B5%EA%B3%84%EC%A0%81-%EA%B2%80%EC%A0%95-%EA%B2%80%EC%A0%95%EB%A0%A5power%EA%B3%BC-Type-1-2-Error1-2-%EC%A2%85-%EC%98%A4%EB%A5%98)
 
 ---
@@ -589,7 +598,7 @@ Bias를 통제하기 위한 방법으로는
 > (주의) log 함수는 0~1 사이에서는 음수값을 가지므로, log(1+x)와 같은 방법으로 처리해주어야한다.
 
 - 추가내용) 왜도(skewness)와 첨도(Kurtosis)
-  - 왜도는 데이터가 한쪽으로 치우친 정도이다.  
+  - 왜도는 데이터가 한쪽으로 치우친 정도이다.
   - 첨도는 분포가 얼마나 뾰족한지를 나타내는 정도이다.
 
 #### References

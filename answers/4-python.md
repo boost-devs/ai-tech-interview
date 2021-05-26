@@ -1,4 +1,10 @@
-## 📝 Table of Contents
+<div align='center'>
+  <h1>🐍 Python Programming Language 🐍</h1>
+</div>
+
+> 질문은 <strong>[Top 100 Python Interview Questions You Must Prepare In 2021 - edureka!](https://www.edureka.co/blog/interview-questions/python-interview-questions/)</strong>을 참고하였으며, 질문에 대한 답변 중 일부는 위의 사이트의 답변을 참고하여 작성되었습니다.
+
+## Table of Contents
 
 - [What is the difference between list and tuples in Python?](#1)
 - [What are the key features of Python?](#2)
@@ -479,9 +485,6 @@ class MyClass:
     def method(self):
         return 'instance method', self
 
-    def wrong_method():
-        print("wrong instance method")
-
 obj = MyClass
 print(obj.method())
 
@@ -489,8 +492,6 @@ print(obj.method())
 ```
 
 우선 `self`가 어디에서 쓰이는지 알아야 한다. `self`는 인스턴스 메서드(instance method)의 첫 번째 인자이다. 메서드가 호출될 때, 파이썬은 `self`에 인스턴스를 넣고 이 인스턴스를 참조하여 인스턴스 메서드를 실행할 수 있게 된다.
-
-다만 `wrong_method` 같이 인스턴스 메서드를 정의를 했지만 첫 번째 인자로 `self`를 넣어주지 않았을 경우 해당 메서드 호출 시 에러가 발생한다.
 
 #### References
 
@@ -526,7 +527,7 @@ for i in range(10):
 # >> 0 1 2 3 4 6 7 8 9
 ```
 
-`pass`는 문법적으로 필요하지만, 아무 것도 수행하고 싶지 않을 때 사용한다. 주로 함수나 클래스의 구조부터 세우고 나중에 구현을 하고 싶을 때 사용한다.
+`pass`는 문법적으로 필요하지만, 아무 것도 하지 않게 하고 싶을 때 사용한다. 주로 함수나 클래스의 구조부터 세우고 나중에 구현을 하고 싶을 때 사용한다.
 
 ```python
 class MyClass:
@@ -545,7 +546,7 @@ class MyClass:
 
 #### What does `[::-1]` do?
 
-파이썬 시퀀스 자료형은 값이 연속적으로 이어진 자료형으로, **리스트, 튜플, range, 문자열**이 있다. 시퀀스 자료형은 시퀀스 객체의 일부를 잘라낼 수 있는 <strong>슬라이싱(slicing)</strong>이라는 기능을 쓸 수 있다. 슬라이싱은 `seq[start:end:step]`처럼 쓸 수 있으며, `start`는 시작 인덱스, `end`는 끝 인덱스(범위에 포함하지는 않음), `step`은 인덱스 증감폭을 말한다. `step`이 양수이면 증가하고, 음수이면 감소한다.
+파이썬 시퀀스 자료형은 값이 연속적으로 이어진 자료형으로, **리스트, 튜플, range, 문자열**이 있다. 시퀀스 자료형은 시퀀스 객체의 일부를 잘라낼 수 있는 **슬라이싱(slicing)**이라는 기능을 쓸 수 있다. 슬라이싱은 `seq[start:end:step]`처럼 쓸 수 있으며, `start`는 시작 인덱스, `end`는 끝 인덱스(범위에 포함하지는 않음), `step`은 인덱스 증감폭을 말한다. `step`이 양수이면 증가하고, 음수이면 감소한다.
 
 다시 돌아와 `seq[::-1]`은 `start`와 `end`는 시작 인덱스와 끝 인덱스를 생략하였는데, 이럴 경우 전체 시퀀스를 가져오며, 증감폭이 -1이므로 `end-1`부터 시작해 `start`순으로 요소를 가져온다. 즉, `seq[::-1]`은 시퀀스를 역전(reverse)시킨다.
 
@@ -697,6 +698,8 @@ for i in r:
 ## #27
 
 #### What is pickling and unpickling?
+
+Pickle module accepts any Python object and converts it into a string representation and dumps it into a file by using dump function, this process is called pickling. While the process of retrieving original Python objects from the stored string representation is called unpickling.
 
 우선 `직렬화(Serialization)`와 `역 직렬화(Deserialization)`의 개념을 알아야 한다. `직렬화`란 객체를 바이트 스트림(byte stream)으로 변환하여 디스크에 저장하거나 네트워크로 보낼 수 있도록 만들어주는 것을 말한다. 반대로 바이트 스트림을 파이썬 객체로 변환하는 것을 `역 직렬화`라고 한다.
 
@@ -855,8 +858,6 @@ print(a is b) # True
 print(a is c) # False
 ```
 
-> 참고로 비교 연산자 `==`는 두 객체의 값만 비교한다. 그러므로 위의 예시에서 `is`를 `==`로 변경하면 `a==b`, `a==c` 모두 True를 반환한다.
-
 `not`은 단항 논리 연산자(logical operator)로 뒤에 오는 boolean 값을 뒤집는다. 뒤에 오는 값이 **True**이면 **False**를, **False**이면 **True**를 반환한다.
 
 ```python
@@ -864,7 +865,7 @@ print(not True)   # False
 print(not False)  # True
 ```
 
-`in`은 멤버 연산자(membership operator)로, 요소 a가 시퀀스 b안에 있는 지를 확인하고 싶을 때 `a in b`로 표현하며 만약 a가 b 안에 있다면 **True**를, 없으면 **False**를 반환한다.
+`in`은 멤버 연산자(membership operator)로, 요소 a와 시퀀스 b가 있는 지를 확인하고 싶을 때 `a in b`로 표현하며 만약 a가 b 안에 있다면 **True**를, 없으면 **False**를 반환한다.
 
 ```python
 b = "abc"
@@ -908,13 +909,13 @@ print(dir())      # 지역 스코프에 정의된 a와 func
 
 #### Whenever Python exits, why isn’t all the memory de-allocated?
 
-우선 순환 참조(Circular Reference)가 발생한 경우를 의심해볼 수 있다. 순환 참조란 참조 구조가 사이클을 이루는 경우를 말한다. 예를 들어, 한 객체가 자기 자신을 참조하거나 두 객체가 서로를 참조하는 경우가 있다. 그럼 왜 메모리 해제가 되지 않을까?
+다른 객체나 전역 네임스페이스에서 참조되는 객체를 순환 참조하는 파이썬 모듈은 항상 해제되지는 않는다. 또한 C 라이브러리가 예약한 메모리의 해당 부분을 해제하는 것은 불가능하다. 그러므로 파이썬 종료 시, 모든 메모리가 해제되지는 않는다.
 
-우선 파이썬이 어떻게 메모리 관리를 하는지 알아야 한다. 파이썬은 내부적으로 `malloc()`과 `free()`를 많이 사용하기 때문에 메무리 누수의 위험이 있다. 그래서 파이썬은 메모리를 관리하기 위한 방법으로 **레퍼런스 카운트**를 사용한다. 레퍼런스 카운트란 객체를 참조하는 변수의 수를 말하며, 객체를 아무도 참조하지 않을 경우 가비지 컬렉션(GC)가 객체를 해제시킨다.
+> **순환 참조(Circular Reference)**
+> 두 객체가 서로 참조하는 경우를 말한다.
 
-다시 돌아와 객체 A, B가 순환 참조를 하고 있고 `a = A; b = B`로 변수 a, b가 객체 A, B를 참조한다고 가정해보자. `a = 0`을 만들어 A를 참조하는 변수가 없게 만들어도 객체 B 내부에서 A를 참조하고 있으므로 A는 절대로 해제되지 않는다.
-
-다른 이유로는 C 라이브러리가 예약한 메모리 부분은 해제할 수 없어서 메모리가 모두 해제되지 않는다.
+> **전역 네임스페이스(Global Namespace)**  
+> 네임스페이스(namespace)란 프로그래밍 언어에서 특정 객체를 이름에 따라 구분할 수 있는 범위를 의미한다. 전역 네임스페이스는 import한 모듈들의 이름을 포함하며, 스크립트가 끝날 때까지 지속된다.
 
 #### References
 
@@ -923,7 +924,6 @@ print(dir())      # 지역 스코프에 정의된 a와 func
 - [Circular References in Python - hearsaysocial](http://engineering.hearsaysocial.com/2013/06/16/circular-references-in-python/)
 - [[Python] 네임스페이스 개념 정리 - Hyungcheol Noh's Blog](https://hcnoh.github.io/2019-01-30-python-namespace)
 - [네임스페이스 - 제대로 파이썬](https://wikidocs.net/23109)
-- [[Python] 파이썬의 메모리 관리 - Margurt's Blog](https://dc7303.github.io/python/2019/08/06/python-memory/)
 
 ---
 
@@ -935,7 +935,7 @@ print(dir())      # 지역 스코프에 정의된 a와 func
 
 딕셔너리의 뜻은 사전이다. 영한 사전에서 각 영단어(ex. beautiful)에 대응하는 단어(ex. 아름다운)가 나오는 것처럼, 영단어가 key값이고 그에 대응하는 단어를 value값으로 볼 수 있다.
 
-> **특징1** : 딕셔너리는 {}를 사용하여 선언하며 { key1 : value1, key2 : value2, ... } 로 요소를 나타낸다.
+> **특징1** : 딕셔너리는 {, }를 사용하여 선언하며 { key1 : value1, key2 : value2, ... } 로 요소를 나타낸다.
 
 - key값으로 변하지 않는 값을 사용하고, value값으로 변하는 값과 변하지 않는 값 둘 다 사용할 수 있다.
 - key값으로 리스트를 사용하면, 값이 변할 가능성이 있기 때문에 인터프리터에서 type error를 발생시킨다.
@@ -1433,6 +1433,14 @@ dis.dis(mult)
 - [How does Python work? - towards data science](https://towardsdatascience.com/how-does-python-work-6f21fd197888)
 - [Is Python interpreted or compiled? Yes. - Ned Batchelder](https://nedbatchelder.com/blog/201803/is_python_interpreted_or_compiled_yes.html)
 - [Can Python be compiled? is it compiled or interpreted? - astateofdata](https://www.astateofdata.com/python-programming/can-python-be-compiled/)
+
+1. 시스템의 컴파일러가 지원하는 언어로 파일을 만든다.
+   - ex. file.c, file.cpp
+2. 이 파일을 사용되고있는 배포판의 모듈/디렉토리에 저장한다.
+3. 모듈/디렉토리에 있는 Setup.local 파일에 행을 추가한다.
+4. spam file.o를 사용하여 파일을 실행한다.
+5. 이 작업을 성공적으로 실행 한 후 최상위 디렉토리에서 make 명령을 사용하여 인터프리터를 다시 빌드한다.
+6. 파일이 변경되면 `make Makefile` 명령을 사용하여 rebuildMakefile을 실행한다.
 
 ---
 
