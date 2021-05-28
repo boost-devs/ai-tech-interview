@@ -44,11 +44,22 @@
 
 수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수 <!-- $\lambda$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Clambda"> (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**
 
-공식  
-![고유값 공식](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen_formula.jpeg)
+공식
 
-아래처럼 x1 은 A 에 의해 변환되었음에도 x1 과 평행하다. 따라서 x1 은 고유벡터이다.  
-![고유벡터 예시](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/eigen_vector.jpeg)
+<!-- $$
+Ax = \lambda x
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=Ax%20%3D%20%5Clambda%20x%0D"></div>
+
+<br/>
+
+아래처럼 x1 은 A 에 의해 변환되었음에도 x1 과 평행하다. 따라서 x1 은 고유벡터이다.
+
+<div align="center">
+  <img src="../images/heath/eigen_vector.jpeg" height="240px"/>
+</div>
+<br/>
 
 고유값과 고유벡터를 통해 A 를 고유값과 고유벡터들로 분해하는 **고유값 분해** (eigen decomposition), 정방행렬 뿐만 아닌 m x n 행렬도 분해할 수 있는 **특이값 분해** (SVD), 데이터들을 차원 축소시킬 때 가장 원래 의미를 잘 보존시키는 **주성분 분석** (PCA) 등에 활용할 수 있으므로 중요하다.
 
@@ -188,20 +199,23 @@ $$ -->
 
 #### 조건부 확률은 무엇일까요?
 
-조건부 확률은 사건 A 가 일어났다는 전제 하에 사건 B 가 일어날 확률이다. 이는 P(B|A) = P(B∩A) / P(A) 로 표현 가능하다.  
-조건부 확률은 <u>베이즈 정리</u>와도 이어지며, 조건부 확률을 이용한 가장 유명한 문제는 [몬티홀 문제](https://terms.naver.com/entry.naver?docId=3569086&cid=58944&categoryId=58970)가 있다.
+조건부 확률은 사건 A 가 일어났다는 전제 하에 사건 B 가 일어날 확률이다. 이는 P(B|A) = P(B∩A) / P(A) 로 표현 가능하다. 조건부 확률은 <u>베이즈 정리</u>와도 이어지며, 조건부 확률을 이용한 가장 유명한 문제는 [몬티홀 문제](https://terms.naver.com/entry.naver?docId=3569086&cid=58944&categoryId=58970)가 있다.
 
-\*베이즈 정리  
-![베이즈 정리](https://media.vlpt.us/images/dldydldy75/post/a1f16b20-7d93-4b4b-af89-9e63201c917c/image.png)
-
-> D : 새로 관찰되는 데이터  
-> θ : 모델에서 계산하고 싶어하는 모수 (가설)  
-> 사후확률 : 데이터를 관찰했을 때, 이 가설이 성립할 확률 (데이터 관찰 이후 측정하기 때문에 사후확률)  
-> 사전확률 : 가설에 대해 사전에 세운 확률 (데이터 관측 이후 사후확률이 사전확률이 된다.)  
-> 가능도 : 현재 주어진 모수 (가정) 에서 이 데이터가 관찰될 가능성  
-> Evidence : 데이터 전체의 분포
+> **베이즈 정리**
 
 베이즈 정리를 통해 가능도와 Evidence를 바탕으로 사전확률을 사후확률로 업데이트한다.
+
+<div align="center">
+  <img src="../images/heath/probability.png" height="240px"/>
+</div>
+<br/>
+
+- <!-- $D$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=D"> : 새로 관찰되는 데이터
+- <!-- $\theta$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Ctheta"> : 모델에서 계산하고 싶어하는 모수 (가설)
+- 사후확률 : 데이터를 관찰했을 때, 이 가설이 성립할 확률 (데이터 관찰 이후 측정하기 때문에 사후확률)
+- 사전확률 : 가설에 대해 사전에 세운 확률 (데이터 관측 이후 사후확률이 사전확률이 된다.)
+- 가능도 : 현재 주어진 모수 (가정) 에서 이 데이터가 관찰될 가능성
+- Evidence : 데이터 전체의 분포
 
 #### References
 
@@ -216,7 +230,13 @@ $$ -->
 
 공분산은 확률변수 X의 편차(평균으로부터 얼마나 떨어져 있는지)와 확률변수 Y의 편차를 곱한 것의 평균값이다.
 
-<img src="https://t1.daumcdn.net/cfile/tistory/99E2B9415C3444B807" width=300>
+<!-- $$
+Cov(X, Y) = E((X - \mu_X)(Y-\mu_Y))
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=Cov(X%2C%20Y)%20%3D%20E((X%20-%20%5Cmu_X)(Y-%5Cmu_Y))%0D"></div>
+
+<br/>
 
 공분산은 두 변수 간에 양의 상관관계가 있는지, 음의 상관관계가 있는지 정도를 알려준다. 하지만 상관관계가 얼마나 큰지는 제대로 반영하지 못한다.
 
@@ -224,7 +244,13 @@ $$ -->
 
 상관계수는 확률변수의 절대적 크기에 영향을 받지 않도록 공분산을 단위화시킨 것이다. 즉, 공분산에 각 확률변수의 분산을 나눠주었다.
 
-<img src="https://t1.daumcdn.net/cfile/tistory/99F3564B5C3449F90F" width=400>
+<!-- $$
+\rho = \frac{Cov(X, Y)}{\sqrt{Var(X) \cdot Var(Y)}}, \quad -1 ≤ \rho≤ 1
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%5Crho%20%3D%20%5Cfrac%7BCov(X%2C%20Y)%7D%7B%5Csqrt%7BVar(X)%20%5Ccdot%20Var(Y)%7D%7D%2C%20%5Cquad%20-1%20%E2%89%A4%20%5Crho%E2%89%A4%201%0D"></div>
+
+<br/>
 
 상관계수는 양의 상관관계가 있는지 음의 상관관계가 있는지 알려줄 뿐만 아니라, 그 상관성이 얼마나 큰지도 알려준다. 1 또는 -1에 가까울수록 상관성이 큰 것이고, 0에 가까울수록 상관성이 작은 것이다.
 
@@ -241,7 +267,10 @@ $$ -->
 
 구간 추정에서 `모수가 a 에서 b 사이에 있을 것으로 추정(신뢰구간)`하고 `그 확률(%, 신뢰수준)`을 구한다.
 
-<img src="/images/sally/2021-04-18-02-19-35.png" width=50%>
+<div align="center">
+  <img src="../images/sally/2021-04-18-02-19-35.png" height="240px"/>
+</div>
+<br/>
 
 **신뢰구간(Confidence Interval)** 은 모집단의 모수(parameter)가 위치해 있을 것으로 신뢰할 수 있는 구간이다.
 모수가 어느 범위 안에 있는지를 확률적으로 보여주는 방법이라고 할 수 있다.
@@ -284,8 +313,7 @@ $$ -->
 
 #### R square의 의미는 무엇인가요?
 
-결정계수 (R square) 는 선형 회귀 모델에서 데이터에 대해 회귀선이 얼마나 잘 설명하는지에 대한 설명력을 의미한다.  
-결정계수는 0~1 의 값을 가질 수 있고, 만약 값이 1 이라면 회귀선으로 모든 데이터를 다 설명할 수 있다고 이해할 수 있다.
+결정계수 (R square) 는 선형 회귀 모델에서 데이터에 대해 회귀선이 얼마나 잘 설명하는지에 대한 설명력을 의미한다. 결정계수는 0~1 의 값을 가질 수 있고, 만약 값이 1 이라면 회귀선으로 모든 데이터를 다 설명할 수 있다고 이해할 수 있다.
 
 참고로 결정계수는 다음의 식으로 구할 수 있다.
 
@@ -295,8 +323,8 @@ SSE = sum((추정값-관측값 평균)^2),
 SST = sum((관측값-관측값 평균)^2),  
 SSR = sum((관측값-추정값)^2)
 
-\*관측값 : 실제 데이터의 값,  
-추정값 : 회귀 모델을 통해 나온 값.
+- 관측값 : 실제 데이터의 값,
+- 추정값 : 회귀 모델을 통해 나온 값.
 
 회귀 모델의 성능을 평가하는 방법은 결정계수 외에도 MAE, MSE, RMSE 가 있다.
 
@@ -442,13 +470,9 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 #### 베이지안과 프리퀀티스트 간의 입장차이를 설명해주실 수 있나요?
 
-베이지안은 사건의 확률을 바라볼 때, 사전 확률을 미리 염두해두고 사건의 발생에 따라 베이즈 정리로 사후 확률을 구해 다시 사전 확률을 업데이트시킨다.
+베이지안은 사건의 확률을 바라볼 때, 사전 확률을 미리 염두해두고 사건의 발생에 따라 베이즈 정리로 사후 확률을 구해 다시 사전 확률을 업데이트시킨다. 즉, 베이지안은 **과거의 사건이 현재 사건에 영향을 끼친다는 입장**을 가지고 있다.
 
-즉, 베이지안은 과거의 사건이 현재 사건에 영향을 끼친다는 입장을 가지고 있다.
-
-반면, 프리퀀티스트는 확률을 무한번 실험한 결과, 객관적으로 발생하는 현상의 빈도수로 바라본다.
-
-즉, 프리퀀티스트는 현재의 객관적인 확률에 의해서만 사건이 발생한다는 입장을 가지고 있다.
+반면, 프리퀀티스트는 확률을 무한번 실험한 결과, 객관적으로 발생하는 현상의 빈도수로 바라본다. 즉, 프리퀀티스트는 **현재의 객관적인 확률에 의해서만 사건이 발생한다는 입장**을 가지고 있다.
 
 #### References
 
@@ -467,7 +491,10 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 검정력은 대립가설 H1이 참인 경우 귀무가설 H0를 기각(대립가설 H1을 채택)할 확률이다.
 
-<img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkJIVD%2FbtqEGDk7q8y%2FJfGDXmB22SCXWxN3enQwg1%2Fimg.png" width=700>
+<div align="center">
+  <img src="../images/adc/statistics-math/hypothesis.png" height="300px"/>
+</div>
+<br/>
 
 #### References
 
@@ -533,7 +560,10 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 먼저 **모집단의 크기 : N** 을 구하고, **신뢰수준 : z** 와 **오차범위 : e** 를 얼마로 할지 선정하여 표본의 크기를 구할 수 있다.
 
-![표본크기 공식](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/sample-size-formula.png)
+<div align="center">
+  <img src="../images/heath/sample-size-formula.png" height="100px"/>
+</div>
+<br/>
 
 참고로 신뢰수준은 표본추출을 반복했을 때 얼마나 그 결과를 신뢰할 수 있는지에 대한 정도로 95% 를 주로 사용한다.
 
@@ -550,16 +580,26 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 #### Bias를 통제하는 방법은 무엇입니까?
 
+<div align="center">
+  <img src="../images/adc/statistics-math/underfit-right-overfit.png" height="200px"/>
+</div>
+<br/>
+
 Bias는 데이터 내에 있는 모든 정보를 고려하지 않음으로 인해, 지속적으로 잘못된 것들을 학습하는 경향을 의미한다. 이는 underfitting과 관계되어 있다.
 
 반대로 Variance는 데이터 내에 있는 에러나 노이즈까지 잘 잡아내는 highly flexible models에 데이터를 fitting 시킴으로써, 실제 현상과 관계 없는 random한 것들까지 학습하는 알고리즘의 경향을 의미한다. 이는 overfitting과 관계되어 있다.
 
-<img src="https://www.endtoend.ai/assets/blog/misc/bias-variance-tradeoff-in-reinforcement-learning/underfit_right_overfit.png" width=600>
-<img src="http://www.endtoend.ai/assets/blog/misc/bias-variance-tradeoff-in-reinforcement-learning/front.png" width=400>
+<div align="center">
+  <img src="../images/adc/statistics-math/variance-bias.png" height="250px"/>
+</div>
+<br/>
 
 편향(Bias)과 분산(Variance)은 한 쪽이 증가하면 다른 한 쪽이 감소하고, 한쪽이 감소하면 다른 한쪽이 증가하는 tradeoff 관계를 가진다.
 
-<img src="https://lh5.googleusercontent.com/lAbzDl1HYiYHAEuGnaUw2GdCyQzkZvjWisgNY-ZRYqvRG-X-U7f7cL_UunIF7v5q0BbUSw4CZ-1-xMXs8mvE8fbGa7ghFeEGzuwJ6wiIs64nUgJxkDNEC2JrSTUHEjViRZLdA23NLqI" width=350>
+<div align="center">
+  <img src="../images/adc/statistics-math/bias-variance-tradeoff.png" height="300px"/>
+</div>
+<br/>
 
 Bias를 통제하기 위한 방법으로는
 
@@ -612,6 +652,8 @@ Bias를 통제하기 위한 방법으로는
 #### 베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포에 대해 설명해주세요.
 
 - [answer/statistics-math-distribution.md](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/statistics-math.md) 참고
+
+(추후 수정)
 
 ---
 
