@@ -466,7 +466,30 @@ DHCP 는 UDP 를 사용하여 클라이언트/서버 구조로 통신한다.
 ## #32
 
 #### delay, timing(jitter), throughput 차이를 설명해주세요.
+위 세가지 개념 중 delay 와 timing 은 
+##### delay
+하나의 데이터 패킷이 출발 지점에서 도착 지점에 도착한 시간을 의미한다.
+
+딜레이는 
+1) 전송 지연 : 장비의 전송 속도가 느려서 생기는 지연
+2) 전파 지연 : 거리가 멀어서 생기는 지연
+3) 노드 처리 지연 : 라우터에서 데이터 패킷 처리 등을 하며 생기는 지연
+4) 큐 지연 : 패킷이 많아서 큐에 쌓여있는 동안 생기는 지연
+의 합으로 계산된다.
+
+
+##### timing(jitter)
+delay 의 변동을 (변화량 수준) 의미한다. 같은 스위치가 아닌 경우 패킷마다 대기 시간이 달라지므로 지터가 생긴다.
+
+
+##### throughput
+지정된 시간동안 실제로 전송된 정보량을 의미한다. 
+
+데이터가 지나갈 수 있는 통로의 크기인 bandwidth 와 헷갈릴 수 있는데, bandwidth 가 크더라도 실제로 전송된 정보량이 적으면 throughput 이 적은 것이다.
 
 #### References
-
+- [Network의 4가지 종류 - 공대생의 개발 노트](https://corona-world.tistory.com/47)
+- [4. 네트워크의 delay, loss, throughput - 나도 잘 모름](https://snnchallenge.tistory.com/98)
+- [[네트워크]latency, bandwidth와 throughput 개념 정리 - 코딩 세상](https://darkstart.tistory.com/141)
+- [Latency Delay Jitter 의 명쾌한 비교](https://sensechef.com/1156)
 ---
