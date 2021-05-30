@@ -272,6 +272,8 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 
 #### References
 
+- [Chapter 2. Application Layer - Computer Networking: A Top-Down Approach](http://www.yes24.com/Product/Goods/24320296?OzSrank=2)
+
 ---
 
 ## #19
