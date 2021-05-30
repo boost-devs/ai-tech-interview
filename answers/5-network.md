@@ -331,7 +331,11 @@ IPv4는 헤더에 options이 존재하고, fragmentation/reassembly 기능을 �
 
 #### MAC Address가 무엇인가요?
 
+MAC 주소(Media Access Control Address)는 Data Link Layer에서 통신을 위해 네트워크 인터페이스에 할당한 식별자를 말한다. 즉, 모든 네트워크 장비는 자신의 MAC 주소가 있으며 주소는 장비 제조업체가 할당한다. MAC 주소는 물리적 주소(Physical Address)라고 불리기도 한다.
+
 #### References
+
+- [MAC 주소 - 위키백과](https://ko.wikipedia.org/wiki/MAC_%EC%A3%BC%EC%86%8C)
 
 ---
 
