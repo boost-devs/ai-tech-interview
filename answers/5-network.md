@@ -347,8 +347,18 @@ IPv4 의 경우 2^(8*4=32) 의 숫자로 주소를 표현하고, 이를 국가, 
 ## #27
 
 #### data encapsulation이 무엇인가요?
+data encapsulation 은 데이터를 보내는 송신측에서 데이터를 생성하는 방법으로, 네트워크 계층에서 상위 계층에서부터 하위 계층으로 내려올 때마다 각 계층의 헤더를 붙여 보내는 데이터로 만들어낸다.
+
+반대로 데이터를 받는 수신측에서는 데이터를 받은 후에 계층을 거슬러 올라가면서 헤더를 떼내며 데이터를 파악한다.
+
+<div align='center'>
+    <img src='../images/heath/network_encapsulation.png' height='250px '/>
+</div>
+<br/>
 
 #### References
+- [[network] 캡슐화 & 역캡슐화 (encalsulation & decapsulation) - CHAEN](https://ychae-leah.tistory.com/20)
+- [[네트워크] TCP/ IP 캡슐화 - jhkang-dev](https://jhkang-tech.tistory.com/20)
 
 ---
 
