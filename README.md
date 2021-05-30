@@ -270,7 +270,7 @@
 
 ### [🖥️ Operating System](./answers/6-operating-system.md)
 
-- 프로세스와 스레드의 차이(Process vs Thread) 를 알려주세요.
+- 프로세스와 스레드의 차이(Process vs Thread)를 알려주세요.
 - 멀티 프로세스 대신 멀티 스레드를 사용하는 이유를 설명해주세요.
 - 캐시의 지역성에 대해 설명해주세요.
 - Thread-safe에 대해 설명해주세요. (hint: critical section)
@@ -284,7 +284,7 @@
 - 사용자 수준 스레드와 커널 수준 스레드의 차이를 설명해주세요.
 - 외부 단편화와 내부 단편화에 대해 설명해주세요.
 - Context Switching이 무엇인지 설명하고 과정을 나열해주세요.
-- Swapping 에 대해 설명해주세요.
+- Swapping에 대해 설명해주세요.
 
 <a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
