@@ -365,8 +365,34 @@ data encapsulation 은 데이터를 보내는 송신측에서 데이터를 생�
 ## #28
 
 #### DHCP를 설명해주세요.
+DHCP (Dynamic Host Configuration Protocol) 는 동적으로 IP 주소나 기타 정보들을 관리해주는 프로토콜을 말한다. 관리해야하는 컴퓨터가 많고 이들의 IP 를 모두 직접 할당하고 관리하려면 상당히 복잡하고 시간이 많이들지만, DHCP 를 사용하면 이러한 문제점을 해결할 수  있다.
+
+DHCP 는 UDP 를 사용하여 클라이언트/서버 구조로 통신한다.
+그 과정은 아래와 같다.
+
+1. DHCP discover  
+: 컴퓨터가 동일 서브넷으로 브로드캐스팅(255.255.255.255) 으로 DHCP 서버를 찾음
+2. DHCP offer  
+: DHCP 가 사용가능한 IP 주소의 리스트를 컴퓨터에게 전달함
+3. DHCP request  
+: 컴퓨터가 리스트 중 하나의 IP 주소를 선택하여 서버에 전달
+4. DHCP ack  
+: DHCP 가 컴퓨터에게 해당 IP 주소를 허락/거절하는 메세지를 전달
+
+##### 장점
+- DHCP 서버에서 자동으로 IP 를 관리해주므로 편리함
+  - IP 에 변동이 있을 때, DHCP 에만 정보를 입력하면 됨
+  - 자동 할당
+- 사용중인 컴퓨터에 대해서만 할당하므로 효율적임
+
+##### 단점
+- DHCP 서버에 의존하기 때문에 서버가 다운되는 경우 모든 컴퓨터에서 인터넷을 할 수 없음
+- 초기 DHCP 세팅 시간 및 트래픽이 큼
+- 단말 컴퓨터를 끌 경우, 완전히 주소가 release 될 때 까지 해당 IP 를 사용할 수 없음
 
 #### References
+- [DHCP 열심히 정리한 글 :) - Don't forget your time](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=hai0416&logNo=221578608161)
+- [DHCP란 그 개념부터 알아보자 - 네트워크보안](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=haionvpn&logNo=40181076143)
 
 ---
 
@@ -374,7 +400,34 @@ data encapsulation 은 데이터를 보내는 송신측에서 데이터를 생�
 
 #### routing protocol을 몇 가지 설명해주세요. (ex. link state, distance vector)
 
+<div align='center'>
+    <img src='../images/heath/routing.png' height='250px '/>
+</div>
+<br/>
+
+패킷을 전달할 때 어느 경로로 갈지 정하는 것을 라우팅이라고 한다.
+
+##### 라우팅 경로 고정 여부
+어떤 경로로 라우팅할지를 미리 정해두냐 동적으로 정하냐에 따라 `정적 라우팅`, `동적 라우팅` 으로 구분한다.
+
+##### 내/외부 라우팅
+동적 라우팅에서 AS (Auotonomous System, 하나의 네트워크 관리자에 의해 관리되는 네트워크 집단) 를 기준으로 내부적으로 동작하냐, 외부적으로 동작하냐에 따라 `내부 라우팅` (RIP, IGRP, OSPF, EIGRP) 과 `외부 라우팅` (BGP, EGP) 으로 나눈다.
+
+##### 라우팅 테이블 관리
+동적 라우팅에서 어떤 방식으로 라우팅 테이블을 관리하느냐에 따라서도 방법이 다르다.
+크게 link state, distance vector 방법이 있다.
+
+`distance vector` 방법은 현재 위치 (단말 또는 라우터) 까지의 방향과 거리를 기록한 라우팅 테이블을 인접한 라우터들에게 전달하고 갱신한다.
+메모리가 적게 들고 구성이 쉽지만, 전체 테이블 구성 시간이 길어질 수 있고 같은 경로를 반복해서 도는 루핑 문제가 발생할 수 있다. (EIGRP 는 루핑이 발생하지 않음)
+
+`link state` 방법은 인접 테이블에 정보를 전달했으면 또 그 인접 테이블들은 이 정보를 바로 인접 테이블로 넘겨, 직접 연결되지 않은 모든 라우터들도 현재 정보를 파악할 수 있다.
+정확하고 루핑 문제가 없다는 장점이 있어 대형 네트워크에서 많이 사용되지만 메모리의 소모와 cpu 로드가 많다는 단점이 있다.
+
 #### References
+- [라우팅 프로토콜(Routing Protocol) - 자비스가 필요해](https://needjarvis.tistory.com/159)
+- [라우팅 프로토콜 종류 - 개발일기](https://developmentdiary.tistory.com/494)
+- [라우팅 프로토콜의 종류 - 청년 고득녕](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=nackji80&logNo=221431942767)
+- [디스턴스 벡터/링크 스테이트 - 이삭이의 토스트 공장](https://toastfactory.tistory.com/286)
 
 ---
 
