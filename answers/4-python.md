@@ -122,7 +122,7 @@
 - [Python 시작하기 - crystalcube](https://crystalcube.co.kr/44)
 - [파이썬 동적 타이핑과 캐스팅 - 스스로 배우는 코딩](https://blog.naver.com/PostView.nhn?blogId=youndok&logNo=222057656966)
 - [python 리스트, 튜플, 딕셔너리 비교 - bskyvision](https://bskyvision.com/854)
-- [Python 일급객체(FIRST-CLASS CITIZEN)- 홍찬기]](https://hckcksrl.medium.com/python-%EC%9D%BC%EA%B8%89%EA%B0%9D%EC%B2%B4-1735746a8229)
+- [Python 일급객체(FIRST-CLASS CITIZEN)- 홍찬기](https://hckcksrl.medium.com/python-%EC%9D%BC%EA%B8%89%EA%B0%9D%EC%B2%B4-1735746a8229)
 - [인터프리터 언어와 컴파일 언어의 차이 - jhkang-dev](https://jhkang-tech.tistory.com/136)
 
 ---
