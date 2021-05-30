@@ -84,7 +84,7 @@
 
 #### What is the difference between list and tuples in Python?
 
-리스트는 muatble(변경 가능), 튜플은 immutable(변경 불가능)이라는 특징을 가지고 있다. 따라서 리스트는 선언 후에도 값에 대한 변경, 삭제가 가능하지만, 튜플은 선언 후에 값을 변경하거나 삭제하는 것이 불가능하다. 또한 리스트는 튜플보다 느리다는 단점을 가지고 있으며, 하나의 튜플/리스트에 다른 타입의 값을 함께 저장할 수 있다는 공통점이 있다. 리스트는 대괄호 `[ ]`를, 튜플은 소괄호 `( )`를 사용해서 나타낸다.
+리스트는 mutable(변경 가능), 튜플은 immutable(변경 불가능)이라는 특징을 가지고 있다. 따라서 리스트는 선언 후에도 값에 대한 변경, 삭제가 가능하지만, 튜플은 선언 후에 값을 변경하거나 삭제하는 것이 불가능하다. 또한 리스트는 튜플보다 느리다는 단점을 가지고 있으며, 하나의 튜플/리스트에 다른 타입의 값을 함께 저장할 수 있다는 공통점이 있다. 리스트는 대괄호 `[ ]`를, 튜플은 소괄호 `( )`를 사용해서 나타낸다.
 
 #### References
 
@@ -122,7 +122,7 @@
 - [Python 시작하기 - crystalcube](https://crystalcube.co.kr/44)
 - [파이썬 동적 타이핑과 캐스팅 - 스스로 배우는 코딩](https://blog.naver.com/PostView.nhn?blogId=youndok&logNo=222057656966)
 - [python 리스트, 튜플, 딕셔너리 비교 - bskyvision](https://bskyvision.com/854)
-- [Python 일급객체(FIRST-CLASS CITIZEN)- 홍찬기]](https://hckcksrl.medium.com/python-%EC%9D%BC%EA%B8%89%EA%B0%9D%EC%B2%B4-1735746a8229)
+- [Python 일급객체(FIRST-CLASS CITIZEN)- 홍찬기](https://hckcksrl.medium.com/python-%EC%9D%BC%EA%B8%89%EA%B0%9D%EC%B2%B4-1735746a8229)
 - [인터프리터 언어와 컴파일 언어의 차이 - jhkang-dev](https://jhkang-tech.tistory.com/136)
 
 ---
@@ -161,7 +161,7 @@
 
 #### What is pep 8?
 
-PEP(Python Enhancement Proposal)는 Python 코드를 포맷하는 방법을 지정하는 규칙 집합이다. 다른 사람과 원활하게 협업하려면 공통된 스타일 공유가 필요하며, 일관성 있는 스타일은 나중에 수정하기도 쉽다. PEP8은 파이썬 코드를 어떻게 구성할 지 알려주는 스타일 가이드로서의 역할을 한다.
+PEP(Python Enhancement Proposal)는 Python 코드를 포맷하는 방법을 지정하는 규칙 집합이다. 다른 사람과 원활하게 협업하려면 공통된 스타일 공유가 필요하며, 일관성 있는 스타일은 나중에 수정하기도 쉽다. PEP8은 파이썬 코드를 어떻게 구성할 지 알려주는 스타일 가이드로서의 역할을 한다. Python formatting tool에는 `black`, `flake8`, `autopep8`, `yamf` 등이 있다.  
 
 > PEP8 스타일 가이드 예시
 
@@ -183,7 +183,11 @@ PEP(Python Enhancement Proposal)는 Python 코드를 포맷하는 방법을 지�
 
 #### How is memory managed in Python?
 
-Python은 모든 것을 객체로 관리한다. 객체가 더이상 필요하지 않으면 파이썬 메모리 관리자가 자동으로 객체에서 메모리를 회수하는 방식을 사용하므로, 파이썬은 **동적 메모리 할당** 방식을 사용한다고 말할 수 있다. <strong>힙(heap)</strong>은 동적할당을 구현하는데 사용된다. 힙을 사용하여 동적으로 메모리를 관리하면, 필요하지 않은 메모리를 비우고 재사용할 수 있다는 장점이 있다. 모든 파이썬 객체 또는 자료구조는 python private heap 공간에서 관리되며, 프로그래머는 이 공간에 접근할 수 없고, 대신 파이썬 인터프리터가 대신해서 관리한다. 파이썬 객체에 대한 힙 공간 할당은 **파이썬 메모리 관리자(Python Memory Manager)** 에 의해 수행된다. 또한, 파이썬은 사용되지 않는 모든 메모리를 재활용하고 힙 공간에서 사용할 수 있도록 하는 **내장 Garbage Collector(GC)** 를 가지고 있으며, Python 메모리 관리자에는 객체별 할당자가있어 int, string 등과 같은 특정 객체에 대해 메모리를 명확하게 할당 할 수 있다.
+Python은 모든 것을 객체로 관리한다. 객체가 더이상 필요하지 않으면 파이썬 메모리 관리자가 자동으로 객체에서 메모리를 회수하는 방식을 사용하므로, 파이썬은 **동적 메모리 할당** 방식을 사용한다고 말할 수 있다. <strong>힙(heap)</strong>은 동적할당을 구현하는데 사용된다. 힙을 사용하여 동적으로 메모리를 관리하면, 필요하지 않은 메모리를 비우고 재사용할 수 있다는 장점이 있다. 모든 파이썬 객체 또는 자료구조는 **python private heap** 공간에서 관리되며, 프로그래머는 이 공간에 접근할 수 없고, 대신 파이썬 인터프리터가 대신해서 관리한다.
+
+> 더 자세히보기
+
+파이썬 객체에 대한 힙 공간 할당을 담당하는 것을 **파이썬 메모리 관리자(Python Memory Manager)** 라고 부른다. Python 메모리 관리자에는 객체별 할당자가있기 때문에 int, string 등과 같은 특정 객체에 대해 메모리를 명확하게 할당 할 수 있다. 또한, 사용되지 않는 모든 메모리를 재활용하고 힙 공간에서 사용할 수 있도록 하는 **내장 Garbage Collector(GC)** 를 가지고 있다.
 
 #### References
 
@@ -266,7 +270,7 @@ print(sys.path)
   - `sys`
   - `math`
   - `random`
-  - `data time`
+  - `datetime`
   - `JSON`
 
 #### References
@@ -279,8 +283,8 @@ print(sys.path)
 
 #### What are local variables and global variables in Python?
 
-- **전역변수(Global Variance)** : 함수 외부 또는 전역 공간에 선언된 변수를 전역 변수라고 한다. 프로그램의 모든 함수에서 전역변수에 접근할 수 있다.
-- **로컬 변수(Local Variance)** : 함수 내부에 선언된 변수를 로컬 변수라고 한다. 전역변수는 전역 공간이 아닌 로컬 공간에 있다.
+- **전역 변수(Global Variable)** : 함수 외부 또는 전역 공간에 선언된 변수를 전역 변수라고 한다. 프로그램의 모든 함수에서 전역변수에 접근할 수 있다. [Whenever Python exits, why isn’t all the memory de-allocated?](#35) 참고
+- **로컬 변수(Local Variable)** : 함수 내부에 선언된 변수를 로컬 변수라고 한다. 로컬 변수는 전역 공간이 아닌 로컬 공간에 있다.
 
 > 예시
 
@@ -403,10 +407,10 @@ print(My_list)
 > 예시
 
 ```python
-def Newfunc():
+def new_func():
   print("Hi, Welcome to Edureka")
 
-Newfunc(); # 함수 호출
+new_func(); # 함수 호출
 
 # Output: Hi, Welcome to Edureka
 ```
@@ -450,9 +454,14 @@ XYZ
 '''
 ```
 
+> 추가내용) `__init__.py`은 무엇인가?
+
+python 3.3 이하 버전에서, package import하기 위해서 사용되는 규칙이다. 3.3 이후의 버전에서는 이 제약사항이 해제되었다. `__init__.py`는 python 프로그램이 디렉토리를 처음 가져올 때 자동으로 실행되는 **패키지 초기화 파일** 역할을 하고, **모듈의 네임스페이스 초기화** 역할을 한다.
+
 #### References
 
 - [7.5. 특별한 메서드들 - 왕초보를 위한 Python](https://wikidocs.net/89)
+- [패키지 __init__.py 파일들 - 그것으로 말미암아,](https://m.blog.naver.com/jodi999/221609408266)
 
 ---
 
@@ -460,7 +469,7 @@ XYZ
 
 #### What is a lambda function?
 
-익명 함수(이름이 없는 함수)를 람다 함수라고 한다. 람다 함수는 `def` 키워드를 통해서 함수를 생성하는 리터럴 표기법을 **딱 한 줄의 코드로 표현**할 수 있게 해주며, `lambda 인자 : 표현식`의 형식으로 표현한다. 람다함수는 결과 부분을 return 키워드 없이 자동으로 return한다. 람다함수를 사용하면 코드가 간결해지고 메모리가 절약된다는 장점이 있다. 그러나 함수에 이름이 없고, 저장된 변수가 없기 때문에 다시 사용하기 위해서는 다시 코드를 적어주거나, 람다함수를 변수에 담아주어야한다. 람다함수도 객체이기 때문에 정의와 동시에 변수에 담을 수는 있다. 재사용할 이유가 없다면 lambda 함수를 생성하여 넘겨주는 편이 좋다.
+익명 함수(이름이 없는 함수)를 람다 함수라고 한다. 람다 함수는 `def` 키워드를 통해서 함수를 생성하는 리터럴 표기법을 **딱 한 줄의 코드로 표현**할 수 있게 해주며, `lambda 인자 : 표현식`의 형식으로 표현한다. 람다함수는 결과 부분을 return 키워드 없이 자동으로 return한다. 람다함수를 사용하면 코드가 간결해지고 메모리가 절약된다는 장점이 있다. 그러나 함수에 이름이 없고, 저장된 변수가 없기 때문에 다시 사용하기 위해서는 다시 코드를 적어주거나, 람다함수를 변수에 담아주어야한다. 따라서, 재사용할 이유가 없다면 lambda 함수를 생성하여 넘겨주는 편이 좋다.
 
 람다함수의 표현법을 그림으로 표현하면 아래와 같다.
 
@@ -1399,9 +1408,21 @@ Python은 객체 지향 프로그래밍 언어이다. Python의 주요 OOP 개�
 
 #### How is Multithreading achieved in Python?
 
-파이썬에는 Multithreading 패키지가 있지만, 일반적으로 코드 속도를 높이기 위해 Multithread 패키지를 사용하는 것은 좋지 않다.
+파이썬에서 멀티 쓰레드를 구현하는 방법은 `threding 모듈(High level)`을 사용하거나 `thread 모듈(Low level)`을 사용하는 방법이 있다. 현재 thread 모듈은 deprecated 되어 threading 모듈을 사용하는 것을 권장한다.
 
-파이썬에는 GIL(Global Interpreter Lock)이라는 구조가 있다. GIL은 한 번에 하나의 스레드만 실행할 수 있도록 한다. 스레드는 GIL을 획득하고 약간의 작업을 수행 한 다음 GIL을 다음 스레드로 전달한다. 이 작업은 매우 빠르게 수행되므로 사람의 눈에는 스레드가 병렬로 실행되는 것처럼 보일 수 있지만 실제로는 동일한 CPU 코어를 사용하여 번갈아 가며 수행한다.
+멀티스레딩을 사용하면 당연히 속도가 빨라질 것이라 생각할 수 있지만, 파이썬의 GIL(Global Interpreter Lock) 정책으로 인해, 멀티스레딩을 사용한다 하더라도, 속도는 싱글스레드와 별반 다르지 않다.
+
+하나의 자원에 여러 프로세스가 아무런 규칙없이 접근하면, 자원 동기화 문제가 발생할 수 있다. 이를 방지하기 위해서 자원에 lock을 두는데, Python은 모든 자원의 lock을 global하게 관리하고 있다. 한번에 하나의 스레드만 자원에 접근할 수 있다는 것이다. 이로인해, 자원을 공유하는 여러 스레드를 동시에 실행시킨다고 해도, 결국 GIL 때문에 한번에 하나의 스레드만 실행되는 것이다.
+
+> 추가내용) 멀티스레딩이 유용한 경우?
+
+GIL은 cpu 동작에 대해서만 적용된다. 쓰레드가 cpu 동작을 마치고 I/O 작업을 실행하는 동안에는 다른 쓰레드가 cpu 동작을 동시에 실행할 수 있다. 따라서 cpu 동작이 많지 않고 I/O동작이 더 많은 프로그램에서는 멀티 쓰레드만으로 성능적으로 큰 효과를 얻을 수 있다.
+
+#### References
+
+- [[Python] 파이썬 멀티 쓰레드(thread)와 멀티 프로세스(process) by Nathan Kwon](https://monkey3199.github.io/develop/python/2018/12/04/python-pararrel.html)
+- [[운영체제] Concurrency : locks- blackinkgj](https://blackinkgj.github.io/Locks/)
+- [What is GIL in Python language?](#67)
 
 ---
 
