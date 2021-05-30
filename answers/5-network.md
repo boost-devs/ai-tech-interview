@@ -197,7 +197,10 @@
 
 URI는 Uniform Resource Identifier의 약자로, 자원을 식별자로 취급하여 나타내는 주소를 말한다. URI의 종류로 URL과 URN이 있다. URI는 일반적으로 다음과 같은 형식을 갖고 있다.
 
-![URI](../images/penguin/uri.png)
+<div align="center">
+<img src="../images/penguin/uri.png" width="90%"/>
+</div>
+<br/>
 
 #### References
 
@@ -213,7 +216,7 @@ URI는 Uniform Resource Identifier의 약자로, 자원을 식별자로 취급�
 
 #### 소켓(Socket)이 무엇인가요? 자신 있는 언어로 간단히 소켓 생성 예시를 보여주세요.
 
-소켓(Socket)이란 Application 프로세스와 end-to-end 통신을 제공하는 Transport 프로토콜 사이의 문을 말한다. 즉, Application에서 Transport 프로토콜을 쓰기 위한 API를 말한다.
+`소켓(Socket)`이란 <u>Application 프로세스와 end-to-end 통신을 제공하는 Transport 프로토콜 사이의 인터페이스</u>을 말한다. 즉, Application에서 Transport 프로토콜을 쓰기 위한 API를 말한다.
 
 소켓은 크게 UDP와 TCP 두종 종류로 분류할 수 있다. 자세한 내용은 [#4. TCP와 UDP의 차이를 설명해주세요.](#4)을 참고!
 
@@ -282,9 +285,12 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 
 > **WebSocket**
 
-![websocket](../images/penguin/web-socket.png)
+<div align="center">
+<img src="../images/penguin/web-socket.png" width="50%"/>
+</div>
+<br/>
 
-`WebSocket`은 <u>서버와 브라우저 간 연결을 유지한 상태로 데이터를 교환할 수 있도록 하는 프로토콜</u>을 말한다.
+`WebSocket`은 <u>서버와 브라우저 간 연결을 유지한 상태로 데이터를 교환할 수 있도록 하는 **프로토콜**</u>을 말한다.
 
 전형적인 브라우저 렌더링 방식은 HTTP 요청에 대한 응답을 받아 브라우저 화면을 깨끗히 지우고 받은 내용을 새로 표시하는 방식인데, 내용을 지우고 다시 그리면 브라우저의 깜박임이 생기게 된다. 이러한 깜박임 없이 필요한 부분만 다시 그리는 상호작용 방식의 수요가 생겼다.
 
@@ -294,7 +300,7 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 
 > **Socket.io**
 
-`socket.io`는 <u>서버와 브라우저의 양방향 통신을 가능하게 하는 모듈</u>을 말한다. WebSocket의 경우 정말 좋은 기술이지만 오래된 브라우저의 경우 지원을 하지 않는 경우가 있다. 이런 경우 socket.io는 서버와 브라우저의 종류와 버전을 파악하여 가장 적합한 기술을 선택해 양방향 통신이 가능하도록 한다.
+`socket.io`는 <u>서버와 브라우저의 양방향 통신을 가능하게 하는 **모듈**</u>을 말한다. WebSocket의 경우 정말 좋은 기술이지만 오래된 브라우저의 경우 지원을 하지 않는 경우가 있다. 이런 경우 socket.io는 서버와 브라우저의 종류와 버전을 파악하여 가장 적합한 기술을 선택해 양방향 통신이 가능하도록 한다.
 
 #### References
 
@@ -310,16 +316,16 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 
 #### IPv4와 IPv6 차이를 설명해주세요.
 
-IPv4와 IPv6는 인터넷 프로토콜(IP)의 버전을 말하며, IPv4는 IP의 4번째 버전, IPv6는 IP의 6번째 버전을 말한다. 이 때 인터넷 프로토콜은 호스트 간 패킷 교환 네트워크에서 패킷(Packet) 혹은 데이터그램(Datagram)으로 불리는 정보를 주고받는데 사용하는 프로토콜을 말한다.
+IPv4와 IPv6는 **인터넷 프로토콜(IP)의 버전**을 말하며, IPv4는 IP의 4번째 버전, IPv6는 IP의 6번째 버전을 말한다. 이 때 인터넷 프로토콜은 호스트 간 패킷 교환 네트워크에서 패킷(Packet) 혹은 데이터그램(Datagram)으로 불리는 정보를 주고받는데 사용하는 프로토콜을 말한다.
 
 <div align="center">
 <img src="../images/penguin/ipv4-ipv6.png" width="80%"/>
 </div>
 <br/>
 
-IPv4는 헤더에 options이 존재하고, fragmentation/reassembly 기능을 제공해 MTU(Maximum Transport Unit)을 넘는 큰 데이터그램을 쪼개 전송을 하고 도착지에서 재조합을 한다. 또한 checksum 비트도 존재하여 매 라우터마다 checksum 비트를 갱신한다.
+`IPv4`는 헤더에 options이 존재하고, fragmentation/reassembly 기능을 제공해 MTU(Maximum Transport Unit)을 넘는 큰 데이터그램을 쪼개 전송을 하고 도착지에서 재조합을 한다. 또한 checksum 비트도 존재하여 매 라우터마다 checksum 비트를 갱신한다.
 
-반면 IPv6는 빠른 속도를 위해 fragmentation/reassembly 기능을 제공하지 않으며, 데이터그램의 우선순위를 설정할 수 있는 priority 비트가 존재한다.
+반면 `IPv6`는 빠른 속도를 위해 fragmentation/reassembly 기능을 제공하지 않으며, 데이터그램의 우선순위를 설정할 수 있는 priority 비트가 존재한다.
 
 #### References
 
@@ -331,7 +337,7 @@ IPv4는 헤더에 options이 존재하고, fragmentation/reassembly 기능을 �
 
 #### MAC Address가 무엇인가요?
 
-MAC 주소(Media Access Control Address)는 Data Link Layer에서 통신을 위해 네트워크 인터페이스에 할당한 식별자를 말한다. 즉, 모든 네트워크 장비는 자신의 MAC 주소가 있으며 주소는 장비 제조업체가 할당한다. MAC 주소는 물리적 주소(Physical Address)라고 불리기도 한다.
+`MAC 주소(Media Access Control Address)`는 Data Link Layer에서 통신을 위해 **네트워크 인터페이스에 할당한 식별자**를 말한다. 즉, 모든 네트워크 장비는 자신의 MAC 주소가 있으며 주소는 장비 제조업체가 할당한다. MAC 주소는 물리적 주소(Physical Address)라고 불리기도 한다.
 
 #### References
 
@@ -345,11 +351,11 @@ MAC 주소(Media Access Control Address)는 Data Link Layer에서 통신을 위�
 
 > 여기서의 네트워크는 LAN(Local Area Network)를 말합니다.
 
-라우터(Router)는 네트워크 사이를 연결하는 장치로, 최종 도착지의 네트워크에 도착할 수 있도록 적절한 경로를 설정하여 패킷을 전송한다.
+`라우터(Router)`는 **네트워크 사이를 연결하는 장치**로, 최종 도착지의 네트워크에 도착할 수 있도록 적절한 경로를 설정하여 패킷을 전송한다.
 
-스위치(Switch)는 네트워크 내에서 패킷을 전송하는 장치를 말한다. 스위치로 요청이 들어오면 IP 주소에 대응되는 MAC 주소를 찾아 해당 MAC 주소로 패킷을 전송한다. 만약 IP 주소에 대응되는 MAC 주소가 없다면 허브처럼 브로드캐스트 방식으로 패킷을 전송하고 IP 주소와 MAC 주소를 대응시킨 테이블을 갱신시킨다.
+`스위치(Switch)`는 **네트워크 내에서 패킷을 전송하는 장치**를 말한다. 스위치로 요청이 들어오면 IP 주소에 대응되는 MAC 주소를 찾아 해당 MAC 주소로 패킷을 전송한다. 만약 IP 주소에 대응되는 MAC 주소가 없다면 허브처럼 브로드캐스트 방식으로 패킷을 전송하고 IP 주소와 MAC 주소를 대응시킨 테이블을 갱신시킨다.
 
-허브(Hub)는 여러 기기를 연결하여 네트워크를 만들어주는 장치로, 패킷을 받으면 연결된 모든 기기에 패킷을 전송한다.
+`허브(Hub)`는 **여러 기기를 연결하여 네트워크를 만들어주는 장치**로, 패킷을 받으면 연결된 모든 기기에 패킷을 전송한다.
 
 #### References
 
@@ -363,7 +369,7 @@ MAC 주소(Media Access Control Address)는 Data Link Layer에서 통신을 위�
 
 #### SMTP가 무엇인가요?
 
-SMTP(Simple Mail Transfer Protocol)은 인터넷에서 이메일을 보내기 위해 사용하는 TCP/IP 프로토콜을 말한다. 사용하는 TCP Port 번호는 25번이다.
+`SMTP(Simple Mail Transfer Protocol)`은 **인터넷에서 이메일을 보내기 위해 사용하는 TCP/IP 프로토콜**을 말한다. 사용하는 TCP Port 번호는 25번이다.
 
 SMTP는 다음의 명령어를 사용하여 메일을 주고 받는다.
 
