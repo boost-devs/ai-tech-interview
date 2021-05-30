@@ -280,7 +280,29 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 
 #### Socket.io와 WebSocket의 차이를 설명해주세요.
 
+> **WebSocket**
+
+![websocket](../images/penguin/web-socket.png)
+
+`WebSocket`은 <u>서버와 브라우저 간 연결을 유지한 상태로 데이터를 교환할 수 있도록 하는 프로토콜</u>을 말한다.
+
+전형적인 브라우저 렌더링 방식은 HTTP 요청에 대한 응답을 받아 브라우저 화면을 깨끗히 지우고 받은 내용을 새로 표시하는 방식인데, 내용을 지우고 다시 그리면 브라우저의 깜박임이 생기게 된다. 이러한 깜박임 없이 필요한 부분만 다시 그리는 상호작용 방식의 수요가 생겼다.
+
+이러한 상호작용을 구현하기 위해 Pooling, Long Pooling, Streaming 등 다양한 방식을 사용했지만 요청을 보내고 응답을 보내는 **단방향 메시지 교환 규칙을 준수**하였기 때문에 상호작용하는 웹페이지를 구현하는 것은 매우 어려웠다.
+
+이보다 쉽게 구현하기 위해 **브라우저와 서버 간 양방향 메시지 송수신 규칙**이 필요했고 이것이 WebSocket이다.
+
+> **Socket.io**
+
+`socket.io`는 <u>서버와 브라우저의 양방향 통신을 가능하게 하는 모듈</u>을 말한다. WebSocket의 경우 정말 좋은 기술이지만 오래된 브라우저의 경우 지원을 하지 않는 경우가 있다. 이런 경우 socket.io는 서버와 브라우저의 종류와 버전을 파악하여 가장 적합한 기술을 선택해 양방향 통신이 가능하도록 한다.
+
 #### References
+
+- [WebSocket과 Socket.io - NAVER D2](https://d2.naver.com/helloworld/1336)
+- [웹소켓 - 위키백과](https://ko.wikipedia.org/wiki/%EC%9B%B9%EC%86%8C%EC%BC%93)
+- [웹소켓 - 모던 JavaScript 튜토리얼](https://ko.javascript.info/websocket)
+- [websocket, socket.io를 이용한 양방향 통신 - zych1751](http://www.secmem.org/blog/2019/08/17/websocket-socketio/)
+- [10.5 Node.js(Express)와 Socket.io - PoiemaWeb](https://poiemaweb.com/nodejs-socketio)
 
 ---
 
@@ -288,7 +310,20 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 
 #### IPv4와 IPv6 차이를 설명해주세요.
 
+IPv4와 IPv6는 인터넷 프로토콜(IP)의 버전을 말하며, IPv4는 IP의 4번째 버전, IPv6는 IP의 6번째 버전을 말한다. 이 때 인터넷 프로토콜은 호스트 간 패킷 교환 네트워크에서 패킷(Packet) 혹은 데이터그램(Datagram)으로 불리는 정보를 주고받는데 사용하는 프로토콜을 말한다.
+
+<div align="center">
+<img src="../images/penguin/ipv4-ipv6.png" width="80%"/>
+</div>
+<br/>
+
+IPv4는 헤더에 options이 존재하고, fragmentation/reassembly 기능을 제공해 MTU(Maximum Transport Unit)을 넘는 큰 데이터그램을 쪼개 전송을 하고 도착지에서 재조합을 한다. 또한 checksum 비트도 존재하여 매 라우터마다 checksum 비트를 갱신한다.
+
+반면 IPv6는 빠른 속도를 위해 fragmentation/reassembly 기능을 제공하지 않으며, 데이터그램의 우선순위를 설정할 수 있는 priority 비트가 존재한다.
+
 #### References
+
+- [Chapter 4. Network Layer - Computer Networking: A Top-Down Approach](http://www.yes24.com/Product/Goods/24320296?OzSrank=2)
 
 ---
 
