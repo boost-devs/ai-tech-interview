@@ -85,8 +85,12 @@
 ## #8
 
 #### 동기와 비동기의 차이를 설명해주세요.
+**동기**는 A, B, C 라는 작업이 **어떤 순서로 끝날지 보장되는 구조**를 말한다. A, B, C 작업이 동시에 시작됐는지 순차적으로 시작됐는지는 중요하지 않다. 작업의 순서를 보장하기 위해 이전 작업이 끝날 때까지 기다리는 방법이 있다. 동기는 파이프라인 프로세스를 지킬 때 용이하다.
+
+**비동기**는 A, B, C **작업이 끝나는 순서를 보장하지 않는 구조**를 말한다. 비동기가 유용한 경우는 네트워크를 생각해볼 수 있다. 사용자마다 환경이 달라 요청에 따른 응답의 시간이 다를 때, 비동기적으로 순서를 보장하지 않고 빠른 순서대로 사용자에게 응답을 할 수 있다.
 
 #### References
+- [동기(Synchronous) 작업과 비동기(Asynchronous) 작업, 그리고 블락(Blocking) 과 넌블락(Non-Blocking) 의 개념 - Jins' Dev Inside](https://jins-dev.tistory.com/entry/%EB%8F%99%EA%B8%B0Synchronous-%EC%9E%91%EC%97%85%EA%B3%BC-%EB%B9%84%EB%8F%99%EA%B8%B0Asynchronous-%EC%9E%91%EC%97%85-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%B8%94%EB%9D%BDBlocking-%EA%B3%BC-%EB%84%8C%EB%B8%94%EB%9D%BDNonBlocking-%EC%9D%98-%EA%B0%9C%EB%85%90)
 
 ---
 
