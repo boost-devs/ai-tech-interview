@@ -50,7 +50,7 @@
 Ax = \lambda x
 $$ -->
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=Ax%20%3D%20%5Clambda%20x%0D"></div>
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=Ax%20%3D%20%5Clambda%20x%0D" height=20></div>
 
 <br/>
 
@@ -162,7 +162,7 @@ P(X=1)와 같은 식으로 표현하고, 이는 "주사위를 굴렸을 때, 1�
 P(X \in B) = \int_{B} f(x) dx
 $$ -->
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=P(X%20%5Cin%20B)%20%3D%20%5Cint_%7BB%7D%20f(x)%20dx%0D"></div>
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=P(X%20%5Cin%20B)%20%3D%20%5Cint_%7BB%7D%20f(x)%20dx%0D" height=25></div>
 
 <br/>
 
@@ -172,7 +172,7 @@ $$ -->
 P(X \in R) = \int_{R} f(x) dx = 1
 $$ -->
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=P(X%20%5Cin%20R)%20%3D%20%5Cint_%7BR%7D%20f(x)%20dx%20%3D%201%0D"></div>
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=P(X%20%5Cin%20R)%20%3D%20%5Cint_%7BR%7D%20f(x)%20dx%20%3D%201%0D" height=25></div>
 
 <br/>
 
@@ -182,7 +182,7 @@ $$ -->
 F(a) = P(X ≤ a) = \int^a_{-\infty} f(x) dx
 $$ -->
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=F(a)%20%3D%20P(X%20%E2%89%A4%20a)%20%3D%20%5Cint%5Ea_%7B-%5Cinfty%7D%20f(x)%20dx%0D"></div>
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=F(a)%20%3D%20P(X%20%E2%89%A4%20a)%20%3D%20%5Cint%5Ea_%7B-%5Cinfty%7D%20f(x)%20dx%0D" height=25></div>
 
 <br/>
 
@@ -234,7 +234,7 @@ $$ -->
 Cov(X, Y) = E((X - \mu_X)(Y-\mu_Y))
 $$ -->
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=Cov(X%2C%20Y)%20%3D%20E((X%20-%20%5Cmu_X)(Y-%5Cmu_Y))%0D"></div>
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=Cov(X%2C%20Y)%20%3D%20E((X%20-%20%5Cmu_X)(Y-%5Cmu_Y))%0D" height=20></div>
 
 <br/>
 
@@ -248,7 +248,7 @@ $$ -->
 \rho = \frac{Cov(X, Y)}{\sqrt{Var(X) \cdot Var(Y)}}, \quad -1 ≤ \rho≤ 1
 $$ -->
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%5Crho%20%3D%20%5Cfrac%7BCov(X%2C%20Y)%7D%7B%5Csqrt%7BVar(X)%20%5Ccdot%20Var(Y)%7D%7D%2C%20%5Cquad%20-1%20%E2%89%A4%20%5Crho%E2%89%A4%201%0D"></div>
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%5Crho%20%3D%20%5Cfrac%7BCov(X%2C%20Y)%7D%7B%5Csqrt%7BVar(X)%20%5Ccdot%20Var(Y)%7D%7D%2C%20%5Cquad%20-1%20%E2%89%A4%20%5Crho%E2%89%A4%201%0D" height=50></div>
 
 <br/>
 
@@ -379,7 +379,7 @@ SSR = sum((관측값-추정값)^2)
 E = - \sum^k_{i=1} p_i \log_2 (p_i)
 $$ -->
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=E%20%3D%20-%20%5Csum%5Ek_%7Bi%3D1%7D%20p_i%20%5Clog_2%20(p_i)%0D"></div>
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=E%20%3D%20-%20%5Csum%5Ek_%7Bi%3D1%7D%20p_i%20%5Clog_2%20(p_i)%0D" height=30></div>
 
 <br/>
 
