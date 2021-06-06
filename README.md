@@ -290,7 +290,7 @@
 
 <br/>
 
-### [🔻 Algorithm](./answers/7-algorithm.md)
+### [🔻 Data Structure & Algorithm](./answers/7-algorithm.md)
 
 <a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
