@@ -293,6 +293,26 @@
 
 ### [🗂 Data Structure](./answers/7-data-structure.md)
 
+- linked list
+  - single linked list
+  - double linked list
+  - circular linked list
+- hash table
+- stack
+- queue
+  - circular queue
+- graph
+- tree
+  - binary tree
+  - full binary tree
+  - complete binary tree
+  - bst(binary search tree)
+- heap(binary heap)
+  - min heap
+  - max heap
+- red-black tree
+- b+ tree
+
 <a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 <br/>
