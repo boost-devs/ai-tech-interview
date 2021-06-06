@@ -19,7 +19,7 @@
 - [Part 3. CS](#part-3-cs)
   - [Network](#-network)
   - [Operating System](#-operating-system)
-  - []
+  - [Data Structure](#-data-structure)
   - [Algorithm](#-algorithm)
 - [References](#references)
 
