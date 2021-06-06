@@ -18,7 +18,7 @@
   - [Python](#-python)
 - [Part 3. CS](#part-3-cs)
   - [Network](#-network)
-  - [Operating System](#-operating-system)
+  - [Operating System](#%EF%B8%8F-operating-system)
   - [Data Structure](#-data-structure)
   - [Algorithm](#-algorithm)
 - [References](#references)
