@@ -1,5 +1,5 @@
 <div align='center'>
-  <h1>🔻 Algorithm 🔻</h1>
+  <h1>🗂 Data Structure 🗂</h1>
 </div>
 
 >
