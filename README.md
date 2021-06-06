@@ -19,6 +19,7 @@
 - [Part 3. CS](#part-3-cs)
   - [Network](#-network)
   - [Operating System](#-operating-system)
+  - []
   - [Algorithm](#-algorithm)
 - [References](#references)
 
@@ -290,7 +291,13 @@
 
 <br/>
 
-### [🔻 Data Structure & Algorithm](./answers/7-algorithm.md)
+### [🗂 Data Structure](./answers/7-data-structure.md)
+
+<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+
+<br/>
+
+### [🔻 Algorithm](./answers/8-algorithm.md)
 
 <a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
