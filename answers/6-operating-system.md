@@ -85,24 +85,82 @@
 ## #8
 
 #### 동기와 비동기의 차이를 설명해주세요.
+**동기**는 A, B, C 라는 작업이 **어떤 순서로 끝날지 보장되는 구조**를 말한다. A, B, C 작업이 동시에 시작됐는지 순차적으로 시작됐는지는 중요하지 않다. 작업의 순서를 보장하기 위해 이전 작업이 끝날 때까지 기다리는 방법이 있다. 동기는 파이프라인 프로세스를 지킬 때 용이하다.
+
+**비동기**는 A, B, C **작업이 끝나는 순서를 보장하지 않는 구조**를 말한다. 비동기가 유용한 경우는 네트워크를 생각해볼 수 있다. 사용자마다 환경이 달라 요청의 시간이 다를 때, 비동기적으로 순서를 보장하지 않고 빠른 순서대로 사용자에게 응답을 할 수 있다.
 
 #### References
+- [동기(Synchronous) 작업과 비동기(Asynchronous) 작업, 그리고 블락(Blocking) 과 넌블락(Non-Blocking) 의 개념 - Jins' Dev Inside](https://jins-dev.tistory.com/entry/%EB%8F%99%EA%B8%B0Synchronous-%EC%9E%91%EC%97%85%EA%B3%BC-%EB%B9%84%EB%8F%99%EA%B8%B0Asynchronous-%EC%9E%91%EC%97%85-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%B8%94%EB%9D%BDBlocking-%EA%B3%BC-%EB%84%8C%EB%B8%94%EB%9D%BDNonBlocking-%EC%9D%98-%EA%B0%9C%EB%85%90)
 
 ---
 
 ## #9
 
 #### 메모리 관리 전략에는 무엇이 있는지 간략히 설명해주세요.
+제한된 메모리 크기를 효율적으로 사용하기 위해 메모리 관리 전략이 필요하다.
+
+**swap**  
+프로세스가 실행되기 위해서는 메모리에 올라가야한다. 실행되어야 하는 여러 프로세스 중, 기존에 메모리에 올라간 프로세스를 보조 기억장치 (HD, SSD) 로 보내는 것을 swap-out, 보조 기억장치에 있던 프로세스를 메모리에 올리는 것을 swap-in 이라고 한다. 어떤 프로세스를 swap-out 시킬지에 대한 대표적인 방법으로는 round-robin 이 있다.
+
+**압축**  
+메모리에 프로세스들을 올리다보면 아래 사진과 같이 빈 공간(free) 이 생긴다. 이 공간을 fragmentation(단편화) 이라고 한다. 현재 메모리에서 프로세스와 단편화를 파악하고 프로세스가 연속적으로 메모리 주소에 할당되게 단편화를 없애는 방법을 압축이라 한다. 압축은 효율적이지 못하기 때문에 좋은 메모리 관리 방법이 아니다.
+
+<div align='center'>
+    <img src='../images/heath/fragmentation.png' height='250px '/>
+</div>
+<br/>
+
+**페이징**  
+메모리에 연속적으로 프로세스를 할당하지 않고, 메모리를 페이지라는 단위로 물리적으로 나눠서 페이지에 프로세스를 올리는 방법이다. 프로세스가 페이지 크기보다 크다면 여러 페이지를 사용한다. 
+페이지 크기보다 작은 프로세스가 할당되면 내부적으로 공간이 남는 내부 단편화가 발생할 수 있다.
+
+**세그멘테이션**  
+페이징은 물리적 단위로 메모리를 나눴다면, 세그멘테이션은 논리적 단위로 메모리를 나눈다. 이를 위해 세그멘테이션 테이블을 사용하고, 테이블에는 시작주소인 base 와 최대 크기인 limit 가 포함되어 있다. 
+세그멘테이션은 세그멘트 간에 할당되지 않은 공간이 남는 외부 단편화가 발생할 수 있다.
+
+<div align='center'>
+    <img src='../images/heath/segmentation.png' height='250px '/>
+</div>
+<br/>
+
+
 
 #### References
+- [[CS 기초 - 운영체제] 메모리 관리 전략 - deannn.log](https://velog.io/@deannn/CS-%EA%B8%B0%EC%B4%88-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EA%B4%80%EB%A6%AC-%EC%A0%84%EB%9E%B5)
+- [스와핑이란? - 양햄찌가 만드는 세상](https://jhnyang.tistory.com/103)
+- [[운영체제(OS)] 14. 세그멘테이션 - 끄적끄적](https://velog.io/@codemcd/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9COS-14.-%EC%84%B8%EA%B7%B8%EB%A9%98%ED%85%8C%EC%9D%B4%EC%85%98)
 
 ---
 
 ## #10
 
 #### 가상 메모리에 대해 설명해주세요.
+메모리의 크기보다 큰 프로세스는 어떻게 해야 실행이될까? 이 문제를 해결하기 위한 방법으로, 프로세스에서 필요한 부분만 메모리에 올려 실행이 가능하게 동작하는 방법을 가상 메모리라고 한다. 페이지와 세그멘테이션 중 주로 페이지를 이용하는 **Demand Paging** 방법을 사용한다.
+
+**Demand Paging** 는 프로세스에서 현재 필요한 페이지만 메모리에 올리는 방법이다. 이를 위한 페이지 테이블은 기존의 테이블에서 valid 와 modified 가 추가적으로 필요하다. 
+
+<div align='center'>
+    <img src='../images/heath/demand_paging.png' height='250px '/>
+</div>
+<br/>
+
+valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타낸다. 페이지가 메모리에 없는 경우 (valid == 0) 를 **page fault** 라고 한다. 아래의 과정으로 페이지를 메모리에 할당한다.
+
+1. 해당 페이지 valid bit 확인
+2. valid 가 0 이면 CPU 인터럽트, 해당 ISR 로 이동
+3. ISR 에서 backing store 를 탐색하여 해당 프로세스의 페이지 찾음
+4. 해당 페이지를 빈 프레임에 할당
+5. 페이지 테이블 갱신 (valid 1 로 변경)
+6. 다시 프로세스 실행
+
+여러 프로세스의 필요한 페이지를 메모리에 올리는 것은 효율적이다. 하지만 결국 한정된 자원을 쓰다보면 메모리가 꽉차는 시점이 생긴다. 이 때 어떤 페이지를 내릴지 **Page Replacement** 를 판단해야 한다. 
+
+메모리에 올라갔던 페이지가 다시 내려가면 victim page 라고 하는데, modified bit 를 확인하여 페이지가 수정되지 않은 (modified == 0) 페이지 중 랜덤하게 혹은 가장 먼저 올라온 페이지를 내릴 수 있다. 
+
 
 #### References
+- [가상 메모리 - Hashtag](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=yeop9657&logNo=220729107141)
+- [[운영체제(OS)] 15. 가상메모리 - 끄적끄적](https://velog.io/@codemcd/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9COS-15.-%EA%B0%80%EC%83%81%EB%A9%94%EB%AA%A8%EB%A6%AC)
 
 ---
 
