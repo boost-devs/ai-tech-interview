@@ -319,6 +319,37 @@
 
 ### [🔻 Algorithm](./answers/8-algorithm.md)
 
+- 시간, 공간 복잡도
+  - Big-O, theta, omega 설명, 왜 빅오만 쓰는지 설명
+- Sort Algorithm
+  - Bubble Sort
+  - Selection Sort
+  - Insertion Sort
+  - Merge Sort
+  - Heap Sort
+  - Quick Sort
+  - Counting Sort
+  - Radix Sort
+- Divide and Conquer
+  - top-down
+  - recursion 방식에 대해서 설명(피보나치 예시) - 저장X
+- Dynamic Programming 
+  - 작은 문제로 쪼갠다 + 재사용성 → top-down vs bottom-up
+  - 메모이제이션 방식으로 설명(피보나치 예시) - 저장O
+  - 냅색, LCS 같은거 백준 링크로 달기
+- Greedy Algorithm
+- Graph
+  - Graph Traversal: BFS, DFS
+  - Shortest Path
+    - Dijkstra
+    - Floyd-Warshall
+    - Bellman-Ford
+  - Minimum Spanning Tree
+    - Prim
+    - Kruskal
+  - Union-find
+  - Topological sort
+
 <a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
 
 ---
