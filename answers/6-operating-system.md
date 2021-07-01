@@ -357,12 +357,29 @@ if __name__=="__main__":
 ## #8
 
 #### 동기와 비동기의 차이를 설명해주세요.
-**동기**는 A, B, C 라는 작업이 **어떤 순서로 끝날지 보장되는 구조**를 말한다. A, B, C 작업이 동시에 시작됐는지 순차적으로 시작됐는지는 중요하지 않다. 작업의 순서를 보장하기 위해 이전 작업이 끝날 때까지 기다리는 방법이 있다. 동기는 파이프라인 프로세스를 지킬 때 용이하다.
 
-**비동기**는 A, B, C **작업이 끝나는 순서를 보장하지 않는 구조**를 말한다. 비동기가 유용한 경우는 네트워크를 생각해볼 수 있다. 사용자마다 환경이 달라 요청의 시간이 다를 때, 비동기적으로 순서를 보장하지 않고 빠른 순서대로 사용자에게 응답을 할 수 있다.
+**동기**는 요청에 대한 결과를 받은 후에야 다음 요청을 진행하는 방식으로 결과를 받을 때까지 대기해야한다. 동기는 직관적인 구조이지만 비효율적이다.
+
+**비동기**는 요청 결과에 관계 없이 바로 다음 요청을 수행하고, 결과는 `콜백` 함수를 통해 받는다. 비동기는 설계가 복잡하지만 효율적이다.
+
+<div align='center'>
+    <img src='../images/heath/sync_async.png' height='250px '/>
+</div>
+<br/>
+
+> 참고 - Blocking, Non-Blocking 
+
+**Blocking** 과 **Non-Blocking** 은 결과에 대한 관점보다는 `System Call(직접 제어할 수 없는 대상의 처리)` 의 관점으로 이해할 수 있다. 
+
+**Blocking** 은 System Call 이 완료될 때까지 Waiting Queue 에서 대기한다.
+
+**Non-Blocking** 은 System Call 이 완료와 상관없이 자신의 작업을 진행한다.
 
 #### References
 - [동기(Synchronous) 작업과 비동기(Asynchronous) 작업, 그리고 블락(Blocking) 과 넌블락(Non-Blocking) 의 개념 - Jins' Dev Inside](https://jins-dev.tistory.com/entry/%EB%8F%99%EA%B8%B0Synchronous-%EC%9E%91%EC%97%85%EA%B3%BC-%EB%B9%84%EB%8F%99%EA%B8%B0Asynchronous-%EC%9E%91%EC%97%85-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%B8%94%EB%9D%BDBlocking-%EA%B3%BC-%EB%84%8C%EB%B8%94%EB%9D%BDNonBlocking-%EC%9D%98-%EA%B0%9C%EB%85%90)
+- [Synchronous(동기) Vs Asynchronous(비동기) - Nesoy Blog](https://nesoy.github.io/articles/2017-01/Synchronized)
+- [[용어정리] 동기방식&비동기방식 비교 - 고구마](https://jieun0113.tistory.com/73)
+- [](https://velog.io/@codemcd/Sync-VS-Async-Blocking-VS-Non-Blocking-sak6d01fhx)
 
 ---
 
@@ -371,14 +388,18 @@ if __name__=="__main__":
 #### 메모리 관리 전략에는 무엇이 있는지 간략히 설명해주세요.
 제한된 메모리 크기를 효율적으로 사용하기 위해 메모리 관리 전략이 필요하다.
 
-**swap**  
-프로세스가 실행되기 위해서는 메모리에 올라가야한다. 실행되어야 하는 여러 프로세스 중, 기존에 메모리에 올라간 프로세스를 보조 기억장치 (HD, SSD) 로 보내는 것을 swap-out, 보조 기억장치에 있던 프로세스를 메모리에 올리는 것을 swap-in 이라고 한다. 어떤 프로세스를 swap-out 시킬지에 대한 대표적인 방법으로는 round-robin 이 있다.
+**스왑**  
+프로세스가 실행되기 위해서는 메모리에 올라가야한다. 실행되어야 하는 여러 프로세스 중, 기존에 메모리에 올라간 프로세스를 보조 기억장치 (HDD, SSD) 로 보내는 것을 swap-out, 보조 기억장치에 있던 프로세스를 메모리에 올리는 것을 swap-in 이라고 한다. 어떤 프로세스를 swap-out 시킬지에 대한 대표적인 방법으로는 round-robin 이 있다.
+
+> 스왑에 관한 더 자세한 설명 
+
+- [15. Swapping에 대해 설명해주세요](#15)
 
 **압축**  
 메모리에 프로세스들을 올리다보면 아래 사진과 같이 빈 공간(free) 이 생긴다. 이 공간을 fragmentation(단편화) 이라고 한다. 현재 메모리에서 프로세스와 단편화를 파악하고 프로세스가 연속적으로 메모리 주소에 할당되게 단편화를 없애는 방법을 압축이라 한다. 압축은 효율적이지 못하기 때문에 좋은 메모리 관리 방법이 아니다.
 
 <div align='center'>
-    <img src='../images/heath/fragmentation.png' height='250px '/>
+    <img src='../images/heath/fragmentation.png' height='70px '/>
 </div>
 <br/>
 
@@ -391,7 +412,7 @@ if __name__=="__main__":
 세그멘테이션은 세그멘트 간에 할당되지 않은 공간이 남는 외부 단편화가 발생할 수 있다.
 
 <div align='center'>
-    <img src='../images/heath/segmentation.png' height='250px '/>
+    <img src='../images/heath/segmentation.png' height='160px '/>
 </div>
 <br/>
 
@@ -412,7 +433,7 @@ if __name__=="__main__":
 **Demand Paging** 는 프로세스에서 현재 필요한 페이지만 메모리에 올리는 방법이다. 이를 위한 페이지 테이블은 기존의 테이블에서 valid 와 modified 가 추가적으로 필요하다. 
 
 <div align='center'>
-    <img src='../images/heath/demand_paging.png' height='250px '/>
+    <img src='../images/heath/demand_paging.png' height='350px '/>
 </div>
 <br/>
 
