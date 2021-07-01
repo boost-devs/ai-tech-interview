@@ -367,7 +367,7 @@ if __name__=="__main__":
 </div>
 <br/>
 
-> 참고 - Blocking, Non-Blocking 
+> [추가자료] Blocking, Non-Blocking 
 
 **Blocking** 과 **Non-Blocking** 은 결과에 대한 관점보다는 `System Call(직접 제어할 수 없는 대상의 처리)` 의 관점으로 이해할 수 있다. 
 
@@ -379,7 +379,7 @@ if __name__=="__main__":
 - [동기(Synchronous) 작업과 비동기(Asynchronous) 작업, 그리고 블락(Blocking) 과 넌블락(Non-Blocking) 의 개념 - Jins' Dev Inside](https://jins-dev.tistory.com/entry/%EB%8F%99%EA%B8%B0Synchronous-%EC%9E%91%EC%97%85%EA%B3%BC-%EB%B9%84%EB%8F%99%EA%B8%B0Asynchronous-%EC%9E%91%EC%97%85-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%B8%94%EB%9D%BDBlocking-%EA%B3%BC-%EB%84%8C%EB%B8%94%EB%9D%BDNonBlocking-%EC%9D%98-%EA%B0%9C%EB%85%90)
 - [Synchronous(동기) Vs Asynchronous(비동기) - Nesoy Blog](https://nesoy.github.io/articles/2017-01/Synchronized)
 - [[용어정리] 동기방식&비동기방식 비교 - 고구마](https://jieun0113.tistory.com/73)
-- [](https://velog.io/@codemcd/Sync-VS-Async-Blocking-VS-Non-Blocking-sak6d01fhx)
+- [동기방식, 비동기방식 - fromzoo](https://velog.io/@codemcd/Sync-VS-Async-Blocking-VS-Non-Blocking-sak6d01fhx)
 
 ---
 
