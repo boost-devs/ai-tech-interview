@@ -125,7 +125,7 @@ P(X=1)와 같은 식으로 표현하고, 이는 "주사위를 굴렸을 때, 1�
 다음과 같은 함수들이 확률모형에 포함될 수 있다. (자세한 내용은 [확률통계 기초용어 - EG 공간](https://kongdols-room.tistory.com/131) 참고)
 
 - 확률질량함수(PMF, Probability Mass Function) - 이산형
-- 확률밀도함후(PDF, Probability Density Function) - 연속형
+- 확률밀도함수(PDF, Probability Density Function) - 연속형
 - 누적분포함수(CDF, Cumulative Distribution Function)
 
 ✔︎ 추가적으로 **확률 통계의 기초 용어**를 정리하면 다음과 같다. (주사위 굴리기 예제 사용)
