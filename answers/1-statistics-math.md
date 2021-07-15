@@ -44,7 +44,7 @@
 
 수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수 <!-- $\lambda$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Clambda"> (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**
 
-공식
+> 공식
 
 <!-- $$
 Ax = \lambda x
