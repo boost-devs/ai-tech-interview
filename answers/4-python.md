@@ -298,8 +298,8 @@ add()
 
 # 출력: 5
 
-# local var: a
-# global var: b, c
+# global var: a
+# local var: b, c
 ```
 
 - `add()` 함수의 외부에서 `add()` 함수의 로컬 변수에 액세스하려고 하면 오류가 발생한다.
