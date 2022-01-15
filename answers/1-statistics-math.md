@@ -665,16 +665,13 @@ Bias를 통제하기 위한 방법으로는
 
 1. 확률 구하기
 
-
 ![image](https://user-images.githubusercontent.com/59533593/149618708-671adb6f-c7ff-4823-98f1-fc84cc18c15b.png)
 
 2. 베이즈 법칙 사용
 
-
 ![image](https://user-images.githubusercontent.com/59533593/149618731-9275ed7b-09d7-4d78-b969-89ac4ef8699f.png)
 
 3. 식에 대입
-
 
 ![image](https://user-images.githubusercontent.com/59533593/149619105-6b584842-003d-46d3-8173-2857b61459ac.png)
 
