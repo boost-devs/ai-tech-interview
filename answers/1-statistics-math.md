@@ -661,6 +661,30 @@ Bias를 통제하기 위한 방법으로는
 
 #### 출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?
 
+출장지에 비가 올 확률을 알아야 확률을 구할 수 있다.
+
+1. 확률 구하기
+
+
+![image](https://user-images.githubusercontent.com/59533593/149618708-671adb6f-c7ff-4823-98f1-fc84cc18c15b.png)
+
+2. 베이즈 법칙 사용
+
+
+![image](https://user-images.githubusercontent.com/59533593/149618731-9275ed7b-09d7-4d78-b969-89ac4ef8699f.png)
+
+3. 식에 대입
+
+
+![image](https://user-images.githubusercontent.com/59533593/149619105-6b584842-003d-46d3-8173-2857b61459ac.png)
+
+
+만약 출장지에 비가 올 확률이 25%라면 실제로 출장지에 비가 내릴 확률은 약 72.7%이다.
+
+
 #### References
+- 문제 출처 : [페이스북 데이터 사이언스 직무 인터뷰 - glassdoor](https://www.glassdoor.com/Interview/You-re-about-to-get-on-a-plane-to-Seattle-You-want-to-know-if-you-should-bring-an-umbrella-You-call-3-random-friends-of-y-QTN_519262.htm)
+
+- 정답 및 이미지 출처 : [Solving Facebook's raining in Seattle interview question - Youtube](https://www.youtube.com/watch?v=NM91QI2uUqI)
 
 ---
