@@ -1,7 +1,7 @@
-> 📌 TODO
-> - [ ] PR, Issue 양식 및 프로세스 수립
-> - [ ] Discussions 탭의 사용 방법 수립
-> - [ ] 사이트화
+## 📌 현재 레포 개선 중에 있습니다. 조금만 기다려주세요😥
+## 👉 [면접 레포 개선하기](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/projects/2)
+
+---
 
 <div align="center"> 
     <img src="logo.png" alt="logo"/>
