@@ -1,4 +1,4 @@
-## 📌 현재 레포 개선 중에 있습니다. 조금만 기다려주세요😥
+## 📌 현재 레포 개선 중에 있습니다. 조금만 기다려주세요🙏
 ## 👉 [면접 레포 개선하기](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/projects/2)
 
 ---
