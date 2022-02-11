@@ -1,6 +1,6 @@
 > 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.
 
-### 고유값(eigen value)와 고유벡터(eigen vector)에 대해 설명해주세요. 그리고 왜 중요할까요?
+## 고유값(eigen value)와 고유벡터(eigen vector)에 대해 설명해주세요. 그리고 왜 중요할까요?
 
 정방행렬 A (n x n) 는 임의의 벡터 x (n x 1) 의 방향과 크기를 변화시킬 수 있다.
 
@@ -21,7 +21,7 @@ $$
 
 고유값과 고유벡터를 통해 A 를 고유값과 고유벡터들로 분해하는 **고유값 분해** (eigen decomposition), 정방행렬 뿐만 아닌 m x n 행렬도 분해할 수 있는 **특이값 분해** (SVD), 데이터들을 차원 축소시킬 때 가장 원래 의미를 잘 보존시키는 **주성분 분석** (PCA) 등에 활용할 수 있으므로 중요하다.
 
-### References
+#### References
 
 - [고유값과 고유 벡터 - 러너게인](https://twlab.tistory.com/46)
 - [머신러닝 - 19. 고유값(eigenvalue), 고유벡터(eigenvector), 고유값 분해(eigen decomposition) - 귀퉁이 서재](https://bkshin.tistory.com/entry/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-19-%ED%96%89%EB%A0%AC)
@@ -30,7 +30,7 @@ $$
 
 ---
 
-### 샘플링(Sampling)과 리샘플링(Resampling)에 대해 설명해주세요. 리샘플링은 무슨 장점이 있을까요?
+## 샘플링(Sampling)과 리샘플링(Resampling)에 대해 설명해주세요. 리샘플링은 무슨 장점이 있을까요?
 
 샘플링이란 **표본추출**을 의미하는 것으로, 모집단 전체에 대한 추정치(estimate)를 얻기 위해 임의의 sample을 뽑아내는 것이다.
 모집단 전체에 대한 조사는 불가능하기 때문에 sample을 이용하여 모집단에 대한 추론(inference)을 하게되는 것이다.
@@ -44,7 +44,7 @@ $$
 
 리샘플링은 표본을 추출하면서 원래 데이터 셋을 복원하기 때문에 이를 통해서 모집단의 분포에 어떤 가정도 필요 없이 표본만으로 추론이 가능하다는 장점이 있다.
 
-### References
+#### References
 
 - [(데이터과학 인터뷰 질문)(2) 샘플링과 리샘플링, 1편 - CHAOS & PATTERN : 데이터 사이언스 블로그](https://cnp-0717.tistory.com/7?category=838077)
 - [샘플링과 리샘플링의 차이는 무엇일까? - 김감귤](https://kejdev.github.io/posts/sampling-resampling/)
@@ -53,7 +53,7 @@ $$
 
 ---
 
-### 확률 모형과 확률 변수는 무엇일까요?
+## 확률 모형과 확률 변수는 무엇일까요?
 
 **확률변수(Random Variable)** 란, 표본 공간의 각 단위 사건에 실수 값을 부여하는 변수이다. 확률변수는 어떠한 함수로 해석할 수 있으므로 `대문자 X`라고 표기한다.
 무작위(Random) 실험을 했을 때, 특정 확률로 발생하는 각각의 결과를 수치적 값으로 표현하는 변수라고 할 수 있다.
@@ -97,7 +97,7 @@ $$
   - 예시) 주사위 눈이 3이 나온다, 짝수/홀수가 나온다.
 ```
 
-### References
+#### References
 
 - [확률변수와 확률모형 - 숨니의 무작정 따라하기](https://sumniya.tistory.com/24)
 - [확률변수와 확률함수 - 필로홍의 데이터 노트](https://drhongdatanote.tistory.com/49)
@@ -108,7 +108,7 @@ $$
 
 ---
 
-### 누적 분포 함수와 확률 밀도 함수는 무엇일까요? 수식과 함께 표현해주세요.
+## 누적 분포 함수와 확률 밀도 함수는 무엇일까요? 수식과 함께 표현해주세요.
 
 확률 변수 $$X$$가 임의의 실수 집합 $$B$$에 포함되는 사건의 확률이 다음과 같이 어떤 음이 아닌 함수 $$f$$의 적분으로 주어진다고 하자.
 
@@ -130,14 +130,14 @@ $$
 
 확률 밀도 함수와 누적 분포 함수는 `미분과 적분의 관계`를 갖는다. 확률 밀도 함수를 음의 무한대에서 특정값 $$a$$까지 적분을 하면, $$a$$에 대한 누적 분포 함수를 얻을 수 있다. 반대로 누적 분포 함수를 미분하면 확률 밀도 함수를 얻을 수 있다.
 
-### References
+#### References
 
 - [확률및통계 강의노트 - 홍영훈 교수님](https://sites.google.com/site/hong0108/)
 - [확률 분포 함수와 확률 밀도 함수의 의미 - groovallstar.log](https://velog.io/@groovallstar/%ED%99%95%EB%A5%A0-%EB%B6%84%ED%8F%AC-%ED%95%A8%EC%88%98%EC%99%80-%ED%99%95%EB%A5%A0-%EB%B0%80%EB%8F%84-%ED%95%A8%EC%88%98%EC%9D%98-%EC%9D%98%EB%AF%B8)
 
 ---
 
-### 조건부 확률은 무엇일까요?
+## 조건부 확률은 무엇일까요?
 
 조건부 확률은 사건 A 가 일어났다는 전제 하에 사건 B 가 일어날 확률이다. 이는 P(B|A) = P(B∩A) / P(A) 로 표현 가능하다. 조건부 확률은 <u>베이즈 정리</u>와도 이어지며, 조건부 확률을 이용한 가장 유명한 문제는 [몬티홀 문제](https://terms.naver.com/entry.naver?docId=3569086&cid=58944&categoryId=58970)가 있다.
 
@@ -157,14 +157,14 @@ $$
 - 가능도 : 현재 주어진 모수 (가정) 에서 이 데이터가 관찰될 가능성
 - Evidence : 데이터 전체의 분포
 
-### References
+#### References
 
 - [조건부 확률 - Truth in Engineering](https://m.blog.naver.com/PostView.nhn?blogId=mykepzzang&logNo=220834864348&proxyReferer=https:%2F%2Fwww.google.com%2F)
 - [통계학 맛보기 - Heath](https://velog.io/@dldydldy75/%EB%B2%A0%EC%9D%B4%EC%A6%88-%ED%86%B5%EA%B3%84%ED%95%99-%EB%A7%9B%EB%B3%B4%EA%B8%B0)
 
 ---
 
-### 공분산과 상관계수는 무엇일까요? 수식과 함께 표현해주세요.
+## 공분산과 상관계수는 무엇일까요? 수식과 함께 표현해주세요.
 
 공분산은 확률변수 X의 편차(평균으로부터 얼마나 떨어져 있는지)와 확률변수 Y의 편차를 곱한 것의 평균값이다.
 
@@ -192,14 +192,14 @@ $$ -->
 
 상관계수는 양의 상관관계가 있는지 음의 상관관계가 있는지 알려줄 뿐만 아니라, 그 상관성이 얼마나 큰지도 알려준다. 1 또는 -1에 가까울수록 상관성이 큰 것이고, 0에 가까울수록 상관성이 작은 것이다.
 
-### References
+#### References
 
 - [공분산과 상관계수의 이해.txt - bskyvision](https://bskyvision.com/398)
 - [공분산(Covariance)과 상관계수(Correlation) - Serious Archive](https://destrudo.tistory.com/15)
 
 ---
 
-### 신뢰 구간의 정의는 무엇인가요?
+## 신뢰 구간의 정의는 무엇인가요?
 
 구간 추정에서 `모수가 a 에서 b 사이에 있을 것으로 추정(신뢰구간)`하고 `그 확률(%, 신뢰수준)`을 구한다.
 
@@ -218,7 +218,7 @@ $$ -->
 
 **모수(parameter)** 는 모집단의 특성을 보여주는 값이다. 예를들어, 평균, 분산 등의 고정인 값이 있을 수 있다.
 
-### References
+#### References
 
 - [COMPUTATAIONAL PREDICTION - Minkoo Seo blog](http://mkseo.pe.kr/stats/?p=763)
 - [신뢰구간 - 위키백과](https://ko.wikipedia.org/wiki/%EC%8B%A0%EB%A2%B0_%EA%B5%AC%EA%B0%84)
@@ -226,7 +226,7 @@ $$ -->
 
 ---
 
-### p-value를 모르는 사람에게 설명한다면 어떻게 설명하실 건가요?
+## p-value를 모르는 사람에게 설명한다면 어떻게 설명하실 건가요?
 
 `p-value`를 알기 위해서는 먼저 1종 오류를 알아야 한다. 여기서 1종 오류란 "귀무가설이 참인데 기각한 경우"을 말한다. 귀무가설이란 기존의 주장을 말하며, 이와 반대로 새로운 주장을 대립가설이라고 한다.
 
@@ -234,7 +234,7 @@ $$ -->
 
 다시 돌아와서 `p-value`는 1종 오류를 범할 확률을 말한다. 예를 들어, p-value가 5%라면, 100번 중 5번 1종 오류가 발생한다는 말이다. 검정을 할 때는 유의 수준 <!-- $\alpha$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Calpha">를 정하는데, 이것이 1종 오류의 상한선이 된다. 그래서 유의 수준보다 p-value가 작다면 실험의 오류가 상한선보다 작으므로 귀무가설을 기각하고 대립가설을 채택한다. 만약 크다면 상한선을 넘었으므로 귀무가설을 채택한다.
 
-### References
+#### References
 
 - [p-value의 의미 - 공돌이의 수학정리노트](https://angeloyeo.github.io/2020/03/29/p_value.html)
 - [p-value란 무엇인가 - 진화하자 어디에도 소속되지 않기](https://adnoctum.tistory.com/332)
@@ -243,7 +243,7 @@ $$ -->
 
 ---
 
-### R square의 의미는 무엇인가요?
+## R square의 의미는 무엇인가요?
 
 결정계수 (R square) 는 선형 회귀 모델에서 데이터에 대해 회귀선이 얼마나 잘 설명하는지에 대한 설명력을 의미한다. 결정계수는 0~1 의 값을 가질 수 있고, 만약 값이 1 이라면 회귀선으로 모든 데이터를 다 설명할 수 있다고 이해할 수 있다.
 
@@ -260,7 +260,7 @@ SSR = sum((관측값-추정값)^2)
 
 회귀 모델의 성능을 평가하는 방법은 결정계수 외에도 MAE, MSE, RMSE 가 있다.
 
-### References
+#### References
 
 - [결정계수의 의미와 계산 방법](https://m.blog.naver.com/tlrror9496/222055889079)
 - [회귀분석에서 R스퀘어의 정확한 의미](https://m.blog.naver.com/PostView.nhn?blogId=will84&logNo=220348748198&proxyReferer=https:%2F%2Fwww.google.com%2F)
@@ -270,7 +270,7 @@ SSR = sum((관측값-추정값)^2)
 
 0
 
-### 평균(mean)과 중앙값(median)중에 어떤 케이스에서 뭐를 써야할까요?
+## 평균(mean)과 중앙값(median)중에 어떤 케이스에서 뭐를 써야할까요?
 
 - 평균(mean): 모든 관측값의 합을 자료의 개수로 나눈 것
 - 중앙값(median): 전체 관측값을 크기 순서로 배열했을 때 가운데 위치하는 값
@@ -279,7 +279,7 @@ SSR = sum((관측값-추정값)^2)
 
 중앙값에서는 관측값을 크기 순서로 배열할 때 관측값의 위치가 중요하고, 가운데 위치한 관측값 이외의 관측값들의 크기는 중요하지 않다. 따라서 평균과는 달리 중앙값은 관측값들의 변화에 민감하지 않고 특히 아주 큰 관측값이나 아주 작은 관측값(즉, outlier)에 영향을 받지 않는다. 중앙값이 유용한 경우는 표본의 편차, 혹은 왜곡이 심하게 나타나는 경우이다.
 
-### References
+#### References
 
 - [평균(average, mean) vs. 중간값(median) | 통계상의 오류가능성 - 슈퍼짱짱](https://leedakyeong.tistory.com/entry/%ED%8F%89%EA%B7%A0-%EC%A4%91%EC%95%99%EA%B0%92-%EC%B5%9C%EB%B9%88%EA%B0%92-%EB%B9%84%EA%B5%90-Mean-VS-Median-VS-Mode)
 - [[기초통계] 평균 중앙값 최빈값 비교 (Mean VS Median VS Mode) - Peter Hwang](https://blog.naver.com/ricemankr/220796823014)
@@ -288,12 +288,12 @@ SSR = sum((관측값-추정값)^2)
 
 1
 
-### 중심극한정리는 왜 유용한걸까요?
+## 중심극한정리는 왜 유용한걸까요?
 
 **중심극한정리**란 크기가 n인 표본추출(30개 이상)이 무수히 많이 수행되면(최소 100회 이상을 의미), 표본 평균의 분포가 정규분포에 수렴한다는 것이다.
 중심극한정리가 유용한 이유는 모집단의 형태가 어떻든지 간에 상관없이 표본 평균의 분포가 정규분포를 따르기 때문이다.
 
-### References
+#### References
 
 - [중심극한정리의 의미 - 공돌이의 수학정리노트](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)
 
@@ -301,7 +301,7 @@ SSR = sum((관측값-추정값)^2)
 
 2
 
-### 엔트로피(Entropy)에 대해 설명해주세요. 가능하면 정보이득(Information Gain)도요.
+## 엔트로피(Entropy)에 대해 설명해주세요. 가능하면 정보이득(Information Gain)도요.
 
 > 엔트로피는 entropy로, 정보이득은 information gain으로 모두 영어로 표기합니다.
 
@@ -319,7 +319,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 `information gain`은 데이터가 어떤 클래스에 속할 확률이 커짐에 따라 정보를 잘 얻게되는 것을 말하며, 감소되는 entropy 양을 의미한다. 수식으로는 기존 시스템의 엔트로피에서 현재 엔트로피를 뺀 값으로 표현된다. 의사결정트리는 가지를 칠 때 이 값을 사용하여 가지를 친다. 이 때 어떤 데이터를 두 집합으로 나누었을 때 두 집합의 information gain이 크도록, entropy는 작아지도록 분할을 한다.
 
-### References
+#### References
 
 - [10.1 엔트로피 - 데이터 사이언스 스쿨](https://datascienceschool.net/02%20mathematics/10.01%20%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC.html)
 - [[인공지능] 엔트로피(Entropy) 와 정보이득(Information Gain) 계산 - 꾸준희](https://eehoeskrap.tistory.com/13)
@@ -329,7 +329,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 3
 
-### 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
+## 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
 
 표본의 통계량 (평균, 표준편차 등) 을 통해 모집단의 모수 (모평균, 모표준편차 등) 를 추정하는 방법을 통계적 추론이라고 한다.
 
@@ -337,7 +337,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 반대로, 모집단의 분포를 가정하지 않는 비모수적 방법은, 표본의 수가 30개 미만이거나 정규성 검정에서 정규 분포를 따르지 않는다고 증명되는 경우 비모수적 방법론을 사용한다.
 
-### References
+#### References
 
 - [어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요? - 내가 보려고 만든 공간](https://astralworld58.tistory.com/80)
 
@@ -345,14 +345,14 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 4
 
-### “likelihood”와 “probability”의 차이는 무엇일까요?
+## “likelihood”와 “probability”의 차이는 무엇일까요?
 
 - 확률(Probability): 어떤 시행(trial, experiment)에서 특정 결과(sample)가 나올 가능성. 즉, **시행 전 모든 경우의 수의 가능성은 정해져 있으며 그 총합은 1(100%)이다.**
 - 가능도(Likelihood): 어떤 시행(trial, experiment)을 충분히 수행한 뒤 그 결과(sample)를 토대로 경우의 수의 가능성을 도출하는 것. 아무리 충분히 수행해도 어디까지나 추론(inference)이기 때문에 **가능성의 합이 1이 되지 않을수도 있다.**
 
 PDF(probability density function)에서는 **확률변수**를 변수로 보기 때문에 총합이 1이지만, likelihood function에서는 **분포의 모수**를 변수로 보기 때문에 총합이 1이 되지 않을수도 있다.
 
-### References
+#### References
 
 - [가능도(Likelihood)와 확률(Probability)의 차이 - JMAN's SW Lab.](https://swjman.tistory.com/104)
 
@@ -360,7 +360,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 5
 
-### 통계에서 사용되는 bootstrap의 의미는 무엇인가요.
+## 통계에서 사용되는 bootstrap의 의미는 무엇인가요.
 
 **부트스트랩(Bootstrap)** 은 가설검증을 하거나 metric을 계산하기 전에 random sampling을 적용하는 방법이다.
 모수의 분포를 추정하는 방법 중 하나는, 현재 가진 표본에서 추가적으로 표본을 복원추출하고 각 표본에 대한 통계량을 다시 계산하는 것이다.
@@ -374,7 +374,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 > 복원추출(Sampling with replacement)이란 확률을 구할 때, 추출했던 것을 원래대로 돌려놓고 다시 추출하는 방법
 
-### References
+#### References
 
 - [부트스트랩에 대하여 - Learning Carrot](https://learningcarrot.wordpress.com/2015/11/12/%EB%B6%80%ED%8A%B8%EC%8A%A4%ED%8A%B8%EB%9E%A9%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-bootstrapping/)
 - [DATA - 12. 부트스트랩](https://bkshin.tistory.com/entry/DATA-12)
@@ -384,13 +384,13 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 6
 
-### 모수가 매우 적은 (수십개 이하) 케이스의 경우 어떤 방식으로 예측 모델을 수립할 수 있을까요?
+## 모수가 매우 적은 (수십개 이하) 케이스의 경우 어떤 방식으로 예측 모델을 수립할 수 있을까요?
 
 > 모수는 모집단의 수가 아닌, 평균, 표준편차 등의 모집단의 특징을 말합니다. 여기서는 모집단의 수로 잘못 쓰인 것으로 보이며, 데이터가 적은 경우라 가정하고 답변을 작성하였습니다.
 
 표본이 매우 작은 경우 표본평균의 분포가 정규분포를 따른다고 가정할 수 없으므로 비모수적 방법을 채택하여 예측 모델을 수립할 수 있다. 하지만 중심극한정리에 의해 표본의 크기가 30보다 클 경우 표본평균이 정규분포를 따른다고 가정할 수 있으므로, 이 경우에는 모수적 방법을 사용한다.
 
-### References
+#### References
 
 - [모수, 큰 수의 법칙, 그리고 중심극한정리 - Kyoyoung Chu](https://chukycheese.github.io/data%20science/parameter-clt/)
 - [퍼널에서 모수 용어 질문요? - 인프런, cco](https://www.inflearn.com/questions/34568)
@@ -400,13 +400,13 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 7
 
-### 베이지안과 프리퀀티스트 간의 입장차이를 설명해주실 수 있나요?
+## 베이지안과 프리퀀티스트 간의 입장차이를 설명해주실 수 있나요?
 
 베이지안은 사건의 확률을 바라볼 때, 사전 확률을 미리 염두해두고 사건의 발생에 따라 베이즈 정리로 사후 확률을 구해 다시 사전 확률을 업데이트시킨다. 즉, 베이지안은 **과거의 사건이 현재 사건에 영향을 끼친다는 입장**을 가지고 있다.
 
 반면, 프리퀀티스트는 확률을 무한번 실험한 결과, 객관적으로 발생하는 현상의 빈도수로 바라본다. 즉, 프리퀀티스트는 **현재의 객관적인 확률에 의해서만 사건이 발생한다는 입장**을 가지고 있다.
 
-### References
+#### References
 
 - [베이지안(Bayesian)과 프리퀀티스트(Frequentist) 간의 입장 차이 - 내가 보려고 만든 공간](https://astralworld58.tistory.com/81)
 
@@ -414,7 +414,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 8
 
-### 검정력(statistical power)은 무엇일까요?
+## 검정력(statistical power)은 무엇일까요?
 
 |                  | 귀무가설 H0 참 |    귀무가설 H0 거짓    |
 | :--------------: | :------------: | :--------------------: |
@@ -428,7 +428,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 </div>
 <br/>
 
-### References
+#### References
 
 - [검정력(power)의 의미 및 수식 -
   Curycu's Box](https://m.blog.naver.com/PostView.nhn?blogId=hancury&logNo=220854934914&proxyReferer=https:%2F%2Fwww.google.com%2F)
@@ -438,7 +438,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 9
 
-### missing value가 있을 경우 채워야 할까요? 그 이유는 무엇인가요?
+## missing value가 있을 경우 채워야 할까요? 그 이유는 무엇인가요?
 
 missing value를 처리하는 방법에는 크게 4가지가 있다.
 
@@ -462,7 +462,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 따라서 `결측치 상태나 비율, 어떤 모델을 사용할 것인지`에 따라서 결측치 대응 방법이 달라질 수 있다.
 
-### References
+#### References
 
 - [누락 데이터(Missing value)를 처리하는 7가지 방법 - 밥먹는 개발자](https://dining-developer.tistory.com/19)
 
@@ -470,7 +470,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 0
 
-### 아웃라이어의 판단하는 기준은 무엇인가요?
+## 아웃라이어의 판단하는 기준은 무엇인가요?
 
 `이상치(outlier)`는 전체 데이터의 패턴에서 벗어난 이상한 값을 가진 데이터를 말한다. 이상치는 모델의 성능에 영향을 미치므로 이를 탐지하는 것은 정말 중요하다.
 
@@ -478,7 +478,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 또 다른 탐지 방법으로는 Z-score를 계산하는 방식이 있다. Z-score는 데이터가 평균에서 얼마나 떨어져 있는지를 나타내는 지표로, 임계값을 설정하여 Z-score이 이 값보다 크다면 이상치로 판단한다. 하지만 Z-score 방식은 데이터가 가우시안 분포를 따른다고 가정하기 때문에 데이터가 가우시안 분포가 아닐 경우 별도의 변환이 필요하다.
 
-### References
+#### References
 
 - [A Brief Overview of Outlier Detection Techniques - Towards Data Science](https://towardsdatascience.com/a-brief-overview-of-outlier-detection-techniques-1e0b2c19e561)
 - [IQR 방식을 이용한 이상치 데이터(Outlier) 제거 - Hwi's ML doc](https://hwi-doc.tistory.com/entry/IQR-%EB%B0%A9%EC%8B%9D%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9D%B4%EC%83%81%EC%B9%98-%EB%8D%B0%EC%9D%B4%ED%84%B0Outlier-%EC%A0%9C%EA%B1%B0)
@@ -488,7 +488,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 1
 
-### 필요한 표본의 크기를 어떻게 계산합니까?
+## 필요한 표본의 크기를 어떻게 계산합니까?
 
 먼저 **모집단의 크기 : N** 을 구하고, **신뢰수준 : z** 와 **오차범위 : e** 를 얼마로 할지 선정하여 표본의 크기를 구할 수 있다.
 
@@ -501,7 +501,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 오차범위는 작을 수록 모집단의 특성에 대한 유용한 정보를 제공하지만 모집단에 대한 추론이 틀릴 가능성도 높아지므로 10% 를 넘지 않게 한다.
 
-### References
+#### References
 
 - [필요한 설문 응답자수(표본크기) 계산하기 - LearnX](https://learnx.tistory.com/entry/%ED%95%84%EC%9A%94%ED%95%9C-%EC%84%A4%EB%AC%B8-%EC%9D%91%EB%8B%B5%EC%9E%90%EC%88%98%ED%91%9C%EB%B3%B8%ED%81%AC%EA%B8%B0-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0)
 - [표본크기의 결정 - Data Scream](https://datascream.co.kr/77)
@@ -510,7 +510,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 2
 
-### Bias를 통제하는 방법은 무엇입니까?
+## Bias를 통제하는 방법은 무엇입니까?
 
 <div align="center">
   <img src="./img/1-statistics-math/underfit-right-overfit.png" height="200px"/>
@@ -543,7 +543,7 @@ Bias를 통제하기 위한 방법으로는
 
 등의 방법이 있다.
 
-### References
+#### References
 
 - [쉽게 이해해보는 bias-variance tradeoff - 건빵의 블로그](https://bywords.tistory.com/entry/%EB%B2%88%EC%97%AD-%EC%9C%A0%EC%B9%98%EC%9B%90%EC%83%9D%EB%8F%84-%EC%9D%B4%ED%95%B4%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-biasvariance-tradeoff)
 - [Bias and Variance (편향과 분산) - 한 페이지 머신러닝](https://opentutorials.org/module/3653/22071)
@@ -553,7 +553,7 @@ Bias를 통제하기 위한 방법으로는
 
 3
 
-### 로그 함수는 어떤 경우 유용합니까? 사례를 들어 설명해주세요.
+## 로그 함수는 어떤 경우 유용합니까? 사례를 들어 설명해주세요.
 
 아래와 같은 경우에 로그함수가 유용하다.
 
@@ -573,7 +573,7 @@ Bias를 통제하기 위한 방법으로는
   - 왜도는 데이터가 한쪽으로 치우친 정도이다.
   - 첨도는 분포가 얼마나 뾰족한지를 나타내는 정도이다.
 
-### References
+#### References
 
 - [로그함수를 취하는 이유 - 당도](https://dangdo.tistory.com/44)
 
@@ -581,7 +581,7 @@ Bias를 통제하기 위한 방법으로는
 
 4
 
-### 베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포에 대해 설명해주세요.
+## 베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포에 대해 설명해주세요.
 
 - [answer/statistics-math-distribution.md](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/statistics-math.md) 참고
 
@@ -591,7 +591,7 @@ Bias를 통제하기 위한 방법으로는
 
 5
 
-### 출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?
+## 출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?
 
 (TODO: 추후 수정)
 
@@ -613,7 +613,7 @@ Bias를 통제하기 위한 방법으로는
 
 만약 출장지에 비가 올 확률이 25%라면 실제로 출장지에 비가 내릴 확률은 약 72.7%이다.
 
-### References
+#### References
 
 - 문제 출처 : [페이스북 데이터 사이언스 직무 인터뷰 - glassdoor](https://www.glassdoor.com/Interview/You-re-about-to-get-on-a-plane-to-Seattle-You-want-to-know-if-you-should-bring-an-umbrella-You-call-3-random-friends-of-y-QTN_519262.htm)
 
