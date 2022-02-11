@@ -1,58 +1,16 @@
-<div align='center'>
-  <h1>📈 Statistics/Math 📈</h1>
-</div>
-
 > 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.
-
----
-
-## Table of Contents
-
-- [고유값(eigen value)와 고유벡터(eigen vector)에 대해 설명해주세요. 그리고 왜 중요할까요?](#1)
-- [샘플링(Sampling)과 리샘플링(Resampling)에 대해 설명해주세요. 리샘플링은 무슨 장점이 있을까요?](#2)
-- [확률 모형과 확률 변수는 무엇일까요?](#3)
-- [누적 분포 함수와 확률 밀도 함수는 무엇일까요? 수식과 함께 표현해주세요.](#4)
-- [조건부 확률은 무엇일까요?](#5)
-- [공분산과 상관계수는 무엇일까요? 수식과 함께 표현해주세요.](#6)
-- [신뢰 구간의 정의는 무엇인가요?](#7)
-- [p-value를 모르는 사람에게 설명한다면 어떻게 설명하실 건가요?](#8)
-- [R square의 의미는 무엇인가요?](#9)
-- [평균(mean)과 중앙값(median)중에 어떤 케이스에서 뭐를 써야할까요?](#10)
-- [중심극한정리는 왜 유용한걸까요?](#11)
-- [엔트로피(entropy)에 대해 설명해주세요. 가능하면 Information Gain도요.](#12)
-- [어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?](#13)
-- [“likelihood”와 “probability”의 차이는 무엇일까요?](#14)
-- [통계에서 사용되는 bootstrap의 의미는 무엇인가요.](#15)
-- [모수가 매우 적은 (수십개 이하) 케이스의 경우 어떤 방식으로 예측 모델을 수립할 수 있을까요?](#16)
-- [베이지안과 프리퀀티스트 간의 입장차이를 설명해주실 수 있나요?](#17)
-- [검정력(statistical power)은 무엇일까요?](#18)
-- [missing value가 있을 경우 채워야 할까요? 그 이유는 무엇인가요?](#19)
-- [아웃라이어의 판단하는 기준은 무엇인가요?](#20)
-- [필요한 표본의 크기를 어떻게 계산합니까?](#21)
-- [Bias를 통제하는 방법은 무엇입니까?](#22)
-- [로그 함수는 어떤 경우 유용합니까? 사례를 들어 설명해주세요.](#23)
-- [베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포에 대해 설명해주세요.](#24)
-- [출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?](#25)
-
----
-
-## #1
 
 #### 고유값(eigen value)와 고유벡터(eigen vector)에 대해 설명해주세요. 그리고 왜 중요할까요?
 
 정방행렬 A (n x n) 는 임의의 벡터 x (n x 1) 의 방향과 크기를 변화시킬 수 있다.
 
-수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수 <!-- $\lambda$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Clambda"> (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**
+수많은 벡터 x 중 어떤 벡터들은 A 에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 Ax 가 원래 x 에 상수 $$\lambda$$ (람다) 를 곱한 것과 같을 때의 x 를 고유 벡터, 람다를 고유값이라 한다.**
 
 > 공식
 
-<!-- $$
+$$
 Ax = \lambda x
-$$ -->
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=Ax%20%3D%20%5Clambda%20x%0D" height=20></div>
-
-<br/>
+$$
 
 아래처럼 x1 은 A 에 의해 변환되었음에도 x1 과 평행하다. 따라서 x1 은 고유벡터이다.
 
@@ -71,8 +29,6 @@ $$ -->
 - [주성분 분석(PCA) - 공돌이의 수학정리노트](https://angeloyeo.github.io/2019/07/27/PCA.html)
 
 ---
-
-## #2
 
 #### 샘플링(Sampling)과 리샘플링(Resampling)에 대해 설명해주세요. 리샘플링은 무슨 장점이 있을까요?
 
@@ -97,8 +53,6 @@ $$ -->
 
 ---
 
-## #3
-
 #### 확률 모형과 확률 변수는 무엇일까요?
 
 **확률변수(Random Variable)** 란, 표본 공간의 각 단위 사건에 실수 값을 부여하는 변수이다. 확률변수는 어떠한 함수로 해석할 수 있으므로 `대문자 X`라고 표기한다.
@@ -120,11 +74,9 @@ P(X=1)와 같은 식으로 표현하고, 이는 "주사위를 굴렸을 때, 1�
 **확률분포(Probability Distribution)** 란 표본공간에 정의된 확률을 이용하여 확률변수의 값 또는 영역에 대한 확률을 표현한 것이다.
 예를 들어 가장 널리 쓰이는 확률 모형의 하나인 `가우시안 정규 분포(Gaussian normal distribution)`는 다음과 같은 수식으로 확률 밀도 함수를 정의한다.
 
-<!-- $$
+$$
 N(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x- \mu^2)}{2 \sigma^2}}
-$$ -->
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=N(x%20%3B%20%5Cmu%2C%20%5Csigma)%20%3D%20%5Cfrac%7B1%7D%7B%5Csigma%20%5Csqrt%7B2%20%5Cpi%7D%7D%20e%5E%7B-%5Cfrac%7B(x-%20%5Cmu%5E2)%7D%7B2%20%5Csigma%5E2%7D%7D%0D" height="50px"></div>
+$$
 
 다음과 같은 함수들이 확률모형에 포함될 수 있다. (자세한 내용은 [확률통계 기초용어 - EG 공간](https://kongdols-room.tistory.com/131) 참고)
 
@@ -156,41 +108,27 @@ $$ -->
 
 ---
 
-## #4
-
 #### 누적 분포 함수와 확률 밀도 함수는 무엇일까요? 수식과 함께 표현해주세요.
 
-확률 변수 <!-- $X$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=X">가 임의의 실수 집합 <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B">에 포함되는 사건의 확률이 다음과 같이 어떤 음이 아닌 함수 <!-- $f$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f">의 적분으로 주어진다고 하자.
+확률 변수 $$X$$가 임의의 실수 집합 $$B$$에 포함되는 사건의 확률이 다음과 같이 어떤 음이 아닌 함수 $$f$$의 적분으로 주어진다고 하자.
 
-<!-- $$
+$$
 P(X \in B) = \int_{B} f(x) dx
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=P(X%20%5Cin%20B)%20%3D%20%5Cint_%7BB%7D%20f(x)%20dx%0D" height=25></div>
+이 때의 $$X$$를 연속확률변수라고 하며, 함수 $$f(x)$$를 `확률 밀도 함수(Probability Density Function, PDF)`라고 한다. 단, 실수 집합 $$B$$가 실수 전체일 경우 실수 전체에 대한 확률밀도함수의 적분은 1을 만족해야 한다.
 
-<br/>
-
-이 때의 <!-- $X$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=X">를 연속확률변수라고 하며, 함수 <!-- $f(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x)">를 `확률 밀도 함수(Probability Density Function, PDF)`라고 한다. 단, 실수 집합 <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B">가 실수 전체일 경우 실수 전체에 대한 확률밀도함수의 적분은 1을 만족해야 한다.
-
-<!-- $$
+$$
 P(X \in R) = \int_{R} f(x) dx = 1
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=P(X%20%5Cin%20R)%20%3D%20%5Cint_%7BR%7D%20f(x)%20dx%20%3D%201%0D" height=25></div>
+`누적 분포 함수(Cumulative Distribution Function, CDF)`는 확률변수가 특정 값보다 작거나 같을 확률을 나타내는 함수이다. 특정 값을 $$a$$라고 할 때, 누적 분포 함수는 다음과 같이 나타낼 수 있다.
 
-<br/>
-
-`누적 분포 함수(Cumulative Distribution Function, CDF)`는 확률변수가 특정 값보다 작거나 같을 확률을 나타내는 함수이다. 특정 값을 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">라고 할 때, 누적 분포 함수는 다음과 같이 나타낼 수 있다.
-
-<!-- $$
+$$
 F(a) = P(X ≤ a) = \int^a_{-\infty} f(x) dx
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=F(a)%20%3D%20P(X%20%E2%89%A4%20a)%20%3D%20%5Cint%5Ea_%7B-%5Cinfty%7D%20f(x)%20dx%0D" height=25></div>
-
-<br/>
-
-확률 밀도 함수와 누적 분포 함수는 `미분과 적분의 관계`를 갖는다. 확률 밀도 함수를 음의 무한대에서 특정값 <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">까지 적분을 하면, <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a">에 대한 누적 분포 함수를 얻을 수 있다. 반대로 누적 분포 함수를 미분하면 확률 밀도 함수를 얻을 수 있다.
+확률 밀도 함수와 누적 분포 함수는 `미분과 적분의 관계`를 갖는다. 확률 밀도 함수를 음의 무한대에서 특정값 $$a$$까지 적분을 하면, $$a$$에 대한 누적 분포 함수를 얻을 수 있다. 반대로 누적 분포 함수를 미분하면 확률 밀도 함수를 얻을 수 있다.
 
 #### References
 
@@ -198,8 +136,6 @@ $$ -->
 - [확률 분포 함수와 확률 밀도 함수의 의미 - groovallstar.log](https://velog.io/@groovallstar/%ED%99%95%EB%A5%A0-%EB%B6%84%ED%8F%AC-%ED%95%A8%EC%88%98%EC%99%80-%ED%99%95%EB%A5%A0-%EB%B0%80%EB%8F%84-%ED%95%A8%EC%88%98%EC%9D%98-%EC%9D%98%EB%AF%B8)
 
 ---
-
-## #5
 
 #### 조건부 확률은 무엇일까요?
 
@@ -227,8 +163,6 @@ $$ -->
 - [통계학 맛보기 - Heath](https://velog.io/@dldydldy75/%EB%B2%A0%EC%9D%B4%EC%A6%88-%ED%86%B5%EA%B3%84%ED%95%99-%EB%A7%9B%EB%B3%B4%EA%B8%B0)
 
 ---
-
-## #6
 
 #### 공분산과 상관계수는 무엇일까요? 수식과 함께 표현해주세요.
 
@@ -265,8 +199,6 @@ $$ -->
 
 ---
 
-## #7
-
 #### 신뢰 구간의 정의는 무엇인가요?
 
 구간 추정에서 `모수가 a 에서 b 사이에 있을 것으로 추정(신뢰구간)`하고 `그 확률(%, 신뢰수준)`을 구한다.
@@ -294,8 +226,6 @@ $$ -->
 
 ---
 
-## #8
-
 #### p-value를 모르는 사람에게 설명한다면 어떻게 설명하실 건가요?
 
 `p-value`를 알기 위해서는 먼저 1종 오류를 알아야 한다. 여기서 1종 오류란 "귀무가설이 참인데 기각한 경우"을 말한다. 귀무가설이란 기존의 주장을 말하며, 이와 반대로 새로운 주장을 대립가설이라고 한다.
@@ -312,8 +242,6 @@ $$ -->
 - [유의수준(Significance Level)과 p값(p-value) - 통계학과 사색의 공간](https://m.blog.naver.com/vnf3751/220830413960)
 
 ---
-
-## #9
 
 #### R square의 의미는 무엇인가요?
 
@@ -340,7 +268,7 @@ SSR = sum((관측값-추정값)^2)
 
 ---
 
-## #10
+0
 
 #### 평균(mean)과 중앙값(median)중에 어떤 케이스에서 뭐를 써야할까요?
 
@@ -358,7 +286,7 @@ SSR = sum((관측값-추정값)^2)
 
 ---
 
-## #11
+1
 
 #### 중심극한정리는 왜 유용한걸까요?
 
@@ -371,7 +299,7 @@ SSR = sum((관측값-추정값)^2)
 
 ---
 
-## #12
+2
 
 #### 엔트로피(Entropy)에 대해 설명해주세요. 가능하면 정보이득(Information Gain)도요.
 
@@ -399,7 +327,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 ---
 
-## #13
+3
 
 #### 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
 
@@ -415,7 +343,7 @@ entropy는 데이터가 서로 다른 클래스에 속하면 높고, 같은 클�
 
 ---
 
-## #14
+4
 
 #### “likelihood”와 “probability”의 차이는 무엇일까요?
 
@@ -430,7 +358,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 ---
 
-## #15
+5
 
 #### 통계에서 사용되는 bootstrap의 의미는 무엇인가요.
 
@@ -454,7 +382,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 ---
 
-## #16
+6
 
 #### 모수가 매우 적은 (수십개 이하) 케이스의 경우 어떤 방식으로 예측 모델을 수립할 수 있을까요?
 
@@ -470,7 +398,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 ---
 
-## #17
+7
 
 #### 베이지안과 프리퀀티스트 간의 입장차이를 설명해주실 수 있나요?
 
@@ -484,7 +412,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 ---
 
-## #18
+8
 
 #### 검정력(statistical power)은 무엇일까요?
 
@@ -508,7 +436,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 ---
 
-## #19
+9
 
 #### missing value가 있을 경우 채워야 할까요? 그 이유는 무엇인가요?
 
@@ -540,7 +468,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 ---
 
-## #20
+0
 
 #### 아웃라이어의 판단하는 기준은 무엇인가요?
 
@@ -558,7 +486,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 ---
 
-## #21
+1
 
 #### 필요한 표본의 크기를 어떻게 계산합니까?
 
@@ -580,7 +508,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 ---
 
-## #22
+2
 
 #### Bias를 통제하는 방법은 무엇입니까?
 
@@ -623,7 +551,7 @@ Bias를 통제하기 위한 방법으로는
 
 ---
 
-## #23
+3
 
 #### 로그 함수는 어떤 경우 유용합니까? 사례를 들어 설명해주세요.
 
@@ -651,7 +579,7 @@ Bias를 통제하기 위한 방법으로는
 
 ---
 
-## #24
+4
 
 #### 베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포에 대해 설명해주세요.
 
@@ -661,7 +589,7 @@ Bias를 통제하기 위한 방법으로는
 
 ---
 
-## #25
+5
 
 #### 출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?
 

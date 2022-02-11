@@ -13,7 +13,3 @@
 - [Data Structure](answers/7-data-structure.md)
 - [Algorithm](answers/8-algorithm.md)
 
-## 🔗 LINK
-
-- [GitHub](https://github.com/boostcamp-ai-tech-4/ai-tech-interview)
-- [Community](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussion)
