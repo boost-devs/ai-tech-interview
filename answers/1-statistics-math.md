@@ -1,7 +1,5 @@
 > **📌 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.**
 
----
-
 ## Table of Contents
 
 - [고유값(eigen value)와 고유벡터(eigen vector)이 무엇이고 왜 중요한지 설명해주세요.](#1)
@@ -30,8 +28,6 @@
 - [베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포에 대해 설명해주세요.](#24)
 - [출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?](#25)
 
----
-
 ## #1
 
 ### 고유값(eigen value)와 고유벡터(eigen vector)이 무엇이고 왜 중요한지 설명해주세요.
@@ -57,8 +53,6 @@ $$
 - [[선형대수학 #4] 특이값 분해(Singular Value Decomposition, SVD)의 활용 - 다크 프로그래머](https://darkpgmr.tistory.com/106)
 - [주성분 분석(PCA) - 공돌이의 수학정리노트](https://angeloyeo.github.io/2019/07/27/PCA.html)
 
----
-
 ## #2
 
 ### 샘플링(Sampling)과 리샘플링(Resampling)이 무엇이고 리샘플링의 장점을 말씀해주세요.
@@ -82,8 +76,6 @@ $$
 - [resampling을 이용한 방법 (bootstrapping) - 진화하자 - 어디에도 소속되지 않기](https://adnoctum.tistory.com/296)
 - [샘플링과 리샘플링 - Wriggling](https://trampled-worm.tistory.com/91)
 
----
-
 ## #3
 
 ### 확률 모형과 확률 변수는 무엇인가요?
@@ -103,7 +95,7 @@ P(X=1)와 같은 식으로 표현하고, 이는 "주사위를 굴렸을 때, 1�
 
 **확률모형(Probability Model)** 이란 확률변수를 이용하여 데이터의 분포를 수학적으로 정의한 모형이다.
 데이터 분포를 묘사하기 위해서 사용된다.
-보통 **확률 분포 함수(probability distribution function)** 또는 **확률 밀도 함수(probability density function)**를 주로 사용하며, 이때 함수의 계수를 분포의 모수(parameter)라고 부른다.
+보통 **확률 분포 함수(probability distribution function)** 또는 <strong>확률 밀도 함수(probability density function)</strong>를 주로 사용하며, 이때 함수의 계수를 분포의 모수(parameter)라고 부른다.
 **확률분포(Probability Distribution)** 란 표본공간에 정의된 확률을 이용하여 확률변수의 값 또는 영역에 대한 확률을 표현한 것이다.
 예를 들어 가장 널리 쓰이는 확률 모형의 하나인 `가우시안 정규 분포(Gaussian normal distribution)`는 다음과 같은 수식으로 확률 밀도 함수를 정의한다.
 
@@ -139,8 +131,6 @@ $$
 - [확률통계 기초용어 - EG 공간](https://kongdols-room.tistory.com/131)
 - [[통계학] 9. 확률변수와 확률분포- 러닝머신의 Train Data Set](https://m.blog.naver.com/nilsine11202/221378790554)
 
----
-
 ## #4
 
 ### 누적 분포 함수와 확률 밀도 함수는 무엇인가요? 수식과 함께 표현해주세요.
@@ -151,13 +141,13 @@ $$
 P(X \in B) = \int_{B} f(x) dx
 $$
 
-이 때의 $$X$$를 연속확률변수라고 하며, 함수 $$f(x)$$를 **확률 밀도 함수(Probability Density Function, PDF)**라고 한다. 단, 실수 집합 $$B$$가 실수 전체일 경우 실수 전체에 대한 확률밀도함수의 적분은 1을 만족해야 한다.
+이 때의 $$X$$를 연속확률변수라고 하며, 함수 $$f(x)$$를 <strong>확률 밀도 함수(Probability Density Function, PDF)</strong>라고 한다. 단, 실수 집합 $$B$$가 실수 전체일 경우 실수 전체에 대한 확률밀도함수의 적분은 1을 만족해야 한다.
 
 $$
 P(X \in R) = \int_{R} f(x) dx = 1
 $$
 
-**누적 분포 함수(Cumulative Distribution Function, CDF)**는 확률변수가 특정 값보다 작거나 같을 확률을 나타내는 함수이다. 특정 값을 $$a$$라고 할 때, 누적 분포 함수는 다음과 같이 나타낼 수 있다.
+<strong>누적 분포 함수(Cumulative Distribution Function, CDF)</strong>는 확률변수가 특정 값보다 작거나 같을 확률을 나타내는 함수이다. 특정 값을 $$a$$라고 할 때, 누적 분포 함수는 다음과 같이 나타낼 수 있다.
 
 $$
 F(a) = P(X ≤ a) = \int^a_{-\infty} f(x) dx
@@ -169,8 +159,6 @@ $$
 
 - [확률및통계 강의노트 - 홍영훈 교수님](https://sites.google.com/site/hong0108/)
 - [확률 분포 함수와 확률 밀도 함수의 의미 - groovallstar.log](https://velog.io/@groovallstar/%ED%99%95%EB%A5%A0-%EB%B6%84%ED%8F%AC-%ED%95%A8%EC%88%98%EC%99%80-%ED%99%95%EB%A5%A0-%EB%B0%80%EB%8F%84-%ED%95%A8%EC%88%98%EC%9D%98-%EC%9D%98%EB%AF%B8)
-
----
 
 ## #5
 
@@ -195,8 +183,6 @@ $$
 
 - [조건부 확률 - Truth in Engineering](https://m.blog.naver.com/PostView.nhn?blogId=mykepzzang&logNo=220834864348&proxyReferer=https:%2F%2Fwww.google.com%2F)
 - [통계학 맛보기 - Heath](https://velog.io/@dldydldy75/%EB%B2%A0%EC%9D%B4%EC%A6%88-%ED%86%B5%EA%B3%84%ED%95%99-%EB%A7%9B%EB%B3%B4%EA%B8%B0)
-
----
 
 ## #6
 
@@ -225,13 +211,11 @@ $$
 - [공분산과 상관계수의 이해.txt - bskyvision](https://bskyvision.com/398)
 - [공분산(Covariance)과 상관계수(Correlation) - Serious Archive](https://destrudo.tistory.com/15)
 
----
-
 ## #7
 
 ### 신뢰 구간의 정의는 무엇인가요?
 
-구간 추정에서 **모수가 a 에서 b 사이에 있을 것으로 추정(신뢰구간)**하고 **그 확률(%, 신뢰수준)**을 구한다.
+구간 추정에서 <strong>모수가 a 에서 b 사이에 있을 것으로 추정(신뢰구간)</strong>하고 <strong>그 확률(%, 신뢰수준)</strong>을 구한다.
 
 ![신뢰수준과 신뢰구간](./img/1-statistics-math/confidence-level.png)
 
@@ -251,8 +235,6 @@ $$
 - [신뢰구간 - 위키백과](https://ko.wikipedia.org/wiki/%EC%8B%A0%EB%A2%B0_%EA%B5%AC%EA%B0%84)
 - [신뢰구간의 의미 - 공돌이의 수학정리노트](https://angeloyeo.github.io/2021/01/05/confidence_interval.html)
 
----
-
 ## #8
 
 ### p-value를 모르는 사람에게 설명한다면 어떻게 설명하실 건가요?
@@ -270,13 +252,11 @@ p-value를 알기 위해서는 먼저 1종 오류를 알아야 한다. 여기서
 - [통계, 기본 개념을 정리해보자 - 이지훈](https://brunch.co.kr/@jihoonleeh9l6/34)
 - [유의수준(Significance Level)과 p값(p-value) - 통계학과 사색의 공간](https://m.blog.naver.com/vnf3751/220830413960)
 
----
-
 ## #9
 
 ### R square의 의미는 무엇인가요?
 
-**결정계수(R square)**는 선형 회귀 모델에서 데이터에 대해 회귀선이 얼마나 잘 설명하는지에 대한 설명력을 의미한다. 결정계수는 0~1 의 값을 가질 수 있고, 만약 값이 1 이라면 회귀선으로 모든 데이터를 다 설명할 수 있다고 이해할 수 있다.
+<strong>결정계수(R square)</strong>는 선형 회귀 모델에서 데이터에 대해 회귀선이 얼마나 잘 설명하는지에 대한 설명력을 의미한다. 결정계수는 0~1 의 값을 가질 수 있고, 만약 값이 1 이라면 회귀선으로 모든 데이터를 다 설명할 수 있다고 이해할 수 있다.
 
 참고로 결정계수는 다음의 식으로 구할 수 있다.
 
@@ -296,8 +276,6 @@ $$
 - [회귀분석에서 R스퀘어의 정확한 의미](https://m.blog.naver.com/PostView.nhn?blogId=will84&logNo=220348748198&proxyReferer=https:%2F%2Fwww.google.com%2F)
 - [모델 성능 평가](https://heung-bae-lee.github.io/2020/01/09/machine_learning_03/)
 
----
-
 ## #10
 
 ### 평균(mean)과 중앙값(median)중에 어떤 케이스에서 뭐를 써야할까요?
@@ -314,8 +292,6 @@ $$
 - [평균(average, mean) vs. 중간값(median) | 통계상의 오류가능성 - 슈퍼짱짱](https://leedakyeong.tistory.com/entry/%ED%8F%89%EA%B7%A0-%EC%A4%91%EC%95%99%EA%B0%92-%EC%B5%9C%EB%B9%88%EA%B0%92-%EB%B9%84%EA%B5%90-Mean-VS-Median-VS-Mode)
 - [[기초통계] 평균 중앙값 최빈값 비교 (Mean VS Median VS Mode) - Peter Hwang](https://blog.naver.com/ricemankr/220796823014)
 
----
-
 ## #11
 
 ### 중심극한정리는 왜 유용한걸까요?
@@ -325,8 +301,6 @@ $$
 #### References
 
 - [중심극한정리의 의미 - 공돌이의 수학정리노트](https://angeloyeo.github.io/2020/09/15/CLT_meaning.html)
-
----
 
 ## #12
 
@@ -348,8 +322,6 @@ $$
 - [[인공지능] 엔트로피(Entropy) 와 정보이득(Information Gain) 계산 - 꾸준희](https://eehoeskrap.tistory.com/13)
 - [파이썬 머신러닝 완벽 가이드 - 권철민](http://www.yes24.com/Product/Goods/87044746?OzSrank=2)
 
----
-
 ## #13
 
 ### 어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?
@@ -364,23 +336,19 @@ $$
 
 - [어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요? - 내가 보려고 만든 공간](https://astralworld58.tistory.com/80)
 
----
-
 ## #14
 
 ### “likelihood”와 “probability”의 차이는 무엇일까요?
 
-**확률(Probability)**은 어떤 시행(trial)에서 특정 결과(sample)가 나올 가능성을 말한다. 즉, 시행 전 모든 경우의 수의 가능성은 정해져 있으며 그 총합은 1(100%)이다.
+<strong>확률(Probability)</strong>은 어떤 시행(trial)에서 특정 결과(sample)가 나올 가능성을 말한다. 즉, 시행 전 모든 경우의 수의 가능성은 정해져 있으며 그 총합은 1(100%)이다.
 
-**가능도(Likelihood)**은 어떤 시행(trial)을 충분히 수행한 뒤 그 결과(sample)를 토대로 경우의 수의 가능성을 도출하는 것을 말한다. 아무리 충분히 수행해도 어디까지나 추론(inference)이기 때문에 가능성의 합이 1이 되지 않을수도 있다.
+<strong>가능도(Likelihood)</strong>은 어떤 시행(trial)을 충분히 수행한 뒤 그 결과(sample)를 토대로 경우의 수의 가능성을 도출하는 것을 말한다. 아무리 충분히 수행해도 어디까지나 추론(inference)이기 때문에 가능성의 합이 1이 되지 않을수도 있다.
 
 PDF(probability density function)에서는 **확률변수**를 변수로 보기 때문에 총합이 1이지만, likelihood function에서는 **분포의 모수**를 변수로 보기 때문에 총합이 1이 되지 않을수도 있다.
 
 #### References
 
 - [가능도(Likelihood)와 확률(Probability)의 차이 - JMAN's SW Lab.](https://swjman.tistory.com/104)
-
----
 
 ## #15
 
@@ -408,8 +376,6 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 - [DATA - 12. 부트스트랩](https://bkshin.tistory.com/entry/DATA-12)
 - [복원추출 - 사이언스올](https://www.scienceall.com/%EB%B3%B5%EC%9B%90-%EC%B6%94%EC%B6%9Csampling-with-replacement/)
 
----
-
 ## #16
 
 ### 모수가 매우 적은 (수십개 이하) 케이스의 경우 어떤 방식으로 예측 모델을 수립할 수 있을까요?
@@ -424,8 +390,6 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 - [퍼널에서 모수 용어 질문요? - 인프런, cco](https://www.inflearn.com/questions/34568)
 - [[통계이론] 모수적 방법 vs 비모수적 방법](https://zzanhtt.tistory.com/18)
 
----
-
 ## #17
 
 ### 베이지안과 프리퀀티스트 간의 입장차이를 설명해주실 수 있나요?
@@ -437,8 +401,6 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 #### References
 
 - [베이지안(Bayesian)과 프리퀀티스트(Frequentist) 간의 입장 차이 - 내가 보려고 만든 공간](https://astralworld58.tistory.com/81)
-
----
 
 ## #18
 
@@ -458,8 +420,6 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 - [검정력(power)의 의미 및 수식 -
   Curycu's Box](https://m.blog.naver.com/PostView.nhn?blogId=hancury&logNo=220854934914&proxyReferer=https:%2F%2Fwww.google.com%2F)
 - [통계적 검정: 검정력(power)과 Type 1, 2 Error(1, 2 종 오류) - 코딩하고, ](https://niceguy1575.tistory.com/entry/%ED%86%B5%EA%B3%84%EC%A0%81-%EA%B2%80%EC%A0%95-%EA%B2%80%EC%A0%95%EB%A0%A5power%EA%B3%BC-Type-1-2-Error1-2-%EC%A2%85-%EC%98%A4%EB%A5%98)
-
----
 
 ## #19
 
@@ -487,13 +447,11 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 
 - [누락 데이터(Missing value)를 처리하는 7가지 방법 - 밥먹는 개발자](https://dining-developer.tistory.com/19)
 
----
-
 ## #20
 
 ### 아웃라이어의 판단하는 기준은 무엇인가요?
 
-**이상치(outlier)**는 전체 데이터의 패턴에서 벗어난 이상한 값을 가진 데이터를 말한다. 이상치는 모델의 성능에 영향을 미치므로 이를 탐지하는 것은 정말 중요하다.
+<strong>이상치(outlier)</strong>는 전체 데이터의 패턴에서 벗어난 이상한 값을 가진 데이터를 말한다. 이상치는 모델의 성능에 영향을 미치므로 이를 탐지하는 것은 정말 중요하다.
 
 이상치를 탐지하는 방법 중 하나로 **IQR(Inter Quantile Range) 기법**이 있다. IQR 기법을 사용하기 위해서는 우선 데이터를 오름차순으로 정렬하고 25%, 50%, 75%, 100%로 4등분을 한다. 이 75% 지점과 25% 지점의 값의 차이를 IQR이라고 한다. 이 IQR에 1.5를 곱한 값을 75% 지점의 값에 더하여 최대값을, 25% 지점의 값에서 빼서 최소값을 계산한다. 이 때 최소값보다 작거나 최대값보다 큰 값을 이상치라고 판단한다.
 
@@ -504,8 +462,6 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 - [A Brief Overview of Outlier Detection Techniques - Towards Data Science](https://towardsdatascience.com/a-brief-overview-of-outlier-detection-techniques-1e0b2c19e561)
 - [IQR 방식을 이용한 이상치 데이터(Outlier) 제거 - Hwi's ML doc](https://hwi-doc.tistory.com/entry/IQR-%EB%B0%A9%EC%8B%9D%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9D%B4%EC%83%81%EC%B9%98-%EB%8D%B0%EC%9D%B4%ED%84%B0Outlier-%EC%A0%9C%EA%B1%B0)
 - [[데이터전처리] Outlier(이상치/이상값/특이값/특이치 등) 탐지 방법(detection method) : 2. Z-score 방식 with - Clary K](https://claryk.tistory.com/5)
-
----
 
 ## #21
 
@@ -525,8 +481,6 @@ $$
 
 - [필요한 설문 응답자수(표본크기) 계산하기 - LearnX](https://learnx.tistory.com/entry/%ED%95%84%EC%9A%94%ED%95%9C-%EC%84%A4%EB%AC%B8-%EC%9D%91%EB%8B%B5%EC%9E%90%EC%88%98%ED%91%9C%EB%B3%B8%ED%81%AC%EA%B8%B0-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0)
 - [표본크기의 결정 - Data Scream](https://datascream.co.kr/77)
-
----
 
 ## #22
 
@@ -551,8 +505,6 @@ $$
 - [쉽게 이해해보는 bias-variance tradeoff - 건빵의 블로그](https://bywords.tistory.com/entry/%EB%B2%88%EC%97%AD-%EC%9C%A0%EC%B9%98%EC%9B%90%EC%83%9D%EB%8F%84-%EC%9D%B4%ED%95%B4%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-biasvariance-tradeoff)
 - [Bias and Variance (편향과 분산) - 한 페이지 머신러닝](https://opentutorials.org/module/3653/22071)
 - [[MLY] avoidable bias를 줄이는 방법들 - 생각많은 소심남](https://talkingaboutme.tistory.com/entry/MLY-avoidable-bias%EB%A5%BC-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B0%A9%EB%B2%95%EB%93%A4?category=538748)
-
----
 
 ## #23
 
@@ -580,8 +532,6 @@ $$
 
 - [로그함수를 취하는 이유 - 당도](https://dangdo.tistory.com/44)
 
----
-
 ## #24
 
 ### 베르누이 분포, 이항 분포, 카테고리 분포, 다항 분포, 가우시안 정규 분포, t 분포, 카이제곱 분포, F 분포, 베타 분포, 감마 분포에 대해 설명해주세요.
@@ -590,17 +540,15 @@ $$
 
 (TODO: 추후 수정)
 
----
-
 ## #25
 
 ### 출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?
 
 ![확률 구하는 방법 시각화](./img/1-statistics-math/facebook-probability.png)
 
-출장지에 비가 내릴 때 $$p$$, 내리지 않을 때를 $$1-p$$라고 하자. 출장지에 비가 내리는데($$p$$) 모든 친구가 비가 내린다라고 한다면 모든 친구가 진실을 말하는 것($$8/27$$)이다. 이 경우 확률은 **$$8p/27$$**이다.
+출장지에 비가 내릴 때 $$p$$, 내리지 않을 때를 $$1-p$$라고 하자. 출장지에 비가 내리는데($$p$$) 모든 친구가 비가 내린다라고 한다면 모든 친구가 진실을 말하는 것($$8/27$$)이다. 이 경우 확률은 $$8p/27$$이다.
 
-출장지가 비가 내리지 않는데$$(1-p)$$ 모든 친구가 비가 내린다라고 한다면 모든 친구가 거짓을 말하는 것($$1/27$$)이다. 이 경우 확률은 **$$(1-p)/27$$**이다.
+출장지가 비가 내리지 않는데$$(1-p)$$ 모든 친구가 비가 내린다라고 한다면 모든 친구가 거짓을 말하는 것($$1/27$$)이다. 이 경우 확률은 $$(1-p)/27$$이다.
 
 ![베이즈 법칙 적용](./img/1-statistics-math/facebook-bayes-rule.png)
 
