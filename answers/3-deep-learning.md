@@ -73,7 +73,7 @@
 > **추가내용) AI, ML, DL**
 
 <div align='center'>
-    <img height='250px' src='../images/sally/2021-05-01-02-44-22.png'/>
+    <img height='250px' src='./img/3-deep-learning/ai.png'/>
 </div>
 
 <br/>
@@ -151,7 +151,7 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 즉 Tensorflow에서는 계산 그래프를 한 번 정의하고 나면 그래프에 들어가는 입력 데이터만 다르게 할 수 있을 뿐 같은 그래프만을 실행할 수 있다. 하지만 PyTorch는 각 순전파마다 새로운 계산 그래프를 정의하여 이용한다.
 
 <div align='center'>
-  <img src="../images/adc/deep-learning/Tensorflow_PyTorch.png">
+  <img src="./img/3-deep-learning/static-dynamic-graph.png">
 </div>
 
 <br/>
@@ -175,7 +175,7 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 - 데이터를 덜 치우치게 만드므로, 좋은 성능을 보인다.
 
 <div align='center'>
-  <img src="../images/sally/2021-05-01-16-15-42.png">
+  <img src="./img/3-deep-learning/data-normalization.png">
 </div>
 
 <br/>
@@ -216,12 +216,12 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 **Sigmoid**
 
 <div align='center'>
-    <img src='../images/heath/sigmoid_formula.png' height='100px '/>
+    <img src='./img/3-deep-learning/sigmoid-formula.png' height='100px '/>
 </div>
 <br/>
 
 <div align='center'>
-    <img src='../images/heath/sigmoid.png' height='200px '/>
+    <img src='./img/3-deep-learning/sigmoid.png' height='200px '/>
 </div>
 <br/>
 
@@ -235,7 +235,7 @@ sigmoid 함수는 입력을 0~1 사이의 값으로 바꿔준다.
 **Tanh**
 
 <div align='center'>
-    <img src='../images/heath/tanh.png' height='200px '/>
+    <img src='./img/3-deep-learning/tanh.png' height='200px '/>
 </div>
 <br/>
 
@@ -246,7 +246,7 @@ sigmoid 함수와 마찬가지로 `saturation` 문제가 있다.
 **ReLU**
 
 <div align='center'>
-    <img src='../images/heath/relu.png' height='200px '/>
+    <img src='./img/3-deep-learning/relu.png' height='200px '/>
 </div>
 <br/>
 
@@ -263,7 +263,7 @@ ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다.
 **LeakyReLU**
 
 <div align='center'>
-    <img src='../images/heath/leakyrelu.png' height='200px '/>
+    <img src='./img/3-deep-learning/leaky-relu.png' height='200px '/>
 </div>
 <br/>
 
@@ -291,17 +291,17 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
   - training loss는 계속 낮아지더라도 validation loss는 올라가는 시점을 overfitting으로 간주하여 학습을 종료하는 방법
 
 <div align='center'>
-  <img src="../images/adc/deep-learning/early_stopping.png" width=500>
+  <img src="./img/3-deep-learning/early-stopping.png" width=500>
 </div>
 
 <br/>
 
 - Parameter norm penalty (weight decay)
 
-  - 비용함수에 제곱을 더하거나(<!-- $L_2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/nvXndsE27D.svg">-Regularization) 절댓값을 더해서(<!-- $L_1$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/iMW66XbpJ0.svg">-Regularization) weight의 크기에 페널티를 부과하는 방법
+  - 비용함수에 제곱을 더하거나(<!-- $L_2 Regularization$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=L_2%20Regularization">) 절댓값을 더해서(<!-- $L_1 Regularization$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=L_1%20Regularization">) weight의 크기에 페널티를 부과하는 방법
 
 <div align='center'>
-  <img src="../images/adc/deep-learning/parameter_norm_penalty.PNG" width=350>
+  <img src="./img/3-deep-learning/parameter-norm-penalty.png" width=350>
 </div>
 
 <br/>
@@ -311,7 +311,7 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
   - 훈련 데이터의 개수가 적을 때, 데이터에 인위적으로 변화를 주어 훈련 데이터의 수를 늘리는 방법
 
 <div align='center'>
-  <img src="../images/adc/deep-learning/data_augmentation.png" width=450>
+  <img src="./img/3-deep-learning/data-augmentation.png" width=450>
 </div>
 
 <br/>
@@ -321,7 +321,7 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
   - 노이즈나 이상치같은 엉뚱한 데이터가 들어와도 흔들리지 않는(robust 한) 모델을 만들기 위해 input data나 weight에 일부러 노이즈를 주는 방법
 
 <div align='center'>
-  <img src="../images/adc/deep-learning/noise_robustness.PNG" width=500>
+  <img src="./img/3-deep-learning/noise-robustness.PNG" width=500>
 </div>
 
 <br/>
@@ -330,12 +330,6 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 
   - 모델이 Ground Truth를 정확하게 예측하지 않아도 되게 만들어 주어 정확하지 않은 학습 데이터셋에 치중되는 경향(overconfident)을 막아주는 방법
 
-<div align='center'>
-  <img src="../images/adc/deep-learning/label_smoothing.png" width=400>
-</div>
-
-<br/>
-
 - Dropout
 
   - 각 계층 마다 일정 비율의 뉴런을 임의로 정해 drop 시키고 나머지 뉴런만 학습하도록 하는 방법
@@ -343,7 +337,7 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
   - dropout은 **학습 시에만 적용**하고, 추론 시에는 적용하지 않는다.
 
 <div align='center'>
-<img src="../images/adc/deep-learning/dropout.png" width=500>
+<img src="./img/3-deep-learning/dropout.png" width=500>
 </div>
 
 <br/>
@@ -354,7 +348,7 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
   - 각 hidden layer에서 정규화를 하면서 입력분포가 일정하게 되고, 이에 따라 Learning rate을 크게 설정해도 괜찮아진다. 결과적으로 학습속도가 빨라지는 효과가 있다.
 
 <div align='center'>
- <img src="../images/adc/deep-learning/batch_normalization.png" width=500>
+ <img src="./img/3-deep-learning/batch-normalization.png" width=500>
 </div>
 
 <br/>
@@ -376,7 +370,7 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 하이퍼 파라미터(Hyper-parameter)는 모델링할 때, **사용자가 직접 세팅해주는 값**을 뜻한다. 하이퍼 파라미터는 정해진 최적의 값이 없으며, 사용자의 선험적 지식을 기반으로 설정(휴리스틱)한다. 예를들어 딥러닝의 하이퍼 파라미터에는 학습률, 배치 사이즈 등이 있고, 가중치는 학습 과정에서 바뀌는 값이며 이는 파라미터에 속한다. 하이퍼 파라미터 튜닝 기법에는 Manual Search, Grid Search, Random Search, Bayesian Optimization 등이 있다. 딥러닝에서의 하이퍼 파라미터는 아래의 그림을 참고한다.
 
 <div align='center'>
- <img src="../images/sally/2021-05-01-16-23-27.png" width=600>
+ <img src="./img/3-deep-learning/hyperparameter.png" width=600>
 </div>
 
 <br/>
@@ -387,7 +381,7 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 딥러닝에서 하이퍼 파라미터는 `학습률, 배치 크기, 은닉층의 개수` 등이 있고, 파라미터는 `가중치, 편향` 등이 있다.
 
 <div align='center'>
- <img src="../images/sally/2021-05-01-16-27-17.png" width=600>
+ <img src="./img/3-deep-learning/parameter-vs-hyperparameter.png" width=600>
 </div>
 
 <br/>
@@ -414,14 +408,14 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 정규 분포를 따르는 방법
 
 <div align='center'>
-    <img src='../images/heath/lecun_normal.png' height='120px'/>
+    <img src='./img/3-deep-learning/lecun-normal.png' height='120px'/>
 </div>
 <br/>
 
 균등 분포를 따르는 방법
 
 <div align='center'>
-    <img src='../images/heath/lecun_uniform.png' height='80px'/>
+    <img src='./img/3-deep-learning/lecun-uniform.png' height='80px'/>
 </div>
 <br/>
 
@@ -431,14 +425,14 @@ LeCun 방법과 비슷하지만 들어오는 노드 수와 나가는 노드 수�
 정규 분포를 따르는 방법
 
 <div align='center'>
-    <img src='../images/heath/xavier_normal.png' height='120px'/>
+    <img src='./img/3-deep-learning/xavier-normal.png' height='120px'/>
 </div>
 <br/>
 
 균등 분포를 따르는 방법
 
 <div align='center'>
-    <img src='../images/heath/xavier_uniform.png' height='80px'/>
+    <img src='./img/3-deep-learning/xavier-uniform.png' height='80px'/>
 </div>
 <br/>
 
@@ -451,14 +445,14 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 정규 분포를 따르는 방법
 
 <div align='center'>
-    <img src='../images/heath/he_normal.png' height='120px'/>
+    <img src='./img/3-deep-learning/he-normal.png' height='120px'/>
 </div>
 <br/>
 
 균등 분포를 따르는 방법
 
 <div align='center'>
-    <img src='../images/heath/he_uniform.png' height='80px'/>
+    <img src='./img/3-deep-learning/he-uniform.png' height='80px'/>
 </div>
 <br/>
 
@@ -481,14 +475,14 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 특히 DBN(Deep Belief Network)에서는 RBM들을 쌓아올려, 각 볼츠만 머신을 순차적으로 학습시킨다.
 
 <div align='center'>
-<img src="../images/adc/deep-learning/boltzmann_machine.PNG">
+<img src="./img/3-deep-learning/boltzmann-machine.png">
 </div>
 <br/>
 
 색깔 별 cell의 역할은 아래와 같다.
 
 <div align='left'>
-<img src="../images/adc/deep-learning/boltzmann_machine_cell.PNG" height=300>
+<img src="./img/3-deep-learning/boltzmann-machine-cell.png" height=300>
 </div>
 <br/>
 
@@ -538,7 +532,7 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 #### 요즘 sigmoid 보다 ReLU를 많이 쓰는데 그 이유는?
 
 <div align='center'>
-<img src='../images/penguin/activation-function.png' height='240px'/>
+<img src='./img/3-deep-learning/activation-function.png' height='240px'/>
 </div>
 
 <br/>
@@ -584,7 +578,7 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 ReLU는 양수일 때 <!-- $y=x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3Dx">인 선형 함수와 음수일 때 <!-- $y=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3D0">인 선형 함수 두 개를 결합된 형태이다. 그렇지만 ReLU는 선형 함수가 갖는 가산성을 만족하지 못하기 때문에 비선형 함수로 볼 수 있다. 하지만 ReLU가 어떻게 곡선 함수를 근사할 수 있을까?
 
 <div align='center'>
-<img src='../images/penguin/relu-approximate.png' height='240px'/>
+<img src='./img/3-deep-learning/relu-approximate.png' height='240px'/>
 </div>
 
 <br/>
@@ -609,7 +603,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 두 번째 문제는 <strong>편향 이동(Bias Shift)</strong>이다. ReLU는 항상 0이상의 값을 출력하기 때문에 활성화값의 평균이 0보다 커 zero-centered하지 않다. 활성화값이 zero-centered되지 않으면 가중치 업데이트가 동일한 방향으로만 업데이트가 돼서 학습 속도가 느려질 수가 있다. 관련 내용은 [CS231n 6강 8:46](https://youtu.be/wEoyxE0GP2M?t=526)을 참고!
 
 <div align='center'>
-<img src='../images/penguin/selu-elu.png' height='240px'/>
+<img src='./img/3-deep-learning/selu-elu.png' height='240px'/>
 </div>
 
 <br/>
@@ -632,7 +626,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 #### 편향(bias)는 왜 있는걸까?
 
 <div align='center' >
-<img src='../images/penguin/bias-example.png' height='250px'/>
+<img src='./img/3-deep-learning/bias-example.png' height='250px'/>
 <br/>
 <small><strong>bias별 sigmoid 함수의 위치</strong></small>
 </div>
@@ -655,7 +649,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 Gradient Descent는 어떤 함수의 극소점을 찾기 위해 gradient 반대 방향으로 이동해 가는 방법이다.
 
 <div align='center'>
-<img src="../images/adc/deep-learning/gradient_descent_2.png" width=700>
+<img src="./img/3-deep-learning/how-to-gradient-descent.png" width=700>
 </div>
 <br/>
 
@@ -664,7 +658,7 @@ Gradient Descent는 어떤 함수의 극소점을 찾기 위해 gradient 반대 
 Gradient Descent를 수식으로 표현하면 아래와 같다.
 
 <div align='center'>
-<img src="../images/adc/deep-learning/gradient_descent.PNG" width=300>
+<img src="./img/3-deep-learning/gradient-descent-formula.png" width=300>
 </div>
 <br/>
 
@@ -676,7 +670,7 @@ Gradient Descent를 수식으로 표현하면 아래와 같다.
   - 한편 step size가 너무 작은 경우 발산하지는 않을 수 있지만 최적의 x를 구하는데 소요되는 시간이 오래 걸린다는 단점이 있다.
 
 <div align='center'>
-  <img src="../images/adc/deep-learning/gradient_descent_4.png">
+  <img src="./img/3-deep-learning/step-size-problem.png">
 </div>
 <br/>
 
@@ -685,7 +679,7 @@ Gradient Descent를 수식으로 표현하면 아래와 같다.
   - gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때문에 어떤 경우에는 local minima에 빠져 계속 헤어나오지 못하는 경우도 생긴다.
 
 <div align='center'>
-  <img src="../images/adc/deep-learning/gradient_descent_3.png" width=400>
+  <img src="./img/3-deep-learning/local-minima-problem.png" width=400>
 </div>
 <br/>
 
@@ -703,7 +697,7 @@ Gradient Descent를 수식으로 표현하면 아래와 같다.
 #### 왜 꼭 Gradient를 써야 할까? 그 그래프에서 가로축과 세로축 각각은 무엇인가? 실제 상황에서는 그 그래프가 어떻게 그려질까?
 
 <div align='center'>
-<img src="../images/adc/deep-learning/Cost-Gradient.jpeg" height=500>
+<img src="./img/3-deep-learning/cost-gradient.jpeg" height=500>
 </div>
 <br/>
 
@@ -720,7 +714,7 @@ Gradient가 양수이면 올라가는 방향이며 음수이면 내려가는 방
 #### GD 중에 때때로 Loss가 증가하는 이유는?
 
 <div align='center'>
-<img src="../images/adc/deep-learning/GD_Loss.jpeg" height=500>
+<img src="./img/3-deep-learning/cost-gradient-optima.jpeg" height=500>
 </div>
 <br/>
 
@@ -751,7 +745,7 @@ minima에 들어갔다가 나오는 경우일 것이다.
 출력층 바로 전 layer에서부터 기울기(미분값)을 계산하고 이를 점점 거꾸로 전파시키면서 전 layer들에서의 기울기와 서로 곱하는 형식으로 나아가면 최종적으로 출력층의 output에 대한 입력층에서의 input의 기울기(미분값)을 구할 수가 있다. 이를 그림으로 나타내면 아래와 같다.
 
 <div align='center'>
-<img src="../images/adc/deep-learning/backpropagation.png" width=550 height=300>
+<img src="./img/3-deep-learning/backpropagation.png" width=550 height=300>
 </div>
 <br/>
 
@@ -777,7 +771,7 @@ local minima 문제가 사실은 고차원(High Dimensional)의 공간에서는 
 고차원의 공간에서 모든 축의 방향으로 오목한 형태가 형성될 확률은 거의 0에 가깝다. 따라서, 고차원의 공간에서 대부분의 critical point는 local minima가 아니라 saddle point다. 그리고, 고차원의 공간에서 설령 local minima가 발생한다 하더라도 이는 global minimum이거나 또는 global minimum과 거의 유사한 수준의 에러 값을 갖는다. 왜냐하면, critical point에 포함된 위로 볼록인 방향 축의 비율이 크면 클수록 높은 에러를 가지기 때문이다.(실험적 결과) local minima는 위로 볼록인 경우가 하나도 없는 경우이기 때문에 결과적으로 매우 낮은 에러를 갖게 될 것이다.
 
 <div align='center'>
-<img src="../images/sally/2021-05-01-17-08-37.png" width="60%">
+<img src="./img/3-deep-learning/saddle-point.png" width="60%">
 </div>
 <br/>
 
@@ -786,14 +780,14 @@ local minima 문제가 사실은 고차원(High Dimensional)의 공간에서는 
 Local minima 문제는 에러를 최소화시키는 최적의 파라미터를 찾는 문제에 있어서 아래 그림처럼 파라미터 공간에 수많은 지역적인 홀(hole)들이 존재하여 이러한 local minima에 빠질 경우 전역적인 해(global minimum)를 찾기 힘들게 되는 문제를 일컫는다.
 
 <div align='center'>
-<img src="../images/sally/2021-05-01-16-53-57.png" width="70%">
+<img src="./img/3-deep-learning/local-and-global-minimum.png" width="70%">
 </div>
 <br/>
 
 > **Critical point, Saddle point, Local minima**
 
 <div align='center'>
-<img src="../images/sally/2021-05-01-17-14-39.png" width="80%">
+<img src="./img/3-deep-learning/critical-saddle-point-and-local-minima.png" width="80%">
 </div>
 <br/>
 
@@ -821,35 +815,35 @@ Local minima 문제를 피하는 방법으로는 **Momentum, Nesterov Accelerate
 **Momentum**이란 관성을 의미하며, 이전 gradient의 방향성을 담고있는 `momentum` 인자를 통해 흐르던 방향을 어느 정도 유지시켜 local minima에 빠지지 않게 만든다. 즉, 관성을 이용하여, 학습 속도를 더 빠르게 하고, 변곡점을 잘 넘어갈 수 있도록 해주는 역할을 수행한다.
 
 <div align='center'>
-<img src="../images/sally/2021-05-01-18-37-27.png" width="50%">
+<img src="./img/3-deep-learning/momentum.png" width="50%">
 </div>
 <br/>
 
 **Nesterov Accelerated Gradient(NAG)** 는 모멘텀과 비슷한 역할을 수행하는 `Look-ahead gradient `인자를 포함하여, <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a"> 라는 `accumulate gradient`가 gradient를 감소시키는 역할을 한다. 모멘텀과 다른 점은, 미리 한 스텝을 옮겨가본 후에 어느 방향으로 갈지 정한다는 것이다.
 
 <div align='center'>
-<img src="../images/sally/2021-05-01-18-41-38.png" width="45%">
+<img src="./img/3-deep-learning/nag.png" width="45%">
 </div>
 <br/>
 
 - **Momentum vs. NAG**
 
 <div align='center'>
-<img src="../images/sally/2021-05-01-18-44-16.png" width="80%">
+<img src="./img/3-deep-learning/momentum-vs-nag.png" width="80%">
 </div>
 <br/>
 
 **Adagrad**란 뉴럴넷의 파라미터가 많이 바뀌었는지 적게 바뀌었는지 확인하고, 적게 변한건 더 크게 변하게 하고, 크게 변한건 더 작게 변화시키는 방법이다. Adagrad는 `sum of gradient squares`(<!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">)를 사용하는데, 이는 그래디언트가 얼만큼 변했는지를 제곱해서 더하는 것이므로 계속 커진다는 문제가 발생한다. <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">가 계속 커지면 분모가 점점 무한대에 가까워지게 되어, <!-- $W$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=W"> 업데이트가 되지 않게 되어, 뒤로 갈수록 학습이 점점 안되는 문제점이 발생한다.
 
 <div align='center'>
-<img src="../images/sally/2021-05-01-18-47-55.png" width="60%">
+<img src="./img/3-deep-learning/adagrad.png" width="60%">
 </div>
 <br/>
 
 **Adadelta**는 `Exponential Moving Average(EMA)`를 사용하여, Adagrad의 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">가 계속 커지는 현상을 막을 수 있다. EMA는 현재 타임스텝으로부터 `윈도우 사이즈만큼의 파라미터 변화(그래디언트 제곱의 변화)를 반영`하는 역할을 하는데, 이전의 값을 모두 저장하는 것이 아닌, `이전 변화량에 특정 비율을 곱해 더한 인자`를 따로 두는 방식이다. Adadelta는 learning rate가 없다.
 
 <div align='center'>
-<img src="../images/sally/2021-05-01-21-41-54.png" width="70%">
+<img src="./img/3-deep-learning/adadelta.png" width="70%">
 </div>
 <br/>
 
@@ -938,7 +932,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 #### Batch Normalization의 효과는?
 
 <div align='center' >
-<img src='../images/penguin/batch-normalization.png' height='250px'/>
+<img src='./img/3-deep-learning/batch-normalization-formula.png' height='250px'/>
 <br/>
 <small><strong>배치 정규화(Batch Normalization) 수식</strong></small>
 </div>
@@ -965,7 +959,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 #### Dropout의 효과는?
 
 <div align='center' >
-<img src='../images/penguin/drop-out.png' height='250px'/>
+<img src='./img/3-deep-learning/dropout-nn.png' height='250px'/>
 <br/>
 <small><a href='https://www.oreilly.com/library/view/deep-learning-for/9781788295628/'><strong>Deep Learning for Computer Vision</strong></a></small>
 </div>
@@ -1029,14 +1023,14 @@ Loss Function을 계산할 때 전체 train set을 사용하는 것을 Batch Gra
 
 RMSProp은 딥러닝의 대가 제프리 힌톤이 제안한 방법으로서, Adagrad의 단점을 해결하기 위한 방법이다.
 
-Adagrad의 식에서 gradient의 제곱값을 더해나가면서 구한 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/SKqtMhxnCB.svg"> 부분을 합이 아니라 지수평균으로 바꾸어서 대체한 방법이다.
+Adagrad의 식에서 gradient의 제곱값을 더해나가면서 구한 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">부분을 합이 아니라 지수평균으로 바꾸어서 대체한 방법이다.
 
-이렇게 대체를 할 경우 Adagrad처럼 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/SKqtMhxnCB.svg"> 가 무한정 커지지는 않으면서 최근 변화량의 변수간 상대적인 크기 차이는 유지할 수 있다.
+이렇게 대체를 할 경우 Adagrad처럼 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">가 무한정 커지지는 않으면서 최근 변화량의 변수간 상대적인 크기 차이는 유지할 수 있다.
 
 식으로 나타내면 다음과 같다.
 
 <div align='center' >
-<img src="../images/adc/deep-learning/RMSProp.PNG" width=250>
+<img src="./img/3-deep-learning/rmsprop.png" width=250>
 </div>
 
 <br/>
@@ -1048,19 +1042,19 @@ Adam(Adaptive Moment Estimation)은 RMSProp과 Momentum 방식을 합친 것 같
 이 방식에서는 Momentum 방식과 유사하게 지금까지 계산해온 기울기의 지수평균을 저장하며, RMSProp과 유사하게 기울기의 제곱값의 지수평균을 저장한다.
 
 <div align='center' >
-<img src="../images/adc/deep-learning/Adam1.PNG" width=300>
+<img src="./img/3-deep-learning/adam.png" width=300>
 </div>
 
 <br/>
 
-다만, Adam에서는 m과 v가 처음에 0으로 초기화되어 있기 때문에 학습의 초반부에서는 <!-- $m_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/s1N1tdU89k.svg">,<!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/vlT3mzq78b.svg">가 0에 가깝게 bias 되어있을 것이라고 판단하여 이를 unbiased 하게 만들어주는 작업을 거친다.
+다만, Adam에서는 m과 v가 처음에 0으로 초기화되어 있기 때문에 학습의 초반부에서는 <!-- $m_t, v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=m_t%2C%20v_t">가 0에 가깝게 bias 되어있을 것이라고 판단하여 이를 unbiased 하게 만들어주는 작업을 거친다.
 
-<!-- $m_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=m_t">와 <!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=v_t">의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
+<!-- $m_t, v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=m_t%2C%20v_t">의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
 
-이 보정된 expectation들을 가지고 gradient가 들어갈 자리에 <!-- $\widehat{m_t}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/Fg1mKf6Zwb.svg">, <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/8GdDTNeust.svg">가 들어갈 자리에 <!-- $\widehat{v_t}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/dHeVwJaC2s.svg">를 넣어 계산을 진행한다.
+이 보정된 expectation들을 가지고 gradient가 들어갈 자리에 <!-- $\widehat{m_t}, G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cwidehat%7Bm_t%7D%2C%20G_t">가 들어갈 자리에 <!-- $\widehat{v_t}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cwidehat%7Bv_t%7D">를 넣어 계산을 진행한다.
 
 <div align='center' >
-<img src="../images/adc/deep-learning/Adam2.PNG" width=220>
+<img src="./img/3-deep-learning/adam-conclusion.png" width=220>
 </div>
 
 <br/>
@@ -1116,10 +1110,21 @@ Momentum 방식은 말 그대로 Gradient Descent를 통해 이동하는 과정�
 
 <!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=v_t">: time step t에서의 이동 벡터
 <br>
-<!-- $v_t = \gamma v_{t-1} + \eta\nabla_{\theta}J(\theta)$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/wVsfex3Z6n.svg">
+
+<!-- $$
+v_t = \gamma v_{t-1} + \eta\nabla_{\theta}J(\theta)
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=v_t%20%3D%20%5Cgamma%20v_%7Bt-1%7D%20%2B%20%5Ceta%5Cnabla_%7B%5Ctheta%7DJ(%5Ctheta)%0D" height=20></div>
+
+<!-- $$
+\theta = \theta - v_t
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%5Ctheta%20%3D%20%5Ctheta%20-%20v_t%0D" height=20></div>
+
 <br>
-<!-- $\theta = \theta - v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/deep-learning/NEC8eYVWpB.svg">
-<br>
+
 이 때, <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cgamma">는 얼마나 momentum을 줄 것인지에 대한 momentum term이다.
 
 #### References

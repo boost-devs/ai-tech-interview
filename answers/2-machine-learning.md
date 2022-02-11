@@ -57,7 +57,7 @@
 > **오차 행렬(confusion matrix)**
 
 <div align='center'>
-    <img height='250px' src='../images/penguin/confusion-matrix.png'/>
+    <img height='250px' src='./img/2-machine-learning/confusion-matrix.png'/>
 </div>
 
 <br/>
@@ -85,7 +85,7 @@ $$ -->
 > **ROC-AUC**
 
 <div align='center'>
-    <img height='250px' src='../images/penguin/roc-curve.png'/>
+    <img height='250px' src='./img/2-machine-learning/roc-curve.png'/>
 </div>
 
 <br/>
@@ -162,7 +162,7 @@ $$ -->
 #### Local Minima와 Global Minima에 대해 설명해주세요.
 
 <div align='center'>
-    <img height='250px' src='../images/penguin/local-minima-global-minima.png'/>
+    <img height='250px' src='./img/2-machine-learning/local-minima-global-minima.png'/>
 </div>
 
 <br/>
@@ -181,7 +181,7 @@ $$ -->
 #### 차원의 저주에 대해 설명해주세요.
 
 <div align='center'>
-    <img height='250px' src='../images/penguin/curse-of-dimensionality.png'/>
+    <img height='250px' src='./img/2-machine-learning/curse-of-dimensionality.png'/>
 </div>
 
 `차원의 저주란 데이터 차원이 증가할수록 해당 공간의 크기가 기하급수적으로 증가하여 데이터 간 거리가 기하급수적으로 멀어지고 희소한 구조를 갖게 되는 현상을 말한다. 이를 해결하기 위해서는 차원을 증가시킨만큼 더 많은 데이터를 추가하거나 PCA, LDA, LLE, MDS와 같은 차원 축소 알고리즘으로 차원을 줄여 해결할 수 있다.
@@ -256,7 +256,7 @@ $$ -->
 n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정 기간의 상태에만 영향을 받는 것을 의미한다. 예를 들면 동전 던지기는 독립 시행이기 때문에 n번째의 상태가 앞이던지 뒤이던지 간에 n+1번째 상태에 영향을 주지 않는다. 하지만 1차 마코프 체인은 n번째 상태가 n+1번째 상태를 결정하는데에 영향을 미친다. (시간 t에서의 관측은 단지 최근 r개의 관측에만 의존한다는 가정을 하고 그 가정하에서 성립)
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/markov_chain.PNG" width=400/>
+    <img src="./img/2-machine-learning/markov-chain.png" width=400/>
 </div>
 
 <br/>
@@ -267,10 +267,10 @@ n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정
 
 > 마코프 모델
 
-마코프 모델은 위의 가정하에 확률적 모델을 만든 것으로써, 가장 먼저 각 상태를 정의하게 된다. 상태(state)는 <!-- $V={v_1,···,v_m}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/27heV0OeWa.svg">로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 <strong>상태 전이 확률(State transition Probability)</strong>을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 <!-- $a_{ij}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/EbxBH6xbkL.svg">는 상태 <!-- $v_i$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/rLeCmj8Out.svg">에서 상태 <!-- $v_j$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/bx2Hfeesug.svg">로 이동할 확률을 의미한다. 아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
+마코프 모델은 위의 가정하에 확률적 모델을 만든 것으로써, 가장 먼저 각 상태를 정의하게 된다. 상태(state)는 <!-- $V = v_1, ... , v_m$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=V%20%3D%20v_1%2C%20...%20%2C%20v_m">로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 <strong>상태 전이 확률(State transition Probability)</strong>을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 <!-- $a_{ij}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a_%7Bij%7D">는 상태 <!-- $v_i$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=v_i">에서 상태 <!-- $v_j$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=v_j">로 이동할 확률을 의미한다. 아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/state_transition_probability.PNG" width=200/>
+    <img src="./img/2-machine-learning/state-transition-probability.png" width=200/>
 </div>
 
 <br/>
@@ -278,7 +278,7 @@ n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정
 그리고 상태와 상태 전이 확률을 정리하여 <strong>상태 전이도(state transition diagram)</strong>으로도 표현할 수 있다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/state_transition_diagram.PNG" width=300/>
+    <img src="./img/2-machine-learning/state-transition-diagram.png" width=300/>
 </div>
 
 <br/>
@@ -343,14 +343,14 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - SVM은 데이터가 사상된 공간에서 **경계로 표현**되며, 공간상에 존재하는 **여러 경계 중 가장 큰 폭을 가진 경계를 찾는다.**
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/SVM.PNG" width=300/>
+    <img src="./img/2-machine-learning/svm.png" width=300/>
 </div>
 
 <br/>
 
-- <!-- $B_1$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/puUbpTR2Jk.svg">: 결정 경계
-- <!-- $b_{11}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/mk2a1PhYFR.svg">: plus-plane
-- <!-- $b_{12}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/5tjVZdiGts.svg">: minus-plane
+- <!-- $B_1$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B_1">: 결정 경계
+- <!-- $b_{11}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=b_%7B11%7D">: plus-plane
+- <!-- $b_{12}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=b_%7B12%7D">: minus-plane
 
 > Margin
 
@@ -360,13 +360,13 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
   - 원공간(Input Space)의 데이터를 선형분류가 가능한 고차원 공간(Feature Space)으로 매핑한 뒤 두 범주를 분류하는 초평면을 찾는다. (Kernel-SVM)
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/SVM2.PNG" width=430/>
+    <img src="./img/2-machine-learning/input-space-and-feature-space.png" width=430/>
 </div>
 
 <br/>
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/SVM3.PNG" width=430/>
+    <img src="./img/2-machine-learning/kernel-svm.png" width=430/>
 </div>
 
 <br/>
@@ -377,7 +377,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - 커널 함수의 종류
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/kernel.PNG" width=500/>
+    <img src="./img/2-machine-learning/kernel-function.png" width=500/>
 </div>
 
 <br/>
@@ -435,23 +435,23 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 **회귀**
 
-> <!-- $R^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/VhPpSHpPzC.svg"> (결정계수, Coefficient of determination)
+> <!--  $R^2$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=R%5E2"> (결정계수, Coefficient of determination)
 
 - 결정계수는 독립변수의 개수가 많아질수록 결정계수가 1에 가까워진다.
 - 회귀모형이 높은 결정계수를 갖는다면 실제로 모형이 설명력이 높은 것인지 단순히 독립변수의 개수가 많은 것인지 알기 어려워 결정계수를 신뢰할 수 없게 되는 문제가 발생한다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/R2.jpg" height=90/>
+    <img src="./img/2-machine-learning/r-square.jpg" height=90/>
 </div>
 
 <br/>
 
-> <!-- $adj R^2, R_a^2$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/e0vHtnZyTf.svg"> (수정된 결정계수, adjusted coefficient of determination)
+> <!-- $adj R^2, R_a^2$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=adj%20R%5E2%2C%20R_a%5E2"> (수정된 결정계수, adjusted coefficient of determination)
 
 - 결정계수의 문제를 해결하기 위해 표본의 크기(n)와 독립변수의 수(p)를 고려하여 수정된 결정계수를 계산한다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/adjR2.jpg" height=100/>
+    <img src="./img/2-machine-learning/adjusted-r-square.jpg" height=100/>
 </div>
 
 <br/>
@@ -463,7 +463,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - 이진 분류에서의 metric으로 사용된다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/log_loss.PNG" height=35/>
+    <img src="./img/2-machine-learning/log-loss.png" height=35/>
 </div>
 
 <br/>
@@ -473,7 +473,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - 분류해야할 class가 3개 이상인 multiclass 분류에서의 metric으로 사용된다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/categorical_crossentropy.PNG" height=70/>
+    <img src="./img/2-machine-learning/categorical-crossentropy.png" height=70/>
 </div>
 
 <br/>
@@ -502,7 +502,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - 전체 거래 중 항목 A와 항목 B를 동시에 포함하는 거래의 비율로 정의한다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/support.PNG" height=60/>
+    <img src="./img/2-machine-learning/support.png" height=60/>
 </div>
 
 <br/>
@@ -512,7 +512,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - 항목 A를 포함한 거래 중에서 항목 A와 항목 B가 같이 포함될 확률이다. 연관성의 정도를 파악할 수 있다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/confidence.PNG" height=60/>
+    <img src="./img/2-machine-learning/confidence.png" height=60/>
 </div>
 
 <br/>
@@ -522,7 +522,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 - A가 구매되지 않았을 때 품목 B의 구매확률에 비해 A가 구매됐을 때 품목 B의 구매확률의 증가 비이다. 연관규칙 A→B는 품목 A와 품목 B의 구매가 서로 관련이 없는 경우에 향상도가 1이 된다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/lift.PNG" height=60/>
+    <img src="./img/2-machine-learning/lift.png" height=60/>
 </div>
 
 <br/>
@@ -539,18 +539,18 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 |      4811      |       no.4        | <U>계란</U>, 우유, <U>맥주, 기저귀</U> |
 |      8091      |       no.5        |         계란, 우유, 맥주, 콜라         |
 
-- <!-- $N = 5$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/68GNpvTMUv.svg"> (전체 transaction 개수)
+- <!-- $N = 5$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=N%20%3D%205"> (전체 transaction 개수)
 
-- <!-- $P(Y) = \frac{n(Y)}{N} = \frac{n\left\{no.2, no.3, no.4\right\}}{N} = \frac{3}{5} = 0.6$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/9XZ0PprAzP.svg">
+- <!-- $P(Y) = \frac{n(Y)}{N} = \frac{n\left\{no.2, no.3, no.4\right\}}{N} = \frac{3}{5} = 0.6$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=P(Y)%20%3D%20%5Cfrac%7Bn(Y)%7D%7BN%7D%20%3D%20%5Cfrac%7Bn%5Cleft%5C%7Bno.2%2C%20no.3%2C%20no.4%5Cright%5C%7D%7D%7BN%7D%20%3D%20%5Cfrac%7B3%7D%7B5%7D%20%3D%200.6">
 
 - 지지도(Support)
-    <!-- $s(X→Y) = \frac{n(X\cup Y)}{N} = \frac{n\left\{no.2, no.4\right\}}{N} = \frac{2}{5} = 0.4$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/BlaUiNtJbK.svg">
+    <!-- $s(X→Y) = \frac{n(X\cup Y)}{N} = \frac{n\left\{no.2, no.4\right\}}{N} = \frac{2}{5} = 0.4$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=s(X%E2%86%92Y)%20%3D%20%5Cfrac%7Bn(X%5Ccup%20Y)%7D%7BN%7D%20%3D%20%5Cfrac%7Bn%5Cleft%5C%7Bno.2%2C%20no.4%5Cright%5C%7D%7D%7BN%7D%20%3D%20%5Cfrac%7B2%7D%7B5%7D%20%3D%200.4">
 
 - 신뢰도(Confidence)
-    <!-- $c(X→Y) = \frac{n(X\cup Y)}{n(X)} = \frac{n\left\{no.2, no.4\right\}}{n\left\{no.2, no.4, no.5\right\}} = \frac{2}{3} = 0.6667$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/IG2lNlELwr.svg">
+    <!-- $c(X→Y) = \frac{n(X\cup Y)}{n(X)} = \frac{n\left\{no.2, no.4\right\}}{n\left\{no.2, no.4, no.5\right\}} = \frac{2}{3} = 0.6667$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=c(X%E2%86%92Y)%20%3D%20%5Cfrac%7Bn(X%5Ccup%20Y)%7D%7Bn(X)%7D%20%3D%20%5Cfrac%7Bn%5Cleft%5C%7Bno.2%2C%20no.4%5Cright%5C%7D%7D%7Bn%5Cleft%5C%7Bno.2%2C%20no.4%2C%20no.5%5Cright%5C%7D%7D%20%3D%20%5Cfrac%7B2%7D%7B3%7D%20%3D%200.6667">
 
 - 향상도(Lift)
-    <!-- $Lift(X→Y) = \frac{c(X→Y)}{s(Y)} = \frac{0.6667}{0.6} = 1.1111$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/xqeS85B3xm.svg">
+    <!-- $Lift(X→Y) = \frac{c(X→Y)}{s(Y)} = \frac{0.6667}{0.6} = 1.1111$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=Lift(X%E2%86%92Y)%20%3D%20%5Cfrac%7Bc(X%E2%86%92Y)%7D%7Bs(Y)%7D%20%3D%20%5Cfrac%7B0.6667%7D%7B0.6%7D%20%3D%201.1111">
 
 #### References
 
@@ -565,17 +565,17 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 > **Newton's Method**
 
-- 방정식 <!-- $f(x)=0$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/3B52psPf6O.svg">의 해를 근사적으로 찾을 때 사용되는 방법
+- 방정식 <!-- $f(x)=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x)%3D0">의 해를 근사적으로 찾을 때 사용되는 방법
 - 현재 x값에서 접선을 그리고 접선이 x축과 만나는 지점으로 x를 이동시켜 가면서 점진적으로 해를 찾는 방법
 - 초기값을 잘 주면 금방 해를 찾을 수 있지만 잘못 주면 시간이 오래 걸리거나 아예 해를 찾지 못할 수 있다.
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/newton.PNG" height=250/>
+    <img src="./img/2-machine-learning/newton.png" height=250/>
 </div>
 
 <br/>
 
-Newton's method를 수식화하면 아무 값이나 초기값 <!-- $x^1$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/WYgejmd8vP.svg">에서 시작해서 다음 수식에 따라 수렴할 때까지 계속 x를 이동시켜 나가는 것이다.
+Newton's method를 수식화하면 아무 값이나 초기값 <!-- $x^1$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x%5E1">에서 시작해서 다음 수식에 따라 수렴할 때까지 계속 x를 이동시켜 나가는 것이다.
 
 <!-- $$
 x^{t+1}=x^t-\frac{f(x^t)}{f^\prime(x^t)}
@@ -585,17 +585,17 @@ $$ -->
 
 <br/>
 
-종료 조건은 x 값의 변화가 거의 없을 때까지이다. 즉, <!-- $\left|x^{t+1}-x^t\right|$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/rTWws9VGwB.svg">이 매우 작은 값이면 Newton's method를 종료하고 <!-- $x=x^{t+1}$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/01BPy35Emb.svg">이 해, 즉 <!-- $f(x^{t+1})=0$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/GUlky4w0I7.svg"> 이라고 생각하는 것이다.
+종료 조건은 x 값의 변화가 거의 없을 때까지이다. 즉, <!-- $\left|x^{t+1}-x^t\right|$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cleft%7Cx%5E%7Bt%2B1%7D-x%5Et%5Cright%7C">이 매우 작은 값이면 Newton's method를 종료하고 <!-- $x=x^{t+1}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x%3Dx%5E%7Bt%2B1%7D">이 해, 즉 <!-- $f(x^{t+1})=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x%5E%7Bt%2B1%7D)%3D0">이라고 생각하는 것이다.
 
 > **Gradient Descent**
 
 <div align='center'>
-    <img src="../images/adc/machine-learning/gradient2.PNG" height=300/>
+    <img src="./img/2-machine-learning/gradient-descent.png" height=300/>
 </div>
 
 <br/>
 
-- <!-- $f^\prime(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="../images/adc/machine-learning/THO6FX4QLH.svg">가 0이 되는 점을 찾는 방법
+- <!-- $f^\prime(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f%5E%5Cprime(x)">가 0이 되는 점을 찾는 방법
 - 미분하여 극소점을 찾아가는 방법 (local minimum에 빠질수도 있다는 문제점이 있다)
 - 모든 차원과 모든 공간에서 적용이 가능
 
@@ -642,7 +642,9 @@ $$ -->
 
 딥러닝 이전의 인공신경망은 선형적으로만 회귀, 분류를 수행하기 때문에 레이어를 깊게 쌓지 못했고, 때문에 XOR 문제 같은 복잡한 문제를 풀지 못하는 문제점이 있었다.
 
-![XOR문제](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/images/heath/XOR.png)
+<div align='center'>
+    <img src="./img/2-machine-learning/xor.png"/>
+</div>
 
 하지만 시그모이드와 같은 비선형 함수를 선형 모델에 추가하여 XOR 문제를 해결하고, 편미분 체인룰을 사용한 오차역전파 방법으로 모델을 업데이트할 수 있게 되면서 레이어를 깊게 쌓은 딥러닝 인공신경망이 발전하였다.
 
@@ -679,7 +681,7 @@ ROC 커브는 **이진분류 모델의 성능**을 나타내는 지표이다.
 FPR 과 TPR 을 그래프에서 x 축, y 축으로 동시에 표현한 ROC 커브를 통해 모델이 얼마나 옳은 값을 잘 예측하는지 알 수 있게 된다.
 
 <div align='center'>
-    <img src="../images/heath/ROC.png" height=300/>
+    <img src="./img/2-machine-learning/roc.png" height=300/>
 </div>
 
 <br/>
@@ -744,7 +746,7 @@ K-means 알고리즘의 단점은 다음과 같다.
 L1 정규화는 특정 피쳐의 값이 매우 낮은 경우 (아웃라이어) 0에 수렴되는 특징이 있다. 특정 피쳐가 0이 되어 사라지는 것은 **feature selection** 과 동일하다고 볼 수 있다.
 
 <div align='center'>
-    <img src="../images/heath/l1_regularization.png" height=120/>
+    <img src="./img/2-machine-learning/l1-regularization.png" height=120/>
 </div>
 
 <br/>
@@ -753,7 +755,7 @@ L1 정규화는 특정 피쳐의 값이 매우 낮은 경우 (아웃라이어) 0
 L2 정규화는 특정 웨이트의 값이 매우 낮아도 0에 수렴되지는 않고 가까워지는 특징이 있다. 이는 L1 정규화에 비해 강하지 않게 정규화를 실행하여 항상 선형 모델에 일반화 효과를 줄 수 있다.
 
 <div align='center'>
-    <img src="../images/heath/l2_regularization.png" height=170/>
+    <img src="./img/2-machine-learning/l2-regularization.png" height=170/>
 </div>
 
 <br/>
@@ -767,7 +769,7 @@ loss 는 데이터 값과 추정 값의 차이로 모델은 loss 를 최소화�
 norm 은 벡터의 크기를 나타내는 것으로 L1 norm 은 벡터의 절댓값 크기를 나타내고, L2 norm 은 직선 거리 (제곱의 루트) 를 나타낸다.
 
 <div align='center'>
-    <img src="../images/heath/norm.png" height=200/>
+    <img src="./img/2-machine-learning/norm.png" height=200/>
 </div>
 
 <br/>
@@ -777,7 +779,7 @@ norm 은 벡터의 크기를 나타내는 것으로 L1 norm 은 벡터의 절댓
 - L1 loss
 
 <div align='center'>
-    <img src="../images/heath/l1_loss.png" height=60/>
+    <img src="./img/2-machine-learning/l1-loss.png" height=60/>
 </div>
 
 <br/>
@@ -785,7 +787,7 @@ norm 은 벡터의 크기를 나타내는 것으로 L1 norm 은 벡터의 절댓
 - L2 loss
 
 <div align='center'>
-    <img src="../images/heath/l2_loss.png" height=60/>
+    <img src="./img/2-machine-learning/l2-loss.png" height=60/>
 </div>
 
 <br/>
@@ -829,7 +831,7 @@ norm 은 벡터의 크기를 나타내는 것으로 L1 norm 은 벡터의 절댓
 > **계층별 k-겹 교차검증** 방법은 k-겹 교차검증 방법에서 fold를 나눌때, 랜덤하게 fold를 지정하는 것이 아닌, 각 클래스별 비율을 고려하여 fold를 구성하는 방법이다.
 
 <div align='center'>
-    <img src="../images/sally/2021-04-25-02-15-37.png" width=70%/>
+    <img src="./img/2-machine-learning/stratified-kfold.png" width=70%/>
 </div>
 
 <br/>
@@ -886,7 +888,7 @@ XGBoost의 장점은 다음과 같다.
 #### 앙상블 방법엔 어떤 것들이 있나요?
 
 <div align='center'>
-    <img src="../images/sally/2021-04-30-00-28-35.png" width=80%/>
+    <img src="./img/2-machine-learning/ensemble.png" width=80%/>
 </div>
 
 <br/>
@@ -921,9 +923,11 @@ XGBoost의 장점은 다음과 같다.
 
 d-차원 데이터의 특징 벡터는 다음과 같이 표시된다.
 
-<div align='center'>
-    <img src="../images/sally/2021-04-25-03-59-10.png" height=40/>
-</div>
+<!-- $$
+x = (x_1, x_2, ..., x_d)^T
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=x%20%3D%20(x_1%2C%20x_2%2C%20...%2C%20x_d)%5ET%0D" height=30></div>
 
 <br/>
 
@@ -969,7 +973,7 @@ d-차원 데이터의 특징 벡터는 다음과 같이 표시된다.
 50개의 작은 의사결정 나무는 앙상블에서 `Bagging` 기법을 사용한 모델로 볼 수 있다. 따라서 Bagging의 대표적인 방법인 `Random Forest` 방법이 왜 좋은지 설명하는 것으로, 왜 50개의 작은 의사결정 나무가 더 나은지 설명하고자 한다.
 
 <div align='center'>
-    <img src="../images/sally/2021-04-25-05-18-50.png"/>
+    <img src="./img/2-machine-learning/random-forest-bagging.png"/>
 </div>
 
 <br/>
@@ -997,7 +1001,7 @@ d-차원 데이터의 특징 벡터는 다음과 같이 표시된다.
 > **추가내용**
 
 <div align='center'>
-    <img src="../images/sally/2021-04-25-07-30-45.png" width="70%">
+    <img src="./img/2-machine-learning/linear-and-logistic-regression.png" width="70%">
 </div>
 
 <br/>
@@ -1007,17 +1011,21 @@ d-차원 데이터의 특징 벡터는 다음과 같이 표시된다.
 로지스틱 회귀는 **시그모이드 함수(sigmoid function)** 를 통해 선형함수를 0과 1 사이의 함수로 바꾼 것이며, S자 형태를 보인다.
 시그모이드 함수의 정의는 아래와 같다.
 
-<div align='center'>
-    <img src="../images/sally/2021-04-25-07-21-21.png" height=40>
-</div>
+<!-- $$
+S(x) = \frac{1}{1 + e^{-x}} = \frac{e^x}{e^x+1}
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=S(x)%20%3D%20%5Cfrac%7B1%7D%7B1%20%2B%20e%5E%7B-x%7D%7D%20%3D%20%5Cfrac%7Be%5Ex%7D%7Be%5Ex%2B1%7D%0D" height=30></div>
 
 <br/>
 
 로지스틱 회귀의 가설함수는 다음과 같다.
 
-<div align='center'>
-    <img src="../images/sally/2021-04-25-11-10-50.png" height=60>
-</div>
+<!-- $$
+H(X) = \frac{1}{1 + e^{-(Wx+b)}} = sigmoid(Wx+b) = \sigma (Wx+b)
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=H(X)%20%3D%20%5Cfrac%7B1%7D%7B1%20%2B%20e%5E%7B-(Wx%2Bb)%7D%7D%20%3D%20sigmoid(Wx%2Bb)%20%3D%20%5Csigma%20(Wx%2Bb)%0D" height=30></div>
 
 <br/>
 
@@ -1031,7 +1039,7 @@ x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값�
 이렇게 되면, 원래는 1로 잘 분류되던 것들의 예측값이 기존 threshold 아래로 내려가게되어, 0으로 분류되어버리는 문제가 발생한다.
 
 <div align='center'>
-    <img src="../images/sally/2021-04-25-10-32-14.png">
+    <img src="./img/2-machine-learning/classification-and-linear-regression.png">
 </div>
 
 <br/>
@@ -1069,7 +1077,7 @@ $$ -->
 > **추가) OLS가 가지는 의미**
 
 <div align='center'>
-    <img src="../images/sally/2021-04-25-05-54-21.png">
+    <img src="./img/2-machine-learning/ols.png">
 </div>
 
 <br/>
@@ -1082,7 +1090,7 @@ $$ -->
 잔차 제곱의 합을 구하는 식은 아래와 같다.
 
 <div align='center'>
-    <img src="../images/sally/2021-04-25-11-31-43.png" width="50%">
+    <img src="./img/2-machine-learning/rss.png" width="50%">
 </div>
 
 <br/>

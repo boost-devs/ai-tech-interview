@@ -61,7 +61,7 @@
 일반적으로 최악의 경우의 성능을 측정하는 빅오 표기법을 많이 사용한다.
 
 <div align='center'>
-    <img src='../images/adc/algorithm/complexity.png' height='400px'>
+    <img src='./img/8-algorithm/complexity.png' height='400px'>
 </div>
 <br>
 
@@ -80,10 +80,7 @@
 버블 정렬(Bubble Sort)은 배열의 0번부터 N-1번까지 탐색을 하면서 인접한 칸과 비교하여 swap을 하는 방식의 정렬 알고리즘이다.
 
 <div align='center'>
-    <img src='../images/adc/algorithm/bubble_1.png' width='500px'>
-</div>
-<div align='center'>
-    <img src='../images/adc/algorithm/bubble_2.png' width='500px'>
+    <img src='./img/8-algorithm/bubble-sort.png' width='500px'>
 </div>
 <br>
 
@@ -94,6 +91,7 @@
 <!-- $O(N^2)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%5E2)">
 
 > 파이썬 구현
+
 ```python
 def bubbleSort(alist):
     for passnum in range(len(alist)-1, 0, -1):
@@ -119,7 +117,7 @@ def bubbleSort(alist):
 선택 정렬(Selection Sort)은 위치 변경 횟수를 줄여, 버블 정렬을 일부 개선한 기법이다. 주어진 배열 중에 최댓값을 찾아 정렬되지 않은 배열의 맨 뒤의 값과 자리를 바꾸어나가는 정렬 알고리즘이다. 배열의 맨 뒤부터 차례로 정렬이 된다.
 
 <div align='center'>
-    <img src='../images/adc/algorithm/selection.png' height='500px'>
+    <img src='./img/8-algorithm/selection-sort.png' height='500px'>
 </div>
 <br>
 
@@ -130,6 +128,7 @@ def bubbleSort(alist):
 <!-- $O(N^2)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%5E2)">
 
 > 파이썬 구현
+
 ```python
 def selectionSort(alist):
    for fillslot in range(len(alist)-1, 0, -1):
@@ -158,20 +157,22 @@ def selectionSort(alist):
 삽입 정렬(Insertion Sort)은 배열의 모든 요소를 배열의 시작부터 끝까지 현재 배열의 요소들과 비교해 가면서 적절한 위치에 삽입하는 정렬 알고리즘이다.
 
 <div align='center'>
-    <img src='../images/adc/algorithm/insertion.png' height='500px'>
+    <img src='./img/8-algorithm/insertion-sort.png' height='500px'>
 </div>
 <br>
 
 > 시간 복잡도
+
 - 최악의 경우(Worst): <!-- $O(N^2)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%5E2)">
 - 평균적인 경우(Average): <!-- $O(N^2)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%5E2)">
 - 최선의 경우(Best): <!-- $O(N)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N)">
 
 > 파이썬 구현
+
 ```python
 def insertion_sort(collection):
     for index in range(1, len(collection)):
-        while 0 < index and collection[index] < collection[index - 1]: 
+        while 0 < index and collection[index] < collection[index - 1]:
             collection[index], collection[
                 index - 1] = collection[index - 1], collection[index]
             index -= 1
@@ -198,7 +199,7 @@ def insertion_sort(collection):
 - Merge: 부분 배열을 하나의 배열로 결합한다.
 
 <div align='center'>
-    <img src='../images/adc/algorithm/merge.png' height='500px'>
+    <img src='./img/8-algorithm/merge-sort.png' height='500px'>
 </div>
 <br>
 
@@ -207,6 +208,7 @@ def insertion_sort(collection):
 <!-- $O(N \log N)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%20%5Clog%20N)">
 
 > 파이썬 구현
+
 ```python
 def merge_sort(list):
     if len(list) <= 1:
@@ -234,7 +236,7 @@ def merge_sort(list):
 힙 정렬(Heap Sort)은 완전 이진 트리로 구현되는 정렬 방식으로, 모든 노드가 힙 속성(각 노드의 값이 자신의 자식 노드 값보다 큰 이진 트리)을 만족하도록 재귀적으로 트리 구조를 만들어 정렬을 완성하는 정렬 알고리즘이다.
 
 <div align='center'>
-    <img src='../images/adc/algorithm/heap.png' height='500px'>
+    <img src='./img/8-algorithm/heap-sort.png' height='500px'>
 </div>
 <br>
 
@@ -244,12 +246,12 @@ def merge_sort(list):
 2. 현재 힙의 루트 노드에는 최대값이 존재하게 된다. 루트의 값을 마지막 요소와 바꾼 후, 힙의 사이즈를 하나 줄인다.
 3. 힙의 사이즈가 1보다 크면 위 과정을 반복한다.
 
-
 > 시간 복잡도
 
 <!-- $O(N \log N)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%20%5Clog%20N)">
 
 > 파이썬 구현
+
 ```python
 def heapify(unsorted, index, heap_size):
     largest = index
@@ -288,21 +290,20 @@ def heap_sort(unsorted):
 퀵 정렬(Quick Sort)는 pivot을 기준으로 pivot 앞에는 pivot보다 작은 값, 뒤에는 큰 값이 오도록 하여 배열을 분할하고, 분할된 두 개 배열 각각에 재귀적으로 이 과정을 반복해 정렬을 완성하는 정렬 알고리즘이다. 합병 정렬과 달리 주어진 배열을 임의로 나누지 않기 때문에 대개는 효율적이지만, pivot이 잘못 선택되면 복잡도가 <!-- $O(n^2)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(n%5E2)">이 될 수도 있다.
 
 <div align='center'>
-    <img src='../images/adc/algorithm/quick_1.png' width='500px'>
-</div>
-<div align='center'>
-    <img src='../images/adc/algorithm/quick_2.png' width='500px'>
+    <img src='./img/8-algorithm/quick-sort.png' width='500px'>
 </div>
 <br>
 
 위의 과정이 퀵 정렬을 1회 실시하고 나서의 결과이다. 54(pivot)를 기준으로 두 개의 배열로 나뉜다.
 
 > 시간 복잡도
+
 - 최악의 경우(Worst): <!-- $O(N^2)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%5E2)">
 - 평균적인 경우(Average): <!-- $O(N \log N)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%20%5Clog%20N)">
 - 최선의 경우(Best): <!-- $O(N \log N)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%20%5Clog%20N)">
 
 > 파이썬 구현
+
 ```python
 def quickSort(alist):
    quickSortHelper(alist, 0, len(alist)-1)
@@ -360,11 +361,12 @@ def partition(alist, first, last):
 계수 정렬(Counting Sort)은 입력값의 빈도를 세어서 이를 결과 리스트의 인덱스로 활용하고 입력 리스트의 요소값에 해당하는 결과 리스트 인덱스 위치에 채워 넣는 방식으로 정렬을 완성하는 정렬 알고리즘이다. 입력 리스트의 최댓값(k)이 커질수록 복잡도가 크게 높아진다.
 
 <div align='center'>
-    <img src='../images/adc/algorithm/counting.png'>
+    <img src='./img/8-algorithm/counting-sort.png'>
 </div>
 <br>
 
 > 동작 원리
+
 1. 각 데이터의 개수를 모두 count 한다.
 2. 최솟값부터 각 값까지의 count 누적합을 구한다.
 3. 새로운 배열에 누적합의 개수를 줄여주며 저장한다.
@@ -374,17 +376,18 @@ def partition(alist, first, last):
 <!-- $O(N+k)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%2Bk)">, <!-- $k$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=k">: 데이터의 최댓값
 
 > 파이썬 구현
+
 ```python
 def counting_sort(A, k):
     B = [-1] * len(A)
     C = [0] * (k + 1)
-    
+
     for a in A:
         C[a] += 1
-    
+
     for i in range(k):
         C[i+1] += C[i]
-    
+
     for j in reversed(range(len(A))):
     	B[C[A[j]] - 1] = A[j]
     	C[A[j]] -= 1
@@ -407,15 +410,16 @@ def counting_sort(A, k):
 기수 정렬(Radix Sort)은 입력값의 자릿수(d) 각각에 대해 카운팅 정렬을 적용하여 입력 데이터의 최댓값인 k가 커질수록 효율이 떨어지는 카운팅 정렬의 단점을 보완한 정렬 알고리즘이다. 10진법으로 표현된 입력값에 기수 정렬을 적용하면 k 값이 9로 작아진다.
 
 <div align='center'>
-    <img src='../images/adc/algorithm/radix.png' height='500px'>
+    <img src='./img/8-algorithm/radix-sort.png' height='500px'>
 </div>
 <br>
 
 > 시간 복잡도
 
-$d \times O(N)$, $d$: 입력값의 자릿수
+<!-- $d \times O(N)$, $d$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=d%20%5Ctimes%20O(N)%24%2C%20%24d">: 입력값의 자릿수
 
 > 파이썬 구현
+
 ```python
 from math import log
 
@@ -522,17 +526,18 @@ def fibb(n):
 
 #### Greedy Algorithm
 
-그리디 알고리즘은 현재 단계에서 최선의 방법을 선택하는 알고리즘이다. 가장 큰 값만 선택, 가장 작은 값만 선택 등 한 가지 방법을 정해놓고 다음 단계로 나아가서도 같은 방식으로 문제를 해결한다. 단, 그리디 알고리즘이 적용하기 위해서는 항상 적용될 수 있는지 정당성을 확인해야 한다. 
+그리디 알고리즘은 현재 단계에서 최선의 방법을 선택하는 알고리즘이다. 가장 큰 값만 선택, 가장 작은 값만 선택 등 한 가지 방법을 정해놓고 다음 단계로 나아가서도 같은 방식으로 문제를 해결한다. 단, 그리디 알고리즘이 적용하기 위해서는 항상 적용될 수 있는지 정당성을 확인해야 한다.
 
-가장 적은 동전 개수를 거슬러주는 동전 거스름돈 문제를 생각해보자. 
-  
+가장 적은 동전 개수를 거슬러주는 동전 거스름돈 문제를 생각해보자.
+
 1, 5, 10원의 거스름돈이 있다면, **큰 값 먼저 그리디하게** 10원짜리 동전 먼저 되는대로 주고, 다음으로 5원, 남는 돈은 1원으로 처리할 수 있다. 이 경우, 값이 큰 동전들은 값이 작은 동전으로 나눠질 수 있으므로 작은 동전으로 새로운 단위를 만들 수 없기 때문에 그리디 알고리즘이 성립한다.
 
-만약 위 문제에서 거스름돈이 1, 7, 10원이라면 어떻게 될까? 14원을 거슬러주기 위해 그리디 알고리즘을 쓴다면 10원 1개, 1원 4개 총 5개의 동전을 쓸 것이다. 하지만 올바른 답은 7원 2개 총 2개가 필요하다. 이 경우, 10원은 7원으로 나눠질 수 없기 때문에 동적 프로그래밍 알고리즘을 사용하는게 적합하다. 
+만약 위 문제에서 거스름돈이 1, 7, 10원이라면 어떻게 될까? 14원을 거슬러주기 위해 그리디 알고리즘을 쓴다면 10원 1개, 1원 4개 총 5개의 동전을 쓸 것이다. 하지만 올바른 답은 7원 2개 총 2개가 필요하다. 이 경우, 10원은 7원으로 나눠질 수 없기 때문에 동적 프로그래밍 알고리즘을 사용하는게 적합하다.
 
 그리디 알고리즘은 다익스트라 알고리즘 등에도 활용 가능하며, 정렬 등과 함께 사용되는 경우가 많다.
 
 #### References
+
 - [Greedy - Heath.log](https://velog.io/@dldydldy75/Greedy-Algorithm)
 - [이것이 코딩테스트다 - 나동빈](https://book.naver.com/bookdb/book_detail.nhn?bid=16439154)
 - [탐욕(그리디) 알고리즘(greedy algorithm) - zero cho](https://www.zerocho.com/category/Algorithm/post/584ba5c9580277001862f188)
@@ -544,49 +549,6 @@ def fibb(n):
 #### Graph
 
 그래프는 정점과 간선으로 이루어진 자료구조이다. 정점 간의 연결관계는 간선으로 나타낸다.
-
-##### 그래프의 종류
-
-<img src="/images/sally/2021-07-01-13-15-10.png" width="50%">  
-
-간선이 담고있는 정보와 연결 상태에 따라 그래프의 종류가 나뉜다. 두 정점을 연결하는 간선에 방향이 없다면 `무방향 그래프`, 두 정점을 연결하는 간선에 방향이 존재하면 `방향 그래프`라고 부른다. 방향 그래프는 간선의 방향으로만 이동할 수 있다. 두 정점을 이동할 때 비용이 발생하면 `가중치 그래프`로 나타낼 수 있다. 모든 정점이 간선으로 연결된 경우, `완전 그래프`라고 부른다.
-
-##### 그래프 구현 방식
-
-<img src="/images/sally/2021-07-01-12-54-57.png" width="60%">
-
-- 인접행렬 방식
-  - 노드를 인덱스로 삼는 2차원 배열을 만든다.
-  - 각 노드가 간선으로 연결되어있으면 배열에 1을 넣어주고, 연결되지 않았다면 0을 넣어준다.
-  - 두 노드의 연결관계를 조회할 때, O(1) 시간이 걸린다.
-  - 그러나 모든 정점에 대해, 간선 정보를 입력해야하므로 초기화에 <!-- $O(N^2)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%5E2)"> 시간이 소요된다.
-  - 노드의 수가 많고, 간선의 수가 적은 그래프의 경우에, 공간을 낭비하게 된다.
-
-<img src="/images/sally/2021-07-01-12-55-08.png" width="70%">  
-
-- 인접리스트 방식
-  - 그래프의 노드들을 리스트로 표현한다. head 노드와 연결된 노드들을 링크에 달아준다.
-  - 한 정점에 연결된 노드들의 정보를 얻기 위해서 O(M) 시간이 걸린다.(M: 간선의 수)
-  - 간선 정보만 유지하므로, 공간 낭비가 적다.
-  - 두 정점이 연결되었는지 확인하기 위해서 O(M) 시간이 걸리며, 구현이 비교적 어렵다.
-  
-##### 그래프 용어
-
-그래프에서 사용하는 용어는 다음과 같다.
-
-- `정점(vertice)` : 노드(node)라고도 하며 정점에는 데이터가 저장된다.
-- `간선(edge)`: 링크(arcs)라고도 하며 노드간의 관계를 나타낸다.
-- `인접 정점(adjacent vertex)` : 간선에 의해 직접 연결된 정점이다.
-- `단순 경로(simple-path)` : 경로 중 반복되는 정점이 없는것, 같은 간선을 자나가지 않는 경로이다.
-- `차수(degree)` : 무방향 그래프에서 하나의 정점에 인접한 정점의 수이다.
-- `진출 차수(out-degree)` : 방향그래프에서 사용되는 용어로 한 노드에서 외부로 향하는 간선의 수를 뜻한다.
-- `진입차수(in-degree)` : 방향그래프에서 사용되는 용어로 외부 노드에서 들어오는 간선의 수를 뜻한다.
-
-#### References
-
-- [[Algorithm] 자료구조 그래프(Graph)란 무엇인가? - 코딩팩토리](https://coding-factory.tistory.com/610)
-
----
 
 ## #6-1
 
@@ -619,7 +581,9 @@ DFS는 그래프 전체를 탐색하는 방법중 하나로써, 시작점 부터
 
 > BFS와 DFS의 탐색 순서
 
-<img src="/images/sally/2021-07-01-13-31-50.png" width="70%">
+<div align='center'>
+<img src="./img/8-algorithm/bfs-dfs.png" width="70%">
+</div>
 
 > 주의해야할 것
 
@@ -648,16 +612,16 @@ DFS는 그래프 전체를 탐색하는 방법중 하나로써, 시작점 부터
 
 기본 다익스트라 알고리즘은 출발 노드에서 다른 노드로 가는 최단 거리를 기록하는 최단 거리 테이블과 해당 노드 방문 여부를 살피는 visited 테이블을 사용한다.
 
-> 동작 방식
-0) 최단 거리 테이블에 출발 노드는 0, 나머지 노드는 INF 로 초기화
-1) 먼저 출발 노드를 방문(visited[start] = True)하고 출발 노드에서 갈 수 있는 다른 노드들까지의 거리를 최단 거리 테이블에 기록한다.  
-2) 최단 거리 테이블을 보고 가장 거리가 짧은 노드를 방문한다(visited에 기록).  
-3) 해당 노드와 연결된 노드 중 방문하지 않은 노드에 대해 현재까지 거리 + 방문하지 않은 노드까지 거리가 최단 거리 테이블의 거리보다 짧다면 최단 거리 테이블을 갱신한다. 
-4) 모든 노드에 방문할 때까지 2 와 3 과정을 반복한다.
+> 동작 방식 0) 최단 거리 테이블에 출발 노드는 0, 나머지 노드는 INF 로 초기화
+
+1. 먼저 출발 노드를 방문(visited[start] = True)하고 출발 노드에서 갈 수 있는 다른 노드들까지의 거리를 최단 거리 테이블에 기록한다.
+2. 최단 거리 테이블을 보고 가장 거리가 짧은 노드를 방문한다(visited에 기록).
+3. 해당 노드와 연결된 노드 중 방문하지 않은 노드에 대해 현재까지 거리 + 방문하지 않은 노드까지 거리가 최단 거리 테이블의 거리보다 짧다면 최단 거리 테이블을 갱신한다.
+4. 모든 노드에 방문할 때까지 2 와 3 과정을 반복한다.
 
 위 알고리즘의 시간 복잡도는 O(V^2) (V : 노드 개수) 이다. 모든 노드에 대해 방문하고 테이블을 모두 살펴보기 때문이다. 이를 개선하기 위해 최단 거리를 찾을 때 `우선순위 큐`를 사용하고 큐에서 꺼낸 거리보다 최단거리 테이블의 값이 더 작다면 방문한 것으로 간주한다. `우선순위 큐`를 사용한 시간 복잡도는 O(ElogV) (V : 노드 개수, E : 엣지 개수) 이다.
 
-``` python
+```python
     import heapq
     import sys
     input = sys.stdin.readline
@@ -709,6 +673,7 @@ DFS는 그래프 전체를 탐색하는 방법중 하나로써, 시작점 부터
 ```
 
 #### References
+
 - [Shortest Path - Heath.log](https://velog.io/@dldydldy75/Shortest-Path)
 - [이것이 코딩테스트다 - 나동빈](https://book.naver.com/bookdb/book_detail.nhn?bid=16439154)
 
@@ -718,7 +683,7 @@ DFS는 그래프 전체를 탐색하는 방법중 하나로써, 시작점 부터
 
 #### Floyd-Warshall
 
-모든 지점에서 모든 지점까지의 최단 경로를 구하는 알고리즘이다. 
+모든 지점에서 모든 지점까지의 최단 경로를 구하는 알고리즘이다.
 
 A -> B 를 거리를 구할 때, 특정 노드 X 를 중간에 거쳐 가는 값과 기존의 최단 경로 테이블 값 중 어느 것이 짧은지 비교하는 것이 핵심이다. 이 과정에서 X 를 모든 노드로 바꿔가며 진행하면 된다.
 
@@ -727,11 +692,11 @@ A -> B 를 거리를 구할 때, 특정 노드 X 를 중간에 거쳐 가는 값
 다익스트라가 그리디한 방식이었다면, 플로이드-워셜은 점화식을 통해 테이블을 갱신하기 때문에 DP 를 사용하는 방식이다.
 
 <div align='center'>
-    <img src='../images/heath/floyd.png' height='50px '/>
+    <img src='./img/8-algorithm/floyd.png' height='50px '/>
 </div>
 <br/>
 
-``` python
+```python
 INF = int(1e9) # 무한을 의미하는 값으로 10 억을 설정
 
 # 노드의 개수 및 간선의 개수를 입력받기
@@ -768,6 +733,7 @@ for a in range(1, n+1):
 ```
 
 #### References
+
 - [Shortest Path - Heath.log](https://velog.io/@dldydldy75/Shortest-Path)
 - [플로이드 와샬 알고리즘 - 안경잡이개발자](https://blog.naver.com/ndb796/221234427842)
 
@@ -781,17 +747,19 @@ for a in range(1, n+1):
 
 기본적인 개념은 **모든 엣지**를 거치면서 최단거리를 찾는 것이다. 이 작업을 모든 노드에 대해 진행한다. 시간 복잡도는 O(VE) (V : 노드 개수, E : 엣지 개수) 이다.
 
-**과정**  
-1) 출발 노드를 설정한다.    
-2) 최단 거리 테이블을 출발 노드는 0 나머지는 INF 로 초기화한다.  
-3) V-1 번 아래 과정을 수행한다.  
+**과정**
+
+1. 출발 노드를 설정한다.
+2. 최단 거리 테이블을 출발 노드는 0 나머지는 INF 로 초기화한다.
+3. V-1 번 아래 과정을 수행한다.
+
 - 모든 E 를 확인하며 테이블 값보다 (현재 노드 최단거리 + 현재노드에서 해당 노드로 가는 거리)가 작다면 테이블을 갱신한다.
 
 이후 음수 사이클을 확인하기 위해서는 3 의 과정을 한 번만 더 수행한다. 이 때, 테이블이 갱신된다면 음수 사이클이 있는 것이다.
 
-다익스트라 알고리즘은 최적의 해를 찾는데 비해, 벨만 포드 알고리즘은 모든 간선을 모든 노드 개수만큼 반복하는 점에서 비효율적이다. 하지만 음수 사이클을 처리할 수 있는 점이 특징이다. 
+다익스트라 알고리즘은 최적의 해를 찾는데 비해, 벨만 포드 알고리즘은 모든 간선을 모든 노드 개수만큼 반복하는 점에서 비효율적이다. 하지만 음수 사이클을 처리할 수 있는 점이 특징이다.
 
-``` python
+```python
 import sys
 input = sys.input.readline
 INF = int(1e9)
@@ -831,6 +799,7 @@ else:
 ```
 
 #### References
+
 - [[Python] 최단 경로 - 벨만 포드(Bellman-Ford) 알고리즘 구현하기 - younge.log](https://velog.io/@younge/Python-%EC%B5%9C%EB%8B%A8-%EA%B2%BD%EB%A1%9C-%EB%B2%A8%EB%A7%8C-%ED%8F%AC%EB%93%9CBellman-Ford-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 - [[알고리즘] 벨만-포드 알고리즘(Bellman-Ford Algorithm) - 딥러닝 공부방](https://deep-learning-study.tistory.com/587)
 
@@ -876,7 +845,9 @@ Prim 알고리즘의 시간 복잡도는, 주 반복문이 정점의 수 n만큼
 
 > Prim 알고리즘의 수행 단계
 
-<img src="/images/sally/2021-07-01-14-23-56.png" width="70%">
+<div align='center'>
+<img src="./img/8-algorithm/prim.png" width="70%">
+</div>
 
 #### References
 
@@ -906,7 +877,9 @@ Kruskal 알고리즘의 시간 복잡도는 O(elog₂e)이다.
 
 > Kruskal 알고리즘 수행 단계
 
-<img src="/images/sally/2021-07-01-14-31-20.png" width="90%">
+<div align='center'>
+<img src="./img/8-algorithm/kruskal.png" width="90%">
+</div>
 
 #### References
 
@@ -966,5 +939,3 @@ Kruskal 알고리즘의 시간 복잡도는 O(elog₂e)이다.
 
 - [[알고리즘] 위상 정렬(Topological Sort)이란](https://gmlwjd9405.github.io/2018/08/27/algorithm-topological-sort.html)
 - [위상정렬 - 위키백과](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC)
-
----

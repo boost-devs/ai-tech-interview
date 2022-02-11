@@ -63,7 +63,9 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 > 기본적인 linked list 구조 (=Single linked list 구조)
 
-![linked list](/images/sally/2021-07-01-04-51-16.png)
+<div align='center'>
+  <img src='./img/7-data-structure/basic-linked-list.png'>
+</div>
 
 ---
 
@@ -71,7 +73,9 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 #### single linked list
 
-<img src="/images/sally/2021-07-01-05-07-59.png" width="60%">
+<div align='center'>
+<img src="./img/7-data-structure/single-linked-list.png" width="60%">
+</div>
 
 [#1 Linked list](#1)에서 언급한 내용은 모두 Single linked list에 해당한다. Single linked list는 linked list 중에서도 가장 기본적인 구조로 되어 있으며, head에서 tail까지 단방향으로 포인터가 이어져 있으므로 N 번째 노드에서 N-1 번째 노드에 접근할 수 없다. 대신, 다시 head로부터 N-1 번의 탐색을 통해 접근해야 한다.
 
@@ -85,7 +89,9 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 #### double linked list
 
-<img src="/images/sally/2021-07-01-05-12-52.png" width="60%">
+<div align='center'>
+<img src="./img/7-data-structure/double-linked-list.png" width="60%">
+</div>
 
 [#1-1 Single linked list](#1-1)은 단방향 연결이기 때문에 한번 다음 노드로 이동하면, 이전 노드로 돌아가기 힘들다는 단점이 있었다. 그러나 Double linked list는 뒤의 노드의 주소뿐만 아니라, 이전 노드의 주소도 담고 있다. 하나의 노드는 하나의 데이터와 두 개의 링크를 가지고 있으며, 각각의 링크를 prev와 next라고 부른다. 다음 노드를 참조하고 싶다면 next 링크가 담고 있는 주소를 확인하면 되고, 이전의 노드를 참조하고 싶다면 prev 링크가 가지는 주소를 확인하면 된다.
 
@@ -99,7 +105,9 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 #### circular linked list
 
-<img src="/images/sally/2021-07-01-05-12-42.png" width="60%">
+<div align='center'>
+<img src="./img/7-data-structure/circular-linked-list.png" width="60%">
+</div>
 
 앞서 언급했던 linked list 유형들과는 다르게, tail이 다시 head를 가리키는 구조를 가지고 있다. 따라서, tail 노드의 next에는 NULL이 들어가는 것 대신, head의 주소가 들어간다.
 
@@ -115,7 +123,10 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 해시 테이블은 (Key, Value)로 데이터를 저장하는 자료구조 중 하나로 빠르게 데이터를 검색할 수 있는 자료구조이다. 해시 테이블이 빠른 검색속도를 제공하는 이유는 내부적으로 배열(버킷)을 사용하여 데이터를 저장하기 때문이다. 해시 테이블은 각각의 Key값에 해시함수를 적용해 배열의 고유한 index를 생성하고, 이 index를 활용해 값을 저장하거나 검색하게 된다. 여기서 실제 값이 저장되는 장소를 버킷 또는 슬롯이라고 한다.
 
-![img](/images/sally/2021-07-01-05-31-53.png)
+<div align='center'>
+<img src='./img/7-data-structure/hash-table.png'/>
+</div>
+<br/>
 
 예를 들어, `(Key, Value)쌍` 구조를 가지는 데이터 `("John Smith", "521-1234")`를 크기가 16인 해시 테이블에 저장한다고 하자. 그러면 먼저 `index = hash_function("John Smith") % 16` 연산을 통해 index 값을 계산한다. 그리고 `array[index] = "521-1234"` 로 value를 저장하게 된다. 이러한 구조로 데이터를 저장하면 Key값으로 데이터를 찾을 때 해시 함수를 1번만 수행하면 되므로 매우 빠르게 데이터를 저장/삭제/조회할 수 있다. 해시테이블의 평균 시간복잡도는 O(1)이다.
 
@@ -125,7 +136,10 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 **해결방법 1: Separate Chaining(분리 연결법)**
 
-![img](/images/sally/2021-07-01-05-35-24.png)
+<div align='center'>
+  <img src='./img/7-data-structure/separate-chaining.png'/>
+</div>
+<br/>
 
 동일한 버킷의 데이터에 대해 자료구조를 활용해 추가 메모리를 사용하여 다음 데이터의 주소를 저장하는 방법이다. 동일한 해시 값을 가지면, 동일한 버킷 안에 엔트리를 할당해줘야한다. 이 때, 버킷 내부의 엔트리 값들은 linked list 형태로 이어준다. 이러한 Chaining 방식은 해시 테이블의 확장이 필요없고 간단하게 구현이 가능하며, 손쉽게 삭제할 수 있다는 장점이 있다. 하지만 데이터의 수가 많아지면 동일한 버킷에 chaining되는 데이터가 많아지며 그에 따라 캐시의 효율성이 감소한다는 단점이 있다.
 
@@ -160,7 +174,7 @@ Open Addressing이란 추가적인 메모리를 사용하는 Chaining 방식과 
 `push` 명령으로 데이터를 넣고, `pop` 명령으로 가장 마지막에 들어간 데이터를 빼낸다.
 
 <div align='center'>
-    <img src='../images/heath/stack.png' height='250px '/>
+    <img src='./img/7-data-structure/stack.png' height='250px '/>
 </div>
 <br/>
 
@@ -169,6 +183,7 @@ stack 은 브라우저의 뒤로가기 기능, ctrl + z (되돌리기), 지역 �
 stack 에 데이터가 꽉 차서 더 넣을 공간이 없는데 데이터를 push 하는 경우 `overflow`, 반대로 데이터가 없는데 pop 하는 경우를 `underflow` 라고 한다.
 
 #### References
+
 - [[자료구조] 스택, 큐는 무엇인가? - 마이구미](https://mygumi.tistory.com/357)
 - [[자료구조] 스택(Stack), 큐(Queue), 덱(Deque) - Choiiis](https://velog.io/@choiiis/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack%EA%B3%BC-%ED%81%90Queue)
 
@@ -184,7 +199,7 @@ stack 에 데이터가 꽉 차서 더 넣을 공간이 없는데 데이터를 pu
 `pop` 명령으로 front 에서 데이터를 빼낸다. front += 1 되어 다음에 데이터를 반환할 메모리를 가리켜야 한다.
 
 <div align='center'>
-    <img src='../images/heath/queue.png' height='150px '/>
+    <img src='./img/7-data-structure/queue.png' height='150px '/>
 </div>
 <br/>
 
@@ -193,6 +208,7 @@ queue 는 CPU 연산처리 작업대기, 프린터 인쇄, 프로세스 관리 �
 queue 의 rear 가 기리키는 공간에 데이터가 있는데 데이터를 push 하는 경우 `overflow`, 반대로 front 가 가리키는 공간에 데이터가 없는데 pop 하는 경우를 `underflow` 라고 한다.
 
 #### References
+
 - [[자료구조] 스택, 큐는 무엇인가? - 마이구미](https://mygumi.tistory.com/357)
 - [[자료구조] 스택(Stack), 큐(Queue), 덱(Deque) - Choiiis](https://velog.io/@choiiis/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack%EA%B3%BC-%ED%81%90Queue)
 
@@ -202,21 +218,21 @@ queue 의 rear 가 기리키는 공간에 데이터가 있는데 데이터를 pu
 
 #### circular queue
 
-크기가 N 인 queue 에서 모든 원소를 다 채우면 rear 는 N-1 을 가리킨다. 이 때, pop 으로 제일 처음 원소를 제거하면 queue 에 남은 공간 1개가 생긴다. 하지만 rear 는 마지막을 가리키고 있기 때문에 더이상 원소를 추가할 수 없다. 이 문제를 해결하기 위해 원형 형태의 `circular queue` 를 사용한다. queue 와 같이 FIFO 구조의 자료형이다. 
+크기가 N 인 queue 에서 모든 원소를 다 채우면 rear 는 N-1 을 가리킨다. 이 때, pop 으로 제일 처음 원소를 제거하면 queue 에 남은 공간 1개가 생긴다. 하지만 rear 는 마지막을 가리키고 있기 때문에 더이상 원소를 추가할 수 없다. 이 문제를 해결하기 위해 원형 형태의 `circular queue` 를 사용한다. queue 와 같이 FIFO 구조의 자료형이다.
 
 <div align='center'>
-    <img src='../images/heath/circular_queue.png' height='150px '/>
+    <img src='./img/7-data-structure/circular-queue.png' height='150px'/>
 </div>
 <br/>
 
-
 > 동작 방식
 
-- 처음에는 front 와 rear 가 같은 메모리를 가리킨다.   
-- 데이터를 입력하기 위해 rear 는 메모리가 꽉찼는지 검사한다. 꽉찬 경우는 rear 다음 번의 메모리가 front 를 가리키는 경우 (rear + 1 == front) 인데, 꽉차지 않았다면 데이터를 입력하고 rear 는 다음 메모리로 이동한다.  
+- 처음에는 front 와 rear 가 같은 메모리를 가리킨다.
+- 데이터를 입력하기 위해 rear 는 메모리가 꽉찼는지 검사한다. 꽉찬 경우는 rear 다음 번의 메모리가 front 를 가리키는 경우 (rear + 1 == front) 인데, 꽉차지 않았다면 데이터를 입력하고 rear 는 다음 메모리로 이동한다.
 - 데이터를 반환하기 위해 front 는 메모리가 비었는지 검사한다. 빈 경우에는 현재 front 위치와 rear 위치가 같은 경우 (rear == front) 인데, 비지 않았다면 데이터를 반환하고 front 는 다음 메모리로 이동한다.
 
 #### References
+
 - [[자료구조] 큐(QUEUE)와 원형큐(CIRCULAR QUEUE) 개념과 구현 - reakwon](https://reakwon.tistory.com/30)
 
 ---
@@ -229,22 +245,31 @@ queue 의 rear 가 기리키는 공간에 데이터가 있는데 데이터를 pu
 
 ##### 그래프의 종류
 
-<img src="/images/sally/2021-07-01-13-15-10.png" width="50%">  
+<div align='center'>
+    <img src='./img/7-data-structure/graph.png' width=50%/>
+</div>
+<br/>
 
 간선이 담고있는 정보와 연결 상태에 따라 그래프의 종류가 나뉜다. 두 정점을 연결하는 간선에 방향이 없다면 `무방향 그래프`, 두 정점을 연결하는 간선에 방향이 존재하면 `방향 그래프`라고 부른다. 방향 그래프는 간선의 방향으로만 이동할 수 있다. 두 정점을 이동할 때 비용이 발생하면 `가중치 그래프`로 나타낼 수 있다. 모든 정점이 간선으로 연결된 경우, `완전 그래프`라고 부른다.
 
 ##### 그래프 구현 방식
 
-<img src="/images/sally/2021-07-01-12-54-57.png" width="60%">
+<div align='center'>
+    <img src='./img/7-data-structure/adjacent-matrix.png' width=60%/>
+</div>
+<br/>
 
 - 인접행렬 방식
   - 노드를 인덱스로 삼는 2차원 배열을 만든다.
   - 각 노드가 간선으로 연결되어있으면 배열에 1을 넣어주고, 연결되지 않았다면 0을 넣어준다.
   - 두 노드의 연결관계를 조회할 때, O(1) 시간이 걸린다.
   - 그러나 모든 정점에 대해, 간선 정보를 입력해야하므로 초기화에 <!-- $O(N^2)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(N%5E2)"> 시간이 소요된다.
- - 노드의 수가 많고, 간선의 수가 적은 그래프의 경우에, 공간을 낭비하게 된다.
+- 노드의 수가 많고, 간선의 수가 적은 그래프의 경우에, 공간을 낭비하게 된다.
 
-<img src="/images/sally/2021-07-01-12-55-08.png" width="70%">  
+<div align='center'>
+    <img src='./img/7-data-structure/adjacent-list.png' width=60%/>
+</div>
+<br/>
 
 - 인접리스트 방식
   - 그래프의 노드들을 리스트로 표현한다. head 노드와 연결된 노드들을 링크에 달아준다.
@@ -287,7 +312,7 @@ tree는 그래프의 일종으로, 부모 노드 밑에 여러 자식 노드가 
 > 용어
 
 <div align='center'>
-  <img src="../images/adc/data-structure/tree-terms.png" width=500>
+  <img src="./img/7-data-structure/tree-terms.png" width=500>
 </div><br>
 
 - 노드(node): 트리를 구성하는 기본 원소
@@ -311,7 +336,7 @@ tree는 그래프의 일종으로, 부모 노드 밑에 여러 자식 노드가 
 - [[자료구조] 트리(Tree)란 - HeeJeong Kwon](https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html)
 - [트리의 종류와 이해 - cjmp1](http://www.secmem.org/blog/2019/05/09/%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-%EC%9D%B4%ED%95%B4/)
 - [[자료구조] 트리? + 이진 트리 (Binary Tree) - Suyeon's Blog](https://suyeon96.tistory.com/29)
-- [트리(그래프) - 나무위키](https://namu.wiki/w/%ED%8A%B8%EB%A6%AC(%EA%B7%B8%EB%9E%98%ED%94%84))
+- [트리(그래프) - 나무위키](<https://namu.wiki/w/%ED%8A%B8%EB%A6%AC(%EA%B7%B8%EB%9E%98%ED%94%84)>)
 
 ---
 
@@ -320,12 +345,13 @@ tree는 그래프의 일종으로, 부모 노드 밑에 여러 자식 노드가 
 #### binary tree
 
 <div align='center'>
-  <img src="../images/adc/data-structure/binary_tree.png" width=300>
+  <img src="./img/7-data-structure/binary-tree.png" width=300>
 </div><br>
 
 이진 트리(binary tree)는 각각의 노드가 최대 두 개의 자식 노드를 가지는 트리를 말한다. 즉, 모든 노드의 차수(degree)가 2 이하인 트리를 말한다. 이진 트리의 모든 서브 트리들은 모두 이진 트리이다.
 
 > 순회(Traversal) 방법
+
 - 전위 순회(preorder)
   1. 노드를 방문한다.
   2. 왼쪽 서브 트리를 전위 순회한다.
@@ -354,7 +380,7 @@ tree는 그래프의 일종으로, 부모 노드 밑에 여러 자식 노드가 
 #### full binary tree
 
 <div align='center'>
-  <img src="../images/adc/data-structure/full-binary-tree.png" width=500>
+  <img src="./img/7-data-structure/full-binary-tree.png" width=500>
 </div><br>
 
 full binary tree는 단말 노드들을 제외한 모든 노드들이 2개의 자식 노드를 가지는 binary tree이다.
@@ -370,7 +396,7 @@ full binary tree는 단말 노드들을 제외한 모든 노드들이 2개의 �
 #### complete binary tree
 
 <div align='center'>
-  <img src="../images/adc/data-structure/complete-binary-tree.png" width=500>
+  <img src="./img/7-data-structure/complete-binary-tree.png" width=500>
 </div><br>
 
 완전 이진 트리(complete binary tree)는 마지막 level을 제외한 나머지 level에 노드들이 가득 차있고, 마지막 level에서 노드는 가장 왼쪽부터 채워지는 형태의 binary tree이다.
@@ -386,10 +412,11 @@ full binary tree는 단말 노드들을 제외한 모든 노드들이 2개의 �
 #### bst(binary search tree)
 
 <div align='center'>
-  <img src="../images/adc/data-structure/BST.png" width=500>
+  <img src="./img/7-data-structure/bst.png" width=500>
 </div><br>
 
 이진 탐색 트리(binary search tree)는 아래의 성질을 갖고 있는 이진 트리이다.
+
 - 각각의 모든 노드들의 값(key)은 중복된 값이 아니다.
 - 노드의 왼쪽 서브트리에는 그 노드의 값보다 작은 값들을 지닌 노드들로 이루어져 있다.
 - 노드의 오른쪽 서브트리에는 그 노드의 값보다 큰 값들을 지닌 노드들로 이루어져 있다.
@@ -409,6 +436,7 @@ full binary tree는 단말 노드들을 제외한 모든 노드들이 2개의 �
 > 삭제(Delete)
 
 삭제하려는 노드의 자식 수에 따라
+
 - 자식 노드가 없는 노드(리프 노드) 삭제: 해당 노드를 단순히 삭제한다.
 - 자식 노드가 1개인 노드 삭제: 해당 노드를 삭제하고 그 위치에 해당 노드의 자식 노드를 대입한다.
 - 자식 노드가 2개인 노드 삭제: 삭제하고자 하는 노드의 값을 해당 노드의 왼쪽 서브트리에서 가장 큰 값으로 변경하거나, 오른쪽 서브트리에서 가장 작은 값으로 변경한 뒤, 해당 노드(왼쪽 서브트리에서 가장 큰 값을 가지는 노드 또는 오른쪽 서브트리에서 가장 작은 값을 가지는 노드)를 삭제한다.
@@ -418,14 +446,14 @@ full binary tree는 단말 노드들을 제외한 모든 노드들이 2개의 �
 BST의 탐색, 삽입, 삭제의 복잡도는 모두 <!-- $O(h)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(h)">이다. (h: BST의 높이(height))
 
 BST는 평균 시간 복잡도가 <!-- $O(\log_2 n)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(%5Clog_2%20n)">이지만 최악의 경우 <!-- $O(n)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(n)">이다. (skewed tree 이면 node의 수만큼 시간이 소요됨)
-  - tree가 complete binary tree 거나 full binary tree 이면 <!-- $O(\log_2 n)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(%5Clog_2%20n)">, skewed tree 이면 <!-- $O(n)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(n)">
+
+- tree가 complete binary tree 거나 full binary tree 이면 <!-- $O(\log_2 n)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(%5Clog_2%20n)">, skewed tree 이면 <!-- $O(n)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=O(n)">
 
 #### References
 
 - [이진 탐색 트리 - 위키백과](https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84_%ED%83%90%EC%83%89_%ED%8A%B8%EB%A6%AC)
 - [Binary Search Tree - 불곰](https://brownbears.tistory.com/392)
-- [6. Binary Search Tree - JuHy_](https://ju-hy.tistory.com/90)
-
+- [6. Binary Search Tree - JuHy\_](https://ju-hy.tistory.com/90)
 
 ---
 
@@ -450,8 +478,9 @@ heap의 종류에는 [min heap](#7-1), [max heap](#7-2)이 있다.
 이진 힙은 다음과 같은 두 가지 특징을 갖는다.
 
 트리를 T, 임의 내부 노드를 v라고 하면 다음과 같다.
-  1. 루트 노드를 제외한 각 내부 노드는 `key(T.parent(v)) < key(v)` 또는 `key(T.parent(v)) > key(v)`이다. (즉, 키 값은 오름차순이거나 내림차순이다.)
-  2. 마지막 왼쪽 결합 노드들의 레벨을 제외한 다른 모든 레벨들은 완전 이진 트리를 형성한다.
+
+1. 루트 노드를 제외한 각 내부 노드는 `key(T.parent(v)) < key(v)` 또는 `key(T.parent(v)) > key(v)`이다. (즉, 키 값은 오름차순이거나 내림차순이다.)
+2. 마지막 왼쪽 결합 노드들의 레벨을 제외한 다른 모든 레벨들은 완전 이진 트리를 형성한다.
 
 힙 리스트(heap list)로 표현할 때 i번째 노드의 왼쪽 자식 노드의 위치는 2i가 되며, i번째 노드의 오른쪽 자식 노드의 위치는 2i+1이고, 또한 i번째 노드의 부모 노드의 위치는 i/2가 된다.
 
@@ -461,7 +490,7 @@ heap의 종류에는 [min heap](#7-1), [max heap](#7-2)이 있다.
 
 #### References
 
-- [힙 (자료 구조) - 위키백과](https://ko.wikipedia.org/wiki/%ED%9E%99_(%EC%9E%90%EB%A3%8C_%EA%B5%AC%EC%A1%B0))
+- [힙 (자료 구조) - 위키백과](<https://ko.wikipedia.org/wiki/%ED%9E%99_(%EC%9E%90%EB%A3%8C_%EA%B5%AC%EC%A1%B0)>)
 
 ---
 
@@ -470,7 +499,7 @@ heap의 종류에는 [min heap](#7-1), [max heap](#7-2)이 있다.
 #### min heap
 
 <div align='center'>
-  <img src="../images/adc/data-structure/min_heap.png" width=300>
+  <img src="./img/7-data-structure/min-heap.png" width=300>
 </div><br>
 
 최소 힙(min heap)은 부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리이다.
@@ -488,7 +517,7 @@ heap의 종류에는 [min heap](#7-1), [max heap](#7-2)이 있다.
 #### max heap
 
 <div align='center'>
-  <img src="../images/adc/data-structure/max_heap.png" width=300>
+  <img src="./img/7-data-structure/max-heap.png" width=300>
 </div><br>
 
 최대 힙(max heap)은 부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리이다.
@@ -508,7 +537,7 @@ heap의 종류에는 [min heap](#7-1), [max heap](#7-2)이 있다.
 > **레드-블랙트리의 정의**
 
 <div align='center'>
-  <img src="../images/penguin/red-black-tree.png" alt="레드-블랙 트리" width="80%"/>
+  <img src="./img/7-data-structure/red-black-tree.png" alt="레드-블랙 트리" width="80%"/>
   <br/>
   <small>출처: <a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree">Red-black tree - Wikipedia</a></small>
 </div>
@@ -548,7 +577,7 @@ heap의 종류에는 [min heap](#7-1), [max heap](#7-2)이 있다.
 > **B-트리의 정의**
 
 <div align='center'>
-  <img src="../images/penguin/b-tree.png" alt="B트리" width="80%"/>
+  <img src="./img/7-data-structure/b-tree.png" alt="B트리" width="80%"/>
   <br/>
   <small>출처: <a href="https://commons.wikimedia.org/wiki/File:B-tree-definition.png">B-tree Definition - Wikimedia</a></small>
 </div>
@@ -581,5 +610,3 @@ B+ 트리는 B-트리와 비슷하지만 리프노드가 연결리스트의 형�
 - [[자료구조] 그림으로 알아보는 B+Tree - emplam27.log](https://velog.io/@emplam27/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EB%8A%94-B-Plus-Tree)
 - [B트리 - 위키백과](https://ko.wikipedia.org/wiki/B_%ED%8A%B8%EB%A6%AC)
 - [B-Tree 개념 정리 - Jlog](https://hyungjoon6876.github.io/jlog/2018/07/20/btree.html)
-
----

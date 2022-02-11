@@ -88,7 +88,7 @@
 
 #### References
 
-[[Python] 튜플(tuple), 리스트(list), 셋(set), 딕셔너리(dict) 비교 - specialscene](https://specialscene.tistory.com/142)
+- [[Python] 튜플(tuple), 리스트(list), 셋(set), 딕셔너리(dict) 비교 - specialscene](https://specialscene.tistory.com/142)
 
 ---
 
@@ -161,7 +161,7 @@
 
 #### What is pep 8?
 
-PEP(Python Enhancement Proposal)는 Python 코드를 포맷하는 방법을 지정하는 규칙 집합이다. 다른 사람과 원활하게 협업하려면 공통된 스타일 공유가 필요하며, 일관성 있는 스타일은 나중에 수정하기도 쉽다. PEP8은 파이썬 코드를 어떻게 구성할 지 알려주는 스타일 가이드로서의 역할을 한다. Python formatting tool에는 `black`, `flake8`, `autopep8`, `yamf` 등이 있다.  
+PEP(Python Enhancement Proposal)는 Python 코드를 포맷하는 방법을 지정하는 규칙 집합이다. 다른 사람과 원활하게 협업하려면 공통된 스타일 공유가 필요하며, 일관성 있는 스타일은 나중에 수정하기도 쉽다. PEP8은 파이썬 코드를 어떻게 구성할 지 알려주는 스타일 가이드로서의 역할을 한다. Python formatting tool에는 `black`, `flake8`, `autopep8`, `yamf` 등이 있다.
 
 > PEP8 스타일 가이드 예시
 
@@ -218,7 +218,7 @@ namespace는 이름 지정 충돌(naming conflicts)을 피하기 위해 이름�
 - `지역 네임스페이스(local namespace)`: 함수 및 메서드 별로 존재하며, 함수 내의 지역 변수들의 이름들이 소속된다.
 
 <div align='center'>
-<img src="../images/sally/2021-05-09-01-33-50.png" width=50%>
+<img src="./img/4-python/namespace.png" width=50%>
 </div>
 <br/>
 
@@ -375,7 +375,7 @@ Python에서는 array과 list가 동일한 방식으로 데이터를 저장한�
 array에서 사용할 수 있는 타입은 아래와 같다.
 
 <div align='center'>
-<img src="../images/sally/2021-05-09-03-08-13.png">
+<img src="./img/4-python/array-type.png">
 </div>
 <br/>
 
@@ -461,7 +461,7 @@ python 3.3 이하 버전에서, package import하기 위해서 사용되는 규�
 #### References
 
 - [7.5. 특별한 메서드들 - 왕초보를 위한 Python](https://wikidocs.net/89)
-- [패키지 __init__.py 파일들 - 그것으로 말미암아,](https://m.blog.naver.com/jodi999/221609408266)
+- [패키지 **init**.py 파일들 - 그것으로 말미암아,](https://m.blog.naver.com/jodi999/221609408266)
 
 ---
 
@@ -474,7 +474,7 @@ python 3.3 이하 버전에서, package import하기 위해서 사용되는 규�
 람다함수의 표현법을 그림으로 표현하면 아래와 같다.
 
 <div align='center'>
-<img src="../images/sally/2021-05-09-03-28-16.png" width="60%">
+<img src="./img/4-python/lambda-function.png" width="60%">
 </div>
 <br/>
 
@@ -1096,9 +1096,11 @@ name(sally="샐리", penguin="펭귄", heath="히스", adc="원딜")
 ```
 {'sally': '샐리', 'penguin': '펭귄', 'heath': '히스', 'adc': '원딜'}
 ```
+
 <br>
 
 - 일반 변수, `*args`, `**kwargs`를 모두 사용하는 경우
+
 ```python
 def function_name(일반변수, *args, **kwargs)
 ```
@@ -1129,6 +1131,7 @@ len(stg)
 ```
 17
 ```
+
 <br>
 
 > **Example_2**
@@ -1159,7 +1162,7 @@ len(ex_list)
 문자열 수정을 위해 Python의 “re” 모듈은 3 가지 메서드를 제공한다.
 
 - `re.split(pattern, string, maxplit=0)`: pattern을 구분자로 string을 분리하여 list로 반환
-> **Example**
+  > **Example**
 
 ```python
 re.split('<[^<>]*>', '<html> Wow <head> header </head> <body> Hey </body> </html>')
@@ -1170,10 +1173,11 @@ re.split('<[^<>]*>', '<html> Wow <head> header </head> <body> Hey </body> </html
 ```
 ['', ' Wow ', ' header ', ' ', ' Hey ', ' ', '']
 ```
+
 <br>
 
 - `re.sub(pattern, repl, string, count=0)`: string에서 pattern과 일치하는 부분에 대하여 repl로 교체하여 결과 문자열을 반환
-> **Example**
+  > **Example**
 
 ```python
 re.sub('\d{4}', 'XXXX', '010-1234-5678')
@@ -1184,10 +1188,11 @@ re.sub('\d{4}', 'XXXX', '010-1234-5678')
 ```
 '010-XXXX-XXXX'
 ```
+
 <br>
 
 - `re.subn(pattern, repl, string, count=0)`: sub와 동일하나, 결과로 (결과문자열, 매칭횟수)를 튜플로 반환
-> **Example**
+  > **Example**
 
 ```python
 re.subn('\d{4}', 'XXXX', '010-1234-5678')
@@ -1202,7 +1207,7 @@ re.subn('\d{4}', 'XXXX', '010-1234-5678')
 #### References
 
 - [파이썬 – 정규식표현식(Regular Expression) 모듈 - devanix](https://devanix.tistory.com/296)
-- [파이썬 정규표현식(re) 사용법 - 05. 주석, 치환, 분리 - YW & YY's Python, Machine & Deep Learning](https://greeksharifa.github.io/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D(re)/2018/08/04/regex-usage-05-intermediate/)
+- [파이썬 정규표현식(re) 사용법 - 05. 주석, 치환, 분리 - YW & YY's Python, Machine & Deep Learning](<https://greeksharifa.github.io/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D(re)/2018/08/04/regex-usage-05-intermediate/>)
 
 ---
 
@@ -1239,6 +1244,7 @@ adc
 adc
 ['penguin', 'sally', 'adc', 'heath']
 ```
+
 <br>
 
 > **Example_2**
@@ -1269,8 +1275,8 @@ Dev
 **모듈**
 
 모듈은 파이썬 코드를 논리적으로 묶어서 관리하고 사용할 수 있도록 하는 것으로, 보통 하나의 파이썬 `.py` 파일이 하나의 모듈이 된다. 모듈 안에는 함수, 클래스, 혹은 변수들이 정의될 수 있으며, 실행 코드를 포함할 수도 있다.
+
 > 모듈에 관한 자세한 내용은 [#9. 모듈](#9) 참고
-<br><br>
 
 **패키지**
 
@@ -1280,7 +1286,7 @@ Dev
 <br><br>
 
 <div align='center'>
-    <img src='../images/adc/python/42_package.png' height='300'/>
+    <img src='./img/4-python/package.png' height='300'/>
 </div>
 
 > 패키지들의 모음인 라이브러리에 대한 내용은 [#52. 라이브러리](#52) 참고
@@ -1339,8 +1345,9 @@ Python의 Built-in type은 아래와 같다.
 - C의 Array를 사용하여 배열을 생성하기 때문에 속도가 빠르다
 
 **np.array의 구조**
+
 <div align='center'>
-    <img src='../images/adc/python/nparray.png' height='400'/>
+    <img src='./img/4-python/numpy-array.png' height='400'/>
 </div>
 <br>
 
@@ -1363,6 +1370,7 @@ Python list는 데이터 주소값을 저장하고 데이터를 가져올 때는
 `append()`, `extend()`, `insert()` 함수를 사용하여 list에 value를 추가할 수 있다.
 
 **append()**
+
 - 시간복잡도: `O(1)`
 
 `list.append(x)` 형태로 사용한다. 괄호 안에 값을 입력하면 새로운 요소를 list 맨 끝에 추가한다. 요소를 추가할 때는 객체로 추가하게 되는데, 입력한 값이 리스트와 같은 반복 가능한 iterable 자료형이더라도 객체로 저장한다.
@@ -1384,9 +1392,11 @@ print(nums)
 [1, 2, 3, 4]
 [1, 2, 3, 4, [5, 6]]
 ```
+
 <br>
 
 **extend()**
+
 - 시간복잡도: `O(N)`
 
 `list.extend(iterable)` 형태로 사용한다. 입력한 iterable 자료형의 항목 각각을 list의 끝에 하나씩 추가한다. iterable 자료형으로 추가되는 것이 아니라 iterable 자료형 안에 있는 항목이 하나씩 떼어져서 추가된다. append와 동일하게 요소를 list의 끝에 추가하지만 append와 다른 점은 괄호 안에는 iterable 자료형만 올 수 있다는 것이다. iterable 자료형이 아닌 경우 TypeError가 발생한다.
@@ -1408,9 +1418,11 @@ print(nums)
 [1, 2, 3, 4]
 [1, 2, 3, 4, 5, 6]
 ```
+
 <br>
 
 **insert()**
+
 - 시간복잡도: `O(N)`
 
 `list.insert(i, x)` 형태로 사용한다. list의 원하는 위치 i 앞에 추가할 값 x를 삽입할 수 있다. i는 위치를 나타내는 인덱스를 숫자를 입력한다. 음수를 입력하면 배열의 끝을 기준으로 처리된다. 추가할 값 x는 객체로 추가되며 iterable 자료형이더라도 객체로 저장된다.
@@ -1436,9 +1448,11 @@ print(nums)
 [10, 1, 2, 99, 3]
 [10, 1, 2, 99, 3, [20, 30]]
 ```
+
 <br>
 
 **`+` 연산자**
+
 - 시간복잡도: `O(1)`
 
 `list_1 + list_2` 형태로 사용한다.
@@ -1470,6 +1484,7 @@ print(nums + [10, 9, 8, 7])
 `remove()`, `pop()` 함수를 사용하여 list에 value를 삭제할 수 있다.
 
 **remove()**
+
 - 시간복잡도: `O(N)`
 
 remove()는 지우고자 하는 인덱스가 아닌, 값을 입력하는 방식이다. 만약 지우고자 하는 값이 리스트 내에 2개 이상이 있다면 순서상 가장 앞에 있는 값을 지우게 된다. 값을 삭제할 때 삭제된 값을 반환하지 않는다.
@@ -1487,9 +1502,11 @@ print(example)
 ```
 [2, 3, 4, 5, 1]
 ```
+
 <br>
 
 **pop()**
+
 - 시간복잡도: `O(N)`
 
 pop()은 리스트에서 지우고자 하는 값의 인덱스를 받아서 지우는 방식이다. 값을 삭제할 때 삭제된 값을 반환한다. 인덱스를 지정하지 않으면 리스트의 마지막 요소가 삭제되며 반환된다.
@@ -1508,6 +1525,7 @@ print(example)
 10
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
+
 <br>
 
 > **Example_2**
@@ -1524,9 +1542,11 @@ print(example)
 4
 [1, 2, 3, 5, 6, 7, 8, 9, 10]
 ```
+
 <br>
 
 **del**
+
 - 시간복잡도: `O(N)`
 
 `del list[i]` 형태로 사용한다. 값을 삭제할 때 삭제된 값을 반환하지 않는다.
@@ -1544,6 +1564,7 @@ print(example)
 ```
 [1, 2, 3, 4, 5, 6, 7, 9, 10]
 ```
+
 <br>
 
 > **Example_2**
@@ -1606,6 +1627,7 @@ print(a, b)
 ```
 [1, 10, 3, 4, 5] [1, 10, 3, 4, 5]
 ```
+
 <br>
 
 **Deep copy**
@@ -1627,6 +1649,7 @@ print(a, b)
 ```
 [1, 10, 3, 4, 5] [1, 2, 3, 4, 5]
 ```
+
 <br>
 
 > **Example_2**
@@ -1644,6 +1667,7 @@ print(a, b)
 ```
 [1, 10, 3, 4, 5] [1, 2, 3, 4, 5]
 ```
+
 <br>
 
 #### References
@@ -1722,7 +1746,7 @@ dis.dis(mult)
 파이썬 라이브러리는 패키지의 모음이다.
 
 <div align='center'>
-    <img src='../images/adc/python/52_library.PNG' width='900'/>
+    <img src='./img/4-python/library.png' width='900'/>
 </div>
 
 주로 사용되는 파이썬 라이브러리로는 [`Numpy`](https://numpy.org/), [`Pandas`](https://pandas.pydata.org/), [`Matplotlib`](https://matplotlib.org/), [`Scikit-learn`](https://scikit-learn.org/stable/) 등이 있다.
@@ -1786,6 +1810,7 @@ import [패키지/모듈]
 from [패키지] import [모듈/변수/함수/클래스]
 from [모듈] import [변수/함수/클래스]
 ```
+
 <br>
 
 > **Example**
@@ -1795,6 +1820,7 @@ import numpy        # importing using the original module name
 import numpy as np  # importing using an alias name
 from numpy import * # imports everything present in the numpy module
 ```
+
 <br>
 
 > 참고

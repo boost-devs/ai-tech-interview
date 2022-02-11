@@ -57,7 +57,7 @@ $$ -->
 아래처럼 x1 은 A 에 의해 변환되었음에도 x1 과 평행하다. 따라서 x1 은 고유벡터이다.
 
 <div align="center">
-  <img src="../images/heath/eigen_vector.jpeg" height="240px"/>
+  <img src="./img/1-statistics-math/eigen-vector.jpeg" height="240px"/>
 </div>
 <br/>
 
@@ -120,7 +120,11 @@ P(X=1)와 같은 식으로 표현하고, 이는 "주사위를 굴렸을 때, 1�
 **확률분포(Probability Distribution)** 란 표본공간에 정의된 확률을 이용하여 확률변수의 값 또는 영역에 대한 확률을 표현한 것이다.
 예를 들어 가장 널리 쓰이는 확률 모형의 하나인 `가우시안 정규 분포(Gaussian normal distribution)`는 다음과 같은 수식으로 확률 밀도 함수를 정의한다.
 
-<img src="/images/sally/2021-04-19-03-39-37.png" width=30%>
+<!-- $$
+N(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x- \mu^2)}{2 \sigma^2}}
+$$ -->
+
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=N(x%20%3B%20%5Cmu%2C%20%5Csigma)%20%3D%20%5Cfrac%7B1%7D%7B%5Csigma%20%5Csqrt%7B2%20%5Cpi%7D%7D%20e%5E%7B-%5Cfrac%7B(x-%20%5Cmu%5E2)%7D%7B2%20%5Csigma%5E2%7D%7D%0D" height="50px"></div>
 
 다음과 같은 함수들이 확률모형에 포함될 수 있다. (자세한 내용은 [확률통계 기초용어 - EG 공간](https://kongdols-room.tistory.com/131) 참고)
 
@@ -206,7 +210,7 @@ $$ -->
 베이즈 정리를 통해 가능도와 Evidence를 바탕으로 사전확률을 사후확률로 업데이트한다.
 
 <div align="center">
-  <img src="../images/heath/probability.png" height="240px"/>
+  <img src="./img/1-statistics-math/probability.png" height="240px"/>
 </div>
 <br/>
 
@@ -268,7 +272,7 @@ $$ -->
 구간 추정에서 `모수가 a 에서 b 사이에 있을 것으로 추정(신뢰구간)`하고 `그 확률(%, 신뢰수준)`을 구한다.
 
 <div align="center">
-  <img src="../images/sally/2021-04-18-02-19-35.png" height="240px"/>
+  <img src="./img/1-statistics-math/confidence-level.png" height="240px"/>
 </div>
 <br/>
 
@@ -317,7 +321,7 @@ $$ -->
 
 참고로 결정계수는 다음의 식으로 구할 수 있다.
 
-> R^2 = SSE/SST = 1 - SSR/SST,
+> <!-- $R^2 = SSE/SST = 1 - SSR/SST$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=R%5E2%20%3D%20SSE%2FSST%20%3D%201%20-%20SSR%2FSST" height='16px'>
 
 SSE = sum((추정값-관측값 평균)^2),  
 SST = sum((관측값-관측값 평균)^2),  
@@ -492,7 +496,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 검정력은 대립가설 H1이 참인 경우 귀무가설 H0를 기각(대립가설 H1을 채택)할 확률이다.
 
 <div align="center">
-  <img src="../images/adc/statistics-math/hypothesis.png" height="300px"/>
+  <img src="./img/1-statistics-math/hypothesis.png" height="300px"/>
 </div>
 <br/>
 
@@ -561,7 +565,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 먼저 **모집단의 크기 : N** 을 구하고, **신뢰수준 : z** 와 **오차범위 : e** 를 얼마로 할지 선정하여 표본의 크기를 구할 수 있다.
 
 <div align="center">
-  <img src="../images/heath/sample-size-formula.png" height="100px"/>
+  <img src="./img/1-statistics-math/sample-size-formula.png" height="100px"/>
 </div>
 <br/>
 
@@ -581,7 +585,7 @@ missing value를 처리하는 방법에는 크게 4가지가 있다.
 #### Bias를 통제하는 방법은 무엇입니까?
 
 <div align="center">
-  <img src="../images/adc/statistics-math/underfit-right-overfit.png" height="200px"/>
+  <img src="./img/1-statistics-math/underfit-right-overfit.png" height="200px"/>
 </div>
 <br/>
 
@@ -590,14 +594,14 @@ Bias는 데이터 내에 있는 모든 정보를 고려하지 않음으로 인�
 반대로 Variance는 데이터 내에 있는 에러나 노이즈까지 잘 잡아내는 highly flexible models에 데이터를 fitting 시킴으로써, 실제 현상과 관계 없는 random한 것들까지 학습하는 알고리즘의 경향을 의미한다. 이는 overfitting과 관계되어 있다.
 
 <div align="center">
-  <img src="../images/adc/statistics-math/variance-bias.png" height="250px"/>
+  <img src="./img/1-statistics-math/variance-bias.png" height="250px"/>
 </div>
 <br/>
 
 편향(Bias)과 분산(Variance)은 한 쪽이 증가하면 다른 한 쪽이 감소하고, 한쪽이 감소하면 다른 한쪽이 증가하는 tradeoff 관계를 가진다.
 
 <div align="center">
-  <img src="../images/adc/statistics-math/bias-variance-tradeoff.png" height="300px"/>
+  <img src="./img/1-statistics-math/bias-variance-tradeoff.png" height="300px"/>
 </div>
 <br/>
 
@@ -605,7 +609,7 @@ Bias를 통제하기 위한 방법으로는
 
 - (neuron이나 계층의 갯수 같은) 모델의 크기 증가
 - 오류평가시 얻은 지식을 기반으로 입력 특성 수정
-- 정규화 
+- 정규화
 - 모델 구조를 수정
 - 학습 데이터 추가
 
@@ -653,7 +657,7 @@ Bias를 통제하기 위한 방법으로는
 
 - [answer/statistics-math-distribution.md](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/statistics-math.md) 참고
 
-(추후 수정)
+(TODO: 추후 수정)
 
 ---
 
@@ -661,11 +665,13 @@ Bias를 통제하기 위한 방법으로는
 
 #### 출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?
 
+(TODO: 추후 수정)
+
 **1. 확률 구하기**
 
 ![image](https://user-images.githubusercontent.com/59533593/149618708-671adb6f-c7ff-4823-98f1-fc84cc18c15b.png)
 
-- 출장지에 비가 내릴 때 p, 내리지 않을 때를 1-p라고 한다. 
+- 출장지에 비가 내릴 때 p, 내리지 않을 때를 1-p라고 한다.
 - `출장지에 비가 내리는데(p)` 모든 친구가 비가 내린다라고 한다면 `모든 친구가 진실을 말하는 것(8/27)`이다. 이 경우 확률은 `8p/27`이다.
 - `출장지가 비가 내리지 않는데(1-p)` 모든 친구가 비가 내린다라고 한다면 `모든 친구가 거짓을 말하는 것(1/27)`이다. 이 경우 확률은 `(1-p)/27이`다.
 
@@ -679,8 +685,8 @@ Bias를 통제하기 위한 방법으로는
 
 만약 출장지에 비가 올 확률이 25%라면 실제로 출장지에 비가 내릴 확률은 약 72.7%이다.
 
-
 #### References
+
 - 문제 출처 : [페이스북 데이터 사이언스 직무 인터뷰 - glassdoor](https://www.glassdoor.com/Interview/You-re-about-to-get-on-a-plane-to-Seattle-You-want-to-know-if-you-should-bring-an-umbrella-You-call-3-random-friends-of-y-QTN_519262.htm)
 
 - 정답 및 이미지 출처 : [Solving Facebook's raining in Seattle interview question - Youtube](https://www.youtube.com/watch?v=NM91QI2uUqI)

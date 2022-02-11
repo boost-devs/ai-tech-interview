@@ -66,7 +66,10 @@ TCP/IP는 크게 5개의 계층으로 구성된다.
 - **물리 계층**(Physical Layer, L1)
   - 물리적인 연결과 전기 신호 변환/제어를 담당하여, 이진 데이터를 전기 신호로 변환한다. 또한 컴퓨터와 네트워크 장비를 물리적으로 연결하여, 하나의 노드에서 다른 노드로 **비트를** 이동시키는 역할을 수행한다. 물리 계층의 프로토콜들은 링크(실제 전송매체 ex.광케이블)에 의존한다.
 
-![img](/images/sally/2021-05-30-16-03-31.png)
+<div align='center'>
+  <img src="./img/5-network/tcp-ip-hierarchy.png" width=100%>
+</div>
+<br/>
 
 #### References
 
@@ -79,7 +82,10 @@ TCP/IP는 크게 5개의 계층으로 구성된다.
 
 #### OSI 7계층와 TCP/IP 계층의 차이를 설명해주세요.
 
-<img src="/images/sally/2021-05-30-16-50-00.png" width="40%">
+<div align='center'>
+  <img src="./img/5-network/osi-7-layer.png" width=40%>
+</div>
+<br/>
 
 ❊ `네트워크 인터페이스 계층`: TCP/IP 5계층에서 물리계층과 링크계층을 하나로 묶은 것
 
@@ -110,7 +116,10 @@ OSI 7계층은 TCP/IP 계층의 애플리케이션 계층을 더 세분화한 �
 - **Datagram**: Network 계층(L3)에서 다른 네트워크와 통신하기 위한 헤더를 세그먼트(L4 계층 데이터)에 붙인것을 데이터그램, 데이터 세그먼트라고 부른다.
 - **Frame**: 데이터 링크 계층(L2)에서 물리적인 통신 채널을 열기 위해 패킷에 헤더와 트레일러를 붙인다. 트레일러는 데이터를 전달할 때 데이터 끝 부분에 붙이는 정보로, 주로 에러 검출에 사용된다.
 
-![img](/images/sally/2021-05-30-16-21-30.png)
+<div align='center'>
+  <img src="./img/5-network/capsulation.png" width=100%>
+</div>
+<br/>
 
 > **추가내용) 왜 패킷을 잘라서 보낼까?**
 
@@ -170,7 +179,10 @@ UDP는 비연결형 서비스이므로 연결설정이 불필요하고 연결상
 
 **UDP segment**의 간략한 구조는 아래와 같다.
 
-![img](/images/sally/2021-05-30-18-22-08.png)
+<div align='center'>
+  <img src="./img/5-network/udp-segment.png" width=70%>
+</div>
+<br/>
 
 애플리케이션 데이터는 UDP 데이터그램의 데이터 필드에 위치한다. UDP 헤더는 2바이트(16비트)씩 구성된 4개의 필드를 가진다. UDP 헤더는 `출발지 포트번호`, `목적지 포트번호`, `체크섬`, `길이`로 이루어져있다.
 
@@ -182,7 +194,11 @@ UDP는 비연결형 서비스이므로 연결설정이 불필요하고 연결상
 
 **TCP segment**의 간략한 구조는 아래와 같다.
 
-![img](/images/sally/2021-05-30-18-24-06.png)  
+<div align='center'>
+  <img src="./img/5-network/tcp-segment.png" width=70%>
+</div>
+<br/>
+
 TCP 소켓은 4개의 다른 요소들의 집합에 의해 식별된다.(`출발지 IP`, `출발지 포트번호`, `목적지 IP`, `목적지 포트번호`) 따라서 IP를 제외한 `출발지/도착지 포트번호`(각 16 bit)와 `sequence number`(32 bit), `ack number`(32 bit)를 합쳐, 기본적으로 20 byte의 헤더를 가지게 되며, 옵션을 포함하면 최대 60 byte의 헤더를 가질 수 있다. 다른 출발지 주소를 가지는 세그먼트는, 다른 소켓을 통해서 프로세스에 전달된다. UDP와 다르게, TCP 세그먼트는 출발지 주소가 다르면, 다른 소켓으로 전달된다.
 
 - **포트번호**는 IP 정보와 결합하여 출발지, 도착지를 구분하기 위해 사용된다.
@@ -201,7 +217,10 @@ TCP 소켓은 4개의 다른 요소들의 집합에 의해 식별된다.(`출발
 
 **핸드셰이크**(Handshake)란, 호스트 간 데이터를 전송하기 전에 먼저 정확한 전송을 보장하기 위해 상대방 컴퓨터와 사전에 세션을 수립하는 과정을 의미한다.
 
-![begin](/images/sally/2021-05-30-18-55-55.png)
+<div align='center'>
+  <img src="./img/5-network/3-way-handshake.png" width=70%>
+</div>
+<br/>
 
 **3-way handshake**는 TCP의 연결을 초기화 할 때 사용한다. 양쪽 모두 데이터를 전송할 준비가 되었다는 것을 보장하고, 실제로 데이터 전달이 시작하기전에 한쪽이 다른 쪽이 준비되었다는 것을 알수 있도록 한다. 양쪽 모두 상대편에 대한 초기 순차일련변호를 얻을 수 있도록 한다. 절차는 다음과 같다.
 
@@ -213,7 +232,10 @@ TCP 소켓은 4개의 다른 요소들의 집합에 의해 식별된다.(`출발
 
 TCP/IP 통신은 양방향성 connection 이다. 위의 그림의 1번 과정에서 클라이언트가 연결 요청을 SYN으로 보내면, 서버는 클라이언트가 요청한 SYN에 대한 대답(ACK)과 함께, 자신도 연결하겠다는 요청의 의미로 SYN을 보내고, 클라이언트로부터 요청에 대한 대답(과정 3)을 받아야한다. 이 과정은 2-way handshaked에서는 성립될 수 없다.
 
-![finish](/images/sally/2021-05-30-18-55-40.png)
+<div align='center'>
+  <img src="./img/5-network/4-way-handshake.png" width=70%>
+</div>
+<br/>
 
 **4-way handshake**는 세션을 종료하기 위해 수행되는 절차이다. 구체적인 과정은 다음과 같다.
 
@@ -330,9 +352,10 @@ HTTP는 암호화가 추가되지 않았기 때문에 보안에 취약한 반면
     <br><br>
 
 <div align='center'>
-  <img src="../images/adc/network/http.PNG">
-  <br><br>
-  <img src="../images/adc/network/http2.png">
+  <img src="./img/5-network/http-request-response.png">
+</div>
+<div align='center'>
+  <img src="./img/5-network/request-response-header.png">
 </div>
 
 #### References
@@ -347,13 +370,7 @@ HTTP는 암호화가 추가되지 않았기 때문에 보안에 취약한 반면
 
 #### HTTP와 HTTPS 동작 과정을 비교해주세요.
 
-<div align='center'>
-  <img src="https://t1.daumcdn.net/cfile/tistory/99E3EE4F5C0FE49F17">
-  <br><br>
-  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRhbUB%2Fbtq0iBHCBTX%2FfKL4uGrKHaz7w5rWr9Ottk%2Fimg.png">
-  <br><br>
-  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbE36KD%2Fbtq0tfDkLaZ%2FazI7Wlmon3eCzE5dQKNCq0%2Fimg.png">
-</div>
+(TODO: 답변 추가하기)
 
 #### References
 
@@ -384,7 +401,7 @@ HTTP는 암호화가 추가되지 않았기 때문에 보안에 취약한 반면
    <br><br>
 
 <div align='center'>
-  <img src="../images/adc/network/CORS.png">
+  <img src="./img/5-network/cors.png">
 </div>
 
 #### References
@@ -560,7 +577,7 @@ DNS는 숫자로 이루어진 IP 주소와 일정한 형식을 가진 도메인�
    <br><br>
 
 <div align='center'>
-  <img src="../images/adc/network/dns.png">
+  <img src="./img/5-network/dns.png">
 </div>
 
 #### References
@@ -597,7 +614,7 @@ DNS는 숫자로 이루어진 IP 주소와 일정한 형식을 가진 도메인�
 URI는 Uniform Resource Identifier의 약자로, 자원을 식별자로 취급하여 나타내는 주소를 말한다. URI의 종류로 URL과 URN이 있다. URI는 일반적으로 다음과 같은 형식을 갖고 있다.
 
 <div align="center">
-<img src="../images/penguin/uri.png" width="90%"/>
+<img src="./img/5-network/uri.png" width="90%"/>
 </div>
 <br/>
 
@@ -685,7 +702,7 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 > **WebSocket**
 
 <div align="center">
-<img src="../images/penguin/web-socket.png" width="50%"/>
+<img src="./img/5-network/web-socket.png" width="50%"/>
 </div>
 <br/>
 
@@ -718,7 +735,7 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 IPv4와 IPv6는 **인터넷 프로토콜(IP)의 버전**을 말하며, IPv4는 IP의 4번째 버전, IPv6는 IP의 6번째 버전을 말한다. 이 때 인터넷 프로토콜은 호스트 간 패킷 교환 네트워크에서 패킷(Packet) 혹은 데이터그램(Datagram)으로 불리는 정보를 주고받는데 사용하는 프로토콜을 말한다.
 
 <div align="center">
-<img src="../images/penguin/ipv4-ipv6.png" width="80%"/>
+<img src="./img/5-network/ipv4-ipv6.png" width="80%"/>
 </div>
 <br/>
 
@@ -757,7 +774,7 @@ IPv4와 IPv6는 **인터넷 프로토콜(IP)의 버전**을 말하며, IPv4는 I
 > 여기서의 네트워크는 LAN(Local Area Network)를 말합니다.
 
 <div align='center'>
-  <img src="../images/penguin/router-switch-hub.png" alt="router switch hub"/>
+  <img src="./img/5-network/router-switch-hub.png" alt="router switch hub"/>
   <br/>
   <small>출처: <a href="https://www.geeksforgeeks.org/network-devices-hub-repeater-bridge-switch-router-gateways/">Network Devices - GeeksforGeeks</a></small>
 </div>
@@ -803,7 +820,7 @@ SMTP는 다음의 명령어를 사용하여 메일을 주고 받는다.
 #### 노트북으로 `www.google.com`에 접속을 했습니다. 요청을 보내고 받기까지의 과정을 자세히 설명해주세요.
 
 <div align='center'>
-  <img src="../images/penguin/browser-access-trip.png" alt="web page request"/>
+  <img src="./img/5-network/browser-access-trip.png" alt="web page request"/>
   <br/>
   <small>출처: <a href="http://www.yes24.com/Product/Goods/45543957">Computer Networking A Top-Down Appoarch Chapter 6.7</a></small>
 </div>
@@ -859,7 +876,7 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 - 메인 노드에 장애가 발생하면 전체 네트워크 사용 불가능
 
 <div align='center'>
-    <img src='../images/heath/star_topology.png' height='250px '/>
+    <img src='./img/5-network/star-topology.png' height='250px '/>
 </div>
 <br/>
 
@@ -877,7 +894,7 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 - 공통 배선의 크기(대역폭)가 제한되어 있으므로 배선에 과부하가 걸릴 경우 네트워크 성능 저하
 
 <div align='center'>
-    <img src='../images/heath/bus_topology.png' height='250px '/>
+    <img src='./img/5-network/bus-topology.png' height='250px '/>
 </div>
 <br/>
 
@@ -894,7 +911,7 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 - 노드 추가 및 삭제가 어려움
 
 <div align='center'>
-    <img src='../images/heath/ring_topology.png' height='250px '/>
+    <img src='./img/5-network/ring-topology.png' height='250px '/>
 </div>
 <br/>
 
@@ -911,12 +928,12 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 - 망 구축 비용이 크고, 노드 추가에도 비용이 많이 듬
 
 <div align='center'>
-    <img src='../images/heath/mesh_full_topology.png' height='250px '/>
+    <img src='./img/5-network/mesh-full-topology.png' height='250px '/>
 </div>
 <br/>
 
 <div align='center'>
-    <img src='../images/heath/mesh_part_topology.png' height='250px '/>
+    <img src='./img/5-network/mesh-part-topology.png' height='250px '/>
 </div>
 <br/>
 
@@ -933,14 +950,14 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 
 ##### IP 주소와 서브네팅 (subnetting)
 
-IPv4 의 경우 2^(8\*4=32) 의 숫자로 주소를 표현하고, 이를 국가, 회사 등 잘게 나눠 어느 영역을 쓰게할 것인지 결정한다.
+IPv4 의 경우 <!-- $2^32$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=2%5E32"> 의 숫자로 주소를 표현하고, 이를 국가, 회사 등 잘게 나눠 어느 영역을 쓰게할 것인지 결정한다.
 
 한정된 자원이기 때문에 효율적으로 노드에 주소를 할당하는게 중요하다. 이를 위해 IP 를 쪼개는, 네트워크 파트 + 호스트 파트로 구성하는 서브네팅을 활용한다.
 
 기본적으로 IP 주소에 따라 5 개의 클래스로 구분된다. 각 클래스에 따라 네트워크 파트와 호스트 파트가 정해진다.
 
 <div align='center'>
-    <img src='../images/heath/network_class.png' height='250px '/>
+    <img src='./img/5-network/network-class.png' height='250px '/>
 </div>
 <br/>
 
@@ -973,7 +990,7 @@ data encapsulation 은 데이터를 보내는 송신측에서 데이터를 생�
 반대로 데이터를 받는 수신측에서는 데이터를 받은 후에 계층을 거슬러 올라가면서 헤더를 떼내며 데이터를 파악한다.
 
 <div align='center'>
-    <img src='../images/heath/network_encapsulation.png' height='250px '/>
+    <img src='./img/5-network/network-encapsulation.png' height='250px '/>
 </div>
 <br/>
 
@@ -1027,7 +1044,7 @@ DHCP 는 UDP 를 사용하여 클라이언트/서버 구조로 통신한다.
 #### routing protocol을 몇 가지 설명해주세요. (ex. link state, distance vector)
 
 <div align='center'>
-    <img src='../images/heath/routing.png' height='250px '/>
+    <img src='./img/5-network/routing.png' height='250px '/>
 </div>
 <br/>
 
@@ -1125,7 +1142,7 @@ link state 를 사용하는 프로토콜로는 OSPF, IS-IS 등이 있으며, lin
 의 합으로 계산된다.
 
 <div align='center'>
-    <img src='../images/heath/network_delay.png' height='250px '/>
+    <img src='./img/5-network/network-delay.png' height='250px '/>
 </div>
 <br/>
 
@@ -1145,9 +1162,3 @@ delay 의 변동을 (변화량 수준) 의미한다. 같은 스위치가 아닌 
 - [4. 네트워크의 delay, loss, throughput - 나도 잘 모름](https://snnchallenge.tistory.com/98)
 - [[네트워크]latency, bandwidth와 throughput 개념 정리 - 코딩 세상](https://darkstart.tistory.com/141)
 - [Latency Delay Jitter 의 명쾌한 비교](https://sensechef.com/1156)
-
----
-
-```
-
-```

@@ -48,7 +48,7 @@
 - 한 프로세스가 다른 프로세스의 자원에 접근하려면 프로세스 간의 통신(IPC, Inter-Process Communication)을 사용해야 한다.
 
 <div align='center'>
-  <img src="../images/adc/os/process.png" width=500>
+  <img src="./img/6-operating-system/process.png" width=500>
 </div>
 <br>
 
@@ -63,7 +63,7 @@
 - 한 스레드가 프로세스 자원을 변경하면, 다른 이웃 스레드(sibling thread)도 그 변경 결과를 즉시 볼 수 있다.
 
 <div align='center'>
-  <img src="../images/adc/os/thread.png" width=700>
+  <img src="./img/6-operating-system/thread.png" width=700>
 </div>
 
 #### References
@@ -166,7 +166,7 @@ CPU에서 여러 프로세스를 돌아가면서 작업을 처리하는 데 이 
 캐시 메모리의 성능은 적중률에 의해 결정된다.
 
 <div align='center'>
-  <img src="../images/adc/os/hit_rate.PNG" width=300>
+  <img src="./img/6-operating-system/hit-rate.PNG" width=300>
 </div>
 
 #### References
@@ -314,7 +314,7 @@ if __name__=="__main__":
 > **스케줄링의 단계**
 
 <div align='center'>
-<img src="../images/penguin/scheduling-level.png" width="80%">
+<img src="./img/6-operating-system/scheduling-level.png" width="80%">
 </div>
 <br/>
 
@@ -369,7 +369,7 @@ if __name__=="__main__":
 **비동기**는 요청 결과에 관계 없이 바로 다음 요청을 수행하고, 결과는 `콜백` 함수를 통해 받는다. 비동기는 설계가 복잡하지만 효율적이다.
 
 <div align='center'>
-    <img src='../images/heath/sync_async.png' height='250px '/>
+    <img src='./img/6-operating-system/sync-async.png' height='250px '/>
 </div>
 <br/>
 
@@ -407,7 +407,7 @@ if __name__=="__main__":
 메모리에 프로세스들을 올리다보면 아래 사진과 같이 빈 공간(free) 이 생긴다. 이 공간을 fragmentation(단편화) 이라고 한다. 현재 메모리에서 프로세스와 단편화를 파악하고 프로세스가 연속적으로 메모리 주소에 할당되게 단편화를 없애는 방법을 압축이라 한다. 압축은 효율적이지 못하기 때문에 좋은 메모리 관리 방법이 아니다.
 
 <div align='center'>
-    <img src='../images/heath/fragmentation.png' height='70px '/>
+    <img src='./img/6-operating-system/fragmentation.png' height='70px '/>
 </div>
 <br/>
 
@@ -420,7 +420,7 @@ if __name__=="__main__":
 세그멘테이션은 세그멘트 간에 할당되지 않은 공간이 남는 외부 단편화가 발생할 수 있다.
 
 <div align='center'>
-    <img src='../images/heath/segmentation.png' height='160px '/>
+    <img src='./img/6-operating-system/segmentation.png' height='160px '/>
 </div>
 <br/>
 
@@ -441,7 +441,7 @@ if __name__=="__main__":
 **Demand Paging** 는 프로세스에서 현재 필요한 페이지만 메모리에 올리는 방법이다. 이를 위한 페이지 테이블은 기존의 테이블에서 valid 와 modified 가 추가적으로 필요하다.
 
 <div align='center'>
-    <img src='../images/heath/demand_paging.png' height='350px '/>
+    <img src='./img/6-operating-system/demand-paging.png' height='350px '/>
 </div>
 <br/>
 
@@ -504,13 +504,20 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 
 > 멀티 스레드 모델
 
-<img src="/images/sally/2021-07-01-04-12-15.png" width="70%">
+<div align="center">
+<img src="./img/6-operating-system/multi-thread-model.png" width="70%">
+</div>
+<br/>
 
 사용자 수준 스레드와 커널 수준 스레드에 얘기하기 전에, 멀티 스레드 모델을 먼저 이해하는 것이 좋다. 멀티 스레드 모형이 위와 같이 존재하고, 어떤 멀티 스레드 모델을 사용하느냐에 따라서, 다르게 동작하기 때문에 사용자/커널 수준 스레드 차이가 발생하는 것이다. 추가적으로, 다대다 모델과 일대일 모델과 다대일 모델을 모두 채택하여 사용하는 경우가 있는데, 이를 `혼합형 모델`이라고 한다.
 
 > 사용자/커널 수준 스레드 구조 차이
 
-![threads](/images/sally/2021-06-05-21-34-17.png)
+<div align="center">
+<img src="./img/6-operating-system/user-kernel-thread
+.png" width="70%">
+</div>
+<br/>
 
 > 스레드를 생성하는 방법
 
@@ -533,7 +540,10 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 
 **메모리 단편화(Memory Fragmentation)** 는 RAM에서 메모리의 공간이 작은 조각으로 나뉘어져 사용가능한 메모리가 존재하지만, 할당이 불가능한 상태를 말한다. 자세히 설명하자면, 어떤 태스크가 메모리를 할당받기 위해서는, 연속된 메모리 공간이 필요하다. 그러나 메모리 단편화가 일어나면, 할당되지 않은 메모리의 총량이 충분해도, 이들이 작은 메모리 파편(Memory Fragment)으로 존재하고 있기 때문에 메모리 할당이 불가능한 상황이 발생한다.
 
-<img src="/images/sally/2021-06-05-22-40-05.png" width="70%">
+<div align='center'>
+<img src="./img/6-operating-system/memory-fragmentation.png" width="70%">
+</div>
+<br/>
 
 **내부 단편화(Internal Fragmentation)** 란, 메모리를 할당할 때 프로세스가 필요한 양보다 더 큰 메모리가 할당되어서 프로세스에서 사용하는 메모리 공간이 낭비 되는 상황을 말한다. 예를 들어, 메모장을 켰는데 OS가 4kb를 할당해주었다고 해보자. 그런데 실제로는 1kb만큼만 사용했다고 한다면, 필요 이상으로 프로세스가 메모리를 할당받았으므로 내부 단편화가 3kb만큼 생겼다고 할 수 있다.
 
@@ -547,14 +557,25 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 #### 메모리 단편화의 해결방법
 
 1. **압축(Compaction)기법**
-   - 주기적으로 삭제 공간을 회수하여, 메모리 공간을 정리하는 방식이다. 그러나 비용이 많이 든다는 단점이 있다.
-2. **페이징(Paging)기법** - 가상메모리사용, 외부 단편화 해결, 내부 단편화 존재  
-   <img src="/images/sally/2021-06-06-01-12-59.png" width="60%">
-   - 쉽게말해, 프로세스를 일정한 단위로 잘라서 사용하자는 방식이다. 프로세스의 주소 공간을 동일한 크기의 페이지 단위로 나누어 물리적 메모리의 서로 다른 위치에 페이지들을 저장하는 방식을 말한다. 이때, 논리(가상) 메모리의 단위는 페이지(page), 물리 메모리의 단위는 프레임(frame)이라고 부른다.
-   - 페이징 기법을 사용하면 연속적이지 않은 공간도 활용할 수 있기 때문에 외부 단편화 문제를 해결할 수 있다. 대신 페이지 단위에 알맞게 꽉채워 쓰는게 아니므로 내부 단편화 문제는 여전히 존재한다. 페이지 단위를 작게하면 내부 단편화 문제도 해결할 수 있겠지만 대신 page mapping 과정이 많아지므로 오히려 효율이 떨어질 수 있다.
+
+주기적으로 삭제 공간을 회수하여, 메모리 공간을 정리하는 방식이다. 그러나 비용이 많이 든다는 단점이 있다.
+
+2. **페이징(Paging)기법** - 가상메모리사용, 외부 단편화 해결, 내부 단편화 존재
+
+<div align='center'>
+<img src="./img/6-operating-system/paging.png" width="60%">
+</div>
+
+- 쉽게말해, 프로세스를 일정한 단위로 잘라서 사용하자는 방식이다. 프로세스의 주소 공간을 동일한 크기의 페이지 단위로 나누어 물리적 메모리의 서로 다른 위치에 페이지들을 저장하는 방식을 말한다. 이때, 논리(가상) 메모리의 단위는 페이지(page), 물리 메모리의 단위는 프레임(frame)이라고 부른다.
+- 페이징 기법을 사용하면 연속적이지 않은 공간도 활용할 수 있기 때문에 외부 단편화 문제를 해결할 수 있다. 대신 페이지 단위에 알맞게 꽉채워 쓰는게 아니므로 내부 단편화 문제는 여전히 존재한다. 페이지 단위를 작게하면 내부 단편화 문제도 해결할 수 있겠지만 대신 page mapping 과정이 많아지므로 오히려 효율이 떨어질 수 있다.
+
 3. **세그멘테이션(Segmentation)기법** - 가상메모리사용, 내부 단편화 해결, 외부 단편화 존재
-   ![segmentation](/images/sally/2021-06-06-01-15-31.png)
-   - 하나의 프로세스를 구성하는 주소 공간은 일반적으로 코드, 데이터, 스택 등의 의미 있는 단위들로 구성되며, 이렇게 기능적인 구조를 하나의 세그먼트 단위로 삼아, 분할하여 저장된다. 즉, 페이징기법에서 가상메모리를 같은 크기의 단위로 분할했지만 세그멘테이션 기법에서는 가상메모리를 서로 크기가 다른 논리적 단위인 세그먼트로 분할해서 메모리를 할당하여 실제 메모리 주소로 변환을 하게 된다. 각 세그먼트는 연속적인 공간에 저장되어 있다. 세그먼트들의 크기가 다르기 때문에 미리 분할해 둘 수 없고 메모리에 적재될 때 빈 공간을 찾아 할당해야한다. 마찬가지로 mapping을 위해 세그먼트 테이블이 필요하다. 프로세스가 필요한 메모리 만큼 할당해주기 때문에 내부단편화는 일어나지 않으나 여전히 중간에 프로세스가 메모리를 해제하면 생기는 hole, 즉 외부 단편화 문제는 여전히 존재한다.
+
+<div align='center'>
+<img src="./img/6-operating-system/segmentation-method.png" width="60%">
+</div>
+
+하나의 프로세스를 구성하는 주소 공간은 일반적으로 코드, 데이터, 스택 등의 의미 있는 단위들로 구성되며, 이렇게 기능적인 구조를 하나의 세그먼트 단위로 삼아, 분할하여 저장된다. 즉, 페이징기법에서 가상메모리를 같은 크기의 단위로 분할했지만 세그멘테이션 기법에서는 가상메모리를 서로 크기가 다른 논리적 단위인 세그먼트로 분할해서 메모리를 할당하여 실제 메모리 주소로 변환을 하게 된다. 각 세그먼트는 연속적인 공간에 저장되어 있다. 세그먼트들의 크기가 다르기 때문에 미리 분할해 둘 수 없고 메모리에 적재될 때 빈 공간을 찾아 할당해야한다. 마찬가지로 mapping을 위해 세그먼트 테이블이 필요하다. 프로세스가 필요한 메모리 만큼 할당해주기 때문에 내부단편화는 일어나지 않으나 여전히 중간에 프로세스가 메모리를 해제하면 생기는 hole, 즉 외부 단편화 문제는 여전히 존재한다.
 
 #### References
 
@@ -572,7 +593,9 @@ Context Switching이란, 현재 실행중인 프로세스의 정보를 저장하
 
 Context Switching 과정은 다음과 같다.
 
-![context_switching](/images/sally/2021-06-05-19-54-53.png)
+<div align='center'>
+<img src="./img/6-operating-system/context-switching.png">
+</div>
 
 1. Interrupt나 시스템 호출에 의해 context switching 요구
 2. User Mode에서 Kernel Mode로 변경
@@ -616,7 +639,10 @@ Process는 Thread보다 Context Switching 오버헤드가 크다. Thread는 Stac
 
 > 표준 스와핑과 페이지 단위 스와핑
 
-![swapping](/images/sally/2021-06-05-16-25-30.png)
+<div align='center'>
+  <img src='./img/6-operating-system/swapping.png'/>
+</div>
+<br/>
 
 스와핑을 사용하면, 실제 물리 메모리보다 더 많은 프로세스를 수용할 수 있다. 스와핑의 가장 중요한 역할은 프로세스의 수를 조절하여, 다중 프로그래밍의 정도(degree of muliprogramming)를 조절 할 수 있다는 것이다. 유휴 상태가 오래 지속되는 프로세스가 스와핑에 적합하며, swap out 될 대상 프로세스는 스와퍼(swapper)라고 불리는 **중기 스케쥴러**(medium-term scheduler)에 의해 선정된다. 주의할 점은, 스와핑이라는 개념이 프로세스가 종료되어 그 주소 공간을 디스크로 내쫓는 것이 아니라, 특정한 이유로 수행 중인 프로세스의 주소 공간을 일시적으로 메모리에서 디스크로 내려놓는 것을 의미한다는 것이다.
 
@@ -631,5 +657,3 @@ Process는 Thread보다 Context Switching 오버헤드가 크다. Thread는 Stac
 - [[운영체제]Swapping 스와핑(swap 스왑)이란? - 양햄찌가 만드는 세상](https://jhnyang.tistory.com/103)
 - [운영체제에서 스와핑(swapping) - 노는 게 제일 좋아](https://luv-n-interest.tistory.com/478)
 - [os/CH.07 메모리 관리 - cs-special-forces-headquarters](https://github.com/LandvibeDev/cs-special-forces-headquarters/blob/main/os/CH.07%20%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC/CH07%20%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A6%AC%201b36c524aebc4550908d46538a87c73e.md)
-
----
