@@ -1,4 +1,5 @@
 ## 📌 현재 레포 개선 중에 있습니다. 조금만 기다려주세요🙏
+
 ## 👉 [면접 레포 개선하기](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/projects/2)
 
 ---
@@ -40,7 +41,7 @@
 
 ### [📈 Statistics/Math](./answers/1-statistics-math.md)
 
-- 고유값(eigen value)와 고유벡터(eigen vector)에 대해 설명해주세요. 그리고 왜 중요할까요?
+- 고유값(eigen value)와 고유벡터(eigen vector)이 무엇이고 왜 중요한지 설명해주세요.
 - 샘플링(Sampling)과 리샘플링(Resampling)에 대해 설명해주세요. 리샘플링은 무슨 장점이 있을까요?
 - 확률 모형과 확률 변수는 무엇일까요?
 - 누적 분포 함수와 확률 밀도 함수는 무엇일까요? 수식과 함께 표현해주세요.
