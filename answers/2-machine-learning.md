@@ -1,10 +1,4 @@
-<div align='center'>
-  <h1>🤖 Machine Learning 🤖</h1>
-</div>
-
-> 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.
-
----
+> **질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.**
 
 ## Table of Contents
 
@@ -44,7 +38,7 @@
 
 #### 알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)
 
-평가지표(metric)을 크게 `분류를 위한 평가지표`와 `회귀를 위한 평가지표`로 나눌 수 있다.
+평가지표(metric)을 크게 **분류를 위한 평가지표**와 **회귀를 위한 평가지표**로 나눌 수 있다.
 
 ---
 
@@ -52,45 +46,35 @@
 
 > **정확도(accuracy)**
 
-`정확도`는 <u>모델의 예측이 얼마나 정확한지</u>를 의미한다. 정확도는 <strong>(예측 결과가 동일한 데이터 개수)/(전체 예측 데이터 개수)</strong>로 계산할 수 있다. 하지만 라벨 불균형이 있는 데이터에서 정확도를 사용하면 안 된다. 예를 들면, 0과 1의 비율이 9:1인 데이터가 있다고 했을 때, 모두 0으로 예측하면 정확도가 90%가 나올 것이다. 이는 잘못된 판단이므로 정확한 판단을 위해서는 다른 지표를 사용해야 한다.
+정확도는 **모델의 예측이 얼마나 정확한지**를 의미한다. 정확도는 <strong>(예측 결과가 동일한 데이터 개수)/(전체 예측 데이터 개수)</strong>로 계산할 수 있다. 하지만 라벨 불균형이 있는 데이터에서 정확도를 사용하면 안 된다. 예를 들면, 0과 1의 비율이 9:1인 데이터가 있다고 했을 때, 모두 0으로 예측하면 정확도가 90%가 나올 것이다. 이는 잘못된 판단이므로 정확한 판단을 위해서는 다른 지표를 사용해야 한다.
 
 > **오차 행렬(confusion matrix)**
 
-<div align='center'>
-    <img height='250px' src='./img/2-machine-learning/confusion-matrix.png'/>
-</div>
+![오차 행렬](./img/2-machine-learning/confusion-matrix.png)
 
-<br/>
-
-`오차 행렬`은 <u>모델이 예측을 하면서 얼마나 헷갈리고 있는지를 보여주는 지표</u>이다. 주로 이진 분류에서 많이 사용하며 이진 분류에 대한 오차 행렬은 위의 그림처럼 같이 나타낼 수 있다. True Positive는 긍정으로 예측을 했는데 실제로 긍정인 경우를, False Positive는 긍정으로 예측했는데 실제로 부정인 경우를, False Negative는 부정으로 예측했는데 실제로 긍정인 경우를, True Negative는 부정으로 예측했는데 실제로 부정인 경우를 말한다. 위의 값을 바탕으로 모델이 어떤 오류를 발생시켰는지를 살펴볼 수 있다.
+오차 행렬은 **모델이 예측을 하면서 얼마나 헷갈리고 있는지를 보여주는 지표**이다. 주로 이진 분류에서 많이 사용하며 이진 분류에 대한 오차 행렬은 위의 그림처럼 같이 나타낼 수 있다. True Positive는 긍정으로 예측을 했는데 실제로 긍정인 경우를, False Positive는 긍정으로 예측했는데 실제로 부정인 경우를, False Negative는 부정으로 예측했는데 실제로 긍정인 경우를, True Negative는 부정으로 예측했는데 실제로 부정인 경우를 말한다. 위의 값을 바탕으로 모델이 어떤 오류를 발생시켰는지를 살펴볼 수 있다.
 
 참고로 정확도는 <strong>(TN + TP) / (TN + FP + FN + TP)</strong>로 계산할 수 있다.
 
 > **정밀도(precision), 재현율(recall)**
 
-정밀도와 재현율은 <u>긍정 데이터 예측 성능에 초점을 맞춘 평가지표</u>이다. `정밀도`란 예측을 긍정으로 한 데이터 중 실제로 긍정인 비율을 말하며, `재현율`은 실제로 긍정인 데이터 중 긍정으로 예측한 비율을 말한다. 오차 행렬을 기준으로 정밀도는 <strong>TP / (FP + TP)</strong>으로, 재현율은 <strong>TP / (FN + TP)</strong>으로 계산할 수 있다.
+정밀도와 재현율은 **긍정 데이터 예측 성능에 초점을 맞춘 평가지표**이다. 정밀도란 **예측을 긍정으로 한 데이터 중 실제로 긍정인 비율**을 말하며, 재현율은 **실제로 긍정인 데이터 중 긍정으로 예측한 비율**을 말한다. 오차 행렬을 기준으로 정밀도는 <strong>TP / (FP + TP)</strong>으로, 재현율은 <strong>TP / (FN + TP)</strong>으로 계산할 수 있다.
 
-정밀도와 재현율은 트레이드오프 관계를 갖는다. 정밀도는 FP를, 재현율은 FN을 낮춤으로써 긍정 예측의 성능을 높인다. 이 같은 특성 때문에 정밀도가 높아지면 재현율은 낮아지고 재현율이 높아지면 정밀도는 낮아진다. 가장 좋은 경우는 두 지표 다 적절히 높은 경우이다.
+정밀도와 재현율은 **트레이드오프 관계**를 갖는다. 정밀도는 FP를, 재현율은 FN을 낮춤으로써 긍정 예측의 성능을 높인다. 이 같은 특성 때문에 정밀도가 높아지면 재현율은 낮아지고 재현율이 높아지면 정밀도는 낮아진다. 가장 좋은 경우는 두 지표 다 적절히 높은 경우이다.
 
 > **F1-Score**
 
-<u>정밀도와 재현율 한 쪽에 치우치지 않고 둘 다 균형을 이루는 것</u>을 나타낸 것이 `F1-Score`이다. F1-Score는 정밀도와 재현율의 조화평균으로 계산할 수 있다.
+**정밀도와 재현율 한 쪽에 치우치지 않고 둘 다 균형을 이루는 것**을 나타낸 것이 `F1-Score`이다. F1-Score는 정밀도와 재현율의 조화평균으로 계산할 수 있다.
 
-<!-- $$
+$$
 F1 = \frac{2}{\frac{1}{recall} + \frac{1}{precision}} = 2 * \frac{precision * recall}{precision + recall}
-$$ -->
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=F1%20%3D%20%5Cfrac%7B2%7D%7B%5Cfrac%7B1%7D%7Brecall%7D%20%2B%20%5Cfrac%7B1%7D%7Bprecision%7D%7D%20%3D%202%20*%20%5Cfrac%7Bprecision%20*%20recall%7D%7Bprecision%20%2B%20recall%7D%0D"></div>
+$$
 
 > **ROC-AUC**
 
-<div align='center'>
-    <img height='250px' src='./img/2-machine-learning/roc-curve.png'/>
-</div>
+![ROC AUC](./img/2-machine-learning/roc-curve.png)
 
-<br/>
-
-`ROC`는 <u>FPR(False Positive Rate)가 변할 때 TPR(True Positive Rate)가 어떻게 변하는지를 나타내는 곡선</u>을 말한다. 여기서 FPR이란 <strong>FP / (FP + TN)</strong>이고, TPR은 <strong>TP / (FN + TP)</strong>으로 재현율을 말한다. 그럼 어떻게 FPR을 움직일까? 바로 분류 결정 임계값을 변경함으로써 움직일 수 있다. FPR이 0이 되려면 임계값을 1로 설정하면 된다. 그럼 긍정의 기준이 높으니 모두 부정으로 예측될 것이다. 반대로 1이 되려면 임계값을 0으로 설정하여 모두 긍정으로 예측시키면 된다. 이렇게 임계값을 움직이면서 나오는 FPR과 TPR을 각각 x와 y 좌표로 두고 그린 곡선이 ROC이다.
+ROC는 **FPR(False Positive Rate)가 변할 때 TPR(True Positive Rate)가 어떻게 변하는지를 나타내는 곡선**을 말한다. 여기서 FPR이란 <strong>FP / (FP + TN)</strong>이고, TPR은 <strong>TP / (FN + TP)</strong>으로 재현율을 말한다. 그럼 어떻게 FPR을 움직일까? 바로 분류 결정 임계값을 변경함으로써 움직일 수 있다. FPR이 0이 되려면 임계값을 1로 설정하면 된다. 그럼 긍정의 기준이 높으니 모두 부정으로 예측될 것이다. 반대로 1이 되려면 임계값을 0으로 설정하여 모두 긍정으로 예측시키면 된다. 이렇게 임계값을 움직이면서 나오는 FPR과 TPR을 각각 x와 y 좌표로 두고 그린 곡선이 ROC이다.
 
 AUC는 ROC 곡선의 넓이를 말한다. AUC가 높을수록 즉, AUC가 왼쪽 위로 휘어질수록 좋은 성능이 나온다고 판단한다. 즉, TPR이 높고 FPR이 낮을수록 예측 오류는 낮아지기 때문에 성능이 잘 나온다 볼 수 있다.
 
@@ -98,39 +82,31 @@ AUC는 ROC 곡선의 넓이를 말한다. AUC가 높을수록 즉, AUC가 왼쪽
 
 마지막으로 **회귀 작업**에 적용할 수 있는 평가지표를 살펴보자.
 
-`MAE(Mean Absolute Error)`는 예측값과 정답값 사이의 차이의 절대값의 평균을 말한다.
+MAE(Mean Absolute Error)는 **예측값과 정답값 사이의 차이의 절대값의 평균**을 말한다.
 
-<!-- $$
+$$
 MAE = \frac{1}{N} \sum^N_{i=1} |y_i - \acute{y_i}|
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=MAE%20%3D%20%5Cfrac%7B1%7D%7BN%7D%20%5Csum%5EN_%7Bi%3D1%7D%20%7Cy_i%20-%20%5Cacute%7By_i%7D%7C%0D"></div>
+MSE(Mean Squared Error)는 **예측값과 정답값 사이의 차이의 제곱의 평균**을 말하며, MAE와 달리 제곱을 했기 때문에 이상치에 민감하다.
 
-`MSE(Mean Squared Error)`는 예측값과 정답값 사이의 차이의 제곱의 평균을 말하며, MAE와 달리 제곱을 했기 때문에 이상치에 민감하다.
-
-<!-- $$
+$$
 MSE = \frac{1}{N} \sum^N_{i=1} (y_i - \acute{y_i})^2
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=MSE%20%3D%20%5Cfrac%7B1%7D%7BN%7D%20%5Csum%5EN_%7Bi%3D1%7D%20(y_i%20-%20%5Cacute%7By_i%7D)%5E2%0D"></div>
+RMSE(Root Mean Squared Error)는 **MSE에 루트를 씌운 값**을 말한다.
 
-`RMSE(Root Mean Squared Error)`는 MSE에 루트를 씌운 값을 말한다.
-
-<!-- $$
+$$
 RMSE = \sqrt{MSE} = \sqrt{\frac{1}{N} \sum^N_{i=1} (y_i - \acute{y_i})^2}
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=RMSE%20%3D%20%5Csqrt%7BMSE%7D%20%3D%20%5Csqrt%7B%5Cfrac%7B1%7D%7BN%7D%20%5Csum%5EN_%7Bi%3D1%7D%20(y_i%20-%20%5Cacute%7By_i%7D)%5E2%7D%0D"></div>
+RMSLE(Root Mean Squared Logarithmic Error)는 RMSE와 비슷하나 **예측값과 정답값에 각각 로그를 씌워 계산**을 한다.
 
-`RMSLE(Root Mean Squared Logarithmic Error)`는 RMSE와 비슷하나 예측값과 정답값에 각각 로그를 씌워 계산을 한다.
-
-<!-- $$
+$$
 RMSLE = \sqrt{\frac{1}{N} \sum^N_{i=1} (\log(y_i+1) - \log(\acute{y_i}+1))^2}
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=RMSLE%20%3D%20%5Csqrt%7B%5Cfrac%7B1%7D%7BN%7D%20%5Csum%5EN_%7Bi%3D1%7D%20(%5Clog(y_i%2B1)%20-%20%5Clog(%5Cacute%7By_i%7D%2B1))%5E2%7D%0D"></div>
-
-`R Squared`는 분산을 기반으로 예측 성능을 평가하는 지표를 말한다. 정답값의 분산 대비 예측값의 분산 비율을 지표로 하며, 1에 가까울수록 정확도가 높다.
+R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 말한다. 정답값의 분산 대비 예측값의 분산 비율을 지표로 하며, 1에 가까울수록 정확도가 높다.
 
 #### References
 
@@ -146,9 +122,9 @@ $$ -->
 
 #### 정규화를 왜 해야할까요? 정규화의 방법은 무엇이 있나요?
 
-`정규화`는 개별 피처의 크기를 모두 똑같은 단위로 변경하는 것을 말한다. 정규화를 하는 이유는 <u>피처의 스케일이 심하게 차이가 나는 경우 값이 큰 피처가 더 중요하게 여겨질 수 있기 때문</u>이다. 이를 막기 위해 피처 모두 동일한 스케일로 반영되도록 하는 것이 정규화이다.
+정규화는 **개별 피처의 크기를 모두 똑같은 단위로 변경하는 것**을 말한다. 정규화를 하는 이유는 **피처의 스케일이 심하게 차이가 나는 경우 값이 큰 피처가 더 중요하게 여겨질 수 있기 때문**이다. 이를 막기 위해 피처 모두 동일한 스케일로 반영되도록 하는 것이 정규화이다.
 
-정규화하는 방법으로는 대표적으로 두 가지가 존재한다. 첫 번째 정규화 방법은 <strong>최소-최대 정규화(min-max normalization)</strong>으로 각 피처의 최소값을 0, 최대값을 1로 두고 변환하는 방법이다. 값을 <!-- $x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x">로, 최소값을 <!-- $min$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=min">, 최대값을 <!-- $max$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=max">로 둘 때, 정규화된 값은 <!-- $\frac{x - min}{max - min}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cfrac%7Bx%20-%20min%7D%7Bmax%20-%20min%7D">으로 계산할 수 있다. 두 번째 정규화 방법으로 <strong>Z-점수 정규화(z-score normalization)</strong>이 있다. 이 방법은 각 피처의 표준편차와 평균으로 값을 정규화시킨다. 정규화된 값은 <!-- $\frac{x - mean}{std}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cfrac%7Bx%20-%20mean%7D%7Bstd%7D">로 계산할 수 있다.
+정규화하는 방법으로는 대표적으로 두 가지가 존재한다. 첫 번째 정규화 방법은 <strong>최소-최대 정규화(min-max normalization)</strong>으로 각 피처의 최소값을 0, 최대값을 1로 두고 변환하는 방법이다. 값을 $$x$$로, 최소값을 $$min$$, 최대값을 $$max$$로 둘 때, 정규화된 값은 $$\frac{x - min}{max - min}$$으로 계산할 수 있다. 두 번째 정규화 방법으로 <strong>Z-점수 정규화(z-score normalization)</strong>이 있다. 이 방법은 각 피처의 표준편차와 평균으로 값을 정규화시킨다. 정규화된 값은 $$\frac{x - mean}{std}$$로 계산할 수 있다.
 
 #### References
 
@@ -161,13 +137,9 @@ $$ -->
 
 #### Local Minima와 Global Minima에 대해 설명해주세요.
 
-<div align='center'>
-    <img height='250px' src='./img/2-machine-learning/local-minima-global-minima.png'/>
-</div>
+![Maxima와 Minima](./img/2-machine-learning/local-minima-global-minima.png)
 
-<br/>
-
-비용 함수(cost function)에서의 `Global Minima`는 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, `Local Minima`는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minima를 뺀 지점을 말한다. Local Minima는 자칫 에러가 **최소화되는 지점을 찾았다고 착각**할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
+비용 함수(cost function)에서의 **Global Minima**는 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, **Local Minima**는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minima를 뺀 지점을 말한다. Local Minima는 자칫 에러가 **최소화되는 지점을 찾았다고 착각**할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
 
 #### References
 
@@ -180,11 +152,9 @@ $$ -->
 
 #### 차원의 저주에 대해 설명해주세요.
 
-<div align='center'>
-    <img height='250px' src='./img/2-machine-learning/curse-of-dimensionality.png'/>
-</div>
+![차원의 저주](./img/2-machine-learning/curse-of-dimensionality.png)
 
-`차원의 저주란 데이터 차원이 증가할수록 해당 공간의 크기가 기하급수적으로 증가하여 데이터 간 거리가 기하급수적으로 멀어지고 희소한 구조를 갖게 되는 현상을 말한다. 이를 해결하기 위해서는 차원을 증가시킨만큼 더 많은 데이터를 추가하거나 PCA, LDA, LLE, MDS와 같은 차원 축소 알고리즘으로 차원을 줄여 해결할 수 있다.
+차원의 저주란 **데이터 차원이 증가할수록 해당 공간의 크기가 기하급수적으로 증가하여 데이터 간 거리가 기하급수적으로 멀어지고 희소한 구조를 갖게 되는 현상**을 말한다. 이를 해결하기 위해서는 차원을 증가시킨만큼 더 많은 데이터를 추가하거나 PCA, LDA, LLE, MDS와 같은 차원 축소 알고리즘으로 차원을 줄여 해결할 수 있다.
 
 #### References
 
@@ -198,7 +168,7 @@ $$ -->
 
 #### dimension reduction 기법으로 보통 어떤 것들이 있나요?
 
-차원 축소는 `피처 선택(feature selection)`과 `피처 추출(feature extraction)`으로 나눌 수 있다. 우선 피처 선택은 <u>특정 피처에 종속성이 강한 불필요한 피처는 제거하고 데이터의 특징을 잘 표현하는 주요 피처만 선택하는 것</u>을 말한다. 반면 피처 추출은 기존 피처를 저차원의 피처로 압축하여, <u>피처를 함축적으로 잘 설명할 수 있도록 저차원으로 매핑하는 것</u>을 말한다. 대표적인 피처 추출 알고리즘으로 PCA, SVD, NMF, LDA 등이 있다.
+차원 축소는 **피처 선택(feature selection)**과 **피처 추출(feature extraction)**으로 나눌 수 있다. 우선 피처 선택은 특정 피처에 종속성이 강한 불필요한 피처는 제거하고 데이터의 특징을 잘 표현하는 주요 피처만 선택하는 것을 말한다. 반면 피처 추출은 기존 피처를 저차원의 피처로 압축하여, 피처를 함축적으로 잘 설명할 수 있도록 저차원으로 매핑하는 것을 말한다. 대표적인 피처 추출 알고리즘으로 PCA, SVD, NMF, LDA 등이 있다.
 
 #### References
 
@@ -210,7 +180,7 @@ $$ -->
 
 #### PCA는 차원 축소 기법이면서, 데이터 압축 기법이기도 하고, 노이즈 제거기법이기도 합니다. 왜 그런지 설명해주실 수 있나요?
 
-`PCA(Principle Component Analysis)`는 <u>입력 데이터의 공분산 행렬을 기반으로 고유벡터를 생성하고 이렇게 구한 고유 벡터에 입력 데이터를 선형 변환하여 차원을 축소하는 방법</u>이다. 차원은 곧 입력 데이터의 피처를 뜻하므로 데이터 압축 기법으로 볼 수도 있다.
+PCA(Principle Component Analysis)는 **입력 데이터의 공분산 행렬을 기반으로 고유벡터를 생성하고 이렇게 구한 고유 벡터에 입력 데이터를 선형 변환하여 차원을 축소하는 방법**이다. 차원은 곧 입력 데이터의 피처를 뜻하므로 데이터 압축 기법으로 볼 수도 있다.
 
 또한 PCA는 고유값이 가장 큰, 즉 데이터의 분산이 가장 큰 순으로 주성분 벡터를 추출하는데, 가장 나중에 뽑힌 벡터보다 가장 먼저 뽑힌 벡터가 데이터를 더 잘 설명할 수 있기 때문에 노이즈 제거 기법이라고도 불린다.
 
@@ -247,41 +217,29 @@ $$ -->
 
 #### Markov Chain을 고등학생에게 설명하려면 어떤 방식이 제일 좋을까요?
 
-> 마코프 체인(Markov Chain)
+> **마코프 체인(Markov Chain)**
 
-마코프 성질(Markov Property)을 지닌 이산 확률 과정(Discrete-time Stochastic Pross)
+마코프 체인이란 **마코프 성질을 지닌 이산 확률 과정(Discrete-time Stochastic Pross)**을 말한다.
 
-> 마코프 성질(Markov Property)
+> **마코프 성질(Markov Property)**
 
-n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정 기간의 상태에만 영향을 받는 것을 의미한다. 예를 들면 동전 던지기는 독립 시행이기 때문에 n번째의 상태가 앞이던지 뒤이던지 간에 n+1번째 상태에 영향을 주지 않는다. 하지만 1차 마코프 체인은 n번째 상태가 n+1번째 상태를 결정하는데에 영향을 미친다. (시간 t에서의 관측은 단지 최근 r개의 관측에만 의존한다는 가정을 하고 그 가정하에서 성립)
+$$n+1$$회의 상태(state)는 오직 $$n$$회에서의 상태, 혹은 그 이전 일정 기간의 상태에만 영향을 받는 것을 의미한다. 예를 들면 동전 던지기는 독립 시행이기 때문에 $$n$$번째의 상태가 앞이던지 뒤이던지 간에 $$n+1$$번째 상태에 영향을 주지 않는다. 하지만 1차 마코프 체인은 $$n$$번째 상태가 $$n+1$$번째 상태를 결정하는데에 영향을 미친다. (시간 $$t$$에서의 관측은 단지 최근 $$r$$개의 관측에만 의존한다는 가정을 하고 그 가정하에서 성립한다.)
 
-<div align='center'>
-    <img src="./img/2-machine-learning/markov-chain.png" width=400/>
-</div>
+![마코프 체인](./img/2-machine-learning/markov-chain.png)
 
-<br/>
+정리하면 마코프 체인은 **확률변수(random variable)가 어떤 상태(state)에 도달할 확률이 오직 바로 이전 시점의 상태(state)에 달려 있는 경우**를 가리킨다.
 
-정리하면 마코프 체인은 확률변수(random variable)가 어떤 상태(state)에 도달할 확률이 오직 바로 이전 시점의 상태(state)에 달려 있는 경우를 가리킨다.
+예를 들어, 오늘의 날씨가 어제의 날씨에만 의존하면 1차 마코프 체인, 이틀 전까지의 날씨에만 의존하면 2차 마코프 체인이다.
 
-예를 들어 오늘의 날씨가 어제의 날씨에만 의존하면 1차 마코프 체인, 이틀 전까지의 날씨에만 의존하면 2차 마코프 체인이다.
+> **마코프 모델(Markov Model)**
 
-> 마코프 모델
+마코프 **모델은 위의 가정하에 확률적 모델을 만든 것으로써 가장 먼저 각 상태를 정의**하게 된다. 상태(state)는 $$V = v_1, ... , v_m$$로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 <strong>상태 전이 확률(State transition Probability)</strong>을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 $$a_{ij}$$는 상태 $$v_i$$에서 상태 $$v_j$$로 이동할 확률을 의미한다. 아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
 
-마코프 모델은 위의 가정하에 확률적 모델을 만든 것으로써, 가장 먼저 각 상태를 정의하게 된다. 상태(state)는 <!-- $V = v_1, ... , v_m$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=V%20%3D%20v_1%2C%20...%20%2C%20v_m">로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 <strong>상태 전이 확률(State transition Probability)</strong>을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 <!-- $a_{ij}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a_%7Bij%7D">는 상태 <!-- $v_i$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=v_i">에서 상태 <!-- $v_j$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=v_j">로 이동할 확률을 의미한다. 아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
-
-<div align='center'>
-    <img src="./img/2-machine-learning/state-transition-probability.png" width=200/>
-</div>
-
-<br/>
+![상태 전이 확률](./img/2-machine-learning/state-transition-probability.png)
 
 그리고 상태와 상태 전이 확률을 정리하여 <strong>상태 전이도(state transition diagram)</strong>으로도 표현할 수 있다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/state-transition-diagram.png" width=300/>
-</div>
-
-<br/>
+![상태 전이도](./img/2-machine-learning/state-transition-diagram.png)
 
 #### References
 
@@ -295,34 +253,27 @@ n+1회의 상태(state)는 오직 n회에서의 상태, 혹은 그 이전 일정
 
 #### 텍스트 더미에서 주제를 추출해야 합니다. 어떤 방식으로 접근해 나가시겠나요?
 
-> 잠재 디리클레 할당(Latent Dirichlet Allocation, LDA)
+> **잠재 디리클레 할당(Latent Dirichlet Allocation, LDA)**
 
-- 문서의 집합에서 토픽을 찾아내는 프로세스를 뜻하는 토픽 모델링의 대표적인 알고리즘
-- LDA는 **문서들은 토픽들의 혼합으로 구성되어져 있으며, 토픽들은 확률 분포에 기반하여 단어들을 생성한다**고 가정
-- 데이터가 주어지면 LDA는 토픽을 문서가 생성되던 과정을 역추적
-- LDA는 각 문서의 **토픽 분포**와 **각 토픽 내의 단어 분포**를 추정
+잠재 디리클레 할당(LDA)이란 **문서의 집합에서 토픽을 찾아내는 프로세스를 뜻하는 토픽 모델링의 대표적인 알고리즘**을 말한다. LDA는 "문서들은 토픽들의 혼합으로 구성되어져 있으며, 토픽들은 확률 분포에 기반하여 단어들을 생성한다"고 가정하며, 데이터가 주어지면 LDA는 토픽을 문서가 생성되던 과정을 역추적한다.
 
-> LDA 예시
+예를 들어, 다음과 같은 예시 문장 3개가 있다고 가정하자.
 
+```text
 문서1 : 저는 사과랑 바나나를 먹어요
-
 문서2 : 우리는 귀여운 강아지가 좋아요
-
 문서3 : 저의 깜찍하고 귀여운 강아지가 바나나를 먹어요
+```
 
-**<각 문서의 토픽 분포>**
+LDA를 통해 각 문서의 **토픽 분포**와 **각 토픽 내의 단어 분포**를 추정할 수 있다.
 
-문서1 : 토픽 A 100%
-
-문서2 : 토픽 B 100%
-
-문서3 : 토픽 B 60%, 토픽 A 40%
-
-**<각 토픽의 단어 분포>**
-
-토픽A : **사과 20%, 바나나 40%, 먹어요 40%**, 귀여운 0%, 강아지 0%, 깜찍하고 0%, 좋아요 0%
-
-토픽B : 사과 0%, 바나나 0%, 먹어요 0%, **귀여운 33%, 강아지 33%, 깜찍하고 16%, 좋아요 16%**
+- **각 문서의 토픽 분포**
+  - 문서1 : 토픽 A 100%
+  - 문서2 : 토픽 B 100%
+  - 문서3 : 토픽 B 60%, 토픽 A 40%
+- **각 토픽의 단어 분포**
+  - 토픽A : 사과 20%, 바나나 40%, 먹어요 40%, 귀여운 0%, 강아지 0%, 깜찍하고 0%, 좋아요 0%
+  - 토픽B : 사과 0%, 바나나 0%, 먹어요 0%, 귀여운 33%, 강아지 33%, 깜찍하고 16%, 좋아요 16%
 
 LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘의 사용자는 위 결과로부터 두 토픽이 각각 과일에 대한 토픽과 강아지에 대한 토픽이라고 판단해볼 수 있다.
 
@@ -338,51 +289,15 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 #### SVM은 왜 반대로 차원을 확장시키는 방식으로 동작할까요? SVM은 왜 좋을까요?
 
-> SVM(Support Vector Machine)
+SVM(Support Vector Machine)은 데이터가 사상된 공간에서 **경계로 표현**되며, 공간상에 존재하는 **여러 경계 중 가장 큰 폭을 가진 경계를 찾는다.**
 
-- SVM은 데이터가 사상된 공간에서 **경계로 표현**되며, 공간상에 존재하는 **여러 경계 중 가장 큰 폭을 가진 경계를 찾는다.**
+![SVM](./img/2-machine-learning/svm.png")
 
-<div align='center'>
-    <img src="./img/2-machine-learning/svm.png" width=300/>
-</div>
+- $$B_1$$: 결정 경계
+- $$b_{11}$$: plus-plane
+- $$b_{12}$$: minus-plane
 
-<br/>
-
-- <!-- $B_1$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=B_1">: 결정 경계
-- <!-- $b_{11}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=b_%7B11%7D">: plus-plane
-- <!-- $b_{12}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=b_%7B12%7D">: minus-plane
-
-> Margin
-
-- Margin은 plus-plane과 minus-plane 사이의 거리를 의미하며, **최적의 결정 경계는 margin을 최대화**한다.
-
-- SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데, 비선형 분류에서는 입력자료를 다차원 공간상으로 맵핑할 때 <strong>커널 트릭(kernel trick)</strong>을 사용하기도 한다.
-  - 원공간(Input Space)의 데이터를 선형분류가 가능한 고차원 공간(Feature Space)으로 매핑한 뒤 두 범주를 분류하는 초평면을 찾는다. (Kernel-SVM)
-
-<div align='center'>
-    <img src="./img/2-machine-learning/input-space-and-feature-space.png" width=430/>
-</div>
-
-<br/>
-
-<div align='center'>
-    <img src="./img/2-machine-learning/kernel-svm.png" width=430/>
-</div>
-
-<br/>
-
-> 커널 트릭(kernel trick)
-
-- 커널 함수를 이용하여 차원 공간(low dimensional space)을 고차원 공간(high dimensional space)으로 매핑해주는 작업
-- 커널 함수의 종류
-
-<div align='center'>
-    <img src="./img/2-machine-learning/kernel-function.png" width=500/>
-</div>
-
-<br/>
-
-> SVM의 장단점
+SVM의 장단점은 다음과 같다.
 
 | 장점                                              | 단점                                                                  |
 | ------------------------------------------------- | --------------------------------------------------------------------- |
@@ -390,6 +305,24 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 | 신경망 기법에 비해 과적합 정도가 낮다.            | 예측이 어떻게 이루어지는지에 대한 이해와 모델에 대한 해석이 어렵다.   |
 | 예측의 정확도가 높다.                             | 대용량 데이터에 대한 모델 구축 시 속도가 느리며,메모리 할당량이 크다. |
 | 저차원과 고차원 데이터에 대해서 모두 잘 작동한다. |                                                                       |
+
+> **마진(Margin)**
+
+마진(Margin)은 plus-plane과 minus-plane 사이의 거리를 의미하며, **최적의 결정 경계는 마진을 최대화**한다.
+
+SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데, 비선형 분류에서는 입력자료를 다차원 공간상으로 맵핑할 때 <strong>커널 트릭(kernel trick)</strong>을 사용하기도 한다. 원공간(Input Space)의 데이터를 선형분류가 가능한 고차원 공간(Feature Space)으로 매핑한 뒤 두 범주를 분류하는 초평면을 찾는다. (Kernel-SVM)
+
+![](./img/2-machine-learning/input-space-and-feature-space.png)
+
+![](./img/2-machine-learning/kernel-svm.png)
+
+> **커널 트릭(Kernel Trick)**
+
+커널 함수를 이용하여 **차원 공간(low dimensional space)을 고차원 공간(high dimensional space)으로 매핑해주는 작업**을 커널트릭이라 한다.
+
+커널 함수의 종류는 다음과 같다.
+
+![커널 함수의 종류](./img/2-machine-learning/kernel-function.png)
 
 #### References
 
@@ -406,11 +339,9 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 #### 다른 좋은 머신 러닝 대비, 오래된 기법인 나이브 베이즈(naive bayes)의 장점을 옹호해보세요.
 
-> 나이브 베이즈(Naïve Bayes Classification)
-
 데이터에서 변수들에 대한 **조건부 독립을 가정**하는 알고리즘으로 클래스에 대한 사전 정보와 데이터로부터 추출된 정보를 결합하고, <strong>베이즈 정리(Bayes Theorem)</strong>를 이용하여 어떤 데이터가 특정 클래스에 속하는지 분류하는 알고리즘이다.
 
-> 나이브 베이즈의 장단점
+나이브 베이즈의 장단점은 다음과 같다.
 
 | 장점                                                                       | 단점                                                                   |
 | -------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -431,52 +362,35 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 #### 회귀 / 분류시 알맞은 metric은 무엇일까?
 
-[#1. 알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)](#1) 참고
+[#1](#1) 답변을 참고해주세요. 해당 답변에서 서술하지 않은 지표만 추가로 설명합니다.
 
-**회귀**
+> **회귀**
 
-> <!--  $R^2$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=R%5E2"> (결정계수, Coefficient of determination)
+$$
+R^2 = \frac{\sum (\hat{y}_l - \bar{y})}{\sum (y_i - \bar{y})^2}
+$$
 
-- 결정계수는 독립변수의 개수가 많아질수록 결정계수가 1에 가까워진다.
-- 회귀모형이 높은 결정계수를 갖는다면 실제로 모형이 설명력이 높은 것인지 단순히 독립변수의 개수가 많은 것인지 알기 어려워 결정계수를 신뢰할 수 없게 되는 문제가 발생한다.
+결정계수(Coefficient of determination)는 (회귀선에 의해 설명되는 변동)/(전체 변동)을 말하며, 독립변수의 개수가 많아질수록 결정계수가 1에 가까워진다. 회귀모형이 높은 결정계수를 갖는다면 실제로 모형이 설명력이 높은 것인지 단순히 독립변수의 개수가 많은 것인지 알기 어려워 결정계수를 신뢰할 수 없게 되는 문제가 발생한다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/r-square.jpg" height=90/>
-</div>
+$$
+adj R^2 = 1 - \frac{n - 1}{(n - p - 1)(1 - R^2)}
+$$
 
-<br/>
+수정된 결정계수는 결정계수의 문제를 해결하기 위해 표본의 크기(n)와 독립변수의 수(p)를 고려하여 수정된 결정계수를 계산한다.
 
-> <!-- $adj R^2, R_a^2$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=adj%20R%5E2%2C%20R_a%5E2"> (수정된 결정계수, adjusted coefficient of determination)
+> **분류**
 
-- 결정계수의 문제를 해결하기 위해 표본의 크기(n)와 독립변수의 수(p)를 고려하여 수정된 결정계수를 계산한다.
+$$
+- (y - \log (p))) + (1 - y) \log (1-p)
+$$
 
-<div align='center'>
-    <img src="./img/2-machine-learning/adjusted-r-square.jpg" height=100/>
-</div>
+Log Loss 혹은 Binary Crossentropy는 이진 분류에서의 지표로 사용된다.
 
-<br/>
+$$
+LogarithmicLoss = - \frac{1}{N} \sum^N_{i=1} \sum^M_{j=1} y_{ij} * \log (p_{ij})
+$$
 
-**분류**
-
-> Log Loss/Binary Crossentropy
-
-- 이진 분류에서의 metric으로 사용된다.
-
-<div align='center'>
-    <img src="./img/2-machine-learning/log-loss.png" height=35/>
-</div>
-
-<br/>
-
-> Categorical Crossentropy
-
-- 분류해야할 class가 3개 이상인 multiclass 분류에서의 metric으로 사용된다.
-
-<div align='center'>
-    <img src="./img/2-machine-learning/categorical-crossentropy.png" height=70/>
-</div>
-
-<br/>
+Categorical Crossentropy는 분류해야할 클래스가 3개 이상인 멀티 클래스 분류에서의 지표로 사용된다.
 
 #### References
 
@@ -491,45 +405,35 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 #### Association Rule의 Support, Confidence, Lift에 대해 설명해주세요.
 
-> 연관규칙분석(Association Analysis)
+연관규칙분석(Association Analysis)은 흔히 장바구니 분석(Market Basket Analysis) 또는 서열분석(Sequence Analysis)이라고 불린다. 기업의 데이터베이스에서 상품의 구매, 서비스 등 **일련의 거래 또는 사건들 간의 규칙을 발견하기 위해 적용**하며, 연관성 분석의 평가 지표로는 Support, Confidence, Lift를 사용한다.
 
-- 연관성 분석은 흔히 장바구니 분석(Market Basket Analysis) 또는 서열분석(Sequence Analysis)이라고 불린다.
-- 기업의 데이터베이스에서 상품의 구매, 서비스 등 일련의 거래 또는 사건들 간의 규칙을 발견하기 위해 적용한다.
-- 연관성 분석의 평가 지표로는 Support, Confidence, Lift를 사용한다.
+> **Support(지지도)**
 
-1. Support(지지도)
+전체 거래 중 항목 A와 항목 B를 동시에 포함하는 거래의 비율로 정의한다.
 
-- 전체 거래 중 항목 A와 항목 B를 동시에 포함하는 거래의 비율로 정의한다.
+$$
+지지도 = P(A \cap B) = \frac{A와 B가 동시에 포함된 거래수}{전체 거래수} = \frac{A \cap B}{전체}
+$$
 
-<div align='center'>
-    <img src="./img/2-machine-learning/support.png" height=60/>
-</div>
+> **Confidence(신뢰도)**
 
-<br/>
+항목 A를 포함한 거래 중에서 항목 A와 항목 B가 같이 포함될 확률이다. 연관성의 정도를 파악할 수 있다.
 
-2. Confidence(신뢰도)
+$$
+신뢰도 = \frac{P(A \cap B)}{P(A)} = \frac{A와 B가 동시에 포함된 거래수}{A를 포함하는 거래수} = \frac{지지도}{P(A)}
+$$
 
-- 항목 A를 포함한 거래 중에서 항목 A와 항목 B가 같이 포함될 확률이다. 연관성의 정도를 파악할 수 있다.
+> **Lift(향상도)**
 
-<div align='center'>
-    <img src="./img/2-machine-learning/confidence.png" height=60/>
-</div>
+A가 구매되지 않았을 때 품목 B의 구매확률에 비해 A가 구매됐을 때 품목 B의 구매확률의 증가 비이다. 연관규칙 A→B는 품목 A와 품목 B의 구매가 서로 관련이 없는 경우에 향상도가 1이 된다.
 
-<br/>
+$$
+향상도 = \frac{P(B | A)}{P(B)} = \frac{P(A \cap B)}{P(A)P(B)} = \frac{A와 B가 동시에 포함된 거래수}{A를 포함하는 거래수 \times B를 포함하는 거래수} = \frac{신뢰도}{P(B)}
+$$
 
-3. Lift(향상도)
+---
 
-- A가 구매되지 않았을 때 품목 B의 구매확률에 비해 A가 구매됐을 때 품목 B의 구매확률의 증가 비이다. 연관규칙 A→B는 품목 A와 품목 B의 구매가 서로 관련이 없는 경우에 향상도가 1이 된다.
-
-<div align='center'>
-    <img src="./img/2-machine-learning/lift.png" height=60/>
-</div>
-
-<br/>
-
-> 예시
-
-연관규칙 X:{계란, 맥주} → Y:{기저귀} 에 대해
+에를 들어 어떤 슈퍼마켓에서 5명의 고객에 의해 발생된 5($$N = 5$$)건의 거래를 가지고, 연관규칙 X:{계란, 맥주} → Y:{기저귀}에 대해 살펴보자.
 
 | Customer<br>ID | Transaction<br>ID |                 Items                  |
 | :------------: | :---------------: | :------------------------------------: |
@@ -539,18 +443,13 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 |      4811      |       no.4        | <U>계란</U>, 우유, <U>맥주, 기저귀</U> |
 |      8091      |       no.5        |         계란, 우유, 맥주, 콜라         |
 
-- <!-- $N = 5$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=N%20%3D%205"> (전체 transaction 개수)
+$$
+P(Y) = \frac{n(Y)}{N} = \frac{n\left\{no.2, no.3, no.4\right\}}{N} = \frac{3}{5} = 0.6
+$$
 
-- <!-- $P(Y) = \frac{n(Y)}{N} = \frac{n\left\{no.2, no.3, no.4\right\}}{N} = \frac{3}{5} = 0.6$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=P(Y)%20%3D%20%5Cfrac%7Bn(Y)%7D%7BN%7D%20%3D%20%5Cfrac%7Bn%5Cleft%5C%7Bno.2%2C%20no.3%2C%20no.4%5Cright%5C%7D%7D%7BN%7D%20%3D%20%5Cfrac%7B3%7D%7B5%7D%20%3D%200.6">
-
-- 지지도(Support)
-    <!-- $s(X→Y) = \frac{n(X\cup Y)}{N} = \frac{n\left\{no.2, no.4\right\}}{N} = \frac{2}{5} = 0.4$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=s(X%E2%86%92Y)%20%3D%20%5Cfrac%7Bn(X%5Ccup%20Y)%7D%7BN%7D%20%3D%20%5Cfrac%7Bn%5Cleft%5C%7Bno.2%2C%20no.4%5Cright%5C%7D%7D%7BN%7D%20%3D%20%5Cfrac%7B2%7D%7B5%7D%20%3D%200.4">
-
-- 신뢰도(Confidence)
-    <!-- $c(X→Y) = \frac{n(X\cup Y)}{n(X)} = \frac{n\left\{no.2, no.4\right\}}{n\left\{no.2, no.4, no.5\right\}} = \frac{2}{3} = 0.6667$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=c(X%E2%86%92Y)%20%3D%20%5Cfrac%7Bn(X%5Ccup%20Y)%7D%7Bn(X)%7D%20%3D%20%5Cfrac%7Bn%5Cleft%5C%7Bno.2%2C%20no.4%5Cright%5C%7D%7D%7Bn%5Cleft%5C%7Bno.2%2C%20no.4%2C%20no.5%5Cright%5C%7D%7D%20%3D%20%5Cfrac%7B2%7D%7B3%7D%20%3D%200.6667">
-
-- 향상도(Lift)
-    <!-- $Lift(X→Y) = \frac{c(X→Y)}{s(Y)} = \frac{0.6667}{0.6} = 1.1111$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=Lift(X%E2%86%92Y)%20%3D%20%5Cfrac%7Bc(X%E2%86%92Y)%7D%7Bs(Y)%7D%20%3D%20%5Cfrac%7B0.6667%7D%7B0.6%7D%20%3D%201.1111">
+- 지지도(Support) = $$s(X→Y) = \frac{n(X\cup Y)}{N} = \frac{n\left\{no.2, no.4\right\}}{N} = \frac{2}{5} = 0.4$$
+- 신뢰도(Confidence) = $$c(X→Y) = \frac{n(X\cup Y)}{n(X)} = \frac{n\left\{no.2, no.4\right\}}{n\left\{no.2, no.4, no.5\right\}} = \frac{2}{3} = 0.6667$$
+- 향상도(Lift) = $$Lift(X→Y) = \frac{c(X→Y)}{s(Y)} = \frac{0.6667}{0.6} = 1.1111$$
 
 #### References
 
@@ -565,49 +464,29 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 > **Newton's Method**
 
-- 방정식 <!-- $f(x)=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x)%3D0">의 해를 근사적으로 찾을 때 사용되는 방법
-- 현재 x값에서 접선을 그리고 접선이 x축과 만나는 지점으로 x를 이동시켜 가면서 점진적으로 해를 찾는 방법
-- 초기값을 잘 주면 금방 해를 찾을 수 있지만 잘못 주면 시간이 오래 걸리거나 아예 해를 찾지 못할 수 있다.
+방정식 $$f(x)=0$$의 해를 근사적으로 찾을 때 사용되는 방법을 말한다. 현재 x값에서 접선을 그리고 접선이 x축과 만나는 지점으로 x를 이동시켜 가면서 점진적으로 해를 찾는다. 초기값을 잘 주면 금방 해를 찾을 수 있지만 잘못 주면 시간이 오래 걸리거나 아예 해를 찾지 못할 수 있다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/newton.png" height=250/>
-</div>
+![뉴턴 방법](./img/2-machine-learning/newton.png)
 
-<br/>
+Newton's method를 수식화하면 아무 값이나 초기값 $$x^1$$에서 시작해서 다음 수식에 따라 수렴할 때까지 계속 x를 이동시켜 나가는 것이다.
 
-Newton's method를 수식화하면 아무 값이나 초기값 <!-- $x^1$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x%5E1">에서 시작해서 다음 수식에 따라 수렴할 때까지 계속 x를 이동시켜 나가는 것이다.
-
-<!-- $$
+$$
 x^{t+1}=x^t-\frac{f(x^t)}{f^\prime(x^t)}
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=x%5E%7Bt%2B1%7D%3Dx%5Et-%5Cfrac%7Bf(x%5Et)%7D%7Bf%5E%5Cprime(x%5Et)%7D%0D" height=50></div>
-
-<br/>
-
-종료 조건은 x 값의 변화가 거의 없을 때까지이다. 즉, <!-- $\left|x^{t+1}-x^t\right|$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cleft%7Cx%5E%7Bt%2B1%7D-x%5Et%5Cright%7C">이 매우 작은 값이면 Newton's method를 종료하고 <!-- $x=x^{t+1}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x%3Dx%5E%7Bt%2B1%7D">이 해, 즉 <!-- $f(x^{t+1})=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x%5E%7Bt%2B1%7D)%3D0">이라고 생각하는 것이다.
+종료 조건은 x 값의 변화가 거의 없을 때까지이다. 즉, $$\left|x^{t+1}-x^t\right|$$이 매우 작은 값이면 Newton's method를 종료하고 $$x=x^{t+1}$$이 해, 즉 $$f(x^{t+1})=0$$이라고 생각하는 것이다.
 
 > **Gradient Descent**
 
-<div align='center'>
-    <img src="./img/2-machine-learning/gradient-descent.png" height=300/>
-</div>
+![경사하강법](./img/2-machine-learning/gradient-descent.png)
 
-<br/>
+경사하강법이란 $$f^\prime(x)$$가 0이 되는 점을 찾는 방법을 말한다. 미분하여 극소점을 찾아가며, 모든 차원과 모든 공간에서 적용이 가능하다.
 
-- <!-- $f^\prime(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f%5E%5Cprime(x)">가 0이 되는 점을 찾는 방법
-- 미분하여 극소점을 찾아가는 방법 (local minimum에 빠질수도 있다는 문제점이 있다)
-- 모든 차원과 모든 공간에서 적용이 가능
+정리하면 경사하강법은 기울기의 특성을 이용하여 어떤 비용함수의 값을 최소화시키기 위한 파라미터 값을 아래와 같이 점진적으로 찾는 방법이다.
 
-Gradient Descent 방법은 그레디언트의 특성을 이용하여 어떤 비용함수의 값을 최소화시키기 위한 파라미터 값을 아래와 같이 점진적으로 찾는 방법이다.
-
-<!-- $$
+$$
 x_{k+1}=x_k-\lambda_k\nabla f(x_k), k\geq0
-$$ -->
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=x_%7Bk%2B1%7D%3Dx_k-%5Clambda_k%5Cnabla%20f(x_k)%2C%20k%5Cgeq0%0D" height=20></div>
-
-<br/>
+$$
 
 #### References
 
@@ -626,7 +505,8 @@ $$ -->
 머신러닝적 접근방법은 모델의 **예측 성공률**을 높이는게 목적이다.  
 따라서 모델의 신뢰도나 정교한 가정보다는 다양한 피쳐를 사용하여 (오버피팅을 감안하더라도) 높은 예측률을 달성하고자 한다.
 
-통계적 접근방법은 분포와 가정을 통해 **신뢰 가능하고 정교한** 모델을 만드는게 목적이다.  
+통계적 접근방법은 분포와 가정을 통해 **신뢰 가능하고 정교한** 모델을 만드는게 목적이다.
+
 따라서 모형을 복잡하지 않고 단순하게 만들고, 어떤 피쳐가 어떤 원인을 주는지 알 수 있도록 한다.
 
 #### References
@@ -642,9 +522,7 @@ $$ -->
 
 딥러닝 이전의 인공신경망은 선형적으로만 회귀, 분류를 수행하기 때문에 레이어를 깊게 쌓지 못했고, 때문에 XOR 문제 같은 복잡한 문제를 풀지 못하는 문제점이 있었다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/xor.png"/>
-</div>
+![XOR 문제](./img/2-machine-learning/xor.png)
 
 하지만 시그모이드와 같은 비선형 함수를 선형 모델에 추가하여 XOR 문제를 해결하고, 편미분 체인룰을 사용한 오차역전파 방법으로 모델을 업데이트할 수 있게 되면서 레이어를 깊게 쌓은 딥러닝 인공신경망이 발전하였다.
 
@@ -680,11 +558,7 @@ ROC 커브는 **이진분류 모델의 성능**을 나타내는 지표이다.
 모델이 참이라고 예측하는 경우는 **FPR** (False Positive Rate, 실제 값이 거짓일 때) 과 **TPR** (True Positive Rate, 실제 값이 참일 때) 두 경우로 나뉜다.  
 FPR 과 TPR 을 그래프에서 x 축, y 축으로 동시에 표현한 ROC 커브를 통해 모델이 얼마나 옳은 값을 잘 예측하는지 알 수 있게 된다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/roc.png" height=300/>
-</div>
-
-<br/>
+![ROC 커브](./img/2-machine-learning/roc.png)
 
 ROC 커브가 좌상단과 가까운 경우 좋은 모델이라고 판단할 수 있다. 모델이 FPR 은 낮게, TPR 은 높게 예측하기 때문이다.
 
@@ -718,11 +592,11 @@ ROC 커브가 좌상단과 가까운 경우 좋은 모델이라고 판단할 수
 
 K-means 는 특성이 비슷한 데이터를 같은 그룹으로 묶어주는 클러스터링 알고리즘으로, k 개의 군집 개수를 정하고 군집의 중심점을 예측하여 각 데이터와 거리를 비교한 후 군집을 결정한다.
 
-K-means 알고리즘의 단점은 다음과 같다.
+**K-means 알고리즘의 단점**은 다음과 같다.
 
-1. K 를 몇 개로 설정하냐에 따라 성능이 달라진다.
-2. K 개 군집의 중심점을 예측하여야 하는데, 어디를 중심점으로 두냐에 따라 성능이 달라진다.
-3. 데이터가 잘 모여있는 경우에 효과적이지, 노이즈가 많은 경우 효과적이지 않다.
+- K 를 몇 개로 설정하냐에 따라 성능이 달라진다.
+- K 개 군집의 중심점을 예측하여야 하는데, 어디를 중심점으로 두냐에 따라 성능이 달라진다.
+- 데이터가 잘 모여있는 경우에 효과적이지, 노이즈가 많은 경우 효과적이지 않다.
 
 #### References
 
@@ -742,55 +616,45 @@ K-means 알고리즘의 단점은 다음과 같다.
 
 모델의 피쳐값이 줄어듦에 따라 특정 피쳐가 너무 큰 값을 갖지 않게 되면서 오버피팅을 방지할 수 있게 된다.
 
-`L1 정규화 (라쏘 회귀)`  
+> **L1 정규화 (라쏘 회귀)**
+
 L1 정규화는 특정 피쳐의 값이 매우 낮은 경우 (아웃라이어) 0에 수렴되는 특징이 있다. 특정 피쳐가 0이 되어 사라지는 것은 **feature selection** 과 동일하다고 볼 수 있다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/l1-regularization.png" height=120/>
-</div>
+$$
+Cost = \sum^N_{i=0} (y_i - \sum^M_{j=0} x_{ij}W_j)^2 + \lambda \sum^M_{j=0} |W_j|
+$$
 
-<br/>
+> **L2 정규화 (릿지 회귀)**
 
-`L2 정규화 (릿지 회귀)`  
 L2 정규화는 특정 웨이트의 값이 매우 낮아도 0에 수렴되지는 않고 가까워지는 특징이 있다. 이는 L1 정규화에 비해 강하지 않게 정규화를 실행하여 항상 선형 모델에 일반화 효과를 줄 수 있다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/l2-regularization.png" height=170/>
-</div>
+$$
+Cost = \sum^N_{i=0} (y_i - \sum^M_{j=0} x_{ij}W_j)^2 + \lambda \sum^M_{j=0} W_j^2
+$$
 
-<br/>
-
-loss 식에 람다 \* 모델의 웨이트에 대한 L1 or L2 norm 을 더해줌으로써 모델의 일반화가 가능해진다.
+loss 식에 람다 모델의 웨이트에 대한 L1 or L2 norm 을 더해줌으로써 모델의 일반화가 가능해진다.
 
 loss 는 데이터 값과 추정 값의 차이로 모델은 loss 를 최소화하는 방향으로 학습하는데, L1 or L2 정규화를 사용하면 loss 가 웨이트의 크기만큼 커지기 때문에 데이터 값에 예측 값이 fit 해지지 않기 때문이다.
 
 > **Norm**
 
-norm 은 벡터의 크기를 나타내는 것으로 L1 norm 은 벡터의 절댓값 크기를 나타내고, L2 norm 은 직선 거리 (제곱의 루트) 를 나타낸다.
+Norm은 벡터의 크기를 나타내는 것으로 L1 Norm은 벡터의 절댓값 크기를 나타내고, L2 Norm은 직선 거리 (제곱의 루트) 를 나타낸다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/norm.png" height=200/>
-</div>
+![Norm](./img/2-machine-learning/norm.png)
 
-<br/>
- 
 위 그림에서 초록선은 L2 norm 을 의미하고, 나머지 선은 L1 norm 을 의미한다.
 
-- L1 loss
+- **L1 loss**
 
-<div align='center'>
-    <img src="./img/2-machine-learning/l1-loss.png" height=60/>
-</div>
-
-<br/>
+$$
+L1LossFunction = \sum^n_{i=1} |y_{true} - y_{predicted}|
+$$
 
 - L2 loss
 
-<div align='center'>
-    <img src="./img/2-machine-learning/l2-loss.png" height=60/>
-</div>
-
-<br/>
+$$
+L2LossFunction = \sum^n_{i=1} (y_{true} - y_{predicted})^2
+$$
 
 #### References
 
@@ -819,26 +683,18 @@ norm 은 벡터의 크기를 나타내는 것으로 L1 norm 은 벡터의 절댓
 - K-겹 교차검증(K-fold Cross Validation)
 - 계층별 k-겹 교차검증(Stratified K-Fold Cross Validation)
 
-> **홀드아웃 교차검증** 방법은 일정한 비율의 validation 데이터셋 하나를 지정하여 검증 데이터셋으로 사용하는 것이다. 홀드아웃 교차검증을 사용하는 경우, 두가지 문제점이 존재한다.
->
-> 1. validation 데이터셋으로 지정된 부분의 데이터가 학습셋으로 사용되지 않는다는 문제
-> 2. validation 데이터셋에 편향되도록 모델을 조정하게 된다는 문제  
->    이를 해결하기 위해 k-겹 교차검증이 등장했다.
+> **홀드 아웃 교차검증**
 
-> **k-겹 교차검증** 방법은 train 데이터를 k개의 fold로 나누어, 그 중 하나의 fold를 validation 데이터셋으로 삼아 검증하는 방법을 k번 반복하여, 그 평균을 결과로서 사용하는 방법이다.  
-> 그러나 k-겹 교차검증 방법은 랜덤하게 validation 데이터셋을 지정하게 되므로, 편향된 데이터로 이뤄진 폴드가 생성될 수 있다는 단점이 있다. 이를 해결하기 위해서 계층별 k-겹 교차검증 방법이 등장했다.
+홀드아웃 교차검증방법은 일정한 비율의 validation 데이터셋 하나를 지정하여 검증 데이터셋으로 사용하는 것이다. 홀드아웃 교차검증을 사용하는 경우, 두가지 문제점이 존재한다.
 
-> **계층별 k-겹 교차검증** 방법은 k-겹 교차검증 방법에서 fold를 나눌때, 랜덤하게 fold를 지정하는 것이 아닌, 각 클래스별 비율을 고려하여 fold를 구성하는 방법이다.
+1. validation 데이터셋으로 지정된 부분의 데이터가 학습셋으로 사용되지 않는다는 문제
+2. validation 데이터셋에 편향되도록 모델을 조정하게 된다는 문제
 
-<div align='center'>
-    <img src="./img/2-machine-learning/stratified-kfold.png" width=70%/>
-</div>
+이를 해결하기 위해 k-겹 교차검증이 등장했다.
 
-<br/>
+> **k-겹 교차검증**
 
-▲ K-Fold 교차검증
-
-교차검증 방법 중, 대표적인 `K-Fold 교차검증`의 세부적인 동작방법은 아래와 같다.
+k-겹 교차검증 방법은 train 데이터를 k개의 fold로 나누어, 그 중 하나의 fold를 validation 데이터셋으로 삼아 검증하는 방법을 k번 반복하여, 그 평균을 결과로서 사용하는 방법이다. 세부적인 동작방법은 다음과 같다.
 
 1. train 데이터셋을 k개의 fold로 나누고, 그 중 하나를 validation 데이터셋으로 지정한다.
 2. validation 데이터셋을 제외한 나머지 폴드들을 train 데이터셋으로 사용하여 모델을 학습한다.
@@ -846,8 +702,16 @@ norm 은 벡터의 크기를 나타내는 것으로 L1 norm 은 벡터의 절댓
 4. 모델을 초기화한 후, 기존 validation 데이터셋이 아닌 다른 fold를 validation 데이터셋으로 지정하고, 2번 과정부터 다시 수행한다.
 5. 모든 fold들이 한번씩 validation 데이터셋으로 사용된 후에는, 저장해둔 검증결과의 평균을 내어, 그것을 최종 validation 결과로 사용한다.
 
-추가) 왜 test 데이터셋 만으로 검증하면 안될까?  
-모든 train 데이터셋을 학습하고, test 데이터셋으로 검증한 결과를 확인한다고 하자. 개발자는 test 데이터셋 점수를 높이기 위해, test 데이터셋에 편향되도록 모델을 튜닝하게 될 것이다. 그러나 중요한 것은 test 데이터셋에 대한 정확도를 높이는 것 뿐만아니라, 모델의 일반적인 정확도를 높이는 것이다. 어떤 데이터가 들어와도 일정하게 높은 정확도를 보여주는 모델이 좋은 모델이라 할 수 있으므로, validation 데이터셋과 test 데이터셋을 분리하여 검증하는 과정을 통해, 모델을 일반화시켜야 한다.
+그러나 k-겹 교차검증 방법은 랜덤하게 validation 데이터셋을 지정하게 되므로, 편향된 데이터로 이뤄진 폴드가 생성될 수 있다는 단점이 있다. 이를 해결하기 위해서 계층별 k-겹 교차검증 방법이 등장했다.
+
+> **계층별 k-겹 교차검증**
+
+계층별 k-겹 교차검증 방법은 k-겹 교차검증 방법에서 fold를 나눌때, 랜덤하게 fold를 지정하는 것이 아닌, 각 클래스별 비율을 고려하여 fold를 구성하는 방법이다.
+
+![계층별 k-겹 교차검증](./img/2-machine-learning/stratified-kfold.png)
+
+> **💡 왜 test 데이터셋 만으로 검증하면 안될까?**  
+> 모든 train 데이터셋을 학습하고, test 데이터셋으로 검증한 결과를 확인한다고 하자. 개발자는 test 데이터셋 점수를 높이기 위해, test 데이터셋에 편향되도록 모델을 튜닝하게 될 것이다. 그러나 중요한 것은 test 데이터셋에 대한 정확도를 높이는 것 뿐만아니라, 모델의 일반적인 정확도를 높이는 것이다. 어떤 데이터가 들어와도 일정하게 높은 정확도를 보여주는 모델이 좋은 모델이라 할 수 있으므로, validation 데이터셋과 test 데이터셋을 분리하여 검증하는 과정을 통해, 모델을 일반화시켜야 한다.
 
 #### References
 
@@ -873,8 +737,8 @@ XGBoost의 장점은 다음과 같다.
 
 **GBM(Gradient Boosting Algorithm)** 이란 회귀분석 또는 분류 분석을 수행할 수 있는 **예측모형**이며 예측모형의 **앙상블 방법론** 중 **부스팅** 계열에 속하는 알고리즘이다. LightGBM, CatBoost, XGBoost는 모두 GBM을 기반으로 만들어졌다. (자세한 내용은 [Gradient Boosting Algorithm의 직관적인 이해 - DeepPlay](https://3months.tistory.com/368) 참고)
 
-> **Q.** boosting 이라는 테크닉 자체가 sequential 한데 어떻게 병렬처리를 할까?  
-> **A.** 세가지 가능성이 제기된다. 나뉜 분기마다 각각 병렬처리하거나, 분기가 나뉘는 지점 계산을 병렬처리 하거나, 처음부터 feature별 정렬을 통해 병렬처리를 할 수 있다. (자세한 내용은 [XGBoost의 병렬처리가 어떻게 가능할까? - GoLab](http://machinelearningkorea.com/2019/07/25/xgboost-%EC%9D%98-%EB%B3%91%EB%A0%AC%EC%B2%98%EB%A6%AC%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C/) 참고)
+> **💡 boosting 이라는 테크닉 자체가 sequential 한데 어떻게 병렬처리를 할까?**  
+> 세가지 가능성이 제기된다. 나뉜 분기마다 각각 병렬처리하거나, 분기가 나뉘는 지점 계산을 병렬처리 하거나, 처음부터 feature별 정렬을 통해 병렬처리를 할 수 있다. (자세한 내용은 [XGBoost의 병렬처리가 어떻게 가능할까? - GoLab](http://machinelearningkorea.com/2019/07/25/xgboost-%EC%9D%98-%EB%B3%91%EB%A0%AC%EC%B2%98%EB%A6%AC%EA%B0%80-%EC%96%B4%EB%96%BB%EA%B2%8C-%EA%B0%80%EB%8A%A5%ED%95%A0%EA%B9%8C/) 참고)
 
 #### References
 
@@ -887,11 +751,7 @@ XGBoost의 장점은 다음과 같다.
 
 #### 앙상블 방법엔 어떤 것들이 있나요?
 
-<div align='center'>
-    <img src="./img/2-machine-learning/ensemble.png" width=80%/>
-</div>
-
-<br/>
+![앙상블 기법](./img/2-machine-learning/ensemble.png)
 
 **앙상블(Ensemble)** 은 여러개의 모델을 조합해서 그 결과를 뽑아 내는 방법이다. "정확도가 높은 강한 모델을 하나 사용하는 것보다, 정확도가 낮은 약한 모델을 여러개 조합 하는 방식의 정확도가 높다"는 개념에서 비롯한 방법이다. `Bagging`, `Boosting`, `Stacking` 등의 방법이 있다.
 
@@ -901,9 +761,8 @@ XGBoost의 장점은 다음과 같다.
 
 **스태킹(Stacking)** 이란 여러 개별 모델이 예측한 결과값을 다시 학습 데이터셋으로 사용해서 모델을 만드는 방법이다. 그러나 위의 그림과 같은 기본적인 스태킹 방법은 `같은 데이터셋을 통해 예측한 결과를 기반으로 다시 학습`하므로 `오버피팅` 문제점이 있다. 따라서 스태킹에 Cross Validation 방식을 도입하여 이 문제를 해결할 수 있다. 데이터를 쪼개고 이들 중 일부만을 가지고 학습한 모델을 여러개 만들어, 그 결과들을 `메타 학습 데이터셋(meta train dataset)` 으로 사용하여 다시 학습하는 것이다. 이 방법은 많은 개별 모델의 결과를 결합하여 예측 성능을 높일 수 있다는 장점이 있다.
 
-> **배깅 vs 부스팅**  
-> **배깅**은 랜덤 복원추출(부트스트랩)을 여러번 반복하여 모델을 **병렬적**으로 여러개 학습을 시킨 다음, 평균을 내는 방식이다.  
-> 반면, **부스팅**은 모든 데이터를 학습에 사용하되, 오답에 더 큰 가중치를 두어 다음 회차를 학습시키는 **순차적**인 방법이다.
+> **💡 배깅 vs 부스팅**  
+> **배깅**은 랜덤 복원추출(부트스트랩)을 여러번 반복하여 모델을 **병렬적**으로 여러개 학습을 시킨 다음, 평균을 내는 방식이다. 반면, **부스팅**은 모든 데이터를 학습에 사용하되, 오답에 더 큰 가중치를 두어 다음 회차를 학습시키는 **순차적**인 방법이다.
 
 #### References
 
@@ -923,17 +782,15 @@ XGBoost의 장점은 다음과 같다.
 
 d-차원 데이터의 특징 벡터는 다음과 같이 표시된다.
 
-<!-- $$
+$$
 x = (x_1, x_2, ..., x_d)^T
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=x%20%3D%20(x_1%2C%20x_2%2C%20...%2C%20x_d)%5ET%0D" height=30></div>
-
-<br/>
-
-> **컴퓨터비전(이미지)** 에서의 특징은 edge, corner 등을 의미한다. 픽셀 값이 급격히 변화하는 곳, 밝기의 변화, 색상의 변화, 그래디언트의 방향 등의 매칭 정보등을 특징으로 삼는다. SIFT, SURF 등의 방법이 존재한다.  
-> **자연어처리(텍스트)** 에서의 특징은 단어, 형태소, 서브워드, 토큰 등으로 표현될 수 있으며, BOW(Bag-of-Words)는 문서에서 단어의 발생을 설명하는 텍스트의 벡터 표현이다. 만약 8개의 단어로 이루어진 문장을 BoW로 만들면, 8차원(dimension)의 vector로서 하나의 단어를 표현할 수 있다.  
-> **정형데이터**에서의 특징은 각 attribute(열)를 의미한다. 키, 나이, 국적 등이 특징으로 사용될 수 있다.
+> **💡 분야에 따른 피처벡터의 의미**
+>
+> - <strong>컴퓨터비전(이미지)</strong>에서의 특징은 edge, corner 등을 의미한다. 픽셀 값이 급격히 변화하는 곳, 밝기의 변화, 색상의 변화, 그래디언트의 방향 등의 매칭 정보등을 특징으로 삼는다. SIFT, SURF 등의 방법이 존재한다.
+> - **자연어처리(텍스트)** 에서의 특징은 단어, 형태소, 서브워드, 토큰 등으로 표현될 수 있으며, BOW(Bag-of-Words)는 문서에서 단어의 발생을 설명하는 텍스트의 벡터 표현이다. 만약 8개의 단어로 이루어진 문장을 BoW로 만들면, 8차원(dimension)의 vector로서 하나의 단어를 표현할 수 있다.
+> - **정형데이터**에서의 특징은 각 attribute(열)를 의미한다. 키, 나이, 국적 등이 특징으로 사용될 수 있다.
 
 #### References
 
@@ -950,7 +807,7 @@ $$ -->
 
 #### 좋은 모델의 정의는 무엇일까요?
 
-> 한 줄로 요약하자면, 좋은 모델은 **데이터의 패턴을 잘 학습한 모델**로서, **한번도 본적 없는 데이터에 대해 옳은 판단을 내리는 모델**이 좋은 모델이라고 할 수 있다.
+한 줄로 요약하자면, 좋은 모델은 **데이터의 패턴을 잘 학습한 모델**로서, **한번도 본적 없는 데이터에 대해 옳은 판단을 내리는 모델**이 좋은 모델이라고 할 수 있다.
 
 머신러닝, 딥러닝 등을 사용하여 모델을 생성하는 이유는 `기계가 사람 대신 어떠한 결정을 내리기 위함`이다. 따라서 모델은 `결정을 대신하는 기계, 결정기`라고 볼 수 있다.
 이 관점에서, 좋은 결정(옳은 결정)을 내리는 모델이 좋은 모델이다. 주어진 학습 데이터에 과적합된 모델의 경우, 주어진 데이터와 조금만 다른 데이터가 들어오면 제대로 분류하지 못하는 상황이 발생된다.
@@ -972,17 +829,17 @@ $$ -->
 
 50개의 작은 의사결정 나무는 앙상블에서 `Bagging` 기법을 사용한 모델로 볼 수 있다. 따라서 Bagging의 대표적인 방법인 `Random Forest` 방법이 왜 좋은지 설명하는 것으로, 왜 50개의 작은 의사결정 나무가 더 나은지 설명하고자 한다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/random-forest-bagging.png"/>
-</div>
-
-<br/>
+![](./img/2-machine-learning/random-forest-bagging.png)
 
 큰 트리는 작은 편향(bias)와 큰 분산(variance)를 갖기 때문에, 매우 깊이 성장한 트리는 훈련데이터에 대해 과적합(overfitting)하게 된다. Random Forest 방식으로 학습하면, 트리들의 편향은 그대로 유지하면서, **여러 데이터셋/여러 경우에 대해 학습하기 떄문에 분산을 감소**시킬 수 있다. 또한 한 개의 결정트리의 경우, train 데이터에 있는 노이즈에 대해 매우 민감하지만, 여러 트리들을 만들면서 평균을 내면, **노이즈에 대해 강인**해질 수 있다. 따라서 하나의 깊은/큰 의사결정 나무보다 50개의 작은 의사결정 나무가 더 좋은 모델을 완성시킨다고 할 수 있다.
 
-> **Bagging(Bootstrap Aggregating)** 은 Bootstrap(반복, 복원추출)하고, 이를 Aggregation(집계)하는 방법이다. 원래 데이터셋에 대해서 여러개의 작은 데이터셋 N개를 샘플링해서 만든다음, 각각의 데이터를 작은 모델 N개로 학습을 시킨다. 그 다음 학습된 N개의 모델을 모두 하나로 합쳐서 최종적인 모델로 사용하는 방법론을 의미한다. 결국, 병렬적으로 데이터를 나누어 여러 개의 모델을 동시에 학습시키는 방법이다.
+> **Bagging(Bootstrap Aggregating)**
 
-> **Random Forest**는 여러 의사 결정 나무를 생성한 후에 다수결(hard voting) 또는 평균(soft voting)에 따라 출력을 예측하는 알고리즘이다. 즉 의사 결정 나무와 bagging을 혼합한 형태라고 볼 수 있다. Random Forest의 특징은 bootstrap을 이용하여 학습 데이터셋에서 다양한 샘플을 추출하여 일부만 한번의 학습에 사용한다는 것이다. 데이터 샘플링 및 변수 선택을 통해 의사 결정 나무의 다양성을 확보할 수 있다. 이를 통해 예측의 변동성이 줄어들고, 과적합을 방지할 수 있어 결측치에 대해 강건하다는 장점을 가진다. 그러나 데이터의 수가 많아지면 의사결정나무에 비해 속도가 크게 떨어지고, 결과에 대한 해석이 어렵다는 단점이 있다.
+Bagging은 Bootstrap(반복, 복원추출)하고, 이를 Aggregation(집계)하는 방법이다. 원래 데이터셋에 대해서 여러개의 작은 데이터셋 N개를 샘플링해서 만든다음, 각각의 데이터를 작은 모델 N개로 학습을 시킨다. 그 다음 학습된 N개의 모델을 모두 하나로 합쳐서 최종적인 모델로 사용하는 방법론을 의미한다. 결국, 병렬적으로 데이터를 나누어 여러 개의 모델을 동시에 학습시키는 방법이다.
+
+> **Random Forest**
+
+Random Forest는 여러 의사 결정 나무를 생성한 후에 다수결(hard voting) 또는 평균(soft voting)에 따라 출력을 예측하는 알고리즘이다. 즉 의사 결정 나무와 bagging을 혼합한 형태라고 볼 수 있다. Random Forest의 특징은 bootstrap을 이용하여 학습 데이터셋에서 다양한 샘플을 추출하여 일부만 한번의 학습에 사용한다는 것이다. 데이터 샘플링 및 변수 선택을 통해 의사 결정 나무의 다양성을 확보할 수 있다. 이를 통해 예측의 변동성이 줄어들고, 과적합을 방지할 수 있어 결측치에 대해 강건하다는 장점을 가진다. 그러나 데이터의 수가 많아지면 의사결정나무에 비해 속도가 크게 떨어지고, 결과에 대한 해석이 어렵다는 단점이 있다.
 
 #### References
 
@@ -998,54 +855,40 @@ $$ -->
 
 스팸 필터는 메일이 스팸 메일인지 아닌지에 대한 확률을 계산하여, 메일을 **분류(Classification)** 하는 문제이다. 로지스틱 회귀는 회귀를 바탕으로 데이터가 어떤 범주에 속할 확률을 0과 1 사이의 값으로 예측하고 그 확률에 따라 가능성이 더 높은 범주에 속하는 것으로 분류(Classification)해주는 지도 학습 알고리즘이다. 특히 **입력값이 아무리 크거나 작아도 0에서 1 사이의 값으로 맵핑**시킨다는 점에서 분류문제에 적합하다. 따라서 로지스틱 회귀가 스팸필터에 많이 사용된다.
 
-> **추가내용**
-
-<div align='center'>
-    <img src="./img/2-machine-learning/linear-and-logistic-regression.png" width="70%">
-</div>
-
-<br/>
+![](/img/2-machine-learning/linear-and-logistic-regression.png)
 
 > **분류문제에서 로지스틱 회귀가 적절한 이유**
 
 로지스틱 회귀는 **시그모이드 함수(sigmoid function)** 를 통해 선형함수를 0과 1 사이의 함수로 바꾼 것이며, S자 형태를 보인다.
 시그모이드 함수의 정의는 아래와 같다.
 
-<!-- $$
+$$
 S(x) = \frac{1}{1 + e^{-x}} = \frac{e^x}{e^x+1}
-$$ -->
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=S(x)%20%3D%20%5Cfrac%7B1%7D%7B1%20%2B%20e%5E%7B-x%7D%7D%20%3D%20%5Cfrac%7Be%5Ex%7D%7Be%5Ex%2B1%7D%0D" height=30></div>
-
-<br/>
+$$
 
 로지스틱 회귀의 가설함수는 다음과 같다.
 
-<!-- $$
+$$
 H(X) = \frac{1}{1 + e^{-(Wx+b)}} = sigmoid(Wx+b) = \sigma (Wx+b)
-$$ -->
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=H(X)%20%3D%20%5Cfrac%7B1%7D%7B1%20%2B%20e%5E%7B-(Wx%2Bb)%7D%7D%20%3D%20sigmoid(Wx%2Bb)%20%3D%20%5Csigma%20(Wx%2Bb)%0D" height=30></div>
-
-<br/>
+$$
 
 x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값을 반환한다. 확률은 **0에서 1사이의 범위 내에 들어와야하므로** 이러한 형태가 적합하다.
+
 이렇게 H(x)의 값이 0과 1사이로 나오면, 위의 Hypothesis 함수로 regression을 한 결과값이 threshold(ex.0.5) 이상인 경우엔 1로 분류하고, threshold 보다 작으면 0으로 분류하면 되기 떄문이다.
 
 > **분류문제에서 선형회귀가 적합하지 않은 이유**
 
 `그림1`과 같이 주어진 데이터를 표현하는 그래프를 그려, 적절한 지점을 기준으로 두 그룹으로 분류할 수 있다.
+
 이때 `그림2`의 `new` 데이터가 새로 들어왔다고 해보자. 그래프는 새로운 데이터 `new`의 영향을 받아, 아래로 기울어진 형태로 업데이트되어, `그림3`의 붉은색 그래프 형태가 된다.
 이렇게 되면, 원래는 1로 잘 분류되던 것들의 예측값이 기존 threshold 아래로 내려가게되어, 0으로 분류되어버리는 문제가 발생한다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/classification-and-linear-regression.png">
-</div>
+![](./img/2-machine-learning/classification-and-linear-regression.png)
 
-<br/>
+선형회귀 함수는 어떤 입력값이 들어오느냐에 따라 **0과 1 사이의 범위를 벗어나기도** 한다.
 
-선형회귀 함수는 어떤 입력값이 들어오느냐에 따라 **0과 1 사이의 범위를 벗어나기도** 한다.  
-또한, `H(x) = 100x`라는 가설함수(Hypothesis function)이 있다고 하자. x가 0.01 이상인 경우는 모두 1로 x가 0 이하인 경우는 모두 0으로 분류하게 된다. 이처럼 **x값에 너무 민감하게 반응**하는 모델이 만들어질 수 있다. 연산상으로는 매우 작은 값만 바뀌어도 아예 분류자체가 바뀌어버린다.  
+또한, `H(x) = 100x`라는 가설함수(Hypothesis function)이 있다고 하자. x가 0.01 이상인 경우는 모두 1로 x가 0 이하인 경우는 모두 0으로 분류하게 된다. 이처럼 **x값에 너무 민감하게 반응**하는 모델이 만들어질 수 있다. 연산상으로는 매우 작은 값만 바뀌어도 아예 분류자체가 바뀌어버린다.
+
 더 나아가, 선형모델은 확률이 아닌, 점들의 보간(interpolate)만으로 이루어지므로 확률로 해석할 수 없다. 예측값이 확률이 아니기 때문에 한 클래스와 다른 **클래스를 구분할 수 있는 의미 있는 임계값이 없다.** 또한 다중 클래스를 가지는 분류문제로 확장할 수 없다는 문제점도 있다. 이러한 문제점들 때문에, 분류문제에서 선형 회귀 모델은 적합하지 못하다.
 
 #### References
@@ -1062,25 +905,15 @@ x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값�
 
 **최소자승법(OLS, Ordinary Least Squares)** 이란, 산점도를 통해 데이터의 분포 그래프를 그릴때, 이 데이터들의 경향을 알기 위한 최적의 추세선을 그리기 위한 방법 중 하나이다. OLS는 근사적으로 구하려는 해와 실제 해의 오차의 제곱의 합이 최소가 되는 해를 구하는 방법이다.
 
-OLS Regression은 회귀를 통해서 방정식의 상수 값들을 추정하는 데에 사용된다. n개의 입력값과 그에 대응하는 출력값 <!-- $(x_{i},y_{i})(1\leq i\leq n)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=(x_%7Bi%7D%2Cy_%7Bi%7D)(1%5Cleq%20i%5Cleq%20n)">이 있고, 이 계의 방정식이 변수 <!-- $x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x">와 <!-- $\beta=(\beta _{0},\beta _{1},\cdots ,\beta _{k})$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta%3D(%5Cbeta%20_%7B0%7D%2C%5Cbeta%20_%7B1%7D%2C%5Ccdots%20%2C%5Cbeta%20_%7Bk%7D)">인 상수 <!-- $\beta$에 대한 식 $f(x, \beta)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta%24%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%8B%9D%20%24f(x%2C%20%5Cbeta)">으로 주어질 때, <!-- $\sum _{i}(y_{i}-f(x_{i}, \beta))^{2}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Csum%20_%7Bi%7D(y_%7Bi%7D-f(x_%7Bi%7D%2C%20%5Cbeta))%5E%7B2%7D"> 의 값을 최소로 만드는 <!-- $\beta$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta">를 구하는 것이 문제의 목표이다.
+OLS Regression은 회귀를 통해서 방정식의 상수 값들을 추정하는 데에 사용된다. n개의 입력값과 그에 대응하는 출력값 $$(x_{i},y_{i})(1\leq i\leq n)$$이 있고, 이 계의 방정식이 변수 $$x$$와 $$\beta=(\beta_{0},\beta_{1},\cdots ,\beta_{k})$$인 상수 $$\beta$$에 대한 식 $$f(x, \beta)$$으로 주어질 때, $$\sum _{i}(y_{i}-f(x_{i}, \beta))^{2}$$ 의 값을 최소로 만드는 $$\beta$$를 구하는 것이 문제의 목표이다.
 
 추정하고자 하는 파라미터 β에 대한 표현식을 다음과 같이 구할 수 있다.
 
-<!-- $$
+$$
 {\hat {\beta}}=(\mathbf {X} ^{\rm {T}}\mathbf {X})^{-1}\mathbf {X}^{\rm {T}}\mathbf {y} ={\big (}\,{\textstyle \sum }\mathbf {x} _{i}\mathbf {x} _{i}^{\rm {T}}\,{\big )}^{-1}{\big (}\,{\textstyle \sum }\mathbf {x} _{i}y_{i}\,{\big)}
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%7B%5Chat%20%7B%5Cbeta%7D%7D%3D(%5Cmathbf%20%7BX%7D%20%5E%7B%5Crm%20%7BT%7D%7D%5Cmathbf%20%7BX%7D)%5E%7B-1%7D%5Cmathbf%20%7BX%7D%5E%7B%5Crm%20%7BT%7D%7D%5Cmathbf%20%7By%7D%20%3D%7B%5Cbig%20(%7D%5C%2C%7B%5Ctextstyle%20%5Csum%20%7D%5Cmathbf%20%7Bx%7D%20_%7Bi%7D%5Cmathbf%20%7Bx%7D%20_%7Bi%7D%5E%7B%5Crm%20%7BT%7D%7D%5C%2C%7B%5Cbig%20)%7D%5E%7B-1%7D%7B%5Cbig%20(%7D%5C%2C%7B%5Ctextstyle%20%5Csum%20%7D%5Cmathbf%20%7Bx%7D%20_%7Bi%7Dy_%7Bi%7D%5C%2C%7B%5Cbig)%7D%0D" height=35></div>
-
-<br>
-
-> **추가) OLS가 가지는 의미**
-
-<div align='center'>
-    <img src="./img/2-machine-learning/ols.png">
-</div>
-
-<br/>
+![](./img/2-machine-learning/ols.png)
 
 예를들어, 7개 데이터의 경향을 나타내는 추세선을 `그림2`와 같이 그렸다고 하자.
 이때 실제 데이터의 y값(실제값)과 추세선의 y값(예측값)의 차를 **잔차(Residual)** 라고 한다. (아래 그래프에서 잔차는 점선으로 표시)
@@ -1089,18 +922,15 @@ $$ -->
 
 잔차 제곱의 합을 구하는 식은 아래와 같다.
 
-<div align='center'>
-    <img src="./img/2-machine-learning/rss.png" width="50%">
-</div>
-
-<br/>
+![](./img/2-machine-learning/rss.png)
 
 파란색 추세선보다 보라색 추세선의 잔차제곱의 합이 더 작다. 따라서 파란색 추세선보다 보라색 추세선이 위 7개의 데이터를 더 잘 표현해주는 추세선임을 알 수 있다.
 이렇게 잔차 제곱의 합을 최소로 하는 방법이 최소자승법이며, 최소자승법을 활용하여 데이터를 가장 잘 표현하는 선형 회귀선을 그릴 수 있다.
 
-> **추가) OLS vs. MSE**  
-> • OLS(Ordinary Least Square): 선형 회귀 모델을 만들기 위한 선횡 최소 제곱법, 모델을 만들때 사용한다.  
-> • MSE(Mean Square Error): 모델 성능 평가 지표, 모델을 평가할 때 사용한다.
+> **💡 OLS vs. MSE**
+>
+> - OLS(Ordinary Least Square): 선형 회귀 모델을 만들기 위한 선횡 최소 제곱법, 모델을 만들때 사용한다.
+> - MSE(Mean Square Error): 모델 성능 평가 지표, 모델을 평가할 때 사용한다.
 
 #### References
 
