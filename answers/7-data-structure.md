@@ -1,7 +1,5 @@
 > **📌 질문은 <strong>[WeareSoft님의 tech-interview](https://github.com/WeareSoft/tech-interview)</strong>를 참고하였으며, 질문에 대한 답변은 직접 작성하였습니다.**
 
----
-
 ## Table of Contents
 
 - [linked list](#1)
