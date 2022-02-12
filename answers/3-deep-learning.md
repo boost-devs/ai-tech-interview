@@ -1,10 +1,4 @@
-<div align='center'>
-  <h1>🧠 Deep Learning 🧠</h1>
-</div>
-
-> 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.
-
----
+> **📌 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.**
 
 ## Table of Contents
 
@@ -61,22 +55,18 @@
 
 #### 딥러닝은 무엇인가요? 딥러닝과 머신러닝의 차이는?
 
-**딥러닝이란** 여러 층을 가진 인공신경망(Artificial Neural Network, ANN)을 사용하여 머신러닝 학습을 수행하는 것으로, 심층학습이라고도 부른다.
+딥러닝이란 **여러 층을 가진 인공신경망(Artificial Neural Network, ANN)을 사용하여 머신러닝 학습을 수행하는 것**으로, 심층학습이라고도 부른다.
 
-> 딥러닝은 엄밀히 말하자면 머신러닝에 포함되는 개념이다. 따라서 전통적인 머신러닝 기법과 딥러닝 기법의 차이를 설명하고자 한다.
+딥러닝은 엄밀히 말하자면 머신러닝에 포함되는 개념이다. 따라서 전통적인 머신러닝 기법과 딥러닝 기법의 차이를 설명하고자 한다.
 
-> 인공신경망, 퍼셉트론에 대한 내용은 [reference](http://tcpschool.com/deep2018/deep2018_deeplearning_intro)를 참고
+(인공신경망, 퍼셉트론에 대한 내용은 [reference](http://tcpschool.com/deep2018/deep2018_deeplearning_intro)를 참고)
 
-**머신러닝과 딥러닝의 가장 큰 차이점**은 다음과 같다. 기존 머신러닝에서는 학습하려는 데이터의 여러 특징 중에서 `어떤 특징을 추출할지 사람이 직접 분석하고 판단`해야하는 반면, 딥러닝에서는 기계가 `자동으로 학습하려는 데이터에서 특징을 추출`하여 학습하게 된다. 따라서 특징 추출에 사람이 개입(feature engineering)하면 머신러닝, 개입하지 않으면 딥러닝이다.
+머신러닝과 딥러닝의 가장 큰 차이점은 다음과 같다. 기존 머신러닝에서는 학습하려는 데이터의 여러 특징 중에서 **어떤 특징을 추출할지 사람이 직접 분석하고 판단**해야하는 반면, 딥러닝에서는 기계가 **자동으로 학습하려는 데이터에서 특징을 추출**하여 학습하게 된다. 따라서 특징 추출에 사람이 개입(feature engineering)하면 머신러닝, 개입하지 않으면 딥러닝이다.
 또한, 딥러닝은 머신러닝보다 큰 데이터셋과 긴 학습시간이 필요하다. 정형데이터는 주로 머신러닝, 비정형데이터는 주로 딥러닝 방식을 사용한다.
 
-> **추가내용) AI, ML, DL**
+> **AI, ML, DL**
 
-<div align='center'>
-    <img height='250px' src='./img/3-deep-learning/ai.png'/>
-</div>
-
-<br/>
+![](./img/3-deep-learning/ai.png)
 
 **인공지능이란** 인간이 가지고 있는 인식, 판단 등의 지적 능력을 모델링하여 컴퓨터에서 구현하는 것이다. 머신러닝, 딥러닝 외에도 다양한 분야가 인공지능 내에 포함된다.
 
@@ -84,10 +74,9 @@
 
 머신러닝은 아래와 같이 분류된다.
 
-- 지도학습
-  - 분류, 회귀, 추천시스템, 시각/음성 인지(DL), 텍스트분석/NLP(DL)
-- 비지도학습
-  - 클러스터링, 차원축소, 강화학습
+|                             지도 학습                             |          비지도 학습           |
+| :---------------------------------------------------------------: | :----------------------------: |
+| 분류, 회귀, 추천시스템<br/>시각/음성 인지(DL), 텍스트분석/NLP(DL) | 클러스터링, 차원축소, 강화학습 |
 
 #### References
 
@@ -135,26 +124,22 @@
 
 #### Tensorflow, PyTorch 특징과 차이가 뭘까요?
 
-| 구분        | Tensorflow         | PyTorch             |
-| ----------- | ------------------ | ------------------- |
-| 패러다임    | Define and Run     | Define by Run       |
+|    구분     |     Tensorflow     |       PyTorch       |
+| :---------: | :----------------: | :-----------------: |
+|  패러다임   |   Define and Run   |    Define by Run    |
 | 그래프 형태 | Static graph(정적) | Dynamic graph(동적) |
 
 Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패러다임이 다르다는 것이다. Tensorflow는 **Define-and-Run**인 반면에, Pytorch는 **Define-by-Run**이다.
 
-> <strong>Define and Run (Tensorflow)</strong><br>코드를 직접 돌리는 환경인 세션을 만들고, placeholder를 선언하고 이것으로 계산 그래프를 만들고(Define), 코드를 실행하는 시점에 데이터를 넣어 실행하는(Run) 방식으로 이는 계산 그래프를 명확히 보여주면서 실행시점에 데이터만 바꿔줘도 되는 유연함을 장점으로 갖지만, 그 자체로 비직관적이다.
+<strong>Define and Run (Tensorflow)</strong>은 코드를 직접 돌리는 환경인 세션을 만들고, placeholder를 선언하고 이것으로 계산 그래프를 만들고(Define), 코드를 실행하는 시점에 데이터를 넣어 실행하는(Run) 방식이다. 이는 계산 그래프를 명확히 보여주면서 실행시점에 데이터만 바꿔줘도 되는 유연함을 장점으로 갖지만, 그 자체로 비직관적이다.
 
-> <strong>Define by Run (PyTorch)</strong><br>선언과 동시에 데이터를 집어넣고 세션도 필요없이 돌리면 되기때문에 코드가 간결하고 난이도가 낮은 편이다.
+<strong>Define by Run (PyTorch)</strong>은 선언과 동시에 데이터를 집어넣고 세션도 필요없이 돌리면 되기때문에 코드가 간결하고 난이도가 낮은 편이다.
 
 두 프레임워크 모두 계산 그래프를 정의하고 자동으로 그래디언트를 계산하는 기능이 있다. 하지만 Tensorflow의 계산 그래프는 정적이고 Pytorch는 동적이다.
 
 즉 Tensorflow에서는 계산 그래프를 한 번 정의하고 나면 그래프에 들어가는 입력 데이터만 다르게 할 수 있을 뿐 같은 그래프만을 실행할 수 있다. 하지만 PyTorch는 각 순전파마다 새로운 계산 그래프를 정의하여 이용한다.
 
-<div align='center'>
-  <img src="./img/3-deep-learning/static-dynamic-graph.png">
-</div>
-
-<br/>
+![](./img/3-deep-learning/static-dynamic-graph.png)
 
 #### References
 
@@ -167,24 +152,21 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 
 #### Data Normalization은 무엇이고 왜 필요한가요?
 
-**Data Normalization(데이터 정규화)이란** feature들의 분포(scale)을 조절하여 균일하게 만드는 방법이다. 데이터 정규화가 필요한 이유는 데이터 feature 간 scale 차이가 심하게 날 때, 큰 범위를 가지는 feature(ex. 가격)가 작은 범위를 가지는 feature(ex. 나이)보다 더 강하게 모델에 반영될 수 있기 때문이다.  
+**Data Normalization(데이터 정규화)이란** feature들의 분포(scale)을 조절하여 균일하게 만드는 방법이다. 데이터 정규화가 필요한 이유는 데이터 feature 간 scale 차이가 심하게 날 때, 큰 범위를 가지는 feature(ex. 가격)가 작은 범위를 가지는 feature(ex. 나이)보다 더 강하게 모델에 반영될 수 있기 때문이다.
+
 즉, 데이터 정규화는 모든 데이터 포인트가 동일한 정도의 스케일(중요도)로 반영되도록 하는 역할을 수행하며, 아래와 같은 장점을 얻을 수 있다.
 
 - 학습속도가 개선된다.
 - 노이즈가 작아지므로 오버피팅을 억제시킨다.
 - 데이터를 덜 치우치게 만드므로, 좋은 성능을 보인다.
 
-<div align='center'>
-  <img src="./img/3-deep-learning/data-normalization.png">
-</div>
+![](./img/3-deep-learning/data-normalization.png)
 
-<br/>
-
-> **추가내용) Regularization, Normalization, Standardization**
+> **Regularization, Normalization, Standardization**
 
 **Regularization(정규화, 규제)** 란 모델에 제약(penalty)를 주어 모델의 복잡성을 낮추고, 이를 통해 오버피팅을 방지하는 방법이다. 제약을 사용하면 학습 정확도(train accuracy)는 조금 낮아질 수 있지만, 테스트 정확도(test accuracy)를 높일 수 있다. 정규화에는 `Drop out, Early Stopping, Weight decay(Parameter Norm Penalty)`와 같은 방법이 존재한다.
 
-- 자세한 Regularization 방법은 [reference](https://bsm8734.github.io/posts/bc-d012-3-dlbasic-optimization-regularization/) 참고
+(자세한 Regularization 방법은 [reference](https://bsm8734.github.io/posts/bc-d012-3-dlbasic-optimization-regularization/) 참고)
 
 **Normalization, Standardization**은 모두 데이터의 범위(scale)을 축소하는 방법이다.(re-scaling) 데이터의 범위 재조정이 필요한 이유는 `데이터의 범위가 너무 넓은 곳에 퍼져있을 때(scale이 크다면), 데이터셋이 outlier를 지나치게 반영`하여 오버피팅이 될 가능성이 높기 때문이다. 두 방법은 scale 조절 방식에 차이가 존재한다.
 
@@ -192,12 +174,18 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 
 - `Batch Normalization`: 적용시키려는 레이어의 통계량, 분포를 정규화시키는 방법이다.
 - `Min-Max Normalization`: 모든 데이터 중에서 가장 작은 값을 0, 가장 큰 값을 1로 두고, 나머지 값들은 비율을 맞춰서 모두 0과 1 사이의 값으로 스케일링하는 방법이다. 모든 feature들의 스케일이 동일하지만, 이상치(outlier)를 잘 처리하지 못한다. 식은 아래와 같다.
-  - <!-- $x= {{x - x_{min}} \over {x_{max} - x_{min}}}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x%3D%20%7B%7Bx%20-%20x_%7Bmin%7D%7D%20%5Cover%20%7Bx_%7Bmax%7D%20-%20x_%7Bmin%7D%7D%7D" width="20%">
+
+$$
+x= {{x - x_{min}} \over {x_{max} - x_{min}}}
+$$
 
 **Standardization(표준화)** 란 표준화 확률변수를 구하는 방법이다. 이는 `z-score를 구하는 방법`을 의미한다. z-score normalization이라 불리기도 한다.
 
 - `Z-score`: 관측값이 평균 기준으로 얼마나 떨어져있는지 나타낼 때 사용한다. 각 데이터에서 데이터 전체의 평균을 빼고, 이를 표준편차로 나누는 방식이다. 이상치(outlier)를 잘 처리하지만, 정확히 동일한 척도로 정규화 된 데이터를 생성하지는 않는다. 식은 아래와 같다.
-  - <!-- $z-score = {{x-{\mu}} \over {\sigma}}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=z-score%20%3D%20%7B%7Bx-%7B%5Cmu%7D%7D%20%5Cover%20%7B%5Csigma%7D%7D" width="25%">
+
+$$
+z-score = {{x-{\mu}} \over {\sigma}}
+$$
 
 #### References
 
@@ -213,63 +201,35 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 
 #### 알고있는 Activation Function에 대해 알려주세요. (Sigmoid, ReLU, LeakyReLU, Tanh 등)
 
-**Sigmoid**
+> **Sigmoid**
 
-<div align='center'>
-    <img src='./img/3-deep-learning/sigmoid-formula.png' height='100px '/>
-</div>
-<br/>
+![](./img/3-deep-learning/sigmoid.png)
 
-<div align='center'>
-    <img src='./img/3-deep-learning/sigmoid.png' height='200px '/>
-</div>
-<br/>
+sigmoid 함수는 $$s(z) = \frac{1}{1 + e^{-z}}$$로, 입력을 0~1 사이의 값으로 바꿔준다.
 
-sigmoid 함수는 입력을 0~1 사이의 값으로 바꿔준다.
+입력 값이 크거나 작을 때 기울기가 0에 가까워지는 `saturation` 문제가 있다. 이는 `gradient vanishing` 문제를 야기하므로 요즘에는 활성화 함수로서 잘 사용되지 않는다.
 
-입력 값이 크거나 작을 때 기울기가 0에 가까워지는 `saturation` 문제가 있다.  
-이는 `gradient vanishing` 문제를 야기하므로 요즘에는 활성화 함수로서 잘 사용되지 않는다.
+또한 값이 `zero-centered` 가 아니기 때문에 입력값의 부호에 그대로 영향을 받으므로 경사하강법 과정에서 정확한 방향으로 가지 못하고 지그재그로 움직이는 문제가 있다. ([12-3 참고](#12-3))
 
-또한 값이 `zero-centered` 가 아니기 때문에 입력값의 부호에 그대로 영향을 받으므로 경사하강법 과정에서 정확한 방향으로 가지 못하고 지그재그로 움직이는 문제가 있다. [12-3 참고](#12-3)
+> **Tanh**
 
-**Tanh**
+![](./img/3-deep-learning/tanh.png)
 
-<div align='center'>
-    <img src='./img/3-deep-learning/tanh.png' height='200px '/>
-</div>
-<br/>
+tanh 함수는 입력을 -1~1 사이의 값으로 바꿔준다. sigmoid 함수와 마찬가지로 `saturation` 문제가 있다.
 
-tanh 함수는 입력을 -1~1 사이의 값으로 바꿔준다.
+**> ReLU**
 
-sigmoid 함수와 마찬가지로 `saturation` 문제가 있다.
+![](./img/3-deep-learning/relu.png)
 
-**ReLU**
+ReLU 함수는 $$f(x) = max(0, x)$$으로, 입력이 양수면 그대로, 음수면 0을 출력한다. 계산 효율과 성능에서 뛰어난 성능을 보여 가장 많이 사용되는 활성화 함수이다. 양의 입력에 대해서는 `saturation` 문제가 발생하지 않는다. 음의 입력 값에 대해서는 어떤 업데이트도 되지 않는 `Dead ReLU` 문제가 발생한다.
 
-<div align='center'>
-    <img src='./img/3-deep-learning/relu.png' height='200px '/>
-</div>
-<br/>
+> **Leaky ReLU**
 
-ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다.
+![](./img/3-deep-learning/leaky-relu.png)
 
-> f(x) = max(0, x)
+>
 
-계산 효율과 성능에서 뛰어난 성능을 보여 가장 많이 사용되는 활성화 함수이다.
-
-양의 입력에 대해서는 `saturation` 문제가 발생하지 않는다.
-
-음의 입력 값에 대해서는 어떤 업데이트도 되지 않는 `Dead ReLU` 문제가 발생한다.
-
-**LeakyReLU**
-
-<div align='center'>
-    <img src='./img/3-deep-learning/leaky-relu.png' height='200px '/>
-</div>
-<br/>
-
-> f(x) = max(0.01x, x)
-
-`ReLU` 와 마찬가지로 좋은 성능을 유지하면서 음수 입력이 0이 아니게 됨에 따라 `Dead ReLU` 문제를 해결하였다.
+Leaky ReLU는 $$f(x) = max(0.01x, x)$$으로, ReLU 와 마찬가지로 좋은 성능을 유지하면서 음수 입력이 0이 아니게 됨에 따라 `Dead ReLU` 문제를 해결하였다.
 
 #### References
 
@@ -282,76 +242,47 @@ ReLU 함수는 입력이 양수면 그대로, 음수면 0을 출력한다.
 
 #### 오버피팅일 경우 어떻게 대처해야 할까요?
 
-**Regularization**
+> **Early Stopping**
 
-Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overfitting을 방지하는 방법
+training loss는 계속 낮아지더라도 validation loss는 올라가는 시점을 overfitting으로 간주하여 학습을 종료하는 방법이다.
 
-- Early stopping
+![](./img/3-deep-learning/early-stopping.png)
 
-  - training loss는 계속 낮아지더라도 validation loss는 올라가는 시점을 overfitting으로 간주하여 학습을 종료하는 방법
+> **Parameter Norm Penalty / Weight Decay**
 
-<div align='center'>
-  <img src="./img/3-deep-learning/early-stopping.png" width=500>
-</div>
+비용함수에 제곱을 더하거나($$L_2 Regularization$$) 절댓값을 더해서($$L_1 Regularization$$) weight의 크기에 페널티를 부과하는 방법을 말한다.
 
-<br/>
+$$
+total cost = loss(D ; W) + \frac{\alpha}{2} \lVert W \rVert^2_2
+$$
 
-- Parameter norm penalty (weight decay)
+> **Data augmentation**
 
-  - 비용함수에 제곱을 더하거나(<!-- $L_2 Regularization$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=L_2%20Regularization">) 절댓값을 더해서(<!-- $L_1 Regularization$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=L_1%20Regularization">) weight의 크기에 페널티를 부과하는 방법
+훈련 데이터의 개수가 적을 때, 데이터에 인위적으로 변화를 주어 훈련 데이터의 수를 늘리는 방법이다.
 
-<div align='center'>
-  <img src="./img/3-deep-learning/parameter-norm-penalty.png" width=350>
-</div>
+![](./img/3-deep-learning/data-augmentation.png)
 
-<br/>
+> **Noise robustness**
 
-- Data augmentation
+노이즈나 이상치같은 엉뚱한 데이터가 들어와도 흔들리지 않는(robust 한) 모델을 만들기 위해 input data나 weight에 일부러 노이즈를 주는 방법을 말한다.
 
-  - 훈련 데이터의 개수가 적을 때, 데이터에 인위적으로 변화를 주어 훈련 데이터의 수를 늘리는 방법
+![](./img/3-deep-learning/noise-robustness.png)
 
-<div align='center'>
-  <img src="./img/3-deep-learning/data-augmentation.png" width=450>
-</div>
+> **Label smoothing**
 
-<br/>
+모델이 Ground Truth를 정확하게 예측하지 않아도 되게 만들어 주어 정확하지 않은 학습 데이터셋에 치중되는 경향(overconfident)을 막아주는 방법이다.
 
-- Noise robustness
+> **Dropout**
 
-  - 노이즈나 이상치같은 엉뚱한 데이터가 들어와도 흔들리지 않는(robust 한) 모델을 만들기 위해 input data나 weight에 일부러 노이즈를 주는 방법
+각 계층 마다 일정 비율의 뉴런을 임의로 정해 drop 시키고 나머지 뉴런만 학습하도록 하는 방법을 말한다. 매 학습마다 drop 되는 뉴런이 달라지기 때문에 서로 다른 모델들을 앙상블 하는 것과 같은 효과가 있다. dropout은 **학습 시에만 적용**하고, 추론 시에는 적용하지 않는다.
 
-<div align='center'>
-  <img src="./img/3-deep-learning/noise-robustness.PNG" width=500>
-</div>
+![](./img/3-deep-learning/dropout.png)
 
-<br/>
+> **Batch normalization**
 
-- Label smoothing
+활성화함수의 활성화값 또는 출력값을 정규화하는 방법이다. 각 hidden layer에서 정규화를 하면서 입력분포가 일정하게 되고, 이에 따라 Learning rate을 크게 설정해도 괜찮아진다. 결과적으로 학습속도가 빨라지는 효과가 있다.
 
-  - 모델이 Ground Truth를 정확하게 예측하지 않아도 되게 만들어 주어 정확하지 않은 학습 데이터셋에 치중되는 경향(overconfident)을 막아주는 방법
-
-- Dropout
-
-  - 각 계층 마다 일정 비율의 뉴런을 임의로 정해 drop 시키고 나머지 뉴런만 학습하도록 하는 방법
-  - 매 학습마다 drop 되는 뉴런이 달라지기 때문에 서로 다른 모델들을 앙상블 하는 것과 같은 효과가 있다.
-  - dropout은 **학습 시에만 적용**하고, 추론 시에는 적용하지 않는다.
-
-<div align='center'>
-<img src="./img/3-deep-learning/dropout.png" width=500>
-</div>
-
-<br/>
-
-- Batch normalization
-
-  - 활성화함수의 활성화값 또는 출력값을 정규화하는 방법
-  - 각 hidden layer에서 정규화를 하면서 입력분포가 일정하게 되고, 이에 따라 Learning rate을 크게 설정해도 괜찮아진다. 결과적으로 학습속도가 빨라지는 효과가 있다.
-
-<div align='center'>
- <img src="./img/3-deep-learning/batch-normalization.png" width=500>
-</div>
-
-<br/>
+![](./img/3-deep-learning/batch-normalization.png)
 
 #### References
 
@@ -369,25 +300,20 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 
 하이퍼 파라미터(Hyper-parameter)는 모델링할 때, **사용자가 직접 세팅해주는 값**을 뜻한다. 하이퍼 파라미터는 정해진 최적의 값이 없으며, 사용자의 선험적 지식을 기반으로 설정(휴리스틱)한다. 예를들어 딥러닝의 하이퍼 파라미터에는 학습률, 배치 사이즈 등이 있고, 가중치는 학습 과정에서 바뀌는 값이며 이는 파라미터에 속한다. 하이퍼 파라미터 튜닝 기법에는 Manual Search, Grid Search, Random Search, Bayesian Optimization 등이 있다. 딥러닝에서의 하이퍼 파라미터는 아래의 그림을 참고한다.
 
-<div align='center'>
- <img src="./img/3-deep-learning/hyperparameter.png" width=600>
-</div>
+![](./img/3-deep-learning/hyperparameter.png)
 
-<br/>
-
-> **추가내용) 파라미터 vs. 하이퍼 파라미터**
+> **파라미터 vs 하이퍼 파라미터**
 
 파라미터와 하이퍼 파라미터를 구분하는 기준은 사용자가 직접 설정하느냐 아니냐이다. **사용자가 직접 설정하면 하이퍼 파라미터, 모델 혹은 데이터에 의해 결정되면 파라미터**이다.
+
 딥러닝에서 하이퍼 파라미터는 `학습률, 배치 크기, 은닉층의 개수` 등이 있고, 파라미터는 `가중치, 편향` 등이 있다.
 
-<div align='center'>
- <img src="./img/3-deep-learning/parameter-vs-hyperparameter.png" width=600>
-</div>
+![](./img/3-deep-learning/parameter-vs-hyperparameter.png)
 
-<br/>
+> **용어 정리**
 
-> ✔︎ 선험적 지식: 경험하지 않아도 알 수 있는 것을 말한다.  
-> ✔︎ 휴리스틱: 체계적이면서 합리적인 판단이 굳이 필요하지 않은 상황에서 사람들이 빠르게 사용할 수 있도록, 보다 용이하게 구성된 간편추론의 방법이다. '대충 어림짐작하기', '눈대중으로 맞추기' 등의 방법을 일컫는다.
+- 선험적 지식: 경험하지 않아도 알 수 있는 것을 말한다.
+- 휴리스틱: 체계적이면서 합리적인 판단이 굳이 필요하지 않은 상황에서 사람들이 빠르게 사용할 수 있도록, 보다 용이하게 구성된 간편추론의 방법이다. '대충 어림짐작하기', '눈대중으로 맞추기' 등의 방법을 일컫는다.
 
 #### References
 
@@ -402,59 +328,56 @@ Generalization이 잘되도록 모델에 제약을 주며 학습을 하여 overf
 
 딥러닝에서 가중치를 잘 초기화하는 것은 기울기 소실이나 local minima 등의 문제를 야기할 수 있기 때문에 중요하다.
 
-**LeCun Initialization**  
+> **LeCun Initialization**
+
 딥러닝의 대가 LeCun 교수님이 제시한 초기화 방법으로 들어오는 노드 수에 대해 정규 분포와 균등 분포를 따르는 방법이 있다.
 
-정규 분포를 따르는 방법
+- **정규 분포를 따르는 방법**
 
-<div align='center'>
-    <img src='./img/3-deep-learning/lecun-normal.png' height='120px'/>
-</div>
-<br/>
+$$
+W \sim N(0, Var(W)), \quad Var(W) = \sqrt{\frac{1}{n_{in}}}
+$$
 
-균등 분포를 따르는 방법
+- **균등 분포를 따르는 방법**
 
-<div align='center'>
-    <img src='./img/3-deep-learning/lecun-uniform.png' height='80px'/>
-</div>
-<br/>
+$$
+W \sim U(- \sqrt{\frac{1}{n_{in}}}, + \sqrt{\frac{1}{n_{in}}})
+$$
 
-**Xavier Initialization**  
+> **Xavier Initialization**
+
 LeCun 방법과 비슷하지만 들어오는 노드 수와 나가는 노드 수에 의존하고, 적절한 상수값도 발견하여 사용한 방법이다.
 
-정규 분포를 따르는 방법
+- **정규 분포를 따르는 방법**
 
-<div align='center'>
-    <img src='./img/3-deep-learning/xavier-normal.png' height='120px'/>
-</div>
-<br/>
+$$
+W \sim N(0, Var(W)), \quad Var(W) = \sqrt{\frac{2}{n_{in} + n_{out}}}
+$$
 
-균등 분포를 따르는 방법
+- **균등 분포를 따르는 방법**
 
-<div align='center'>
-    <img src='./img/3-deep-learning/xavier-uniform.png' height='80px'/>
-</div>
-<br/>
+$$
+W \sim U(- \sqrt{\frac{6}{n_{in} + n_{out}}}, + \sqrt{\frac{6}{n_{in} + n_{out}}})
+$$
 
 sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 사용할 경우 0에 수렴하는 문제가 발생한다.  
 따라서 `sigmoid` 나 `tanh` 함수와 주로 많이 사용한다.
 
-**He Initialization**
+> **He Initialization**
+
 `ReLU` 와 함께 많이 사용되는 방법으로, LeCun 방법과 같지만 상수를 다르게 하였다. 들어오는 노드만 고려한다.
 
-정규 분포를 따르는 방법
+- **정규 분포를 따르는 방법**
 
-<div align='center'>
-    <img src='./img/3-deep-learning/he-normal.png' height='120px'/>
-</div>
-<br/>
+$$
+W \sim N(0, Var(W)), \quad Var(W) = \sqrt{\frac{2}{n_{in}}}
+$$
 
-균등 분포를 따르는 방법
+- **균등 분포를 따르는 방법**
 
-<div align='center'>
-    <img src='./img/3-deep-learning/he-uniform.png' height='80px'/>
-</div>
-<br/>
+$$
+W \sim U(- \sqrt{\frac{6}{n_{in}}}, + \sqrt{\frac{6}{n_{in}}})
+$$
 
 #### References
 
@@ -474,17 +397,16 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 특히 DBN(Deep Belief Network)에서는 RBM들을 쌓아올려, 각 볼츠만 머신을 순차적으로 학습시킨다.
 
+![](./img/3-deep-learning/boltzmann-machine.png)
+
 <div align='center'>
-<img src="./img/3-deep-learning/boltzmann-machine.png">
+<img src="">
 </div>
 <br/>
 
 색깔 별 cell의 역할은 아래와 같다.
 
-<div align='left'>
-<img src="./img/3-deep-learning/boltzmann-machine-cell.png" height=300>
-</div>
-<br/>
+![](./img/3-deep-learning/boltzmann-machine-cell.png)
 
 #### References
 
@@ -503,20 +425,17 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 추가적으로 딥러닝 디버깅 툴은 아니지만, logging tool로서 tensorboard, wandb 등이 매우 유용하게 사용될 수 있다.
 
-#### References
-
 ---
 
 ## #11
 
 #### 뉴럴넷의 가장 큰 단점은 무엇인가? 이를 위해 나온 One-Shot Learning은 무엇인가?
 
-사람은 처음 보는 물건 (새 레이블) 에 대해 조금만 봐도 다른 것과 이 물건을 구분해낼 수 있다.  
-하지만 뉴럴넷은 이 물건을 구분해내기 위해서는 이 물건에 대한 많은 데이터를 학습해야한다.
+사람은 처음 보는 물건 (새 레이블) 에 대해 조금만 봐도 다른 것과 이 물건을 구분해낼 수 있다. 하지만 뉴럴넷은 이 물건을 구분해내기 위해서는 이 물건에 대한 많은 데이터를 학습해야한다.
 
-`One-shot Learning` 은 뉴럴넷도 새로운 레이블을 지닌 데이터가 적을 때 (one-shot 에서는 한 개) 에도 모델이 좋은 성능을 내도록 사용되는 방법이다.
+**One-shot Learning** 은 뉴럴넷도 새로운 레이블을 지닌 데이터가 적을 때 (one-shot 에서는 한 개) 에도 모델이 좋은 성능을 내도록 사용되는 방법이다.
 
-이를 위해서는 기존에 다른 레이블의 많은 데이터를 학습하여 데이터의 특성을 잘 이해하는 `pretrained` 모델이 필요하다.
+이를 위해서는 기존에 다른 레이블의 많은 데이터를 학습하여 데이터의 특성을 잘 이해하는 **pretrained** 모델이 필요하다.
 
 학습된 모델에 새로운 레이블의 데이터 하나 던져 주면 모델은 데이터의 특성에 대한 이해를 바탕으로 이 레이블에 대해서도 이해를 하게 된다.
 
@@ -531,11 +450,7 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 #### 요즘 sigmoid 보다 ReLU를 많이 쓰는데 그 이유는?
 
-<div align='center'>
-<img src='./img/3-deep-learning/activation-function.png' height='240px'/>
-</div>
-
-<br/>
+![](./img/3-deep-learning/activation-function.png)
 
 우선 sigmoid와 ReLU 함수의 모양을 보자. sigmoid는 값이 큰 양수일수록 1에, 큰 음수일수록 0에 가까워진다. 반면 ReLU는 값이 양수이면 원래 값을 그대로 가져가고, 음수이면 0이다.
 
@@ -555,14 +470,14 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 #### Non-Linearity라는 말의 의미와 그 필요성은?
 
-비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 <!-- $x_1, x_2, ... , x_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x_1%2C%20x_2%2C%20...%20%2C%20x_n">과 가중치 <!-- $w_1, w_2, ... , w_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=w_1%2C%20w_2%2C%20...%20%2C%20w_n">으로 <!-- $y = w_1*x_1 + w_2*x_2 + ... + w_n*x_n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20w_1*x_1%20%2B%20w_2*x_2%20%2B%20...%20%2B%20w_n*x_n">으로 표현할 수 있으며, 가산성(Additreivityly)과 동차성(Homogeneity)을 만족해야 한다.
+비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 $$x_1, x_2, ... , x_n$$과 가중치 $$w_1, w_2, ... , w_n$$으로 $$y = w_1*x_1 + w_2*x_2 + ... + w_n*x_n$$으로 표현할 수 있으며, 가산성(Additreivityly)과 동차성(Homogeneity)을 만족해야 한다.
 
-- **가산성**: 임의의 수 <!-- $x, y$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=x%2C%20y">에 대해 <!-- $f(x+y) = f(x) + f(y)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(x%2By)%20%3D%20f(x)%20%2B%20f(y)">가 성립
-- **동차성**: 임의의 수 $x, \alpha$에 대해 <!-- $f(\alpha x) = \alpha f(x)$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=f(%5Calpha%20x)%20%3D%20%5Calpha%20f(x)">가 성립
+- **가산성**: 임의의 수 $$x, y$$에 대해 $$f(x+y) = f(x) + f(y)$$가 성립
+- **동차성**: 임의의 수 $$x, \alpha$$에 대해 $$f(\alpha x) = \alpha f(x)$$가 성립
 
 이를 만족하지 못하는 모델을 비선형 관계에 있는 모델이라고 한다.
 
-딥러닝에서 이런 비선형 관계는 활성화 함수(activation function)을 도입함으로써 표현할 수 있다. 그럼 비선형 관계 즉, 활성화 함수가 왜 필요할까? 바로 **활성화 함수를 사용해 여러 층을 쌓아서 더 복잡한 표현을 하기 위해서**이다. 활성화 함수가 <!-- $h(x) = cx$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=h(x)%20%3D%20cx">인 선형 함수라고 생각해보자. 이 때 <!-- $n$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=n">개의 층을 쌓았다고 할 때, 모델은 <!-- $y = h^n(x) = c^nx$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20h%5En(x)%20%3D%20c%5Enx">로 나타낼 수 있다. <!-- $c^n=k$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=c%5En%3Dk">라는 상수로 치환하면 결국 1층을 가진 신경망과 동일하다. 그렇기 때문에 비선형인 활성화 함수가 필요한 것이다.
+딥러닝에서 이런 비선형 관계는 활성화 함수(activation function)을 도입함으로써 표현할 수 있다. 그럼 비선형 관계 즉, 활성화 함수가 왜 필요할까? 바로 **활성화 함수를 사용해 여러 층을 쌓아서 더 복잡한 표현을 하기 위해서**이다. 활성화 함수가 $$h(x) = cx$$인 선형 함수라고 생각해보자. 이 때 $$n$$개의 층을 쌓았다고 할 때, 모델은 $$y = h^n(x) = c^nx$$로 나타낼 수 있다. $$c^n=k$$라는 상수로 치환하면 결국 1층을 가진 신경망과 동일하다. 그렇기 때문에 비선형인 활성화 함수가 필요한 것이다.
 
 #### References
 
@@ -577,11 +492,7 @@ sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 �
 
 ReLU는 양수일 때 <!-- $y=x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3Dx">인 선형 함수와 음수일 때 <!-- $y=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3D0">인 선형 함수 두 개를 결합된 형태이다. 그렇지만 ReLU는 선형 함수가 갖는 가산성을 만족하지 못하기 때문에 비선형 함수로 볼 수 있다. 하지만 ReLU가 어떻게 곡선 함수를 근사할 수 있을까?
 
-<div align='center'>
-<img src='./img/3-deep-learning/relu-approximate.png' height='240px'/>
-</div>
-
-<br/>
+![](./img/3-deep-learning/relu-approximate.png)
 
 ReLU를 여러 개 결합하면, 특정 지점에서 특정 각도만큼 선형 함수를 구부릴 수 있다. 이 성질을 이용하여 곡선 함수 뿐만 아니라 모든 함수에 근사를 할 수 있게 된다.
 
@@ -602,11 +513,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 두 번째 문제는 <strong>편향 이동(Bias Shift)</strong>이다. ReLU는 항상 0이상의 값을 출력하기 때문에 활성화값의 평균이 0보다 커 zero-centered하지 않다. 활성화값이 zero-centered되지 않으면 가중치 업데이트가 동일한 방향으로만 업데이트가 돼서 학습 속도가 느려질 수가 있다. 관련 내용은 [CS231n 6강 8:46](https://youtu.be/wEoyxE0GP2M?t=526)을 참고!
 
-<div align='center'>
-<img src='./img/3-deep-learning/selu-elu.png' height='240px'/>
-</div>
-
-<br/>
+![](./img/3-deep-learning/selu-elu.png)
 
 이를 해결하기 위해 배치 정규화(Batch Normalization)을 사용하거나 zero-centered된 ELU, SeLU와 같은 활성화 함수를 사용한다.
 
@@ -625,13 +532,7 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 #### 편향(bias)는 왜 있는걸까?
 
-<div align='center' >
-<img src='./img/3-deep-learning/bias-example.png' height='250px'/>
-<br/>
-<small><strong>bias별 sigmoid 함수의 위치</strong></small>
-</div>
-
-<br/>
+![bias별 sigmoid 함수의 위치](./img/3-deep-learning/bias-example.png)
 
 편향(bias)는 활성화 함수가 왼쪽 혹은 오른쪽으로 이동한다. 가중치(weight)는 활성화 함수의 가파른 정도 즉, 기울기를 조절하는 반면, 편향(bias)는 **활성화 함수를 움직임으로써 데이터에 더 잘 맞도록 한다.**
 
@@ -648,42 +549,27 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 Gradient Descent는 어떤 함수의 극소점을 찾기 위해 gradient 반대 방향으로 이동해 가는 방법이다.
 
-<div align='center'>
-<img src="./img/3-deep-learning/how-to-gradient-descent.png" width=700>
-</div>
-<br/>
+![](./img/3-deep-learning/how-to-gradient-descent.png)
 
 딥러닝에서는 Loss function을 최소화시키기 위해 파라미터에 대해 Loss function을 미분하여 그 기울기값(gradient)을 구하고, 경사가 하강하는 방향으로 파라미터 값을 점진적으로 찾기위해 사용된다.
 
 Gradient Descent를 수식으로 표현하면 아래와 같다.
 
-<div align='center'>
-<img src="./img/3-deep-learning/gradient-descent-formula.png" width=300>
-</div>
-<br/>
+$$
+W_{t+1} \leftarrow W_t - \eta g_t
+$$
 
-**Gradient Descent의 문제점**
+Gradient Descent의 문제점으로는 크게 두 가지가 있다.
 
-- 적절한 step size(learning rate)
+첫 번째로 적절한 **step size(learning rate)**가 필요하다. step size가 큰 경우 한 번 이동하는 거리가 커지므로 빠르게 수렴할 수 있다는 장점이 있다. 하지만, step size를 너무 크게 설정해버리면 최소값을 계산하도록 수렴하지 못하고 함수 값이 계속 커지는 방향으로 최적화가 진행될 수 있다.
 
-  - step size가 큰 경우 한 번 이동하는 거리가 커지므로 빠르게 수렴할 수 있다는 장점이 있다. 하지만, step size를 너무 크게 설정해버리면 최소값을 계산하도록 수렴하지 못하고 함수 값이 계속 커지는 방향으로 최적화가 진행될 수 있다.
-  - 한편 step size가 너무 작은 경우 발산하지는 않을 수 있지만 최적의 x를 구하는데 소요되는 시간이 오래 걸린다는 단점이 있다.
+한편 step size가 너무 작은 경우 발산하지는 않을 수 있지만 최적의 x를 구하는데 소요되는 시간이 오래 걸린다는 단점이 있다.
 
-<div align='center'>
-  <img src="./img/3-deep-learning/step-size-problem.png">
-</div>
-<br/>
+![](./img/3-deep-learning/step-size-problem.png)
 
-- local minima 문제
+두 번째로 **local minima 문제**이다. gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때문에 어떤 경우에는 local minima에 빠져 계속 헤어나오지 못하는 경우도 생긴다. (자세한 내용은 [#14-1. GD가 Local Minima 문제를 피하는 방법은?](#14-1) 참고)
 
-  - gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때문에 어떤 경우에는 local minima에 빠져 계속 헤어나오지 못하는 경우도 생긴다.
-
-<div align='center'>
-  <img src="./img/3-deep-learning/local-minima-problem.png" width=400>
-</div>
-<br/>
-
-> 자세한 내용은 [#14-1. GD가 Local Minima 문제를 피하는 방법은?](#14-1) 참고
+![](./img/3-deep-learning/local-minima-problem.png)
 
 #### References
 
@@ -696,10 +582,7 @@ Gradient Descent를 수식으로 표현하면 아래와 같다.
 
 #### 왜 꼭 Gradient를 써야 할까? 그 그래프에서 가로축과 세로축 각각은 무엇인가? 실제 상황에서는 그 그래프가 어떻게 그려질까?
 
-<div align='center'>
-<img src="./img/3-deep-learning/cost-gradient.jpeg" height=500>
-</div>
-<br/>
+![](./img/3-deep-learning/cost-gradient.jpeg)
 
 Gradient가 양수이면 올라가는 방향이며 음수이면 내려가는 방향이다. 실제 상황에서는 Gradient 그래프가 0을 중심으로 진동하는 모양이 될 것이다.
 
@@ -713,18 +596,13 @@ Gradient가 양수이면 올라가는 방향이며 음수이면 내려가는 방
 
 #### GD 중에 때때로 Loss가 증가하는 이유는?
 
-<div align='center'>
-<img src="./img/3-deep-learning/cost-gradient-optima.jpeg" height=500>
-</div>
-<br/>
+![](./img/3-deep-learning/cost-gradient-optima.jpeg)
 
-minima에 들어갔다가 나오는 경우일 것이다.
-
-실제로 사용되는 GD에서는 local minima 문제를 피하기 위해 Momentum 등의 개념을 도입한 RMSprop, Adam 등의 optimization 전략을 사용한다.
+minima에 들어갔다가 나오는 경우일 것이다. 실제로 사용되는 GD에서는 local minima 문제를 피하기 위해 Momentum 등의 개념을 도입한 RMSprop, Adam 등의 optimization 전략을 사용한다.
 
 각 optimization 전략에 따라 gradient가 양수인 방향으로도 parameter update step을 가져가는 경우가 생길 수 있으며, 이 경우에는 Loss가 일시적으로 증가할 수 있다.
 
-> 자세한 내용은 [#17. SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?](#17) 참고
+(자세한 내용은 [#17. SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?](#17) 참고)
 
 #### References
 
@@ -740,14 +618,11 @@ minima에 들어갔다가 나오는 경우일 것이다.
 
 이렇게 거꾸로 전파시켜서 최종적으로 출력층에서의 output값에 대한 입력층에서의 input data의 기울기 값을 구할 수 있다.
 
-이 과정에서 `chain rule`이 이용된다.
+이 과정에서 **chain rule**이 이용된다.
 
 출력층 바로 전 layer에서부터 기울기(미분값)을 계산하고 이를 점점 거꾸로 전파시키면서 전 layer들에서의 기울기와 서로 곱하는 형식으로 나아가면 최종적으로 출력층의 output에 대한 입력층에서의 input의 기울기(미분값)을 구할 수가 있다. 이를 그림으로 나타내면 아래와 같다.
 
-<div align='center'>
-<img src="./img/3-deep-learning/backpropagation.png" width=550 height=300>
-</div>
-<br/>
+![](./img/3-deep-learning/backpropagation.png)
 
 역전파 알고리즘이 해결한 문제가 바로 파라미터가 매우 많고 layer가 여러개 있을때 가중치w와 b를 학습시키기 어려웠다는 문제이다.
 
@@ -770,26 +645,11 @@ local minima 문제가 사실은 고차원(High Dimensional)의 공간에서는 
 
 고차원의 공간에서 모든 축의 방향으로 오목한 형태가 형성될 확률은 거의 0에 가깝다. 따라서, 고차원의 공간에서 대부분의 critical point는 local minima가 아니라 saddle point다. 그리고, 고차원의 공간에서 설령 local minima가 발생한다 하더라도 이는 global minimum이거나 또는 global minimum과 거의 유사한 수준의 에러 값을 갖는다. 왜냐하면, critical point에 포함된 위로 볼록인 방향 축의 비율이 크면 클수록 높은 에러를 가지기 때문이다.(실험적 결과) local minima는 위로 볼록인 경우가 하나도 없는 경우이기 때문에 결과적으로 매우 낮은 에러를 갖게 될 것이다.
 
-<div align='center'>
-<img src="./img/3-deep-learning/saddle-point.png" width="60%">
-</div>
-<br/>
+![](./img/3-deep-learning/saddle-point.png)
 
-> **추가자료) Local minima**
+> **Critical point, Saddle point, Local minimum**
 
-Local minima 문제는 에러를 최소화시키는 최적의 파라미터를 찾는 문제에 있어서 아래 그림처럼 파라미터 공간에 수많은 지역적인 홀(hole)들이 존재하여 이러한 local minima에 빠질 경우 전역적인 해(global minimum)를 찾기 힘들게 되는 문제를 일컫는다.
-
-<div align='center'>
-<img src="./img/3-deep-learning/local-and-global-minimum.png" width="70%">
-</div>
-<br/>
-
-> **Critical point, Saddle point, Local minima**
-
-<div align='center'>
-<img src="./img/3-deep-learning/critical-saddle-point-and-local-minima.png" width="80%">
-</div>
-<br/>
+![](./img/3-deep-learning/critical-saddle-point-and-local-minima.png)
 
 - `critical point`: 일차 미분이 0인 지점이다. (local/global)minima, (local/global)maxima, saddle point를 가리킴
 - `local minimum`: 모든 방향에서 극소값을 만족하는 점
@@ -814,41 +674,20 @@ Local minima 문제를 피하는 방법으로는 **Momentum, Nesterov Accelerate
 
 **Momentum**이란 관성을 의미하며, 이전 gradient의 방향성을 담고있는 `momentum` 인자를 통해 흐르던 방향을 어느 정도 유지시켜 local minima에 빠지지 않게 만든다. 즉, 관성을 이용하여, 학습 속도를 더 빠르게 하고, 변곡점을 잘 넘어갈 수 있도록 해주는 역할을 수행한다.
 
-<div align='center'>
-<img src="./img/3-deep-learning/momentum.png" width="50%">
-</div>
-<br/>
+![](./img/3-deep-learning/momentum.png)
 
-**Nesterov Accelerated Gradient(NAG)** 는 모멘텀과 비슷한 역할을 수행하는 `Look-ahead gradient `인자를 포함하여, <!-- $a$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=a"> 라는 `accumulate gradient`가 gradient를 감소시키는 역할을 한다. 모멘텀과 다른 점은, 미리 한 스텝을 옮겨가본 후에 어느 방향으로 갈지 정한다는 것이다.
+**Nesterov Accelerated Gradient(NAG)** 는 모멘텀과 비슷한 역할을 수행하는 `Look-ahead gradient `인자를 포함하여, $$a$$ 라는 `accumulate gradient`가 gradient를 감소시키는 역할을 한다. 모멘텀과 다른 점은, 미리 한 스텝을 옮겨가본 후에 어느 방향으로 갈지 정한다는 것이다.
 
-<div align='center'>
-<img src="./img/3-deep-learning/nag.png" width="45%">
-</div>
-<br/>
+**Adagrad**란 뉴럴넷의 파라미터가 많이 바뀌었는지 적게 바뀌었는지 확인하고, 적게 변한건 더 크게 변하게 하고, 크게 변한건 더 작게 변화시키는 방법이다. Adagrad는 `sum of gradient squares`($$G_t$$)를 사용하는데, 이는 그래디언트가 얼만큼 변했는지를 제곱해서 더하는 것이므로 계속 커진다는 문제가 발생한다. $$G_t$$가 계속 커지면 분모가 점점 무한대에 가까워지게 되어, $$W$$ 업데이트가 되지 않게 되어, 뒤로 갈수록 학습이 점점 안되는 문제점이 발생한다.
 
-- **Momentum vs. NAG**
+![](./img/3-deep-learning/adagrad.png)
 
-<div align='center'>
-<img src="./img/3-deep-learning/momentum-vs-nag.png" width="80%">
-</div>
-<br/>
+**Adadelta**는 `Exponential Moving Average(EMA)`를 사용하여, Adagrad의 $$G_t$$가 계속 커지는 현상을 막을 수 있다. EMA는 현재 타임스텝으로부터 `윈도우 사이즈만큼의 파라미터 변화(그래디언트 제곱의 변화)를 반영`하는 역할을 하는데, 이전의 값을 모두 저장하는 것이 아닌, `이전 변화량에 특정 비율을 곱해 더한 인자`를 따로 두는 방식이다. Adadelta는 learning rate가 없다.
 
-**Adagrad**란 뉴럴넷의 파라미터가 많이 바뀌었는지 적게 바뀌었는지 확인하고, 적게 변한건 더 크게 변하게 하고, 크게 변한건 더 작게 변화시키는 방법이다. Adagrad는 `sum of gradient squares`(<!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">)를 사용하는데, 이는 그래디언트가 얼만큼 변했는지를 제곱해서 더하는 것이므로 계속 커진다는 문제가 발생한다. <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">가 계속 커지면 분모가 점점 무한대에 가까워지게 되어, <!-- $W$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=W"> 업데이트가 되지 않게 되어, 뒤로 갈수록 학습이 점점 안되는 문제점이 발생한다.
+![](./img/3-deep-learning/adadelta.png)
 
-<div align='center'>
-<img src="./img/3-deep-learning/adagrad.png" width="60%">
-</div>
-<br/>
-
-**Adadelta**는 `Exponential Moving Average(EMA)`를 사용하여, Adagrad의 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">가 계속 커지는 현상을 막을 수 있다. EMA는 현재 타임스텝으로부터 `윈도우 사이즈만큼의 파라미터 변화(그래디언트 제곱의 변화)를 반영`하는 역할을 하는데, 이전의 값을 모두 저장하는 것이 아닌, `이전 변화량에 특정 비율을 곱해 더한 인자`를 따로 두는 방식이다. Adadelta는 learning rate가 없다.
-
-<div align='center'>
-<img src="./img/3-deep-learning/adadelta.png" width="70%">
-</div>
-<br/>
-
-> **Momentum**의 더 자세한 내용은 [모멘텀의 수식을 적어 본다면?](#17-3) 참고  
-> **SGD, RMSprop, Adam**에 대한 설명은 [SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?](#17) 참고
+(**Momentum**의 더 자세한 내용은 [모멘텀의 수식을 적어 본다면?](#17-3) 참고)  
+(**SGD, RMSprop, Adam**에 대한 설명은 [SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?](#17) 참고)
 
 #### References
 
@@ -874,8 +713,7 @@ Gradient Descent 방식에서 lacal minima에 도달함은 증명되어있으나
 
 #### Training 세트와 Test 세트를 분리하는 이유는?
 
-모델은 데이터에 대해 예측값을 만들고 정답과 비교하며 업데이트되면서 학습이 된다.  
-그런데 학습 데이터에 대해서는 좋은 성능을 낸다 하더라도 본 적 없는 데이터에 대해서는 잘 대응하지 못하는 **오버피팅** 문제가 생긴다면 좋은 모델이 아니다.
+모델은 데이터에 대해 예측값을 만들고 정답과 비교하며 업데이트되면서 학습이 된다. 그런데 학습 데이터에 대해서는 좋은 성능을 낸다 하더라도 본 적 없는 데이터에 대해서는 잘 대응하지 못하는 **오버피팅** 문제가 생긴다면 좋은 모델이 아니다.
 
 이를 막기 위해 학습된 모델이 처음 보는 데이터에도 강건하게 성능을 내는지 판단하기 위한 수단으로 test 세트를 따로 만든다.
 
@@ -931,15 +769,9 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 #### Batch Normalization의 효과는?
 
-<div align='center' >
-<img src='./img/3-deep-learning/batch-normalization-formula.png' height='250px'/>
-<br/>
-<small><strong>배치 정규화(Batch Normalization) 수식</strong></small>
-</div>
+![배치 정규화(Batch Normalization) 수식](./img/3-deep-learning/batch-normalization-formula.png)
 
-<br/>
-
-배치 정규화(Batch Normalization)은 학습 시 **미니배치 단위로 입력의 분포가 평균이 0, 분산이 1이 되도록 정규화**한다. 더불어 <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cgamma">로 스케일과 <!-- $\beta$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cbeta">로 이동 변환을 수행한다. 이렇게 배치 정규화를 사용하면 다음과 같은 효과를 얻을 수 있다.
+배치 정규화(Batch Normalization)은 학습 시 **미니배치 단위로 입력의 분포가 평균이 0, 분산이 1이 되도록 정규화**한다. 더불어 $$\gamma$$로 스케일과 $$\beta$$로 이동 변환을 수행한다. 이렇게 배치 정규화를 사용하면 다음과 같은 효과를 얻을 수 있다.
 
 - `장점 1` 기울기 소실/폭발 문제가 해결되어 큰 학습률을 설정할 수 있어 학습속도가 빨라진다.
 - `장점 2` 항상 입력을 정규화시키기 때문에 가중치 초깃값에 크게 의존하지 않아도 된다.
@@ -958,15 +790,9 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 #### Dropout의 효과는?
 
-<div align='center' >
-<img src='./img/3-deep-learning/dropout-nn.png' height='250px'/>
-<br/>
-<small><a href='https://www.oreilly.com/library/view/deep-learning-for/9781788295628/'><strong>Deep Learning for Computer Vision</strong></a></small>
-</div>
+![](./img/3-deep-learning/dropout-nn.png)
 
-<br/>
-
-드롭아웃(Dropout)은 **설정된 확률 <!-- $p$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=p">만큼 은닉층(hidden layer)에 있는 뉴런을 무작위로 제거하는 방법**으로, 오버피팅을 방지하기 위한 방법 중 하나이다. (정확히는 출력을 0으로 만들어 더이상의 전파가 되지 않도록 한다.) 드롭아웃(Dropout)은 학습 때마다 무작위로 뉴런을 제거하므로 매번 다른 모델을 학습시키는 것으로 해석할 수 있다. 그리고 추론 시 출력에 제거 확률 <!-- $p$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=p">를 곱함으로써 앙상블 학습에서 여러 모델의 평균을 내는 효과를 얻을 수 있다.
+드롭아웃(Dropout)은 <strong>설정된 확률 $$p$$만큼 은닉층(hidden layer)에 있는 뉴런을 무작위로 제거하는 방법</strong>으로, 오버피팅을 방지하기 위한 방법 중 하나이다. (정확히는 출력을 0으로 만들어 더이상의 전파가 되지 않도록 한다.) 드롭아웃(Dropout)은 학습 때마다 무작위로 뉴런을 제거하므로 매번 다른 모델을 학습시키는 것으로 해석할 수 있다. 그리고 추론 시 출력에 제거 확률 $$p$$를 곱함으로써 앙상블 학습에서 여러 모델의 평균을 내는 효과를 얻을 수 있다.
 
 #### References
 
@@ -1003,15 +829,11 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 #### SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?
 
-> SGD
+> **SGD**
 
-Loss Function을 계산할 때 전체 train set을 사용하는 것을 Batch Gradient Descent 라고 한다.
+Loss Function을 계산할 때 전체 train set을 사용하는 것을 Batch Gradient Descent 라고 한다. 그러나 이렇게 계산을 할 경우 한번 step을 내딛을 때 전체 데이터에 대해 Loss Function을 계산해야 하므로 너무 많은 계산량이 필요하다.
 
-그러나 이렇게 계산을 할 경우 한번 step을 내딛을 때 전체 데이터에 대해 Loss Function을 계산해야 하므로 너무 많은 계산량이 필요하다.
-
-이를 방지하기 위해 보통은 Stochastic Gradient Descent(SGD)라는 방법을 사용한다.
-
-이 방법에서는 loss function을 계산할 때 전체 데이터(batch) 대신 데이터 한 개 또는 일부 조그마한 데이터의 모음(mini-batch)에 대해서만 loss function을 계산한다.
+이를 방지하기 위해 보통은 Stochastic Gradient Descent(SGD)라는 방법을 사용한다. 이 방법에서는 loss function을 계산할 때 전체 데이터(batch) 대신 데이터 한 개 또는 일부 조그마한 데이터의 모음(mini-batch)에 대해서만 loss function을 계산한다.
 
 **데이터 한 개**를 사용하는 경우를 <strong>Stochastic Gradient Descent(SGD)</strong>, <strong>데이터의 일부(mini-batch)</strong>를 사용하는 경우를 <strong>mini-batch Stochastic Gradient Descent(mini-batch SGD)</strong>라고 하지만 **오늘날의 딥러닝에서 일반적으로 통용되는 SGD는 mini-batch SGD이다.**
 
@@ -1019,45 +841,33 @@ Loss Function을 계산할 때 전체 train set을 사용하는 것을 Batch Gra
 
 또한, SGD를 사용할 경우 Batch Gradient Descent에서 빠질 local minima에 빠지지 않고 더 좋은 방향으로 수렴할 가능성도 있다.
 
-> RMSprop
+> **RMSprop**
 
 RMSProp은 딥러닝의 대가 제프리 힌톤이 제안한 방법으로서, Adagrad의 단점을 해결하기 위한 방법이다.
 
-Adagrad의 식에서 gradient의 제곱값을 더해나가면서 구한 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">부분을 합이 아니라 지수평균으로 바꾸어서 대체한 방법이다.
+Adagrad의 식에서 gradient의 제곱값을 더해나가면서 구한 $$G_t$$부분을 합이 아니라 지수평균으로 바꾸어서 대체한 방법이다.
 
-이렇게 대체를 할 경우 Adagrad처럼 <!-- $G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=G_t">가 무한정 커지지는 않으면서 최근 변화량의 변수간 상대적인 크기 차이는 유지할 수 있다.
+이렇게 대체를 할 경우 Adagrad처럼 $$G_t$$가 무한정 커지지는 않으면서 최근 변화량의 변수간 상대적인 크기 차이는 유지할 수 있다.
 
 식으로 나타내면 다음과 같다.
 
-<div align='center' >
-<img src="./img/3-deep-learning/rmsprop.png" width=250>
-</div>
+![](./img/3-deep-learning/rmsprop.png)
 
-<br/>
-
-> Adam
+> **Adam**
 
 Adam(Adaptive Moment Estimation)은 RMSProp과 Momentum 방식을 합친 것 같은 알고리즘이다.
 
 이 방식에서는 Momentum 방식과 유사하게 지금까지 계산해온 기울기의 지수평균을 저장하며, RMSProp과 유사하게 기울기의 제곱값의 지수평균을 저장한다.
 
-<div align='center' >
-<img src="./img/3-deep-learning/adam.png" width=300>
-</div>
+![](./img/3-deep-learning/adam.png)
 
-<br/>
+다만, Adam에서는 m과 v가 처음에 0으로 초기화되어 있기 때문에 학습의 초반부에서는 $$m_t, v_t$$가 0에 가깝게 bias 되어있을 것이라고 판단하여 이를 unbiased 하게 만들어주는 작업을 거친다.
 
-다만, Adam에서는 m과 v가 처음에 0으로 초기화되어 있기 때문에 학습의 초반부에서는 <!-- $m_t, v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=m_t%2C%20v_t">가 0에 가깝게 bias 되어있을 것이라고 판단하여 이를 unbiased 하게 만들어주는 작업을 거친다.
+$$m_t, v_t$$의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
 
-<!-- $m_t, v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=m_t%2C%20v_t">의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
+이 보정된 expectation들을 가지고 gradient가 들어갈 자리에 $$\widehat{m_t}, G_t$$가 들어갈 자리에 $$\widehat{v_t}$$를 넣어 계산을 진행한다.
 
-이 보정된 expectation들을 가지고 gradient가 들어갈 자리에 <!-- $\widehat{m_t}, G_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cwidehat%7Bm_t%7D%2C%20G_t">가 들어갈 자리에 <!-- $\widehat{v_t}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cwidehat%7Bv_t%7D">를 넣어 계산을 진행한다.
-
-<div align='center' >
-<img src="./img/3-deep-learning/adam-conclusion.png" width=220>
-</div>
-
-<br/>
+![](./img/3-deep-learning/adam-conclusion.png)
 
 #### References
 
@@ -1084,15 +894,16 @@ SGD는 Loss Function을 계산할 때 전체 train dataset을 사용하는 Batch
 
 #### 미니배치를 작게 할때의 장단점은?
 
-- 장점
+> **장점**
 
-  - 한 iteration의 계산량이 적어지기 때문에 step 당 속도가 빨라진다.
-  - 적은 Graphic Ram으로도 학습이 가능하다.
+- 한 iteration의 계산량이 적어지기 때문에 step 당 속도가 빨라진다.
+- 적은 Graphic Ram으로도 학습이 가능하다.
 
-- 단점
-  - 데이터 전체의 경향을 반영하기 힘들다. 업데이트를 항상 좋은 방향으로 하지만은 않는다.
+> **단점**
 
-> batch size에 관련된 논문은 [Batch Size in Deep Learning - hyeonseob](https://blog.lunit.io/2018/08/03/batch-size-in-deep-learning/) 참고
+- 데이터 전체의 경향을 반영하기 힘들다. 업데이트를 항상 좋은 방향으로 하지만은 않는다.
+
+(batch size에 관련된 논문은 [Batch Size in Deep Learning - hyeonseob](https://blog.lunit.io/2018/08/03/batch-size-in-deep-learning/) 참고)
 
 #### References
 
@@ -1108,24 +919,15 @@ Momentum 방식은 말 그대로 Gradient Descent를 통해 이동하는 과정�
 
 현재 Gradient를 통해 이동하는 방향과는 별개로, 과거에 이동했던 방식을 기억하면서 그 방향으로 일정 정도를 추가적으로 이동하는 방식이다.
 
-<!-- $v_t$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=v_t">: time step t에서의 이동 벡터
-<br>
-
-<!-- $$
+$$
 v_t = \gamma v_{t-1} + \eta\nabla_{\theta}J(\theta)
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=v_t%20%3D%20%5Cgamma%20v_%7Bt-1%7D%20%2B%20%5Ceta%5Cnabla_%7B%5Ctheta%7DJ(%5Ctheta)%0D" height=20></div>
-
-<!-- $$
+$$
 \theta = \theta - v_t
-$$ -->
+$$
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=%5Ctheta%20%3D%20%5Ctheta%20-%20v_t%0D" height=20></div>
-
-<br>
-
-이 때, <!-- $\gamma$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5Cgamma">는 얼마나 momentum을 줄 것인지에 대한 momentum term이다.
+이 때, $$v_t$$는 time step t에서의 이동 벡터이며, $$\gamma$$는 얼마나 momentum을 줄 것인지에 대한 momentum term이다.
 
 #### References
 
