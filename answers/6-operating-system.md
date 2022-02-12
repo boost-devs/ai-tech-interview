@@ -1,4 +1,4 @@
-> **질문은 <strong>[WeareSoft님의 tech-interview](https://github.com/WeareSoft/tech-interview)</strong>를 참고하였습니다.**
+> **📌 질문은 <strong>[WeareSoft님의 tech-interview](https://github.com/WeareSoft/tech-interview)</strong>를 참고하였습니다.**
 
 ## Table of Contents
 
@@ -348,11 +348,7 @@ if __name__=="__main__":
 
 > **Blocking, Non-Blocking**
 
-**Blocking** 과 **Non-Blocking** 은 결과에 대한 관점보다는 `System Call(직접 제어할 수 없는 대상의 처리)` 의 관점으로 이해할 수 있다.
-
-**Blocking** 은 System Call 이 완료될 때까지 Waiting Queue 에서 대기한다.
-
-**Non-Blocking** 은 System Call 이 완료와 상관없이 자신의 작업을 진행한다.
+Blocking 과 Non-Blocking은 결과에 대한 관점보다는 `System Call(직접 제어할 수 없는 대상의 처리)` 의 관점으로 이해할 수 있다. Blocking은 System Call 이 완료될 때까지 Waiting Queue에서 대기한다. Non-Blocking은 System Call이 완료와 상관없이 자신의 작업을 진행한다.
 
 #### References
 
