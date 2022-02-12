@@ -1,8 +1,4 @@
-<div align='center'>
-  <h1>🐍 Python Programming Language 🐍</h1>
-</div>
-
-> 질문은 <strong>[Top 100 Python Interview Questions You Must Prepare In 2021 - edureka!](https://www.edureka.co/blog/interview-questions/python-interview-questions/)</strong>을 참고하였으며, 질문에 대한 답변 중 일부는 위의 사이트의 답변을 참고하여 작성되었습니다.
+> **질문은 <strong>[Top 100 Python Interview Questions You Must Prepare In 2021 - edureka!](https://www.edureka.co/blog/interview-questions/python-interview-questions/)</strong>을 참고하였습니다.**
 
 ## Table of Contents
 
@@ -133,8 +129,8 @@
 
 파이썬은 정확하게는, 스크립트 언어이다. 모든 스크립트 언어는 프로그래밍 언어로 볼 수 있으나, 모든 프로그래밍 언어가 스크립트 언어로 분류되는 것은 아니다. 따라서 파이썬은 스크립트 언어이자, 프로그래밍 언어이다. 그러나 사람들은 일반적인 경우에 파이썬을 프로그래밍 언어의 목적으로 분류하고, 프로그래밍 목적으로 많이 사용한다.
 
-- 스크립팅(scripting/Scripting Language)
-  - 스크립트 언어란 컴파일이 필요없이 실행될 수 있는 명령어의 집합이다. 스크립트 언어는 인터프리터를 사용하는데, 인터프리터는 컴파일 과정이 필요하지 않으며, 소스코드로 부터 바로 명령어를 해석할 수 있다.
+> **💡 스크립팅(scripting/Scripting Language)**  
+> 스크립트 언어란 컴파일이 필요없이 실행될 수 있는 명령어의 집합이다. 스크립트 언어는 인터프리터를 사용하는데, 인터프리터는 컴파일 과정이 필요하지 않으며, 소스코드로 부터 바로 명령어를 해석할 수 있다.
 
 #### References
 
@@ -148,8 +144,7 @@
 
 인터프리터는 고급 언어로 작성된 원시코드 명령어들을 한번에 한 줄씩 읽어들여서 실행하는 프로그램이다. 인터프리터 언어는 실행시간(runtime) 전에 기계 레벨 코드(machine-level code)를 만드는 컴파일 언어와 다르게 소스코드를 바로 실행하는 언어이며, 파이썬은 인터프리터 언어에 해당한다.
 
-> 인터프리터 언어는 스크립트 언어와 동일한 의미이다.  
-> 스크립팅/스크립트 언어에 대한 질문과 답변은 [What type of language is python? Programming or scripting?](#3)을 참고한다.
+인터프리터 언어는 스크립트 언어와 동일한 의미이다. 스크립팅/스크립트 언어에 대한 질문과 답변은 [What type of language is python? Programming or scripting?](#3)을 참고한다.
 
 #### References
 
@@ -163,7 +158,7 @@
 
 PEP(Python Enhancement Proposal)는 Python 코드를 포맷하는 방법을 지정하는 규칙 집합이다. 다른 사람과 원활하게 협업하려면 공통된 스타일 공유가 필요하며, 일관성 있는 스타일은 나중에 수정하기도 쉽다. PEP8은 파이썬 코드를 어떻게 구성할 지 알려주는 스타일 가이드로서의 역할을 한다. Python formatting tool에는 `black`, `flake8`, `autopep8`, `yamf` 등이 있다.
 
-> PEP8 스타일 가이드 예시
+> **PEP8 스타일 가이드 예시**
 
 - whitespace
   - 한 줄의 문자 길이가 79자 이하여야 한다.
@@ -185,7 +180,7 @@ PEP(Python Enhancement Proposal)는 Python 코드를 포맷하는 방법을 지�
 
 Python은 모든 것을 객체로 관리한다. 객체가 더이상 필요하지 않으면 파이썬 메모리 관리자가 자동으로 객체에서 메모리를 회수하는 방식을 사용하므로, 파이썬은 **동적 메모리 할당** 방식을 사용한다고 말할 수 있다. <strong>힙(heap)</strong>은 동적할당을 구현하는데 사용된다. 힙을 사용하여 동적으로 메모리를 관리하면, 필요하지 않은 메모리를 비우고 재사용할 수 있다는 장점이 있다. 모든 파이썬 객체 또는 자료구조는 **python private heap** 공간에서 관리되며, 프로그래머는 이 공간에 접근할 수 없고, 대신 파이썬 인터프리터가 대신해서 관리한다.
 
-> 더 자세히보기
+> **더 자세히보기**
 
 파이썬 객체에 대한 힙 공간 할당을 담당하는 것을 **파이썬 메모리 관리자(Python Memory Manager)** 라고 부른다. Python 메모리 관리자에는 객체별 할당자가있기 때문에 int, string 등과 같은 특정 객체에 대해 메모리를 명확하게 할당 할 수 있다. 또한, 사용되지 않는 모든 메모리를 재활용하고 힙 공간에서 사용할 수 있도록 하는 **내장 Garbage Collector(GC)** 를 가지고 있다.
 
@@ -204,23 +199,20 @@ namespace는 이름 지정 충돌(naming conflicts)을 피하기 위해 이름�
 
 네임스페이스가 필요한 이유는 다음과 같다. 프로그래밍을 수행하다보면 모든 변수 이름과 함수 이름을 정하는 것이 중요한데 이들 모두를 겹치지 않게 정하는 것은 사실상 불가능하다. 따라서 프로그래밍언어에서는 네임스페이스라는 개념을 도입하여, 특정한 하나의 이름이 통용될 수 있는 범위를 제한한다. 즉, **소속된 네임스페이스가 다르다면 같은 이름이 다른 개체를 가리키도록 하는 것이 가능**하다.
 
-> 파이썬 네임스페이스의 특징
+> **파이썬 네임스페이스의 특징**
 
 - 네임스페이스는 딕셔너리 형태로 구현된다.
 - 모든 이름 자체는 문자열로 되어있고 각각은 해당 네임스페이스의 범위에서 실제 객체를 가리킨다.
 - 이름과 실제 객체 사이의 매핑은 가변적(Mutable)이므로 런타임동안 새로운 이름이 추가될 수 있다.
 - 빌트인 네임스페이스는 함부로 추가하거나 삭제할 수 없다.
 
-> 파이썬 네임스페이스의 3가지 분류
+> **파이썬 네임스페이스의 3가지 분류**
 
 - `빌트인 네임스페이스(build-in namespace)`: 기본 내장 함수 및 기본 예외들의 이름들이 소속된다. 파이썬으로 작성된 모든 코드 범위가 포함된다.
 - `전역 네임스페이스(global namespace)`: 모듈별로 존재하며, 모듈 전체에서 통용될 수 있는 이름들이 소속된다.
 - `지역 네임스페이스(local namespace)`: 함수 및 메서드 별로 존재하며, 함수 내의 지역 변수들의 이름들이 소속된다.
 
-<div align='center'>
-<img src="./img/4-python/namespace.png" width=50%>
-</div>
-<br/>
+![](./img/4-python/namespace.png)
 
 #### References
 
@@ -236,7 +228,7 @@ namespace는 이름 지정 충돌(naming conflicts)을 피하기 위해 이름�
 
 PYTHONPATH 환경 변수에 경로를 추가하면, 파이썬은 이 경로들을 `sys.path`에 추가한다. 이를 통해 파이썬 코드 내부에서 뿐만 아니라 파이썬 코드 밖에서도 `sys.path`를 조작할 수 있다. PYTHONPATH에는 `sys.path`에 추가할 여러 경로들이 들어간다. 리눅스에서는 `/foo:/bar`처럼 `:`로 두 경로를 구분하고, 윈도우에서는 `/foo;/bar`처럼 `;`로 두 경로를 구분한다. 이외에도 sys.path에는 파이썬에 포함된 여러 내장 모듈 등을 탐색하기 위한 기본 경로가 들어간다.
 
-> 주의 `sys.path`의 순서
+> **`sys.path`의 순서**
 
 import는 `sys.path` 리스트에 들어있는 경로들을 탐색하며 불러올 파이썬 파일을 찾는다. 리스트에 들어있는 맨 처음 경로부터 탐색을 시작하여, 특정 경로에서 불러올 파일을 찾았다면 남은 경로를 더 찾아보지 않고 탐색을 중지한다.
 `sys.path`의 기본값은 아래의 순서대로 추가된다.
@@ -245,7 +237,7 @@ import는 `sys.path` 리스트에 들어있는 경로들을 탐색하며 불러�
 - PYTHONPATH 환경 변수
 - 기타 기본 경로
 
-> 아래의 코드를 통해서 `sys.path`를 직접 확인할 수 있다.
+아래의 코드를 통해서 `sys.path`를 직접 확인할 수 있다.
 
 ```python
 import sys
@@ -265,13 +257,14 @@ print(sys.path)
 
 모듈이란 Python 코드를 포함하는 파일로써, 함수나 변수 또는 클래스를 모아 놓은 파일이다. 모듈은 다른 파이썬 프로그램에서 불러와 사용할 수 있게끔 만든 파이썬 파일이라고도 할 수 있다. 실행 가능한 코드를 포함하는, 파이썬 확장자 `.py`로 만든 파이썬 파일은 모두 모듈이다. 모듈을 사용하면, 다른 코드에 적용하기가 쉬워지므로 이식성이 좋아진다.
 
-- 자주 사용되는 빌트인 모듈(built-in module)의 예시는 다음과 같다.
-  - `os`
-  - `sys`
-  - `math`
-  - `random`
-  - `datetime`
-  - `JSON`
+자주 사용되는 빌트인 모듈(built-in module)의 예시는 다음과 같다.
+
+- `os`
+- `sys`
+- `math`
+- `random`
+- `datetime`
+- `JSON`
 
 #### References
 
@@ -283,10 +276,9 @@ print(sys.path)
 
 #### What are local variables and global variables in Python?
 
-- **전역 변수(Global Variable)** : 함수 외부 또는 전역 공간에 선언된 변수를 전역 변수라고 한다. 프로그램의 모든 함수에서 전역변수에 접근할 수 있다. [Whenever Python exits, why isn’t all the memory de-allocated?](#35) 참고
-- **로컬 변수(Local Variable)** : 함수 내부에 선언된 변수를 로컬 변수라고 한다. 로컬 변수는 전역 공간이 아닌 로컬 공간에 있다.
+**전역 변수(Global Variable)**는 함수 외부 또는 전역 공간에 선언된 변수이다. 프로그램의 모든 함수에서 전역변수에 접근할 수 있다. ([Whenever Python exits, why isn’t all the memory de-allocated?](#35) 참고)
 
-> 예시
+**로컬 변수(Local Variable)**는 함수 내부에 선언된 변수를 말한다. 로컬 변수는 전역 공간이 아닌 로컬 공간에 있다.
 
 ```python
 a=2
@@ -302,7 +294,7 @@ add()
 # local var: b, c
 ```
 
-- `add()` 함수의 외부에서 `add()` 함수의 로컬 변수에 액세스하려고 하면 오류가 발생한다.
+`add()` 함수의 외부에서 `add()` 함수의 로컬 변수에 액세스하려고 하면 오류가 발생한다.
 
 ---
 
@@ -320,7 +312,7 @@ add()
 
 type conversion은 타입 캐스팅(type casting)과 동일한 의미를 가지며, 이는 어떤 데이터 타입을 다른 데이터 타입으로 변환하는 것을 말한다.
 
-> 타입 캐스팅 함수의 종류
+> **타입 캐스팅 함수의 종류**
 
 - `int()`: 정수형으로 변환한다.
 - `float()`: 실수형으로 변환한다.
@@ -374,12 +366,7 @@ Python에서는 array과 list가 동일한 방식으로 데이터를 저장한�
 
 array에서 사용할 수 있는 타입은 아래와 같다.
 
-<div align='center'>
-<img src="./img/4-python/array-type.png">
-</div>
-<br/>
-
-> 예시
+![](./img/4-python/array-type.png)
 
 ```python
 import array as arr
@@ -404,8 +391,6 @@ print(My_list)
 
 함수는 호출될 때만 실행되는 코드 블록이다. Python 함수를 정의하기 위해 def 키워드가 사용된다. 반복되는 부분을 함수로 만들어서 사용하면, 똑같은 코드를 여러번 반복하여 쓰지 않아도 되고, 프로그램의 흐름을 쉽게 파악할 수 있다는 장점이 있다.
 
-> 예시
-
 ```python
 def new_func():
   print("Hi, Welcome to Edureka")
@@ -426,8 +411,6 @@ new_func(); # 함수 호출
 #### What is `__init__`?
 
 `__init__`는 파이썬에서 특별하게 약속된 메서드 가운데 하나로, 초기화 메서드 혹은 생성자라고도 한다. 이 메서드는 클래스의 새 개체/인스턴스가 생성될 때 메모리를 할당하기 위해 자동으로 호출되며, 그 객체가 갖게 될 여러 가지 성질을 정해준다. 모든 클래스에는 `__init__` 메서드가 있다.
-
-> 예시
 
 ```python
 class Employee:
@@ -454,9 +437,8 @@ XYZ
 '''
 ```
 
-> 추가내용) `__init__.py`은 무엇인가?
-
-python 3.3 이하 버전에서, package import하기 위해서 사용되는 규칙이다. 3.3 이후의 버전에서는 이 제약사항이 해제되었다. `__init__.py`는 python 프로그램이 디렉토리를 처음 가져올 때 자동으로 실행되는 **패키지 초기화 파일** 역할을 하고, **모듈의 네임스페이스 초기화** 역할을 한다.
+> **💡 `__init__.py`은 무엇인가?**  
+> python 3.3 이하 버전에서, package import하기 위해서 사용되는 규칙이다. 3.3 이후의 버전에서는 이 제약사항이 해제되었다. `__init__.py`는 python 프로그램이 디렉토리를 처음 가져올 때 자동으로 실행되는 **패키지 초기화 파일** 역할을 하고, **모듈의 네임스페이스 초기화** 역할을 한다.
 
 #### References
 
@@ -473,12 +455,7 @@ python 3.3 이하 버전에서, package import하기 위해서 사용되는 규�
 
 람다함수의 표현법을 그림으로 표현하면 아래와 같다.
 
-<div align='center'>
-<img src="./img/4-python/lambda-function.png" width="60%">
-</div>
-<br/>
-
-> 예시
+![](./img/4-python/lambda-function.png)
 
 ```python
 a = lambda x, y : x + y
@@ -663,7 +640,7 @@ print(random.sample(lst, 5))    # [70, 36, 32, 82, 5]
 
 #### What is the difference between range & xrange?
 
-> 파이썬2에서는 `range`와 `xrange` 모두 존재하지만, 파이썬3부터는 `range`가 내부적으로 `xrange`로 동작하도록 바뀌어서 `range`만 존재한다. 그러므로 **파이썬2**를 기준으로 `range`와 `xrange`를 설명한다.
+> _파이썬2에서는 `range`와 `xrange` 모두 존재하지만, 파이썬3부터는 `range`가 내부적으로 `xrange`로 동작하도록 바뀌어서 `range`만 존재한다. 그러므로 **파이썬2**를 기준으로 `range`와 `xrange`를 설명한다._
 
 `range` 객체는 입력으로 받은 정수 범위의 값을 요소로 같는 리스트를 말한다. 그러므로 `range(3)`과 ` [0, 1, 2]`는 완전히 동일하다.
 
@@ -699,13 +676,13 @@ for i in r:
 
 #### How do you write comments in python?
 
-> 따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#32)를 참고!
-
 `#`을 사용하여 주석을 달 수 있다.
 
 ```python
 # this is my comment
 ```
+
+따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#32)를 참고!
 
 #### References
 
@@ -716,8 +693,6 @@ for i in r:
 ## #27
 
 #### What is pickling and unpickling?
-
-Pickle module accepts any Python object and converts it into a string representation and dumps it into a file by using dump function, this process is called pickling. While the process of retrieving original Python objects from the stored string representation is called unpickling.
 
 우선 `직렬화(Serialization)`와 `역 직렬화(Deserialization)`의 개념을 알아야 한다. `직렬화`란 객체를 바이트 스트림(byte stream)으로 변환하여 디스크에 저장하거나 네트워크로 보낼 수 있도록 만들어주는 것을 말한다. 반대로 바이트 스트림을 파이썬 객체로 변환하는 것을 `역 직렬화`라고 한다.
 
@@ -734,7 +709,7 @@ Pickle module accepts any Python object and converts it into a string representa
 
 #### What are the generators in python?
 
-제너레이터(Generator)란 Iterator 객체를 간단히 만들 수 있는 함수를 말한다. 제너레이터는 다음과 같이 ① yield문과 함수, ② 표현식 형태로 만들 수 있다.
+제너레이터(Generator)란 Iterator 객체를 간단히 만들 수 있는 함수를 말한다. 제너레이터는 다음과 같이 1) yield문과 함수, 2) 표현식 형태로 만들 수 있다.
 
 > **방법 1. yield문과 함수**
 
@@ -815,8 +790,6 @@ print(string.lower())           # boostcamp ai tech
 
 #### How to comment multiple lines in python?
 
-> 따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#32)를 참고!
-
 `#`을 여러 줄 사용하여 여러 줄의 주석을 달 수 있다.
 
 ```python
@@ -824,6 +797,8 @@ print(string.lower())           # boostcamp ai tech
 # I am commenting multiple lines
 # - boostcamp ai tech team 4
 ```
+
+따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#32)를 참고!
 
 #### References
 
@@ -852,7 +827,7 @@ print(help(mult))
 print(mult.__doc__)
 ```
 
-> **Comments(주석) vs Dosctrings**  
+> **💡 Comments(주석) vs Dosctrings**  
 > comments와 docstrings은 각각 `#`, `"""`을 쓴다는 점에서 다르지만 가장 큰 차이는 **읽는 대상**이다. comments는 개발을 위해 동료 혹은 나중에 코드를 읽을 나에게 남겨놓는 것이고 docstrings는 이 코드를 사용할 사용자들이 이해하기 쉽도록 남겨놓는 것이다.
 
 #### References
@@ -929,10 +904,10 @@ print(dir())      # 지역 스코프에 정의된 a와 func
 
 다른 객체나 전역 네임스페이스에서 참조되는 객체를 순환 참조하는 파이썬 모듈은 항상 해제되지는 않는다. 또한 C 라이브러리가 예약한 메모리의 해당 부분을 해제하는 것은 불가능하다. 그러므로 파이썬 종료 시, 모든 메모리가 해제되지는 않는다.
 
-> **순환 참조(Circular Reference)**
+> **💡 순환 참조(Circular Reference)**  
 > 두 객체가 서로 참조하는 경우를 말한다.
 
-> **전역 네임스페이스(Global Namespace)**  
+> **💡 전역 네임스페이스(Global Namespace)**  
 > 네임스페이스(namespace)란 프로그래밍 언어에서 특정 객체를 이름에 따라 구분할 수 있는 범위를 의미한다. 전역 네임스페이스는 import한 모듈들의 이름을 포함하며, 스크립트가 끝날 때까지 지속된다.
 
 #### References
@@ -1013,38 +988,14 @@ print(ex)  # {'name': 'Groot', 'lover': 'Penguin', 'feature': 'handsome'}
 
 #### How can the ternary operators be used in python?
 
-ternary operators(삼항 연산자)는 조건문을 표시하는 데 사용되는 연산자이며 아래의 형태로 표현된다.
-
-```python
-[true_value] if [condition] else [false_value]
-```
-
-> **Example_1**
+ternary operators(삼항 연산자)는 조건문을 표시하는 데 사용되는 연산자이며 `[true_value] if [condition] else [false_value]`의 형태로 표현된다.
 
 ```python
 a = 123
-print("a is 123" if a==123 else "a is not 123")
-```
+print("a is 123" if a==123 else "a is not 123") # a is 123
 
-> **Output**
-
-```
-a is 123
-```
-
-<br>
-
-> **Example_2**
-
-```python
 a = 456
-print("a is 123" if a==123 else "a is not 123")
-```
-
-> **Output**
-
-```
-a is not 123
+print("a is 123" if a==123 else "a is not 123") # a is not 123
 ```
 
 #### References
@@ -1061,45 +1012,27 @@ a is not 123
 
 파이썬에서는 어디서부터 어디까지 `*args`에 담아야 할지 알 수 없기 때문에, 일반 변수를 앞에 두고 그 뒤에 `*args`를 지정해 주어야 한다.
 
-> **Example_1**
-
 ```python
 def name(*args):
     print(args)
 
 name("샐리", "펭귄", "히스", "원딜")
+# output: ('샐리', '펭귄', '히스', '원딜')
 ```
-
-> **Output**
-
-```
-('샐리', '펭귄', '히스', '원딜')
-```
-
-<br>
 
 `**kwargs`는 함수에 전달되는 keyword argument의 수를 모르거나, dictionary의 keyword argument들을 함수에 전달하고자 할 때 사용한다.
 
 `*args`와 `**kwargs`를 함께 사용하는 경우 `*args`를 `**kwargs`보다 앞에 두어야 한다.
-
-> **Example_2**
 
 ```python
 def name(**kwargs):
     print(kwargs)
 
 name(sally="샐리", penguin="펭귄", heath="히스", adc="원딜")
+# output: {'sally': '샐리', 'penguin': '펭귄', 'heath': '히스', 'adc': '원딜'}
 ```
 
-> **Output**
-
-```
-{'sally': '샐리', 'penguin': '펭귄', 'heath': '히스', 'adc': '원딜'}
-```
-
-<br>
-
-- 일반 변수, `*args`, `**kwargs`를 모두 사용하는 경우
+일반 변수, `*args`, `**kwargs`를 모두 사용하는 경우 다음과 같은 순서를 따른다.
 
 ```python
 def function_name(일반변수, *args, **kwargs)
@@ -1119,32 +1052,12 @@ def function_name(일반변수, *args, **kwargs)
 
 argument로는 sequence(string, bytes, tuple, list, range, ...), collection(dictionary, set, frozenset, ...)을 받는다.
 
-> **Example_1**
-
 ```python
 stg = "ai-tech-interview"
-len(stg)
-```
+len(stg)  #17
 
-> **Output**
-
-```
-17
-```
-
-<br>
-
-> **Example_2**
-
-```python
 ex_list = ["ai", "tech", "interview"]
-len(ex_list)
-```
-
-> **Output**
-
-```
-3
+len(ex_list)  # 3
 ```
 
 #### References
@@ -1157,51 +1070,27 @@ len(ex_list)
 
 #### Explain split(), sub(), subn() methods of “re” module in Python.
 
-파이썬에서 정규표현식을 사용하기 위해 “re” 모듈을 사용한다.
+파이썬에서 정규표현식을 사용하기 위해 “re” 모듈을 사용한다. 문자열 수정을 위해 Python의 “re” 모듈은 3 가지 메서드를 제공한다.
 
-문자열 수정을 위해 Python의 “re” 모듈은 3 가지 메서드를 제공한다.
-
-- `re.split(pattern, string, maxplit=0)`: pattern을 구분자로 string을 분리하여 list로 반환
-  > **Example**
+- `re.split(pattern, string, maxplit=0)`: pattern을 구분자로 string을 분리하여 list로 반환한다.
 
 ```python
 re.split('<[^<>]*>', '<html> Wow <head> header </head> <body> Hey </body> </html>')
+# output: ['', ' Wow ', ' header ', ' ', ' Hey ', ' ', '']
 ```
 
-> **Output**
-
-```
-['', ' Wow ', ' header ', ' ', ' Hey ', ' ', '']
-```
-
-<br>
-
-- `re.sub(pattern, repl, string, count=0)`: string에서 pattern과 일치하는 부분에 대하여 repl로 교체하여 결과 문자열을 반환
-  > **Example**
+- `re.sub(pattern, repl, string, count=0)`: string에서 pattern과 일치하는 부분에 대하여 repl로 교체하여 결과 문자열을 반환한다.
 
 ```python
 re.sub('\d{4}', 'XXXX', '010-1234-5678')
+# output: '010-XXXX-XXXX'
 ```
 
-> **Output**
-
-```
-'010-XXXX-XXXX'
-```
-
-<br>
-
-- `re.subn(pattern, repl, string, count=0)`: sub와 동일하나, 결과로 (결과문자열, 매칭횟수)를 튜플로 반환
-  > **Example**
+- `re.subn(pattern, repl, string, count=0)`: sub와 동일하나, 결과로 (결과문자열, 매칭횟수)를 튜플로 반환한다.
 
 ```python
 re.subn('\d{4}', 'XXXX', '010-1234-5678')
-```
-
-> **Output**
-
-```
-('010-XXXX-XXXX', 2)
+# output: ('010-XXXX-XXXX', 2)
 ```
 
 #### References
@@ -1215,51 +1104,28 @@ re.subn('\d{4}', 'XXXX', '010-1234-5678')
 
 #### What are negative indexes and why are they used?
 
-**인덱스**
+> **인덱스**
 
 - 시퀀스 객체에 `[]`(대괄호)를 붙여 사용
 - 시퀀스 객체의 인덱스는 항상 0부터 시작
 - 시퀀스 객체(list, tuple, range, 문자열)에 사용가능
 - 시퀀스객체[인덱스]
 
-**음수 인덱스**
+> **음수 인덱스**
 
 - 인덱스를 음수로 지정하면 뒤에서부터 요소에 접근하게 된다.
   - -1은 뒤에서 첫 번째, -5는 뒤에서 다섯 번째 요소를 뜻한다.
 - 시퀀스 객체(list, tuple, range, 문자열)에 사용가능
 
-> **Example_1**
-
 ```python
 example = ['Boostcamp', 'AI', 'Tech', 'penguin', 'sally', 'adc', 'heath']
-print(example[5])
-print(example[-2])
-print(example[-4:])
-```
+print(example[5]) # adc
+print(example[-2])  # adc
+print(example[-4:]) # ['penguin', 'sally', 'adc', 'heath']
 
-> **Output**
-
-```
-adc
-adc
-['penguin', 'sally', 'adc', 'heath']
-```
-
-<br>
-
-> **Example_2**
-
-```python
 example = "BoostDevs"
-print(example[:5])
-print(example[-4:-1])
-```
-
-> **Output**
-
-```
-Boost
-Dev
+print(example[:5])  # Boost
+print(example[-4:-1]) # Dev
 ```
 
 #### References
@@ -1272,24 +1138,21 @@ Dev
 
 #### What are Python packages?
 
-**모듈**
+> **모듈**
 
 모듈은 파이썬 코드를 논리적으로 묶어서 관리하고 사용할 수 있도록 하는 것으로, 보통 하나의 파이썬 `.py` 파일이 하나의 모듈이 된다. 모듈 안에는 함수, 클래스, 혹은 변수들이 정의될 수 있으며, 실행 코드를 포함할 수도 있다.
 
-> 모듈에 관한 자세한 내용은 [#9. 모듈](#9) 참고
+모듈에 관한 자세한 내용은 [#9. 모듈](#9) 참고!
 
-**패키지**
+> **패키지**
 
 패키지는 특정 기능과 관련된 여러 모듈을 묶은 것으로 패키지는 모듈에 namespace를 제공한다. 패키지는 하나의 디렉토리에 놓여진 모듈들의 집합을 가리키는데, 그 디렉토리에는 일반적으로 `__init__.py` 라는 패키지 초기화 파일이 존재한다.
 
 패키지는 모듈들의 컨테이너로서 패키지 안에는 또다른 서브 패키지를 포함할 수도 있다. 파일시스템으로 비유하면 패키지는 일반적으로 디렉토리에 해당하고, 모듈은 디렉토리 안의 파일에 해당한다.
-<br><br>
 
-<div align='center'>
-    <img src='./img/4-python/package.png' height='300'/>
-</div>
+![](./img/4-python/package.png)
 
-> 패키지들의 모음인 라이브러리에 대한 내용은 [#52. 라이브러리](#52) 참고
+패키지들의 모음인 라이브러리에 대한 내용은 [#52. 라이브러리](#52) 참고!
 
 #### References
 
@@ -1304,16 +1167,12 @@ Dev
 
 os 모듈을 import 한 후 `os.remove()` 함수를 사용하여 파일을 삭제할수있다.
 
-> **Example**
-
 ```python
 import os
 os.remove("ai-tech-interview.txt")
 ```
 
-<br>
-
-> 자세한 내용은 [os.remove - Python documentation](https://docs.python.org/3/library/os.html#os.remove) 참고
+자세한 내용은 [os.remove - Python documentation](https://docs.python.org/3/library/os.html#os.remove) 참고!
 
 ---
 
@@ -1330,9 +1189,10 @@ Python의 Built-in type은 아래와 같다.
 - Boolean
 - Built-in function
 
-> 자세한 내용은 [Built-in Types - Python documentation](https://docs.python.org/3/library/stdtypes.html) 참고
+자세한 내용은 [Built-in Types - Python documentation](https://docs.python.org/3/library/stdtypes.html) 참고!
 
-> <strong>빌트인built-in이란?</strong><br>어떤 기능이나 함수 등이 내장 또는 빌트인되어 있다는 뜻은 그것이 프로그램에서 바로 사용가능하도록 준비되어 있다는 뜻<br>자세한 내용은 [basic-terminology-in-programming - shoark7](https://gist.github.com/shoark7/e8e103dd9a2ff11b94432c17c3826ab9#-%EB%82%B4%EC%9E%A5%EB%90%9Cbuilt-ins) 참고
+> <strong>💡 빌트인built-in이란?</strong>  
+> 어떤 기능이나 함수 등이 내장 또는 빌트인되어 있다는 뜻은 그것이 프로그램에서 바로 사용가능하도록 준비되어 있다는 뜻이다. 자세한 내용은 [basic-terminology-in-programming - shoark7](https://gist.github.com/shoark7/e8e103dd9a2ff11b94432c17c3826ab9#-%EB%82%B4%EC%9E%A5%EB%90%9Cbuilt-ins) 참고할 것.
 
 ---
 
@@ -1340,22 +1200,13 @@ Python의 Built-in type은 아래와 같다.
 
 #### What advantages do NumPy arrays offer over (nested) Python lists?
 
-- numpy array는 하나의 데이터 타입만 정의가 가능하다.
-- Python list와 가장 큰 차이점은 다이나믹 타이핑을 지원하지 않는다는 것이다.
-- C의 Array를 사용하여 배열을 생성하기 때문에 속도가 빠르다
+numpy array는 하나의 데이터 타입만 정의가 가능하다. Python list와 달리 다이나믹 타이핑을 지원하지 않으며, C의 Array를 사용하여 배열을 생성하기 때문에 속도가 빠르다.
 
-**np.array의 구조**
+![](./img/4-python/numpy-array.png)
 
-<div align='center'>
-    <img src='./img/4-python/numpy-array.png' height='400'/>
-</div>
-<br>
+Python list는 데이터 주소값을 저장하고 데이터를 가져올 때는 해당 주소에 가서 데이터를 가져온다. 반면 Numpy array는 C의 배열과 유사하여 연속된 주소를 가지고 있어 데이터를 가져올 때는 순서대로 가져오면 되기 때문에 메모리를 효율적으로 사용한다.
 
-Python list는 데이터 주소값을 저장하고 데이터를 가져올 때는 해당 주소에 가서 데이터를 가져온다.
-
-반면 Numpy array는 C의 배열과 유사하여 연속된 주소를 가지고 있어 데이터를 가져올 때는 순서대로 가져오면 되기 때문에 메모리를 효율적으로 사용한다.
-
-> Numpy에 대한 내용은 [#66. Numpy](#66) 참고
+Numpy에 대한 내용은 [#66. Numpy](#66) 참고!
 
 #### References
 
@@ -1369,105 +1220,57 @@ Python list는 데이터 주소값을 저장하고 데이터를 가져올 때는
 
 `append()`, `extend()`, `insert()` 함수를 사용하여 list에 value를 추가할 수 있다.
 
-**append()**
+> **append()**
 
-- 시간복잡도: `O(1)`
-
-`list.append(x)` 형태로 사용한다. 괄호 안에 값을 입력하면 새로운 요소를 list 맨 끝에 추가한다. 요소를 추가할 때는 객체로 추가하게 되는데, 입력한 값이 리스트와 같은 반복 가능한 iterable 자료형이더라도 객체로 저장한다.
-
-> **Example**
+`list.append(x)` 형태로 사용하며, $$O(1)$$의 시간복잡도를 갖는다. 괄호 안에 값을 입력하면 새로운 요소를 list 맨 끝에 추가한다. 요소를 추가할 때는 객체로 추가하게 되는데, 입력한 값이 리스트와 같은 반복 가능한 iterable 자료형이더라도 객체로 저장한다.
 
 ```python
 nums = [1, 2, 3]
 nums.append(4)
-print(nums)
+print(nums) # [1, 2, 3, 4]
 
 nums.append([5, 6])
-print(nums)
+print(nums) # [1, 2, 3, 4, [5, 6]]
 ```
 
-> **Output**
+> **extend()**
 
-```
-[1, 2, 3, 4]
-[1, 2, 3, 4, [5, 6]]
-```
-
-<br>
-
-**extend()**
-
-- 시간복잡도: `O(N)`
-
-`list.extend(iterable)` 형태로 사용한다. 입력한 iterable 자료형의 항목 각각을 list의 끝에 하나씩 추가한다. iterable 자료형으로 추가되는 것이 아니라 iterable 자료형 안에 있는 항목이 하나씩 떼어져서 추가된다. append와 동일하게 요소를 list의 끝에 추가하지만 append와 다른 점은 괄호 안에는 iterable 자료형만 올 수 있다는 것이다. iterable 자료형이 아닌 경우 TypeError가 발생한다.
-
-> **Example**
+`list.extend(iterable)` 형태로 사용하며, $$O(N)$$ 시간복잡도를 갖는다. 입력한 iterable 자료형의 항목 각각을 list의 끝에 하나씩 추가한다. iterable 자료형으로 추가되는 것이 아니라 iterable 자료형 안에 있는 항목이 하나씩 떼어져서 추가된다. append와 동일하게 요소를 list의 끝에 추가하지만 append와 다른 점은 괄호 안에는 iterable 자료형만 올 수 있다는 것이다. iterable 자료형이 아닌 경우 TypeError가 발생한다.
 
 ```python
 nums = [1, 2, 3]
 nums.extend([4])
-print(nums)
+print(nums) # [1, 2, 3, 4]
 
 nums.extend([5, 6])
-print(nums)
+print(nums) # [1, 2, 3, 4, 5, 6]
 ```
 
-> **Output**
+> **insert()**
 
-```
-[1, 2, 3, 4]
-[1, 2, 3, 4, 5, 6]
-```
+- 시간복잡도: ``
 
-<br>
-
-**insert()**
-
-- 시간복잡도: `O(N)`
-
-`list.insert(i, x)` 형태로 사용한다. list의 원하는 위치 i 앞에 추가할 값 x를 삽입할 수 있다. i는 위치를 나타내는 인덱스를 숫자를 입력한다. 음수를 입력하면 배열의 끝을 기준으로 처리된다. 추가할 값 x는 객체로 추가되며 iterable 자료형이더라도 객체로 저장된다.
-
-> **Example**
+`list.insert(i, x)` 형태로 사용하며, $$O(N)$$ 시간복잡도를 갖는다. list의 원하는 위치 i 앞에 추가할 값 x를 삽입할 수 있다. i는 위치를 나타내는 인덱스를 숫자를 입력한다. 음수를 입력하면 배열의 끝을 기준으로 처리된다. 추가할 값 x는 객체로 추가되며 iterable 자료형이더라도 객체로 저장된다.
 
 ```python
 nums = [1, 2, 3]
 nums.insert(0, 10)
-print(nums)
+print(nums) # [10, 1, 2, 3]
 
 nums.insert(-1, 99)
-print(nums)
+print(nums) # [10, 1, 2, 99, 3]
 
 nums.insert(len(nums), [20, 30])
-print(nums)
+print(nums) # [10, 1, 2, 99, 3, [20, 30]]
 ```
 
-> **Output**
+> **`+` 연산자**
 
-```
-[10, 1, 2, 3]
-[10, 1, 2, 99, 3]
-[10, 1, 2, 99, 3, [20, 30]]
-```
-
-<br>
-
-**`+` 연산자**
-
-- 시간복잡도: `O(1)`
-
-`list_1 + list_2` 형태로 사용한다.
-
-> **Example**
+`list_1 + list_2` 형태로 사용하며, $$O(1)$$ 시간복잡도를 갖는다.
 
 ```python
 nums = [1, 2, 4, 6, 1, 5]
-print(nums + [10, 9, 8, 7])
-```
-
-> **Output**
-
-```
-[1, 2, 4, 6, 1, 5, 10, 9, 8, 7]
+print(nums + [10, 9, 8, 7]) # [1, 2, 4, 6, 1, 5, 10, 9, 8, 7]
 ```
 
 #### References
@@ -1483,102 +1286,42 @@ print(nums + [10, 9, 8, 7])
 
 `remove()`, `pop()` 함수를 사용하여 list에 value를 삭제할 수 있다.
 
-**remove()**
+> **remove()**
 
-- 시간복잡도: `O(N)`
-
-remove()는 지우고자 하는 인덱스가 아닌, 값을 입력하는 방식이다. 만약 지우고자 하는 값이 리스트 내에 2개 이상이 있다면 순서상 가장 앞에 있는 값을 지우게 된다. 값을 삭제할 때 삭제된 값을 반환하지 않는다.
-
-> **Example**
+`remove()`는 지우고자 하는 인덱스가 아닌, 값을 입력하는 방식이다. 만약 지우고자 하는 값이 리스트 내에 2개 이상이 있다면 순서상 가장 앞에 있는 값을 지우게 된다. 값을 삭제할 때 삭제된 값을 반환하지 않는다. `remove()`는 시간복잡도 $$O(N)$$를 갖는다.
 
 ```python
 example = [1, 2, 3, 4, 5, 1]
 example.remove(1)
-print(example)
+print(example)  # [2, 3, 4, 5, 1]
 ```
 
-> **Output**
+> **pop()**
 
-```
-[2, 3, 4, 5, 1]
-```
-
-<br>
-
-**pop()**
-
-- 시간복잡도: `O(N)`
-
-pop()은 리스트에서 지우고자 하는 값의 인덱스를 받아서 지우는 방식이다. 값을 삭제할 때 삭제된 값을 반환한다. 인덱스를 지정하지 않으면 리스트의 마지막 요소가 삭제되며 반환된다.
-
-> **Example_1**
+`pop()`은 리스트에서 지우고자 하는 값의 인덱스를 받아서 지우는 방식이다. 값을 삭제할 때 삭제된 값을 반환한다. 인덱스를 지정하지 않으면 리스트의 마지막 요소가 삭제되며 반환된다. `pop()`은 시간복잡도 $$O(N)$$를 갖는다.
 
 ```python
 example = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(example.pop())
-print(example)
-```
+print(example.pop())  # 10
+print(example)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-> **Output**
-
-```
-10
-[1, 2, 3, 4, 5, 6, 7, 8, 9]
-```
-
-<br>
-
-> **Example_2**
-
-```python
 example = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(example.pop(3))
-print(example)
+print(example.pop(3)) # 4
+print(example)  # [1, 2, 3, 5, 6, 7, 8, 9, 10]
 ```
 
-> **Output**
+> **del**
 
-```
-4
-[1, 2, 3, 5, 6, 7, 8, 9, 10]
-```
-
-<br>
-
-**del**
-
-- 시간복잡도: `O(N)`
-
-`del list[i]` 형태로 사용한다. 값을 삭제할 때 삭제된 값을 반환하지 않는다.
-
-> **Example_1**
+`del list[i]` 형태로 사용하며, 시간복잡도 $$O(N)$$을 갖는다. 값을 삭제할 때 삭제된 값을 반환하지 않는다.
 
 ```python
 example = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 del example[7]
-print(example)
-```
+print(example)  # [1, 2, 3, 4, 5, 6, 7, 9, 10]
 
-> **Output**
-
-```
-[1, 2, 3, 4, 5, 6, 7, 9, 10]
-```
-
-<br>
-
-> **Example_2**
-
-```python
 example = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 del example[7:]
-print(example)
-```
-
-> **Output**
-
-```
-[1, 2, 3, 4, 5, 6, 7]
+print(example)  # [1, 2, 3, 4, 5, 6, 7]
 ```
 
 #### References
@@ -1593,7 +1336,7 @@ print(example)
 
 Python은 객체 지향 프로그래밍 언어이다. Python의 주요 OOP 개념에는 Class, Object, Method, Inheritance(상속), Polymorphism(다형성), Data Abstraction(데이터 추상화), Encapsulation(캡슐화)을 포함한다.
 
-> 더 자세한 내용은 [#55. Inheritance](#55), [#59. Polymorphism](#59), [#60. Encapsulation](#60), [#61. Data Abstraction](#61) 참고
+더 자세한 내용은 [#55. Inheritance](#55), [#59. Polymorphism](#59), [#60. Encapsulation](#60), [#61. Data Abstraction](#61) 참고!
 
 #### References
 
@@ -1605,70 +1348,33 @@ Python은 객체 지향 프로그래밍 언어이다. Python의 주요 OOP 개�
 
 #### What is the difference between deep and shallow copy?
 
-**Shallow copy**
+Shallow copy는 **새로운 객체(변수)를 만든 후에 원본에 접근할 수 있는 참조(reference)를 입력**한다. 이런 경우 서로 다른 변수명이지만 본질적으로 서로 같은 대상을 의미하므로 하나의 변수 역시 수정이 된다.
 
-- Shallow copy는 새로운 객체(변수)를 만든 후에 원본에 접근할 수 있는 참조(reference)를 입력한다.
-  - 이런 경우 서로 다른 변수명이지만 본질적으로 서로 같은 대상을 의미하므로 하나의 변수 역시 수정이 된다.
-- 가변형(mutable) 자료형에 대해서 적용이 가능하다.
-  - 가변형(mutable) 자료형은 같은 주소에서 값(value)이 변경 가능하기 때문에 얕은 복사가 가능하다.
-  - 불변형(immutable) 자료형은 본질적으로 변경이 불가능하므로 재배정을 통해 변수를 바꾼다. 따라서 재배정이 이루어지므로 객체가 서로 달라진다.
-
-> **Example**
+가변형(mutable) 자료형에 대해서 적용이 가능하다. 가변형(mutable) 자료형은 같은 주소에서 값(value)이 변경 가능하기 때문에 얕은 복사가 가능하다. 반면 불변형(immutable) 자료형은 본질적으로 변경이 불가능하므로 재배정을 통해 변수를 바꾼다. 따라서 재배정이 이루어지므로 객체가 서로 달라진다.
 
 ```python
 a = [1, 2, 3, 4, 5]
 b = a    # shallow copy
 a[1] = 10
-print(a, b)
+print(a, b) # [1, 10, 3, 4, 5] [1, 10, 3, 4, 5]
 ```
 
-> **Output**
-
-```
-[1, 10, 3, 4, 5] [1, 10, 3, 4, 5]
-```
-
-<br>
-
-**Deep copy**
-
-- Deep copy는 새로운 객체(변수)를 만든 뒤에 원본의 복사본을 변수에 입력한다.
-  - 서로 값만 같을 뿐 본질적으로 서로 다르기 때문에 한 변수가 수정될 시 다른 변수가 수정되지 않는다.
-
-> **Example_1**
+Deep copy는 **새로운 객체(변수)를 만든 뒤에 원본의 복사본을 변수에 입력**한다. 서로 값만 같을 뿐 본질적으로 서로 다르기 때문에 한 변수가 수정될 시 다른 변수가 수정되지 않는다.
 
 ```python
 a = [1, 2, 3, 4, 5]
 b = a[:]    # deep copy
 a[1] = 10
-print(a, b)
+print(a, b) # [1, 10, 3, 4, 5] [1, 2, 3, 4, 5]
 ```
-
-> **Output**
-
-```
-[1, 10, 3, 4, 5] [1, 2, 3, 4, 5]
-```
-
-<br>
-
-> **Example_2**
 
 ```python
 import copy
 a = [1, 2, 3, 4, 5]
 b = copy.deepcopy(a)    # deep copy
 a[1] = 10
-print(a, b)
+print(a, b) # [1, 10, 3, 4, 5] [1, 2, 3, 4, 5]
 ```
-
-> **Output**
-
-```
-[1, 10, 3, 4, 5] [1, 2, 3, 4, 5]
-```
-
-<br>
 
 #### References
 
@@ -1686,9 +1392,8 @@ print(a, b)
 
 하나의 자원에 여러 프로세스가 아무런 규칙없이 접근하면, 자원 동기화 문제가 발생할 수 있다. 이를 방지하기 위해서 자원에 lock을 두는데, Python은 모든 자원의 lock을 global하게 관리하고 있다. 한번에 하나의 스레드만 자원에 접근할 수 있다는 것이다. 이로인해, 자원을 공유하는 여러 스레드를 동시에 실행시킨다고 해도, 결국 GIL 때문에 한번에 하나의 스레드만 실행되는 것이다.
 
-> 추가내용) 멀티스레딩이 유용한 경우?
-
-GIL은 cpu 동작에 대해서만 적용된다. 쓰레드가 cpu 동작을 마치고 I/O 작업을 실행하는 동안에는 다른 쓰레드가 cpu 동작을 동시에 실행할 수 있다. 따라서 cpu 동작이 많지 않고 I/O동작이 더 많은 프로그램에서는 멀티 쓰레드만으로 성능적으로 큰 효과를 얻을 수 있다.
+> **💡 멀티스레딩이 유용한 경우**  
+> GIL은 cpu 동작에 대해서만 적용된다. 쓰레드가 cpu 동작을 마치고 I/O 작업을 실행하는 동안에는 다른 쓰레드가 cpu 동작을 동시에 실행할 수 있다. 따라서 cpu 동작이 많지 않고 I/O동작이 더 많은 프로그램에서는 멀티 쓰레드만으로 성능적으로 큰 효과를 얻을 수 있다.
 
 #### References
 
@@ -1708,8 +1413,6 @@ GIL은 cpu 동작에 대해서만 적용된다. 쓰레드가 cpu 동작을 마�
 
 참고로 dis 모듈을 사용하여 소스 코드가 어떤 바이트 코드로 변환되는지 확인할 수 있다.
 
-- 소스 코드
-
 ```python
 import dis
 
@@ -1717,15 +1420,11 @@ def mult(a, b):
     return a*b
 
 dis.dis(mult)
-```
-
-- 출력 결과
-
-```shell
-4           0 LOAD_FAST                0 (a)
-            2 LOAD_FAST                1 (b)
-            4 BINARY_MULTIPLY
-            6 RETURN_VALUE
+# output:
+# 4           0 LOAD_FAST                0 (a)
+#             2 LOAD_FAST                1 (b)
+#             4 BINARY_MULTIPLY
+#             6 RETURN_VALUE
 ```
 
 #### References
@@ -1745,13 +1444,11 @@ dis.dis(mult)
 
 파이썬 라이브러리는 패키지의 모음이다.
 
-<div align='center'>
-    <img src='./img/4-python/library.png' width='900'/>
-</div>
+![](./img/4-python/library.png)
 
 주로 사용되는 파이썬 라이브러리로는 [`Numpy`](https://numpy.org/), [`Pandas`](https://pandas.pydata.org/), [`Matplotlib`](https://matplotlib.org/), [`Scikit-learn`](https://scikit-learn.org/stable/) 등이 있다.
 
-> 패키지에 대한 더 자세한 내용은 [#42. 패키지](#42) 참고
+패키지에 대한 더 자세한 내용은 [#42. 패키지](#42) 참고!
 
 ---
 
@@ -1771,26 +1468,15 @@ sep이 지정되면 구분자를 기준으로 문자열을 분리하고, sep이 
 
 maxsplit이 지정되면 그 수만큼의 분할이 수행되고, maxsplit이 지정되지 않았거나 -1인 경우에는 가능한 모든 분할이 수행된다.
 
-> **Example**
-
 ```python
 a = "ai tech interview"
-print(a.split())
+print(a.split())  # ['ai', 'tech', 'interview']
 a = "ai                    tech          interview"
-print(a.split())
+print(a.split())  # ['ai', 'tech', 'interview']
 a = "ai-tech-interview"
-print(a.split("-"))
+print(a.split("-")) # ['ai', 'tech', 'interview']
 a = "ai-tech-interview"
-print(a.split("-", 1))
-```
-
-> **Output**
-
-```
-['ai', 'tech', 'interview']
-['ai', 'tech', 'interview']
-['ai', 'tech', 'interview']
-['ai', 'tech-interview']
+print(a.split("-", 1))  # ['ai', 'tech-interview']
 ```
 
 #### References
@@ -1803,27 +1489,19 @@ print(a.split("-", 1))
 
 #### How to import modules in python?
 
-`import` 키워드를 사용하여 모듈을 가져올 수 있다. 세 가지 방법으로 모듈을 가져올 수 있다.
-
 ```python
 import [패키지/모듈]
 from [패키지] import [모듈/변수/함수/클래스]
 from [모듈] import [변수/함수/클래스]
 ```
 
-<br>
-
-> **Example**
+`import` 키워드를 사용하여 모듈을 가져올 수 있다. 세 가지 방법으로 모듈을 가져올 수 있다.
 
 ```python
 import numpy        # importing using the original module name
 import numpy as np  # importing using an alias name
 from numpy import * # imports everything present in the numpy module
 ```
-
-<br>
-
-> 참고
 
 ```python
 from numpy import argmax as arm # 이런거도 된다
@@ -1968,11 +1646,10 @@ class 추상클래스명(metaclass=ABCMeta):
 
 접두사 _ 가 한 개 있는 경우에는 protected, 접두사 _ 가 두 개 있는 경우에는 private, 접두사 _ 가 없거나 접미사 _ 가 두 개 이상 있는 경우에는 public 이다.
 
-> [public, private, protect의 차이점 - Eureka Developer](https://eurekadeveloper.tistory.com/entry/public-private-protect%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90)
-
 #### References
 
 - [[python] 접근 제어자 - 불곰](https://brownbears.tistory.com/112)
+- [public, private, protect의 차이점 - Eureka Developer](https://eurekadeveloper.tistory.com/entry/public-private-protect%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90)
 
 ---
 
@@ -1997,9 +1674,7 @@ print(e.a) # 10
 
 #### What does an object() do?
 
-파이썬은 모든 것이 객체이다. 따라서 기본적으로 object 클래스를 상속받고 있다.
-
-object() 함수를 사용하면 새로운 기본 object 객체를 반환받을 수 있다.
+파이썬은 모든 것이 객체이다. 따라서 기본적으로 object 클래스를 상속받고 있다. `object()` 함수를 사용하면 새로운 기본 object 객체를 반환받을 수 있다.
 
 ---
 
@@ -2104,7 +1779,7 @@ def big_number2(n):
 
 object interning 은 자주 사용될, 즉 재활용될 object 에 대해 매번 새로운 주소를 할당하는 것은 비효율적이므로, 하나의 주소에 값을 주고 그 주소를 재활용하는 작업을 말한다.
 
-기본적으로 파이썬에서는 -5~256, [a-Az-Z0-9_] 에 대해 고정된 주소를 할당하여 interning 을 하고 있다.
+기본적으로 파이썬에서는 `-5~256, [a-Az-Z0-9_]` 에 대해 고정된 주소를 할당하여 interning 을 하고 있다.
 
 #### References
 
@@ -2116,11 +1791,11 @@ object interning 은 자주 사용될, 즉 재활용될 object 에 대해 매번
 
 #### What is @classmethod, @staticmethod, @property?
 
-**@classmethod**
+> **@classmethod**
 
 클래스 내부의 함수 중에 @classmethod 로 선언된 함수에 대해서는 클래스의 객체를 만들지 않고도 바로 접근이 가능하다. 하지만 함수의 첫 인자로 클래스를 받아서, 상속되었을 때 자식 클래스의 데이터를 따르는 특징이 있다.
 
-**@staticmethod**
+> **@staticmethod**
 
 @staticmethod 는 @classmethod 와 마찬가지로 클래스의 객체를 만들지 않고도 바로 접근할 수 있다. 하지만 클래스를 인자로 받지 않기 때문에, 상속되었을 때에도 자식 클래스의 데이터를 따르지 않고 처음에 클래스에서 선언한 데이터대로 함수가 사용된다.
 
@@ -2156,7 +1831,8 @@ class KoreanLanguage(Language):
 나의 언어는한국어
 ```
 
-**@property**
+> **@property**
+
 객체지향 언어에서는 캡슐화를 위해 변수를 직접 지정하지 않고 객체의 함수를 통해 지정하고 받아오는 setter, getter 함수를 사용한다. 파이썬에서는 이를 편하게 사용할 수 있도록 @property 를 제공한다.
 
 getter 가 될 함수에 @property 를, setter 가 될 함수에 @변수.setter 를 붙이면 된다.
