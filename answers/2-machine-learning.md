@@ -464,7 +464,7 @@ $$
 
 > **Newton's Method**
 
-함수 $f$의 2차 테일러 근사(quadratic approximation)은 다음과 같다.
+함수 $$f$$의 2차 테일러 근사(quadratic approximation)은 다음과 같다.
 
 $$
 f(y)\approx f(x)+\nabla f(x)^T(y-x)+\frac{1}{2}(y-x)^T\nabla^2f(x)(y-x),
@@ -472,9 +472,9 @@ f(y)\approx f(x)+\nabla f(x)^T(y-x)+\frac{1}{2}(y-x)^T\nabla^2f(x)(y-x),
 f_{approx}(y)=f(x)+\nabla f(x)^T(y-x)+\frac{1}{2}(y-x)^T\nabla^2f(x)(y-x)
 $$
 
-여기서 $y$는 다음 스텝의 $x$ 값인 $x^+$이다. 또한 quadratic approximation을 $f_{approx}$로 정한다.
+여기서 $$y$$는 다음 스텝의 $$x$$ 값인 $$x^+$$이다. 또한 quadratic approximation을 $$f_{approx}$$로 정한다.
 
-이 $f_{approx}$ 즉, quadratic approximation을 최소로 만드는 입력 $y$를 찾으려 한다. 이때 $f_{approx}$는 convex이므로 위 식의 gradient를 0으로 만드는 입력 $y$가 $f_{approx}$를 최소로 만들 것이다. 이 결과가 Newton’s method에서의 step update 식이 된다. 아래 식의 미분은 $y$에 대한 미분 임을 기억하자.
+이 $$f_{approx}$$ 즉, quadratic approximation을 최소로 만드는 입력 $$y$$를 찾으려 한다. 이때 $$f_{approx}$$는 convex이므로 위 식의 gradient를 0으로 만드는 입력 $$y$$가 $$f_{approx}$$를 최소로 만들 것이다. 이 결과가 Newton’s method에서의 step update 식이 된다. 아래 식의 미분은 $$y$$에 대한 미분 임을 기억하자.
 
 $$
 \nabla f_{approx}(y)=\nabla f(x)+\frac{1}{2}\left((\nabla^2f(x))^T(y-x)+(y-x)^T\nabla^2f(x)\right)
@@ -488,7 +488,7 @@ $$
 
 > **Gradient Descent**
 
-Gradient descent에서는 함수 $f$의 2차 테일러 근사항을 사용하고, 2차 항의 경우 실제 2차 미분 결과가 아닌, 정방행렬(identity matrix)과 이를 $t$로 나눈 값으로 가정한다.
+Gradient descent에서는 함수 $$f$$의 2차 테일러 근사항을 사용하고, 2차 항의 경우 실제 2차 미분 결과가 아닌, 정방행렬(identity matrix)과 이를 $$t$$로 나눈 값으로 가정한다.
 
 $$
 f(y)\approx f(x)+\nabla f(x)^T(y-x)+\frac{1}{2t}\parallel y-x\parallel^2_2,
@@ -496,7 +496,7 @@ f(y)\approx f(x)+\nabla f(x)^T(y-x)+\frac{1}{2t}\parallel y-x\parallel^2_2,
 f_{approx}(y)=f(x)+\nabla f(x)^T(y-x)+\frac{1}{2t}\parallel y-x\parallel^2_2
 $$
 
-Newton’s method와 동일하게 위 근사식의 gradient가 0인 $y$ 값, 즉 $x^+$를 정할 수 있다.
+Newton’s method와 동일하게 위 근사식의 gradient가 0인 $$y$$ 값, 즉 $$x^+$$를 정할 수 있다.
 
 $$
 \nabla f(y)=\nabla f(x)+\frac{1}{t}(y-x),
