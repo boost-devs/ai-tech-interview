@@ -1,4 +1,4 @@
-> **질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.**
+> **📌 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.**
 
 ## Table of Contents
 
@@ -168,7 +168,7 @@ R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 
 
 #### dimension reduction 기법으로 보통 어떤 것들이 있나요?
 
-차원 축소는 **피처 선택(feature selection)**과 **피처 추출(feature extraction)**으로 나눌 수 있다. 우선 피처 선택은 특정 피처에 종속성이 강한 불필요한 피처는 제거하고 데이터의 특징을 잘 표현하는 주요 피처만 선택하는 것을 말한다. 반면 피처 추출은 기존 피처를 저차원의 피처로 압축하여, 피처를 함축적으로 잘 설명할 수 있도록 저차원으로 매핑하는 것을 말한다. 대표적인 피처 추출 알고리즘으로 PCA, SVD, NMF, LDA 등이 있다.
+차원 축소는 <strong>피처 선택(feature selection)</strong>과 <strong>피처 추출(feature extraction)</strong>으로 나눌 수 있다. 우선 피처 선택은 특정 피처에 종속성이 강한 불필요한 피처는 제거하고 데이터의 특징을 잘 표현하는 주요 피처만 선택하는 것을 말한다. 반면 피처 추출은 기존 피처를 저차원의 피처로 압축하여, 피처를 함축적으로 잘 설명할 수 있도록 저차원으로 매핑하는 것을 말한다. 대표적인 피처 추출 알고리즘으로 PCA, SVD, NMF, LDA 등이 있다.
 
 #### References
 
@@ -219,7 +219,7 @@ PCA(Principle Component Analysis)는 **입력 데이터의 공분산 행렬을 �
 
 > **마코프 체인(Markov Chain)**
 
-마코프 체인이란 **마코프 성질을 지닌 이산 확률 과정(Discrete-time Stochastic Pross)**을 말한다.
+마코프 체인이란 <strong>마코프 성질을 지닌 이산 확률 과정(Discrete-time Stochastic Pross)</strong>을 말한다.
 
 > **마코프 성질(Markov Property)**
 
@@ -855,7 +855,7 @@ Random Forest는 여러 의사 결정 나무를 생성한 후에 다수결(hard 
 
 스팸 필터는 메일이 스팸 메일인지 아닌지에 대한 확률을 계산하여, 메일을 **분류(Classification)** 하는 문제이다. 로지스틱 회귀는 회귀를 바탕으로 데이터가 어떤 범주에 속할 확률을 0과 1 사이의 값으로 예측하고 그 확률에 따라 가능성이 더 높은 범주에 속하는 것으로 분류(Classification)해주는 지도 학습 알고리즘이다. 특히 **입력값이 아무리 크거나 작아도 0에서 1 사이의 값으로 맵핑**시킨다는 점에서 분류문제에 적합하다. 따라서 로지스틱 회귀가 스팸필터에 많이 사용된다.
 
-![](/img/2-machine-learning/linear-and-logistic-regression.png)
+![](./img/2-machine-learning/linear-and-logistic-regression.png)
 
 > **분류문제에서 로지스틱 회귀가 적절한 이유**
 
