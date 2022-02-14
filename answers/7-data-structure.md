@@ -461,7 +461,7 @@ $$
 
 > **레드-블랙트리의 정의**
 
-![](./img/7-data-structure/red-black-tree.png")
+![](./img/7-data-structure/red-black-tree.png)
 
 레드-블랙 트리(Red-Black Tree)는 이진탐색트리(Binary Search Tree)의 한 종류로, 삽입(insert), 삭제(delete), 검색(retrieval) 연산을 $$O(\log N)$$에 수행하도록 보장하는 **균형 잡힌 트리**를 말한다. 즉, 트리의 높이가 $$\log N$$이 되도록 한다.
 
