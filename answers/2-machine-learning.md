@@ -291,7 +291,7 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 SVM(Support Vector Machine)은 데이터가 사상된 공간에서 **경계로 표현**되며, 공간상에 존재하는 **여러 경계 중 가장 큰 폭을 가진 경계를 찾는다.**
 
-![SVM](./img/2-machine-learning/svm.png")
+![SVM](./img/2-machine-learning/svm.png)
 
 - $$B_1$$: 결정 경계
 - $$b_{11}$$: plus-plane
