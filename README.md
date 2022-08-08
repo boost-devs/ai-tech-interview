@@ -81,7 +81,7 @@
 
 - 알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)
 - 정규화를 왜 해야할까요? 정규화의 방법은 무엇이 있나요?
-- Local Minima와 Global Minima에 대해 설명해주세요.
+- Local Minima와 Global Minimum에 대해 설명해주세요.
 - 차원의 저주에 대해 설명해주세요.
 - dimension reduction기법으로 보통 어떤 것들이 있나요?
 - PCA는 차원 축소 기법이면서, 데이터 압축 기법이기도 하고, 노이즈 제거기법이기도 합니다. 왜 그런지 설명해주실 수 있나요?

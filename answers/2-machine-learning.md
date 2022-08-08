@@ -4,7 +4,7 @@
 
 - [알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)](#1)
 - [정규화를 왜 해야할까요? 정규화의 방법은 무엇이 있나요?](#2)
-- [Local Minima와 Global Minima에 대해 설명해주세요.](#3)
+- [Local Minima와 Global Minimum에 대해 설명해주세요.](#3)
 - [차원의 저주에 대해 설명해주세요.](#4)
 - [dimension reduction 기법으로 보통 어떤 것들이 있나요?](#5)
 - [PCA는 차원 축소 기법이면서, 데이터 압축 기법이기도 하고, 노이즈 제거기법이기도 합니다. 왜 그런지 설명해주실 수 있나요?](#6)
@@ -135,11 +135,11 @@ R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 
 
 ## #3
 
-#### Local Minima와 Global Minima에 대해 설명해주세요.
+#### Local Minima와 Global Minimum에 대해 설명해주세요.
 
 ![Maxima와 Minima](./img/2-machine-learning/local-minima-global-minima.png)
 
-비용 함수(cost function)에서의 **Global Minima**는 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, **Local Minima**는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minima를 뺀 지점을 말한다. Local Minima는 자칫 에러가 **최소화되는 지점을 찾았다고 착각**할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
+비용 함수(cost function)에서의 **Global Minimum**은 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, **Local Minima**는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minimum을 뺀 지점을 말한다. Local Minima는 자칫 에러가 **최소화되는 지점을 찾았다고 착각**할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
 
 #### References
 
