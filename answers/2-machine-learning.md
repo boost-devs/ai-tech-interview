@@ -139,7 +139,7 @@ R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 
 
 ![Maxima와 Minima](./img/2-machine-learning/local-minima-global-minima.png)
 
-비용 함수(cost function)에서의 **Global Minimum**는 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, **Local Minima**는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minimum를 뺀 지점을 말한다. Local Minima는 자칫 에러가 **최소화되는 지점을 찾았다고 착각**할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
+비용 함수(cost function)에서의 **Global Minimum**은 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, **Local Minima**는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minimum을 뺀 지점을 말한다. Local Minima는 자칫 에러가 **최소화되는 지점을 찾았다고 착각**할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
 
 #### References
 
