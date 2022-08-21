@@ -441,10 +441,10 @@ $$
 |      4811      |       no.4        | <U>계란</U>, 우유, <U>맥주, 기저귀</U> |
 |      8091      |       no.5        |         계란, 우유, 맥주, 콜라         |
 
-$$ P(Y) = \frac{n(Y)}{N} = \frac{n \{ no.2, no.3, no.4 \} }{N} = \frac{3}{5} = 0.6 $$
+$$ P(Y) = \frac{n(Y)}{N} = \frac{n \\{ no.2, no.3, no.4 \\} }{N} = \frac{3}{5} = 0.6 $$
 
-- 지지도(Support) = $s(X→Y) = \frac{n(X\cup Y)}{N} = \frac{n \{ no.2, no.4 \} }{N} = \frac{2}{5} = 0.4$
-- 신뢰도(Confidence) = $c(X→Y) = \frac{n(X\cup Y)}{n(X)} = \frac{n \{ no.2, no.4 \} }{n \{ no.2, no.4, no.5 \} } = \frac{2}{3} = 0.6667$
+- 지지도(Support) = $s(X→Y) = \frac{n(X\cup Y)}{N} = \frac{n \\{ no.2, no.4 \\} }{N} = \frac{2}{5} = 0.4$
+- 신뢰도(Confidence) = $c(X→Y) = \frac{n(X\cup Y)}{n(X)} = \frac{n \\{ no.2, no.4 \\} }{n \\{ no.2, no.4, no.5 \\} } = \frac{2}{3} = 0.6667$
 - 향상도(Lift) = $Lift(X→Y) = \frac{c(X→Y)}{s(Y)} = \frac{0.6667}{0.6} = 1.1111$
 
 #### References
