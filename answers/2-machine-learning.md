@@ -124,7 +124,7 @@ R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 
 
 정규화는 **개별 피처의 크기를 모두 똑같은 단위로 변경하는 것**을 말한다. 정규화를 하는 이유는 **피처의 스케일이 심하게 차이가 나는 경우 값이 큰 피처가 더 중요하게 여겨질 수 있기 때문**이다. 이를 막기 위해 피처 모두 동일한 스케일로 반영되도록 하는 것이 정규화이다.
 
-정규화하는 방법으로는 대표적으로 두 가지가 존재한다. 첫 번째 정규화 방법은 <strong>최소-최대 정규화(min-max normalization)</strong>으로 각 피처의 최소값을 0, 최대값을 1로 두고 변환하는 방법이다. 값을 $$x$$로, 최소값을 $$min$$, 최대값을 $$max$$로 둘 때, 정규화된 값은 $$\frac{x - min}{max - min}$$으로 계산할 수 있다. 두 번째 정규화 방법으로 <strong>Z-점수 정규화(z-score normalization)</strong>이 있다. 이 방법은 각 피처의 표준편차와 평균으로 값을 정규화시킨다. 정규화된 값은 $$\frac{x - mean}{std}$$로 계산할 수 있다.
+정규화하는 방법으로는 대표적으로 두 가지가 존재한다. 첫 번째 정규화 방법은 <strong>최소-최대 정규화(min-max normalization)</strong>으로 각 피처의 최소값을 0, 최대값을 1로 두고 변환하는 방법이다. 값을 $x$로, 최소값을 $min$, 최대값을 $max$로 둘 때, 정규화된 값은 $\frac{x - min}{max - min}$으로 계산할 수 있다. 두 번째 정규화 방법으로 <strong>Z-점수 정규화(z-score normalization)</strong>이 있다. 이 방법은 각 피처의 표준편차와 평균으로 값을 정규화시킨다. 정규화된 값은 $\frac{x - mean}{std}$로 계산할 수 있다.
 
 #### References
 
@@ -223,7 +223,7 @@ PCA(Principle Component Analysis)는 **입력 데이터의 공분산 행렬을 �
 
 > **마코프 성질(Markov Property)**
 
-$$n+1$$회의 상태(state)는 오직 $$n$$회에서의 상태, 혹은 그 이전 일정 기간의 상태에만 영향을 받는 것을 의미한다. 예를 들면 동전 던지기는 독립 시행이기 때문에 $$n$$번째의 상태가 앞이던지 뒤이던지 간에 $$n+1$$번째 상태에 영향을 주지 않는다. 하지만 1차 마코프 체인은 $$n$$번째 상태가 $$n+1$$번째 상태를 결정하는데에 영향을 미친다. (시간 $$t$$에서의 관측은 단지 최근 $$r$$개의 관측에만 의존한다는 가정을 하고 그 가정하에서 성립한다.)
+$n+1$회의 상태(state)는 오직 $n$회에서의 상태, 혹은 그 이전 일정 기간의 상태에만 영향을 받는 것을 의미한다. 예를 들면 동전 던지기는 독립 시행이기 때문에 $n$번째의 상태가 앞이던지 뒤이던지 간에 $n+1$번째 상태에 영향을 주지 않는다. 하지만 1차 마코프 체인은 $n$번째 상태가 $n+1$번째 상태를 결정하는데에 영향을 미친다. (시간 $t$에서의 관측은 단지 최근 $r$개의 관측에만 의존한다는 가정을 하고 그 가정하에서 성립한다.)
 
 ![마코프 체인](./img/2-machine-learning/markov-chain.png)
 
@@ -233,7 +233,7 @@ $$n+1$$회의 상태(state)는 오직 $$n$$회에서의 상태, 혹은 그 이�
 
 > **마코프 모델(Markov Model)**
 
-마코프 **모델은 위의 가정하에 확률적 모델을 만든 것으로써 가장 먼저 각 상태를 정의**하게 된다. 상태(state)는 $$V = v_1, ... , v_m$$로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 <strong>상태 전이 확률(State transition Probability)</strong>을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 $$a_{ij}$$는 상태 $$v_i$$에서 상태 $$v_j$$로 이동할 확률을 의미한다. 아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
+마코프 **모델은 위의 가정하에 확률적 모델을 만든 것으로써 가장 먼저 각 상태를 정의**하게 된다. 상태(state)는 $V = v_1, ... , v_m$로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 <strong>상태 전이 확률(State transition Probability)</strong>을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 $a_{ij}$는 상태 $v_i$에서 상태 $v_j$로 이동할 확률을 의미한다. 아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
 
 ![상태 전이 확률](./img/2-machine-learning/state-transition-probability.png)
 
@@ -293,9 +293,9 @@ SVM(Support Vector Machine)은 데이터가 사상된 공간에서 **경계로 �
 
 ![SVM](./img/2-machine-learning/svm.png)
 
-- $$B_1$$: 결정 경계
-- $$b_{11}$$: plus-plane
-- $$b_{12}$$: minus-plane
+- $B_1$: 결정 경계
+- $b_{11}$: plus-plane
+- $b_{12}$: minus-plane
 
 SVM의 장단점은 다음과 같다.
 
@@ -433,7 +433,7 @@ $$
 
 ---
 
-에를 들어 어떤 슈퍼마켓에서 5명의 고객에 의해 발생된 5($$N = 5$$)건의 거래를 가지고, 연관규칙 X:{계란, 맥주} → Y:{기저귀}에 대해 살펴보자.
+에를 들어 어떤 슈퍼마켓에서 5명의 고객에 의해 발생된 5($N = 5$)건의 거래를 가지고, 연관규칙 X:{계란, 맥주} → Y:{기저귀}에 대해 살펴보자.
 
 | Customer<br>ID | Transaction<br>ID |                 Items                  |
 | :------------: | :---------------: | :------------------------------------: |
@@ -447,9 +447,9 @@ $$
 P(Y) = \frac{n(Y)}{N} = \frac{n\left\{no.2, no.3, no.4\right\}}{N} = \frac{3}{5} = 0.6
 $$
 
-- 지지도(Support) = $$s(X→Y) = \frac{n(X\cup Y)}{N} = \frac{n\left\{no.2, no.4\right\}}{N} = \frac{2}{5} = 0.4$$
-- 신뢰도(Confidence) = $$c(X→Y) = \frac{n(X\cup Y)}{n(X)} = \frac{n\left\{no.2, no.4\right\}}{n\left\{no.2, no.4, no.5\right\}} = \frac{2}{3} = 0.6667$$
-- 향상도(Lift) = $$Lift(X→Y) = \frac{c(X→Y)}{s(Y)} = \frac{0.6667}{0.6} = 1.1111$$
+- 지지도(Support) = $s(X→Y) = \frac{n(X\cup Y)}{N} = \frac{n\left\{no.2, no.4\right\}}{N} = \frac{2}{5} = 0.4$
+- 신뢰도(Confidence) = $c(X→Y) = \frac{n(X\cup Y)}{n(X)} = \frac{n\left\{no.2, no.4\right\}}{n\left\{no.2, no.4, no.5\right\}} = \frac{2}{3} = 0.6667$
+- 향상도(Lift) = $Lift(X→Y) = \frac{c(X→Y)}{s(Y)} = \frac{0.6667}{0.6} = 1.1111$
 
 #### References
 
@@ -464,7 +464,7 @@ $$
 
 > **Newton's Method**
 
-함수 $$f$$의 2차 테일러 근사(quadratic approximation)은 다음과 같다.
+함수 $f$의 2차 테일러 근사(quadratic approximation)은 다음과 같다.
 
 $$
 f(y)\approx f(x)+\nabla f(x)^T(y-x)+\frac{1}{2}(y-x)^T\nabla^2f(x)(y-x),
@@ -472,9 +472,9 @@ f(y)\approx f(x)+\nabla f(x)^T(y-x)+\frac{1}{2}(y-x)^T\nabla^2f(x)(y-x),
 f_{approx}(y)=f(x)+\nabla f(x)^T(y-x)+\frac{1}{2}(y-x)^T\nabla^2f(x)(y-x)
 $$
 
-여기서 $$y$$는 다음 스텝의 $$x$$ 값인 $$x^+$$이다. 또한 quadratic approximation을 $$f_{approx}$$로 정한다.
+여기서 $y$는 다음 스텝의 $x$ 값인 $x^+$이다. 또한 quadratic approximation을 $f_{approx}$로 정한다.
 
-이 $$f_{approx}$$ 즉, quadratic approximation을 최소로 만드는 입력 $$y$$를 찾으려 한다. 이때 $$f_{approx}$$는 convex이므로 위 식의 gradient를 0으로 만드는 입력 $$y$$가 $$f_{approx}$$를 최소로 만들 것이다. 이 결과가 Newton’s method에서의 step update 식이 된다. 아래 식의 미분은 $$y$$에 대한 미분 임을 기억하자.
+이 $f_{approx}$ 즉, quadratic approximation을 최소로 만드는 입력 $y$를 찾으려 한다. 이때 $f_{approx}$는 convex이므로 위 식의 gradient를 0으로 만드는 입력 $y$가 $f_{approx}$를 최소로 만들 것이다. 이 결과가 Newton’s method에서의 step update 식이 된다. 아래 식의 미분은 $y$에 대한 미분 임을 기억하자.
 
 $$
 \nabla f_{approx}(y)=\nabla f(x)+\frac{1}{2}\left((\nabla^2f(x))^T(y-x)+(y-x)^T\nabla^2f(x)\right)
@@ -488,7 +488,7 @@ $$
 
 > **Gradient Descent**
 
-Gradient descent에서는 함수 $$f$$의 2차 테일러 근사항을 사용하고, 2차 항의 경우 실제 2차 미분 결과가 아닌, 정방행렬(identity matrix)과 이를 $$t$$로 나눈 값으로 가정한다.
+Gradient descent에서는 함수 $f$의 2차 테일러 근사항을 사용하고, 2차 항의 경우 실제 2차 미분 결과가 아닌, 정방행렬(identity matrix)과 이를 $t$로 나눈 값으로 가정한다.
 
 $$
 f(y)\approx f(x)+\nabla f(x)^T(y-x)+\frac{1}{2t}\parallel y-x\parallel^2_2,
@@ -496,7 +496,7 @@ f(y)\approx f(x)+\nabla f(x)^T(y-x)+\frac{1}{2t}\parallel y-x\parallel^2_2,
 f_{approx}(y)=f(x)+\nabla f(x)^T(y-x)+\frac{1}{2t}\parallel y-x\parallel^2_2
 $$
 
-Newton’s method와 동일하게 위 근사식의 gradient가 0인 $$y$$ 값, 즉 $$x^+$$를 정할 수 있다.
+Newton’s method와 동일하게 위 근사식의 gradient가 0인 $y$ 값, 즉 $x^+$를 정할 수 있다.
 
 $$
 \nabla f(y)=\nabla f(x)+\frac{1}{t}(y-x),
@@ -933,7 +933,7 @@ x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값�
 
 **최소자승법(OLS, Ordinary Least Squares)** 이란, 산점도를 통해 데이터의 분포 그래프를 그릴때, 이 데이터들의 경향을 알기 위한 최적의 추세선을 그리기 위한 방법 중 하나이다. OLS는 근사적으로 구하려는 해와 실제 해의 오차의 제곱의 합이 최소가 되는 해를 구하는 방법이다.
 
-OLS Regression은 회귀를 통해서 방정식의 상수 값들을 추정하는 데에 사용된다. n개의 입력값과 그에 대응하는 출력값 $$(x_{i},y_{i})(1\leq i\leq n)$$이 있고, 이 계의 방정식이 변수 $$x$$와 $$\beta=(\beta_{0},\beta_{1},\cdots ,\beta_{k})$$인 상수 $$\beta$$에 대한 식 $$f(x, \beta)$$으로 주어질 때, $$\sum _{i}(y_{i}-f(x_{i}, \beta))^{2}$$ 의 값을 최소로 만드는 $$\beta$$를 구하는 것이 문제의 목표이다.
+OLS Regression은 회귀를 통해서 방정식의 상수 값들을 추정하는 데에 사용된다. n개의 입력값과 그에 대응하는 출력값 $(x_{i},y_{i})(1\leq i\leq n)$이 있고, 이 계의 방정식이 변수 $x$와 $\beta=(\beta_{0},\beta_{1},\cdots ,\beta_{k})$인 상수 $\beta$에 대한 식 $f(x, \beta)$으로 주어질 때, $\sum _{i}(y_{i}-f(x_{i}, \beta))^{2}$ 의 값을 최소로 만드는 $\beta$를 구하는 것이 문제의 목표이다.
 
 추정하고자 하는 파라미터 β에 대한 표현식을 다음과 같이 구할 수 있다.
 

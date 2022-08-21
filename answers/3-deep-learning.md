@@ -205,7 +205,7 @@ $$
 
 ![](./img/3-deep-learning/sigmoid.png)
 
-sigmoid 함수는 $$s(z) = \frac{1}{1 + e^{-z}}$$로, 입력을 0~1 사이의 값으로 바꿔준다.
+sigmoid 함수는 $s(z) = \frac{1}{1 + e^{-z}}$로, 입력을 0~1 사이의 값으로 바꿔준다.
 
 입력 값이 크거나 작을 때 기울기가 0에 가까워지는 `saturation` 문제가 있다. 이는 `gradient vanishing` 문제를 야기하므로 요즘에는 활성화 함수로서 잘 사용되지 않는다.
 
@@ -221,7 +221,7 @@ tanh 함수는 입력을 -1~1 사이의 값으로 바꿔준다. sigmoid 함수�
 
 ![](./img/3-deep-learning/relu.png)
 
-ReLU 함수는 $$f(x) = max(0, x)$$으로, 입력이 양수면 그대로, 음수면 0을 출력한다. 계산 효율과 성능에서 뛰어난 성능을 보여 가장 많이 사용되는 활성화 함수이다. 양의 입력에 대해서는 `saturation` 문제가 발생하지 않는다. 음의 입력 값에 대해서는 어떤 업데이트도 되지 않는 `Dead ReLU` 문제가 발생한다.
+ReLU 함수는 $f(x) = max(0, x)$으로, 입력이 양수면 그대로, 음수면 0을 출력한다. 계산 효율과 성능에서 뛰어난 성능을 보여 가장 많이 사용되는 활성화 함수이다. 양의 입력에 대해서는 `saturation` 문제가 발생하지 않는다. 음의 입력 값에 대해서는 어떤 업데이트도 되지 않는 `Dead ReLU` 문제가 발생한다.
 
 > **Leaky ReLU**
 
@@ -229,7 +229,7 @@ ReLU 함수는 $$f(x) = max(0, x)$$으로, 입력이 양수면 그대로, 음수
 
 >
 
-Leaky ReLU는 $$f(x) = max(0.01x, x)$$으로, ReLU 와 마찬가지로 좋은 성능을 유지하면서 음수 입력이 0이 아니게 됨에 따라 `Dead ReLU` 문제를 해결하였다.
+Leaky ReLU는 $f(x) = max(0.01x, x)$으로, ReLU 와 마찬가지로 좋은 성능을 유지하면서 음수 입력이 0이 아니게 됨에 따라 `Dead ReLU` 문제를 해결하였다.
 
 #### References
 
@@ -250,7 +250,7 @@ training loss는 계속 낮아지더라도 validation loss는 올라가는 시�
 
 > **Parameter Norm Penalty / Weight Decay**
 
-비용함수에 제곱을 더하거나($$L_2 Regularization$$) 절댓값을 더해서($$L_1 Regularization$$) weight의 크기에 페널티를 부과하는 방법을 말한다.
+비용함수에 제곱을 더하거나($L_2 Regularization$) 절댓값을 더해서($L_1 Regularization$) weight의 크기에 페널티를 부과하는 방법을 말한다.
 
 $$
 total cost = loss(D ; W) + \frac{\alpha}{2} \lVert W \rVert^2_2
@@ -470,14 +470,14 @@ $$
 
 #### Non-Linearity라는 말의 의미와 그 필요성은?
 
-비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 $$x_1, x_2, ... , x_n$$과 가중치 $$w_1, w_2, ... , w_n$$으로 $$y = w_1*x_1 + w_2*x_2 + ... + w_n*x_n$$으로 표현할 수 있으며, 가산성(Additreivityly)과 동차성(Homogeneity)을 만족해야 한다.
+비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 $x_1, x_2, ... , x_n$과 가중치 $w_1, w_2, ... , w_n$으로 $y = w_1*x_1 + w_2*x_2 + ... + w_n*x_n$으로 표현할 수 있으며, 가산성(Additreivityly)과 동차성(Homogeneity)을 만족해야 한다.
 
-- **가산성**: 임의의 수 $$x, y$$에 대해 $$f(x+y) = f(x) + f(y)$$가 성립
-- **동차성**: 임의의 수 $$x, \alpha$$에 대해 $$f(\alpha x) = \alpha f(x)$$가 성립
+- **가산성**: 임의의 수 $x, y$에 대해 $f(x+y) = f(x) + f(y)$가 성립
+- **동차성**: 임의의 수 $x, \alpha$에 대해 $f(\alpha x) = \alpha f(x)$가 성립
 
 이를 만족하지 못하는 모델을 비선형 관계에 있는 모델이라고 한다.
 
-딥러닝에서 이런 비선형 관계는 활성화 함수(activation function)을 도입함으로써 표현할 수 있다. 그럼 비선형 관계 즉, 활성화 함수가 왜 필요할까? 바로 **활성화 함수를 사용해 여러 층을 쌓아서 더 복잡한 표현을 하기 위해서**이다. 활성화 함수가 $$h(x) = cx$$인 선형 함수라고 생각해보자. 이 때 $$n$$개의 층을 쌓았다고 할 때, 모델은 $$y = h^n(x) = c^nx$$로 나타낼 수 있다. $$c^n=k$$라는 상수로 치환하면 결국 1층을 가진 신경망과 동일하다. 그렇기 때문에 비선형인 활성화 함수가 필요한 것이다.
+딥러닝에서 이런 비선형 관계는 활성화 함수(activation function)을 도입함으로써 표현할 수 있다. 그럼 비선형 관계 즉, 활성화 함수가 왜 필요할까? 바로 **활성화 함수를 사용해 여러 층을 쌓아서 더 복잡한 표현을 하기 위해서**이다. 활성화 함수가 $h(x) = cx$인 선형 함수라고 생각해보자. 이 때 $n$개의 층을 쌓았다고 할 때, 모델은 $y = h^n(x) = c^nx$로 나타낼 수 있다. $c^n=k$라는 상수로 치환하면 결국 1층을 가진 신경망과 동일하다. 그렇기 때문에 비선형인 활성화 함수가 필요한 것이다.
 
 #### References
 
@@ -676,13 +676,13 @@ Local minima 문제를 피하는 방법으로는 **Momentum, Nesterov Accelerate
 
 ![](./img/3-deep-learning/momentum.png)
 
-**Nesterov Accelerated Gradient(NAG)** 는 모멘텀과 비슷한 역할을 수행하는 `Look-ahead gradient `인자를 포함하여, $$a$$ 라는 `accumulate gradient`가 gradient를 감소시키는 역할을 한다. 모멘텀과 다른 점은, 미리 한 스텝을 옮겨가본 후에 어느 방향으로 갈지 정한다는 것이다.
+**Nesterov Accelerated Gradient(NAG)** 는 모멘텀과 비슷한 역할을 수행하는 `Look-ahead gradient `인자를 포함하여, $a$ 라는 `accumulate gradient`가 gradient를 감소시키는 역할을 한다. 모멘텀과 다른 점은, 미리 한 스텝을 옮겨가본 후에 어느 방향으로 갈지 정한다는 것이다.
 
-**Adagrad**란 뉴럴넷의 파라미터가 많이 바뀌었는지 적게 바뀌었는지 확인하고, 적게 변한건 더 크게 변하게 하고, 크게 변한건 더 작게 변화시키는 방법이다. Adagrad는 `sum of gradient squares`($$G_t$$)를 사용하는데, 이는 그래디언트가 얼만큼 변했는지를 제곱해서 더하는 것이므로 계속 커진다는 문제가 발생한다. $$G_t$$가 계속 커지면 분모가 점점 무한대에 가까워지게 되어, $$W$$ 업데이트가 되지 않게 되어, 뒤로 갈수록 학습이 점점 안되는 문제점이 발생한다.
+**Adagrad**란 뉴럴넷의 파라미터가 많이 바뀌었는지 적게 바뀌었는지 확인하고, 적게 변한건 더 크게 변하게 하고, 크게 변한건 더 작게 변화시키는 방법이다. Adagrad는 `sum of gradient squares`($G_t$)를 사용하는데, 이는 그래디언트가 얼만큼 변했는지를 제곱해서 더하는 것이므로 계속 커진다는 문제가 발생한다. $G_t$가 계속 커지면 분모가 점점 무한대에 가까워지게 되어, $W$ 업데이트가 되지 않게 되어, 뒤로 갈수록 학습이 점점 안되는 문제점이 발생한다.
 
 ![](./img/3-deep-learning/adagrad.png)
 
-**Adadelta**는 `Exponential Moving Average(EMA)`를 사용하여, Adagrad의 $$G_t$$가 계속 커지는 현상을 막을 수 있다. EMA는 현재 타임스텝으로부터 `윈도우 사이즈만큼의 파라미터 변화(그래디언트 제곱의 변화)를 반영`하는 역할을 하는데, 이전의 값을 모두 저장하는 것이 아닌, `이전 변화량에 특정 비율을 곱해 더한 인자`를 따로 두는 방식이다. Adadelta는 learning rate가 없다.
+**Adadelta**는 `Exponential Moving Average(EMA)`를 사용하여, Adagrad의 $G_t$가 계속 커지는 현상을 막을 수 있다. EMA는 현재 타임스텝으로부터 `윈도우 사이즈만큼의 파라미터 변화(그래디언트 제곱의 변화)를 반영`하는 역할을 하는데, 이전의 값을 모두 저장하는 것이 아닌, `이전 변화량에 특정 비율을 곱해 더한 인자`를 따로 두는 방식이다. Adadelta는 learning rate가 없다.
 
 ![](./img/3-deep-learning/adadelta.png)
 
@@ -771,7 +771,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 ![배치 정규화(Batch Normalization) 수식](./img/3-deep-learning/batch-normalization-formula.png)
 
-배치 정규화(Batch Normalization)은 학습 시 **미니배치 단위로 입력의 분포가 평균이 0, 분산이 1이 되도록 정규화**한다. 더불어 $$\gamma$$로 스케일과 $$\beta$$로 이동 변환을 수행한다. 이렇게 배치 정규화를 사용하면 다음과 같은 효과를 얻을 수 있다.
+배치 정규화(Batch Normalization)은 학습 시 **미니배치 단위로 입력의 분포가 평균이 0, 분산이 1이 되도록 정규화**한다. 더불어 $\gamma$로 스케일과 $\beta$로 이동 변환을 수행한다. 이렇게 배치 정규화를 사용하면 다음과 같은 효과를 얻을 수 있다.
 
 - `장점 1` 기울기 소실/폭발 문제가 해결되어 큰 학습률을 설정할 수 있어 학습속도가 빨라진다.
 - `장점 2` 항상 입력을 정규화시키기 때문에 가중치 초깃값에 크게 의존하지 않아도 된다.
@@ -792,7 +792,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 ![](./img/3-deep-learning/dropout-nn.png)
 
-드롭아웃(Dropout)은 <strong>설정된 확률 $$p$$만큼 은닉층(hidden layer)에 있는 뉴런을 무작위로 제거하는 방법</strong>으로, 오버피팅을 방지하기 위한 방법 중 하나이다. (정확히는 출력을 0으로 만들어 더이상의 전파가 되지 않도록 한다.) 드롭아웃(Dropout)은 학습 때마다 무작위로 뉴런을 제거하므로 매번 다른 모델을 학습시키는 것으로 해석할 수 있다. 그리고 추론 시 출력에 제거 확률 $$p$$를 곱함으로써 앙상블 학습에서 여러 모델의 평균을 내는 효과를 얻을 수 있다.
+드롭아웃(Dropout)은 <strong>설정된 확률 $p$만큼 은닉층(hidden layer)에 있는 뉴런을 무작위로 제거하는 방법</strong>으로, 오버피팅을 방지하기 위한 방법 중 하나이다. (정확히는 출력을 0으로 만들어 더이상의 전파가 되지 않도록 한다.) 드롭아웃(Dropout)은 학습 때마다 무작위로 뉴런을 제거하므로 매번 다른 모델을 학습시키는 것으로 해석할 수 있다. 그리고 추론 시 출력에 제거 확률 $p$를 곱함으로써 앙상블 학습에서 여러 모델의 평균을 내는 효과를 얻을 수 있다.
 
 #### References
 
@@ -845,9 +845,9 @@ Loss Function을 계산할 때 전체 train set을 사용하는 것을 Batch Gra
 
 RMSProp은 딥러닝의 대가 제프리 힌톤이 제안한 방법으로서, Adagrad의 단점을 해결하기 위한 방법이다.
 
-Adagrad의 식에서 gradient의 제곱값을 더해나가면서 구한 $$G_t$$부분을 합이 아니라 지수평균으로 바꾸어서 대체한 방법이다.
+Adagrad의 식에서 gradient의 제곱값을 더해나가면서 구한 $G_t$부분을 합이 아니라 지수평균으로 바꾸어서 대체한 방법이다.
 
-이렇게 대체를 할 경우 Adagrad처럼 $$G_t$$가 무한정 커지지는 않으면서 최근 변화량의 변수간 상대적인 크기 차이는 유지할 수 있다.
+이렇게 대체를 할 경우 Adagrad처럼 $G_t$가 무한정 커지지는 않으면서 최근 변화량의 변수간 상대적인 크기 차이는 유지할 수 있다.
 
 식으로 나타내면 다음과 같다.
 
@@ -861,11 +861,11 @@ Adam(Adaptive Moment Estimation)은 RMSProp과 Momentum 방식을 합친 것 같
 
 ![](./img/3-deep-learning/adam.png)
 
-다만, Adam에서는 m과 v가 처음에 0으로 초기화되어 있기 때문에 학습의 초반부에서는 $$m_t, v_t$$가 0에 가깝게 bias 되어있을 것이라고 판단하여 이를 unbiased 하게 만들어주는 작업을 거친다.
+다만, Adam에서는 m과 v가 처음에 0으로 초기화되어 있기 때문에 학습의 초반부에서는 $m_t, v_t$가 0에 가깝게 bias 되어있을 것이라고 판단하여 이를 unbiased 하게 만들어주는 작업을 거친다.
 
-$$m_t, v_t$$의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
+$m_t, v_t$의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서 정리해보면, 다음과 같은 보정을 통해 unbiased 된 expectation을 얻을 수 있다.
 
-이 보정된 expectation들을 가지고 gradient가 들어갈 자리에 $$\widehat{m_t}, G_t$$가 들어갈 자리에 $$\widehat{v_t}$$를 넣어 계산을 진행한다.
+이 보정된 expectation들을 가지고 gradient가 들어갈 자리에 $\widehat{m_t}, G_t$가 들어갈 자리에 $\widehat{v_t}$를 넣어 계산을 진행한다.
 
 ![](./img/3-deep-learning/adam-conclusion.png)
 
@@ -927,7 +927,7 @@ $$
 \theta = \theta - v_t
 $$
 
-이 때, $$v_t$$는 time step t에서의 이동 벡터이며, $$\gamma$$는 얼마나 momentum을 줄 것인지에 대한 momentum term이다.
+이 때, $v_t$는 time step t에서의 이동 벡터이며, $\gamma$는 얼마나 momentum을 줄 것인지에 대한 momentum term이다.
 
 #### References
 
