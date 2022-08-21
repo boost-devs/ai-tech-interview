@@ -20,7 +20,7 @@
 
 ### [👉 이전 버전은 backup 브랜치로](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/tree/backup)
 
-### [👉 피드백](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/pulls)
+### [👉 피드백 작성 방법](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/181)
 
 ### [👉 질문/커뮤니티](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/)
 
