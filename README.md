@@ -20,6 +20,8 @@
 
 ### [👉 이전 버전은 backup 브랜치로](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/tree/backup)
 
+### [👉 공지는 여기로](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/categories/1-%EA%B3%B5%EC%A7%80)
+
 ### [👉 피드백 작성 방법](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/181)
 
 ### [👉 질문/커뮤니티](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/)
