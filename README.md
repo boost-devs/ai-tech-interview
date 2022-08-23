@@ -14,7 +14,7 @@
 
 - 피드백은 [Pull Request를 통한 피드백 요청 방법](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/181)을 참고하여 Pull Request로 보내주세요.
   - Pull Request 작성 규칙은 [여기](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/182)를 참고해주세요. 
-- GitHub외에 [웹사이트](https://boostdevs.gitbook.io/ai-tech-interview/)로도 보실 수 있습니다.
+- GitHub 외에 [GitBook 사이트](https://boostdevs.gitbook.io/ai-tech-interview/)로도 보실 수 있습니다.
   - 하지만 Latex 문법이 달라 올해 안으로 다른 웹사이트로 마이그레이션 예정입니다.
 - 궁금한 점이 있거나 공유하고 싶은 팁이 있으시면 [Discussion](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/)을 활용해주세요.
 
