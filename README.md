@@ -8,6 +8,12 @@
   <img src="https://img.shields.io/github/license/boostcamp-ai-tech-4/ai-tech-interview" alt="license"/>
 </div>
 
+---
+
+## Notice
+
+- 피드백은 [Pull Request를 통한 피드백 요청 방법](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/181)을 참고하여 Pull Request로 보내주세요.
+
 ## 공지
 
 - 피드백은 이슈가 아닌 PR로만 받습니다. PR로 수정할 부분을 수정한 뒤 PR 보내주세요! 자세한 내용은 공지를 확인해주세요!
@@ -27,26 +33,18 @@
 
 ---
 
-## Table of Contents
+## Contributors
 
-- [Part 1. Data Science](#part-1-data-science)
-  - [Statistics/Math](#-statisticsmath)
-  - [Machine Learning](#-machine-learning)
-  - [Deep Learning](#-deep-learning)
-- [Part 2. Language](#part-2-language)
-  - [Python](#-python)
-- [Part 3. CS](#part-3-cs)
-  - [Network](#-network)
-  - [Operating System](#%EF%B8%8F-operating-system)
-  - [Data Structure](#-data-structure)
-  - [Algorithm](#-algorithm)
-- [References](#references)
+<a href="https://github.com/boostcamp-ai-tech-4/ai-tech-interview/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=boostcamp-ai-tech-4/ai-tech-interview" />
+</a>
 
 ---
 
-## Part 1. Data Science
+## Interview Questions
 
-### [📈 Statistics/Math](./answers/1-statistics-math.md)
+<details>
+<summary><a href="./answers/1-statistics-math.md"><strong>📈 통계/수학</strong></a></summary>
 
 - 고유값(eigen value)와 고유벡터(eigen vector)이 무엇이고 왜 중요한지 설명해주세요.
 - 샘플링(Sampling)과 리샘플링(Resampling)이 무엇이고 리샘플링의 장점을 말씀해주세요.
@@ -74,11 +72,10 @@
 - 베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포에 대해 설명해주세요. 그리고 분포 간의 연관성도 설명해주세요.
 - 출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문해주세요. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?
 
-<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+</details>
 
-<br/>
-
-### [🤖 Machine Learning](./answers/2-machine-learning.md)
+<details>
+<summary><a href="./answers/2-machine-learning.md"><strong>🤖 머신러닝</strong></a></summary>
 
 - 알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)
 - 정규화를 왜 해야할까요? 정규화의 방법은 무엇이 있나요?
@@ -110,11 +107,10 @@
 - 스팸 필터에 로지스틱 리그레션을 많이 사용하는 이유는 무엇일까요?
 - OLS(ordinary least squre) regression의 공식은 무엇인가요?
 
-<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+</details>
 
-<br/>
-
-### [🧠 Deep Learning](./answers/3-deep-learning.md)
+<details>
+<summary><a href="./answers/3-deep-learning.md"><strong>🧠 딥러닝</strong></a></summary>
 
 - 딥러닝은 무엇인가요? 딥러닝과 머신러닝의 차이는?
 - Cost Function과 Activation Function은 무엇인가요?
@@ -163,13 +159,10 @@
   - GPU를 두개 다 쓰고 싶다. 방법은?
   - 학습시 필요한 GPU 메모리는 어떻게 계산하는가?
 
-<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+</details>
 
----
-
-## Part 2. Language
-
-### [🐍 Python](./answers/4-python.md)
+<details>
+<summary><a href="./answers/4-python.md"><strong>🐍 파이썬</strong></a></summary>
 
 - What is the difference between list and tuples in Python?
 - What are the key features of Python?
@@ -243,13 +236,10 @@
 - What is object interning?
 - What is @classmethod, @staticmethod, @property?
 
-<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+</details>
 
----
-
-## Part 3. CS
-
-### [🌐 Network](./answers/5-network.md)
+<details>
+<summary><a href="./answers/5-network.md"><strong>🌐 네트워크</strong></a></summary>
 
 - TCP/IP의 각 계층을 설명해주세요.
 - OSI 7계층와 TCP/IP 계층의 차이를 설명해주세요.
@@ -284,11 +274,10 @@
 - client와 server의 차이점을 설명해주세요.
 - delay, timing(jitter), throughput 차이를 설명해주세요.
 
-<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+</details>
 
-<br/>
-
-### [🖥️ Operating System](./answers/6-operating-system.md)
+<details>
+<summary><a href="./answers/6-operating-system.md"><strong>🖥️ 운영체제</strong></a></summary>
 
 - 프로세스와 스레드의 차이(Process vs Thread)를 알려주세요.
 - 멀티 프로세스 대신 멀티 스레드를 사용하는 이유를 설명해주세요.
@@ -306,11 +295,10 @@
 - Context Switching이 무엇인지 설명하고 과정을 나열해주세요.
 - Swapping에 대해 설명해주세요.
 
-<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+</details>
 
-<br/>
-
-### [🗂 Data Structure](./answers/7-data-structure.md)
+<details>
+<summary><a href="./answers/7-data-structure.md"><strong>🗂 자료구조</strong></a></summary>
 
 - linked list
   - single linked list
@@ -332,11 +320,10 @@
 - red-black tree
 - b+ tree
 
-<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+</details>
 
-<br/>
-
-### [🔻 Algorithm](./answers/8-algorithm.md)
+<details>
+<summary><a href="./answers/8-algorithm.md"><strong>🔻 알고리즘</strong></a></summary>
 
 - 시간, 공간 복잡도
 - Sort Algorithm
@@ -363,7 +350,7 @@
   - Union-find
   - Topological sort
 
-<a href='#table-of-contents'><strong><small>목차로 돌아가기</small></strong></a>
+</details>
 
 ---
 
