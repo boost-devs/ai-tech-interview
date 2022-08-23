@@ -19,15 +19,7 @@
 - 궁금한 점이 있거나 공유하고 싶은 팁이 있으시면 [Discussion](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/)을 활용해주세요.
   - 커뮤니티 활성화는 언제든지 환영입니다!
 - 면접 레포 개선 프로젝트 진행 상황은 [여기](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/projects/2)를 확인해주세요.
-  - [공지](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/184)에 말씀드린 것처럼 진행이 더딜 수 있습니다.
-
----
-
-## Contributors
-
-<a href="https://github.com/boostcamp-ai-tech-4/ai-tech-interview/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=boostcamp-ai-tech-4/ai-tech-interview" />
-</a>
+  - [공지](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/184)에서 말씀드린 것처럼 진행이 더딜 수 있습니다.
 
 ---
 
@@ -341,6 +333,14 @@
   - Topological sort
 
 </details>
+
+---
+
+## Contributors
+
+<a href="https://github.com/boostcamp-ai-tech-4/ai-tech-interview/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=boostcamp-ai-tech-4/ai-tech-interview" />
+</a>
 
 ---
 
