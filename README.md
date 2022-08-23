@@ -13,23 +13,10 @@
 ## Notice
 
 - 피드백은 [Pull Request를 통한 피드백 요청 방법](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/181)을 참고하여 Pull Request로 보내주세요.
-
-## 공지
-
-- 피드백은 이슈가 아닌 PR로만 받습니다. PR로 수정할 부분을 수정한 뒤 PR 보내주세요! 자세한 내용은 공지를 확인해주세요!
-- LaTeX는 block은 `$$\lambda$$`, inline은 `$\lambda$`로 작성합니다.
-
-## 바로가기
-
-### [👉 면접 레포 사이트](https://boostdevs.gitbook.io/ai-tech-interview/)
-
-### [👉 이전 버전은 backup 브랜치로](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/tree/backup)
-
-### [👉 공지는 여기로](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/categories/1-%EA%B3%B5%EC%A7%80)
-
-### [👉 피드백 작성 방법](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/181)
-
-### [👉 질문/커뮤니티](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/)
+  - Pull Request 작성 규칙은 [여기](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/182)를 참고해주세요. 
+- GitHub외에 [웹사이트](https://boostdevs.gitbook.io/ai-tech-interview/)로도 보실 수 있습니다.
+  - 하지만 Latex 문법이 달라 올해 안으로 다른 웹사이트로 마이그레이션 예정입니다.
+- 궁금한 점이 있거나 공유하고 싶은 팁이 있으시면 [Discussion](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/)을 활용해주세요.
 
 ---
 
