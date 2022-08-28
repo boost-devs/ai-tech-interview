@@ -20,6 +20,7 @@
   - 커뮤니티 활성화는 언제든지 환영입니다!
 - 면접 레포 개선 프로젝트 진행 상황은 [여기](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/projects/2)를 확인해주세요.
   - [공지](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/184)에서 말씀드린 것처럼 진행이 더딜 수 있습니다.
+- 현재 GitHub Latex Rendering 버그가 있습니다. 자세한 내용은 [여기](https://github.com/github/markup/issues/1586)를 참고해주세요.
 
 ---
 
