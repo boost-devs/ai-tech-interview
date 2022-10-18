@@ -761,7 +761,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 모델의 오버피팅을 막고 처음 보는 데이터에도 잘 예측하도록 만드는 방법을 Regularization(일반화)라고 한다.
 
-대표적인 방법으로 dropout, [L1-L2 Regularization](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/machine-learning.md#21) 등이 있다. [6번 참고](#6)
+대표적인 방법으로 dropout, [L1-L2 Regularization](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/2-machine-learning.md#21) 등이 있다. [6번 참고](#6)
 
 ---
 
