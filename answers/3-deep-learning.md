@@ -759,18 +759,9 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 #### Regularization이란 무엇인가?
 
-모델의 오버피팅을 막는 대표적인 방법이며 가중치 규제라고도 한다.  
+모델의 오버피팅을 막고 처음 보는 데이터에도 잘 예측하도록 만드는 방법을 Regularization(일반화)라고 한다.  
 
-가중치 규제란, 가중치의 값이 너무 커지지 않도록 강제로 설정함을 의미한다.
-
-만약 단순하게 손실 함수의 값이 작아지는 쪽으로 학습을 하면 특정 가중치의 값들이 커지면서 오히려 좋지 않은 성능을 보여줄 수 있다.  
-
-그래서 다음 식과 같이 손실 함수에 l1 또는 l2 regularization 항을 더해 오버피팅을 방지한다.  
-
-$$L = L_0 + \frac{\lambda}{n}\sum_w\vert w\vert$$    
-$$L = L_0 + \frac{\lambda}{n}\sum_ww^2$$  
-
-이때 $L$은 regularization 항이 포함된 새로운 손실 함수, $L_0$는 원래의 손실 함수, $\lambda$는 규제의 정도를 정하는 하이퍼파라미터이며 0에 가까울수록 규제의 효과는 사라진다.
+대표적인 방법으로 [Dropout](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/3-deep-learning.md#16-1), [L1-L2 Regularization](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/2-machine-learning.md#21)이 존재한다.  
 
 #### References  
 
