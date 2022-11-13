@@ -1867,7 +1867,7 @@ if __name__ == '__main__':
 
 ##### What is difference between array in C and list in python?
 
-- 파이썬의 리스트는 동적 배열(Dynamic arrays)이다. 따라서 초기 선언 시, 리스트의 크기를 지정하지 않아도 된다. 
+- 파이썬의 리스트는 동적 배열(Dynamic arrays)이다. 따라서 초기 선언 시, 리스트의 크기를 지정하지 않아도 된다. 또한, 리스트 클래스는 referential structure로 서로 다른 자료형 데이터를 저장할 수 있다. 
 
 - 배열은 연속된 메모리 공간에 자료를 저장하도록 하는 데이터 구조이다. 따라서, index를 기반으로 상수의 시간으로 접근하여 호출할 수 있게 된다. 따라서, 기본적으로는 크기를 지정해주어야 한다. 
 - 파이썬에서 리스트 클래스는 element를 더 추가하고자 하면, 초기 capacity가 만료되고 새롭게 capcity가 설정된다. (이는 실험을 통해, 계속 list에 None 객체를 append 해봄으로써 경험적으로 확인해볼 수 있다.)
