@@ -73,7 +73,7 @@
 - [What are Decorators in Python?](#69)
 - [What is object interning?](#70)
 - [What is @classmethod, @staticmethod, @property?](#71)
-
+- [What is difference between array in C and list in python](#72)
 ---
 
 ## #1
@@ -1858,10 +1858,23 @@ if __name__ == '__main__':
 
     print(t.color)
 ```
-
 #### References
 
 - [44. class 정리, 정적메소드 @classmethod와 @staticmethod의 정리 - 파이썬 기본을 갈고 닦자!](https://wikidocs.net/16074)
 - [파이썬에서 @property 에 대해 알아보자. - HAMA 블로그](https://hamait.tistory.com/827)
+
+## #72
+
+##### What is difference between array in C and list in python?
+
+- 파이썬의 리스트는 동적 배열(Dynamic arrays)이다. 따라서 초기 선언 시, 리스트의 크기를 지정하지 않아도 된다. 
+
+- 배열은 연속된 메모리 공간에 자료를 저장하도록 하는 데이터 구조이다. 따라서, index를 기반으로 상수의 시간으로 접근하여 호출할 수 있게 된다. 따라서, 기본적으로는 크기를 지정해주어야 한다. 
+- 파이썬에서 리스트 클래스는 element를 더 추가하고자 하면, 초기 capacity가 만료되고 새롭게 capcity가 설정된다. (이는 실험을 통해, 계속 list에 None 객체를 append 해봄으로써 경험적으로 확인해볼 수 있다.)
+
+#### References
+- Michael T. Goodrich, Roberto Tamassia, and Michael H. Goldwasser. 2013. Data Structures and Algorithms in Python (1st. ed.). Wiley Publishing.
+- [Array Based Sequence](https://velog.io/@cardy20/%EC%A0%84%EA%B3%B5-%EC%84%9C%EC%A0%81-%EB%B2%88%EC%97%AD)
+
 
 ---
