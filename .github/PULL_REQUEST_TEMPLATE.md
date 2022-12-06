@@ -32,4 +32,4 @@
 
 - [ ] [PR 작성 규칙](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/182)을 준수하셨나요?
 - [ ] upstream 레포의 최신 브랜치와 동일한 main 브랜치에서 분기하여 수정하셨나요?
-- [ ] PR 템플릿 가이드에 맞춰서 PR을 작성하셨나요?
+- [ ] PR 템플릿에 맞춰서 PR을 작성하셨나요?
