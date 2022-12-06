@@ -1,5 +1,5 @@
-| **⚠ PR 템플릿 가이드는 삭제하지 말아주세요!** |
-| --- |
+| **⚠ PR 템플릿은 수정하지 말아주세요!** <br/> **🔥 [PR 작성 규칙](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/182#discussion-4321560)을 준수하지 않는 PR은 거절됩니다. 꼭 읽어주세요.**|
+| :--- |
 
 
 ## 🔎 What is this PR?
