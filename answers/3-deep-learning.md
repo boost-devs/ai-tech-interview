@@ -1,59 +1,9 @@
-> **📌 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.**
-
-## Table of Contents
-
-- [딥러닝은 무엇인가요? 딥러닝과 머신러닝의 차이는?](#1)
-- [Cost Function과 Activation Function은 무엇인가요?](#2)
-- [Tensorflow, PyTorch 특징과 차이가 뭘까요?](#3)
-- [Data Normalization은 무엇이고 왜 필요한가요?](#4)
-- [알고있는 Activation Function에 대해 알려주세요. (Sigmoid, ReLU, LeakyReLU, Tanh 등)](#5)
-- [오버피팅일 경우 어떻게 대처해야 할까요?](#6)
-- [하이퍼 파라미터는 무엇인가요?](#7)
-- [Weight Initialization 방법에 대해 말해주세요. 그리고 무엇을 많이 사용하나요?](#8)
-- [볼츠만 머신은 무엇인가요?](#9)
-- [TF, PyTorch 등을 사용할 때 디버깅 노하우는?](#10)
-- [뉴럴넷의 가장 큰 단점은 무엇인가? 이를 위해 나온 One-Shot Learning은 무엇인가?](#11)
-- [요즘 Sigmoid 보다 ReLU를 많이 쓰는데 그 이유는?](#12)
-  - [Non-Linearity라는 말의 의미와 그 필요성은?](#12-1)
-  - [ReLU로 어떻게 곡선 함수를 근사하나?](#12-2)
-  - [ReLU의 문제점은?](#12-3)
-  - [Bias는 왜 있는걸까?](#12-4)
-- [Gradient Descent에 대해서 쉽게 설명한다면?](#13)
-  - [왜 꼭 Gradient를 써야 할까? 그 그래프에서 가로축과 세로축 각각은 무엇인가? 실제 상황에서는 그 그래프가 어떻게 그려질까?](#13-1)
-  - [GD 중에 때때로 Loss가 증가하는 이유는?](#13-2)
-  - [Back Propagation에 대해서 쉽게 설명 한다면?](#13-3)
-- [Local Minima 문제에도 불구하고 딥러닝이 잘 되는 이유는?](#14)
-  - [GD가 Local Minima 문제를 피하는 방법은?](#14-1)
-  - [찾은 해가 Global Minimum인지 아닌지 알 수 있는 방법은?](#14-2)
-- [Training 세트와 Test 세트를 분리하는 이유는?](#15)
-  - [Validation 세트가 따로 있는 이유는?](#15-1)
-  - [Test 세트가 오염되었다는 말의 뜻은?](#15-2)
-  - [Regularization이란 무엇인가?](#15-3)
-- [Batch Normalization의 효과는?](#16)
-  - [Dropout의 효과는?](#16-1)
-  - [BN 적용해서 학습 이후 실제 사용시에 주의할 점은? 코드로는?](#16-2)
-  - [GAN에서 Generator 쪽에도 BN을 적용해도 될까?](#16-3)
-- [SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?](#17)
-  - [SGD에서 Stochastic의 의미는?](#17-1)
-  - [미니배치를 작게 할때의 장단점은?](#17-2)
-  - [모멘텀의 수식을 적어 본다면?](#17-3)
-- [간단한 MNIST 분류기를 MLP+CPU 버전으로 numpy로 만든다면 몇줄일까?](#18)
-  - [어느 정도 돌아가는 녀석을 작성하기까지 몇시간 정도 걸릴까?](#18-1)
-  - [Back Propagation은 몇줄인가?](#18-2)
-  - [CNN으로 바꾼다면 얼마나 추가될까?](#18-3)
-- [간단한 MNIST 분류기를 TF, PyTorch 등으로 작성하는데 몇시간이 필요한가?](#19)
-  - [CNN이 아닌 MLP로 해도 잘 될까?](#19-1)
-  - [마지막 레이어 부분에 대해서 설명 한다면?](#19-2)
-  - [학습은 BCE loss로 하되 상황을 MSE loss로 보고 싶다면?](#19-3)
-- [딥러닝할 때 GPU를 쓰면 좋은 이유는?](#20)
-  - [GPU를 두개 다 쓰고 싶다. 방법은?](#20-1)
-  - [학습시 필요한 GPU 메모리는 어떻게 계산하는가?](#20-2)
 
 ---
 
 ## #1
 
-#### 딥러닝은 무엇인가요? 딥러닝과 머신러닝의 차이는?
+### 딥러닝은 무엇인가요? 딥러닝과 머신러닝의 차이는?
 
 딥러닝이란 **여러 층을 가진 인공신경망(Artificial Neural Network, ANN)을 사용하여 머신러닝 학습을 수행하는 것**으로, 심층학습이라고도 부른다.
 
@@ -66,7 +16,7 @@
 
 > **AI, ML, DL**
 
-![](./img/3-deep-learning/ai.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/ai.png)
 
 **인공지능이란** 인간이 가지고 있는 인식, 판단 등의 지적 능력을 모델링하여 컴퓨터에서 구현하는 것이다. 머신러닝, 딥러닝 외에도 다양한 분야가 인공지능 내에 포함된다.
 
@@ -88,7 +38,7 @@
 
 ## #2
 
-#### Cost Function과 Activation Function은 무엇인가요?
+### Cost Function과 Activation Function은 무엇인가요?
 
 > **cost function**
 
@@ -122,7 +72,7 @@
 
 ## #3
 
-#### Tensorflow, PyTorch 특징과 차이가 뭘까요?
+### Tensorflow, PyTorch 특징과 차이가 뭘까요?
 
 |    구분     |     Tensorflow     |       PyTorch       |
 | :---------: | :----------------: | :-----------------: |
@@ -139,7 +89,7 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 
 즉 Tensorflow에서는 계산 그래프를 한 번 정의하고 나면 그래프에 들어가는 입력 데이터만 다르게 할 수 있을 뿐 같은 그래프만을 실행할 수 있다. 하지만 PyTorch는 각 순전파마다 새로운 계산 그래프를 정의하여 이용한다.
 
-![](./img/3-deep-learning/static-dynamic-graph.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/static-dynamic-graph.png)
 
 #### References
 
@@ -150,7 +100,7 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 
 ## #4
 
-#### Data Normalization은 무엇이고 왜 필요한가요?
+### Data Normalization은 무엇이고 왜 필요한가요?
 
 **Data Normalization(데이터 정규화)이란** feature들의 분포(scale)을 조절하여 균일하게 만드는 방법이다. 데이터 정규화가 필요한 이유는 데이터 feature 간 scale 차이가 심하게 날 때, 큰 범위를 가지는 feature(ex. 가격)가 작은 범위를 가지는 feature(ex. 나이)보다 더 강하게 모델에 반영될 수 있기 때문이다.
 
@@ -160,7 +110,7 @@ Tensorflow와 Pytorch의 가장 큰 차이점은 딥러닝을 구현하는 패�
 - 노이즈가 작아지므로 오버피팅을 억제시킨다.
 - 데이터를 덜 치우치게 만드므로, 좋은 성능을 보인다.
 
-![](./img/3-deep-learning/data-normalization.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/data-normalization.png)
 
 > **Regularization, Normalization, Standardization**
 
@@ -199,11 +149,11 @@ $$
 
 ## #5
 
-#### 알고있는 Activation Function에 대해 알려주세요. (Sigmoid, ReLU, LeakyReLU, Tanh 등)
+### 알고있는 Activation Function에 대해 알려주세요. (Sigmoid, ReLU, LeakyReLU, Tanh 등)
 
 > **Sigmoid**
 
-![](./img/3-deep-learning/sigmoid.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/sigmoid.png)
 
 sigmoid 함수는 $s(z) = \frac{1}{1 + e^{-z}}$로, 입력을 0~1 사이의 값으로 바꿔준다.
 
@@ -213,19 +163,19 @@ sigmoid 함수는 $s(z) = \frac{1}{1 + e^{-z}}$로, 입력을 0~1 사이의 값�
 
 > **Tanh**
 
-![](./img/3-deep-learning/tanh.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/tanh.png)
 
 tanh 함수는 입력을 -1~1 사이의 값으로 바꿔준다. sigmoid 함수와 마찬가지로 `saturation` 문제가 있다.
 
 **> ReLU**
 
-![](./img/3-deep-learning/relu.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/relu.png)
 
 ReLU 함수는 $f(x) = max(0, x)$으로, 입력이 양수면 그대로, 음수면 0을 출력한다. 계산 효율과 성능에서 뛰어난 성능을 보여 가장 많이 사용되는 활성화 함수이다. 양의 입력에 대해서는 `saturation` 문제가 발생하지 않는다. 음의 입력 값에 대해서는 어떤 업데이트도 되지 않는 `Dead ReLU` 문제가 발생한다.
 
 > **Leaky ReLU**
 
-![](./img/3-deep-learning/leaky-relu.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/leaky-relu.png)
 
 >
 
@@ -240,13 +190,13 @@ Leaky ReLU는 $f(x) = max(0.01x, x)$으로, ReLU 와 마찬가지로 좋은 성�
 
 ## #6
 
-#### 오버피팅일 경우 어떻게 대처해야 할까요?
+### 오버피팅일 경우 어떻게 대처해야 할까요?
 
 > **Early Stopping**
 
 training loss는 계속 낮아지더라도 validation loss는 올라가는 시점을 overfitting으로 간주하여 학습을 종료하는 방법이다.
 
-![](./img/3-deep-learning/early-stopping.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/early-stopping.png)
 
 > **Parameter Norm Penalty / Weight Decay**
 
@@ -260,13 +210,13 @@ $$
 
 훈련 데이터의 개수가 적을 때, 데이터에 인위적으로 변화를 주어 훈련 데이터의 수를 늘리는 방법이다.
 
-![](./img/3-deep-learning/data-augmentation.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/data-augmentation.png)
 
 > **Noise robustness**
 
 노이즈나 이상치같은 엉뚱한 데이터가 들어와도 흔들리지 않는(robust 한) 모델을 만들기 위해 input data나 weight에 일부러 노이즈를 주는 방법을 말한다.
 
-![](./img/3-deep-learning/noise-robustness.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/noise-robustness.png)
 
 > **Label smoothing**
 
@@ -276,13 +226,13 @@ $$
 
 각 계층 마다 일정 비율의 뉴런을 임의로 정해 drop 시키고 나머지 뉴런만 학습하도록 하는 방법을 말한다. 매 학습마다 drop 되는 뉴런이 달라지기 때문에 서로 다른 모델들을 앙상블 하는 것과 같은 효과가 있다. dropout은 **학습 시에만 적용**하고, 추론 시에는 적용하지 않는다.
 
-![](./img/3-deep-learning/dropout.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/dropout.png)
 
 > **Batch normalization**
 
 활성화함수의 활성화값 또는 출력값을 정규화하는 방법이다. 각 hidden layer에서 정규화를 하면서 입력분포가 일정하게 되고, 이에 따라 Learning rate을 크게 설정해도 괜찮아진다. 결과적으로 학습속도가 빨라지는 효과가 있다.
 
-![](./img/3-deep-learning/batch-normalization.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/batch-normalization.png)
 
 #### References
 
@@ -296,11 +246,11 @@ $$
 
 ## #7
 
-#### 하이퍼 파라미터는 무엇인가요?
+### 하이퍼 파라미터는 무엇인가요?
 
 하이퍼 파라미터(Hyper-parameter)는 모델링할 때, **사용자가 직접 세팅해주는 값**을 뜻한다. 하이퍼 파라미터는 정해진 최적의 값이 없으며, 사용자의 선험적 지식을 기반으로 설정(휴리스틱)한다. 예를들어 딥러닝의 하이퍼 파라미터에는 학습률, 배치 사이즈 등이 있고, 가중치는 학습 과정에서 바뀌는 값이며 이는 파라미터에 속한다. 하이퍼 파라미터 튜닝 기법에는 Manual Search, Grid Search, Random Search, Bayesian Optimization 등이 있다. 딥러닝에서의 하이퍼 파라미터는 아래의 그림을 참고한다.
 
-![](./img/3-deep-learning/hyperparameter.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/hyperparameter.png)
 
 > **파라미터 vs 하이퍼 파라미터**
 
@@ -308,7 +258,7 @@ $$
 
 딥러닝에서 하이퍼 파라미터는 `학습률, 배치 크기, 은닉층의 개수` 등이 있고, 파라미터는 `가중치, 편향` 등이 있다.
 
-![](./img/3-deep-learning/parameter-vs-hyperparameter.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/parameter-vs-hyperparameter.png)
 
 > **용어 정리**
 
@@ -324,7 +274,7 @@ $$
 
 ## #8
 
-#### Weight Initialization 방법에 대해 말해주세요. 그리고 무엇을 많이 사용하나요?
+### Weight Initialization 방법에 대해 말해주세요. 그리고 무엇을 많이 사용하나요?
 
 딥러닝에서 가중치를 잘 초기화하는 것은 기울기 소실이나 local minima 등의 문제를 야기할 수 있기 때문에 중요하다.
 
@@ -387,7 +337,7 @@ $$
 
 ## #9
 
-#### 볼츠만 머신은 무엇인가요?
+### 볼츠만 머신은 무엇인가요?
 
 볼츠만 머신은 가시층(Visible Layer)와 은닉층(Hidden Layer), 총 두 개의 층으로 신경망을 구성하는 방법이다.
 
@@ -397,7 +347,7 @@ $$
 
 특히 DBN(Deep Belief Network)에서는 RBM들을 쌓아올려, 각 볼츠만 머신을 순차적으로 학습시킨다.
 
-![](./img/3-deep-learning/boltzmann-machine.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/boltzmann-machine.png)
 
 <div align='center'>
 <img src="">
@@ -406,7 +356,7 @@ $$
 
 색깔 별 cell의 역할은 아래와 같다.
 
-![](./img/3-deep-learning/boltzmann-machine-cell.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/boltzmann-machine-cell.png)
 
 #### References
 
@@ -417,7 +367,7 @@ $$
 
 ## #10
 
-#### TF, PyTorch 등을 사용할 때 디버깅 노하우는?
+### TF, PyTorch 등을 사용할 때 디버깅 노하우는?
 
 오류가 발생하는 곳, 중요한 데이터가 바뀌는 지점을 디버깅 포인트로 두고, 확인하는 방법이 있다. 또, IDE에서 다양한 디버깅 extension을 지원하기 때문에 이를 잘 활용하면 좋은 인사이트를 얻을 수 있다. 예를들어, vs code의 jupyter extension을 사용하면 데이터 프레임, 변수값등을 보기 쉽게 정렬하여 확인할 수 있다.
 
@@ -429,7 +379,7 @@ $$
 
 ## #11
 
-#### 뉴럴넷의 가장 큰 단점은 무엇인가? 이를 위해 나온 One-Shot Learning은 무엇인가?
+### 뉴럴넷의 가장 큰 단점은 무엇인가? 이를 위해 나온 One-Shot Learning은 무엇인가?
 
 사람은 처음 보는 물건 (새 레이블) 에 대해 조금만 봐도 다른 것과 이 물건을 구분해낼 수 있다. 하지만 뉴럴넷은 이 물건을 구분해내기 위해서는 이 물건에 대한 많은 데이터를 학습해야한다.
 
@@ -448,9 +398,9 @@ $$
 
 ## #12
 
-#### 요즘 sigmoid 보다 ReLU를 많이 쓰는데 그 이유는?
+### 요즘 sigmoid 보다 ReLU를 많이 쓰는데 그 이유는?
 
-![](./img/3-deep-learning/activation-function.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/activation-function.png)
 
 우선 sigmoid와 ReLU 함수의 모양을 보자. sigmoid는 값이 큰 양수일수록 1에, 큰 음수일수록 0에 가까워진다. 반면 ReLU는 값이 양수이면 원래 값을 그대로 가져가고, 음수이면 0이다.
 
@@ -468,7 +418,7 @@ $$
 
 ## #12-1
 
-#### Non-Linearity라는 말의 의미와 그 필요성은?
+### Non-Linearity라는 말의 의미와 그 필요성은?
 
 비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 $x_1, x_2, ... , x_n$과 가중치 $w_1, w_2, ... , w_n$으로 $y = w_1*x_1 + w_2*x_2 + ... + w_n*x_n$으로 표현할 수 있으며, 가산성(Additreivityly)과 동차성(Homogeneity)을 만족해야 한다.
 
@@ -488,11 +438,11 @@ $$
 
 ## #12-2
 
-#### ReLU로 어떻게 곡선 함수를 근사하나?
+### ReLU로 어떻게 곡선 함수를 근사하나?
 
 ReLU는 양수일 때 <!-- $y=x$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3Dx">인 선형 함수와 음수일 때 <!-- $y=0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=y%3D0">인 선형 함수 두 개를 결합된 형태이다. 그렇지만 ReLU는 선형 함수가 갖는 가산성을 만족하지 못하기 때문에 비선형 함수로 볼 수 있다. 하지만 ReLU가 어떻게 곡선 함수를 근사할 수 있을까?
 
-![](./img/3-deep-learning/relu-approximate.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/relu-approximate.png)
 
 ReLU를 여러 개 결합하면, 특정 지점에서 특정 각도만큼 선형 함수를 구부릴 수 있다. 이 성질을 이용하여 곡선 함수 뿐만 아니라 모든 함수에 근사를 할 수 있게 된다.
 
@@ -507,13 +457,13 @@ ReLU를 여러 개 결합하면, 특정 지점에서 특정 각도만큼 선형 
 
 ## #12-3
 
-#### ReLU의 문제점은?
+### ReLU의 문제점은?
 
 ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</strong>이다. ReLU는 결과값이 음수인 경우 모두 0으로 취급하는데, back propagation시 기울기에 0이 곱해져 해당 부분의 뉴런은 죽고 그 이후의 뉴런 모두 죽게 된다. 이를 해결한 Leaky ReLU는 값이 음수일 때 조금의 음의 기울기를 갖도록 하여 뉴런이 조금이라도 기울기를 갖도록 한다. 또 다른 방법으로는 입력값에 아주 조금의 편향(bias)를 주어 ReLU를 왼쪽으로 조금 이동시키는 방법이 있다. 이렇게 되면 입력값은 모두 양수이므로 뉴런이 모두 활성화가 되어 뉴런이 죽지 않는다. 관련 내용은 [CS231n 6강 16:45](https://youtu.be/wEoyxE0GP2M?t=1005)를 참고!
 
 두 번째 문제는 <strong>편향 이동(Bias Shift)</strong>이다. ReLU는 항상 0이상의 값을 출력하기 때문에 활성화값의 평균이 0보다 커 zero-centered하지 않다. 활성화값이 zero-centered되지 않으면 가중치 업데이트가 동일한 방향으로만 업데이트가 돼서 학습 속도가 느려질 수가 있다. 관련 내용은 [CS231n 6강 8:46](https://youtu.be/wEoyxE0GP2M?t=526)을 참고!
 
-![](./img/3-deep-learning/selu-elu.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/selu-elu.png)
 
 이를 해결하기 위해 배치 정규화(Batch Normalization)을 사용하거나 zero-centered된 ELU, SeLU와 같은 활성화 함수를 사용한다.
 
@@ -530,9 +480,9 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 ## #12-4
 
-#### 편향(bias)는 왜 있는걸까?
+### 편향(bias)는 왜 있는걸까?
 
-![bias별 sigmoid 함수의 위치](./img/3-deep-learning/bias-example.png)
+![bias별 sigmoid 함수의 위치](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/bias-example.png)
 
 편향(bias)는 활성화 함수가 왼쪽 혹은 오른쪽으로 이동한다. 가중치(weight)는 활성화 함수의 가파른 정도 즉, 기울기를 조절하는 반면, 편향(bias)는 **활성화 함수를 움직임으로써 데이터에 더 잘 맞도록 한다.**
 
@@ -545,11 +495,11 @@ ReLU의 가장 큰 문제점은 바로 <strong>죽은 뉴런(Dead Neurons)</stro
 
 ## #13
 
-#### Gradient Descent에 대해서 쉽게 설명한다면?
+### Gradient Descent에 대해서 쉽게 설명한다면?
 
 Gradient Descent는 어떤 함수의 극소점을 찾기 위해 gradient 반대 방향으로 이동해 가는 방법이다.
 
-![](./img/3-deep-learning/how-to-gradient-descent.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/how-to-gradient-descent.png)
 
 딥러닝에서는 Loss function을 최소화시키기 위해 파라미터에 대해 Loss function을 미분하여 그 기울기값(gradient)을 구하고, 경사가 하강하는 방향으로 파라미터 값을 점진적으로 찾기위해 사용된다.
 
@@ -565,11 +515,11 @@ Gradient Descent의 문제점으로는 크게 두 가지가 있다.
 
 한편 step size가 너무 작은 경우 발산하지는 않을 수 있지만 최적의 x를 구하는데 소요되는 시간이 오래 걸린다는 단점이 있다.
 
-![](./img/3-deep-learning/step-size-problem.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/step-size-problem.png)
 
 두 번째로 **local minima 문제**이다. gradient descent 알고리즘을 시작하는 위치는 매번 랜덤하기 때문에 어떤 경우에는 local minima에 빠져 계속 헤어나오지 못하는 경우도 생긴다. (자세한 내용은 [#14-1. GD가 Local Minima 문제를 피하는 방법은?](#14-1) 참고)
 
-![](./img/3-deep-learning/local-minima-problem.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/local-minima-problem.png)
 
 #### References
 
@@ -580,9 +530,9 @@ Gradient Descent의 문제점으로는 크게 두 가지가 있다.
 
 ## #13-1
 
-#### 왜 꼭 Gradient를 써야 할까? 그 그래프에서 가로축과 세로축 각각은 무엇인가? 실제 상황에서는 그 그래프가 어떻게 그려질까?
+### 왜 꼭 Gradient를 써야 할까? 그 그래프에서 가로축과 세로축 각각은 무엇인가? 실제 상황에서는 그 그래프가 어떻게 그려질까?
 
-![](./img/3-deep-learning/cost-gradient.jpeg)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/cost-gradient.jpeg)
 
 Gradient가 양수이면 올라가는 방향이며 음수이면 내려가는 방향이다. 실제 상황에서는 Gradient 그래프가 0을 중심으로 진동하는 모양이 될 것이다.
 
@@ -594,9 +544,9 @@ Gradient가 양수이면 올라가는 방향이며 음수이면 내려가는 방
 
 ## #13-2
 
-#### GD 중에 때때로 Loss가 증가하는 이유는?
+### GD 중에 때때로 Loss가 증가하는 이유는?
 
-![](./img/3-deep-learning/cost-gradient-optima.jpeg)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/cost-gradient-optima.jpeg)
 
 minima에 들어갔다가 나오는 경우일 것이다. 실제로 사용되는 GD에서는 local minima 문제를 피하기 위해 Momentum 등의 개념을 도입한 RMSprop, Adam 등의 optimization 전략을 사용한다.
 
@@ -612,7 +562,7 @@ minima에 들어갔다가 나오는 경우일 것이다. 실제로 사용되는 
 
 ## #13-3
 
-#### Back Propagation에 대해서 쉽게 설명 한다면?
+### Back Propagation에 대해서 쉽게 설명 한다면?
 
 역전파 알고리즘은 Loss에 대한 입력값의 기울기(미분값)를 출력층 layer에서부터 계산하여 거꾸로 전파시키는 것이다.
 
@@ -622,7 +572,7 @@ minima에 들어갔다가 나오는 경우일 것이다. 실제로 사용되는 
 
 출력층 바로 전 layer에서부터 기울기(미분값)을 계산하고 이를 점점 거꾸로 전파시키면서 전 layer들에서의 기울기와 서로 곱하는 형식으로 나아가면 최종적으로 출력층의 output에 대한 입력층에서의 input의 기울기(미분값)을 구할 수가 있다. 이를 그림으로 나타내면 아래와 같다.
 
-![](./img/3-deep-learning/backpropagation.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/backpropagation.png)
 
 역전파 알고리즘이 해결한 문제가 바로 파라미터가 매우 많고 layer가 여러개 있을때 가중치w와 b를 학습시키기 어려웠다는 문제이다.
 
@@ -637,7 +587,7 @@ minima에 들어갔다가 나오는 경우일 것이다. 실제로 사용되는 
 
 ## #14
 
-#### Local Minima 문제에도 불구하고 딥러닝이 잘 되는 이유는?
+### Local Minima 문제에도 불구하고 딥러닝이 잘 되는 이유는?
 
 local minima 문제가 사실은 고차원(High Dimensional)의 공간에서는 발생하기 힘든, 매우 희귀한 경우이기 때문이다. 실제 딥러닝 모델에서는 weight가 수도없이 많으며, 그 수많은 weight가 모두 local minima에 빠져야 weight update가 정지되기 때문에 local minima는 큰 문제가 되지 않는다.
 
@@ -645,11 +595,11 @@ local minima 문제가 사실은 고차원(High Dimensional)의 공간에서는 
 
 고차원의 공간에서 모든 축의 방향으로 오목한 형태가 형성될 확률은 거의 0에 가깝다. 따라서, 고차원의 공간에서 대부분의 critical point는 local minima가 아니라 saddle point다. 그리고, 고차원의 공간에서 설령 local minima가 발생한다 하더라도 이는 global minimum이거나 또는 global minimum과 거의 유사한 수준의 에러 값을 갖는다. 왜냐하면, critical point에 포함된 위로 볼록인 방향 축의 비율이 크면 클수록 높은 에러를 가지기 때문이다.(실험적 결과) local minima는 위로 볼록인 경우가 하나도 없는 경우이기 때문에 결과적으로 매우 낮은 에러를 갖게 될 것이다.
 
-![](./img/3-deep-learning/saddle-point.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/saddle-point.png)
 
 > **Critical point, Saddle point, Local minimum**
 
-![](./img/3-deep-learning/critical-saddle-point-and-local-minima.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/critical-saddle-point-and-local-minima.png)
 
 - `critical point`: 일차 미분이 0인 지점이다. (local/global)minima, (local/global)maxima, saddle point를 가리킴
 - `local minimum`: 모든 방향에서 극소값을 만족하는 점
@@ -666,7 +616,7 @@ local minima 문제가 사실은 고차원(High Dimensional)의 공간에서는 
 
 ## #14-1
 
-#### GD(Gradient Descent)가 Local Minima 문제를 피하는 방법은?
+### GD(Gradient Descent)가 Local Minima 문제를 피하는 방법은?
 
 Local minima 문제를 피하는 방법으로는 **Momentum, Nesterov Accelerated Gradient(NAG), Adagrad, Adadelta, RMSprop, Adam** 등이 있다.
 
@@ -674,17 +624,17 @@ Local minima 문제를 피하는 방법으로는 **Momentum, Nesterov Accelerate
 
 **Momentum**이란 관성을 의미하며, 이전 gradient의 방향성을 담고있는 `momentum` 인자를 통해 흐르던 방향을 어느 정도 유지시켜 local minima에 빠지지 않게 만든다. 즉, 관성을 이용하여, 학습 속도를 더 빠르게 하고, 변곡점을 잘 넘어갈 수 있도록 해주는 역할을 수행한다.
 
-![](./img/3-deep-learning/momentum.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/momentum.png)
 
 **Nesterov Accelerated Gradient(NAG)** 는 모멘텀과 비슷한 역할을 수행하는 `Look-ahead gradient `인자를 포함하여, $a$ 라는 `accumulate gradient`가 gradient를 감소시키는 역할을 한다. 모멘텀과 다른 점은, 미리 한 스텝을 옮겨가본 후에 어느 방향으로 갈지 정한다는 것이다.
 
 **Adagrad**란 뉴럴넷의 파라미터가 많이 바뀌었는지 적게 바뀌었는지 확인하고, 적게 변한건 더 크게 변하게 하고, 크게 변한건 더 작게 변화시키는 방법이다. Adagrad는 `sum of gradient squares`($G_t$)를 사용하는데, 이는 그래디언트가 얼만큼 변했는지를 제곱해서 더하는 것이므로 계속 커진다는 문제가 발생한다. $G_t$가 계속 커지면 분모가 점점 무한대에 가까워지게 되어, $W$ 업데이트가 되지 않게 되어, 뒤로 갈수록 학습이 점점 안되는 문제점이 발생한다.
 
-![](./img/3-deep-learning/adagrad.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/adagrad.png)
 
 **Adadelta**는 `Exponential Moving Average(EMA)`를 사용하여, Adagrad의 $G_t$가 계속 커지는 현상을 막을 수 있다. EMA는 현재 타임스텝으로부터 `윈도우 사이즈만큼의 파라미터 변화(그래디언트 제곱의 변화)를 반영`하는 역할을 하는데, 이전의 값을 모두 저장하는 것이 아닌, `이전 변화량에 특정 비율을 곱해 더한 인자`를 따로 두는 방식이다. Adadelta는 learning rate가 없다.
 
-![](./img/3-deep-learning/adadelta.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/adadelta.png)
 
 (**Momentum**의 더 자세한 내용은 [모멘텀의 수식을 적어 본다면?](#17-3) 참고)  
 (**SGD, RMSprop, Adam**에 대한 설명은 [SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?](#17) 참고)
@@ -698,7 +648,7 @@ Local minima 문제를 피하는 방법으로는 **Momentum, Nesterov Accelerate
 
 ## #14-2
 
-#### 찾은 해가 Global Minimum인지 아닌지 알 수 있는 방법은?
+### 찾은 해가 Global Minimum인지 아닌지 알 수 있는 방법은?
 
 Gradient Descent 방식에서 local minima에 도달함은 증명되어있으나, global minima에 도달하는 것은 보장되지 않았다. 또한, 현재 지점이 global minima인지도 알 수 없다. 딥러닝에서 다루는 문제가 convexity를 만족하지 않기 때문이다. 대신, local minima를 찾는다면, 그 지점이 곧 global minima일 가능성이 크다. [Local Minima 문제에도 불구하고 딥러닝이 잘 되는 이유는?](#14)에서 언급했듯, saddle point가 아닌 완전한 local minimum이 발생하는 경우는 희귀하다. 따라서 모든 방향에서 아래로 볼록인 local minima를 발견한다면, 그 지점이 바로 global minima일 가능성이 높다.
 
@@ -711,7 +661,7 @@ Gradient Descent 방식에서 local minima에 도달함은 증명되어있으나
 
 ## #15
 
-#### Training 세트와 Test 세트를 분리하는 이유는?
+### Training 세트와 Test 세트를 분리하는 이유는?
 
 모델은 데이터에 대해 예측값을 만들고 정답과 비교하며 업데이트되면서 학습이 된다. 그런데 학습 데이터에 대해서는 좋은 성능을 낸다 하더라도 본 적 없는 데이터에 대해서는 잘 대응하지 못하는 **오버피팅** 문제가 생긴다면 좋은 모델이 아니다.
 
@@ -725,7 +675,7 @@ Gradient Descent 방식에서 local minima에 도달함은 증명되어있으나
 
 ## #15-1
 
-#### Validation 세트가 따로 있는 이유는?
+### Validation 세트가 따로 있는 이유는?
 
 모델을 학습시키고 test 데이터를 통해 모델의 일반화 성능을 파악하고, 다시 모델에 새로운 시도를 하고 test 데이터를 통해 모델의 성능을 파악한다고 생각해보자.
 
@@ -743,7 +693,7 @@ Gradient Descent 방식에서 local minima에 도달함은 증명되어있으나
 
 ## #15-2
 
-#### Test 세트가 오염되었다는 말의 뜻은?
+### Test 세트가 오염되었다는 말의 뜻은?
 
 test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다. 그런데 train 데이터가 test 데이터와 흡사하거나 포함되기까지한다면 test 데이터는 더이상 학습된 모델의 성능 평가를 객관적으로 하지 못한다.
 
@@ -757,7 +707,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 ## #15-3
 
-#### Regularization이란 무엇인가?
+### Regularization이란 무엇인가?
 
 모델의 오버피팅을 막고 처음 보는 데이터에도 잘 예측하도록 만드는 방법을 Regularization(일반화)라고 한다.  
 
@@ -771,9 +721,9 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 ## #16
 
-#### Batch Normalization의 효과는?
+### Batch Normalization의 효과는?
 
-![배치 정규화(Batch Normalization) 수식](./img/3-deep-learning/batch-normalization-formula.png)
+![배치 정규화(Batch Normalization) 수식](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/batch-normalization-formula.png)
 
 배치 정규화(Batch Normalization)은 학습 시 **미니배치 단위로 입력의 분포가 평균이 0, 분산이 1이 되도록 정규화**한다. 더불어 $\gamma$로 스케일과 $\beta$로 이동 변환을 수행한다. 이렇게 배치 정규화를 사용하면 다음과 같은 효과를 얻을 수 있다.
 
@@ -792,9 +742,9 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 ## #16-1
 
-#### Dropout의 효과는?
+### Dropout의 효과는?
 
-![](./img/3-deep-learning/dropout-nn.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/dropout-nn.png)
 
 드롭아웃(Dropout)은 <strong>설정된 확률 $p$만큼 은닉층(hidden layer)에 있는 뉴런을 무작위로 제거하는 방법</strong>으로, 오버피팅을 방지하기 위한 방법 중 하나이다. (정확히는 출력을 0으로 만들어 더이상의 전파가 되지 않도록 한다.) 드롭아웃(Dropout)은 학습 때마다 무작위로 뉴런을 제거하므로 매번 다른 모델을 학습시키는 것으로 해석할 수 있다. 그리고 추론 시 출력에 제거 확률 $p$를 곱함으로써 앙상블 학습에서 여러 모델의 평균을 내는 효과를 얻을 수 있다.
 
@@ -807,7 +757,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 ## #16-2
 
-#### BN 적용해서 학습 이후 실제 사용시에 주의할 점은? 코드로는?
+### BN 적용해서 학습 이후 실제 사용시에 주의할 점은? 코드로는?
 
 학습 과정에서는 미니 배치의 평균과 분산을 계산하여 배치 정규화를 적용하지만, 추론 시에는 학습 데이터 전체에 대한 평균과 분산을 계산하여 적용을 해야 한다. 왜냐하면 사용자가 설정한 배치의 크기에 따라 추론 결과가 변할 수도 있기 때문이다.
 
@@ -819,7 +769,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 ## #16-3
 
-#### GAN에서 Generator 쪽에도 BN을 적용해도 될까?
+### GAN에서 Generator 쪽에도 BN을 적용해도 될까?
 
 일반적으로 GAN에서는 생성기(Generator)의 출력층(Output Layer)에만 BN(Batch Normalization)을 적용하지 않는다. 왜냐하면 생성기가 만든 이미지가 BN을 지나면 실제 이미지와는 값의 범위가 달라지기 때문이다.
 
@@ -831,7 +781,7 @@ test 데이터는 한 번도 학습에서 본 적 없는 데이터여야 한다.
 
 ## #17
 
-#### SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?
+### SGD, RMSprop, Adam에 대해서 아는대로 설명한다면?
 
 > **SGD**
 
@@ -855,7 +805,7 @@ Adagrad의 식에서 gradient의 제곱값을 더해나가면서 구한 $G_t$부
 
 식으로 나타내면 다음과 같다.
 
-![](./img/3-deep-learning/rmsprop.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/rmsprop.png)
 
 > **Adam**
 
@@ -863,7 +813,7 @@ Adam(Adaptive Moment Estimation)은 RMSProp과 Momentum 방식을 합친 것 같
 
 이 방식에서는 Momentum 방식과 유사하게 지금까지 계산해온 기울기의 지수평균을 저장하며, RMSProp과 유사하게 기울기의 제곱값의 지수평균을 저장한다.
 
-![](./img/3-deep-learning/adam.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/adam.png)
 
 다만, Adam에서는 m과 v가 처음에 0으로 초기화되어 있기 때문에 학습의 초반부에서는 $m_t, v_t$가 0에 가깝게 bias 되어있을 것이라고 판단하여 이를 unbiased 하게 만들어주는 작업을 거친다.
 
@@ -871,7 +821,7 @@ $m_t, v_t$의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서
 
 이 보정된 expectation들을 가지고 gradient가 들어갈 자리에 $\widehat{m_t}, G_t$가 들어갈 자리에 $\widehat{v_t}$를 넣어 계산을 진행한다.
 
-![](./img/3-deep-learning/adam-conclusion.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/3-deep-learning/adam-conclusion.png)
 
 #### References
 
@@ -882,7 +832,7 @@ $m_t, v_t$의 식을 ∑ 형태로 펼친 후 양변에 expectation을 씌워서
 
 ## #17-1
 
-#### SGD에서 Stochastic의 의미는?
+### SGD에서 Stochastic의 의미는?
 
 SGD는 Loss Function을 계산할 때 전체 train dataset을 사용하는 Batch Gradient Descent와 다르게 일부 조그마한 데이터의 모음(mini-batch)에 대해서만 loss function을 계산한다.
 
@@ -896,7 +846,7 @@ SGD는 Loss Function을 계산할 때 전체 train dataset을 사용하는 Batch
 
 ## #17-2
 
-#### 미니배치를 작게 할때의 장단점은?
+### 미니배치를 작게 할때의 장단점은?
 
 > **장점**
 
@@ -917,7 +867,7 @@ SGD는 Loss Function을 계산할 때 전체 train dataset을 사용하는 Batch
 
 ## #17-3
 
-#### 모멘텀의 수식을 적어 본다면?
+### 모멘텀의 수식을 적어 본다면?
 
 Momentum 방식은 말 그대로 Gradient Descent를 통해 이동하는 과정에 일종의 `관성`을 주는 것이다.
 
@@ -941,7 +891,7 @@ $$
 
 ## #18
 
-#### 간단한 MNIST 분류기를 MLP+CPU 버전으로 numpy로 만든다면 몇줄일까?
+### 간단한 MNIST 분류기를 MLP+CPU 버전으로 numpy로 만든다면 몇줄일까?
 
 2-layer 신경망을 구현한다고 했을 때, 100줄 이내로 만들 수 있다.
 
@@ -954,7 +904,7 @@ $$
 
 ## #18-1
 
-#### 어느 정도 돌아가는 녀석을 작성하기까지 몇시간 정도 걸릴까?
+### 어느 정도 돌아가는 녀석을 작성하기까지 몇시간 정도 걸릴까?
 
 간단한 MNIST 분류기를 MLP+CPU 버전으로 numpy로 만든, 참고 코드([deeplearning_from_scratch - youbeebee](https://github.com/youbeebee/deeplearning_from_scratch/blob/master/ch4.%EC%8B%A0%EA%B2%BD%EB%A7%9D%20%ED%95%99%EC%8A%B5/4.5.%ED%95%99%EC%8A%B5%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0.py))의 경우, 15 에폭 기준 0.9 이상의 정확도가 나온다고 한다. 이 100줄 가량의 코드를 작성하는데 걸리는 시간은 사람마다 다르겠지만, 구조를 정확히 알고있다면 오래걸려도 30분 내에는 작성할 수 있을 것이라 생각한다. 그러나 pretrain되지 않은 모델의 경우, 학습시간이 꽤 오래걸린다고 한다.
 
@@ -966,7 +916,7 @@ $$
 
 ## #18-2
 
-#### Back Propagation은 몇줄인가?
+### Back Propagation은 몇줄인가?
 
 참고 코드(경사하강법 적용) 기준으로 10줄이면 구현할 수 있다. `gradient_descent` 함수를 각 레이어별로 적용하면 미분값을 적용시킬 수 있다.
 
@@ -1004,7 +954,7 @@ for key in ('W1', 'b1', 'W2', 'b2'):
 
 ## #18-3
 
-#### CNN으로 바꾼다면 얼마나 추가될까?
+### CNN으로 바꾼다면 얼마나 추가될까?
 
 filter의 수, 크기, padding, stride 등에 대한 내용과 pooling layer등 레이어에 관한 정의가 추가되므로 약 50줄 정도 추가된다.
 
@@ -1022,7 +972,7 @@ MLP 버전과 CNN 버전의 참고코드는 아래와 같다.
 
 ## #19
 
-#### 간단한 MNIST 분류기를 TF, PyTorch 등으로 작성하는데 몇시간이 필요한가?
+### 간단한 MNIST 분류기를 TF, PyTorch 등으로 작성하는데 몇시간이 필요한가?
 
 TF 나 Pytorch 를 몇 번 사용해본 사람이라면 도큐먼트 참고도 하고 적당히 구글링도 하면, MNIST 분류기의 `데이터 다운로드, 데이터셋, 데이터로더, 모델 세팅, 학습, 추론` 를 구현하는데 2시간이 걸리지 않을 것이라 생각한다.
 
@@ -1032,7 +982,7 @@ TF 나 Pytorch 를 몇 번 사용해본 사람이라면 도큐먼트 참고도 �
 
 ## #19-1
 
-#### CNN이 아닌 MLP로 해도 잘 될까?
+### CNN이 아닌 MLP로 해도 잘 될까?
 
 Convolution 레이어는 receptive field 를 통해 이미지의 위치 정보까지 고려할 수 있다는 장점이 있다.
 
@@ -1044,7 +994,7 @@ Convolution 레이어는 receptive field 를 통해 이미지의 위치 정보�
 
 ## #19-2
 
-#### 마지막 레이어 부분에 대해서 설명 한다면?
+### 마지막 레이어 부분에 대해서 설명 한다면?
 
 MNIST 분류기는 Convolution 레이어를 깊게 쌓으며 숫자 이미지의 작은 특징부터 큰 특징까지 파악한다.
 
@@ -1056,7 +1006,7 @@ MNIST 분류기는 Convolution 레이어를 깊게 쌓으며 숫자 이미지의
 
 ## #19-3
 
-#### 학습은 BCE loss로 하되 상황을 MSE loss로 보고 싶다면?
+### 학습은 BCE loss로 하되 상황을 MSE loss로 보고 싶다면?
 
 train 과정에서 criterion 은 BinaryCrossEntropy 를 사용하고, valid 데이터를 이용한 valid loss 를 구하는 과정에서는 MeanSquaredLoss 를 사용한다.
 
@@ -1064,7 +1014,7 @@ train 과정에서 criterion 은 BinaryCrossEntropy 를 사용하고, valid 데�
 
 ## #20
 
-#### 딥러닝할 때 GPU를 쓰면 좋은 이유는?
+### 딥러닝할 때 GPU를 쓰면 좋은 이유는?
 
 GPU(Graphics Processing Unit)은 부동 소수점 연산을 수행하는 많은 코어가 있어 수 많은 연산을 **병렬처리**할 수 있다. 또한 CPU보다 더 큰 메모리 대역폭을 가지고 있기 때문에 **큰 데이터를 더 효율적으로 빠르게 처리**할 수 있다.
 
@@ -1078,7 +1028,7 @@ GPU(Graphics Processing Unit)은 부동 소수점 연산을 수행하는 많은 
 
 ## #20-1
 
-#### GPU를 두개 다 쓰고 싶다. 방법은?
+### GPU를 두개 다 쓰고 싶다. 방법은?
 
 Pytorch의 경우 `torch.nn.DataParallel`을 사용하여 여러 개의 GPU를 사용할 수 있다.
 
@@ -1094,7 +1044,7 @@ Pytorch의 경우 `torch.nn.DataParallel`을 사용하여 여러 개의 GPU를 �
 
 ## #20-2
 
-#### 학습시 필요한 GPU 메모리는 어떻게 계산하는가?
+### 학습시 필요한 GPU 메모리는 어떻게 계산하는가?
 
 Pytorch를 기준으로 볼 때 `something.to('cuda')`로 변환하는 모든 것들을 생각해보면 된다. 보통 GPU로 올리는 것은 모델과 데이터셋이므로, <strong>(모델의 크기 + 데이터의 크기 × 배치 크기)</strong>로 학습시 필요한 메모리 크기를 계산할 수 있다.
 

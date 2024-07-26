@@ -1,28 +1,9 @@
-> **📌 질문은 <strong>[WeareSoft님의 tech-interview](https://github.com/WeareSoft/tech-interview)</strong>를 참고하였습니다.**
-
-## Table of Contents
-
-- [프로세스와 스레드의 차이(Process vs Thread)를 알려주세요.](#1)
-- [멀티 프로세스 대신 멀티 스레드를 사용하는 이유를 설명해주세요.](#2)
-- [캐시의 지역성에 대해 설명해주세요.](#3)
-- [Thread-safe에 대해 설명해주세요. (hint: critical section)](#4)
-- [뮤텍스와 세마포어의 차이를 설명해주세요.](#5)
-- [스케줄러가 무엇이고, 단기/중기/장기로 나누는 기준에 대해 설명해주세요.](#6)
-- [CPU 스케줄러인 FCFS, SJF, SRTF, RR, Priority Scheduling에 대해 간략히 설명해주세요.](#7)
-- [동기와 비동기의 차이를 설명해주세요.](#8)
-- [메모리 관리 전략에는 무엇이 있는지 간략히 설명해주세요.](#9)
-- [가상 메모리에 대해 설명해주세요.](#10)
-- [교착상태(데드락, Deadlock)의 개념과 조건을 설명해주세요.](#11)
-- [사용자 수준 스레드와 커널 수준 스레드의 차이를 설명해주세요.](#12)
-- [외부 단편화와 내부 단편화에 대해 설명해주세요.](#13)
-- [Context Switching이 무엇인지 설명하고 과정을 나열해주세요.](#14)
-- [Swapping에 대해 설명해주세요.](#15)
 
 ---
 
 ## #1
 
-#### 프로세스와 스레드의 차이(Process vs Thread)를 알려주세요.
+### 프로세스와 스레드의 차이(Process vs Thread)를 알려주세요.
 
 <strong>프로그램(Program)</strong>이란 파일이 저장 장치에 저장되어 있지만 메모리에 올라가 있지 않은 정적인 상태를 말한다.
 
@@ -41,7 +22,7 @@
 - 각 프로세스는 별도의 주소 공간에서 실행되며, 한 프로세스는 다른 프로세스의 변수나 자료구조에 접근할 수 없다.
 - 한 프로세스가 다른 프로세스의 자원에 접근하려면 프로세스 간의 통신(IPC, Inter-Process Communication)을 사용해야 한다.
 
-![](./img/6-operating-system/process.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/process.png)
 
 <strong>스레드(Thread)</strong>란 프로세스가 할당받은 자원을 이용하는 실행의 단위로 프로세스와는 다른 더 작은 실행 단위 개념이다. 스레드는 프로세스의 코드에 정의된 절차에 따라 실행되는 특정한 수행 경로이다.
 
@@ -53,7 +34,7 @@
 - 각각의 스레드는 별도의 레지스터와 스택을 갖고 있지만, 힙 메모리는 서로 읽고 쓸 수 있다.
 - 한 스레드가 프로세스 자원을 변경하면, 다른 이웃 스레드(sibling thread)도 그 변경 결과를 즉시 볼 수 있다.
 
-![](./img/6-operating-system/thread.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/thread.png)
 
 #### References
 
@@ -64,7 +45,7 @@
 
 ## #2
 
-#### 멀티 프로세스 대신 멀티 스레드를 사용하는 이유를 설명해주세요.
+### 멀티 프로세스 대신 멀티 스레드를 사용하는 이유를 설명해주세요.
 
 **멀티 프로세스**란 하나의 응용프로그램을 여러 개의 프로세스로 구성하여 각 프로세스가 하나의 작업을 처리하도록 하는 것이다.
 
@@ -122,7 +103,7 @@ Context Switching에 대한 자세한 내용은 [#14. Context Switching이 무�
 
 ## #3
 
-#### 캐시의 지역성에 대해 설명해주세요.
+### 캐시의 지역성에 대해 설명해주세요.
 
 **캐시 메모리**는 CPU의 처리 속도와 메모리의 속도 차이로 인한 병목현상을 완화하기 위해 사용하는 고속 버퍼 메모리이다. 주기억장치에 있는 데이터를 액세스하려면 비교적 오랜 시간이 걸리게 되는데 이를 줄이기 위해 데이터를 빠르게 액세스할 수 있도록 중간에 캐시 메모리를 두는 것이다. 주기억장치 내에서 자주 읽고 쓰는 데이터의 일부를 캐시 메모리에 불러와 속도 차이를 줄이고, 주기억장치와 CPU 간 신호 교환에 이용되는 Memory Bandwidth를 I/O 사용에 집중할 수 있게 만든다.
 
@@ -146,7 +127,7 @@ Context Switching에 대한 자세한 내용은 [#14. Context Switching이 무�
 
 캐시 메모리의 성능은 적중률에 의해 결정된다.
 
-![](./img/6-operating-system/hit-rate.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/hit-rate.png)
 
 #### References
 
@@ -159,7 +140,7 @@ Context Switching에 대한 자세한 내용은 [#14. Context Switching이 무�
 
 ## #4
 
-#### Thread-safe에 대해 설명해주세요. (hint: critical section)
+### Thread-safe에 대해 설명해주세요. (hint: critical section)
 
 `스레드 안전(Thread-safe)`이란 <u>멀티 스레드 프로그래밍에서 일반적으로 어떤 함수나 변수, 객체를 여러 스레드가 동시에 접근해도 프로그램 실행에 문제가 없음</u>을 뜻한다. 즉, 멀티 스레드 환경에서 여러 쓰레드가 동시에 동일한 코드를 실행시켰을 때 올바른 결과를 얻는 것을 말한다.
 
@@ -239,7 +220,7 @@ if __name__=="__main__":
 
 ## #5
 
-#### 뮤텍스와 세마포어의 차이를 설명해주세요.
+### 뮤텍스와 세마포어의 차이를 설명해주세요.
 
 `상호배제(Mutual Exclusion, Mutex)`는 **한 스레드/프로세스가 임계 영역에 있으면 다른 스레드/프로세스가 못 들어오도록 막는 것**을 말한다. 상호배제는 다음과 같이 수행된다.
 
@@ -265,7 +246,7 @@ if __name__=="__main__":
 
 ## #6
 
-#### 스케줄러가 무엇이고, 단기/중기/장기로 나누는 기준에 대해 설명해주세요.
+### 스케줄러가 무엇이고, 단기/중기/장기로 나누는 기준에 대해 설명해주세요.
 
 시스템 내에는 여러 개의 프로세스가 존재한다. 이 때 시간(time)과 공간(space) 즉, <u>자원을 할당할 프로세스를 선택</u>해야 하는데, 이 역할을 맡은 것을 `스케줄러`라고 한다.
 
@@ -292,7 +273,7 @@ if __name__=="__main__":
 
 > **스케줄링의 단계**
 
-![](./img/6-operating-system/scheduling-level.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/scheduling-level.png)
 
 #### References
 
@@ -302,7 +283,7 @@ if __name__=="__main__":
 
 ## #7
 
-#### CPU 스케줄러인 FCFS, SJF, SRTF, RR, Priority Scheduling에 대해 간략히 설명해주세요.
+### CPU 스케줄러인 FCFS, SJF, SRTF, RR, Priority Scheduling에 대해 간략히 설명해주세요.
 
 > **스케줄링 정책**
 
@@ -338,13 +319,13 @@ if __name__=="__main__":
 
 ## #8
 
-#### 동기와 비동기의 차이를 설명해주세요.
+### 동기와 비동기의 차이를 설명해주세요.
 
 **동기**는 요청에 대한 결과를 받은 후에야 다음 요청을 진행하는 방식으로 결과를 받을 때까지 대기해야한다. 동기는 직관적인 구조이지만 비효율적이다.
 
 **비동기**는 요청 결과에 관계 없이 바로 다음 요청을 수행하고, 결과는 `콜백` 함수를 통해 받는다. 비동기는 설계가 복잡하지만 효율적이다.
 
-![](./img/6-operating-system/sync-async.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/sync-async.png)
 
 > **Blocking, Non-Blocking**
 
@@ -361,7 +342,7 @@ Blocking 과 Non-Blocking은 결과에 대한 관점보다는 `System Call(직�
 
 ## #9
 
-#### 메모리 관리 전략에는 무엇이 있는지 간략히 설명해주세요.
+### 메모리 관리 전략에는 무엇이 있는지 간략히 설명해주세요.
 
 제한된 메모리 크기를 효율적으로 사용하기 위해 메모리 관리 전략이 필요하다.
 
@@ -375,7 +356,7 @@ Blocking 과 Non-Blocking은 결과에 대한 관점보다는 `System Call(직�
 
 메모리에 프로세스들을 올리다보면 아래 사진과 같이 빈 공간(free) 이 생긴다. 이 공간을 fragmentation(단편화) 이라고 한다. 현재 메모리에서 프로세스와 단편화를 파악하고 프로세스가 연속적으로 메모리 주소에 할당되게 단편화를 없애는 방법을 압축이라 한다. 압축은 효율적이지 못하기 때문에 좋은 메모리 관리 방법이 아니다.
 
-![](./img/6-operating-system/fragmentation.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/fragmentation.png)
 
 > **페이징**
 
@@ -387,7 +368,7 @@ Blocking 과 Non-Blocking은 결과에 대한 관점보다는 `System Call(직�
 페이징은 물리적 단위로 메모리를 나눴다면, 세그멘테이션은 논리적 단위로 메모리를 나눈다. 이를 위해 세그멘테이션 테이블을 사용하고, 테이블에는 시작주소인 base 와 최대 크기인 limit 가 포함되어 있다.
 세그멘테이션은 세그멘트 간에 할당되지 않은 공간이 남는 외부 단편화가 발생할 수 있다.
 
-![](./img/6-operating-system/segmentation.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/segmentation.png)
 
 #### References
 
@@ -399,13 +380,13 @@ Blocking 과 Non-Blocking은 결과에 대한 관점보다는 `System Call(직�
 
 ## #10
 
-#### 가상 메모리에 대해 설명해주세요.
+### 가상 메모리에 대해 설명해주세요.
 
 메모리의 크기보다 큰 프로세스는 어떻게 해야 실행이될까? 이 문제를 해결하기 위한 방법으로, 프로세스에서 필요한 부분만 메모리에 올려 실행이 가능하게 동작하는 방법을 가상 메모리라고 한다. 페이지와 세그멘테이션 중 주로 페이지를 이용하는 **Demand Paging** 방법을 사용한다.
 
 **Demand Paging** 는 프로세스에서 현재 필요한 페이지만 메모리에 올리는 방법이다. 이를 위한 페이지 테이블은 기존의 테이블에서 valid 와 modified 가 추가적으로 필요하다.
 
-![](./img/6-operating-system/demand-paging.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/demand-paging.png)
 
 valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타낸다. 페이지가 메모리에 없는 경우 (valid == 0) 를 **page fault** 라고 한다. 아래의 과정으로 페이지를 메모리에 할당한다.
 
@@ -429,7 +410,7 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 
 ## #11
 
-#### 교착상태(데드락, Deadlock)의 개념과 조건을 설명해주세요.
+### 교착상태(데드락, Deadlock)의 개념과 조건을 설명해주세요.
 
 교착상태란, 두 개 이상의 작업이 서로 상대방의 작업이 끝나기 만을 기다리고 있기 때문에 결과적으로 아무것도 완료되지 못하는 상태를 가리킨다. 교착상태의 조건은 아래와 같다.
 
@@ -452,7 +433,7 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 
 ## #12
 
-#### 사용자 수준 스레드와 커널 수준 스레드의 차이를 설명해주세요.
+### 사용자 수준 스레드와 커널 수준 스레드의 차이를 설명해주세요.
 
 **사용자 수준 스레드**란, 유저 레벨에서 생성되고 동작하는 스레드이다. 커널이 제공하는 pthread와 같은 **스레드 라이브러리**를 사용하여 스레드를 만들고, 사용자 단에서 스레드를 관리한다는 특징을 가진다.
 
@@ -466,13 +447,13 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 
 > **멀티 스레드 모델**
 
-![](./img/6-operating-system/multi-thread-model.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/multi-thread-model.png)
 
 사용자 수준 스레드와 커널 수준 스레드에 얘기하기 전에, 멀티 스레드 모델을 먼저 이해하는 것이 좋다. 멀티 스레드 모형이 위와 같이 존재하고, 어떤 멀티 스레드 모델을 사용하느냐에 따라서, 다르게 동작하기 때문에 사용자/커널 수준 스레드 차이가 발생하는 것이다. 추가적으로, 다대다 모델과 일대일 모델과 다대일 모델을 모두 채택하여 사용하는 경우가 있는데, 이를 `혼합형 모델`이라고 한다.
 
 > **사용자/커널 수준 스레드 구조 차이**
 
-![](./img/6-operating-system/user-kernel-thread.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/user-kernel-thread.png)
 
 > **스레드를 생성하는 방법**
 
@@ -489,11 +470,11 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 
 ## #13
 
-#### 외부 단편화와 내부 단편화에 대해 설명해주세요.
+### 외부 단편화와 내부 단편화에 대해 설명해주세요.
 
 **메모리 단편화(Memory Fragmentation)** 는 RAM에서 메모리의 공간이 작은 조각으로 나뉘어져 사용가능한 메모리가 존재하지만, 할당이 불가능한 상태를 말한다. 자세히 설명하자면, 어떤 태스크가 메모리를 할당받기 위해서는, 연속된 메모리 공간이 필요하다. 그러나 메모리 단편화가 일어나면, 할당되지 않은 메모리의 총량이 충분해도, 이들이 작은 메모리 파편(Memory Fragment)으로 존재하고 있기 때문에 메모리 할당이 불가능한 상황이 발생한다.
 
-![](./img/6-operating-system/memory-fragmentation.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/memory-fragmentation.png)
 
 **내부 단편화(Internal Fragmentation)** 란, 메모리를 할당할 때 프로세스가 필요한 양보다 더 큰 메모리가 할당되어서 프로세스에서 사용하는 메모리 공간이 낭비 되는 상황을 말한다. 예를 들어, 메모장을 켰는데 OS가 4kb를 할당해주었다고 해보자. 그런데 실제로는 1kb만큼만 사용했다고 한다면, 필요 이상으로 프로세스가 메모리를 할당받았으므로 내부 단편화가 3kb만큼 생겼다고 할 수 있다.
 
@@ -510,7 +491,7 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 
 - **페이징(Paging)기법**: 가상메모리사용, 외부 단편화 해결, 내부 단편화 존재
 
-![](./img/6-operating-system/paging.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/paging.png)
 
 쉽게말해, 프로세스를 일정한 단위로 잘라서 사용하자는 방식이다. 프로세스의 주소 공간을 동일한 크기의 페이지 단위로 나누어 물리적 메모리의 서로 다른 위치에 페이지들을 저장하는 방식을 말한다. 이때, 논리(가상) 메모리의 단위는 페이지(page), 물리 메모리의 단위는 프레임(frame)이라고 부른다.
 
@@ -518,7 +499,7 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 
 - **세그멘테이션(Segmentation)기법**: 가상메모리사용, 내부 단편화 해결, 외부 단편화 존재
 
-![](./img/6-operating-system/segmentation-method.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/segmentation-method.png)
 
 하나의 프로세스를 구성하는 주소 공간은 일반적으로 코드, 데이터, 스택 등의 의미 있는 단위들로 구성되며, 이렇게 기능적인 구조를 하나의 세그먼트 단위로 삼아, 분할하여 저장된다. 즉, 페이징기법에서 가상메모리를 같은 크기의 단위로 분할했지만 세그멘테이션 기법에서는 가상메모리를 서로 크기가 다른 논리적 단위인 세그먼트로 분할해서 메모리를 할당하여 실제 메모리 주소로 변환을 하게 된다. 각 세그먼트는 연속적인 공간에 저장되어 있다. 세그먼트들의 크기가 다르기 때문에 미리 분할해 둘 수 없고 메모리에 적재될 때 빈 공간을 찾아 할당해야한다. 마찬가지로 mapping을 위해 세그먼트 테이블이 필요하다.
 
@@ -534,13 +515,13 @@ valid 는 해당 페이지가 메모리에서 사용되고 있는지를 나타�
 
 ## #14
 
-#### Context Switching이 무엇인지 설명하고 과정을 나열해주세요.
+### Context Switching이 무엇인지 설명하고 과정을 나열해주세요.
 
 Context Switching이란, 현재 실행중인 프로세스의 정보를 저장하고 다른 프로세스를 실행시킬 때 발생한다. CPU는 하나의 프로세스 정보만 기억할 수 있기 때문에, 다른 프로세스를 실행하기 위해서는, 기존에 실행중이던 프로세스의 상태 또는 레지스터 값(Context)을 PCB에 저장해야 한다. 기존의 값을 저장한 후, 다음 실행시킬 프로세스의 상태와 레지스터값을 PCB에서 읽어와서 레지스터에 적재하는 작업을 Context Switching 이라 한다.
 
 Context Switching 과정은 다음과 같다.
 
-![](./img/6-operating-system/context-switching.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/context-switching.png)
 
 1. Interrupt나 시스템 호출에 의해 context switching 요구
 2. User Mode에서 Kernel Mode로 변경
@@ -576,7 +557,7 @@ Process는 Thread보다 Context Switching 오버헤드가 크다. Thread는 Stac
 
 ## #15
 
-#### Swapping에 대해 설명해주세요.
+### Swapping에 대해 설명해주세요.
 
 스와핑(Swapping)이란, **주기억장치(메인메모리)에 적재한 하나의 프로세스와 보조기억장치(하드디스크)에 적재한 다른 프로세스의 메모리를 교체하는 기법**이다.
 
@@ -584,7 +565,7 @@ Process는 Thread보다 Context Switching 오버헤드가 크다. Thread는 Stac
 
 > **표준 스와핑과 페이지 단위 스와핑**
 
-![](./img/6-operating-system/swapping.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/6-operating-system/swapping.png)
 
 스와핑을 사용하면, 실제 물리 메모리보다 더 많은 프로세스를 수용할 수 있다. 스와핑의 가장 중요한 역할은 프로세스의 수를 조절하여, 다중 프로그래밍의 정도(degree of muliprogramming)를 조절 할 수 있다는 것이다. 유휴 상태가 오래 지속되는 프로세스가 스와핑에 적합하며, swap out 될 대상 프로세스는 스와퍼(swapper)라고 불리는 **중기 스케쥴러**(medium-term scheduler)에 의해 선정된다. 주의할 점은, 스와핑이라는 개념이 프로세스가 종료되어 그 주소 공간을 디스크로 내쫓는 것이 아니라, 특정한 이유로 수행 중인 프로세스의 주소 공간을 일시적으로 메모리에서 디스크로 내려놓는 것을 의미한다는 것이다.
 

@@ -1,32 +1,9 @@
-> **📌 질문은 <strong>[WeareSoft님의 tech-interview](https://github.com/WeareSoft/tech-interview)</strong>를 참고하였으며, 질문에 대한 답변은 직접 작성하였습니다.**
-
-## Table of Contents
-
-- [linked list](#1)
-  - [single linked list](#1-1)
-  - [double linked list](#1-2)
-  - [circular linked list](#1-3)
-- [hash table](#2)
-- [stack](#3)
-- [queue](#4)
-  - [circular queue](#4-1)
-- [graph](#5)
-- [tree](#6)
-  - [binary tree](#6-1)
-  - [full binary tree](#6-2)
-  - [complete binary tree](#6-3)
-  - [bst(binary search tree)](#6-4)
-- [heap(binary heap)](#7)
-  - [min heap](#7-1)
-  - [max heap](#7-2)
-- [Red-black Tree](#8)
-- [B-Tree](#9)
 
 ---
 
 ## #1
 
-#### linked list
+### linked list
 
 linked list는 서로 떨어져 있는 데이터를 메모리 주소를 참조함으로써 이어진 것처럼 사용할 수 있다. linked list는 구조체가 이어진 형태로 존재하며, 이 구조체를 `노드`라고 부른다. 노드는 값을 담고 있는 `데이터 필드`와 다음 구조체를 가리키는 `링크 필드(포인터)`로 구성된다. 정확히는, 포인터가 다음 구조체의 주소를 담고 있다. 보통, linked list의 맨 첫 원소를 가리키는 head 포인터와 맨 마지막 원소를 가리키는 tail 포인터를 통해, 리스트의 요소에 접근하거나 수정한다. linked list는 구현 방법에 따라, single linked list와 double linked list, circular linked list 등으로 구분할 수 있다.
 
@@ -50,15 +27,15 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 > **기본적인 linked list 구조 (=Single linked list 구조)**
 
-![](./img/7-data-structure/basic-linked-list.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/basic-linked-list.png)
 
 ---
 
 ## #1-1
 
-#### single linked list
+### single linked list
 
-![](./img/7-data-structure/single-linked-list.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/single-linked-list.png)
 
 [#1 Linked list](#1)에서 언급한 내용은 모두 Single linked list에 해당한다. Single linked list는 linked list 중에서도 가장 기본적인 구조로 되어 있으며, head에서 tail까지 단방향으로 포인터가 이어져 있으므로 N 번째 노드에서 N-1 번째 노드에 접근할 수 없다. 대신, 다시 head로부터 N-1 번의 탐색을 통해 접근해야 한다.
 
@@ -70,9 +47,9 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 ## #1-2
 
-#### double linked list
+### double linked list
 
-![](./img/7-data-structure/double-linked-list.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/double-linked-list.png)
 
 [#1-1 Single linked list](#1-1)은 단방향 연결이기 때문에 한번 다음 노드로 이동하면, 이전 노드로 돌아가기 힘들다는 단점이 있었다. 그러나 Double linked list는 뒤의 노드의 주소뿐만 아니라, 이전 노드의 주소도 담고 있다. 하나의 노드는 하나의 데이터와 두 개의 링크를 가지고 있으며, 각각의 링크를 prev와 next라고 부른다. 다음 노드를 참조하고 싶다면 next 링크가 담고 있는 주소를 확인하면 되고, 이전의 노드를 참조하고 싶다면 prev 링크가 가지는 주소를 확인하면 된다.
 
@@ -84,9 +61,9 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 ## #1-3
 
-#### circular linked list
+### circular linked list
 
-![](./img/7-data-structure/circular-linked-list.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/circular-linked-list.png)
 
 앞서 언급했던 linked list 유형들과는 다르게, tail이 다시 head를 가리키는 구조를 가지고 있다. 따라서, tail 노드의 next에는 NULL이 들어가는 것 대신, head의 주소가 들어간다.
 
@@ -98,11 +75,11 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 ## #2
 
-#### hash table
+### hash table
 
 해시 테이블은 (Key, Value)로 데이터를 저장하는 자료구조 중 하나로 빠르게 데이터를 검색할 수 있는 자료구조이다. 해시 테이블이 빠른 검색속도를 제공하는 이유는 내부적으로 배열(버킷)을 사용하여 데이터를 저장하기 때문이다. 해시 테이블은 각각의 Key값에 해시함수를 적용해 배열의 고유한 index를 생성하고, 이 index를 활용해 값을 저장하거나 검색하게 된다. 여기서 실제 값이 저장되는 장소를 버킷 또는 슬롯이라고 한다.
 
-![](./img/7-data-structure/hash-table.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/hash-table.png)
 
 예를 들어, `(Key, Value)쌍` 구조를 가지는 데이터 `("John Smith", "521-1234")`를 크기가 16인 해시 테이블에 저장한다고 하자. 그러면 먼저 `index = hash_function("John Smith") % 16` 연산을 통해 index 값을 계산한다. 그리고 `array[index] = "521-1234"` 로 value를 저장하게 된다. 이러한 구조로 데이터를 저장하면 Key값으로 데이터를 찾을 때 해시 함수를 1번만 수행하면 되므로 매우 빠르게 데이터를 저장/삭제/조회할 수 있다. 해시테이블의 평균 시간복잡도는 O(1)이다.
 
@@ -112,7 +89,7 @@ array에서 중간에 값을 삽입하고 싶다면, 삽입할 위치 뒤의 모
 
 **해결방법 1: Separate Chaining(분리 연결법)**
 
-![](./img/7-data-structure/separate-chaining.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/separate-chaining.png)
 
 동일한 버킷의 데이터에 대해 자료구조를 활용해 추가 메모리를 사용하여 다음 데이터의 주소를 저장하는 방법이다. 동일한 해시 값을 가지면, 동일한 버킷 안에 엔트리를 할당해줘야한다. 이 때, 버킷 내부의 엔트리 값들은 linked list 형태로 이어준다. 이러한 Chaining 방식은 해시 테이블의 확장이 필요없고 간단하게 구현이 가능하며, 손쉽게 삭제할 수 있다는 장점이 있다. 하지만 데이터의 수가 많아지면 동일한 버킷에 chaining되는 데이터가 많아지며 그에 따라 캐시의 효율성이 감소한다는 단점이 있다.
 
@@ -140,9 +117,9 @@ Open Addressing이란 추가적인 메모리를 사용하는 Chaining 방식과 
 
 ## #3
 
-#### stack
+### stack
 
-![](./img/7-data-structure/stack.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/stack.png)
 
 **LIFO (Last In First Out)** 구조의 자료형으로 한 쪽으로만 데이터를 넣고 뺄 수 있다. `push` 명령으로 데이터를 넣고, `pop` 명령으로 가장 마지막에 들어간 데이터를 빼낸다.
 
@@ -159,9 +136,9 @@ stack 에 데이터가 꽉 차서 더 넣을 공간이 없는데 데이터를 pu
 
 ## #4
 
-#### queue
+### queue
 
-![](./img/7-data-structure/queue.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/queue.png)
 
 **FIFO (First In First Out)** 구조의 자료형으로 출구(front)와 입구(rear or back)가 따로 존재하여 먼저 입력된 데이터가 먼저 반환된다.
 
@@ -180,9 +157,9 @@ queue 의 rear 가 기리키는 공간에 데이터가 있는데 데이터를 pu
 
 ## #4-1
 
-#### circular queue
+### circular queue
 
-![](./img/7-data-structure/circular-queue.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/circular-queue.png)
 
 크기가 N 인 queue 에서 모든 원소를 다 채우면 rear 는 N-1 을 가리킨다. 이 때, pop 으로 제일 처음 원소를 제거하면 queue 에 남은 공간 1개가 생긴다. 하지만 rear 는 마지막을 가리키고 있기 때문에 더이상 원소를 추가할 수 없다. 이 문제를 해결하기 위해 원형 형태의 `circular queue` 를 사용한다. queue 와 같이 FIFO 구조의 자료형이다.
 
@@ -200,13 +177,13 @@ queue 의 rear 가 기리키는 공간에 데이터가 있는데 데이터를 pu
 
 ## #5
 
-#### graph
+### graph
 
 그래프는 정점과 간선으로 이루어진 자료구조이다. 정점 간의 연결관계는 간선으로 나타낸다.
 
 > **그래프의 종류**
 
-![](./img/7-data-structure/graph.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/graph.png)
 
 간선이 담고있는 정보와 연결 상태에 따라 그래프의 종류가 나뉜다. 두 정점을 연결하는 간선에 방향이 없다면 `무방향 그래프`, 두 정점을 연결하는 간선에 방향이 존재하면 `방향 그래프`라고 부른다. 방향 그래프는 간선의 방향으로만 이동할 수 있다. 두 정점을 이동할 때 비용이 발생하면 `가중치 그래프`로 나타낼 수 있다. 모든 정점이 간선으로 연결된 경우, `완전 그래프`라고 부른다.
 
@@ -218,7 +195,7 @@ queue 의 rear 가 기리키는 공간에 데이터가 있는데 데이터를 pu
 
 노드의 수가 많고, 간선의 수가 적은 그래프의 경우에, 공간을 낭비하게 된다.
 
-![](./img/7-data-structure/adjacent-matrix.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/adjacent-matrix.png)
 
 두 번째로 **인접리스트 방식**이 있다. 그래프의 노드들을 리스트로 표현한다. head 노드와 연결된 노드들을 링크에 달아주면 된다.
 
@@ -242,7 +219,7 @@ queue 의 rear 가 기리키는 공간에 데이터가 있는데 데이터를 pu
 
 ## #6
 
-#### tree
+### tree
 
 tree는 그래프의 일종으로, 부모 노드 밑에 여러 자식 노드가 연결되고, 자식 노드 각각에 다시 자식 노드가 연결되는 재귀적 형태의 자료구조이다. 노드들은 서로 다른 자식 노드를 가지며 이때 각 노드는 재사용 되지 않는다. 트리는 다음과 같은 특징을 갖는다.
 
@@ -254,7 +231,7 @@ tree는 그래프의 일종으로, 부모 노드 밑에 여러 자식 노드가 
 
 > **트리 용어**
 
-![](./img/7-data-structure/tree-terms.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/tree-terms.png)
 
 - `노드(node)`: 트리를 구성하는 기본 원소
 - `루트 노드(root node/root)`: 트리에서 부모가 없는 최상위 노드, 트리의 시작점
@@ -283,9 +260,9 @@ tree는 그래프의 일종으로, 부모 노드 밑에 여러 자식 노드가 
 
 ## #6-1
 
-#### binary tree
+### binary tree
 
-![](./img/7-data-structure/binary-tree.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/binary-tree.png)
 
 이진 트리(binary tree)는 각각의 노드가 최대 두 개의 자식 노드를 가지는 트리를 말한다. 즉, 모든 노드의 차수(degree)가 2 이하인 트리를 말한다. 이진 트리의 모든 서브 트리들은 모두 이진 트리이다.
 
@@ -316,9 +293,9 @@ tree는 그래프의 일종으로, 부모 노드 밑에 여러 자식 노드가 
 
 ## #6-2
 
-#### full binary tree
+### full binary tree
 
-![](./img/7-data-structure/full-binary-tree.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/full-binary-tree.png)
 
 full binary tree는 단말 노드들을 제외한 모든 노드들이 2개의 자식 노드를 가지는 binary tree이다.
 
@@ -330,9 +307,9 @@ full binary tree는 단말 노드들을 제외한 모든 노드들이 2개의 �
 
 ## #6-3
 
-#### complete binary tree
+### complete binary tree
 
-![](./img/7-data-structure/complete-binary-tree.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/complete-binary-tree.png)
 
 완전 이진 트리(complete binary tree)는 마지막 level을 제외한 나머지 level에 노드들이 가득 차있고, 마지막 level에서 노드는 가장 왼쪽부터 채워지는 형태의 binary tree이다.
 
@@ -344,9 +321,9 @@ full binary tree는 단말 노드들을 제외한 모든 노드들이 2개의 �
 
 ## #6-4
 
-#### bst(binary search tree)
+### bst(binary search tree)
 
-![](./img/7-data-structure/bst.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/bst.png)
 
 이진 탐색 트리(binary search tree)는 아래의 성질을 갖고 있는 이진 트리이다.
 
@@ -390,7 +367,7 @@ BST의 탐색, 삽입, 삭제의 복잡도는 모두 $O(h)$이다. (h는 BST의 
 
 ## #7
 
-#### heap(binary heap)
+### heap(binary heap)
 
 최대값 및 최소값을 찾아내는 연산을 빠르게 하기 위해 고안된 완전 이진 트리를 기본으로 한 자료구조로서 다음의 속성을 만족한다.
 
@@ -421,9 +398,9 @@ heap의 종류에는 [min heap](#7-1), [max heap](#7-2)이 있다.
 
 ## #7-1
 
-#### min heap
+### min heap
 
-![](./img/7-data-structure/min-heap.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/min-heap.png)
 
 최소 힙(min heap)은 부모 노드의 키 값이 자식 노드의 키 값보다 작거나 같은 완전 이진 트리이다.
 
@@ -439,9 +416,9 @@ $$
 
 ## #7-2
 
-#### max heap
+### max heap
 
-![](./img/7-data-structure/max-heap.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/max-heap.png)
 
 최대 힙(max heap)은 부모 노드의 키 값이 자식 노드의 키 값보다 크거나 같은 완전 이진 트리이다.
 
@@ -457,11 +434,11 @@ $$
 
 ## #8
 
-#### Red-black Tree
+### Red-black Tree
 
 > **레드-블랙트리의 정의**
 
-![](./img/7-data-structure/red-black-tree.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/red-black-tree.png)
 
 레드-블랙 트리(Red-Black Tree)는 이진탐색트리(Binary Search Tree)의 한 종류로, 삽입(insert), 삭제(delete), 검색(retrieval) 연산을 $O(\log N)$에 수행하도록 보장하는 **균형 잡힌 트리**를 말한다. 즉, 트리의 높이가 $\log N$이 되도록 한다.
 
@@ -493,11 +470,11 @@ $$
 
 ## #9
 
-#### B-Tree
+### B-Tree
 
 > **B-트리의 정의**
 
-![](./img/7-data-structure/b-tree.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/7-data-structure/b-tree.png)
 
 B-트리는 이진 트리(Binary Tree)를 확장해 모든 리프 노드들이 같은 높이를 갖도록 하는 트리이다. 노드 내에 여러 개의 key가 있을 수 있으며, 최대 key의 개수에 따라 2개이면 2차 B-트리, N개면 N차 B-트리라고 부른다.
 

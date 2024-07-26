@@ -1,45 +1,9 @@
-> **📌 질문 중 일부는 <strong>[WeareSoft님의 tech-interview](https://github.com/WeareSoft/tech-interview)</strong>를 참고하였습니다.**
-
-## Table of Contents
-
-- [TCP/IP의 각 계층을 설명해주세요.](#1)
-- [OSI 7계층와 TCP/IP 계층의 차이를 설명해주세요.](#2)
-- [Frame, Packet, Segment, Datagram을 비교해주세요.](#3)
-- [TCP와 UDP의 차이를 설명해주세요.](#4)
-- [TCP와 UDP의 헤더를 비교해주세요.](#5)
-- [TCP의 3-way-handshake와 4-way-handshake를 비교 설명해주세요.](#6)
-- [TCP의 연결 설정 과정(3단계)과 연결 종료 과정(4단계)이 단계가 차이나는 이유가 무엇인가요?](#7)
-- [만약 Server에서 FIN 플래그를 전송하기 전에 전송한 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해 FIN 패킷보다 늦게 도착하는 상황이 발생하면 어떻게 될까요?](#8)
-- [초기 Sequence Number인 ISN을 0부터 시작하지 않고 난수를 생성해서 설정하는 이유가 무엇인가요?](#9)
-- [HTTP와 HTTPS에 대해서 설명하고 차이점에 대해 설명해주세요.](#10)
-- [HTTP 요청/응답 헤더의 구조를 설명해주세요.](#11)
-- [HTTP와 HTTPS 동작 과정을 비교해주세요.](#12)
-- [CORS가 무엇인가요?](#13)
-- [HTTP GET과 POST 메서드를 비교/설명해주세요.](#14)
-- [쿠키(Cookie)와 세션(Session)을 설명해주세요.](#15)
-- [DNS가 무엇인가요?](#16)
-- [REST와 RESTful의 개념을 설명하고 차이를 말해주세요.](#17)
-- [소켓(Socket)이 무엇인가요? 자신 있는 언어로 간단히 소켓 생성 예시를 보여주세요.](#18)
-- [Socket.io와 WebSocket의 차이를 설명해주세요.](#19)
-- [IPv4와 IPv6 차이를 설명해주세요.](#20)
-- [MAC Address가 무엇인가요?](#21)
-- [라우터와 스위치, 허브의 차이를 설명해주세요.](#22)
-- [SMTP가 무엇인가요?](#23)
-- [노트북으로 `www.google.com`에 접속을 했습니다. 요청을 보내고 받기까지의 과정을 자세히 설명해주세요.](#24)
-- [여러 네트워크 topology에 대해 간단히 소개해주세요.](#25)
-- [subnet mask에 대해서 설명해주세요.](#26)
-- [data encapsulation이 무엇인가요?](#27)
-- [DHCP를 설명해주세요.](#28)
-- [routing protocol을 몇 가지 설명해주세요. (ex. link state, distance vector)](#29)
-- [이더넷(ethernet)이 무엇인가요?](#30)
-- [client와 server의 차이점을 설명해주세요.](#31)
-- [delay, timing(jitter), throughput 차이를 설명해주세요.](#32)
 
 ---
 
 ## #1
 
-#### TCP/IP의 각 계층을 설명해주세요.
+### TCP/IP의 각 계층을 설명해주세요.
 
 TCP/IP는 인터넷에서 표준으로 사용되고 있는 네트워크 프로토콜(규칙)을 의미한다. TCP/IP는 IP(Internet Protocol)을 중심으로 한 여러 프로토콜의 집합체로, TCP/IP 5계층 혹은 TCP/IP 4계층(링크계층과 물리계층을 하나의 계층으로 보는 경우)으로 불린다.
 
@@ -65,7 +29,7 @@ TCP/IP는 크게 5개의 계층으로 구성된다.
 
 물리적인 연결과 전기 신호 변환/제어를 담당하여, 이진 데이터를 전기 신호로 변환한다. 또한 컴퓨터와 네트워크 장비를 물리적으로 연결하여, 하나의 노드에서 다른 노드로 **비트를** 이동시키는 역할을 수행한다. 물리 계층의 프로토콜들은 링크(실제 전송매체 ex.광케이블)에 의존한다.
 
-![](./img/5-network/tcp-ip-hierarchy.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/tcp-ip-hierarchy.png)
 
 #### References
 
@@ -76,9 +40,9 @@ TCP/IP는 크게 5개의 계층으로 구성된다.
 
 ## #2
 
-#### OSI 7계층와 TCP/IP 계층의 차이를 설명해주세요.
+### OSI 7계층와 TCP/IP 계층의 차이를 설명해주세요.
 
-![](./img/5-network/osi-7-layer.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/osi-7-layer.png)
 
 (`네트워크 인터페이스 계층`: TCP/IP 5계층에서 물리계층과 링크계층을 하나로 묶은 것)
 
@@ -105,14 +69,14 @@ OSI 7계층은 TCP/IP 계층의 애플리케이션 계층을 더 세분화한 �
 
 ## #3
 
-#### Frame, Packet, Segment, Datagram을 비교해주세요. (TCP/IP 5계층 기준)
+### Frame, Packet, Segment, Datagram을 비교해주세요. (TCP/IP 5계층 기준)
 
 - **Packet**: 컴퓨터 간에 데이터를 주고받을 때, 네트워크를 통해 전송되는 **데이터 조각**을 패킷이라고 부른다. 송신 측(애플리케이션)은 많은 양의 데이터를 한번에 보내는 것이 아니라, 일정 단위로 잘라서 보낸다. 각 계층에서 필요한 정보는 캡슐화/역캡슐화되어 전달되고, 수신 측은 받은 패킷을 다시 조립해서 사용한다.
 - **Segment**: Transport 계층(L4)에서 신뢰할 수 있는 통신을 구현하기 위한 헤더를 데이터(L5 계층 데이터)에 붙이는데, 이렇게 만들어진 패킷을 세그먼트라고 부른다.
 - **Datagram**: Network 계층(L3)에서 다른 네트워크와 통신하기 위한 헤더를 세그먼트(L4 계층 데이터)에 붙인것을 데이터그램, 데이터 세그먼트라고 부른다.
 - **Frame**: 데이터 링크 계층(L2)에서 물리적인 통신 채널을 열기 위해 패킷에 헤더와 트레일러를 붙인다. 트레일러는 데이터를 전달할 때 데이터 끝 부분에 붙이는 정보로, 주로 에러 검출에 사용된다.
 
-![](./img/5-network/capsulation.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/capsulation.png)
 
 > **왜 패킷을 잘라서 보낼까?**
 
@@ -140,7 +104,7 @@ OSI 7계층은 TCP/IP 계층의 애플리케이션 계층을 더 세분화한 �
 
 ## #4
 
-#### TCP와 UDP의 차이를 설명해주세요.
+### TCP와 UDP의 차이를 설명해주세요.
 
 TCP와 UDP는 모두 트랜스포트 계층(4계층)의 프로토콜이다. TCP와 UDP가 **공통적**으로 가지고 있는 기능은 아래와 같다.
 
@@ -167,11 +131,11 @@ UDP는 비연결형 서비스이므로 연결설정이 불필요하고 연결상
 
 ## #5
 
-#### TCP와 UDP의 헤더를 비교해주세요.
+### TCP와 UDP의 헤더를 비교해주세요.
 
 **UDP segment**의 간략한 구조는 아래와 같다.
 
-![](./img/5-network/udp-segment.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/udp-segment.png)
 
 애플리케이션 데이터는 UDP 데이터그램의 데이터 필드에 위치한다. UDP 헤더는 2바이트(16비트)씩 구성된 4개의 필드를 가진다. UDP 헤더는 `출발지 포트번호`, `목적지 포트번호`, `체크섬`, `길이`로 이루어져있다.
 
@@ -183,7 +147,7 @@ UDP는 비연결형 서비스이므로 연결설정이 불필요하고 연결상
 
 **TCP segment**의 간략한 구조는 아래와 같다.
 
-![](./img/5-network/tcp-segment.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/tcp-segment.png)
 
 TCP 소켓은 4개의 다른 요소들의 집합에 의해 식별된다.(`출발지 IP`, `출발지 포트번호`, `목적지 IP`, `목적지 포트번호`) 따라서 IP를 제외한 `출발지/도착지 포트번호`(각 16 bit)와 `sequence number`(32 bit), `ack number`(32 bit)를 합쳐, 기본적으로 20 byte의 헤더를 가지게 되며, 옵션을 포함하면 최대 60 byte의 헤더를 가질 수 있다. 다른 출발지 주소를 가지는 세그먼트는, 다른 소켓을 통해서 프로세스에 전달된다. UDP와 다르게, TCP 세그먼트는 출발지 주소가 다르면, 다른 소켓으로 전달된다.
 
@@ -199,11 +163,11 @@ TCP 소켓은 4개의 다른 요소들의 집합에 의해 식별된다.(`출발
 
 ## #6
 
-#### TCP의 3-way-handshake와 4-way-handshake를 비교 설명해주세요.
+### TCP의 3-way-handshake와 4-way-handshake를 비교 설명해주세요.
 
 **핸드셰이크**(Handshake)란, 호스트 간 데이터를 전송하기 전에 먼저 정확한 전송을 보장하기 위해 상대방 컴퓨터와 사전에 세션을 수립하는 과정을 의미한다.
 
-![](./img/5-network/3-way-handshake.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/3-way-handshake.png)
 
 **3-way handshake**는 TCP의 연결을 초기화 할 때 사용한다. 양쪽 모두 데이터를 전송할 준비가 되었다는 것을 보장하고, 실제로 데이터 전달이 시작하기전에 한쪽이 다른 쪽이 준비되었다는 것을 알수 있도록 한다. 양쪽 모두 상대편에 대한 초기 순차일련변호를 얻을 수 있도록 한다. 절차는 다음과 같다.
 
@@ -213,7 +177,7 @@ TCP 소켓은 4개의 다른 요소들의 집합에 의해 식별된다.(`출발
 
 단순히 응답을 주고받는데 2-way Handshake면 충분해보이지 않는가? 왜 3-way 일까? TCP/IP 통신은 양방향성 connection이다. 위의 그림의 1번 과정에서 클라이언트가 연결 요청을 SYN으로 보내면, 서버는 클라이언트가 요청한 SYN에 대한 대답(ACK)과 함께, 자신도 연결하겠다는 요청의 의미로 SYN을 보내고, 클라이언트로부터 요청에 대한 대답(과정 3)을 받아야한다. 이 과정은 2-way handshaked에서는 성립될 수 없다.
 
-![](./img/5-network/4-way-handshake.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/4-way-handshake.png)
 
 **4-way handshake**는 세션을 종료하기 위해 수행되는 절차이다. 구체적인 과정은 다음과 같다.
 
@@ -241,7 +205,7 @@ TCP 소켓은 4개의 다른 요소들의 집합에 의해 식별된다.(`출발
 
 ## #7
 
-#### TCP의 연결 설정 과정(3단계)과 연결 종료 과정(4단계)이 단계가 차이나는 이유가 무엇인가요?
+### TCP의 연결 설정 과정(3단계)과 연결 종료 과정(4단계)이 단계가 차이나는 이유가 무엇인가요?
 
 연결 설정 과정과 다르게, 연결 종료 과정에서 고려해야하는 경우가 존재하는데, 이는 전송중인 데이터에 대한 경우이다. 클라이언트는 아직 서버로부터 못 받은 데이터가 있을 것을 대비하여 일정시간동안 세션을 남긴다(`TIME_WAIT`). 모든 데이터를 다 보내서 더 이상 보낼 데이터가 없다는 의미의 `FIN`을 받으면, 바로 연결을 종료한다.
 
@@ -253,7 +217,7 @@ TCP 소켓은 4개의 다른 요소들의 집합에 의해 식별된다.(`출발
 
 ## #8
 
-#### 만약 Server에서 FIN 플래그를 전송하기 전에 전송한 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해 FIN 패킷보다 늦게 도착하는 상황이 발생하면 어떻게 될까요?
+### 만약 Server에서 FIN 플래그를 전송하기 전에 전송한 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해 FIN 패킷보다 늦게 도착하는 상황이 발생하면 어떻게 될까요?
 
 클라이언트에서 세션을 종료시킨 후 뒤늦게 도착하는 패킷이 있다면 이 패킷은 Drop되고 **데이터는 유실**될 것이다.
 
@@ -267,7 +231,7 @@ A 클라이언트는 이러한 현상에 대비하여 Client는 Server로부터 
 
 ## #9
 
-#### 초기 Sequence Number인 ISN을 0부터 시작하지 않고 난수를 생성해서 설정하는 이유가 무엇인가요?
+### 초기 Sequence Number인 ISN을 0부터 시작하지 않고 난수를 생성해서 설정하는 이유가 무엇인가요?
 
 Connection을 맺을 때 사용하는 포트는 유한 범위 내에서 사용하고 시간이 지남에 따라 재사용된다.
 
@@ -285,7 +249,7 @@ Connection을 맺을 때 사용하는 포트는 유한 범위 내에서 사용�
 
 ## #10
 
-#### HTTP와 HTTPS에 대해서 설명하고 차이점에 대해 설명해주세요.
+### HTTP와 HTTPS에 대해서 설명하고 차이점에 대해 설명해주세요.
 
 HTTP란 **서버/클라이언트 모델을 따라 데이터를 주고받기 위한 프로토콜**이다. 즉, HTTP는 인터넷에서 하이퍼텍스트를 교환하기 위한 통신 규약으로, 80번 포트를 사용하고 있다. 따라서 HTTP 서버가 80번 포트에서 요청을 기다리고 있으며, 클라이언트는 80번 포트로 요청을 보내게 된다.
 
@@ -305,7 +269,7 @@ HTTP는 암호화가 추가되지 않았기 때문에 보안에 취약한 반면
 
 ## #11
 
-#### HTTP 요청/응답 헤더의 구조를 설명해주세요.
+### HTTP 요청/응답 헤더의 구조를 설명해주세요.
 
 (TODO: 답변 작성하기)
 
@@ -319,7 +283,7 @@ HTTP는 암호화가 추가되지 않았기 때문에 보안에 취약한 반면
 
 ## #12
 
-#### HTTP와 HTTPS 동작 과정을 비교해주세요.
+### HTTP와 HTTPS 동작 과정을 비교해주세요.
 
 (TODO: 답변 추가하기)
 
@@ -333,7 +297,7 @@ HTTP는 암호화가 추가되지 않았기 때문에 보안에 취약한 반면
 
 ## #13
 
-#### CORS가 무엇인가요?
+### CORS가 무엇인가요?
 
 교차 출처 리소스 공유(Cross-Origin Resource Sharing, CORS)는 **추가 HTTP 헤더를 사용하여, 한 출처에서 실행 중인 웹 애플리케이션이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제**이다.
 
@@ -345,7 +309,7 @@ CORS 체제는 브라우저와 서버 간의 안전한 교차 출처 요청 및 
 2. 서버는 요청에 대한 응답을 하는데, 응답 헤더(response header)에 `Access-Control-Allow-Origin`이라는 값에 '이 리소스를 접근하는 것이 허용된 출처'를 내려준다.
 3. 이후 응답을 받은 브라우저는 자신이 보냈던 요청의 Origin과 서버가 보내준 응답의 `Access-Control-Allow-Origin`을 비교해 본 후 이 응답이 유효한 응답인지 아닌지를 결정한다.
 
-![](./img/5-network/cors.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/cors.png)
 
 #### References
 
@@ -356,7 +320,7 @@ CORS 체제는 브라우저와 서버 간의 안전한 교차 출처 요청 및 
 
 ## #14
 
-#### HTTP GET과 POST 메서드를 비교/설명해주세요.
+### HTTP GET과 POST 메서드를 비교/설명해주세요.
 
 > **GET**
 
@@ -387,7 +351,7 @@ GET에서 URL의 파라미터로 보냈던 `name1=value1&name2=value2`가 body�
 
 ## #15
 
-#### 쿠키(Cookie)와 세션(Session)을 설명해주세요.
+### 쿠키(Cookie)와 세션(Session)을 설명해주세요.
 
 > <strong>쿠키(Cookie)</strong>
 
@@ -440,7 +404,7 @@ GET에서 URL의 파라미터로 보냈던 `name1=value1&name2=value2`가 body�
 
 ## #16
 
-#### DNS가 무엇인가요?
+### DNS가 무엇인가요?
 
 모든 네트워크 통신에는 고유의 주소, 즉 IP 주소가 필요하다. 이때 통신을 주고받는 주체가 되는 네트워크에 연결되어 있는 모든 장치들을 host라고 한다. IP는 사람이 이해하고 기억하기 어렵기 때문에 이를 위해서 각 ip에 부여한 이름이 <strong>도메인(Domain)</strong>이다. 예를 들어 210.89.164.90의 도메인은 naver.com이다.
 
@@ -456,7 +420,7 @@ DNS(Domain Name Server 또는 Domain Name Service 모두를 의미)는 숫자로
 2. 만약 캐시에 없다면 컴퓨터 내부에 파일 형태로 존재하는 hosts 파일을 검색해서 찾는다. 해당 hosts 파일에 특정 도메인과 IP를 매핑 시켜놓으면 해당 도메인은 지정한 IP로 이동한다.
 3. 만약 위의 경우에서 도메인에 대한 IP를 찾지 못하면 최종적으로 DNS를 검색한다.
 
-![](./img/5-network/dns.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/dns.png)
 
 #### References
 
@@ -467,7 +431,7 @@ DNS(Domain Name Server 또는 Domain Name Service 모두를 의미)는 숫자로
 
 ## #17
 
-#### REST와 RESTful의 개념을 설명하고 차이를 말해주세요.
+### REST와 RESTful의 개념을 설명하고 차이를 말해주세요.
 
 `REST`란 **Re**presentational **S**tate **T**ransfer의 약자로, <u>URI로 자원(Resource)을 명시하고 HTTP 메서드를 통해 해당 자원에 대한 CRUD(Create, Read, Update, Delete) 연산을 적용하는 것</u>을 의미한다.
 
@@ -491,7 +455,7 @@ DNS(Domain Name Server 또는 Domain Name Service 모두를 의미)는 숫자로
 
 URI는 Uniform Resource Identifier의 약자로, 자원을 식별자로 취급하여 나타내는 주소를 말한다. URI의 종류로 URL과 URN이 있다. URI는 일반적으로 다음과 같은 형식을 갖고 있다.
 
-![](./img/5-network/uri.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/uri.png)
 
 #### References
 
@@ -505,7 +469,7 @@ URI는 Uniform Resource Identifier의 약자로, 자원을 식별자로 취급�
 
 ## #18
 
-#### 소켓(Socket)이 무엇인가요? 자신 있는 언어로 간단히 소켓 생성 예시를 보여주세요.
+### 소켓(Socket)이 무엇인가요? 자신 있는 언어로 간단히 소켓 생성 예시를 보여주세요.
 
 `소켓(Socket)`이란 <u>Application 프로세스와 end-to-end 통신을 제공하는 Transport 프로토콜 사이의 인터페이스</u>을 말한다. 즉, Application에서 Transport 프로토콜을 쓰기 위한 API를 말한다.
 
@@ -572,11 +536,11 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 
 ## #19
 
-#### Socket.io와 WebSocket의 차이를 설명해주세요.
+### Socket.io와 WebSocket의 차이를 설명해주세요.
 
 > **WebSocket**
 
-![](./img/5-network/web-socket.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/web-socket.png)
 
 `WebSocket`은 <u>서버와 브라우저 간 연결을 유지한 상태로 데이터를 교환할 수 있도록 하는 **프로토콜**</u>을 말한다.
 
@@ -602,11 +566,11 @@ server_socket.bind(('', server_port)) # 소켓에 주소 바인딩
 
 ## #20
 
-#### IPv4와 IPv6 차이를 설명해주세요.
+### IPv4와 IPv6 차이를 설명해주세요.
 
 IPv4와 IPv6는 **인터넷 프로토콜(IP)의 버전**을 말하며, IPv4는 IP의 4번째 버전, IPv6는 IP의 6번째 버전을 말한다. 이 때 인터넷 프로토콜은 호스트 간 패킷 교환 네트워크에서 패킷(Packet) 혹은 데이터그램(Datagram)으로 불리는 정보를 주고받는데 사용하는 프로토콜을 말한다.
 
-![](./img/5-network/ipv4-ipv6.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/ipv4-ipv6.png)
 
 `IPv4`는 헤더에 options이 존재하고, fragmentation/reassembly 기능을 제공해 MTU(Maximum Transport Unit)을 넘는 큰 데이터그램을 쪼개 전송을 하고 도착지에서 재조합을 한다. 또한 checksum 비트도 존재하여 매 라우터마다 checksum 비트를 갱신한다.
 
@@ -620,7 +584,7 @@ IPv4와 IPv6는 **인터넷 프로토콜(IP)의 버전**을 말하며, IPv4는 I
 
 ## #21
 
-#### MAC Address가 무엇인가요?
+### MAC Address가 무엇인가요?
 
 `MAC 주소(Media Access Control Address)`는 Data Link Layer에서 통신을 위해 **네트워크 인터페이스에 할당한 식별자**를 말한다. 즉, 모든 네트워크 장비는 자신의 MAC 주소가 있으며 주소는 장비 제조업체가 할당한다. MAC 주소는 물리적 주소(Physical Address)라고 불리기도 한다.
 
@@ -638,11 +602,11 @@ IPv4와 IPv6는 **인터넷 프로토콜(IP)의 버전**을 말하며, IPv4는 I
 
 ## #22
 
-#### 라우터와 스위치, 허브의 차이를 설명해주세요.
+### 라우터와 스위치, 허브의 차이를 설명해주세요.
 
 (여기서의 네트워크는 LAN(Local Area Network)를 말합니다.)
 
-![](./img/5-network/router-switch-hub.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/router-switch-hub.png)
 
 `라우터(Router)`는 Network Layer 3계층 장비로 **네트워크 사이를 연결하는 장치**이다. 최종 도착지의 네트워크에 도착할 수 있도록 적절한 경로를 설정하여 패킷을 전송한다.
 
@@ -663,7 +627,7 @@ IPv4와 IPv6는 **인터넷 프로토콜(IP)의 버전**을 말하며, IPv4는 I
 
 ## #23
 
-#### SMTP가 무엇인가요?
+### SMTP가 무엇인가요?
 
 `SMTP(Simple Mail Transfer Protocol)`은 **인터넷에서 이메일을 보내기 위해 사용하는 TCP/IP 프로토콜**을 말한다. 사용하는 TCP Port 번호는 25번이다.
 
@@ -681,9 +645,9 @@ SMTP는 다음의 명령어를 사용하여 메일을 주고 받는다.
 
 ## #24
 
-#### 노트북으로 `www.google.com`에 접속을 했습니다. 요청을 보내고 받기까지의 과정을 자세히 설명해주세요.
+### 노트북으로 `www.google.com`에 접속을 했습니다. 요청을 보내고 받기까지의 과정을 자세히 설명해주세요.
 
-![](./img/5-network/browser-access-trip.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/browser-access-trip.png)
 
 > **1단계**
 
@@ -715,7 +679,7 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 
 ## #25
 
-#### 여러 네트워크 topology에 대해 간단히 소개해주세요.
+### 여러 네트워크 topology에 대해 간단히 소개해주세요.
 
 컴퓨터끼리 정보를 교환하고 교류하는 형태를 의미하는 네트워크에서 토폴로지는 **컴퓨터들의 특정한 망구성 방식**을 의미한다.
 
@@ -728,7 +692,7 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 - `장점`: 장애 발견이 쉽고 관리가 용이함
 - `단점`: 메인 노드에 장애가 발생하면 전체 네트워크 사용 불가능
 
-![](./img/5-network/star-topology.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/star-topology.png)
 
 > **Bus**
 
@@ -737,7 +701,7 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 - `장점`: 노드 추가 및 삭제가 용이하며, 한 노드에 장애가 발생해도 다른 노드에 영향을 주지 않음
 - `단점`: 공통 배선의 크기(대역폭)가 제한되어 있으므로 배선에 과부하가 걸릴 경우 네트워크 성능 저하
 
-![](./img/5-network/bus-topology.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/bus-topology.png)
 
 > **Ring**
 
@@ -746,7 +710,7 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 - `장점`: 단방향 구조로 단순하고, 중간에 있는 노드들이 증폭기의 역할을 해준다. (거리 제약 적어진다.)
 - `단점`: 노드 추가 및 삭제가 어렵다.
 
-![](./img/5-network/ring-topology.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/ring-topology.png)
 
 > **Mesh**
 
@@ -755,9 +719,9 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 - `장점`: 노드의 장애에 영향받지 않으며 유연한 대처가 가능하고 안정적이다.
 - `단점`: 구축 비용이 크고, 노드 추가에도 비용이 많이 든다.
 
-![완전 연결형](./img/5-network/mesh-full-topology.png)
+![완전 연결형](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/mesh-full-topology.png)
 
-![부분 연결형](./img/5-network/mesh-part-topology.png)
+![부분 연결형](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/mesh-part-topology.png)
 
 #### References
 
@@ -768,7 +732,7 @@ TCP 소켓을 생성하고 3-way handshake로 연결을 생성한다. HTTP 요�
 
 ## #26
 
-#### subnet mask에 대해서 설명해주세요.
+### subnet mask에 대해서 설명해주세요.
 
 > **IP 주소와 서브네팅 (subnetting)**
 
@@ -778,7 +742,7 @@ IPv4 의 경우 $2^{32}$의 숫자로 주소를 표현하고, 이를 국가, 회
 
 기본적으로 IP 주소에 따라 5 개의 클래스로 구분된다. 각 클래스에 따라 네트워크 파트와 호스트 파트가 정해진다.
 
-![](./img/5-network/network-class.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/network-class.png)
 
 위와 같은 클래스 구조와 더불어 더욱 효율적인 서브네팅을 위해서 사용하는 방법이 서브넷 마스크이다.
 
@@ -802,13 +766,13 @@ IPv4 의 경우 $2^{32}$의 숫자로 주소를 표현하고, 이를 국가, 회
 
 ## #27
 
-#### data encapsulation이 무엇인가요?
+### data encapsulation이 무엇인가요?
 
 data encapsulation 은 데이터를 보내는 송신측에서 데이터를 생성하는 방법으로, 네트워크 계층에서 상위 계층에서부터 하위 계층으로 내려올 때마다 각 계층의 헤더를 붙여 보내는 데이터로 만들어낸다.
 
 반대로 데이터를 받는 수신측에서는 데이터를 받은 후에 계층을 거슬러 올라가면서 헤더를 떼내며 데이터를 파악한다.
 
-![](./img/5-network/data-encapsulation.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/data-encapsulation.png)
 
 #### References
 
@@ -819,7 +783,7 @@ data encapsulation 은 데이터를 보내는 송신측에서 데이터를 생�
 
 ## #28
 
-#### DHCP를 설명해주세요.
+### DHCP를 설명해주세요.
 
 DHCP (Dynamic Host Configuration Protocol) 는 동적으로 IP 주소나 기타 정보들을 관리해주는 프로토콜을 말한다. 관리해야하는 컴퓨터가 많고 이들의 IP 를 모두 직접 할당하고 관리하려면 상당히 복잡하고 시간이 많이들지만, DHCP 를 사용하면 이러한 문제점을 해결할 수 있다.
 
@@ -851,9 +815,9 @@ DHCP 는 UDP 를 사용하여 클라이언트/서버 구조로 통신한다.
 
 ## #29
 
-#### routing protocol을 몇 가지 설명해주세요. (ex. link state, distance vector)
+### routing protocol을 몇 가지 설명해주세요. (ex. link state, distance vector)
 
-![](./img/5-network/routing.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/routing.png)
 
 패킷을 전달할 때 어느 경로로 갈지 정하는 것을 라우팅이라고 한다.
 
@@ -889,7 +853,7 @@ link state 를 사용하는 프로토콜로는 OSPF, IS-IS 등이 있으며, lin
 
 ## #30
 
-#### 이더넷(ethernet)이 무엇인가요?
+### 이더넷(ethernet)이 무엇인가요?
 
 이더넷은 근거리 유선 통신을 위해 사용되는 네트워킹 방법으로 [CSMA/CD](https://security-nanglam.tistory.com/193)프로토콜을 사용한다. IEEE 802.3 에 표준으로 정의되었다.
 
@@ -915,7 +879,7 @@ CSMA/CD 방법을 간략히 말하자면 버스 구조로 통신을 하는데 �
 
 ## #31
 
-#### client와 server의 차이점을 설명해주세요.
+### client와 server의 차이점을 설명해주세요.
 
 네트워크 상에서 요청을 보내는 대상을 `client`, 요청에 응답하는 대상을 `server` 라고 한다. client 와 server 는 고정되지 않고 요청에 따라 바뀐다. 전에는 요청을 보내는 client 였어도 다음 번에는 다른 노드로부터 요청을 받으면 server 가 된다.
 
@@ -927,7 +891,7 @@ CSMA/CD 방법을 간략히 말하자면 버스 구조로 통신을 하는데 �
 
 ## #32
 
-#### delay, timing(jitter), throughput 차이를 설명해주세요.
+### delay, timing(jitter), throughput 차이를 설명해주세요.
 
 위 세가지 개념은 모두 네트워크의 성능과 관련되어 있다.
 
@@ -944,7 +908,7 @@ CSMA/CD 방법을 간략히 말하자면 버스 구조로 통신을 하는데 �
 
 의 합으로 계산된다.
 
-![](./img/5-network/network-delay.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/5-network/network-delay.png)
 
 > **timing(jitter)**
 

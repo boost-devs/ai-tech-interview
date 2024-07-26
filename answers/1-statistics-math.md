@@ -1,32 +1,3 @@
-> **📌 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.**
-
-## Table of Contents
-
-- [고유값(eigen value)와 고유벡터(eigen vector)이 무엇이고 왜 중요한지 설명해주세요.](#1)
-- [샘플링(Sampling)과 리샘플링(Resampling)이 무엇이고 리샘플링의 장점을 말씀해주세요.](#2)
-- [확률 모형과 확률 변수는 무엇인가요?](#3)
-- [누적 분포 함수와 확률 밀도 함수는 무엇인가요? 수식과 함께 표현해주세요.](#4)
-- [조건부 확률은 무엇인가요?](#5)
-- [공분산과 상관계수는 무엇일까요? 수식과 함께 표현해주세요.](#6)
-- [신뢰 구간의 정의는 무엇인가요?](#7)
-- [p-value를 모르는 사람에게 설명한다면 어떻게 설명하실 건가요?](#8)
-- [R square의 의미는 무엇인가요?](#9)
-- [평균(mean)과 중앙값(median)중에 어떤 케이스에서 뭐를 써야할까요?](#10)
-- [중심극한정리는 왜 유용한걸까요?](#11)
-- [엔트로피(entropy)에 대해 설명해주세요. 가능하면 Information Gain도요.](#12)
-- [어떨 때 모수적 방법론을 쓸 수 있고, 어떨 때 비모수적 방법론을 쓸 수 있나요?](#13)
-- [“likelihood”와 “probability”의 차이는 무엇일까요?](#14)
-- [통계에서 사용되는 bootstrap의 의미는 무엇인가요.](#15)
-- [모수가 매우 적은 (수십개 이하) 케이스의 경우 어떤 방식으로 예측 모델을 수립할 수 있을까요?](#16)
-- [베이지안과 프리퀀티스트 간의 입장차이를 설명해주실 수 있나요?](#17)
-- [검정력(statistical power)은 무엇일까요?](#18)
-- [missing value가 있을 경우 채워야 할까요? 그 이유는 무엇인가요?](#19)
-- [아웃라이어의 판단하는 기준은 무엇인가요?](#20)
-- [필요한 표본의 크기를 어떻게 계산합니까?](#21)
-- [Bias를 통제하는 방법은 무엇입니까?](#22)
-- [로그 함수는 어떤 경우 유용합니까? 사례를 들어 설명해주세요.](#23)
-- [베르누이 분포 / 이항 분포 / 카테고리 분포 / 다항 분포 / 가우시안 정규 분포 / t 분포 / 카이제곱 분포 / F 분포 / 베타 분포 / 감마 분포에 대해 설명해주세요.](#24)
-- [출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?](#25)
 
 ---
 
@@ -34,8 +5,7 @@
 
 ### 고유값(eigen value)와 고유벡터(eigen vector)이 무엇이고 왜 중요한지 설명해주세요.
 
-정방행렬 $(n \times n)$인 $A$는 임의의 벡터 $(n \times 1)$인 $x$의 방향과 크기를 변화시킬 수 있다.
-
+정방행렬 $(n \times n)$인 $A$는 임의의 벡터 $(n \times 1)$인 $x$의 방향과 크기를 변화시킬[[[[[](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)
 수많은 벡터 $x$중 어떤 벡터들은 $A$에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 $Ax$가 원래 $x$에 상수 $\lambda$를 곱한 것과 같을 때의 $x$를 고유 벡터, 람다를 고유값이라 한다.**
 
 $$
@@ -44,7 +14,7 @@ $$
 
 아래처럼 $x_1$은 $A$에 의해 변환되었음에도 $x_1$과 평행하다. 따라서 $x_1$은 고유벡터이다.
 
-![고유벡터](./img/1-statistics-math/eigen-vector.png)
+![고유벡터](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/1-statistics-math/eigen-vector.png)
 
 고유값과 고유벡터를 통해 $A$를 고유값과 고유벡터들로 분해하는 **고유값 분해(eigen decomposition)**, 정방행렬 뿐만 아닌 $m \times n$행렬도 분해할 수 있는 **특이값 분해(SVD)**, 데이터들을 차원 축소시킬 때 가장 원래 의미를 잘 보존시키는 **주성분 분석(PCA)** 등에 활용할 수 있으므로 중요하다.
 
@@ -180,7 +150,7 @@ $$
 
 베이즈 정리를 통해 가능도(Likelihood)와 증거(Evidence)를 바탕으로 사전확률을 사후확률로 업데이트한다.
 
-![베이즈 정리](./img/1-statistics-math/probability.png)
+![베이즈 정리](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/1-statistics-math/probability.png)
 
 - $D$: 새로 관찰되는 데이터
 - $\theta$: 모델에서 계산하고 싶어하는 모수 (가설)
@@ -231,7 +201,7 @@ $$
 
 구간 추정에서 <strong>모수가 a 에서 b 사이에 있을 것으로 추정(신뢰구간)</strong>하고 <strong>그 확률(%, 신뢰수준)</strong>을 구한다.
 
-![신뢰수준과 신뢰구간](./img/1-statistics-math/confidence-level.png)
+![신뢰수준과 신뢰구간](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/1-statistics-math/confidence-level.png)
 
 **신뢰구간(Confidence Interval)** 은 모집단의 모수(parameter)가 위치해 있을 것으로 신뢰할 수 있는 구간이다.
 모수가 어느 범위 안에 있는지를 확률적으로 보여주는 방법이라고 할 수 있다.
@@ -442,6 +412,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 ### 검정력(statistical power)은 무엇일까요?
 
+
 |        　        | 귀무가설 H0 참 |    귀무가설 H0 거짓    |
 | :--------------: | :------------: | :--------------------: |
 | 귀무가설 H0 채택 | 옳은 결정(1-α) |     제 2종 오류(β)     |
@@ -449,7 +420,7 @@ PDF(probability density function)에서는 **확률변수**를 변수로 보기 
 
 검정력은 대립가설 H1이 참인 경우 귀무가설 H0를 기각(대립가설 H1을 채택)할 확률이다.
 
-![검정력](./img/1-statistics-math/hypothesis.png)
+![검정력](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/1-statistics-math/hypothesis.png)
 
 #### References
 
@@ -530,17 +501,17 @@ $$
 
 ### Bias를 통제하는 방법은 무엇입니까?
 
-![언더피팅과 오버피팅](./img/1-statistics-math/underfit-right-overfit.png)
+![언더피팅과 오버피팅](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/1-statistics-math/underfit-right-overfit.png)
 
 편향(Bias)는 데이터 내에 있는 모든 정보를 고려하지 않음으로 인해, 지속적으로 잘못된 것들을 학습하는 경향을 의미한다. 이는 언더피팅(Underfitting)과 관계되어 있다.
 
 반대로 분산(Variance)는 데이터 내에 있는 에러나 노이즈까지 잘 잡아내는 highly flexible models에 데이터를 피팅시킴으로써, 실제 현상과 관계 없는 랜덤한 것들까지 학습하는 알고리즘의 경향을 의미한다. 이는 오버피팅(Overfitting)과 관계되어 있다.
 
-![편향과 분산](./img/1-statistics-math/variance-bias.png)
+![편향과 분산](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/1-statistics-math/variance-bias.png)
 
 편향(Bias)과 분산(Variance)은 한 쪽이 증가하면 다른 한 쪽이 감소하고, 한쪽이 감소하면 다른 한쪽이 증가하는 tradeoff 관계를 가진다.
 
-![편향과 분산의 트레이드오프 관계](./img/1-statistics-math/bias-variance-tradeoff.png)
+![편향과 분산의 트레이드오프 관계](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/1-statistics-math/bias-variance-tradeoff.png)
 
 **Bias를 통제하기 위한 방법**으로는 뉴런이나 계층의 개수가 같은 모델의 크기 증가, 오류평가시 얻은 지식을 기반으로 입력 특성 수정, 정규화, 모델 구조를 수정, 학습 데이터 추가 등의 방법이 있다.
 
@@ -594,13 +565,13 @@ $$
 
 ### 출장을 위해 비행기를 타려고 합니다. 당신은 우산을 가져가야 하는지 알고 싶어 출장지에 사는 친구 3명에게 무작위로 전화를 하고 비가 오는 경우를 독립적으로 질문했습니다. 각 친구는 2/3로 진실을 말하고 1/3으로 거짓을 말합니다. 3명의 친구가 모두 “그렇습니다. 비가 내리고 있습니다”라고 말했습니다. 실제로 비가 내릴 확률은 얼마입니까?
 
-![확률 구하는 방법 시각화](./img/1-statistics-math/facebook-probability.png)
+![확률 구하는 방법 시각화](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/1-statistics-math/facebook-probability.png)
 
 출장지에 비가 내릴 때 $p$, 내리지 않을 때를 $1-p$라고 하자. 출장지에 비가 내리는데( $p$ ) 모든 친구가 비가 내린다라고 한다면 모든 친구가 진실을 말하는 것( $\frac{8}{27}$ )이다. 이 경우 확률은 $\frac{8p}{27}$이다.
 
 출장지가 비가 내리지 않는데( $(1-p)$ ) 모든 친구가 비가 내린다라고 한다면 모든 친구가 거짓을 말하는 것( $\frac{1}{27}$ )이다. 이 경우 확률은 $\frac{(1-p)}{27}$이다.
 
-![베이즈 법칙 적용](./img/1-statistics-math/facebook-bayes-rule.png)
+![베이즈 법칙 적용](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/1-statistics-math/facebook-bayes-rule.png)
 
 위에서 계산한 확률을 위의 식에 대입하고 식을 정리하면 아래와 같다.
 

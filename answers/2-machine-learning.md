@@ -1,46 +1,11 @@
-> **📌 질문은 <strong>[zzsza님의 Datascience-Interview-Questions](https://github.com/zzsza/Datascience-Interview-Questions)</strong>를 참고하였습니다.**
-
-## Table of Contents
-
-- [알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)](#1)
-- [정규화를 왜 해야할까요? 정규화의 방법은 무엇이 있나요?](#2)
-- [Local Minima와 Global Minimum에 대해 설명해주세요.](#3)
-- [차원의 저주에 대해 설명해주세요.](#4)
-- [dimension reduction 기법으로 보통 어떤 것들이 있나요?](#5)
-- [PCA는 차원 축소 기법이면서, 데이터 압축 기법이기도 하고, 노이즈 제거기법이기도 합니다. 왜 그런지 설명해주실 수 있나요?](#6)
-- [LSA, LDA, SVD 등의 약자들이 어떤 뜻이고 서로 어떤 관계를 가지는지 설명할 수 있나요?](#7)
-- [Markov Chain을 고등학생에게 설명하려면 어떤 방식이 제일 좋을까요?](#8)
-- [텍스트 더미에서 주제를 추출해야 합니다. 어떤 방식으로 접근해 나가시겠나요?](#9)
-- [SVM은 왜 반대로 차원을 확장시키는 방식으로 동작할까요? SVM은 왜 좋을까요?](#10)
-- [다른 좋은 머신 러닝 대비, 오래된 기법인 나이브 베이즈(naive bayes)의 장점을 옹호해보세요.](#11)
-- [회귀 / 분류시 알맞은 metric은 무엇일까?](#12)
-- [Association Rule의 Support, Confidence, Lift에 대해 설명해주세요.](#13)
-- [최적화 기법중 Newton’s Method와 Gradient Descent 방법에 대해 알고 있나요?](#14)
-- [머신러닝(machine)적 접근방법과 통계(statistics)적 접근방법의 둘간에 차이에 대한 견해가 있나요?](#15)
-- [인공신경망(deep learning이전의 전통적인)이 가지는 일반적인 문제점은 무엇일까요?](#16)
-- [지금 나오고 있는 deep learning 계열의 혁신의 근간은 무엇이라고 생각하시나요?](#17)
-- [ROC 커브에 대해 설명해주실 수 있으신가요?](#18)
-- [여러분이 서버를 100대 가지고 있습니다. 이때 인공신경망보다 Random Forest를 써야하는 이유는 뭘까요?](#19)
-- [K-means의 대표적 의미론적 단점은 무엇인가요? (계산량 많다는것 말고)](#20)
-- [L1, L2 정규화에 대해 설명해주세요.](#21)
-- [Cross Validation은 무엇이고 어떻게 해야하나요?](#22)
-- [XGBoost을 아시나요? 왜 이 모델이 캐글에서 유명할까요?](#23)
-- [앙상블 방법엔 어떤 것들이 있나요?](#24)
-- [feature vector란 무엇일까요?](#25)
-- [좋은 모델의 정의는 무엇일까요?](#26)
-- [50개의 작은 의사결정 나무는 큰 의사결정 나무보다 괜찮을까요? 왜 그렇게 생각하나요?](#27)
-- [스팸 필터에 로지스틱 리그레션을 많이 사용하는 이유는 무엇일까요?](#28)
-- [OLS(ordinary least squre) regression의 공식은 무엇인가요?](#29)
 
 ---
 
 ## #1
 
-#### 알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)
+### 알고 있는 metric에 대해 설명해주세요. (ex. RMSE, MAE, recall, precision ...)
 
 평가지표(metric)을 크게 **분류를 위한 평가지표**와 **회귀를 위한 평가지표**로 나눌 수 있다.
-
----
 
 우선 <strong>분류 작업(task)</strong>에 적용할 수 있는 평가지표를 살펴보자.
 
@@ -50,7 +15,7 @@
 
 > **오차 행렬(confusion matrix)**
 
-![오차 행렬](./img/2-machine-learning/confusion-matrix.png)
+![오차 행렬](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/confusion-matrix.png)
 
 오차 행렬은 **모델이 예측을 하면서 얼마나 헷갈리고 있는지를 보여주는 지표**이다. 주로 이진 분류에서 많이 사용하며 이진 분류에 대한 오차 행렬은 위의 그림처럼 같이 나타낼 수 있다. True Positive는 긍정으로 예측을 했는데 실제로 긍정인 경우를, False Positive는 긍정으로 예측했는데 실제로 부정인 경우를, False Negative는 부정으로 예측했는데 실제로 긍정인 경우를, True Negative는 부정으로 예측했는데 실제로 부정인 경우를 말한다. 위의 값을 바탕으로 모델이 어떤 오류를 발생시켰는지를 살펴볼 수 있다.
 
@@ -72,13 +37,11 @@ $$
 
 > **ROC-AUC**
 
-![ROC AUC](./img/2-machine-learning/roc-curve.png)
+![ROC AUC](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/roc-curve.png)
 
 ROC는 **FPR(False Positive Rate)가 변할 때 TPR(True Positive Rate)가 어떻게 변하는지를 나타내는 곡선**을 말한다. 여기서 FPR이란 <strong>FP / (FP + TN)</strong>이고, TPR은 <strong>TP / (FN + TP)</strong>으로 재현율을 말한다. 그럼 어떻게 FPR을 움직일까? 바로 분류 결정 임계값을 변경함으로써 움직일 수 있다. FPR이 0이 되려면 임계값을 1로 설정하면 된다. 그럼 긍정의 기준이 높으니 모두 부정으로 예측될 것이다. 반대로 1이 되려면 임계값을 0으로 설정하여 모두 긍정으로 예측시키면 된다. 이렇게 임계값을 움직이면서 나오는 FPR과 TPR을 각각 x와 y 좌표로 두고 그린 곡선이 ROC이다.
 
 AUC는 ROC 곡선의 넓이를 말한다. AUC가 높을수록 즉, AUC가 왼쪽 위로 휘어질수록 좋은 성능이 나온다고 판단한다. 즉, TPR이 높고 FPR이 낮을수록 예측 오류는 낮아지기 때문에 성능이 잘 나온다 볼 수 있다.
-
----
 
 마지막으로 **회귀 작업**에 적용할 수 있는 평가지표를 살펴보자.
 
@@ -120,7 +83,7 @@ R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 
 
 ## #2
 
-#### 정규화를 왜 해야할까요? 정규화의 방법은 무엇이 있나요?
+### 정규화를 왜 해야할까요? 정규화의 방법은 무엇이 있나요?
 
 정규화는 **개별 피처의 크기를 모두 똑같은 단위로 변경하는 것**을 말한다. 정규화를 하는 이유는 **피처의 스케일이 심하게 차이가 나는 경우 값이 큰 피처가 더 중요하게 여겨질 수 있기 때문**이다. 이를 막기 위해 피처 모두 동일한 스케일로 반영되도록 하는 것이 정규화이다.
 
@@ -135,9 +98,9 @@ R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 
 
 ## #3
 
-#### Local Minima와 Global Minimum에 대해 설명해주세요.
+### Local Minima와 Global Minimum에 대해 설명해주세요.
 
-![Maxima와 Minima](./img/2-machine-learning/local-minima-global-minima.png)
+![Maxima와 Minima](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/local-minima-global-minima.png)
 
 비용 함수(cost function)에서의 **Global Minimum**은 에러가 최소화되는 즉, 우리가 찾고자 하는 지점을 말하며, **Local Minima**는 에러가 최소가 될 수 있는 후보가 되는 지점 중 Global Minimum을 뺀 지점을 말한다. Local Minima는 자칫 에러가 **최소화되는 지점을 찾았다고 착각**할 수 있기에 함정에 비유할 수 있다. 이를 해결하기 위해 Momentum과 같은 최적화 알고리즘을 사용하거나 학습률(learning rate)를 잘 조절하여 Local Minima에서 벗어날 수 있다.
 
@@ -150,9 +113,9 @@ R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 
 
 ## #4
 
-#### 차원의 저주에 대해 설명해주세요.
+### 차원의 저주에 대해 설명해주세요.
 
-![차원의 저주](./img/2-machine-learning/curse-of-dimensionality.png)
+![차원의 저주](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/curse-of-dimensionality.png)
 
 차원의 저주란 **데이터 차원이 증가할수록 해당 공간의 크기가 기하급수적으로 증가하여 데이터 간 거리가 기하급수적으로 멀어지고 희소한 구조를 갖게 되는 현상**을 말한다. 이를 해결하기 위해서는 차원을 증가시킨만큼 더 많은 데이터를 추가하거나 PCA, LDA, LLE, MDS와 같은 차원 축소 알고리즘으로 차원을 줄여 해결할 수 있다.
 
@@ -166,7 +129,7 @@ R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 
 
 ## #5
 
-#### dimension reduction 기법으로 보통 어떤 것들이 있나요?
+### dimension reduction 기법으로 보통 어떤 것들이 있나요?
 
 차원 축소는 <strong>피처 선택(feature selection)</strong>과 <strong>피처 추출(feature extraction)</strong>으로 나눌 수 있다. 우선 피처 선택은 특정 피처에 종속성이 강한 불필요한 피처는 제거하고 데이터의 특징을 잘 표현하는 주요 피처만 선택하는 것을 말한다. 반면 피처 추출은 기존 피처를 저차원의 피처로 압축하여, 피처를 함축적으로 잘 설명할 수 있도록 저차원으로 매핑하는 것을 말한다. 대표적인 피처 추출 알고리즘으로 PCA, SVD, NMF, LDA 등이 있다.
 
@@ -178,7 +141,7 @@ R Squared는 **분산을 기반으로 예측 성능을 평가하는 지표**를 
 
 ## #6
 
-#### PCA는 차원 축소 기법이면서, 데이터 압축 기법이기도 하고, 노이즈 제거기법이기도 합니다. 왜 그런지 설명해주실 수 있나요?
+### PCA는 차원 축소 기법이면서, 데이터 압축 기법이기도 하고, 노이즈 제거기법이기도 합니다. 왜 그런지 설명해주실 수 있나요?
 
 PCA(Principle Component Analysis)는 **입력 데이터의 공분산 행렬을 기반으로 고유벡터를 생성하고 이렇게 구한 고유 벡터에 입력 데이터를 선형 변환하여 차원을 축소하는 방법**이다. 차원은 곧 입력 데이터의 피처를 뜻하므로 데이터 압축 기법으로 볼 수도 있다.
 
@@ -193,7 +156,7 @@ PCA(Principle Component Analysis)는 **입력 데이터의 공분산 행렬을 �
 
 ## #7
 
-#### LSA, LDA, SVD 등의 약자들이 어떤 뜻이고 서로 어떤 관계를 가지는지 설명할 수 있나요?
+### LSA, LDA, SVD 등의 약자들이 어떤 뜻이고 서로 어떤 관계를 가지는지 설명할 수 있나요?
 
 `PCA`는 **Principle Component Analysis**의 약자로 데이터의 공분산 행렬을 기반으로 고유벡터를 생성하고 이렇게 구한 고유 벡터에 입력 데이터를 선형 변환하여 차원을 축소하는 방법이다. `SVD`는 **Singular Value Decomposition**의 약자로 PCA와 유사한 행렬 분해 기법을 사용하나 정방 행렬(square matrix)를 분해하는 PCA와 달리 행과 열의 크기가 다른 행렬에도 적용할 수 있다.
 
@@ -215,7 +178,7 @@ PCA(Principle Component Analysis)는 **입력 데이터의 공분산 행렬을 �
 
 ## #8
 
-#### Markov Chain을 고등학생에게 설명하려면 어떤 방식이 제일 좋을까요?
+### Markov Chain을 고등학생에게 설명하려면 어떤 방식이 제일 좋을까요?
 
 > **마코프 체인(Markov Chain)**
 
@@ -225,7 +188,7 @@ PCA(Principle Component Analysis)는 **입력 데이터의 공분산 행렬을 �
 
 $n+1$회의 상태(state)는 오직 $n$회에서의 상태, 혹은 그 이전 일정 기간의 상태에만 영향을 받는 것을 의미한다. 예를 들면 동전 던지기는 독립 시행이기 때문에 $n$번째의 상태가 앞이던지 뒤이던지 간에 $n+1$번째 상태에 영향을 주지 않는다. 하지만 1차 마코프 체인은 $n$번째 상태가 $n+1$번째 상태를 결정하는데에 영향을 미친다. (시간 $t$에서의 관측은 단지 최근 $r$개의 관측에만 의존한다는 가정을 하고 그 가정하에서 성립한다.)
 
-![마코프 체인](./img/2-machine-learning/markov-chain.png)
+![마코프 체인](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/markov-chain.png)
 
 정리하면 마코프 체인은 **확률변수(random variable)가 어떤 상태(state)에 도달할 확률이 오직 바로 이전 시점의 상태(state)에 달려 있는 경우**를 가리킨다.
 
@@ -235,11 +198,11 @@ $n+1$회의 상태(state)는 오직 $n$회에서의 상태, 혹은 그 이전 �
 
 마코프 **모델은 위의 가정하에 확률적 모델을 만든 것으로써 가장 먼저 각 상태를 정의**하게 된다. 상태(state)는 $V = v_1, ... , v_m$로 정의하고, m개의 상태가 존재하게 되는 것이다. 그 다음은 <strong>상태 전이 확률(State transition Probability)</strong>을 정의할 수 있다. 상태 전이 확률이란 각 상태에서 각 상태로 이동할 확률을 말한다. 상태 전이 확률 $a_{ij}$는 상태 $v_i$에서 상태 $v_j$로 이동할 확률을 의미한다. 아래의 식은 상태 전이 확률을 식으로 나타낸 것과 그 아래는 확률의 기본 정의에 의한 상태 전이 확률의 조건이다.
 
-![상태 전이 확률](./img/2-machine-learning/state-transition-probability.png)
+![상태 전이 확률](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/state-transition-probability.png)
 
 그리고 상태와 상태 전이 확률을 정리하여 <strong>상태 전이도(state transition diagram)</strong>으로도 표현할 수 있다.
 
-![상태 전이도](./img/2-machine-learning/state-transition-diagram.png)
+![상태 전이도](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/state-transition-diagram.png)
 
 #### References
 
@@ -251,7 +214,7 @@ $n+1$회의 상태(state)는 오직 $n$회에서의 상태, 혹은 그 이전 �
 
 ## #9
 
-#### 텍스트 더미에서 주제를 추출해야 합니다. 어떤 방식으로 접근해 나가시겠나요?
+### 텍스트 더미에서 주제를 추출해야 합니다. 어떤 방식으로 접근해 나가시겠나요?
 
 > **잠재 디리클레 할당(Latent Dirichlet Allocation, LDA)**
 
@@ -287,11 +250,11 @@ LDA는 토픽의 제목을 정해주지 않지만, 이 시점에서 알고리즘
 
 ## #10
 
-#### SVM은 왜 반대로 차원을 확장시키는 방식으로 동작할까요? SVM은 왜 좋을까요?
+### SVM은 왜 반대로 차원을 확장시키는 방식으로 동작할까요? SVM은 왜 좋을까요?
 
 SVM(Support Vector Machine)은 데이터가 사상된 공간에서 **경계로 표현**되며, 공간상에 존재하는 **여러 경계 중 가장 큰 폭을 가진 경계를 찾는다.**
 
-![SVM](./img/2-machine-learning/svm.png)
+![SVM](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/svm.png)
 
 - $B_1$: 결정 경계
 - $b_{11}$: plus-plane
@@ -312,9 +275,9 @@ SVM의 장단점은 다음과 같다.
 
 SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데, 비선형 분류에서는 입력자료를 다차원 공간상으로 맵핑할 때 <strong>커널 트릭(kernel trick)</strong>을 사용하기도 한다. 원공간(Input Space)의 데이터를 선형분류가 가능한 고차원 공간(Feature Space)으로 매핑한 뒤 두 범주를 분류하는 초평면을 찾는다. (Kernel-SVM)
 
-![](./img/2-machine-learning/input-space-and-feature-space.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/input-space-and-feature-space.png)
 
-![](./img/2-machine-learning/kernel-svm.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/kernel-svm.png)
 
 > **커널 트릭(Kernel Trick)**
 
@@ -322,7 +285,7 @@ SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데,
 
 커널 함수의 종류는 다음과 같다.
 
-![커널 함수의 종류](./img/2-machine-learning/kernel-function.png)
+![커널 함수의 종류](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/kernel-function.png)
 
 #### References
 
@@ -337,7 +300,7 @@ SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데,
 
 ## #11
 
-#### 다른 좋은 머신 러닝 대비, 오래된 기법인 나이브 베이즈(naive bayes)의 장점을 옹호해보세요.
+### 다른 좋은 머신 러닝 대비, 오래된 기법인 나이브 베이즈(naive bayes)의 장점을 옹호해보세요.
 
 데이터에서 변수들에 대한 **조건부 독립을 가정**하는 알고리즘으로 클래스에 대한 사전 정보와 데이터로부터 추출된 정보를 결합하고, <strong>베이즈 정리(Bayes Theorem)</strong>를 이용하여 어떤 데이터가 특정 클래스에 속하는지 분류하는 알고리즘이다.
 
@@ -360,7 +323,7 @@ SVM은 선형 분류뿐만 아니라 **비선형 분류**에도 사용되는데,
 
 ## #12
 
-#### 회귀 / 분류시 알맞은 metric은 무엇일까?
+### 회귀 / 분류시 알맞은 metric은 무엇일까?
 
 [#1](#1) 답변을 참고해주세요. 해당 답변에서 서술하지 않은 지표만 추가로 설명합니다.
 
@@ -401,7 +364,7 @@ Categorical Crossentropy는 분류해야할 클래스가 3개 이상인 멀티 �
 
 ## #13
 
-#### Association Rule의 Support, Confidence, Lift에 대해 설명해주세요.
+### Association Rule의 Support, Confidence, Lift에 대해 설명해주세요.
 
 연관규칙분석(Association Analysis)은 흔히 장바구니 분석(Market Basket Analysis) 또는 서열분석(Sequence Analysis)이라고 불린다. 기업의 데이터베이스에서 상품의 구매, 서비스 등 **일련의 거래 또는 사건들 간의 규칙을 발견하기 위해 적용**하며, 연관성 분석의 평가 지표로는 Support, Confidence, Lift를 사용한다.
 
@@ -456,7 +419,7 @@ $$ P(Y) = \frac{n(Y)}{N} = \frac{n \\{ no.2, no.3, no.4 \\} }{N} = \frac{3}{5} =
 
 ## #14
 
-#### 최적화 기법중 Newton’s Method와 Gradient Descent 방법에 대해 알고 있나요?
+### 최적화 기법중 Newton’s Method와 Gradient Descent 방법에 대해 알고 있나요?
 
 > **Newton's Method**
 
@@ -522,7 +485,7 @@ Gradient descent는 2차 미분항을 정방행렬에 상수가 곱해진 값으
 
 ## #15
 
-#### 머신러닝(machine)적 접근방법과 통계(statistics)적 접근방법의 둘간에 차이에 대한 견해가 있나요?
+### 머신러닝(machine)적 접근방법과 통계(statistics)적 접근방법의 둘간에 차이에 대한 견해가 있나요?
 
 머신러닝적 접근방법과 통계적 접근방법의 차이는 두 방법의 주 목적이 다르다는 것이다.
 
@@ -542,11 +505,11 @@ Gradient descent는 2차 미분항을 정방행렬에 상수가 곱해진 값으
 
 ## #16
 
-#### 인공신경망(deep learning이전의 전통적인)이 가지는 일반적인 문제점은 무엇일까요?
+### 인공신경망(deep learning이전의 전통적인)이 가지는 일반적인 문제점은 무엇일까요?
 
 딥러닝 이전의 인공신경망은 선형적으로만 회귀, 분류를 수행하기 때문에 레이어를 깊게 쌓지 못했고, 때문에 XOR 문제 같은 복잡한 문제를 풀지 못하는 문제점이 있었다.
 
-![XOR 문제](./img/2-machine-learning/xor.png)
+![XOR 문제](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/xor.png)
 
 하지만 시그모이드와 같은 비선형 함수를 선형 모델에 추가하여 XOR 문제를 해결하고, 편미분 체인룰을 사용한 오차역전파 방법으로 모델을 업데이트할 수 있게 되면서 레이어를 깊게 쌓은 딥러닝 인공신경망이 발전하였다.
 
@@ -559,7 +522,7 @@ Gradient descent는 2차 미분항을 정방행렬에 상수가 곱해진 값으
 
 ## #17
 
-#### 지금 나오고 있는 deep learning 계열의 혁신의 근간은 무엇이라고 생각하시나요?
+### 지금 나오고 있는 deep learning 계열의 혁신의 근간은 무엇이라고 생각하시나요?
 
 ImageNet 과 같은 **거대하고 높은 품질의 데이터셋**이 모두에게 공개되면서 딥러닝의 혁신적인 발전이 시작될 수 있었다. 현재는 더 다양한 태스크에 적합한 좋은 GLUE 같은 데이터들도 공개되어 더욱 딥러닝의 발전에 이바지하고 있다.
 
@@ -575,14 +538,14 @@ ImageNet 과 같은 **거대하고 높은 품질의 데이터셋**이 모두에�
 
 ## #18
 
-#### ROC 커브에 대해 설명해주실 수 있으신가요?
+### ROC 커브에 대해 설명해주실 수 있으신가요?
 
 ROC 커브는 **이진분류 모델의 성능**을 나타내는 지표이다.
 
 모델이 참이라고 예측하는 경우는 **FPR** (False Positive Rate, 실제 값이 거짓일 때) 과 **TPR** (True Positive Rate, 실제 값이 참일 때) 두 경우로 나뉜다.  
 FPR 과 TPR 을 그래프에서 x 축, y 축으로 동시에 표현한 ROC 커브를 통해 모델이 얼마나 옳은 값을 잘 예측하는지 알 수 있게 된다.
 
-![ROC 커브](./img/2-machine-learning/roc.png)
+![ROC 커브](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/roc.png)
 
 ROC 커브가 좌상단과 가까운 경우 좋은 모델이라고 판단할 수 있다. 모델이 FPR 은 낮게, TPR 은 높게 예측하기 때문이다.
 
@@ -594,7 +557,7 @@ ROC 커브가 좌상단과 가까운 경우 좋은 모델이라고 판단할 수
 
 ## #19
 
-#### 여러분이 서버를 100대 가지고 있습니다. 이때 인공신경망보다 Random Forest를 써야하는 이유는 뭘까요?
+### 여러분이 서버를 100대 가지고 있습니다. 이때 인공신경망보다 Random Forest를 써야하는 이유는 뭘까요?
 
 **랜덤 포레스트**는 여러 결정 트리를 앙상블하여 하나의 모델로 구성하는 방법이다. 랜덤 포레스트에서는 각 서버를 모델의 특성을 이해하는 단일 결정 트리 (Decision tree) 로 **병렬**적이게 구성할 수 있다.
 
@@ -612,7 +575,7 @@ ROC 커브가 좌상단과 가까운 경우 좋은 모델이라고 판단할 수
 
 ## #20
 
-#### K-means의 대표적 의미론적 단점은 무엇인가요? (계산량 많다는것 말고)
+### K-means의 대표적 의미론적 단점은 무엇인가요? (계산량 많다는것 말고)
 
 K-means 는 특성이 비슷한 데이터를 같은 그룹으로 묶어주는 클러스터링 알고리즘으로, k 개의 군집 개수를 정하고 군집의 중심점을 예측하여 각 데이터와 거리를 비교한 후 군집을 결정한다.
 
@@ -630,7 +593,7 @@ K-means 는 특성이 비슷한 데이터를 같은 그룹으로 묶어주는 �
 
 ## #21
 
-#### L1, L2 정규화에 대해 설명해주세요.
+### L1, L2 정규화에 대해 설명해주세요.
 
 정규화(**일반화**)의 목적은 모델이 학습 데이터에 오버피팅되지 않고 처음 보는 테스트 데이터에도 좋은 성능을 내도록 만드는 것이다.
 
@@ -664,7 +627,7 @@ loss 는 데이터 값과 추정 값의 차이로 모델은 loss 를 최소화�
 
 Norm은 벡터의 크기를 나타내는 것으로 L1 Norm은 벡터의 절댓값 크기를 나타내고, L2 Norm은 직선 거리 (제곱의 루트) 를 나타낸다.
 
-![Norm](./img/2-machine-learning/norm.png)
+![Norm](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/norm.png)
 
 위 그림에서 초록선은 L2 norm 을 의미하고, 나머지 선은 L1 norm 을 의미한다.
 
@@ -690,7 +653,7 @@ $$
 
 ## #22
 
-#### Cross Validation은 무엇이고 어떻게 해야하나요?
+### Cross Validation은 무엇이고 어떻게 해야하나요?
 
 **cross validation(교차검증)이란** train(학습) 데이터로 학습한 모델이, 학습에 사용되지 않은 validation(검증) 데이터를 기준으로 얼마나 잘 동작하는지 확인하는 것이다. 여기서 주의할 점은 train 데이터셋과 validation 데이터셋에는 test 데이터셋이 포함되면 안된다는 것이다.
 
@@ -732,7 +695,7 @@ k-겹 교차검증 방법은 train 데이터를 k개의 fold로 나누어, 그 �
 
 계층별 k-겹 교차검증 방법은 k-겹 교차검증 방법에서 fold를 나눌때, 랜덤하게 fold를 지정하는 것이 아닌, 각 클래스별 비율을 고려하여 fold를 구성하는 방법이다.
 
-![계층별 k-겹 교차검증](./img/2-machine-learning/stratified-kfold.png)
+![계층별 k-겹 교차검증](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/stratified-kfold.png)
 
 > **💡 왜 test 데이터셋 만으로 검증하면 안될까?**  
 > 모든 train 데이터셋을 학습하고, test 데이터셋으로 검증한 결과를 확인한다고 하자. 개발자는 test 데이터셋 점수를 높이기 위해, test 데이터셋에 편향되도록 모델을 튜닝하게 될 것이다. 그러나 중요한 것은 test 데이터셋에 대한 정확도를 높이는 것 뿐만아니라, 모델의 일반적인 정확도를 높이는 것이다. 어떤 데이터가 들어와도 일정하게 높은 정확도를 보여주는 모델이 좋은 모델이라 할 수 있으므로, validation 데이터셋과 test 데이터셋을 분리하여 검증하는 과정을 통해, 모델을 일반화시켜야 한다.
@@ -746,7 +709,7 @@ k-겹 교차검증 방법은 train 데이터를 k개의 fold로 나누어, 그 �
 
 ## #23
 
-#### XGBoost을 아시나요? 왜 이 모델이 캐글에서 유명할까요?
+### XGBoost을 아시나요? 왜 이 모델이 캐글에서 유명할까요?
 
 **XGBoost(eXtreme Gradient Boosting)** 이란, 트리 기반의 앙상블 학습에서 가장 각광받고 있는 알고리즘 중 하나이다. Kaggle 경연대회에서 상위를 차지한 많은 과학자들이 XGBoost를 이용하면서 널리 알려졌다. GBM에 기반하고 있지만, GBM의 단점인 느린 수행시간 및 과적합 규제(Regularization) 부재 등의 문제를 해결해서 각광받고 있다.
 
@@ -773,9 +736,9 @@ XGBoost의 장점은 다음과 같다.
 
 ## #24
 
-#### 앙상블 방법엔 어떤 것들이 있나요?
+### 앙상블 방법엔 어떤 것들이 있나요?
 
-![앙상블 기법](./img/2-machine-learning/ensemble.png)
+![앙상블 기법](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/ensemble.png)
 
 **앙상블(Ensemble)** 은 여러개의 모델을 조합해서 그 결과를 뽑아 내는 방법이다. "정확도가 높은 강한 모델을 하나 사용하는 것보다, 정확도가 낮은 약한 모델을 여러개 조합 하는 방식의 정확도가 높다"는 개념에서 비롯한 방법이다. `Bagging`, `Boosting`, `Stacking` 등의 방법이 있다.
 
@@ -797,7 +760,7 @@ XGBoost의 장점은 다음과 같다.
 
 ## #25
 
-#### feature vector란 무엇일까요?
+### feature vector란 무엇일까요?
 
 **특징(feature)** 이란, 샘플(데이터)을 잘 설명하는 측정가능한 속성이다. 특징을 통해 특정 샘플을 수치화하여 나타낼 수 있다.  
 **특징벡터(feature vector)** 란 피쳐(feature)들의 집합이다. 굳이 벡터로 표시하는 이유는 수학적으로 다루기 편하기 때문이다.  
@@ -829,7 +792,7 @@ $$
 
 ## #26
 
-#### 좋은 모델의 정의는 무엇일까요?
+### 좋은 모델의 정의는 무엇일까요?
 
 한 줄로 요약하자면, 좋은 모델은 **데이터의 패턴을 잘 학습한 모델**로서, **한번도 본적 없는 데이터에 대해 옳은 판단을 내리는 모델**이 좋은 모델이라고 할 수 있다.
 
@@ -849,11 +812,11 @@ $$
 
 ## #27
 
-#### 50개의 작은 의사결정 나무는 큰 의사결정 나무보다 괜찮을까요? 왜 그렇게 생각하나요?
+### 50개의 작은 의사결정 나무는 큰 의사결정 나무보다 괜찮을까요? 왜 그렇게 생각하나요?
 
 50개의 작은 의사결정 나무는 앙상블에서 `Bagging` 기법을 사용한 모델로 볼 수 있다. 따라서 Bagging의 대표적인 방법인 `Random Forest` 방법이 왜 좋은지 설명하는 것으로, 왜 50개의 작은 의사결정 나무가 더 나은지 설명하고자 한다.
 
-![](./img/2-machine-learning/random-forest-bagging.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/random-forest-bagging.png)
 
 큰 트리는 작은 편향(bias)와 큰 분산(variance)를 갖기 때문에, 매우 깊이 성장한 트리는 훈련데이터에 대해 과적합(overfitting)하게 된다. Random Forest 방식으로 학습하면, 트리들의 편향은 그대로 유지하면서, **여러 데이터셋/여러 경우에 대해 학습하기 떄문에 분산을 감소**시킬 수 있다. 또한 한 개의 결정트리의 경우, train 데이터에 있는 노이즈에 대해 매우 민감하지만, 여러 트리들을 만들면서 평균을 내면, **노이즈에 대해 강인**해질 수 있다. 따라서 하나의 깊은/큰 의사결정 나무보다 50개의 작은 의사결정 나무가 더 좋은 모델을 완성시킨다고 할 수 있다.
 
@@ -875,11 +838,11 @@ Random Forest는 여러 의사 결정 나무를 생성한 후에 다수결(hard 
 
 ## #28
 
-#### 스팸 필터에 Logistic Regression을 많이 사용하는 이유는 무엇일까요?
+### 스팸 필터에 Logistic Regression을 많이 사용하는 이유는 무엇일까요?
 
 스팸 필터는 메일이 스팸 메일인지 아닌지에 대한 확률을 계산하여, 메일을 **분류(Classification)** 하는 문제이다. 로지스틱 회귀는 회귀를 바탕으로 데이터가 어떤 범주에 속할 확률을 0과 1 사이의 값으로 예측하고 그 확률에 따라 가능성이 더 높은 범주에 속하는 것으로 분류(Classification)해주는 지도 학습 알고리즘이다. 특히 **입력값이 아무리 크거나 작아도 0에서 1 사이의 값으로 맵핑**시킨다는 점에서 분류문제에 적합하다. 따라서 로지스틱 회귀가 스팸필터에 많이 사용된다.
 
-![](./img/2-machine-learning/linear-and-logistic-regression.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/linear-and-logistic-regression.png)
 
 > **분류문제에서 로지스틱 회귀가 적절한 이유**
 
@@ -907,7 +870,7 @@ x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값�
 이때 `그림2`의 `new` 데이터가 새로 들어왔다고 해보자. 그래프는 새로운 데이터 `new`의 영향을 받아, 아래로 기울어진 형태로 업데이트되어, `그림3`의 붉은색 그래프 형태가 된다.
 이렇게 되면, 원래는 1로 잘 분류되던 것들의 예측값이 기존 threshold 아래로 내려가게되어, 0으로 분류되어버리는 문제가 발생한다.
 
-![](./img/2-machine-learning/classification-and-linear-regression.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/classification-and-linear-regression.png)
 
 선형회귀 함수는 어떤 입력값이 들어오느냐에 따라 **0과 1 사이의 범위를 벗어나기도** 한다.
 
@@ -925,7 +888,7 @@ x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값�
 
 ## #29
 
-#### OLS(ordinary least square) Regression의 공식은 무엇인가요?
+### OLS(ordinary least square) Regression의 공식은 무엇인가요?
 
 **최소자승법(OLS, Ordinary Least Squares)** 이란, 산점도를 통해 데이터의 분포 그래프를 그릴때, 이 데이터들의 경향을 알기 위한 최적의 추세선을 그리기 위한 방법 중 하나이다. OLS는 근사적으로 구하려는 해와 실제 해의 오차의 제곱의 합이 최소가 되는 해를 구하는 방법이다.
 
@@ -937,7 +900,7 @@ $$
 {\hat {\beta}}=(\mathbf {X} ^{\rm {T}}\mathbf {X})^{-1}\mathbf {X}^{\rm {T}}\mathbf {y} ={\big (}\,{\textstyle \sum }\mathbf {x} _{i}\mathbf {x} _{i}^{\rm {T}}\,{\big )}^{-1}{\big (}\,{\textstyle \sum }\mathbf {x} _{i}y_{i}\,{\big)}
 $$
 
-![](./img/2-machine-learning/ols.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/ols.png)
 
 예를들어, 7개 데이터의 경향을 나타내는 추세선을 `그림2`와 같이 그렸다고 하자.
 이때 실제 데이터의 y값(실제값)과 추세선의 y값(예측값)의 차를 **잔차(Residual)** 라고 한다. (아래 그래프에서 잔차는 점선으로 표시)
@@ -946,7 +909,7 @@ $$
 
 잔차 제곱의 합을 구하는 식은 아래와 같다.
 
-![](./img/2-machine-learning/rss.png)
+![](https://github.com/boost-devs/ai-tech-interview/raw/main/answers/img/2-machine-learning/rss.png)
 
 파란색 추세선보다 보라색 추세선의 잔차제곱의 합이 더 작다. 따라서 파란색 추세선보다 보라색 추세선이 위 7개의 데이터를 더 잘 표현해주는 추세선임을 알 수 있다.
 이렇게 잔차 제곱의 합을 최소로 하는 방법이 최소자승법이며, 최소자승법을 활용하여 데이터를 가장 잘 표현하는 선형 회귀선을 그릴 수 있다.
