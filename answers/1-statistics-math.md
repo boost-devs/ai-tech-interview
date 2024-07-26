@@ -5,7 +5,8 @@
 
 ### 고유값(eigen value)와 고유벡터(eigen vector)이 무엇이고 왜 중요한지 설명해주세요.
 
-정방행렬 $(n \times n)$인 $A$는 임의의 벡터 $(n \times 1)$인 $x$의 방향과 크기를 변화시킬[[[[[](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)](https://github.com/boost-devs/ai-tech-interview/raw/main/answers)
+정방행렬 $(n \times n)$인 $A$는 임의의 벡터 $(n \times 1)$인 $x$의 방향과 크기를 변화시킬시킬 수 있다.
+
 수많은 벡터 $x$중 어떤 벡터들은 $A$에 의해 선형 변환되었을 때에도 원래 벡터와 평행한 경우가 있다. **이렇듯 $Ax$가 원래 $x$에 상수 $\lambda$를 곱한 것과 같을 때의 $x$를 고유 벡터, 람다를 고유값이라 한다.**
 
 $$

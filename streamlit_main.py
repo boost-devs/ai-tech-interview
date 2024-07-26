@@ -17,7 +17,7 @@ def read_md_files(folder_path, filename):
 
 
 # Streamlit 애플리케이션
-st.title("퀴즈 애플리케이션")
+# st.title("퀴즈 애플리케이션")
 
 # MD 파일이 있는 폴더 경로
 folder_path = 'answers'
