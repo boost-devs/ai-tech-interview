@@ -6,7 +6,7 @@ def read_md_files(folder_path, filename):
     filepath = os.path.join(folder_path, filename)
     with open(filepath, 'r', encoding='utf-8') as file:
         content = file.read()
-        parts = content.split('---')
+        parts = content.split('\n---\n')
         for part in parts:
             if '## #' in part:
                 num = part.split('##')[1].strip()[1:]
