@@ -12,17 +12,17 @@
 
 ## Notice
 
-> **Warning**   
-> **PR 요청 시 [작성 규칙](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/182)을 준수해주세요. 준수하지 않을 시 해당 PR은 거절됩니다.**
+> [!WARNING]  
+> PR 요청 시 [작성 규칙](https://github.com/boost-devs/ai-tech-interview/discussions/182)을 준수해주세요. **준수하지 않을 시 해당 PR은 거절될 수 있습니다.**
 
-- 피드백은 [Pull Request를 통한 피드백 요청 방법](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/181)을 참고하여 Pull Request로 보내주세요.
-  - Pull Request 작성 규칙은 [여기](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/182)를 참고해주세요. 
+- 피드백은 [Pull Request를 통한 피드백 요청 방법](https://github.com/boost-devs/ai-tech-interview/discussions/181)을 참고하여 Pull Request로 보내주세요.
+  - Pull Request 작성 규칙은 [여기](https://github.com/boost-devs/ai-tech-interview/discussions/182)를 참고해주세요. 
 - GitHub 외에 [GitBook 사이트](https://boostdevs.gitbook.io/ai-tech-interview/)로도 보실 수 있습니다.
   - 하지만 Latex 문법이 달라 올해 안(2023년에는 반드시!)으로 다른 웹사이트로 마이그레이션 예정입니다.
-- 궁금한 점이 있거나 공유하고 싶은 팁이 있으시면 [Discussion](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/)을 활용해주세요.
+- 궁금한 점이 있거나 공유하고 싶은 팁이 있으시면 [Discussion](https://github.com/boost-devs/ai-tech-interview/discussions/)을 활용해주세요.
   - 커뮤니티 활성화는 언제든지 환영입니다!
-- 면접 레포 개선 프로젝트 진행 상황은 [여기](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/projects/2)를 확인해주세요.
-  - [공지](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/discussions/184)에서 말씀드린 것처럼 진행이 더딜 수 있습니다.
+- 면접 레포 개선 프로젝트 진행 상황은 [여기](https://github.com/boost-devs/ai-tech-interview/projects/2)를 확인해주세요.
+  - [공지](https://github.com/boost-devs/ai-tech-interview/discussions/184)에서 말씀드린 것처럼 진행이 더딜 수 있습니다.
 
 ---
 
