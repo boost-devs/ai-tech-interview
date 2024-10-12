@@ -470,7 +470,7 @@ $$
 
 #### Non-Linearity라는 말의 의미와 그 필요성은?
 
-비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 $x_1, x_2, ... , x_n$과 가중치 $w_1, w_2, ... , w_n$으로 $y = w_1*x_1 + w_2*x_2 + ... + w_n*x_n$으로 표현할 수 있으며, 가산성(Additreivityly)과 동차성(Homogeneity)을 만족해야 한다.
+비선형(non-linearity)의 뜻을 알기 위해서는 우선 선형(linearity)가 무엇인지 알아야 한다. 어떤 모델이 선형적(linearity)라고 한다면 그 모델은 변수 $x_1, x_2, ... , x_n$과 가중치 $w_1, w_2, ... , w_n$으로 $y = w_1 * x_1 + w_2 * x_2 + ... + w_n * x_n$으로 표현할 수 있으며, 가산성(Additreivityly)과 동차성(Homogeneity)을 만족해야 한다.
 
 - **가산성**: 임의의 수 $x, y$에 대해 $f(x+y) = f(x) + f(y)$가 성립
 - **동차성**: 임의의 수 $x, \alpha$에 대해 $f(\alpha x) = \alpha f(x)$가 성립
