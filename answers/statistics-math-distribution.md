@@ -215,7 +215,7 @@ $$
 f(x, k, \theta) = x^{k-1}\frac{e^{-x / \theta}}{\theta^k \Gamma (k)} \quad \text{for x > 0}
 $$
 
-![](.img/1-statistics-math/gamma-distribution.png)
+![](./img/1-statistics-math/gamma-distribution.png)
 
 **감마 함수**  
 **팩토리얼**을 함수로 일반화한 것
@@ -249,7 +249,7 @@ $$
 Beta(x; a, b) = \frac{\Gamma(\alpha + \beta )}{\Gamma ( \alpha ) \Gamma ( \beta )} x^{\alpha - 1} (1 - x)^{\beta - 1}
 $$
 
-![](.img/1-statistics-math/beta-distribution.png)
+![](./img/1-statistics-math/beta-distribution.png)
 
 #### References
 
