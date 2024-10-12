@@ -929,12 +929,12 @@ x값이 아무리 +, -로 작아지거나 커져도 항상 0과 1 사이의 값�
 
 **최소자승법(OLS, Ordinary Least Squares)** 이란, 산점도를 통해 데이터의 분포 그래프를 그릴때, 이 데이터들의 경향을 알기 위한 최적의 추세선을 그리기 위한 방법 중 하나이다. OLS는 근사적으로 구하려는 해와 실제 해의 오차의 제곱의 합이 최소가 되는 해를 구하는 방법이다.
 
-OLS Regression은 회귀를 통해서 방정식의 상수 값들을 추정하는 데에 사용된다. n개의 입력값과 그에 대응하는 출력값 $(x_{i},y_{i})(1\leq i\leq n)$이 있고, 이 계의 방정식이 변수 $x$와 $\beta=(\beta_{0},\beta_{1},\cdots ,\beta_{k})$인 상수 $\beta$에 대한 식 $f(x, \beta)$으로 주어질 때, $\sum _{i}(y_{i}-f(x_{i}, \beta))^{2}$ 의 값을 최소로 만드는 $\beta$를 구하는 것이 문제의 목표이다.
+OLS Regression은 회귀를 통해서 방정식의 상수 값들을 추정하는 데에 사용된다. n개의 입력값과 그에 대응하는 출력값 $(x_i, y_i)(1\leq i\leq n)$이 있고, 이 계의 방정식이 변수 $x$와 $\beta=(\beta_0, \beta_1, \cdots , \beta_k )$인 상수 $\beta$에 대한 식 $f(x, \beta)$으로 주어질 때, $\sum_i(y_i - f(x_i, \beta))^{2}$ 의 값을 최소로 만드는 $\beta$를 구하는 것이 문제의 목표이다.
 
 추정하고자 하는 파라미터 β에 대한 표현식을 다음과 같이 구할 수 있다.
 
 $$
-{\hat {\beta}}=(\mathbf {X} ^{\rm {T}}\mathbf {X})^{-1}\mathbf {X}^{\rm {T}}\mathbf {y} ={\big (}\,{\textstyle \sum }\mathbf {x} _{i}\mathbf {x} _{i}^{\rm {T}}\,{\big )}^{-1}{\big (}\,{\textstyle \sum }\mathbf {x} _{i}y_{i}\,{\big)}
+{\hat {\beta}}=(\mathbf {X}^{\rm {T}}\mathbf {X})^{-1}\mathbf {X}^{\rm {T}}\mathbf {y} = {\big (} ~ {\textstyle \sum }\mathbf x_i \mathbf x_i^{\rm {T}}\,{\big )}^{-1}{\big (} ~ {\textstyle \sum }\mathbf x_i y_i ~ {\big)}
 $$
 
 ![](./img/2-machine-learning/ols.png)
