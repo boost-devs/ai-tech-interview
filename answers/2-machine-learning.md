@@ -219,7 +219,7 @@ PCA(Principle Component Analysis)는 **입력 데이터의 공분산 행렬을 �
 
 > **마코프 체인(Markov Chain)**
 
-마코프 체인이란 <strong>마코프 성질을 지닌 이산 확률 과정(Discrete-time Stochastic Pross)</strong>을 말한다.
+마코프 체인이란 <strong>마코프 성질을 지닌 이산 확률 과정(Discrete-time Stochastic Process)</strong>을 말한다.
 
 > **마코프 성질(Markov Property)**
 
