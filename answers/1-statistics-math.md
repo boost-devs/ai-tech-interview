@@ -77,7 +77,7 @@ P(X=1)와 같은 식으로 표현하고, 이는 "주사위를 굴렸을 때, 1�
 예를 들어 가장 널리 쓰이는 확률 모형의 하나인 `가우시안 정규 분포(Gaussian normal distribution)`는 다음과 같은 수식으로 확률 밀도 함수를 정의한다.
 
 $$
-N(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x- \mu^2)}{2 \sigma^2}}
+N(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x- \mu)^2}{2 \sigma^2}}
 $$
 
 다음과 같은 함수들이 확률모형에 포함될 수 있다. (자세한 내용은 [확률통계 기초용어 - EG 공간](https://kongdols-room.tistory.com/131) 참고)
@@ -253,9 +253,9 @@ $$
 R^2 = SSE/SST = 1 - SSR/SST
 $$
 
-- SSE = sum((추정값-관측값 평균)$^2$),
-- SST = sum((관측값-관측값 평균)$^2$),
-- SSR = sum((관측값-추정값)$^2$)
+- $SSE = \sum(\text{추정값 - 관측값 평균})^2$
+- $SST = \sum(\text{관측값 - 관측값 평균})^2$
+- $SSR = \sum(\text{관측값 - 추정값})^2$
 
 관측값은 실제 데이터의 값을 말하며, 추정값은 회귀 모델을 통해 나온 값을 말한다. 회귀 모델의 성능을 평가하는 방법은 결정계수 외에도 MAE, MSE, RMSE 가 있다.
 
@@ -556,7 +556,7 @@ $$
 
 ### 베르누이 분포, 이항 분포, 카테고리 분포, 다항 분포, 가우시안 정규 분포, t 분포, 카이제곱 분포, F 분포, 베타 분포, 감마 분포에 대해 설명해주세요.
 
-- [answer/statistics-math-distribution.md](https://github.com/boostcamp-ai-tech-4/ai-tech-interview/blob/main/answers/statistics-math.md) 참고
+- [answer/statistics-math-distribution.md](./statistics-math-distribution.md) 참고
 
 (TODO: 추후 수정)
 
