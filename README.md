@@ -26,6 +26,13 @@
 
 ---
 
+## 🌐 서비스 링크
+
+- **Streamlit 웹 애플리케이션**: [AI Tech Interview 연습하기](https://ai-tech-interview.streamlit.app/)
+  - 브라우저에서 바로 면접 질문을 연습할 수 있는 인터랙티브 웹 애플리케이션입니다.
+
+---
+
 ## Interview Questions
 
 <details>
