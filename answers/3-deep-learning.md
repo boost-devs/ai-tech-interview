@@ -94,7 +94,7 @@
 
 모델은 데이터에 대해 현재 예측을 얼마나 잘하고 있는지 알아야 학습 방향을 어느 방향으로, 얼마나 개선할지 판단할 수 있다.
 
-이 때, 예측 값과 데이터 값의 차이에 대한 함수를 **cost function**(MSE, CrossEntropy 등) 이라고 한다.
+이 때, 예측 값과 데이터 값의 차이에 대한 함수를 **cost function (또는 loss function)** (MSE, CrossEntropy 등) 이라고 한다.
 
 **cost function** 을 최소화함으로써 모델을 적절한 표현력을 갖추도록 학습시킬 수 있다.
 
