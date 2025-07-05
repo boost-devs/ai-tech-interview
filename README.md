@@ -13,7 +13,7 @@
 ## Notice
 
 > [!TIP]
-> 이동하면서도 면접 준비하고 싶다면 @LearningnRunning 님이 만든 [AI Tech Interview 연습하기](https://ai-tech-interview.streamlit.app/)를 사용해보세요!
+> 이동 중에도 면접 준비하고 싶다면, @LearningnRunning 님이 만든 [AI Tech Interview 연습하기](https://ai-tech-interview.streamlit.app/)를 이용해보세요!
 
 > [!WARNING]  
 > PR 요청 시 [작성 규칙](https://github.com/boost-devs/ai-tech-interview/discussions/182)을 준수해주세요. **준수하지 않을 시 해당 PR은 거절될 수 있습니다.**
