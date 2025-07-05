@@ -282,9 +282,9 @@ $$
 R^2 = SSE/SST = 1 - SSR/SST
 $$
 
-- $SSE = \sum(\text{추정값 - 관측값 평균})^2$
-- $SST = \sum(\text{관측값 - 관측값 평균})^2$
-- $SSR = \sum(\text{관측값 - 추정값})^2$
+- SSE(**E**xplained **S**um of **S**quares) = $\sum(\text{추정값 - 관측값 평균})^2$
+- SST(**T**otal **S**um of **S**quares) = $\sum(\text{관측값 - 관측값 평균})^2$
+- SSR(**R**esidual **S**um of **S**quares) = $SSR = \sum(\text{관측값 - 추정값})^2$
 
 관측값은 실제 데이터의 값을 말하며, 추정값은 회귀 모델을 통해 나온 값을 말한다. 회귀 모델의 성능을 평가하는 방법은 결정계수 외에도 MAE, MSE, RMSE 가 있다.
 
