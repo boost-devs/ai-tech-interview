@@ -779,7 +779,7 @@ XGBoost의 장점은 다음과 같다.
 
 **앙상블(Ensemble)** 은 여러개의 모델을 조합해서 그 결과를 뽑아 내는 방법이다. "정확도가 높은 강한 모델을 하나 사용하는 것보다, 정확도가 낮은 약한 모델을 여러개 조합 하는 방식의 정확도가 높다"는 개념에서 비롯한 방법이다. `Bagging`, `Boosting`, `Stacking` 등의 방법이 있다.
 
-**배깅(Bagging, Bootstrap Aggregation)** 이란 샘플을 여러번 뽑아(Bootstrap = 복원 랜덤 샘플링) 각 모델을 학습시켜 결과물을 집계(Aggregation)하는 방법이다. 카테고리 데이터는 투표 방식(Votinig)으로 결과를 집계하며, 연속형 데이터는 평균으로 집계한다. Bagging을 사용한 대표적인 기법에는 `Random Forest` 방법이 있다. 학습 데이터가 충분하지 않더라도 충분한 학습효과를 주어 높은 bias의 underfitting 문제나, 높은 variance로 인한 overfitting 문제를 해결하는데 도움을 준다.
+**배깅(Bagging, Bootstrap Aggregation)** 이란 샘플을 여러번 뽑아(Bootstrap = 복원 랜덤 샘플링) 각 모델을 학습시켜 결과물을 집계(Aggregation)하는 방법이다. 카테고리 데이터는 투표 방식(Voting)으로 결과를 집계하며, 연속형 데이터는 평균으로 집계한다. Bagging을 사용한 대표적인 기법에는 `Random Forest` 방법이 있다. 학습 데이터가 충분하지 않더라도 충분한 학습효과를 주어 높은 bias의 underfitting 문제나, 높은 variance로 인한 overfitting 문제를 해결하는데 도움을 준다.
 
 **부스팅(Boosting)** 이란 이전 모델의 오답에 가중치를 높게 부여하여 다음 모델을 학습하는 방법이다. 오답을 정답으로 맞추기 위해 오답에 더 집중하여 학습시키기 떄문에 일반적으로 배깅에 비해 정확도가 높다. 그러나 틀렸던 부분에 대해 반복적으로 학습하므로 오버피팅의 문제가 있으며, outlier에 취약하고, 속도가 느리다는 단점도 가지고 있다. `GBM(Gradient Boosting)` 방법이 대표적이고, `XGBoost, AdaBoost, GradientBoost` 등의 알고리즘이 존재한다.
 
