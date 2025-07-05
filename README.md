@@ -12,6 +12,9 @@
 
 ## Notice
 
+> [!TIP]
+> 이동하면서도 면접 준비하고 싶다면 @LearningnRunning 님이 만든 [AI Tech Interview 연습하기](https://ai-tech-interview.streamlit.app/)를 사용해보세요!
+
 > [!WARNING]  
 > PR 요청 시 [작성 규칙](https://github.com/boost-devs/ai-tech-interview/discussions/182)을 준수해주세요. **준수하지 않을 시 해당 PR은 거절될 수 있습니다.**
 
@@ -23,13 +26,6 @@
   - 커뮤니티 활성화는 언제든지 환영입니다!
 - 면접 레포 개선 프로젝트 진행 상황은 [여기](https://github.com/boost-devs/ai-tech-interview/projects/2)를 확인해주세요.
   - [공지](https://github.com/boost-devs/ai-tech-interview/discussions/184)에서 말씀드린 것처럼 진행이 더딜 수 있습니다.
-
----
-
-## 🌐 서비스 링크
-
-- **Streamlit 웹 애플리케이션**: [AI Tech Interview 연습하기](https://ai-tech-interview.streamlit.app/)
-  - 브라우저에서 바로 면접 질문을 연습할 수 있는 인터랙티브 웹 애플리케이션입니다.
 
 ---
 
