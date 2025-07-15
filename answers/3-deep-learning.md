@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [딥러닝은 무엇인가요? 딥러닝과 머신러닝의 차이는?](#1)
-- [Cost Function과 Activation Function은 무엇인가요?](#2)
+- [Loss Function, Cost Function과 Activation Function은 무엇인가요?](#2)
 - [Tensorflow, PyTorch 특징과 차이가 뭘까요?](#3)
 - [Data Normalization은 무엇이고 왜 필요한가요?](#4)
 - [알고있는 Activation Function에 대해 알려주세요. (Sigmoid, ReLU, LeakyReLU, Tanh 등)](#5)
@@ -88,15 +88,17 @@
 
 ## #2
 
-#### Cost Function과 Activation Function은 무엇인가요?
+#### Loss Function, Cost Function과 Activation Function은 무엇인가요?
 
-> **cost function**
+> **loss function & cost function**
 
 모델은 데이터에 대해 현재 예측을 얼마나 잘하고 있는지 알아야 학습 방향을 어느 방향으로, 얼마나 개선할지 판단할 수 있다.
 
-이 때, 예측 값과 데이터 값의 차이에 대한 함수를 **cost function**(MSE, CrossEntropy 등) 이라고 한다.
+이 때, 예측 값과 데이터 값의 차이에 대한 함수를 **cost function (또는 loss function)** (MSE, CrossEntropy 등) 이라고 한다.
 
 **cost function** 을 최소화함으로써 모델을 적절한 표현력을 갖추도록 학습시킬 수 있다.
+
+**loss function** 은 개별 데이터 (data point) 관점에서, **cost function** 은 전체 데이터 (entire data) 관점에서의 함수이다.
 
 > **activation function**
 
@@ -117,6 +119,7 @@
 - [5. 결과 값을 비교하는 방식(Cost function) - 대소니](https://daeson.tistory.com/166)
 - [Activation Functions에 대해 알아보자 - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/113)
 - [활성화 함수(activation function)을 사용하는 이유 - 프라이데이](https://ganghee-lee.tistory.com/30)
+- [머신러닝 - Loss Function, Cost Function, Objective Function의 차이 - 예비개발자](https://blog.naver.com/qbxlvnf11/221386278997)
 
 ---
 
