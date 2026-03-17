@@ -54,7 +54,7 @@ def convert_callouts(content):
         body = match.group(2)
         lines = re.sub(r'^> ?', '', body, flags=re.MULTILINE).strip()
         style = style_map.get(callout_type, 'info')
-        return f'{{% hint style="{style}" %}}\n{lines}\n{{% endhint %}}'
+        return f'{{% hint style="{style}" %}}\n{lines}\n{{% endhint %}}\n'
 
     pattern = r'> \[!(\w+)\]\s*\n((?:>[ \t]?[^\n]*\n)*)'
     return re.sub(pattern, replace_callout, content)
