@@ -21,10 +21,6 @@
 - 피드백은 [Pull Request를 통한 피드백 요청 방법](https://github.com/boost-devs/ai-tech-interview/discussions/181)을 참고하여 Pull Request로 보내주세요.
   - Pull Request 작성 규칙은 [여기](https://github.com/boost-devs/ai-tech-interview/discussions/182)를 참고해주세요. 
 - GitHub 외에 [GitBook 사이트](https://boostdevs.gitbook.io/ai-tech-interview/)로도 보실 수 있습니다.
-- 궁금한 점이 있거나 공유하고 싶은 팁이 있으시면 [Discussion](https://github.com/boost-devs/ai-tech-interview/discussions/)을 활용해주세요.
-  - 커뮤니티 활성화는 언제든지 환영입니다!
-- 면접 레포 개선 프로젝트 진행 상황은 [여기](https://github.com/boost-devs/ai-tech-interview/projects/2)를 확인해주세요.
-  - [공지](https://github.com/boost-devs/ai-tech-interview/discussions/184)에서 말씀드린 것처럼 진행이 더딜 수 있습니다.
 
 ---
 
