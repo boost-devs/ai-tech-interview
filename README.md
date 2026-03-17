@@ -12,11 +12,13 @@
 
 ## Notice
 
-> [!TIP]
-> 이동 중에도 면접 준비하고 싶다면, @LearningnRunning 님이 만든 [AI Tech Interview 연습하기](https://ai-tech-interview.streamlit.app/)를 이용해보세요!
+{% hint style="info" %}
+이동 중에도 면접 준비하고 싶다면, @LearningnRunning 님이 만든 [AI Tech Interview 연습하기](https://ai-tech-interview.streamlit.app/)를 이용해보세요!
+{% endhint %}
 
-> [!WARNING]  
-> PR 요청 시 [작성 규칙](https://github.com/boost-devs/ai-tech-interview/discussions/182)을 준수해주세요. **준수하지 않을 시 해당 PR은 거절될 수 있습니다.**
+{% hint style="warning" %}
+PR 요청 시 [작성 규칙](https://github.com/boost-devs/ai-tech-interview/discussions/182)을 준수해주세요. **준수하지 않을 시 해당 PR은 거절될 수 있습니다.**
+{% endhint %}
 
 - 피드백은 [Pull Request를 통한 피드백 요청 방법](https://github.com/boost-devs/ai-tech-interview/discussions/181)을 참고하여 Pull Request로 보내주세요.
   - Pull Request 작성 규칙은 [여기](https://github.com/boost-devs/ai-tech-interview/discussions/182)를 참고해주세요. 

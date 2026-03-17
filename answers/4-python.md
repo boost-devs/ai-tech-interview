@@ -2,77 +2,77 @@
 
 ## Table of Contents
 
-- [What is the difference between list and tuples in Python?](#1)
-- [What are the key features of Python?](#2)
-- [What type of language is python? Programming or scripting?](#3)
-- [Python an interpreted language. Explain.](#4)
-- [What is pep 8?](#5)
-- [How is memory managed in Python?](#6)
-- [What is namespace in Python?](#7)
-- [What is PYTHONPATH?](#8)
-- [What are python modules? Name some commonly used built-in modules in Python?](#9)
-- [What are local variables and global variables in Python?](#10)
-- [Is python case sensitive?](#11)
-- [What is type conversion in Python?](#12)
-- [How to install Python on Windows and set path variable?](#13)
-- [Is indentation required in python?](#14)
-- [What is the difference between Python Arrays and lists?](#15)
-- [What are functions in Python?](#16)
-- [What is `__init__`?](#17)
-- [What is a lambda function?](#18)
-- [What is self in Python?](#19)
-- [How does break, continue and pass work?](#20)
-- [What does `[::-1]` do?](#21)
-- [How can you randomize the items of a list in place in Python?](#22)
-- [What’s the difference between iterator and iterable?](#23)
-- [How can you generate random numbers in Python?](#24)
-- [What is the difference between range & xrange?](#25)
-- [How do you write comments in python?](#26)
-- [What is pickling and unpickling?](#27)
-- [What are the generators in python?](#28)
-- [How will you capitalize the first letter of string?](#29)
-- [How will you convert a string to all lowercase?](#30)
-- [How to comment multiple lines in python?](#31)
-- [What are docstrings in Python?](#32)
-- [What is the purpose of is, not and in operators?](#33)
-- [What is the usage of help() and dir() function in Python?](#34)
-- [Whenever Python exits, why isn’t all the memory de-allocated?](#35)
-- [What is a dictionary in Python?](#36)
-- [How can the ternary operators be used in python?](#37)
-- [What does this mean: `*args`, `**kwargs`? And why would we use it?](#38)
-- [What does len() do?](#39)
-- [Explain split(), sub(), subn() methods of “re” module in Python.](#40)
-- [What are negative indexes and why are they used?](#41)
-- [What are Python packages?](#42)
-- [How can files be deleted in Python?](#43)
-- [What are the built-in types of python?](#44)
-- [What advantages do NumPy arrays offer over (nested) Python lists?](#45)
-- [How to add values to a python array?](#46)
-- [How to remove values to a python array?](#47)
-- [Does Python have OOps concepts?](#48)
-- [What is the difference between deep and shallow copy?](#49)
-- [How is Multithreading achieved in Python?](#50)
-- [What is the process of compilation and linking in python?](#51)
-- [What are Python libraries? Name a few of them.](#52)
-- [What is split used for?](#53)
-- [How to import modules in python?](#54)
-- [Explain Inheritance in Python with an example.](#55)
-- [How are classes created in Python?](#56)
-- [What is monkey patching in Python?](#57)
-- [Does python support multiple inheritance?](#58)
-- [What is Polymorphism in Python?](#59)
-- [Define encapsulation in Python?](#60)
-- [How do you do data abstraction in Python?](#61)
-- [Does python make use of access specifiers?](#62)
-- [How to create an empty class in Python?](#63)
-- [What does an object() do?](#64)
-- [What is map function in Python?](#65)
-- [Is python numpy better than lists?](#66)
-- [What is GIL in Python language?](#67)
-- [What makes the CPython different from Python?](#68)
-- [What are Decorators in Python?](#69)
-- [What is object interning?](#70)
-- [What is @classmethod, @staticmethod, @property?](#71)
+- [What is the difference between list and tuples in Python?](#id-1)
+- [What are the key features of Python?](#id-2)
+- [What type of language is python? Programming or scripting?](#id-3)
+- [Python an interpreted language. Explain.](#id-4)
+- [What is pep 8?](#id-5)
+- [How is memory managed in Python?](#id-6)
+- [What is namespace in Python?](#id-7)
+- [What is PYTHONPATH?](#id-8)
+- [What are python modules? Name some commonly used built-in modules in Python?](#id-9)
+- [What are local variables and global variables in Python?](#id-10)
+- [Is python case sensitive?](#id-11)
+- [What is type conversion in Python?](#id-12)
+- [How to install Python on Windows and set path variable?](#id-13)
+- [Is indentation required in python?](#id-14)
+- [What is the difference between Python Arrays and lists?](#id-15)
+- [What are functions in Python?](#id-16)
+- [What is `__init__`?](#id-17)
+- [What is a lambda function?](#id-18)
+- [What is self in Python?](#id-19)
+- [How does break, continue and pass work?](#id-20)
+- [What does `[::-1]` do?](#id-21)
+- [How can you randomize the items of a list in place in Python?](#id-22)
+- [What’s the difference between iterator and iterable?](#id-23)
+- [How can you generate random numbers in Python?](#id-24)
+- [What is the difference between range & xrange?](#id-25)
+- [How do you write comments in python?](#id-26)
+- [What is pickling and unpickling?](#id-27)
+- [What are the generators in python?](#id-28)
+- [How will you capitalize the first letter of string?](#id-29)
+- [How will you convert a string to all lowercase?](#id-30)
+- [How to comment multiple lines in python?](#id-31)
+- [What are docstrings in Python?](#id-32)
+- [What is the purpose of is, not and in operators?](#id-33)
+- [What is the usage of help() and dir() function in Python?](#id-34)
+- [Whenever Python exits, why isn’t all the memory de-allocated?](#id-35)
+- [What is a dictionary in Python?](#id-36)
+- [How can the ternary operators be used in python?](#id-37)
+- [What does this mean: `*args`, `**kwargs`? And why would we use it?](#id-38)
+- [What does len() do?](#id-39)
+- [Explain split(), sub(), subn() methods of “re” module in Python.](#id-40)
+- [What are negative indexes and why are they used?](#id-41)
+- [What are Python packages?](#id-42)
+- [How can files be deleted in Python?](#id-43)
+- [What are the built-in types of python?](#id-44)
+- [What advantages do NumPy arrays offer over (nested) Python lists?](#id-45)
+- [How to add values to a python array?](#id-46)
+- [How to remove values to a python array?](#id-47)
+- [Does Python have OOps concepts?](#id-48)
+- [What is the difference between deep and shallow copy?](#id-49)
+- [How is Multithreading achieved in Python?](#id-50)
+- [What is the process of compilation and linking in python?](#id-51)
+- [What are Python libraries? Name a few of them.](#id-52)
+- [What is split used for?](#id-53)
+- [How to import modules in python?](#id-54)
+- [Explain Inheritance in Python with an example.](#id-55)
+- [How are classes created in Python?](#id-56)
+- [What is monkey patching in Python?](#id-57)
+- [Does python support multiple inheritance?](#id-58)
+- [What is Polymorphism in Python?](#id-59)
+- [Define encapsulation in Python?](#id-60)
+- [How do you do data abstraction in Python?](#id-61)
+- [Does python make use of access specifiers?](#id-62)
+- [How to create an empty class in Python?](#id-63)
+- [What does an object() do?](#id-64)
+- [What is map function in Python?](#id-65)
+- [Is python numpy better than lists?](#id-66)
+- [What is GIL in Python language?](#id-67)
+- [What makes the CPython different from Python?](#id-68)
+- [What are Decorators in Python?](#id-69)
+- [What is object interning?](#id-70)
+- [What is @classmethod, @staticmethod, @property?](#id-71)
 
 ---
 
@@ -96,7 +96,7 @@
 
 - **인터프리터 언어(Interpreter Language)**
   - 파이썬은 인터프리터 언어이므로, 실행하기 전에 컴파일을 할 필요가 없다.
-  - 자세한 내용은 [Python an interpreted language. Explain.](#4) 참고
+  - 자세한 내용은 [Python an interpreted language. Explain.](#id-4) 참고
 - **동적타이핑(Dynamic Typing)**
   - 파이썬은 실행시간에 자료형을 검사하므로, 선언할 때 변수 유형(ex.int, double, ...)을 명시할 필요가 없다.
   - `typing`이란 프로그램 내에서 변수의 데이터 타입을 정하는 것을 말한다. 데이터 타입 지정(assign)은 정적 또는 동적 타이핑으로 분류되는데, 프로그램 컴파일 시에 변수의 타입을 체크하는 C, C++과 같은 언어는 정적 타입(static typed) 언어라고 하고, 프로그램 실행 시에 타입을 체크하는 python은 동적 타입(dynamic typed) 언어이다.
@@ -144,7 +144,7 @@
 
 인터프리터는 고급 언어로 작성된 원시코드 명령어들을 한번에 한 줄씩 읽어들여서 실행하는 프로그램이다. 인터프리터 언어는 실행시간(runtime) 전에 기계 레벨 코드(machine-level code)를 만드는 컴파일 언어와 다르게 소스코드를 바로 실행하는 언어이며, 파이썬은 인터프리터 언어에 해당한다.
 
-인터프리터 언어는 스크립트 언어와 동일한 의미이다. 스크립팅/스크립트 언어에 대한 질문과 답변은 [What type of language is python? Programming or scripting?](#3)을 참고한다.
+인터프리터 언어는 스크립트 언어와 동일한 의미이다. 스크립팅/스크립트 언어에 대한 질문과 답변은 [What type of language is python? Programming or scripting?](#id-3)을 참고한다.
 
 #### References
 
@@ -276,7 +276,7 @@ print(sys.path)
 
 #### What are local variables and global variables in Python?
 
-**전역 변수(Global Variable)**는 함수 외부 또는 전역 공간에 선언된 변수이다. 프로그램의 모든 함수에서 전역변수에 접근할 수 있다. ([Whenever Python exits, why isn’t all the memory de-allocated?](#35) 참고)
+**전역 변수(Global Variable)**는 함수 외부 또는 전역 공간에 선언된 변수이다. 프로그램의 모든 함수에서 전역변수에 접근할 수 있다. ([Whenever Python exits, why isn’t all the memory de-allocated?](#id-35) 참고)
 
 **로컬 변수(Local Variable)**는 함수 내부에 선언된 변수를 말한다. 로컬 변수는 전역 공간이 아닌 로컬 공간에 있다.
 
@@ -651,7 +651,7 @@ print(r)            # [0, 1, 2, 3, 4]
 print(type(r))      # <type 'list'>
 ```
 
-`xrange`는 제너레이터 객체로, 오직 루프를 돌때만 해당 범위의 정수를 하나씩 반환한다. 제너레이터에 관한 설명은 [여기](#28)에서!
+`xrange`는 제너레이터 객체로, 오직 루프를 돌때만 해당 범위의 정수를 하나씩 반환한다. 제너레이터에 관한 설명은 [여기](#id-28)에서!
 
 ```python
 #python2
@@ -682,7 +682,7 @@ for i in r:
 # this is my comment
 ```
 
-따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#32)를 참고!
+따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#id-32)를 참고!
 
 #### References
 
@@ -798,7 +798,7 @@ print(string.lower())           # boostcamp ai tech
 # - boostcamp ai tech team 4
 ```
 
-따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#32)를 참고!
+따옴표를 이용한 주석은 Docstring 형식으로 자세한 내용은 [#32](#id-32)를 참고!
 
 #### References
 
@@ -876,7 +876,7 @@ print("z" in b) # False
 
 #### What is the usage of help() and dir() function in Python?
 
-`help()`는 docstrings를 작성하였다면 해당 docstrings를 출력한다. docstrings에는 클래스, 메서드의 사용법에 관한 내용이 담겨있으므로 해당 클래스와 메서드를 사용자에게 매우 유용하다. docstrings에 대한 내용은 [#31](#31) 참고!
+`help()`는 docstrings를 작성하였다면 해당 docstrings를 출력한다. docstrings에는 클래스, 메서드의 사용법에 관한 내용이 담겨있으므로 해당 클래스와 메서드를 사용자에게 매우 유용하다. docstrings에 대한 내용은 [#31](#id-31) 참고!
 
 `dir()`은 인자로 넣은 객체의 속성과 메서드를 문자열로 변환하고 그것을 요소로 갖는 정렬된 리스트를 반환한다. `dir`은 사용할 객체의 메서드와 속성에 대한 정보를 얻고 싶을 때 유용하다. 다만 인자가 없다면 현재 지역 스코프에서 정의된 함수와 변수들의 리스트를 반환한다.
 
@@ -1142,7 +1142,7 @@ print(example[-4:-1]) # Dev
 
 모듈은 파이썬 코드를 논리적으로 묶어서 관리하고 사용할 수 있도록 하는 것으로, 보통 하나의 파이썬 `.py` 파일이 하나의 모듈이 된다. 모듈 안에는 함수, 클래스, 혹은 변수들이 정의될 수 있으며, 실행 코드를 포함할 수도 있다.
 
-모듈에 관한 자세한 내용은 [#9. 모듈](#9) 참고!
+모듈에 관한 자세한 내용은 [#9. 모듈](#id-9) 참고!
 
 > **패키지**
 
@@ -1152,7 +1152,7 @@ print(example[-4:-1]) # Dev
 
 ![](./img/4-python/package.png)
 
-패키지들의 모음인 라이브러리에 대한 내용은 [#52. 라이브러리](#52) 참고!
+패키지들의 모음인 라이브러리에 대한 내용은 [#52. 라이브러리](#id-52) 참고!
 
 #### References
 
@@ -1206,7 +1206,7 @@ numpy array는 하나의 데이터 타입만 정의가 가능하다. Python list
 
 Python list는 데이터 주소값을 저장하고 데이터를 가져올 때는 해당 주소에 가서 데이터를 가져온다. 반면 Numpy array는 C의 배열과 유사하여 연속된 주소를 가지고 있어 데이터를 가져올 때는 순서대로 가져오면 되기 때문에 메모리를 효율적으로 사용한다.
 
-Numpy에 대한 내용은 [#66. Numpy](#66) 참고!
+Numpy에 대한 내용은 [#66. Numpy](#id-66) 참고!
 
 #### References
 
@@ -1222,7 +1222,7 @@ Numpy에 대한 내용은 [#66. Numpy](#66) 참고!
 
 > **append()**
 
-`list.append(x)` 형태로 사용하며, $O(1)$의 시간복잡도를 갖는다. 괄호 안에 값을 입력하면 새로운 요소를 list 맨 끝에 추가한다. 요소를 추가할 때는 객체로 추가하게 되는데, 입력한 값이 리스트와 같은 반복 가능한 iterable 자료형이더라도 객체로 저장한다.
+`list.append(x)` 형태로 사용하며, $$O(1)$$의 시간복잡도를 갖는다. 괄호 안에 값을 입력하면 새로운 요소를 list 맨 끝에 추가한다. 요소를 추가할 때는 객체로 추가하게 되는데, 입력한 값이 리스트와 같은 반복 가능한 iterable 자료형이더라도 객체로 저장한다.
 
 ```python
 nums = [1, 2, 3]
@@ -1235,7 +1235,7 @@ print(nums) # [1, 2, 3, 4, [5, 6]]
 
 > **extend()**
 
-`list.extend(iterable)` 형태로 사용하며, $O(N)$ 시간복잡도를 갖는다. 입력한 iterable 자료형의 항목 각각을 list의 끝에 하나씩 추가한다. iterable 자료형으로 추가되는 것이 아니라 iterable 자료형 안에 있는 항목이 하나씩 떼어져서 추가된다. append와 동일하게 요소를 list의 끝에 추가하지만 append와 다른 점은 괄호 안에는 iterable 자료형만 올 수 있다는 것이다. iterable 자료형이 아닌 경우 TypeError가 발생한다.
+`list.extend(iterable)` 형태로 사용하며, $$O(N)$$ 시간복잡도를 갖는다. 입력한 iterable 자료형의 항목 각각을 list의 끝에 하나씩 추가한다. iterable 자료형으로 추가되는 것이 아니라 iterable 자료형 안에 있는 항목이 하나씩 떼어져서 추가된다. append와 동일하게 요소를 list의 끝에 추가하지만 append와 다른 점은 괄호 안에는 iterable 자료형만 올 수 있다는 것이다. iterable 자료형이 아닌 경우 TypeError가 발생한다.
 
 ```python
 nums = [1, 2, 3]
@@ -1250,7 +1250,7 @@ print(nums) # [1, 2, 3, 4, 5, 6]
 
 - 시간복잡도: ``
 
-`list.insert(i, x)` 형태로 사용하며, $O(N)$ 시간복잡도를 갖는다. list의 원하는 위치 i 앞에 추가할 값 x를 삽입할 수 있다. i는 위치를 나타내는 인덱스를 숫자를 입력한다. 음수를 입력하면 배열의 끝을 기준으로 처리된다. 추가할 값 x는 객체로 추가되며 iterable 자료형이더라도 객체로 저장된다.
+`list.insert(i, x)` 형태로 사용하며, $$O(N)$$ 시간복잡도를 갖는다. list의 원하는 위치 i 앞에 추가할 값 x를 삽입할 수 있다. i는 위치를 나타내는 인덱스를 숫자를 입력한다. 음수를 입력하면 배열의 끝을 기준으로 처리된다. 추가할 값 x는 객체로 추가되며 iterable 자료형이더라도 객체로 저장된다.
 
 ```python
 nums = [1, 2, 3]
@@ -1266,7 +1266,7 @@ print(nums) # [10, 1, 2, 99, 3, [20, 30]]
 
 > **`+` 연산자**
 
-`list_1 + list_2` 형태로 사용하며, $O(1)$ 시간복잡도를 갖는다.
+`list_1 + list_2` 형태로 사용하며, $$O(1)$$ 시간복잡도를 갖는다.
 
 ```python
 nums = [1, 2, 4, 6, 1, 5]
@@ -1288,7 +1288,7 @@ print(nums + [10, 9, 8, 7]) # [1, 2, 4, 6, 1, 5, 10, 9, 8, 7]
 
 > **remove()**
 
-`remove()`는 지우고자 하는 인덱스가 아닌, 값을 입력하는 방식이다. 만약 지우고자 하는 값이 리스트 내에 2개 이상이 있다면 순서상 가장 앞에 있는 값을 지우게 된다. 값을 삭제할 때 삭제된 값을 반환하지 않는다. `remove()`는 시간복잡도 $O(N)$를 갖는다.
+`remove()`는 지우고자 하는 인덱스가 아닌, 값을 입력하는 방식이다. 만약 지우고자 하는 값이 리스트 내에 2개 이상이 있다면 순서상 가장 앞에 있는 값을 지우게 된다. 값을 삭제할 때 삭제된 값을 반환하지 않는다. `remove()`는 시간복잡도 $$O(N)$$를 갖는다.
 
 ```python
 example = [1, 2, 3, 4, 5, 1]
@@ -1298,7 +1298,7 @@ print(example)  # [2, 3, 4, 5, 1]
 
 > **pop()**
 
-`pop()`은 리스트에서 지우고자 하는 값의 인덱스를 받아서 지우는 방식이다. 값을 삭제할 때 삭제된 값을 반환한다. 인덱스를 지정하지 않으면 리스트의 마지막 요소가 삭제되며 반환된다. `pop()`은 시간복잡도 $O(N)$를 갖는다.
+`pop()`은 리스트에서 지우고자 하는 값의 인덱스를 받아서 지우는 방식이다. 값을 삭제할 때 삭제된 값을 반환한다. 인덱스를 지정하지 않으면 리스트의 마지막 요소가 삭제되며 반환된다. `pop()`은 시간복잡도 $$O(N)$$를 갖는다.
 
 ```python
 example = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -1312,7 +1312,7 @@ print(example)  # [1, 2, 3, 5, 6, 7, 8, 9, 10]
 
 > **del**
 
-`del list[i]` 형태로 사용하며, 시간복잡도 $O(N)$을 갖는다. 값을 삭제할 때 삭제된 값을 반환하지 않는다.
+`del list[i]` 형태로 사용하며, 시간복잡도 $$O(N)$$을 갖는다. 값을 삭제할 때 삭제된 값을 반환하지 않는다.
 
 ```python
 example = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -1336,7 +1336,7 @@ print(example)  # [1, 2, 3, 4, 5, 6, 7]
 
 Python은 객체 지향 프로그래밍 언어이다. Python의 주요 OOP 개념에는 Class, Object, Method, Inheritance(상속), Polymorphism(다형성), Data Abstraction(데이터 추상화), Encapsulation(캡슐화)을 포함한다.
 
-더 자세한 내용은 [#55. Inheritance](#55), [#59. Polymorphism](#59), [#60. Encapsulation](#60), [#61. Data Abstraction](#61) 참고!
+더 자세한 내용은 [#55. Inheritance](#id-55), [#59. Polymorphism](#id-59), [#60. Encapsulation](#id-60), [#61. Data Abstraction](#id-61) 참고!
 
 #### References
 
@@ -1399,7 +1399,7 @@ print(a, b) # [1, 10, 3, 4, 5] [1, 2, 3, 4, 5]
 
 - [[Python] 파이썬 멀티 쓰레드(thread)와 멀티 프로세스(process) by Nathan Kwon](https://monkey3199.github.io/develop/python/2018/12/04/python-pararrel.html)
 - [[운영체제] Concurrency : locks- blackinkgj](https://blackinkgj.github.io/Locks/)
-- [What is GIL in Python language?](#67)
+- [What is GIL in Python language?](#id-67)
 
 ---
 
@@ -1448,7 +1448,7 @@ dis.dis(mult)
 
 주로 사용되는 파이썬 라이브러리로는 [`Numpy`](https://numpy.org/), [`Pandas`](https://pandas.pydata.org/), [`Matplotlib`](https://matplotlib.org/), [`Scikit-learn`](https://scikit-learn.org/stable/) 등이 있다.
 
-패키지에 대한 더 자세한 내용은 [#42. 패키지](#42) 참고!
+패키지에 대한 더 자세한 내용은 [#42. 패키지](#id-42) 참고!
 
 ---
 
@@ -1576,7 +1576,7 @@ my_A.a # new_a 가 동작
 
 #### Does python support multiple inheritance?
 
-파이썬은 자바와 다르게 multiple inheritance 을 지원한다. multiple inheritance 의 개념은 [#55](#55) 에서 참고할 수 있다.
+파이썬은 자바와 다르게 multiple inheritance 을 지원한다. multiple inheritance 의 개념은 [#55](#id-55) 에서 참고할 수 있다.
 
 예시는 아래와 같다.
 
