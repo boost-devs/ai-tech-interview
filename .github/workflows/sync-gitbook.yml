@@ -1,0 +1,35 @@
+name: Sync to GitBook
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Convert markdown for GitBook
+        run: python .github/scripts/convert_for_gitbook.py
+
+      - name: Push to gitbook branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -B gitbook
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: sync from main [skip ci]"
+          git push origin gitbook --force
