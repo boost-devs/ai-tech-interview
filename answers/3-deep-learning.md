@@ -344,7 +344,7 @@ $$
 W \sim U(- \sqrt{\frac{1}{n_{in}}}, + \sqrt{\frac{1}{n_{in}}})
 $$
 
-> **Xavier Initialization**
+> **Xavier Initialization** (또는 Glorot Initialization)
 
 LeCun 방법과 비슷하지만 들어오는 노드 수와 나가는 노드 수에 의존하고, 적절한 상수값도 발견하여 사용한 방법이다.
 
@@ -363,7 +363,7 @@ $$
 sigmoid 나 tanh 함수와는 좋은 결과를 보여주지만 ReLU 함수와 사용할 경우 0에 수렴하는 문제가 발생한다.  
 따라서 `sigmoid` 나 `tanh` 함수와 주로 많이 사용한다.
 
-> **He Initialization**
+> **He Initialization** (또는 Kaiming Initialization)
 
 `ReLU` 와 함께 많이 사용되는 방법으로, LeCun 방법과 같지만 상수를 다르게 하였다. 들어오는 노드만 고려한다.
 
@@ -382,6 +382,7 @@ $$
 #### References
 
 - [가중치 초기화 (Weight Initialization) - reniew's blog](https://reniew.github.io/13/)
+- [[Deep learning] 가중치 초기화(weight initialization) (feat. Xavier, He,normal, uniform) - 독립성이 강한 ISFP](https://resultofeffort.tistory.com/114)
 
 ---
 
