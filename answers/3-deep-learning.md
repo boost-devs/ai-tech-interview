@@ -231,10 +231,22 @@ ReLU 함수는 $f(x) = max(0, x)$으로, 입력이 양수면 그대로, 음수�
 
 Leaky ReLU는 $f(x) = max(0.01x, x)$으로, ReLU 와 마찬가지로 좋은 성능을 유지하면서 음수 입력이 0이 아니게 됨에 따라 `Dead ReLU` 문제를 해결하였다.
 
+> **SiLU (Swish)**
+
+![](./img/3-deep-learning/silu.png)
+
+SiLU (Swish) 는 $f(x) = x \times sigmoid(x) = \frac{x}{1 + e^{-x}}$ 으로, 입력값에 Sigmoid 를 단순히 곱한 함수이다.
+
+SiLU 함수의 특징은 다음과 같다.
+
+* 단조 증가가 아니고 감소하는 부분이 존재한다. (x = -1.278 부근에서 최솟값 약 -0.278)
+* 다양한 연구 결과에서 ReLU 보다 성능이 좋음이 확인되었다.
+
 #### References
 
 - [Activation Functions에 대해 알아보자 - Steve-Lee's Deep Insight](https://deepinsight.tistory.com/113)
 - [[신경망] 6. 활성화 함수 (Activation Function) - 분석벌레의 공부방](https://analysisbugs.tistory.com/55)
+- [[활성화 함수] SiLU(Swish) - Tae-Jun](https://tae-jun.tistory.com/10)
 
 ---
 
